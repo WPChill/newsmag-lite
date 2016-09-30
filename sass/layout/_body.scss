@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the main body of the site/application.
+// -----------------------------------------------------------------------------
+/**
+* Override bootstrap paddings to match PSD layout
+*/
+
+.error404 {
+  .site-main {
+    text-align : center;
+  }
+  .page-content {
+    margin-bottom : 40px;
+  }
+}

@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+/* Header */
+.site-branding {
+  padding : 15px;
+  @media (min-width : 768px) {
+    padding : 35px 15px;
+  }
+  @media (max-width : 767px) {
+    .header-logo {
+      text-align : center;
+    }
+  }
+
+}
+
+.header-banner {
+  text-align : right;
+}
+
+.custom-logo {
+  margin-top : 25px;
+}
+
+.custom-logo-link {
+  font-weight    : 700;
+  text-transform : uppercase;
+  font-size      : 40px;
+  color          : #333;
+}

@@ -1,0 +1,41 @@
+.newsmag-news-ticker {
+  @media (max-width: 767px) {
+    text-align: center;
+
+  }
+  .newsmag-module-title {
+    color: #FFF;
+    padding: 12px 25px;
+    font-weight: 600;
+    background: $color__brand-red;
+    display: inline-block;
+    @media (max-width: 767px) {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    icon.fa {
+      color: #FFF;
+      margin-right: 10px;
+    }
+  }
+  ul {
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    @media (min-width: 768px) {
+      width: 73%;
+      display: inline-block !important;
+    }
+    list-style-type: none;
+    position: relative;
+    li {
+      a {
+        color: $font__main;
+        font-size: 14px;
+        font-family: 'Hind';
+        font-weight: 400;
+      }
+    }
+  }
+}

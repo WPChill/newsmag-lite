@@ -1,0 +1,35 @@
+.newsmag-post-meta {
+  > ul {
+    list-style-type : none;
+    margin          : 10px 0 20px;
+    padding         : 0;
+    > li {
+      display     : inline-block;
+      font-size   : 12px;
+      font-family : $font__main;
+      color       : #777777;
+      position    : relative;
+      &:after {
+        content      : '|';
+        display      : inline-block;
+        margin-left  : 8px;
+        margin-right : 8px;
+      }
+      &:last-of-type {
+        &:after {
+          display : none;
+        }
+      }
+      &.post-category {
+        a, icon {
+          color : $color__brand-red;
+        }
+      }
+    }
+  }
+}
+
+.newsmag-layout-a-row,
+.newsmag-layout-c-row {
+  margin-bottom : 30px;
+}
