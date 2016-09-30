@@ -71,5 +71,8 @@ ul.macho-upsell-requirements {
     font-size: 12px;
 }
 
+[class^='newsmag_'], [class*=' newsmag_'], [class^='newsmag-'], [class*=' newsmag-']{
+    background:rgba(0, 115, 170, 0.05) !important;
+}
 /*# sourceMappingURL=style.css.map */
 

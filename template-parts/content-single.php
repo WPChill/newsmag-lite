@@ -6,10 +6,11 @@
  *
  * @package Newsmag
  */
-
+// Grab the current author
+$curauth = get_userdata( $post->post_author );
 ?>
 <div class="row newsmag-article-post">
-	<?php if ( get_theme_mod( 'newsmag_enable_author_box', 'enabled' ) === 'enabled' ): ?>
+	<?php if ( get_theme_mod( 'newsmag_enable_author_box', 'enabled' ) === 'enabled' && ! empty( $curauth->description )): ?>
 		<div class="col-md-3">
 			<?php
 			// Include author information
@@ -17,8 +18,7 @@
 			?>
 		</div>
 	<?php endif; ?>
-	<div
-		class="<?php echo ( get_theme_mod( 'newsmag_enable_author_box', 'enabled' ) === 'enabled' ) ? 'col-md-9' : 'col-md-12'; ?>">
+	<div class="<?php echo ( get_theme_mod( 'newsmag_enable_author_box', 'enabled' ) === 'enabled' && ! empty( $curauth->description ) ) ? 'col-md-9' : 'col-md-12'; ?>">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php if ( ! is_single() ): ?>
 				<header class="entry-header">

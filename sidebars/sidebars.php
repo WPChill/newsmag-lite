@@ -19,7 +19,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 
 			register_sidebar( array(
 				'id'            => 'sidebar',
-				'name'          => __( 'Right Sidebar', 'newsmag' ),
+				'name'          => __( 'Blog Sidebar', 'newsmag' ),
 				'description'   => __( 'This widget is located right side as sidebar. Only seen on the normal post query', 'newsmag' ),
 				'before_widget' => '<div class="widget %2$s">',
 				'after_widget'  => '</div>',
@@ -36,83 +36,6 @@ if ( function_exists( 'register_sidebar' ) ) {
 					'after_widget'  => '</div>'
 				)
 			);
-
-//			register_sidebar( array(
-//					'id'            => 'top-area-a',
-//					'name'          => __( 'Top Area #1', 'newsmag' ),
-//					'before_title'  => '<h3 class="widget-title"><span>',
-//					'after_title'   => '</span></h3>',
-//					'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//					'after_widget'  => '</div>'
-//				)
-//			);
-//			register_sidebar( array(
-//					'id'            => 'top-area-b',
-//					'name'          => __( 'Top Area #2', 'newsmag' ),
-//					'before_title'  => '<h3 class="widget-title"><span>',
-//					'after_title'   => '</span></h3>',
-//					'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//					'after_widget'  => '</div>'
-//				)
-//			);
-//			register_sidebar( array(
-//					'id'            => 'top-area-c',
-//					'name'          => __( 'Top Area #3', 'newsmag' ),
-//					'before_title'  => '<h3 class="widget-title"><span>',
-//					'after_title'   => '</span></h3>',
-//					'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//					'after_widget'  => '</div>'
-//				)
-//			);
-//
-//			register_sidebar( array(
-//					'id'            => 'content-area-a',
-//					'name'          => __( 'Content Area #1', 'newsmag' ),
-//					'before_title'  => '<h3 class="widget-title"><span>',
-//					'after_title'   => '</span></h3>',
-//					'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//					'after_widget'  => '</div>'
-//				)
-//			);
-//			register_sidebar( array(
-//					'id'            => 'content-area-b',
-//					'name'          => __( 'Content Area #2', 'newsmag' ),
-//					'before_title'  => '<h3 class="widget-title"><span>',
-//					'after_title'   => '</span></h3>',
-//					'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//					'after_widget'  => '</div>'
-//				)
-//			);
-//
-//			register_sidebar( array(
-//					'id'            => 'content-area-main',
-//					'name'          => __( 'Content Area Main', 'newsmag' ),
-//					'before_title'  => '<h3 class="widget-title"><span>',
-//					'after_title'   => '</span></h3>',
-//					'before_widget' => '<div id="%1$s" class="widget newsmag-margin-top %2$s">',
-//					'after_widget'  => '</div>'
-//				)
-//			);
-//
-//			register_sidebar( array(
-//					'id'            => 'content-area-banner',
-//					'name'          => __( 'Content Area Banner', 'newsmag' ),
-//					'before_title'  => '<h3 class="widget-title"><span>',
-//					'after_title'   => '</span></h3>',
-//					'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//					'after_widget'  => '</div>'
-//				)
-//			);
-//
-//			register_sidebar( array(
-//					'id'            => 'before-footer-area',
-//					'name'          => __( 'Before Footer Content Area', 'newsmag' ),
-//					'before_title'  => '<h3 class="widget-title"><span>',
-//					'after_title'   => '</span></h3>',
-//					'before_widget' => '<div id="%1$s" class="widget newsmag-margin-top %2$s">',
-//					'after_widget'  => '</div>'
-//				)
-//			);
 
 			register_sidebar( array(
 				'id'            => 'footer-1',
