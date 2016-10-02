@@ -10,7 +10,7 @@ if ( $posts->have_posts() ):
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 				}
-				$new_image = apply_filters( 'newsmag_widget_image', $image );
+				$new_image = $image;
 				?>
 				<div class="newsmag-post-box-a">
 					<?php if ( ! empty( $instance['title'] ) ) { ?>
@@ -35,7 +35,7 @@ if ( $posts->have_posts() ):
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
 				}
-				$new_image = apply_filters( 'newsmag_widget_image', $image );
+				$new_image = $image;
 				?>
 				<div class="newsmag-blog-post-layout-b">
 					<div class="row">

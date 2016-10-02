@@ -21,6 +21,10 @@ if ( ! class_exists( 'WP_Macho_Pro_Control' ) ):
 			$this->json['pro_label'] = $this->pro_label;
 		}
 
+		public function enqueue() {
+			wp_enqueue_style( 'rl-slider', get_template_directory_uri() . '/inc/customizer/custom-fields/assets/css/style.css' );
+		}
+
 		public function content_template() { ?>
 			<div class="macho-upsell">
 				<# if ( data.options ) { #>

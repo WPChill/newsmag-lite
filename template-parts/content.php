@@ -14,7 +14,7 @@
 	if ( has_post_thumbnail() ) {
 		$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 	}
-	$new_image = apply_filters( 'newsmag_widget_image', $image ); ?>
+	$new_image = $image; ?>
 	<div class="row">
 		<div class="col-sm-4 col-xs-12">
 			<div class="newsmag-image">

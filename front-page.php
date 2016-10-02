@@ -24,7 +24,7 @@ if ( get_option( 'show_on_front' ) == 'posts' ):
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
-						<h2 class="page-title"><?php echo get_option('blogname') ?></h2>
+						<h2 class="page-title"><?php echo get_option( 'blogname' ) ?></h2>
 					</div>
 				</div>
 			</div>
@@ -68,8 +68,10 @@ if ( get_option( 'show_on_front' ) == 'posts' ):
 
 	<?php
 else:
-	if ( is_active_sidebar( 'homepage-slider' ) ) {
-		dynamic_sidebar( 'homepage-slider' );
+	if ( is_active_sidebar( 'homepage-slider' ) ) { ?>
+		<div id="newsmag-homepage-slider"> <?php
+			dynamic_sidebar( 'homepage-slider' );
+		?> </div> <?php
 	} elseif ( current_user_can( 'edit_theme_options' ) ) {
 		get_template_part( 'inc/demo-content/slider' );
 	} ?>

@@ -335,8 +335,6 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/components/breadcrumbs/class-newsmag-breadcrumbs.php';
-require get_template_directory() . '/inc/components/related-posts/class-newsmag-related-posts.php';
-require get_template_directory() . '/inc/components/lazyload/class-newsmag-lazyload.php';
 
 function newsmag_widget_init() {
 

@@ -23,16 +23,6 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-	<?php
-	/**
-	 * Enable / Disable the top bar
-	 */
-	if ( get_theme_mod( 'newsmag_enable_news_ticker', 'enabled' ) !== 'disabled' ) :
-		get_template_part( 'template-parts/news-ticker' );
-	endif;
-
-	?>
-
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding container">
 			<div class="row">

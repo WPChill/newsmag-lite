@@ -14,16 +14,6 @@ $wp_customize->add_setting( 'newsmag_enable_menu_search',
 	)
 );
 
-$wp_customize->add_setting( 'newsmag_enable_news_ticker',
-	array(
-		'sanitize_callback' => array(
-			'Newsmag_Customizer_Helper',
-			'newsmag_sanitize_radio_buttons'
-		),
-		'default'           => 'enabled'
-	)
-);
-
 /**
  * Breadcrumbs on single blog posts
  */
@@ -110,82 +100,6 @@ $wp_customize->add_setting( 'newsmag_enable_go_top',
 		'default'           => 'enabled'
 	)
 );
-
-/**
- * Blog Settings
- */
-$wp_customize->add_setting( 'newsmag_related_posts_enabled',
-	array(
-		'sanitize_callback' => array(
-			'Newsmag_Customizer_Helper',
-			'newsmag_sanitize_radio_buttons'
-		),
-		'default'           => 'enabled'
-	)
-);
-
-/**
- * Blog posts to display
- */
-$wp_customize->add_setting( 'newsmag_howmany_blog_posts',
-	array(
-		'sanitize_callback' => 'absint',
-		'default'           => 4
-	)
-);
-
-/*
-* Auto play carousel
-*/
-$wp_customize->add_setting( 'newsmag_autoplay_blog_posts',
-	array(
-		'sanitize_callback' => array(
-			'Newsmag_Customizer_Helper',
-			'newsmag_sanitize_checkbox'
-		),
-		'default'           => 1,
-	)
-);
-
-/**
- * Show Title
- */
-$wp_customize->add_setting( 'newsmag_enable_related_title_blog_posts',
-	array(
-		'sanitize_callback' => array(
-			'Newsmag_Customizer_Helper',
-			'newsmag_sanitize_checkbox'
-		),
-		'default'           => 1
-	)
-);
-
-/**
- * Show Date
- */
-$wp_customize->add_setting( 'newsmag_enable_related_date_blog_posts',
-	array(
-		'sanitize_callback' => array(
-			'Newsmag_Customizer_Helper',
-			'newsmag_sanitize_checkbox'
-		),
-		'default'           => 0
-	)
-);
-
-/**
- * Blog layout
- */
-$wp_customize->add_setting( 'newsmag_blog_layout',
-	array(
-		'sanitize_callback' => array(
-			'Newsmag_Customizer_Helper',
-			'newsmag_sanitize_radio_buttons'
-		),
-		'default'           => 'right-sidebar'
-	)
-);
-
 /**
  * Author box
  */

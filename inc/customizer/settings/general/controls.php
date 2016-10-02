@@ -18,23 +18,6 @@ $wp_customize->add_control(
 );
 
 /**
- * Enable the news ticker
- */
-$wp_customize->add_control(
-	'newsmag_enable_news_ticker',
-	array(
-		'type'    => 'radio',
-		'choices' => array(
-			'enabled'  => esc_html__( 'Enabled', 'newsmag' ),
-			'disabled' => esc_html__( 'Disabled', 'newsmag' )
-		),
-		'label'   => esc_html__( 'Enable or disable the news ticker', 'newsmag' ),
-		'section' => 'newsmag_general_section',
-	)
-);
-
-
-/**
  * Footer Column Count
  */
 $wp_customize->add_control(
@@ -94,25 +77,6 @@ $wp_customize->add_control(
 	)
 );
 
-/**
- * Blog Settings
- *
- * Author box
- */
-$wp_customize->add_control(
-	'newsmag_blog_layout',
-	array(
-		'type'    => 'radio',
-		'choices' => array(
-			'fullwidth'     => esc_html__( 'Fullwidth', 'newsmag' ),
-			'left-sidebar'  => esc_html__( 'Sidebar Left', 'newsmag' ),
-			'right-sidebar' => esc_html__( 'Sidebar Right', 'newsmag' ),
-		),
-		'label'   => esc_html__( 'Blog layout', 'newsmag' ),
-		'section' => 'newsmag_blog_section',
-	)
-);
-
 $wp_customize->add_control(
 	'newsmag_enable_author_box',
 	array(
@@ -125,6 +89,7 @@ $wp_customize->add_control(
 		'section' => 'newsmag_blog_section',
 	)
 );
+
 /**
  * Enable breadcrumbs on single posts
  */
@@ -176,83 +141,6 @@ $wp_customize->add_control(
 		'active_callback' => 'breadcrumbs_enabled_callback',
 	)
 );
-/*
- * Related Post Section
- */
-$wp_customize->add_control(
-	'newsmag_related_posts_enabled',
-	array(
-		'type'    => 'radio',
-		'choices' => array(
-			'enabled'  => esc_html__( 'Enabled', 'newsmag' ),
-			'disabled' => esc_html__( 'Disabled', 'newsmag' ),
-		),
-		'label'   => esc_html__( 'Enable Related Posts Section', 'newsmag' ),
-		'section' => 'newsmag_blog_section',
-	)
-);
-
-/**
- * Autoplay carousel
- */
-$wp_customize->add_control(
-	'newsmag_autoplay_blog_posts',
-	array(
-		'type'            => 'checkbox',
-		'label'           => esc_html__( 'Autoplay related carousel?', 'newsmag' ),
-		'section'         => 'newsmag_blog_section',
-		'active_callback' => 'related_posts_enabled_callback',
-	)
-);
-
-/**
- * Blog Post number
- */
-$wp_customize->add_control( new Newsmag_Controls_Slider_Control(
-		$wp_customize,
-		'newsmag_howmany_blog_posts',
-		array(
-			'label'           => esc_html__( 'How many blog posts to display in the carousel at once?', 'newsmag' ),
-			'description'     => esc_html__( 'No more than 4 posts at once;', 'newsmag' ),
-			'choices'         => array(
-				'min'  => 1,
-				'max'  => 4,
-				'step' => 1,
-			),
-			'section'         => 'newsmag_blog_section',
-			'default'         => 4,
-			'active_callback' => 'related_posts_enabled_callback',
-		)
-	)
-);
-
-/**
- * Show title
- */
-
-$wp_customize->add_control(
-	'newsmag_enable_related_title_blog_posts',
-	array(
-		'type'            => 'checkbox',
-		'label'           => esc_html__( 'Posts title in the carousel ?', 'newsmag' ),
-		'section'         => 'newsmag_blog_section',
-		'active_callback' => 'related_posts_enabled_callback',
-	)
-);
-
-/**
- * Show date
- */
-$wp_customize->add_control(
-	'newsmag_enable_related_date_blog_posts',
-	array(
-		'type'            => 'checkbox',
-		'label'           => esc_html__( 'Carousel related posts date?', 'newsmag' ),
-		'section'         => 'newsmag_blog_section',
-		'active_callback' => 'related_posts_enabled_callback',
-	)
-);
-
 /**
  * General Settings Upsell
  */
@@ -263,7 +151,7 @@ $wp_customize->add_control( new WP_Macho_Pro_Control(
 			'section'     => 'newsmag_general_section',
 			'options'     => array( 'News Ticker' ),
 			'priority'    => 0,
-			'button_link' => 'https://machothemes.com',
+			'button_link' => 'https://www.machothemes.com/themes/newsmag-pro/',
 			'button_text' => 'Upgrade to pro!',
 		)
 	)
@@ -275,7 +163,7 @@ $wp_customize->add_control( new WP_Macho_Pro_Control(
 			'section'     => 'newsmag_blog_section',
 			'options'     => array( 'Related Posts Carousel', 'Blog Layout' ),
 			'priority'    => 0,
-			'button_link' => 'https://machothemes.com',
+			'button_link' => 'https://www.machothemes.com/themes/newsmag-pro/',
 			'button_text' => 'Upgrade to pro!',
 		)
 	)

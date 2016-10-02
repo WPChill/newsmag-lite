@@ -13,7 +13,7 @@ if ( $posts->have_posts() ):?>
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail_url( get_the_ID(), 'newsmag-recent-post-big' );
 			}
-			$new_image = apply_filters( 'newsmag_widget_image', $image ); ?>
+			$new_image = $image; ?>
 
 			<div class="newsmag-blog-post-layout-banner <?php echo ( $posts->post_count > 4 ) ? 'col-md-3' : 'col-md-6' ?>"
 			     style="background-image:url('<?php echo $new_image ?>')">
