@@ -24,12 +24,6 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 			$instance['newsmag_category'] = '';
 		}
 
-		if ( isset( $instance['show_post'] ) ) {
-			$show_post = $instance['show_post'];
-		} else {
-			$instance['show_post'] = '';
-		}
-
 		?>
 
 		<label><?php _e( 'Title', 'newsmag' ); ?> :</label><br>
@@ -52,22 +46,6 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 			<?php } ?>
 		</select><br>
 
-		<hr>
-
-		<label><?php _e( 'Posts to Show', 'newsmag' ); ?> :</label><br>
-		<select name="<?php echo $this->get_field_name( 'show_post' ); ?>"
-		        id="<?php echo $this->get_field_id( 'show_post' ); ?>">
-			<option value="2" <?php selected( 2, $instance['show_post'] ); ?>>2</option>
-			<option value="3" <?php selected( 3, $instance['show_post'] ); ?>>3</option>
-			<option value="4" <?php selected( 4, $instance['show_post'] ); ?>>4</option>
-			<option value="5" <?php selected( 5, $instance['show_post'] ); ?>>5</option>
-			<option value="6" <?php selected( 6, $instance['show_post'] ); ?>>6</option>
-			<option value="7" <?php selected( 7, $instance['show_post'] ); ?>>7</option>
-			<option value="8" <?php selected( 8, $instance['show_post'] ); ?>>8</option>
-			<option value="9" <?php selected( 9, $instance['show_post'] ); ?>>9</option>
-			<option value="10" <?php selected( 10, $instance['show_post'] ); ?>>10</option>
-		</select>
-
 	<?php }
 
 	public function update( $new_instance, $old_instance ) {
@@ -76,7 +54,6 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 
 		$instance['title']            = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['newsmag_category'] = ( ! empty( $new_instance['newsmag_category'] ) ) ? $new_instance['newsmag_category'] : '';
-		$instance['show_post']        = ( ! empty( $new_instance['show_post'] ) ) ? $new_instance['show_post'] : '';
 
 		return $instance;
 
@@ -95,7 +72,7 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 
 		$atts = array(
 			'cat'            => $id,
-			'posts_per_page' => $args['show_post'],
+			'posts_per_page' => 2,
 		);
 
 		$posts = new WP_Query( $atts );
@@ -117,12 +94,6 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = 'uncategorized';
-		}
-
-		if ( isset( $instance['show_post'] ) ) {
-			$show_post = $instance['show_post'];
-		} else {
-			$instance['show_post'] = '';
 		}
 
 		extract( $args, EXTR_SKIP );
