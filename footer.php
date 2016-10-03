@@ -28,11 +28,11 @@
 				<div class="row">
 					<div class="col-md-6">
 						<?php
-						echo get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://machothemes.com/">Newsmag. All rights reserved.</a>' );
+						echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://machothemes.com/">Newsmag. All rights reserved.</a>' ) );
 						?>
 					</div>
 					<div class="col-md-6 text-right">
-						<?php echo __('Created by Macho Themes', 'newsmag') ?>
+						<?php echo __( 'Created by Macho Themes', 'newsmag' ) ?>
 					</div>
 				</div>
 			</div>

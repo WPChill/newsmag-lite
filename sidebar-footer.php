@@ -37,12 +37,12 @@ if ( empty( $sidebars ) ) {
 /**
  * Handle the sizing of the footer columns based on the user selection
  */
-$count = (int) get_theme_mod( 'newsmag_footer_columns', 4 );
+$count = get_theme_mod( 'newsmag_footer_columns', 4 );
 /**
  * Size can be set dynamically as well by counting the array elements
  * $size = 12 / count($sidebars);
  */
-$size = 12 / $count;
+$size = 12 / (int) $count;
 /**
  * In case all the sidebars have widgets attached, we slice the array it.
  */
@@ -52,7 +52,7 @@ $sidebars = array_slice( $sidebars, 0, $count );
 	<div class="container">
 		<div class="row">
 			<?php foreach ( $sidebars as $sidebar ): ?>
-				<div class="col-md-<?php echo $size ?> col-sm-6">
+				<div class="col-md-<?php echo esc_attr($size) ?> col-sm-6">
 					<?php dynamic_sidebar( $sidebar ); ?>
 				</div>
 			<?php endforeach; ?>

@@ -31,15 +31,15 @@
 					if ( function_exists( 'the_custom_logo' ) ) {
 						the_custom_logo();
 						if ( ! get_theme_mod( 'custom_logo' ) ) {
-							$header_textcolor = esc_attr(get_theme_mod('header_textcolor'));
+							$header_textcolor = get_theme_mod('header_textcolor');
 							?>
-								<a class="custom-logo-link site-title" <?php echo (!empty($header_textcolor)) ? 'style="color:#'.$header_textcolor.'"': ''; ?> href="<?php echo get_home_url() ?>"> <?php echo get_option('blogname') ?></a>
+								<a class="custom-logo-link site-title" <?php echo (!empty($header_textcolor)) ? 'style="color:#'.esc_attr($header_textcolor).'"': ''; ?> href="<?php echo get_home_url() ?>"> <?php echo get_option('blogname') ?></a>
 							<?php
 						}
 					}
 					$description = get_bloginfo( 'description', 'display' );
 					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description" <?php echo (!empty($header_textcolor)) ? 'style="color:#'.$header_textcolor.'"': ''; ?>><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<p class="site-description" <?php echo (!empty($header_textcolor)) ? 'style="color:#'.esc_attr($header_textcolor).'"': ''; ?>><?php echo wp_kses_post($description); /* WPCS: xss ok. */ ?></p>
 						<?php
 					endif; ?>
 				</div>

@@ -28,7 +28,7 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 			<ul class="posts-list">
 				<?php while ( $r->have_posts() ) : $r->the_post();
 					global $post;
-					$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . get_template_directory_uri() . '/images/picture_placeholder_list.jpg" />';
+					$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url_raw( get_template_directory_uri() . '/images/picture_placeholder_list.jpg' ) . '" />';
 					if ( has_post_thumbnail() ) {
 						$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
 					}
@@ -75,16 +75,16 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 		$title  = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'newsmag' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
-			       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>"/>
+		<p><label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php _e( 'Title:', 'newsmag' ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"
+			       name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr($title); ?>"/>
 		</p>
 
 		<p>
 			<label
-				for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'newsmag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'number' ); ?>"
-			       name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>"
+				for="<?php echo esc_attr($this->get_field_id( 'number' )); ?>"><?php _e( 'Number of posts to show:', 'newsmag' ); ?></label>
+			<input id="<?php echo esc_attr($this->get_field_id( 'number' )); ?>"
+			       name="<?php echo esc_attr($this->get_field_name( 'number' )); ?>" type="text" value="<?php echo esc_att($number); ?>"
 			       size="3"/>
 		</p>
 		<?php

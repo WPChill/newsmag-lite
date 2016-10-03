@@ -98,7 +98,7 @@ function newsmag_get_attachment_id( $url ) {
 		}
 	}
 
-	return $attachment_id;
+	return (int) $attachment_id;
 }
 
 /**

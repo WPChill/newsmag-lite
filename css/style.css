@@ -514,7 +514,7 @@ a {
 #site-navigation {
   border-top: 1px solid #e1e1e1; }
   #site-navigation a {
-    font-family: "Poppins";
+    font-family: 'Lato', serif;
     line-height: 26px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -529,7 +529,6 @@ a {
       color: #ff3d2e; }
     #site-navigation .nav-menu > li > a {
       font-size: 15px;
-      font-weight: 600;
       position: relative;
       text-transform: uppercase; }
     #site-navigation .nav-menu > li:last-of-type {

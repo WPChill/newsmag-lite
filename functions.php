@@ -231,7 +231,11 @@ function newsmag_scripts() {
 	/**
 	 * Load the fonts
 	 */
-	wp_enqueue_style( 'newsmag-fonts', 'https://fonts.googleapis.com/css?family=Hind:400,700|Lato:400,700|Poppins:400,600,700' );
+	$query_args = array(
+		'family' => 'Hind:400,700|Lato:400,600,700|Poppins:400,500,600,700'
+	);
+
+	wp_enqueue_style( 'newsmag-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), 1, 'all' );
 	wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
 
 	/**

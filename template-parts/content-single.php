@@ -10,7 +10,7 @@
 $curauth = get_userdata( $post->post_author );
 ?>
 <div class="row newsmag-article-post">
-	<?php if ( get_theme_mod( 'newsmag_enable_author_box', true ) && ! empty( $curauth->description )): ?>
+	<?php if ( get_theme_mod( 'newsmag_enable_author_box', true ) && ! empty( $curauth->description ) ): ?>
 		<div class="col-md-3">
 			<?php
 			// Include author information
@@ -18,7 +18,8 @@ $curauth = get_userdata( $post->post_author );
 			?>
 		</div>
 	<?php endif; ?>
-	<div class="<?php echo ( get_theme_mod( 'newsmag_enable_author_box', true ) && ! empty( $curauth->description ) ) ? 'col-md-9' : 'col-md-12'; ?>">
+	<div
+		class="<?php echo ( get_theme_mod( 'newsmag_enable_author_box', true ) && ! empty( $curauth->description ) ) ? 'col-md-9' : 'col-md-12'; ?>">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php if ( ! is_single() ): ?>
 				<header class="entry-header">
@@ -28,7 +29,7 @@ $curauth = get_userdata( $post->post_author );
 						if ( has_post_thumbnail() ) {
 							the_post_thumbnail( 'newsmag-recent-post-big' );
 						} else {
-							echo '<img src=' . get_template_directory_uri() . '/images/picture_placeholder.jpg" />';
+							echo '<img src=' . esc_url( get_template_directory_uri() . '/images/picture_placeholder.jpg' ) . '" />';
 						}
 						?>
 					</div>
@@ -47,9 +48,9 @@ $curauth = get_userdata( $post->post_author );
 				is_single() ? the_content() : the_excerpt();
 
 				wp_link_pages( array(
-					'before' => '<ul class="newsmag-pager">',
-					'after'  => '</ul>',
-				) );
+					               'before' => '<ul class="newsmag-pager">',
+					               'after'  => '</ul>',
+				               ) );
 
 				$prev = get_previous_post_link();
 				$prev = str_replace( '&laquo;', '<span class="fa fa-caret-left"></span>', $prev );
@@ -58,10 +59,10 @@ $curauth = get_userdata( $post->post_author );
 				?>
 				<div class="newsmag-next-prev row">
 					<div class="col-md-6 text-left">
-						<?php echo $prev ?>
+						<?php echo wp_kses_post( $prev ) ?>
 					</div>
 					<div class="col-md-6 text-right">
-						<?php echo $next ?>
+						<?php echo wp_kses_post( $next ) ?>
 					</div>
 				</div>
 				<?php
@@ -72,20 +73,14 @@ $curauth = get_userdata( $post->post_author );
 </div>
 <div class="row newsmag-article-post-footer">
 	<div class="col-md-12">
-		<div class="newsmag-kiwi">
-			<?php do_action( 'newsmag_single_kiwi' ); ?>
-		</div>
-
 		<footer class="entry-footer">
 			<?php
-
 			if ( 'post' === get_post_type() ) : ?>
 				<div class="newsmag-post-meta">
 					<?php newsmag_posted_on( 'tags' ); ?>
 				</div><!-- .entry-meta -->
 				<?php
 			endif;
-
 			?>
 		</footer><!-- .entry-footer -->
 
