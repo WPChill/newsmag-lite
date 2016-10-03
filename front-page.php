@@ -20,7 +20,7 @@ if ( get_option( 'show_on_front' ) == 'posts' ):
 	$img = $img->url;
 
 	if ( ! empty( $img ) ): ?>
-		<div class="newsmag-custom-header" style="background-image:url(<?php echo esc_url_raw($img) ?>)">
+		<div class="newsmag-custom-header" style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
@@ -71,9 +71,7 @@ else:
 	if ( is_active_sidebar( 'homepage-slider' ) ) { ?>
 		<div id="newsmag-homepage-slider"> <?php
 			dynamic_sidebar( 'homepage-slider' );
-		?> </div> <?php
-	} elseif ( current_user_can( 'edit_theme_options' ) ) {
-		get_template_part( 'inc/demo-content/slider' );
+			?> </div> <?php
 	} ?>
 
 	<div class="container newsmag-margin-top">

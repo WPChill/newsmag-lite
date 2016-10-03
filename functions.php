@@ -50,9 +50,9 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'newsmag' ),
-			'social'  => esc_html__( 'Social', 'newsmag' ),
-		) );
+			                    'primary' => esc_html__( 'Primary', 'newsmag' ),
+			                    'social'  => esc_html__( 'Social', 'newsmag' ),
+		                    ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -151,23 +151,6 @@ endif;
 add_action( 'after_setup_theme', 'newsmag_setup' );
 
 /**
- * @param $sidebars_widgets
- *
- * @return mixed
- */
-function newsmag_disable_default_widgets( $sidebars_widgets ) {
-
-	if ( is_array( $sidebars_widgets['before-content-area'] ) ) {
-		foreach ( $sidebars_widgets['before-content-area'] as $i => $widget ) {
-			unset( $sidebars_widgets['before-content-area'][ $i ] );
-		}
-
-	}
-
-	return $sidebars_widgets;
-}
-
-/**
  * @return bool
  */
 function newsmag_is_not_static_page() {
@@ -241,22 +224,6 @@ function newsmag_remove_from_archive_title( $title ) {
 
 add_filter( 'get_the_archive_title', 'newsmag_remove_from_archive_title' );
 
-function newsmag_check_widget_text( $content ) {
-
-	$content = preg_replace( "/<object/Si", '<div class="newsmag-video-containe"><object', $content );
-	$content = preg_replace( "/<\/object>/Si", '</object></div>', $content );
-
-	/**
-	 * Added iframe filtering, iframes are bad.
-	 */
-	$content = preg_replace( "/<iframe.+?src=\"(.+?)\"/Si", '<div class="newsmag-video-containe"><iframe src="\1" frameborder="0" allowfullscreen>', $content );
-	$content = preg_replace( "/<\/iframe>/Si", '</iframe></div>', $content );
-
-	return $content;
-}
-
-add_filter( 'widget_text', 'newsmag_check_widget_text' );
-
 /**
  * Enqueue scripts and styles.
  */
@@ -264,11 +231,7 @@ function newsmag_scripts() {
 	/**
 	 * Load the fonts
 	 */
-	$ssl = is_ssl() ? 'https:' : 'http:';
-
-	wp_enqueue_style( 'poppins-style', $ssl . '//fonts.googleapis.com/css?family=Poppins:400,600,500,700,300' );
-	wp_enqueue_style( 'lato-style', $ssl . '//fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900' );
-	wp_enqueue_style( 'hind-style', $ssl . '//fonts.googleapis.com/css?family=Hind:400,300,500,600,700' );
+	wp_enqueue_style( 'newsmag-fonts', 'https://fonts.googleapis.com/css?family=Hind:400,700|Lato:400,700|Poppins:400,600,700' );
 	wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
 
 	/**
@@ -298,11 +261,11 @@ function newsmag_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_register_script( 'owlCarousel-js', get_template_directory_uri() . '/js/owl-carousel/owl.carousel.min
+	wp_enqueue_script( 'owlCarousel-js', get_template_directory_uri() . '/js/owl-carousel/owl.carousel.min
 				.js', array( 'jquery' ), '1.3.3', true );
 	// owlCarousel Stylesheet
-	wp_register_style( 'owlCarousel-main-css', get_template_directory_uri() . '/css/owl-carousel/owl.carousel.min.css' );
-	wp_register_style( 'owlCarousel-theme-css', get_template_directory_uri() . '/css/owl-carousel/owl.theme.default.css' );
+	wp_enqueue_style( 'owlCarousel-main-css', get_template_directory_uri() . '/css/owl-carousel/owl.carousel.min.css' );
+	wp_enqueue_style( 'owlCarousel-theme-css', get_template_directory_uri() . '/css/owl-carousel/owl.theme.default.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'newsmag_scripts' );
@@ -340,26 +303,121 @@ function newsmag_widget_init() {
 	}
 }
 
-function newsmag_register_new_user_profile_fields( $profile_fields ) {
-	// Add new fields
-	$profile_fields['twitter']     = 'Twitter URL';
-	$profile_fields['facebook']    = 'Facebook URL';
-	$profile_fields['google-plus'] = 'Google+ URL';
-	$profile_fields['linkedin']    = 'LinkedIn URL';
-	$profile_fields['dribbble']    = 'Dribbble URL';
-	$profile_fields['github']      = 'GitHub URL';
-	$profile_fields['pinterest']   = 'Pinterest URL';
-	$profile_fields['tumblr']      = 'Tumblr URL';
-	$profile_fields['youtube']     = 'YouTube URL';
-	$profile_fields['flickr']      = 'FlickR URL';
-	$profile_fields['vimeo']       = 'Vimeo URL';
-	$profile_fields['instagram']   = 'Instagram URL';
-	$profile_fields['codepen']     = 'Codepen URL';
+if ( ! function_exists( 'newsmag_author_extra_social_links' ) ) {
 
-	return $profile_fields;
+	/**
+	 * Function used to register more social profiles on the w.org admin back-end -> user profile.
+	 *
+	 * @param $user
+	 */
+	function newsmag_author_extra_social_links( $user ) {
+
+		echo '<div class="shapely-extra-profile-links">';
+		echo '<h2>' . __( 'Shapely Profile Links', 'shapely' ) . '</h2>';
+		echo '<small>' . __( 'These user profile fields are being registered through the current active theme - Newsmag. If you disable the theme, this information will be lost.', 'shapely' ) . '</small>';
+
+		echo '<table class="form-table">';
+		echo '<tr>';
+		echo '<th><label for="facebook_profile">' . __( 'Facebook Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="facebook_profile" value="' . esc_attr( get_the_author_meta( 'facebook_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="twitter_profile">' . __( 'Twitter Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="twitter_profile" value="' . esc_attr( get_the_author_meta( 'twitter_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="github_profile">' . __( 'Github Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="github_profile" value="' . esc_attr( get_the_author_meta( 'github_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="dribble_profile">' . __( 'Dribbble Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="dribble_profile" value="' . esc_attr( get_the_author_meta( 'dribble_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="vimeo_profile">' . __( 'Vimeo Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="vimeo_profile" value="' . esc_attr( get_the_author_meta( 'vimeo_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="google-plus_profile">' . __( 'Google Plus Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="google-plus_profile" value="' . esc_attr( get_the_author_meta( 'google-plus_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="linkedin_profile">' . __( 'Linkedin Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="linkedin_profile" value="' . esc_attr( get_the_author_meta( 'linkedin_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="pinterest_profile">' . __( 'Pinterest Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="pinterest_profile" value="' . esc_attr( get_the_author_meta( 'pinterest_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="tumblr_profile">' . __( 'TumblrR Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="tumblr_profile" value="' . esc_attr( get_the_author_meta( 'tumblr_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="youtube_profile">' . __( 'YouTube Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="youtube_profile" value="' . esc_attr( get_the_author_meta( 'youtube_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="flickr_profile">' . __( 'FlickR Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="flickr_profile" value="' . esc_attr( get_the_author_meta( 'flickr_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="instagram_profile">' . __( 'Instagram Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="instagram_profile" value="' . esc_attr( get_the_author_meta( 'instagram_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '<tr>';
+		echo '<th><label for="codepen_profile">' . __( 'Codepen Profile', 'newsmag' ) . '</label></th>';
+		echo '<td><input type="text" name="codepen_profile" value="' . esc_attr( get_the_author_meta( 'codepen_profile', $user->ID ) ) . '" class="regular-text" /></td>';
+		echo '</tr>';
+
+		echo '</table>';
+		echo '</div><!--/.shapely-extra-profile-links-->';
+	}
+
+	// hook our functions
+	add_action( 'show_user_profile', 'newsmag_author_extra_social_links' );
+	add_action( 'edit_user_profile', 'newsmag_author_extra_social_links' );
+
 }
 
-add_filter( 'user_contactmethods', 'newsmag_register_new_user_profile_fields' );
+if ( ! function_exists( 'newsmag_save_extra_social_links' ) ) {
+
+	/**
+	 * @param $user_id
+	 */
+	function newsmag_save_extra_social_links( $user_id ) {
+		update_user_meta( $user_id, 'facebook_profile', sanitize_text_field( $_POST['facebook_profile'] ) );
+		update_user_meta( $user_id, 'twitter_profile', sanitize_text_field( $_POST['twitter_profile'] ) );
+		update_user_meta( $user_id, 'github_profile', sanitize_text_field( $_POST['github_profile'] ) );
+		update_user_meta( $user_id, 'dribble_profile', sanitize_text_field( $_POST['dribble_profile'] ) );
+		update_user_meta( $user_id, 'vimeo_profile', sanitize_text_field( $_POST['vimeo_profile'] ) );
+		update_user_meta( $user_id, 'google_plus_profile', sanitize_text_field( $_POST['google_plus_profile'] ) );
+		update_user_meta( $user_id, 'linkedin_profile', sanitize_text_field( $_POST['linkedin_profile'] ) );
+		update_user_meta( $user_id, 'pinterest_profile', sanitize_text_field( $_POST['pinterest_profile'] ) );
+		update_user_meta( $user_id, 'tumblr_profile', sanitize_text_field( $_POST['tumblr_profile'] ) );
+		update_user_meta( $user_id, 'youtube_profile', sanitize_text_field( $_POST['youtube_profile'] ) );
+		update_user_meta( $user_id, 'flickr_profile', sanitize_text_field( $_POST['flickr_profile'] ) );
+		update_user_meta( $user_id, 'instagram_profile', sanitize_text_field( $_POST['instagram_profile'] ) );
+		update_user_meta( $user_id, 'codepen_profile', sanitize_text_field( $_POST['codepen_profile'] ) );
+	}
+
+	//hook our functions
+	add_action( 'personal_options_update', 'newsmag_save_extra_social_links' );
+	add_action( 'edit_user_profile_update', 'newsmag_save_extra_social_links' );
+}
+
 
 function newsmag_dirname_to_classname( $dirname ) {
 	$class_name = explode( '-', $dirname );

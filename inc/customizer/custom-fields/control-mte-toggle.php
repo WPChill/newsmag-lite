@@ -20,18 +20,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		public $type = 'mte-toggle';
 
 		/**
-		 * Enqueue scripts/styles.
-		 *
-		 * @since  1.0.0
-		 * @access public
-		 * @return void
-		 */
-		public function enqueue() {
-			wp_enqueue_style( 'newsmag-custom-control-mte-toggle', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/custom-fields/assets/css/switchery.min.css' );
-			wp_enqueue_script( 'newsmag-custom-control-mte-toggle', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/custom-fields/assets/js/switchery.min.js', array( 'jquery' ) );
-		}
-
-		/**
 		 * Displays the control content.
 		 *
 		 * @since  1.0.0

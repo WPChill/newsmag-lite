@@ -1,9 +1,4 @@
-<?php
-wp_enqueue_script( 'owlCarousel-js' );
-// owlCarousel Stylesheet
-wp_enqueue_style( 'owlCarousel-main-css' );
-wp_enqueue_style( 'owlCarousel-theme-css' );
-?>
+
 <section class="primary-slider" role="slider">
 	<div class="owl-carousel owl-theme newsmag-slider">
 		<?php

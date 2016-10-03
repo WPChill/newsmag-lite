@@ -122,12 +122,24 @@ function newsmag_comment_placeholders( $fields ) {
 	);
 	$fields['email']  = str_replace(
 		'<input id="email" name="email"',
-		'<input placeholder="Email *"  id="email" name="email"',
+		'<input placeholder="'
+		. _x(
+			'Email *',
+			'comment form placeholder',
+			'newsmag'
+		)
+		. '"  id="email" name="email"',
 		$fields['email']
 	);
 	$fields['url']    = str_replace(
 		'<input id="url" name="url"',
-		'<input placeholder="Website" id="url" name="url"',
+		'<input placeholder="'
+		. _x(
+			'Website',
+			'comment form placeholder',
+			'newsmag'
+		)
+		. '" id="url" name="url"',
 		$fields['url']
 	);
 
@@ -257,8 +269,8 @@ function newsmag_render_banner() {
 		}
 
 		$html .= '<div class="col-xs-12 newsmag-image-banner">';
-		$html .= '<a href="' . get_theme_mod( 'newsmag_banner_link', 'https://machothemes.com/' ) . '">';
-		$html .= '<img src="' . get_theme_mod( 'newsmag_banner_image', get_template_directory_uri() . '/images/banner.jpg' ) . '"/>';
+		$html .= '<a href="' . esc_url_raw( get_theme_mod( 'newsmag_banner_link', 'https://machothemes.com/' ) ) . '">';
+		$html .= '<img src="' . esc_url_raw( get_theme_mod( 'newsmag_banner_image', get_template_directory_uri() . '/images/banner.jpg' ) ) . '"/>';
 		$html .= '</a>';
 		$html .= '</div>';
 	}

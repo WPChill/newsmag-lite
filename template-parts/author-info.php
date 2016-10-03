@@ -7,19 +7,19 @@
  * @package Newsmag
  */
 $social_media = array(
-	'twitter',
-	'facebook',
-	'google-plus',
-	'linkedin',
-	'dribbble',
-	'github',
-	'pinterest',
-	'tumblr',
-	'youtube',
-	'flickr',
-	'vimeo',
-	'instagram',
-	'codepen',
+	'twitter_profile',
+	'facebook_profile',
+	'google-plus_profile',
+	'linkedin_profile',
+	'dribbble_profile',
+	'github_profile',
+	'pinterest_profile',
+	'tumblr_profile',
+	'youtube_profile',
+	'flickr_profile',
+	'vimeo_profile',
+	'instagram_profile',
+	'codepen_profile',
 );
 
 $filtered = array();
@@ -45,7 +45,7 @@ if ( is_single() && ! empty( $curauth->description ) ) { ?>
 		<p><?php the_author_meta( 'description' ); ?></p>
 		<ul class="social-links">
 			<?php foreach ( $filtered as $key => $val ): ?>
-				<li><a href="<?php echo esc_url( $val ) ?>"><span class="fa fa-<?php echo $key ?>"></span></a></li>
+				<li><a href="<?php echo esc_url( $val ) ?>"><span class="fa fa-<?php echo str_replace('_profile', '', $key) ?>"></span></a></li>
 			<?php endforeach; ?>
 		</ul>
 		<!-- .Short Description -->
