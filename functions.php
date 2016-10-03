@@ -143,20 +143,6 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"check"       => newsmag_is_not_static_page()
 				),
 
-				array(
-					"id"          => 'newsmag-req-ac-frontpage-latest-news',
-					"title"       => esc_html__( 'Change frontpage template', 'newsmag' ),
-					"description" => esc_html__( 'Change the template of the Static Page to "Front Page Template".', 'newsmag' ),
-					"check"       => newsmag_is_not_template_front_page()
-				),
-
-				array(
-					"id"          => 'newsmag-req-ac-check-demo-content',
-					"title"       => esc_html__( 'Check the demo content after installing Newsmag Plugin', 'newsmag' ),
-					"description" => esc_html__( "After installing Newsmag Theme plugin, please make sure to import the demo content.", 'newsmag' ),
-					"check"       => $imported,
-				)
-
 			);
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 		}
@@ -296,7 +282,7 @@ function newsmag_scripts() {
 	 * Theme styling
 	 */
 	wp_enqueue_style( 'newsmag-style', get_stylesheet_uri() );
-
+	wp_enqueue_style( 'newsmag-stylesheet', get_template_directory_uri() . '/css/style.css' );
 	/**
 	 * Load menu script & skip-link-focus-fix
 	 */
