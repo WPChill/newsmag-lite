@@ -1,18 +1,4 @@
-.newsmag_builder {
-  margin: initial !important;
-  h2.colored {
-    margin-top: 0;
-    text-transform: uppercase;
-    font-size: 26px;
-    color: $color__brand-red;
-    margin-bottom: 30px;
-    font-weight: 700;
-    a {
-      font-weight: 700;
-      color: $color__brand-red;
-    }
-  }
-
+.newsmag_slider {
   .newsmag-slider {
     .item-image {
       position: relative;
@@ -54,6 +40,7 @@
         color: transparentize(#FFF, .7);
         font-size: 110px;
       }
+
       &:hover {
         i {
           color: #FFF;
@@ -66,9 +53,7 @@
     .main-slider-next {
       right: 20%;
     }
-
   }
-
   .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     background: $color__brand-red;
   }
@@ -78,6 +63,24 @@
     padding-bottom: 5px;
   }
 
+}
+
+
+
+.newsmag_builder {
+  margin: initial !important;
+  h2.colored {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 26px;
+    color: $color__brand-red;
+    margin-bottom: 30px;
+    font-weight: 700;
+    a {
+      font-weight: 700;
+      color: $color__brand-red;
+    }
+  }
   .newsmag-post-box-a {
     margin-bottom: 45px;
     position: relative;

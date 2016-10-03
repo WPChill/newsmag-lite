@@ -1200,6 +1200,54 @@ a {
 
   .header-banner {
     display: none; } }
+.newsmag_slider .newsmag-slider .item-image {
+  position: relative; }
+  .newsmag_slider .newsmag-slider .item-image .slider-caption {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 50px;
+    color: #FFF; }
+    @media (min-width: 1300px) {
+      .newsmag_slider .newsmag-slider .item-image .slider-caption {
+        left: 20%; } }
+    .newsmag_slider .newsmag-slider .item-image .slider-caption h3 a {
+      color: #FFF;
+      font-size: 33px;
+      font-weight: 800; }
+    .newsmag_slider .newsmag-slider .item-image .slider-caption .post-categories {
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+      .newsmag_slider .newsmag-slider .item-image .slider-caption .post-categories a {
+        color: #FFF;
+        font-weight: 700;
+        text-transform: uppercase; }
+.newsmag_slider .newsmag-slider .main-slider-previous, .newsmag_slider .newsmag-slider .main-slider-next {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  -webkit-transform: translateY(-75%);
+  -khtml-transform: translateY(-75%);
+  -moz-transform: translateY(-75%);
+  -ms-transform: translateY(-75%);
+  -o-transform: translateY(-75%);
+  transform: translateY(-75%); }
+  .newsmag_slider .newsmag-slider .main-slider-previous i, .newsmag_slider .newsmag-slider .main-slider-next i {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 110px; }
+  .newsmag_slider .newsmag-slider .main-slider-previous:hover i, .newsmag_slider .newsmag-slider .main-slider-next:hover i {
+    color: #FFF; }
+.newsmag_slider .newsmag-slider .main-slider-previous {
+  left: 20%; }
+.newsmag_slider .newsmag-slider .main-slider-next {
+  right: 20%; }
+.newsmag_slider .owl-theme .owl-dots .owl-dot.active span, .newsmag_slider .owl-theme .owl-dots .owl-dot:hover span {
+  background: #ff3d2e; }
+.newsmag_slider .owl-dots {
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 5px; }
+
 .newsmag_builder {
   margin: initial !important; }
   .newsmag_builder h2.colored {
@@ -1212,53 +1260,6 @@ a {
     .newsmag_builder h2.colored a {
       font-weight: 700;
       color: #ff3d2e; }
-  .newsmag_builder .newsmag-slider .item-image {
-    position: relative; }
-    .newsmag_builder .newsmag-slider .item-image .slider-caption {
-      position: absolute;
-      left: 5%;
-      right: 5%;
-      bottom: 50px;
-      color: #FFF; }
-      @media (min-width: 1300px) {
-        .newsmag_builder .newsmag-slider .item-image .slider-caption {
-          left: 20%; } }
-      .newsmag_builder .newsmag-slider .item-image .slider-caption h3 a {
-        color: #FFF;
-        font-size: 33px;
-        font-weight: 800; }
-      .newsmag_builder .newsmag-slider .item-image .slider-caption .post-categories {
-        list-style-type: none;
-        padding: 0;
-        margin: 0; }
-        .newsmag_builder .newsmag-slider .item-image .slider-caption .post-categories a {
-          color: #FFF;
-          font-weight: 700;
-          text-transform: uppercase; }
-  .newsmag_builder .newsmag-slider .main-slider-previous, .newsmag_builder .newsmag-slider .main-slider-next {
-    position: absolute;
-    top: 50%;
-    cursor: pointer;
-    -webkit-transform: translateY(-75%);
-    -khtml-transform: translateY(-75%);
-    -moz-transform: translateY(-75%);
-    -ms-transform: translateY(-75%);
-    -o-transform: translateY(-75%);
-    transform: translateY(-75%); }
-    .newsmag_builder .newsmag-slider .main-slider-previous i, .newsmag_builder .newsmag-slider .main-slider-next i {
-      color: rgba(255, 255, 255, 0.3);
-      font-size: 110px; }
-    .newsmag_builder .newsmag-slider .main-slider-previous:hover i, .newsmag_builder .newsmag-slider .main-slider-next:hover i {
-      color: #FFF; }
-  .newsmag_builder .newsmag-slider .main-slider-previous {
-    left: 20%; }
-  .newsmag_builder .newsmag-slider .main-slider-next {
-    right: 20%; }
-  .newsmag_builder .owl-theme .owl-dots .owl-dot.active span, .newsmag_builder .owl-theme .owl-dots .owl-dot:hover span {
-    background: #ff3d2e; }
-  .newsmag_builder .owl-dots {
-    border-bottom: 1px solid #e1e1e1;
-    padding-bottom: 5px; }
   .newsmag_builder .newsmag-post-box-a {
     margin-bottom: 45px;
     position: relative; }

@@ -10,7 +10,6 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 				'id'            => 'homepage-slider',
 				'name'          => __( 'Homepage Slider', 'newsmag' ),
-				'description'   => __( 'But first, create a homepage template. Dashboard > Pages > Add New > Template > Front Page Template', 'newsmag' ),
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3>',

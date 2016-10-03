@@ -1,12 +1,12 @@
 <?php
 
-class Widget_Newsmag_homepage_builder extends WP_Widget {
+class Widget_Newsmag_homepage_slider extends WP_Widget {
 
 	function __construct() {
 
-		parent::__construct( 'newsmag_widget', __( 'Newsmag - Homepage Builder', 'newsmag' ), array(
-			'classname'   => 'newsmag_builder',
-			'description' => __( 'You can customize your homepage by this widget. Don\'t use others.', 'newsmag' )
+		parent::__construct( 'newsmag_slider_widget', __( 'Newsmag - Homepage Slider', 'newsmag' ), array(
+			'classname'   => 'newsmag_slider',
+			'description' => __( 'You can add a fullwidth slider with this widget.', 'newsmag' )
 		) );
 	}
 
@@ -22,12 +22,6 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = '';
-		}
-
-		if ( isset( $instance['block_style'] ) ) {
-			$block_style = $instance['block_style'];
-		} else {
-			$instance['block_style'] = '';
 		}
 
 		if ( isset( $instance['show_post'] ) ) {
@@ -60,23 +54,6 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 
 		<hr>
 
-		<label><?php _e( 'Block Style', 'newsmag' ); ?> :</label><br>
-		<select name="<?php echo $this->get_field_name( 'block_style' ); ?>"
-		        id="<?php echo $this->get_field_id( 'block_style' ); ?>">
-			<option
-				value="banner" <?php selected( 'banner', $instance['block_style'] ); ?>><?php _e( 'Post Banner', 'newsmag' ); ?></option>
-			<option
-				value="onecolumn" <?php selected( 'onecolumn', $instance['block_style'] ); ?>><?php _e( 'One Column', 'newsmag' ); ?></option>
-			<option
-				value="twocolumns" <?php selected( 'twocolumns', $instance['block_style'] ); ?>><?php _e( 'Two Columns', 'newsmag' ); ?></option>
-			<option
-				value="thumbnail" <?php selected( 'thumbnail', $instance['block_style'] ); ?>><?php _e( 'Thumbnail', 'newsmag' ); ?></option>
-			<option
-				value="recent" <?php selected( 'recent', $instance['block_style'] ); ?>><?php _e( 'Recent Posts', 'newsmag' ); ?></option>
-		</select><br>
-
-		<hr>
-
 		<label><?php _e( 'Posts to Show', 'newsmag' ); ?> :</label><br>
 		<select name="<?php echo $this->get_field_name( 'show_post' ); ?>"
 		        id="<?php echo $this->get_field_id( 'show_post' ); ?>">
@@ -99,7 +76,6 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 
 		$instance['title']            = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['newsmag_category'] = ( ! empty( $new_instance['newsmag_category'] ) ) ? $new_instance['newsmag_category'] : '';
-		$instance['block_style']      = ( ! empty( $new_instance['block_style'] ) ) ? $new_instance['block_style'] : '';
 		$instance['show_post']        = ( ! empty( $new_instance['show_post'] ) ) ? $new_instance['show_post'] : '';
 
 		return $instance;
@@ -143,12 +119,6 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 			$instance['newsmag_category'] = 'uncategorized';
 		}
 
-		if ( isset( $instance['block_style'] ) ) {
-			$block_style = $instance['block_style'];
-		} else {
-			$instance['block_style'] = '';
-		}
-
 		if ( isset( $instance['show_post'] ) ) {
 			$show_post = $instance['show_post'];
 		} else {
@@ -158,7 +128,7 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 		extract( $args, EXTR_SKIP );
 
 		echo $before_widget;
-		$filepath = dirname( __FILE__ ) . '/layouts/' . $instance['block_style'] . '.php';
+		$filepath = dirname( __FILE__ ) . '/layouts/slider.php';
 
 		$posts = $this->get_posts( $instance );
 
