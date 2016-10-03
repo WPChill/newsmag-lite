@@ -44,7 +44,7 @@
 					endif; ?>
 				</div>
 
-				<?php if ( get_theme_mod( 'newsmag_show_banner_on_homepage', 'enabled' ) === 'enabled' ): ?>
+				<?php if ( get_theme_mod( 'newsmag_show_banner_on_homepage', true ) ): ?>
 					<div class="col-md-8 header-banner">
 						<?php
 						$banner = get_theme_mod( 'newsmag_banner_type', 'image' );

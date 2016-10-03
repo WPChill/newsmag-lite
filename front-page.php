@@ -20,7 +20,7 @@ if ( get_option( 'show_on_front' ) == 'posts' ):
 	$img = $img->url;
 
 	if ( ! empty( $img ) ): ?>
-		<div class="newsmag-custom-header" style="background-image:url(<?php echo $img ?>)">
+		<div class="newsmag-custom-header" style="background-image:url(<?php echo esc_url_raw($img) ?>)">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">

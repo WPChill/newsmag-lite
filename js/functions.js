@@ -7,38 +7,39 @@ jQuery(document).ready(function ($) {
 
 var Newsmag = {
 	initMainSlider : function ($) {
-		jQuery('.newsmag-slider').owlCarousel({
-			loop           : true,
-			nav            : true,
-			items          : 1,
-			dots           : true,
-			mouseDrag      : true,
-			navText        : [
-				"<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>" ],
-			navClass       : [ "main-slider-previous", "main-slider-next" ],
-			autoplay       : true,
-			autoplayTimeout: 17000,
-			responsive     : {
-				1   : {
-					nav : false,
-					dots: false
-				},
-				600 : {
-					nav : false,
-					dots: false
-				},
-				991 : {
-					nav : false,
-					dots: true
+		if($('.newsmag-slider').length){
+			jQuery('.newsmag-slider').owlCarousel({
+				loop           : true,
+				nav            : true,
+				items          : 1,
+				dots           : true,
+				mouseDrag      : true,
+				navText        : [
+					"<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>" ],
+				navClass       : [ "main-slider-previous", "main-slider-next" ],
+				autoplay       : true,
+				autoplayTimeout: 17000,
+				responsive     : {
+					1   : {
+						nav : false,
+						dots: false
+					},
+					600 : {
+						nav : false,
+						dots: false
+					},
+					991 : {
+						nav : false,
+						dots: true
 
-				},
-				1300: {
-					nav : true,
-					dots: true
+					},
+					1300: {
+						nav : true,
+						dots: true
+					}
 				}
-			}
-		})
-		;
+			})
+		}
 	},
 	initSearchForm : function ($) {
 		$('#search-top-bar-submit').on('click', function (e) {

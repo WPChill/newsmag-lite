@@ -9,11 +9,11 @@
 
 get_header(); ?>
 <?php
-$img          = get_custom_header();
-$img          = $img->url;
+$img = get_custom_header();
+$img = $img->url;
 
 if ( ! empty( $img ) ): ?>
-	<div class="newsmag-custom-header" style="background-image:url(<?php echo $img ?>)">
+	<div class="newsmag-custom-header" style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -25,8 +25,8 @@ if ( ! empty( $img ) ): ?>
 <?php endif; ?>
 	<div class="container">
 		<?php
-		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', 'breadcrumbs_enabled' );
-		if ( $breadcrumbs_enabled == 'breadcrumbs_enabled' ) { ?>
+		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+		if ( $breadcrumbs_enabled ) { ?>
 			<div class="row">
 				<div class="col-xs-12">
 					<?php newsmag_breadcrumbs(); ?>
@@ -41,7 +41,8 @@ if ( ! empty( $img ) ): ?>
 				<?php get_sidebar( 'sidebar' ); ?>
 			<?php endif; ?>
 
-			<div id="primary" class="newsmag-content newsmag-search-page <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-sm-12 col-xs-12">
+			<div id="primary"
+			     class="newsmag-content newsmag-search-page <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-sm-12 col-xs-12">
 				<main id="main" class="site-main" role="main">
 					<?php
 					if ( have_posts() ) :

@@ -22,11 +22,11 @@ if ( empty( $img ) ) {
 }
 ?>
 <?php if ( ! empty( $img ) ): ?>
-	<div class="newsmag-custom-header" style="background-image:url(<?php echo $img ?>)">
+	<div class="newsmag-custom-header" style="background-image:url(<?php echo esc_url_raw($img) ?>)">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2><?php echo $title ?></h2>
+					<h2><?php echo esc_html($title) ?></h2>
 				</div>
 			</div>
 		</div>
@@ -34,8 +34,8 @@ if ( empty( $img ) ) {
 <?php endif; ?>
 	<div class="container">
 		<?php
-		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', 'breadcrumbs_enabled' );
-		if ( $breadcrumbs_enabled == 'breadcrumbs_enabled' ) { ?>
+		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+		if ( $breadcrumbs_enabled ) { ?>
 		<div class="row">
 			<div class="col-xs-12">
 				<?php newsmag_breadcrumbs(); ?>

@@ -29,12 +29,12 @@
 			);
 		}
 		?>
-
-		<?php if ( get_theme_mod( 'newsmag_enable_menu_search', 'enabled' ) === 'enabled'): ?>
+		<?php if ( get_theme_mod( 'newsmag_enable_menu_search', true ) ): ?>
 
 			<span class="separator pull-right"></span>
 			<!-- Search Form -->
-			<form role="search" method="get" class="pull-right" id="searchform_topbar" action="<?php echo home_url( '/' ); ?>">
+			<form role="search" method="get" class="pull-right" id="searchform_topbar"
+			      action="<?php echo home_url( '/' ); ?>">
 				<label>
 					<span class="screen-reader-text"><?php __( 'Search for:', 'newsmag' ) ?></span>
 					<input class="search-field-top-bar" id="search-field-top-bar" placeholder="Search ..."

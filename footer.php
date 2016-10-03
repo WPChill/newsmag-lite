@@ -16,13 +16,13 @@
 
 	<?php get_sidebar( 'footer' ) ?>
 
-	<?php if ( get_theme_mod( 'newsmag_enable_go_top', 'enabled' ) !== 'disabled' ): ?>
+	<?php if ( get_theme_mod( 'newsmag_enable_go_top', true ) ): ?>
 		<a href="#0" id="back-to-top" class="back-to-top">
 			<span class="fa fa-angle-up"></span>
 		</a>
 	<?php endif; ?>
 
-	<?php if ( get_theme_mod( 'newsmag_enable_copyright', 'enabled' ) !== 'disabled' ): ?>
+	<?php if ( get_theme_mod( 'newsmag_enable_copyright', true ) ): ?>
 		<div class="site-info">
 			<div class="container">
 				<div class="row">

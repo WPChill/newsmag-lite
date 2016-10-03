@@ -4,19 +4,17 @@ global $wp_customize;
 /**
  * Enable search
  */
-$wp_customize->add_control(
-	'newsmag_enable_menu_search',
-	array(
-		'type'    => 'radio',
-		'choices' => array(
-			'enabled'  => esc_html__( 'Enabled', 'newsmag' ),
-			'disabled' => esc_html__( 'Disabled', 'newsmag' )
-		),
-		'label'   => esc_html__( 'Enable or disable the search from menu bar', 'newsmag' ),
-		'section' => 'newsmag_general_section',
-	)
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_enable_menu_search',
+	                            array(
+		                            'type'        => 'mte-toggle',
+		                            'label'       => esc_html__( 'Search from menu', 'newsmag' ),
+		                            'description' => esc_html__( 'This is a description', 'newsmag' ),
+		                            'section'     => 'newsmag_general_section',
+	                            )
+                            )
 );
-
 /**
  * Footer Column Count
  */
@@ -38,17 +36,16 @@ $wp_customize->add_control(
 /**
  * Copyright enable/disable
  */
-$wp_customize->add_control(
-	'newsmag_enable_copyright',
-	array(
-		'type'    => 'radio',
-		'choices' => array(
-			'enabled'  => esc_html__( 'Enabled', 'newsmag' ),
-			'disabled' => esc_html__( 'Disabled', 'newsmag' ),
-		),
-		'label'   => esc_html__( 'Enable copyright footer bar?', 'newsmag' ),
-		'section' => 'newsmag_footer_section',
-	)
+
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_enable_copyright',
+	                            array(
+		                            'type'    => 'mte-toggle',
+		                            'label'   => esc_html__( 'Copyright bar?', 'newsmag' ),
+		                            'section' => 'newsmag_footer_section',
+	                            )
+                            )
 );
 /**
  * Copyright content
@@ -64,47 +61,41 @@ $wp_customize->add_control(
 /**
  * Enable / Disable Go top
  */
-$wp_customize->add_control(
-	'newsmag_enable_go_top',
-	array(
-		'type'    => 'radio',
-		'choices' => array(
-			'enabled'  => esc_html__( 'Enabled', 'newsmag' ),
-			'disabled' => esc_html__( 'Disabled', 'newsmag' ),
-		),
-		'label'   => esc_html__( 'Go Top Button', 'newsmag' ),
-		'section' => 'newsmag_footer_section',
-	)
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_enable_go_top',
+	                            array(
+		                            'type'    => 'mte-toggle',
+		                            'label'   => esc_html__( 'Go Top Button', 'newsmag' ),
+		                            'section' => 'newsmag_footer_section',
+	                            )
+                            )
 );
 
-$wp_customize->add_control(
-	'newsmag_enable_author_box',
-	array(
-		'type'    => 'radio',
-		'choices' => array(
-			'enabled'  => esc_html__( 'Enabled', 'newsmag' ),
-			'disabled' => esc_html__( 'Disabled', 'newsmag' ),
-		),
-		'label'   => esc_html__( 'Show author box in posts?', 'newsmag' ),
-		'section' => 'newsmag_blog_section',
-	)
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_enable_author_box',
+	                            array(
+		                            'type'    => 'mte-toggle',
+		                            'label'   => esc_html__( 'Show author box in posts?', 'newsmag' ),
+		                            'section' => 'newsmag_blog_section',
+	                            )
+                            )
 );
+
 
 /**
  * Enable breadcrumbs on single posts
  */
-$wp_customize->add_control(
-	'newsmag_enable_post_breadcrumbs',
-	array(
-		'type'        => 'radio',
-		'choices'     => array(
-			'breadcrumbs_enabled'  => esc_html__( 'Enabled', 'newsmag' ),
-			'breadcrumbs_disabled' => esc_html__( 'Disabled', 'newsmag' )
-		),
-		'label'       => esc_html__( 'Breadcrumbs on single blog posts', 'newsmag' ),
-		'description' => esc_html__( 'This will disable the breadcrumbs', 'newsmag' ),
-		'section'     => 'newsmag_blog_section',
-	)
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_enable_post_breadcrumbs',
+	                            array(
+		                            'type'    => 'mte-toggle',
+		                            'label'   => esc_html__( 'Show Breadcrumbs?', 'newsmag' ),
+		                            'section' => 'newsmag_blog_section',
+	                            )
+                            )
 );
 
 /**
@@ -145,34 +136,34 @@ $wp_customize->add_control(
  * General Settings Upsell
  */
 $wp_customize->add_control( new WP_Macho_Pro_Control(
-		$wp_customize,
-		'newsmag_upsell_macho_general',
-		array(
-			'section'     => 'newsmag_general_section',
-			'options'     => array( 'News Ticker' ),
-			'priority'    => 0,
-			'button_link' => 'https://www.machothemes.com/themes/newsmag-pro/',
-			'button_text' => 'Upgrade to pro!',
-		)
-	)
+	                            $wp_customize,
+	                            'newsmag_upsell_macho_general',
+	                            array(
+		                            'section'     => 'newsmag_general_section',
+		                            'options'     => array( 'News Ticker' ),
+		                            'priority'    => 0,
+		                            'button_link' => 'https://www.machothemes.com/themes/newsmag-pro/',
+		                            'button_text' => 'Upgrade to pro!',
+	                            )
+                            )
 );
 $wp_customize->add_control( new WP_Macho_Pro_Control(
-		$wp_customize,
-		'newsmag_upsell_macho_blog',
-		array(
-			'section'     => 'newsmag_blog_section',
-			'options'     => array( 'Related Posts Carousel', 'Blog Layout' ),
-			'priority'    => 0,
-			'button_link' => 'https://www.machothemes.com/themes/newsmag-pro/',
-			'button_text' => 'Upgrade to pro!',
-		)
-	)
+	                            $wp_customize,
+	                            'newsmag_upsell_macho_blog',
+	                            array(
+		                            'section'     => 'newsmag_blog_section',
+		                            'options'     => array( 'Related Posts Carousel', 'Blog Layout' ),
+		                            'priority'    => 0,
+		                            'button_link' => 'https://www.machothemes.com/themes/newsmag-pro/',
+		                            'button_text' => 'Upgrade to pro!',
+	                            )
+                            )
 );
 /**
  * Active Callback for breadcrumb
  */
 function breadcrumbs_enabled_callback( $control ) {
-	if ( $control->manager->get_setting( 'newsmag_enable_post_breadcrumbs' )->value() == 'breadcrumbs_enabled' ) {
+	if ( $control->manager->get_setting( 'newsmag_enable_post_breadcrumbs' )->value() == true ) {
 		return true;
 	}
 
@@ -183,7 +174,7 @@ function breadcrumbs_enabled_callback( $control ) {
  * Active Callback for copyright
  */
 function copyright_enabled_callback( $control ) {
-	if ( $control->manager->get_setting( 'newsmag_enable_copyright' )->value() == 'enabled' ) {
+	if ( $control->manager->get_setting( 'newsmag_enable_copyright' )->value() == true ) {
 		return true;
 	}
 
@@ -194,7 +185,7 @@ function copyright_enabled_callback( $control ) {
  * Active Callback for copyright
  */
 function related_posts_enabled_callback( $control ) {
-	if ( $control->manager->get_setting( 'newsmag_related_posts_enabled' )->value() == 'enabled' ) {
+	if ( $control->manager->get_setting( 'newsmag_related_posts_enabled' )->value() == true ) {
 		return true;
 	}
 

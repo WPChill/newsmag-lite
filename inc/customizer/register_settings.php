@@ -141,9 +141,9 @@ class Newsmag_Customizer_Helper {
 	 */
 	public static function newsmag_sanitize_checkbox( $value ) {
 		if ( $value == 1 ) {
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 	}
 

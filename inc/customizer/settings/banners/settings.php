@@ -29,21 +29,9 @@ $wp_customize->add_setting( 'newsmag_show_banner_on_homepage',
                             array(
 	                            'sanitize_callback' => array(
 		                            'Newsmag_Customizer_Helper',
-		                            'newsmag_sanitize_radio_buttons'
+		                            'newsmag_sanitize_checkbox'
 	                            ),
-	                            'default'           => 'enabled'
-                            )
-);
-/**
- * Display banner on categories page
- */
-$wp_customize->add_setting( 'newsmag_show_banner_on_archive_pages',
-                            array(
-	                            'sanitize_callback' => array(
-		                            'Newsmag_Customizer_Helper',
-		                            'newsmag_sanitize_radio_buttons'
-	                            ),
-	                            'default'           => 'enabled'
+	                            'default'           => true
                             )
 );
 

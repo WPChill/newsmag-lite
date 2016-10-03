@@ -23,3 +23,6 @@ The exceptions to this license are as follows:
 
 * Google Fonts:
     License: SIL OFL 1.1
+    
+* On/Off Switch
+    https://proto.io/freebies/onoff/

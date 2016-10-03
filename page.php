@@ -15,8 +15,8 @@
 get_header(); ?>
 	<div class="container">
 		<?php
-		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', 'breadcrumbs_enabled' );
-		if ( $breadcrumbs_enabled == 'breadcrumbs_enabled' ) { ?>
+		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+		if ( $breadcrumbs_enabled ) { ?>
 			<div class="row">
 				<div class="col-xs-12">
 					<?php newsmag_breadcrumbs(); ?>

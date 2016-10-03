@@ -22,17 +22,16 @@ $wp_customize->add_control(
 /**
  * Display banner on homepage
  */
-$wp_customize->add_control(
-	'newsmag_show_banner_on_homepage',
-	array(
-		'type'    => 'radio',
-		'choices' => array(
-			'enabled'  => esc_html__( 'Enabled', 'newsmag' ),
-			'disabled' => esc_html__( 'Disabled', 'newsmag' )
-		),
-		'label'   => esc_html__( 'Enable banner on homepage?', 'newsmag' ),
-		'section' => 'newsmag_general_banners_controls',
-	)
+
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_show_banner_on_homepage',
+	                            array(
+		                            'type'    => 'mte-toggle',
+		                            'label'   => esc_html__( 'Homepage banner?', 'newsmag' ),
+		                            'section' => 'newsmag_general_banners_controls',
+	                            )
+                            )
 );
 
 /**
