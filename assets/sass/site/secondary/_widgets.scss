@@ -60,8 +60,9 @@
     color: $color__brand-red;
     text-transform: uppercase;
     margin-bottom: 25px;
+    margin-top: 0;
   }
-  margin: 0 0 30px;
+  margin: 0 0 40px;
   /**
   * Reset the margins for UL / OL
   */
@@ -251,6 +252,7 @@
   }
   &.widget_rss {
     h3 {
+      margin-top: 0;
       > a {
         font-size: 18px;
         font-family: $font__alternate;
@@ -269,6 +271,9 @@
           color: #333;
           font-family: 'Poppins';
           font-weight: 700;
+          &:hover {
+            color: $color__brand-red;
+          }
         }
         .rss-date {
           display: block;
@@ -375,16 +380,22 @@
         min-height: 50px;
         text-align: center;
         font-size: 20px;
-        font-weight: 400;
+        font-weight: 500;
         padding-bottom: 11px;
         padding-top: 11px;
         position: relative;
+        font-family: 'Poppins';
       }
       thead {
         color: $color__brand-red;
         > tr {
           height: 50px;
         }
+      }
+      tfoot {
+        display: block;
+        height: 0;
+        float: left
       }
 
       th {

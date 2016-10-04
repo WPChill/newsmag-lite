@@ -107,8 +107,8 @@ code, kbd, tt, var {
   font-size: 0.9375rem; }
 
 abbr, acronym {
-  border-bottom: 1px dotted #666;
-  cursor: help; }
+  border-bottom: none !important;
+  text-decoration: none; }
 
 mark, ins {
   background: #fff9c0;
@@ -832,7 +832,7 @@ a {
 * Select all widgets except for the search box
 */
 .widget:not(.widget_newsmag_banner) {
-  margin: 0 0 30px;
+  margin: 0 0 40px;
   /**
   * Reset the margins for UL / OL
   */
@@ -849,7 +849,8 @@ a {
     font-weight: 700;
     color: #ff3d2e;
     text-transform: uppercase;
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    margin-top: 0; }
   .widget:not(.widget_newsmag_banner) > ul, .widget:not(.widget_newsmag_banner) > ol {
     margin: 0;
     padding: 0;
@@ -967,13 +968,15 @@ a {
     .widget:not(.widget_newsmag_banner).widget_recent_comments ul li a {
       font-weight: 500;
       font-family: 'Poppins'; }
-  .widget:not(.widget_newsmag_banner).widget_rss h3 > a {
-    font-size: 18px;
-    font-family: "Poppins", "serif";
-    font-weight: 700;
-    color: #ff3d2e;
-    text-transform: uppercase;
-    margin-bottom: 25px; }
+  .widget:not(.widget_newsmag_banner).widget_rss h3 {
+    margin-top: 0; }
+    .widget:not(.widget_newsmag_banner).widget_rss h3 > a {
+      font-size: 18px;
+      font-family: "Poppins", "serif";
+      font-weight: 700;
+      color: #ff3d2e;
+      text-transform: uppercase;
+      margin-bottom: 25px; }
   .widget:not(.widget_newsmag_banner).widget_rss ul li {
     margin-bottom: 20px; }
     .widget:not(.widget_newsmag_banner).widget_rss ul li .rsswidget {
@@ -982,6 +985,8 @@ a {
       color: #333;
       font-family: 'Poppins';
       font-weight: 700; }
+      .widget:not(.widget_newsmag_banner).widget_rss ul li .rsswidget:hover {
+        color: #ff3d2e; }
     .widget:not(.widget_newsmag_banner).widget_rss ul li .rss-date {
       display: block;
       position: relative;
@@ -1061,14 +1066,19 @@ a {
         min-height: 50px;
         text-align: center;
         font-size: 20px;
-        font-weight: 400;
+        font-weight: 500;
         padding-bottom: 11px;
         padding-top: 11px;
-        position: relative; }
+        position: relative;
+        font-family: 'Poppins'; }
       .widget:not(.widget_newsmag_banner).widget_calendar #wp-calendar thead {
         color: #ff3d2e; }
         .widget:not(.widget_newsmag_banner).widget_calendar #wp-calendar thead > tr {
           height: 50px; }
+      .widget:not(.widget_newsmag_banner).widget_calendar #wp-calendar tfoot {
+        display: block;
+        height: 0;
+        float: left; }
       .widget:not(.widget_newsmag_banner).widget_calendar #wp-calendar th {
         background: transparent;
         border: none;
