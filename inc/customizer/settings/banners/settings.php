@@ -45,7 +45,7 @@ $wp_customize->add_setting( 'newsmag_banner_image',
 		                            'Newsmag_Customizer_Helper',
 		                            'newsmag_sanitize_file_url'
 	                            ),
-	                            'default'           => get_template_directory_uri() . '/images/banner.jpg',
+	                            'default'           => get_template_directory_uri() . '/assets/images/banner.jpg',
                             )
 );
 /**

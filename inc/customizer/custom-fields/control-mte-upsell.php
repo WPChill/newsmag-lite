@@ -1,15 +1,15 @@
 <?php
 
-if ( ! class_exists( 'WP_Macho_Pro_Control' ) ):
-	class WP_Macho_Pro_Control extends WP_Customize_Control {
+if ( ! class_exists( 'WP_MTE_Upsell_Control' ) ):
+	class WP_MTE_Upsell_Control extends WP_Customize_Control {
 
-		public $type = 'macho_pro';
+		public $type = 'mte_upsell';
 		public $button_text = 'Hello';
 		public $button_url = '#';
 		public $options = array();
 		public $requirements = array();
 
-		public $pro_label = 'Pro Option';//__( 'Pro Option', 'macho' );
+		public $pro_label = 'Pro';//__( 'Pro Option', 'macho' );
 
 		public function to_json() {
 			parent::to_json();

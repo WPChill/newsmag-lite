@@ -1,6 +1,21 @@
 <?php
 global $wp_customize;
 
+
+/**
+ * Display banner on homepage
+ */
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_show_banner_on_homepage',
+	                            array(
+		                            'type'    => 'mte-toggle',
+		                            'label'   => esc_html__( 'Enable banner', 'newsmag' ),
+		                            'section' => 'newsmag_general_banners_controls',
+	                            )
+                            )
+);
+
 /**
  * Type of banners
  */
@@ -17,21 +32,6 @@ $wp_customize->add_control(
 		                             'newsmag' ),
 		'section'     => 'newsmag_general_banners_controls',
 	)
-);
-
-/**
- * Display banner on homepage
- */
-
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
-	                            $wp_customize,
-	                            'newsmag_show_banner_on_homepage',
-	                            array(
-		                            'type'    => 'mte-toggle',
-		                            'label'   => esc_html__( 'Homepage banner?', 'newsmag' ),
-		                            'section' => 'newsmag_general_banners_controls',
-	                            )
-                            )
 );
 
 /**

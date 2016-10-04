@@ -35,7 +35,7 @@
 							$header_textcolor = get_theme_mod( 'header_textcolor' );
 							?>
 							<a class="custom-logo-link site-title" <?php echo ( ! empty( $header_textcolor ) ) ? 'style="color:#' . esc_attr( $header_textcolor ) . '"' : ''; ?>
-							   href="<?php echo get_home_url() ?>"> <?php echo get_option( 'blogname' ) ?></a>
+							   href="<?php echo get_home_url() ?>"> <?php echo esc_html(get_option( 'blogname' )) ?></a>
 							<?php
 						}
 					}

@@ -56,7 +56,7 @@ if ( ! empty( $img ) ): ?>
 
 						endwhile;
 
-						newsmag_numeric_posts_nav();
+						the_posts_pagination();
 					else:
 						echo '<div class="row">';
 						get_template_part( 'template-parts/content', 'none' );

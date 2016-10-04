@@ -27,11 +27,10 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 		?>
 
 		<label><?php _e( 'Title', 'newsmag' ); ?> :</label><br>
-		<input type="text" name="<?php echo $this->get_field_name( 'title' ); ?>"
-		       id="<?php echo $this->get_field_id( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>"><br>
-
+		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+		       id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php echo esc_attr( $title ); ?>">
+		<br>
 		<hr>
-
 		<label><?php _e( 'Category', 'newsmag' ); ?> :</label><br>
 		<select name="<?php echo $this->get_field_name( 'newsmag_category' ); ?>"
 		        id="<?php echo $this->get_field_id( 'newsmag_category' ); ?>">
@@ -42,7 +41,7 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 			$categories = get_categories( 'hide_empty=0' );
 			foreach ( $categories as $category ) { ?>
 				<option
-					value="<?php echo $category->slug; ?>" <?php selected( $category->slug, $instance['newsmag_category'] ); ?>><?php echo $category->cat_name; ?></option>
+					value="<?php echo esc_attr($category->slug); ?>" <?php selected( esc_attr($category->slug), $instance['newsmag_category'] ); ?>><?php echo esc_html($category->cat_name); ?></option>
 			<?php } ?>
 		</select><br>
 
@@ -99,7 +98,7 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 		extract( $args, EXTR_SKIP );
 
 		echo $before_widget;
-		$filepath = dirname( __FILE__ ) . '/layouts/slider.php';
+		$filepath = get_template_directory() . '/inc/widgets/homepage_slider/layouts/slider.php';
 
 		$posts = $this->get_posts( $instance );
 

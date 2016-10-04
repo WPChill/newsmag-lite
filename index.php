@@ -22,7 +22,7 @@ if ( ! empty( $img ) ): ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="page-title"><span><?php single_post_title(); ?></span></h2>
+					<h2 class="page-title"><?php echo esc_html( get_option( 'blogname' ) ) ?></h2>
 				</div>
 			</div>
 		</div>

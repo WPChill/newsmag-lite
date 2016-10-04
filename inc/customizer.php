@@ -24,10 +24,10 @@ function newsmag_customize_register( $wp_customize ) {
 	 */
 	require_once get_template_directory() . '/inc/customizer/custom-fields/control-checkbox-multiple.php';
 	require_once get_template_directory() . '/inc/customizer/custom-fields/control-slider-control.php';
-	require_once get_template_directory() . '/inc/customizer/custom-fields/control-macho-pro.php';
+	require_once get_template_directory() . '/inc/customizer/custom-fields/control-mte-upsell.php';
 	require_once get_template_directory() . '/inc/customizer/custom-fields/control-mte-toggle.php';
 
-	$wp_customize->register_control_type( 'WP_Macho_Pro_Control' );
+	$wp_customize->register_control_type( 'WP_MTE_Upsell_Control' );
 
 	/**
 	 * Customizer settings

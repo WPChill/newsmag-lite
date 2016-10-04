@@ -39,14 +39,15 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 		?>
 
 		<label><?php _e( 'Title', 'newsmag' ); ?> :</label><br>
-		<input type="text" name="<?php echo $this->get_field_name( 'title' ); ?>"
-		       id="<?php echo $this->get_field_id( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>"><br>
+		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+		       id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php echo esc_attr( $title ); ?>">
+		<br>
 
 		<hr>
 
 		<label><?php _e( 'Category', 'newsmag' ); ?> :</label><br>
-		<select name="<?php echo $this->get_field_name( 'newsmag_category' ); ?>"
-		        id="<?php echo $this->get_field_id( 'newsmag_category' ); ?>">
+		<select name="<?php echo esc_attr( $this->get_field_name( 'newsmag_category' ) ); ?>"
+		        id="<?php echo esc_attr( $this->get_field_id( 'newsmag_category' ) ); ?>">
 			<option value="" <?php if ( empty( $instance['newsmag_category'] ) ) {
 				echo 'selected="selected"';
 			} ?>><?php _e( '&ndash; Select a category &ndash;', 'newsmag' ) ?></option>
@@ -54,15 +55,15 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 			$categories = get_categories( 'hide_empty=0' );
 			foreach ( $categories as $category ) { ?>
 				<option
-					value="<?php echo $category->slug; ?>" <?php selected( $category->slug, $instance['newsmag_category'] ); ?>><?php echo $category->cat_name; ?></option>
+					value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_attr( $category->cat_name ); ?></option>
 			<?php } ?>
 		</select><br>
 
 		<hr>
 
 		<label><?php _e( 'Block Style', 'newsmag' ); ?> :</label><br>
-		<select name="<?php echo $this->get_field_name( 'block_style' ); ?>"
-		        id="<?php echo $this->get_field_id( 'block_style' ); ?>">
+		<select name="<?php echo esc_attr( $this->get_field_name( 'block_style' ) ); ?>"
+		        id="<?php echo esc_attr( $this->get_field_id( 'block_style' ) ); ?>">
 			<option
 				value="banner" <?php selected( 'banner', $instance['block_style'] ); ?>><?php _e( 'Post Banner', 'newsmag' ); ?></option>
 			<option
@@ -78,8 +79,8 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 		<hr>
 
 		<label><?php _e( 'Posts to Show', 'newsmag' ); ?> :</label><br>
-		<select name="<?php echo $this->get_field_name( 'show_post' ); ?>"
-		        id="<?php echo $this->get_field_id( 'show_post' ); ?>">
+		<select name="<?php echo esc_attr( $this->get_field_name( 'show_post' ) ); ?>"
+		        id="<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>">
 			<option value="2" <?php selected( 2, $instance['show_post'] ); ?>>2</option>
 			<option value="3" <?php selected( 3, $instance['show_post'] ); ?>>3</option>
 			<option value="4" <?php selected( 4, $instance['show_post'] ); ?>>4</option>
@@ -158,7 +159,7 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 		extract( $args, EXTR_SKIP );
 
 		echo $before_widget;
-		$filepath = dirname( __FILE__ ) . '/layouts/' . $instance['block_style'] . '.php';
+		$filepath = get_template_directory() . '/inc/widgets/homepage_builder/layouts/' . $instance['block_style'] . '.php';
 
 		$posts = $this->get_posts( $instance );
 

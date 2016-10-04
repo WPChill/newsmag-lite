@@ -148,7 +148,7 @@ $wp_customize->add_control(
 /**
  * General Settings Upsell
  */
-$wp_customize->add_control( new WP_Macho_Pro_Control(
+$wp_customize->add_control( new WP_MTE_Upsell_Control(
 	                            $wp_customize,
 	                            'newsmag_upsell_macho_general',
 	                            array(
@@ -160,7 +160,7 @@ $wp_customize->add_control( new WP_Macho_Pro_Control(
 	                            )
                             )
 );
-$wp_customize->add_control( new WP_Macho_Pro_Control(
+$wp_customize->add_control( new WP_MTE_Upsell_Control(
 	                            $wp_customize,
 	                            'newsmag_upsell_macho_blog',
 	                            array(

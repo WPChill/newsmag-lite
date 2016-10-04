@@ -69,10 +69,12 @@ if ( $show_on_front == 'posts' ):
 	<?php
 else:
 	if ( is_active_sidebar( 'homepage-slider' ) ) { ?>
-		<div id="newsmag-homepage-slider"> <?php
+		<div id="newsmag-homepage-slider">
+			<?php
 			dynamic_sidebar( 'homepage-slider' );
-			?> </div> <?php
-	} ?>
+			?>
+		</div>
+		<?php } ?>
 
 	<div class="container newsmag-margin-top">
 		<div class="row">

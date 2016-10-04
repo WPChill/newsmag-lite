@@ -56,7 +56,7 @@ p {
   margin-bottom: 1.5em; }
 
 a {
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
   color: #333; }
   a:hover {
@@ -530,7 +530,9 @@ a {
     #site-navigation .nav-menu > li > a {
       font-size: 15px;
       position: relative;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-family: "Poppins";
+      font-weight: 500; }
     #site-navigation .nav-menu > li:last-of-type {
       padding-right: 0; }
     #site-navigation .nav-menu > li.menu-item-has-children:after {
@@ -1315,7 +1317,7 @@ a {
       .newsmag_builder .newsmag-blog-post-layout-b .newsmag-image img {
         width: 100%; }
     .newsmag_builder .newsmag-blog-post-layout-b span.colored {
-      margin-right: 10px; }
+      margin-right: px; }
     .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h3 {
       font-size: 16px;
       font-family: "Poppins", "serif";

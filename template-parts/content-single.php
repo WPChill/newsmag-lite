@@ -29,7 +29,7 @@ $curauth = get_userdata( $post->post_author );
 						if ( has_post_thumbnail() ) {
 							the_post_thumbnail( 'newsmag-recent-post-big' );
 						} else {
-							echo '<img src=' . esc_url( get_template_directory_uri() . '/images/picture_placeholder.jpg' ) . '" />';
+							echo '<img src=' . esc_url( get_template_directory_uri() . '/assets/images/picture_placeholder.jpg' ) . '" />';
 						}
 						?>
 					</div>

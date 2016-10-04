@@ -20,8 +20,8 @@ if ( ! empty( $img ) ): ?>
 			<div class="row">
 				<div class="col-xs-12">
 					<?php
-					the_archive_title( '<h2 class="page-title">', '</span></h2>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					esc_html( the_archive_title( '<h2 class="page-title">', '</span></h2>' ) );
+					wp_kses_post( the_archive_description( '<div class="taxonomy-description">', '</div>' ) );
 					?>
 				</div>
 			</div>

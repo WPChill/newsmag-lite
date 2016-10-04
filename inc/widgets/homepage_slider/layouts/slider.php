@@ -1,4 +1,3 @@
-
 <section class="primary-slider" role="slider">
 	<div class="owl-carousel owl-theme newsmag-slider">
 		<?php
@@ -11,7 +10,7 @@
 							if ( has_post_thumbnail() ) {
 								the_post_thumbnail( 'newsmag-slider-image' );
 							} else {
-								echo '<img src="' . get_stylesheet_directory_uri() . '/images/banner-placeholder.jpg"/>';
+								echo '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/banner-placeholder.jpg' ) . '"/>';
 							}
 							?>
 						</a>

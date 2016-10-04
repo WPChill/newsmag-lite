@@ -262,15 +262,15 @@ function newsmag_render_banner() {
 	$html .= '<div class="row">';
 
 	if ( $banner_type === 'image' ) {
-		$image = get_theme_mod( 'newsmag_banner_image', get_template_directory_uri() . '/images/banner.jpg' );
+		$image = get_theme_mod( 'newsmag_banner_image', get_template_directory_uri() . '/assets/images/banner.jpg' );
 
-		if ( $image !== get_template_directory_uri() . '/images/banner.jpg' ) {
+		if ( $image !== get_template_directory_uri() . '/assets/images/banner.jpg' ) {
 
 		}
 
 		$html .= '<div class="col-xs-12 newsmag-image-banner">';
 		$html .= '<a href="' . esc_url_raw( get_theme_mod( 'newsmag_banner_link', 'https://machothemes.com/' ) ) . '">';
-		$html .= '<img src="' . esc_url_raw( get_theme_mod( 'newsmag_banner_image', get_template_directory_uri() . '/images/banner.jpg' ) ) . '"/>';
+		$html .= '<img src="' . esc_url_raw( get_theme_mod( 'newsmag_banner_image', get_template_directory_uri() . '/assets/images/banner.jpg' ) ) . '"/>';
 		$html .= '</a>';
 		$html .= '</div>';
 	}

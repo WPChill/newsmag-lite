@@ -14,15 +14,15 @@ if ( ! function_exists( 'newsmag_posted_on' ) ) :
 	function newsmag_posted_on( $element = 'default' ) {
 		$cat       = get_the_category();
 		$comments  = wp_count_comments( get_the_ID() );
-		$date      = get_the_date( 'F d, Y' );
+		$date      = get_the_date();
 		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'newsmag' ) );
 
 		$html = '<ul>';
 		$html .= '<li class="post-category"><icon class="fa fa-folder"></icon> <a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a></li>';
-		$html .= '<li class="post-comments"><icon class="fa fa-comments"></icon> ' . $comments->approved . ' </li>';
+		$html .= '<li class="post-comments"><icon class="fa fa-comments"></icon> ' . esc_html($comments->approved) . ' </li>';
 		$html .= '<li class="post-date">' . $date . ' </li>';
 		if ( $tags_list ) {
-			$html .= '<li class="post-tags"><icon class="fa fa-tags"></icon> ' . $tags_list . '</li>';
+			$html .= '<li class="post-tags"><icon class="fa fa-tags"></icon> ' . esc_html($tags_list) . '</li>';
 		}
 		$html .= '</ul>';
 
@@ -31,10 +31,10 @@ if ( ! function_exists( 'newsmag_posted_on' ) ) :
 				echo '<a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a>';
 				break;
 			case 'comments':
-				echo $comments->approved;
+				echo esc_html($comments->approved);
 				break;
 			case 'date':
-				echo '<div class="newsmag-date">' . $date . '</div>';
+				echo '<div class="newsmag-date">' . esc_html($date) . '</div>';
 				break;
 			case 'tags':
 				echo ! empty( $tags_list ) ? '<div class="newsmag-tags"><strong>' . __( 'TAGS: ', 'newsmag' ) . '</strong>' . $tags_list . '</div>' : '';
@@ -89,77 +89,3 @@ function newsmag_category_transient_flusher() {
 
 add_action( 'edit_category', 'newsmag_category_transient_flusher' );
 add_action( 'save_post', 'newsmag_category_transient_flusher' );
-
-function newsmag_numeric_posts_nav() {
-	if ( is_singular() ) {
-		return;
-	}
-	global $wp_query;
-	/**
-	 * Stop execution if there`s only 1 page
-	 */
-	if ( $wp_query->max_num_pages <= 1 ) {
-		return;
-	}
-	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-	$max   = intval( $wp_query->max_num_pages );
-	/**
-	 * Add current page to the array
-	 */
-	if ( $paged >= 1 ) {
-		$links[] = $paged;
-	}
-	/**
-	 * Add the pages around the current page to the array
-	 */
-	if ( $paged >= 3 ) {
-		$links[] = $paged - 1;
-		$links[] = $paged - 2;
-	}
-	if ( ( $paged + 2 ) <= $max ) {
-		$links[] = $paged + 2;
-		$links[] = $paged + 1;
-	}
-	echo '<div class="row text-center"><ul class="newsmag-pager">' . "\n";
-	/**
-	 * Previous Post Link
-	 */
-	if ( get_previous_posts_link() ) {
-		printf( '<li class="prev-next">%s</li>' . "\n", get_previous_posts_link( '<span class="fa fa-angle-left"></span>' . __(' PREV', 'newsmag') ) );
-	}
-	/**
-	 * Link to first page, plus ellipses if necessary
-	 */
-	if ( ! in_array( 1, $links ) ) {
-		$class = 1 == $paged ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
-		if ( ! in_array( 2, $links ) ) {
-			echo '<li>...</li>';
-		}
-	}
-	/**
-	 * Link to current page, plus 2 pages in either direction if necessary
-	 */
-	sort( $links );
-	foreach ( (array) $links as $link ) {
-		$class = $paged == $link ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
-	}
-	/**
-	 * Link to last page, plus ellipses if necessary
-	 */
-	if ( ! in_array( $max, $links ) ) {
-		if ( ! in_array( $max - 1, $links ) ) {
-			echo '<li>...</li>' . "\n";
-		}
-		$class = $paged == $max ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-	}
-	/**
-	 * Next Post Link
-	 */
-	if ( get_next_posts_link() ) {
-		printf( '<li class="prev-next">%s</li>' . "\n", get_next_posts_link( __('NEXT ', 'newsmag') . '<span class="fa fa-angle-right"></span>' ) ) ;
-	}
-	echo '</ul></div>' . "\n";
-}
