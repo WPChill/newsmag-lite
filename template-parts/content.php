@@ -19,7 +19,7 @@
 		<div class="col-sm-4 col-xs-12">
 			<div class="newsmag-image">
 				<a href=" <?php echo esc_url( get_the_permalink() ); ?>">
-					<?php echo esc_url( $image ) ?>
+					<?php echo wp_kses_post( $image ) ?>
 				</a>
 			</div>
 		</div>
