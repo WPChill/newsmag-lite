@@ -84,7 +84,7 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 			<label
 				for="<?php echo esc_attr($this->get_field_id( 'number' )); ?>"><?php _e( 'Number of posts to show:', 'newsmag' ); ?></label>
 			<input id="<?php echo esc_attr($this->get_field_id( 'number' )); ?>"
-			       name="<?php echo esc_attr($this->get_field_name( 'number' )); ?>" type="text" value="<?php echo esc_att($number); ?>"
+			       name="<?php echo esc_attr($this->get_field_name( 'number' )); ?>" type="text" value="<?php echo esc_attr($number); ?>"
 			       size="3"/>
 		</p>
 		<?php

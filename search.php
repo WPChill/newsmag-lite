@@ -69,7 +69,7 @@ if ( ! empty( $img ) ): ?>
 				<?php get_sidebar( 'sidebar' ); ?>
 			<?php endif; ?>
 		</div>
-		<?php newsmag_numeric_posts_nav(); ?>
+		<?php the_posts_pagination(); ?>
 	</div>
 <?php
 get_footer();

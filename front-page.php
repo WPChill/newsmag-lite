@@ -13,8 +13,8 @@
  */
 
 get_header();
-
-if ( get_option( 'show_on_front' ) == 'posts' ):
+$show_on_front = get_option('show_on_front');
+if ( $show_on_front == 'posts' ):
 
 	$img = get_custom_header();
 	$img = $img->url;
@@ -24,7 +24,7 @@ if ( get_option( 'show_on_front' ) == 'posts' ):
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
-						<h2 class="page-title"><?php echo get_option( 'blogname' ) ?></h2>
+						<h2 class="page-title"><?php echo esc_html( get_option( 'blogname' ) ) ?></h2>
 					</div>
 				</div>
 			</div>
@@ -63,7 +63,7 @@ if ( get_option( 'show_on_front' ) == 'posts' ):
 			<?php endif; ?>
 
 		</div>
-		<?php newsmag_numeric_posts_nav(); ?>
+		<?php the_posts_pagination(); ?>
 	</div>
 
 	<?php

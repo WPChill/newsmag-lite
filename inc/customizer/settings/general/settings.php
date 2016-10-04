@@ -79,6 +79,15 @@ $wp_customize->add_setting( 'newsmag_enable_copyright',
 	                            'default'           => true
                             )
 );
+$wp_customize->add_setting( 'newsmag_enable_attribution',
+                            array(
+	                            'sanitize_callback' => array(
+		                            'Newsmag_Customizer_Helper',
+		                            'newsmag_sanitize_checkbox'
+	                            ),
+	                            'default'           => true
+                            )
+);
 /**
  * Copyright text
  */

@@ -16,6 +16,19 @@ $wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
                             )
 );
 /**
+ * Enable / Disable Go top
+ */
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_enable_go_top',
+	                            array(
+		                            'type'    => 'mte-toggle',
+		                            'label'   => esc_html__( 'Enable go to top', 'newsmag' ),
+		                            'section' => 'newsmag_general_section',
+	                            )
+                            )
+);
+/**
  * Footer Column Count
  */
 $wp_customize->add_control(
@@ -29,7 +42,7 @@ $wp_customize->add_control(
 			4 => esc_html__( 'Four Columns', 'newsmag' )
 		),
 		'label'       => esc_html__( 'Footer Columns', 'newsmag' ),
-		'description' => esc_html__( 'Select how many columns should the footer display.', 'newsmag' ),
+		'description' => esc_html__( 'Select the number of sidebars you would like to use in the footer. The higher the number, the more widgets you will be able to place here.', 'newsmag' ),
 		'section'     => 'newsmag_footer_section',
 	)
 );
@@ -42,11 +55,23 @@ $wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
 	                            'newsmag_enable_copyright',
 	                            array(
 		                            'type'    => 'mte-toggle',
-		                            'label'   => esc_html__( 'Copyright bar?', 'newsmag' ),
+		                            'label'   => esc_html__( 'Enable Copyright area?', 'newsmag' ),
 		                            'section' => 'newsmag_footer_section',
 	                            )
                             )
 );
+
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_enable_attribution',
+	                            array(
+		                            'type'    => 'mte-toggle',
+		                            'label'   => esc_html__( 'Link attribution?', 'newsmag' ),
+		                            'section' => 'newsmag_footer_section',
+	                            )
+                            )
+);
+
 /**
  * Copyright content
  */
@@ -58,19 +83,7 @@ $wp_customize->add_control(
 		'active_callback' => 'copyright_enabled_callback',
 	)
 );
-/**
- * Enable / Disable Go top
- */
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
-	                            $wp_customize,
-	                            'newsmag_enable_go_top',
-	                            array(
-		                            'type'    => 'mte-toggle',
-		                            'label'   => esc_html__( 'Go Top Button', 'newsmag' ),
-		                            'section' => 'newsmag_footer_section',
-	                            )
-                            )
-);
+
 
 $wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
 	                            $wp_customize,
