@@ -97,6 +97,17 @@ $wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
 );
 
 
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_show_single_post_tags',
+	                            array(
+		                            'type'        => 'mte-toggle',
+		                            'label'       => esc_html__( 'Tags meta on single blog post?', 'newsmag' ),
+		                            'description' => esc_html__( 'This will disable the tagged with zone', 'newsmag' ),
+		                            'section'     => 'newsmag_blog_section',
+	                            )
+                            )
+);
 /**
  * Enable breadcrumbs on single posts
  */
@@ -134,16 +145,17 @@ $wp_customize->add_control(
 /**
  *  Breadcrumbs post category
  */
-
-$wp_customize->add_control(
-	'newsmag_blog_breadcrumb_menu_post_category',
-	array(
-		'type'            => 'checkbox',
-		'label'           => esc_html__( 'Show post category ?', 'newsmag' ),
-		'description'     => esc_html__( 'Show the post category in the breadcrumb ?', 'newsmag' ),
-		'section'         => 'newsmag_blog_section',
-		'active_callback' => 'breadcrumbs_enabled_callback',
-	)
+$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+	                            $wp_customize,
+	                            'newsmag_blog_breadcrumb_menu_post_category',
+	                            array(
+		                            'type'            => 'mte-toggle',
+		                            'label'           => esc_html__( 'Show post category ?', 'newsmag' ),
+		                            'description'     => esc_html__( 'Show the post category in the breadcrumb ?', 'newsmag' ),
+		                            'section'         => 'newsmag_blog_section',
+		                            'active_callback' => 'breadcrumbs_enabled_callback',
+	                            )
+                            )
 );
 /**
  * General Settings Upsell

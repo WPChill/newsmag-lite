@@ -29,10 +29,12 @@
 					<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
 				</h3>
 				<span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+
 			</div>
 			<div class="newsmag-content">
 				<?php is_single() ? the_content() : the_excerpt(); ?>
 				<span class="newsmag-categories"><?php the_category( ', ' ) ?></span>
+
 			</div>
 		</div>
 	</div>

@@ -73,17 +73,20 @@ $curauth = get_userdata( $post->post_author );
 </div>
 <div class="row newsmag-article-post-footer">
 	<div class="col-md-12">
-		<footer class="entry-footer">
-			<?php
-			if ( 'post' === get_post_type() ) : ?>
-				<div class="newsmag-post-meta">
-					<?php newsmag_posted_on( 'tags' ); ?>
-				</div><!-- .entry-meta -->
+		<?php
+		$tags_enabled = get_theme_mod( 'newsmag_show_single_post_tags', true );
+		$has_tag = has_tag();
+		if ( $tags_enabled && $has_tag ): ?>
+			<footer class="entry-footer">
 				<?php
-			endif;
-			?>
-		</footer><!-- .entry-footer -->
+				if ( 'post' === get_post_type() ) : ?>
+					<div class="newsmag-post-meta">
+						<?php newsmag_posted_on( 'tags' ); ?>
+					</div><!-- .entry-meta -->
+				<?php endif; ?>
+			</footer><!-- .entry-footer -->
 
+		<?php endif; ?>
 		<?php do_action( 'newsmag_single_after_article' ); ?>
 
 	</div>

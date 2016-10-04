@@ -49,7 +49,7 @@ $wp_customize->add_setting( 'newsmag_blog_breadcrumb_menu_post_category',
 		                            'Newsmag_Customizer_Helper',
 		                            'newsmag_sanitize_checkbox'
 	                            ),
-	                            'default'           => 1
+	                            'default'           => true
                             )
 );
 
@@ -123,6 +123,15 @@ $wp_customize->add_setting( 'newsmag_enable_author_box',
                             )
 );
 
+$wp_customize->add_setting( 'newsmag_show_single_post_tags',
+                            array(
+	                            'sanitize_callback' => array(
+		                            'Newsmag_Customizer_Helper',
+		                            'newsmag_sanitize_checkbox'
+	                            ),
+	                            'default'           => true
+                            )
+);
 /**
  * Upsell
  */

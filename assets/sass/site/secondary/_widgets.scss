@@ -15,6 +15,7 @@
     width: 100%;
     font-size: 15px;
     font-family: $font__main;
+    font-weight: 400;
   }
 
   .search-form::before {
@@ -52,6 +53,14 @@
 * Select all widgets except for the search box
 */
 .widget:not(.widget_newsmag_banner) {
+  h3 {
+    font-size: 18px;
+    font-family: $font__alternate;
+    font-weight: 700;
+    color: $color__brand-red;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
   margin: 0 0 30px;
   /**
   * Reset the margins for UL / OL
@@ -112,6 +121,9 @@
           font-weight: 700;
           font-size: 15px;
           color: #333333;
+          &:hover {
+            color: $color__brand-red;
+          }
         }
         margin-bottom: 20px;
         padding-bottom: 20px;
@@ -121,8 +133,15 @@
         }
         .post-date {
           display: block;
-          font-style: italic;
-          font-size: 12px;
+          position: relative;
+          &:before {
+            font-family: 'FontAwesome';
+            color: $color__brand-red;
+            content: '\f017';
+            display: inline-block;
+            position: relative;
+            margin-right: 5px;
+          }
         }
       }
     }
@@ -164,9 +183,9 @@
     .tagcloud {
       a {
         background: #fafafa;
-        padding: 10px 15px;
+        padding: 5px 15px;
         display: inline-block;
-        margin: 0 10px 10px 0;
+        margin: 0 6px 6px 0;
         font-size: 14px !important;
         border-radius: 3px;
         color: #767676;
@@ -177,20 +196,112 @@
       }
     }
   }
-  /**
-  * Style the categories and archive widgets
-  */
-  &.widget_categories, &.widget_archive {
-    /**
-    * Dropdown categories/archives
-    */
+
+  &.widget_nav_menu {
+    > div {
+      > ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        color: $color__text-main;
+        > li {
+          margin-bottom: 10px;
+          &:before {
+            content: "\f105";
+            font-family: 'FontAwesome';
+            display: inline-block;
+            margin-left: 0;
+            width: 15px;
+            color: $color__brand-red;
+          }
+          a {
+            color: $color__text-main;
+            font-family: $font__alternate;
+            font-weight: 500;
+            font-size: 15px;
+            &:hover,
+            &:focus {
+              text-decoration: none;
+              color: $color__brand-red;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.widget_recent_comments {
+    ul {
+      li {
+        color: #767676;
+        margin-bottom: 10px;
+        .comment-author-link {
+          a {
+            color: #767676;
+            font-size: 15px;
+            font-weight: 400;
+          }
+        }
+        a {
+          font-weight: 500;
+          font-family: 'Poppins';
+        }
+      }
+    }
+  }
+  &.widget_rss {
+    h3 {
+      > a {
+        font-size: 18px;
+        font-family: $font__alternate;
+        font-weight: 700;
+        color: $color__brand-red;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+      }
+    }
+    ul {
+      li {
+        margin-bottom: 20px;
+        .rsswidget {
+          display: block;
+          font-size: 15px;
+          color: #333;
+          font-family: 'Poppins';
+          font-weight: 700;
+        }
+        .rss-date {
+          display: block;
+          position: relative;
+          color: #a0a0a0;
+          &:before {
+            font-family: 'FontAwesome';
+            color: $color__brand-red;
+            content: '\f017';
+            display: inline-block;
+            position: relative;
+            margin-right: 5px;
+          }
+        }
+        .rssSummary {
+          font-size: 15px;
+        }
+        cite {
+          margin-top: 15px;
+          color: #a0a0a0;
+          font-style: normal;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  &.widget_categories, &.widget_archive, &.widget_meta, &.widget_pages {
     > select {
       width: 100%;
       display: block;
       margin: 0 auto;
       margin-bottom: 30px;
     }
-
     > ul {
       list-style-type: none;
       margin: 0;
@@ -198,15 +309,20 @@
       font-size: 15px;
       color: $color__text-main;
       > li {
-        padding-bottom: 10px;
         margin-bottom: 10px;
-        border-bottom: 1px solid #e1e1e1;
-        &:last-of-type {
-          border-bottom: none;
+        &:before {
+          content: "\f105";
+          font-family: 'FontAwesome';
+          display: inline-block;
+          margin-left: 0;
+          width: 15px;
+          color: $color__brand-red;
         }
         a {
           color: $color__text-main;
-          font-family: $font__main;
+          font-family: $font__alternate;
+          font-weight: 500;
+          font-size: 15px;
           &:hover,
           &:focus {
             text-decoration: none;
@@ -232,20 +348,6 @@
     }
   }
 
-  &.widget_categories, &.widget_archive, &.widget_meta {
-    ul {
-      li {
-        color: $color__brand-red;
-        a {
-          color: $color__brand-red;
-          &:hover {
-            color: $color__brand-red;
-          }
-        }
-      }
-    }
-  }
-
   /**
   * Calendar restyling. The title will always be hidden.
   */
@@ -264,8 +366,8 @@
       display: none;
     }
     #wp-calendar {
-      font-size: 12px;
-      color: #717171;
+      font-size: 14px;
+      color: #767676;
       margin-bottom: 0;
       > caption {
         background-color: $color__brand-red;
@@ -290,14 +392,14 @@
         border: none;
         color: $color__text-main;
         font-size: 17px;
-        font-weight: 400;
+        font-weight: 700;
       }
       td.pad {
 
       }
       td:not(.pad) {
         background: #f1f1f1;
-        color: $color__text-main;
+        color: #767676;
         width: 44px;
         height: 44px;
       }
@@ -312,6 +414,7 @@
           display: block;
           &:hover, &:focus {
             text-decoration: none;
+            background: lighten($color__brand-red, 5%);
           }
         }
       }
@@ -416,6 +519,8 @@
       font-weight: 700;
       margin-bottom: 25px;
       margin-top: 0;
+      color: #333333;
+
     }
 
     &.widget_newsmag_recent {
@@ -457,7 +562,7 @@
           }
           a {
             color: $color__text-main;
-            font-family: $font__main;
+
             &:hover,
             &:focus {
               text-decoration: none;
