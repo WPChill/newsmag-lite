@@ -19,7 +19,9 @@
 								<a href="<?php the_permalink(); ?>"
 								   class="u-url"><?php the_title(); ?></a>
 							</h3>
-							<?php the_category() ?>
+							<span class="post-categories">
+							<?php the_category( ' ' ) ?>
+							</span>
 						</div> <!-- end caption -->
 					</div> <!-- end image -->
 				</div> <!-- end h-entry -->

@@ -18,14 +18,14 @@
 			?>
 
 			<div class="col-md-3 col-sm-6">
-				<div class="newsmag-post-box-a">
+				<div class="newsmag-post-box-a thumbnail-layout">
 					<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 						<?php echo wp_kses_post( $image ) ?>
 					</a>
 					<h3>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
-					<span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+					<div class="date"><span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?></div>
 				</div>
 			</div>
 			<?php

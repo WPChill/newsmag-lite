@@ -32,7 +32,7 @@
 			</div>
 			<div class="newsmag-content">
 				<?php is_single() ? the_content() : the_excerpt(); ?>
-				<span class="newsmag-categories"><?php esc_html( the_category( ', ' ) ) ?></span>
+				<span class="newsmag-categories"><?php the_category( ', ' ) ?></span>
 			</div>
 		</div>
 	</div>

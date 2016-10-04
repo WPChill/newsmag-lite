@@ -12,10 +12,11 @@
           left: 20%;
         }
         h3 {
+          font-family: 'Poppins';
           a {
             color: #FFF;
             font-size: 33px;
-            font-weight: 800;
+            font-weight: 700;
           }
         }
 
@@ -57,15 +58,15 @@
   .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     background: $color__brand-red;
   }
-
+  .owl-theme .owl-dots .owl-dot span {
+    margin: 5px;
+  }
   .owl-dots {
     border-bottom: 1px solid #e1e1e1;
     padding-bottom: 5px;
   }
 
 }
-
-
 
 .newsmag_builder {
   margin: initial !important;
@@ -74,27 +75,37 @@
     text-transform: uppercase;
     font-size: 26px;
     color: $color__brand-red;
-    margin-bottom: 30px;
-    font-weight: 700;
+    margin-bottom: 26px;
+    font-weight: 500;
+    font-family: 'Poppins';
     a {
-      font-weight: 700;
+      font-weight: 500;
       color: $color__brand-red;
     }
   }
   .newsmag-post-box-a {
     margin-bottom: 45px;
     position: relative;
+    &.thumbnail-layout {
+      h3 {
+        margin-top: 19px;
+        font-size: 16px;
+      }
+      .date {
+        display: none;
+      }
+    }
     h3 {
       font-size: 23px;
-      margin-top: 25px;
-      font-weight: 700;
+      margin-top: 23px;
+      font-weight: 500;
       font-family: 'Poppins';
     }
     span.colored {
       margin-right: 5px;
     }
     p {
-      margin-top: 15px;
+      margin-top: 9px;
     }
     .newsmag-post-box-image {
       display: block;
@@ -119,17 +130,18 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
+        font-size: 12px;
         text-transform: uppercase;
         color: #FFF;
-        font-weight: 700;
-        font-family: 'Lato', serif
+        font-weight: 500;
+        font-family: 'Poppins', serif
       }
     }
 
   }
   .newsmag-blog-post-layout-b {
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+    padding-bottom: 37px;
+    margin-bottom: 37px;
     border-bottom: 1px solid #e1e1e1;
 
     &:last-of-type {
@@ -199,11 +211,12 @@
       .newsmag-title {
         h3 {
           font-size: 23px;
+          margin-bottom: 8px;
         }
       }
       p {
         &:first-of-type {
-          margin-top: 15px;
+          margin-top: 9px;
         }
       }
     }
@@ -252,13 +265,14 @@
     }
     .banner-content {
       position: absolute;
-      bottom: 25px;
+      bottom: 23px;
       left: 25px;
       h3 {
+        font-family: 'Poppins', sans-serif;
         a {
           color: #FFF;
           font-size: 23px;
-          font-weight: 700;
+          font-weight: 500;
         }
       }
       .date {
