@@ -20,8 +20,17 @@ if ( ! empty( $img ) ): ?>
 			<div class="row">
 				<div class="col-xs-12">
 					<?php
-					esc_html( the_archive_title( '<h2 class="page-title">', '</span></h2>' ) );
-					wp_kses_post( the_archive_description( '<div class="taxonomy-description">', '</div>' ) );
+					if ( is_day() ) :
+						printf( __( '<h2 class="page-title">Day: %s</h2>', 'newsmag' ), get_the_date() );
+					elseif ( is_month() ) :
+						printf( __( '<h2 class="page-title">Month: %s</h2>', 'newsmag' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'saiph-lite' ) ) );
+					elseif ( is_year() ) :
+						printf( __( '<h2 class="page-title">Year: %s</h2>', 'newsmag' ), get_the_date( _x( 'Y', 'yearly archives date format', 'saiph-lite' ) ) );
+					elseif ( is_category() ):
+						the_archive_title( '<h2 class="page-title">', '</h2>');
+					else :
+						_e( 'Archives', 'newsmag' );
+					endif;
 					?>
 				</div>
 			</div>
@@ -76,7 +85,7 @@ if ( ! empty( $img ) ): ?>
 					endif;
 					?>
 				</main><!-- #main -->
-				<?php the_posts_pagination(array('prev_text' => 'prev', 'next_text' => 'next')); ?>
+				<?php the_posts_pagination( array( 'prev_text' => 'prev', 'next_text' => 'next' ) ); ?>
 			</div><!-- #primary -->
 			<?php if ( $layout === 'right-sidebar' ): ?>
 				<?php get_sidebar( 'sidebar' ); ?>
