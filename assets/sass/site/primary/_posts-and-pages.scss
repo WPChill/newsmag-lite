@@ -154,9 +154,9 @@
   }
 }
 
-.navigation{
-  width:100%;
-  text-align:center;
+.navigation {
+  width: 100%;
+  text-align: center;
   .nav-links {
     .page-numbers {
       display: inline-block;
@@ -184,7 +184,6 @@
     }
   }
 }
-
 
 .blog #primary {
   margin-top: 30px;
@@ -297,6 +296,9 @@
       background: #fafafa;
       padding: 10px;
       color: #767676;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      display: inline-block;
     }
   }
 }

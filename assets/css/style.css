@@ -1722,7 +1722,10 @@ a {
 .newsmag-article-post-footer .newsmag-tags a {
   background: #fafafa;
   padding: 10px;
-  color: #767676; }
+  color: #767676;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: inline-block; }
 
 /*--------------------------------------------------------------
 ## Asides
