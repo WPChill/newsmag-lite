@@ -1716,6 +1716,8 @@ a {
       .newsmag-blog-post-layout .newsmag-title h3 > a:hover, .newsmag-blog-post-layout .newsmag-title h3 > a:focus {
         text-decoration: none;
         color: inherit; }
+  .newsmag-blog-post-layout .newsmag-title .colored {
+    margin-right: 5px; }
   .newsmag-blog-post-layout .newsmag-content {
     margin-top: 10px; }
     .newsmag-blog-post-layout .newsmag-content .newsmag-categories {
