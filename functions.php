@@ -106,7 +106,7 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		 */
 		add_theme_support( 'custom-logo', array(
 			'height'     => 45,
-			'width'      => 285,
+			'width'      => 150,
 			'flex-width' => true,
 		) );
 
