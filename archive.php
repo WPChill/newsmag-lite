@@ -19,19 +19,21 @@ if ( ! empty( $img ) ): ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
+					<h2 class="page-title">
 					<?php
 					if ( is_day() ) :
-						printf( __( '<h2 class="page-title">Day: %s</h2>', 'newsmag' ), get_the_date() );
+						printf( __( 'Day: %s', 'newsmag' ), get_the_date() );
 					elseif ( is_month() ) :
-						printf( __( '<h2 class="page-title">Month: %s</h2>', 'newsmag' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'saiph-lite' ) ) );
+						printf( __( 'Month: %s', 'newsmag' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'saiph-lite' ) ) );
 					elseif ( is_year() ) :
-						printf( __( '<h2 class="page-title">Year: %s</h2>', 'newsmag' ), get_the_date( _x( 'Y', 'yearly archives date format', 'saiph-lite' ) ) );
+						printf( __( 'Year: %s', 'newsmag' ), get_the_date( _x( 'Y', 'yearly archives date format', 'saiph-lite' ) ) );
 					elseif ( is_category() ):
-						the_archive_title( '<h2 class="page-title">', '</h2>');
+						the_archive_title();
 					else :
 						_e( 'Archives', 'newsmag' );
 					endif;
 					?>
+					</h2>
 				</div>
 			</div>
 		</div>
