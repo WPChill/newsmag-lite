@@ -1,45 +1,46 @@
 html {
-  box-sizing : border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing : inherit;
+  box-sizing: inherit;
 }
 
 body {
-  background : $color__background-body; /* Fallback for when there is no custom background color defined. */
+  background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote, q {
-  quotes      : "" "";
-  margin      : 0;
-  display     : block;
-  width       : 100%;
-  text-align  : center;
-  border      : none;
-
+  quotes: "" "";
+  margin: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: none;
+  margin-bottom: 1.5em;
   > p {
-    color       : $color__text-main;
-    font-size   : 23px;
-    font-style  : italic;
+    color: $color__text-main;
+    font-size: 23px;
+    font-style: italic;
+    line-height:30px;
   }
 
 }
 
 hr {
-  background-color : $color__background-hr;
-  border           : 0;
-  height           : 1px;
-  margin-bottom    : 1.5em;
+  background-color: $color__background-hr;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
 }
 
 @import "lists";
 
 img {
-  height    : auto; /* Make sure images are scaled correctly. */
-  max-width : 100%; /* Adhere to container width. */
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
 }
 
 @import "tables";
