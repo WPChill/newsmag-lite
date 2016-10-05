@@ -20,26 +20,9 @@ blockquote, q {
   text-align  : center;
   border      : none;
 
-  &:before,
-  &:after {
-    content          : "";
-    background-image : -webkit-linear-gradient(left, transparent, #DBDBDB, transparent);
-    background-image : linear-gradient(to right, transparent, #DBDBDB, transparent);
-    border           : 0;
-    height           : 1px;
-    margin           : 10px 0 40px 0;
-    width            : 100%;
-    position         : relative;
-    display          : block;
-  }
-  &:after {
-    margin : 40px 0 30px 0;
-  }
-
   > p {
-    color       : $color__brand-red;
-    font-size   : 22px;
-    font-weight : 600;
+    color       : $color__text-main;
+    font-size   : 23px;
     font-style  : italic;
   }
 

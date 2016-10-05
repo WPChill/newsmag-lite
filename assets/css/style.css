@@ -81,6 +81,43 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   border: none; }
 
+h1 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px; }
+
+h2 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 36px; }
+
+h3 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+  text-transform: uppercase; }
+
+h4 {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 28px; }
+
+h5 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px; }
+
+h6 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px; }
+
 dfn, cite, em, i {
   font-style: italic; }
 
@@ -140,22 +177,9 @@ blockquote, q {
   width: 100%;
   text-align: center;
   border: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: "";
-    background-image: -webkit-linear-gradient(left, transparent, #DBDBDB, transparent);
-    background-image: linear-gradient(to right, transparent, #DBDBDB, transparent);
-    border: 0;
-    height: 1px;
-    margin: 10px 0 40px 0;
-    width: 100%;
-    position: relative;
-    display: block; }
-  blockquote:after, q:after {
-    margin: 40px 0 30px 0; }
   blockquote > p, q > p {
-    color: #ff3d2e;
-    font-size: 22px;
-    font-weight: 600;
+    color: #333;
+    font-size: 23px;
     font-style: italic; }
 
 hr {

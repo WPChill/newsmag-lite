@@ -1,21 +1,64 @@
 h1, h2, h3, h4, h5, h6 {
-  clear         : both;
-  -ms-word-wrap : break-word;
-  word-wrap     : break-word;
-  color         : $color__text-title;
+  clear: both;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  color: $color__text-title;
 }
 
 .section-title {
-  font-weight    : 600;
-  font-family    : $font__alternate;
-  font-size      : 20px;
-  position       : relative;
-  text-transform : uppercase;
-  margin-bottom  : 25px;
+  font-weight: 600;
+  font-family: $font__alternate;
+  font-size: 20px;
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 25px;
 }
 
 .page-header {
-  padding : 0;
-  margin  : 0;
-  border  : none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+h1 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+h2 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 36px;
+}
+
+h3 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 28px;
+}
+
+h5 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+h6 {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
