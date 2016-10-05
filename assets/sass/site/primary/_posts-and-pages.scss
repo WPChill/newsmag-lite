@@ -52,12 +52,6 @@
   margin-bottom: 20px;
 }
 
-.single-post {
-  .newsmag-breadcrumbs {
-    margin-top: 20px;
-  }
-}
-
 /* Author box styling */
 .author-description {
   padding-top: 15px;
@@ -160,71 +154,37 @@
   }
 }
 
-.nav-links {
-  .page-numbers {
-    display: inline-block;
-    font-family: 'Lato';
-    padding: 5px;
-    text-align: center;
-    border-bottom: 2px solid transparent;
-    &.current {
-      border-bottom-color: $color__brand-red;
-      color: $color__brand-red;
-    }
-    &.next {
-      border: 1px solid #e1e1e1;
-      padding: 5px 10px;
-      font-size: 12px;
-      margin-left: 10px;
-      text-transform: uppercase;
-
-    }
-    &.prev {
-      border: 1px solid #e1e1e1;
-      padding: 5px 10px;
-      margin-right: 10px;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-  }
-}
-
-.newsmag-pager {
-  list-style-type: none;
-  display: inline-block;
-  text-align: center;
-  margin: 20px auto;
-  padding: 0;
-  li {
-    display: inline-block;
-    font-family: 'Lato';
-    font-weight: 700;
-    padding: 5px;
-    text-align: center;
-    border-bottom: 1px solid transparent;
-    > a {
-      font-weight: 700;
-    }
-    &.active {
-      border-bottom-color: $color__brand-red;
-      color: $color__brand-red;
-    }
-    &.prev-next {
-      border: 1px solid #ebebeb;
-      padding: 10px;
-      font-size: 12px;
-      a {
+.navigation{
+  width:100%;
+  text-align:center;
+  .nav-links {
+    .page-numbers {
+      display: inline-block;
+      font-family: 'Lato';
+      padding: 5px;
+      text-align: center;
+      border-bottom: 2px solid transparent;
+      margin-right: 15px;
+      &.current {
+        border-bottom-color: $color__brand-red;
+        color: $color__brand-red;
+      }
+      &.next {
+        border: 1px solid #e1e1e1;
+        padding: 5px 10px;
         font-size: 12px;
+        text-transform: uppercase;
       }
-      &:first-child {
-        margin-right: 10px;
-      }
-      &:last-child {
-        margin-left: 10px;
+      &.prev {
+        border: 1px solid #e1e1e1;
+        padding: 5px 10px;
+        font-size: 12px;
+        text-transform: uppercase;
       }
     }
   }
 }
+
 
 .blog #primary {
   margin-top: 30px;

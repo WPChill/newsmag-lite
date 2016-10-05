@@ -437,6 +437,12 @@
         height: 50px;
         background-color: $color__brand-red;
         color: #FFF;
+        cursor: pointer;
+        &:hover {
+          &:before {
+            color: #000;
+          }
+        }
         &:before {
           content: ' \f104 ';
           display: block;
@@ -463,6 +469,12 @@
         background-color: $color__brand-red;
         color: #FFF;
         display: block;
+        cursor: pointer;
+        &:hover {
+          &:before {
+            color: #000;
+          }
+        }
         &:before {
           content: ' \f105 ';
           display: block;
