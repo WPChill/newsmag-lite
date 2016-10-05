@@ -65,13 +65,13 @@ if ( ! empty( $img ) ): ?>
 					endif;
 					?>
 				</main><!-- #main -->
+				<?php the_posts_pagination(array('prev_text' => 'prev', 'next_text' => 'next')); ?>
 			</div><!-- #primary -->
 			<?php if ( $layout === 'right-sidebar' ): ?>
 				<?php get_sidebar( 'sidebar' ); ?>
 			<?php endif; ?>
 
 		</div>
-		<?php the_posts_pagination(); ?>
 	</div>
 <?php
 get_footer();

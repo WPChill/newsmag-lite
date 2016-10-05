@@ -108,7 +108,7 @@ code, kbd, tt, var {
 
 abbr, acronym {
   border-bottom: none !important;
-  text-decoration: none; }
+  text-decoration: none !important; }
 
 mark, ins {
   background: #fff9c0;
@@ -1616,6 +1616,28 @@ a {
 .newsmag-archive-page .newsmag-image-banner img {
   display: block;
   width: 100%; }
+
+.nav-links .page-numbers {
+  display: inline-block;
+  font-family: 'Lato';
+  padding: 5px;
+  text-align: center;
+  border-bottom: 2px solid transparent; }
+  .nav-links .page-numbers.current {
+    border-bottom-color: #ff3d2e;
+    color: #ff3d2e; }
+  .nav-links .page-numbers.next {
+    border: 1px solid #e1e1e1;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-left: 10px;
+    text-transform: uppercase; }
+  .nav-links .page-numbers.prev {
+    border: 1px solid #e1e1e1;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 12px;
+    text-transform: uppercase; }
 
 .newsmag-pager {
   list-style-type: none;
