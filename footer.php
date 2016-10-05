@@ -34,13 +34,13 @@
 					<?php if ( $copyright_area ): ?>
 						<div class="col-md-6">
 							<?php
-							echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://machothemes.com/">Newsmag. All rights reserved.</a>' ) );
+							echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://machothemes.com/newsmag-lite/">Newsmag</a>. All rights reserved.' ) );
 							?>
 						</div>
 					<?php endif; ?>
 					<?php if ( $copyright_attribution ): ?>
 						<div class="col-md-6 text-right">
-							<?php echo __( 'Created by Macho Themes', 'newsmag' ) ?>
+							<?php echo __( 'Created by <a href="https://machothemes.com">Macho Themes</a>', 'newsmag' ) ?>
 						</div>
 					<?php endif; ?>
 				</div>
