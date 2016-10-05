@@ -31,5 +31,8 @@ input[type="submit"] {
     color: #FFF;
     border: none;
     border-radius: 2px;
+    &:hover{
+      background-color: darken($color__brand-red, 15%);
+    }
   }
 }

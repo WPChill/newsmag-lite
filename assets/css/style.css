@@ -263,6 +263,8 @@ input[type="submit"] {
   color: #FFF;
   border: none;
   border-radius: 2px; }
+  .form-submit .submit:hover {
+    background-color: #e11000; }
 
 input[type="text"],
 input[type="email"],
@@ -1760,7 +1762,7 @@ a {
   .comment-list .comment {
     padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px dashed #e1e1e1; }
+    border-bottom: 1px solid #e1e1e1; }
     .comment-list .comment:first-of-type {
       padding-top: 0; }
   .comment-list .says {
@@ -1784,9 +1786,10 @@ a {
     font-family: "Lato", sans-serif;
     font-size: 15px;
     font-weight: 700; }
+    .comment-list .reply > a:hover {
+      color: #c70e00; }
 
 #reply-title {
-  color: #ff3d2e;
   font-family: "Poppins", "serif";
   font-size: 20px;
   text-transform: uppercase; }

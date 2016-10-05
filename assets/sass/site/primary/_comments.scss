@@ -1,9 +1,9 @@
 .comment-content a {
-  word-wrap : break-word;
+  word-wrap: break-word;
 }
 
 .bypostauthor {
-  display : block;
+  display: block;
 }
 
 #comments {
@@ -13,92 +13,94 @@
     }
   }
   ul, ol {
-    list-style-type : none;
+    list-style-type: none;
   }
 
   .comment-awaiting-moderation {
-    padding-left : 97px;
+    padding-left: 97px;
   }
 
   .children {
-    margin-top : 15px;
+    margin-top: 15px;
     > .comment {
-      border-bottom : none;
-      padding-top   : 20px;
-      border-top    : 1px dashed #e1e1e1;
+      border-bottom: none;
+      padding-top: 20px;
+      border-top: 1px dashed #e1e1e1;
     }
   }
 }
 
 .comment-list {
-  margin          : 0;
-  padding         : 0;
-  list-style-type : none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   .comment {
-    padding-top    : 20px;
-    padding-bottom : 20px;
-    border-bottom  : 1px dashed #e1e1e1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1;
     &:first-of-type {
-      padding-top : 0;
+      padding-top: 0;
     }
   }
   .says {
-    display : none;
+    display: none;
   }
 
   .fn {
-    font-size : 20px;
+    font-size: 20px;
   }
   .comment-author {
     > img {
-      margin-right : 30px;
+      margin-right: 30px;
     }
   }
 
   .comment-metadata {
-    padding-left : 97px;
-    position     : relative;
-    bottom       : 18px;
+    padding-left: 97px;
+    position: relative;
+    bottom: 18px;
     > a {
-      color       : $color__brand-red;
-      font-family : $font__main;
-      font-size   : 15px;
+      color: $color__brand-red;
+      font-family: $font__main;
+      font-size: 15px;
     }
   }
 
   .comment-content {
-    padding-left : 97px;
+    padding-left: 97px;
   }
 
   .reply {
     @extend .comment-content;
     > a {
-      color       : $color__brand-red;
-      font-family : $font__main;
-      font-size   : 15px;
-      font-weight : 700;
+      color: $color__brand-red;
+      font-family: $font__main;
+      font-size: 15px;
+      font-weight: 700;
+      &:hover {
+        color: darken($color__brand-red, 20%);
+      }
     }
   }
 }
 
 #reply-title {
-  color          : $color__brand-red;
-  font-family    : $font__alternate;
-  font-size      : 20px;
-  text-transform : uppercase;
+  font-family: $font__alternate;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .comment-notes {
-  display : none;
+  display: none;
 }
 
 .comment-form {
   [class^="comment-form-"] {
     > label {
-      display : none;
+      display: none;
     }
     > input {
-      width : 100%;
+      width: 100%;
     }
   }
 }
