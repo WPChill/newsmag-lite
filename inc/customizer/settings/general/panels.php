@@ -8,3 +8,12 @@ $wp_customize->add_panel( 'newsmag_panel_general',
 	                          'title'          => esc_html__( 'Theme options', 'newsmag' )
                           )
 );
+
+$wp_customize->add_panel( 'newsmag_panel_blog',
+                          array(
+	                          'priority'       => 25,
+	                          'capability'     => 'edit_theme_options',
+	                          'theme_supports' => '',
+	                          'title'          => esc_html__( 'Blog Settings', 'newsmag' )
+                          )
+);

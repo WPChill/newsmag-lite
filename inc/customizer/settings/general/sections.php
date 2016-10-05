@@ -11,16 +11,15 @@ $wp_customize->add_section( 'newsmag_general_section',
 
 $wp_customize->add_section( 'newsmag_footer_section',
 	array(
-		'title'    => esc_html__( 'Footer', 'newsmag' ),
-		'panel'    => 'newsmag_panel_general',
-		'priority' => 2,
+		'title'    => esc_html__( 'Footer Settings', 'newsmag' ),
+		'priority' => 50,
 	)
 );
 
 $wp_customize->add_section( 'newsmag_blog_section',
 	array(
 		'title'    => esc_html__( 'Blog Settings', 'newsmag' ),
-		'panel'    => 'newsmag_panel_general',
-		'priority' => 3,
+		'panel'    => 'newsmag_panel_blog',
+		'priority' => 1,
 	)
 );
