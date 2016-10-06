@@ -8,8 +8,9 @@
  */
 // Grab the current author
 $curauth = get_userdata( $post->post_author );
+$breadcrumbs_enabled = get_theme_mod('newsmag_enable_post_breadcrumbs', true);
 ?>
-<div class="row newsmag-article-post">
+<div class="row newsmag-article-post <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top' ?> ">
 	<?php if ( get_theme_mod( 'newsmag_enable_author_box', true ) && ! empty( $curauth->description ) ): ?>
 		<div class="col-md-3">
 			<?php

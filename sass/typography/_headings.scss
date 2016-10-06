@@ -1,0 +1,21 @@
+h1, h2, h3, h4, h5, h6 {
+  clear         : both;
+  -ms-word-wrap : break-word;
+  word-wrap     : break-word;
+  color         : $color__text-title;
+}
+
+.section-title {
+  font-weight    : 600;
+  font-family    : $font__alternate;
+  font-size      : 20px;
+  position       : relative;
+  text-transform : uppercase;
+  margin-bottom  : 25px;
+}
+
+.page-header {
+  padding : 0;
+  margin  : 0;
+  border  : none;
+}

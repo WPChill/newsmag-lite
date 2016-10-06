@@ -11,6 +11,9 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function newsmag_customize_register( $wp_customize ) {
+
+	wp_enqueue_style( 'epsilon-framework-style', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
+	
 	/**
 	 * Custom controls
 	 */

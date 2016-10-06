@@ -27,7 +27,7 @@ $wp_customize->add_section( 'newsmag_blog_section',
 $wp_customize->add_section(
 	'newsmag_general_pro_version_section',
 	array(
-		'title'    => esc_html__( 'View PRO Version', 'newsmag' ),
+		'title'    => esc_html__( 'Newsmag PRO features', 'newsmag' ),
 		'priority' => 0
 	)
 );
