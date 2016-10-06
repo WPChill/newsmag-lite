@@ -102,7 +102,7 @@ h3 {
 
 h4 {
   font-family: 'Poppins';
-  font-weight: 500;
+  font-weight: 700;
   font-size: 23px;
   line-height: 28px; }
 
@@ -1913,12 +1913,10 @@ a {
   transition: opacity .3s 0s, visibility 0s 0s; }
 
 .back-to-top.back-to-top-is-visible {
-  /* the button becomes visible */
   visibility: visible;
   opacity: 1; }
 
 .back-to-top.back-to-top-fade-out {
-  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
   opacity: .5; }
 
 .no-touch .back-to-top:hover {

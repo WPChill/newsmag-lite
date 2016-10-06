@@ -45,14 +45,12 @@
 }
 
 .back-to-top.back-to-top-is-visible {
-  /* the button becomes visible */
   visibility: visible;
   opacity: 1;
 
 }
 
 .back-to-top.back-to-top-fade-out {
-  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
   opacity: .5;
 }
 
