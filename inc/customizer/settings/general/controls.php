@@ -181,7 +181,7 @@ $wp_customize->add_control( new Epsilon_Control_Upsell(
 			                            esc_html__('Multiple blog layouts are available in the PRO version of Newsmag. That includes: full-width posts and sidebars on the left.', 'newsmag'),
 		                            ),
 		                            'priority'    => 0,
-		                            'button_link' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
+		                            'button_url' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
 		                            'button_text' => esc_html__('Get the PRO version!', 'newsmag'),
 	                            )
                             )
@@ -209,7 +209,7 @@ $wp_customize->add_control( new Epsilon_Control_Upsell(
 			                            esc_html__('Get in-content banner areas - blend your ads with the posts for a better click-through rate.', 'newsmag'),
 			                            esc_html__('Theme updates and support for 1 year - included with purchase', 'newsmag') ,
 		                            ),
-		                            'button_link' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
+		                            'button_url' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
 		                            'button_text' => esc_html__('Get the PRO version!', 'newsmag'),
 	                            )
                             )
@@ -228,7 +228,7 @@ $wp_customize->add_control( new Epsilon_Control_Upsell(
 		                            'requirements' => array(
 			                            esc_html__('The PRO version of Newsmag allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'newsmag'),
 		                            ),
-		                            'button_link' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
+		                            'button_url' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
 		                            'button_text' => esc_html__('Get the PRO version!', 'newsmag'),
 	                            )
                             )

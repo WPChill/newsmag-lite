@@ -158,3 +158,9 @@ $wp_customize->add_setting( 'newsmag_upsell_pro_version',
 	                            'sanitize_callback' => 'esc_html',
 	                            'default'           => ''
                             ) );
+
+$wp_customize->add_setting( 'newsmag_upsell_color_version',
+                            array(
+	                            'sanitize_callback' => 'esc_html',
+	                            'default'           => ''
+                            ) );
