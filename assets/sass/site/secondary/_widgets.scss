@@ -171,6 +171,38 @@
           ul, ol {
             list-style-type: none;
             padding-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            li {
+              &:before {
+                content: "\f105";
+                font-family: 'FontAwesome';
+                display: inline-block;
+                margin-left: 0;
+                width: 15px;
+                color: $color__brand-red;
+              }
+              > ul, > ol {
+                margin-top: 0;
+                margin-bottom: 0;
+                @media (min-width: 1200px) {
+                  padding-left: 20px;
+                }
+                li {
+                  &:before {
+                    display: none;
+                  }
+                }
+              }
+              a {
+                color: #767676;
+                &:hover,
+                &:focus {
+                  text-decoration: none;
+                  color: $color__brand-red;
+                }
+              }
+            }
           }
         }
       }
@@ -344,12 +376,40 @@
     }
     .children {
       list-style-type: none;
-      margin-left: 0;
-      padding-left: 25px;
-      > li {
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: 1px dashed #e1e1e1;
+      padding-left: 10px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      li {
+        &:before {
+          content: "\f105";
+          font-family: 'FontAwesome';
+          display: inline-block;
+          margin-left: 0;
+          width: 15px;
+          color: $color__brand-red;
+        }
+        > ul, > ol {
+          margin-top: 0;
+          margin-bottom: 0;
+          @media (min-width: 1200px) {
+            padding-left: 20px;
+            margin-bottom: 8px;
+            margin-top: 8px;
+          }
+          li {
+            &:before {
+              display: none;
+            }
+          }
+        }
+        a {
+          color: #767676;
+          &:hover,
+          &:focus {
+            text-decoration: none;
+            color: $color__brand-red;
+          }
+        }
       }
     }
   }
