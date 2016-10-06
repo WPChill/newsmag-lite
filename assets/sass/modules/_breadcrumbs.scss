@@ -2,11 +2,9 @@
   font-size: 14px;
   font-family: $font__main;
   font-weight: 400;
-  padding-bottom: 10px;
-  margin-top: 10px;
-  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 20px;
   color: $color__brand-red;
-  .breadcrumb-leaf{
+  .breadcrumb-leaf {
     color: #6b6a77;
   }
   a {
@@ -22,16 +20,22 @@
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
   background: #FFF;
+  .newsmag-breadcrumbs {
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 0;
+  }
 }
 
 .newsmag-breadcrumbs-container {
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     width: 750px;
   }
-  @media (min-width: 992px){
+  @media (min-width: 992px) {
     width: 970px;
   }
-  @media (min-width: 1200px){
+  @media (min-width: 1200px) {
     width: 1200px;
   }
   .newsmag-breadcrumbs-row {

@@ -18,6 +18,10 @@
   margin: 10px 0 0;
 }
 
+.single-post .entry-content{
+  margin-top: 0;
+}
+
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
@@ -54,7 +58,6 @@
 
 /* Author box styling */
 .author-description {
-  padding-top: 15px;
   position: relative;
   margin: 0;
   img {
