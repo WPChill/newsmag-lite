@@ -162,18 +162,6 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
  */
 $wp_customize->add_control( new Epsilon_Control_Upsell(
 	                            $wp_customize,
-	                            'newsmag_upsell_macho_general',
-	                            array(
-		                            'section'     => 'newsmag_general_section',
-		                            'options'     => array( 'News Ticker' ),
-		                            'priority'    => 0,
-		                            'button_link' => 'https://www.machothemes.com/themes/newsmag-pro/',
-		                            'button_text' => 'Upgrade to pro!',
-	                            )
-                            )
-);
-$wp_customize->add_control( new Epsilon_Control_Upsell(
-	                            $wp_customize,
 	                            'newsmag_upsell_macho_blog',
 	                            array(
 		                            'section'     => 'newsmag_blog_section',

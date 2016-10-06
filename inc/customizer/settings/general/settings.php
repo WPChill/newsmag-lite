@@ -135,11 +135,6 @@ $wp_customize->add_setting( 'newsmag_show_single_post_tags',
 /**
  * Upsell
  */
-$wp_customize->add_setting( 'newsmag_upsell_macho_general',
-                            array(
-	                            'sanitize_callback' => 'esc_html',
-	                            'default'           => ''
-                            ) );
 $wp_customize->add_setting( 'newsmag_upsell_macho_blog',
                             array(
 	                            'sanitize_callback' => 'esc_html',
