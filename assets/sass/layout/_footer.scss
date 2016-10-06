@@ -92,4 +92,61 @@
   > .widgets-area {
     padding: 40px 0 0 0;
   }
+  p.no-margin {
+    margin-bottom: 0;
+  }
+  .newsmag-social-footer {
+    list-style-type: none;
+    margin: 0 0 30px;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-right: 15px;
+      a{
+        &[href*="wordpress.org"],
+        &[href*="wordpress.com"] {
+          color: #21759b;
+        }
+        &[href*="facebook.com"] {
+          color: #3b5998;
+        }
+        &[href*="twitter.com"] {
+          color: #33ccff;
+        }
+        &[href*="dribbble.com"] {
+          color: #ea4c89;
+        }
+        &[href*="plus.google.com"] {
+          color: #dd4b39;
+        }
+        &[href*="pinterest.com"] {
+          color: #c8232c;
+        }
+        &[href*="github.com"]{
+          color: #171515;
+        }
+        &[href*="tumblr.com"] {
+          color: #34526f;
+        }
+        &[href*="youtube.com"] {
+          color: #c4302b;
+        }
+        &[href*="flickr.com"] {
+          color: #ff0084;
+        }
+        &[href*="vimeo.com"]{
+          color: #1AB7EA;
+        }
+        &[href*="instagram.com"] {
+          color: #3f729b;
+        }
+        &[href*="codepen.io"]{
+          color: #000;
+        }
+        &[href*="linkedin.com"]{
+          color: #0e76a8;
+        }
+      }
+    }
+  }
 }

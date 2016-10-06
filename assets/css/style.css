@@ -1758,8 +1758,8 @@ a {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
   .newsmag-custom-header.newsmag-custom-header-single-post {
     height: 455px;
-    background-attachment: fixed;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    background-attachment: fixed; }
     .newsmag-custom-header.newsmag-custom-header-single-post .container {
       position: relative;
       top: 50%;
@@ -2047,6 +2047,43 @@ a {
     line-height: 50px; } }
 .site-footer > .widgets-area {
   padding: 40px 0 0 0; }
+.site-footer p.no-margin {
+  margin-bottom: 0; }
+.site-footer .newsmag-social-footer {
+  list-style-type: none;
+  margin: 0 0 30px;
+  padding: 0; }
+  .site-footer .newsmag-social-footer li {
+    display: inline-block;
+    margin-right: 15px; }
+    .site-footer .newsmag-social-footer li a[href*="wordpress.org"], .site-footer .newsmag-social-footer li a[href*="wordpress.com"] {
+      color: #21759b; }
+    .site-footer .newsmag-social-footer li a[href*="facebook.com"] {
+      color: #3b5998; }
+    .site-footer .newsmag-social-footer li a[href*="twitter.com"] {
+      color: #33ccff; }
+    .site-footer .newsmag-social-footer li a[href*="dribbble.com"] {
+      color: #ea4c89; }
+    .site-footer .newsmag-social-footer li a[href*="plus.google.com"] {
+      color: #dd4b39; }
+    .site-footer .newsmag-social-footer li a[href*="pinterest.com"] {
+      color: #c8232c; }
+    .site-footer .newsmag-social-footer li a[href*="github.com"] {
+      color: #171515; }
+    .site-footer .newsmag-social-footer li a[href*="tumblr.com"] {
+      color: #34526f; }
+    .site-footer .newsmag-social-footer li a[href*="youtube.com"] {
+      color: #c4302b; }
+    .site-footer .newsmag-social-footer li a[href*="flickr.com"] {
+      color: #ff0084; }
+    .site-footer .newsmag-social-footer li a[href*="vimeo.com"] {
+      color: #1AB7EA; }
+    .site-footer .newsmag-social-footer li a[href*="instagram.com"] {
+      color: #3f729b; }
+    .site-footer .newsmag-social-footer li a[href*="codepen.io"] {
+      color: #000; }
+    .site-footer .newsmag-social-footer li a[href*="linkedin.com"] {
+      color: #0e76a8; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
