@@ -9,8 +9,8 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            'newsmag_enable_menu_search',
 	                            array(
 		                            'type'        => 'mte-toggle',
-		                            'label'       => esc_html__( 'Search from menu', 'newsmag' ),
-		                            'description' => esc_html__( 'This is a description', 'newsmag' ),
+		                            'label'       => esc_html__( 'Search icon in the menu', 'newsmag' ),
+		                            'description' => esc_html__( 'Toggle the display of the search icon and functionality in the main navigation menu.', 'newsmag' ),
 		                            'section'     => 'newsmag_general_section',
 	                            )
                             )
@@ -23,7 +23,8 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            'newsmag_enable_go_top',
 	                            array(
 		                            'type'    => 'mte-toggle',
-		                            'label'   => esc_html__( 'Enable go to top', 'newsmag' ),
+		                            'label'   => esc_html__( 'Go to top button', 'newsmag' ),
+		                            'description' => esc_html__( 'Toggle the display of the go to top button.', 'newsmag' ),
 		                            'section' => 'newsmag_general_section',
 	                            )
                             )
@@ -52,25 +53,29 @@ $wp_customize->add_control(
 
 $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
-	                            'newsmag_enable_copyright',
+	                            'newsmag_enable_attribution',
 	                            array(
 		                            'type'    => 'mte-toggle',
-		                            'label'   => esc_html__( 'Enable Copyright area?', 'newsmag' ),
+		                            'label'   => esc_html__( 'Link attribution', 'newsmag' ),
+		                            'description' => esc_html__( 'Toggling this to off will remove the link attribution. This basically means that we, the theme authors, will not be receiving a backlink to our website.', 'newsmag' ),
 		                            'section' => 'newsmag_footer_section',
 	                            )
                             )
 );
 
+
 $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
-	                            'newsmag_enable_attribution',
+	                            'newsmag_enable_copyright',
 	                            array(
 		                            'type'    => 'mte-toggle',
-		                            'label'   => esc_html__( 'Link attribution?', 'newsmag' ),
+		                            'label'   => esc_html__( 'Copyright Area', 'newsmag' ),
+		                            'description' => esc_html__( 'Toggle the copyright area on or off. By setting it on the off position, you will not be able to display a copyright message in the footer', 'newsmag' ),
 		                            'section' => 'newsmag_footer_section',
 	                            )
                             )
 );
+
 
 /**
  * Copyright content
@@ -90,7 +95,8 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            'newsmag_enable_author_box',
 	                            array(
 		                            'type'    => 'mte-toggle',
-		                            'label'   => esc_html__( 'Show author box in posts?', 'newsmag' ),
+		                            'label'   => esc_html__( 'Posta meta: Author', 'newsmag' ),
+		                            'description' => esc_html__('Toggle the display of the author box, at the left side of the post. Will only display if the author has a description defined.', 'newsmag'),
 		                            'section' => 'newsmag_blog_section',
 	                            )
                             )
@@ -102,8 +108,8 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            'newsmag_show_single_post_tags',
 	                            array(
 		                            'type'        => 'mte-toggle',
-		                            'label'       => esc_html__( 'Tags meta on single blog post?', 'newsmag' ),
-		                            'description' => esc_html__( 'This will disable the tagged with zone', 'newsmag' ),
+		                            'label'       => esc_html__( 'Post Meta: Tags', 'newsmag' ),
+		                            'description' => esc_html__( 'This will disable the tags zone at the end of the post.', 'newsmag' ),
 		                            'section'     => 'newsmag_blog_section',
 	                            )
                             )
@@ -116,7 +122,8 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            'newsmag_enable_post_breadcrumbs',
 	                            array(
 		                            'type'    => 'mte-toggle',
-		                            'label'   => esc_html__( 'Show Breadcrumbs?', 'newsmag' ),
+		                            'label'   => esc_html__( 'Breadcrumbs', 'newsmag' ),
+		                            'description' => esc_html__( 'Toggle the display of the breadcrumbs. Affects the whole blog - single posts as well as the blog archive.', 'newsmag' ),
 		                            'section' => 'newsmag_blog_section',
 	                            )
                             )
@@ -136,7 +143,7 @@ $wp_customize->add_control(
 			'diez'      => esc_html( '&#35;' ),
 			'ampersand' => esc_html( '&#38;' ),
 		),
-		'label'           => esc_html__( 'Separator to be used between breadcrumb items', 'newsmag' ),
+		'label'           => esc_html__( 'Breadcrumbs: Separator', 'newsmag' ),
 		'section'         => 'newsmag_blog_section',
 		'active_callback' => 'breadcrumbs_enabled_callback',
 	)
@@ -150,7 +157,7 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            'newsmag_blog_breadcrumb_menu_post_category',
 	                            array(
 		                            'type'            => 'mte-toggle',
-		                            'label'           => esc_html__( 'Show post category ?', 'newsmag' ),
+		                            'label'           => esc_html__( 'Breacrumbs: Category', 'newsmag' ),
 		                            'description'     => esc_html__( 'Show the post category in the breadcrumb ?', 'newsmag' ),
 		                            'section'         => 'newsmag_blog_section',
 		                            'active_callback' => 'breadcrumbs_enabled_callback',
@@ -165,10 +172,17 @@ $wp_customize->add_control( new Epsilon_Control_Upsell(
 	                            'newsmag_upsell_macho_blog',
 	                            array(
 		                            'section'     => 'newsmag_blog_section',
-		                            'options'     => array( 'Related Posts Carousel', 'Blog Layout' ),
+		                            'options'     => array(
+			                            esc_html__('Related Posts Carousel', 'newsmag'),
+			                            esc_html__('Extra Blog Layouts', 'newsmag')
+		                            ),
+		                            'requirements' => array(
+			                            esc_html__('Control the number of posts, speed, display of title and date on your related posts carousel.', 'newsmag'),
+			                            esc_html__('Multiple blog layouts are available in the PRO version of Newsmag. That includes: full-width posts and sidebars on the left.', 'newsmag'),
+		                            ),
 		                            'priority'    => 0,
-		                            'button_link' => 'https://www.machothemes.com/themes/newsmag-pro/',
-		                            'button_text' => 'Upgrade to pro!',
+		                            'button_link' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
+		                            'button_text' => esc_html__('Get the PRO version!', 'newsmag'),
 	                            )
                             )
 );
@@ -178,12 +192,48 @@ $wp_customize->add_control( new Epsilon_Control_Upsell(
 	                            array(
 		                            'section'     => 'newsmag_general_pro_version_section',
 		                            'priority'    => 0,
-		                            'options'     => array( 'News Ticker', 'Related Posts Carousel', 'Blog Layout' ),
-		                            'button_link' => 'https://www.machothemes.com/themes/newsmag-pro/',
-		                            'button_text' => 'Upgrade to pro!',
+		                            'options'     => array(
+			                            esc_html__('News Ticker', 'newsmag'),
+			                            esc_html__('Related Posts Carousel', 'newsmag'),
+			                            esc_html__('Extra Blog Layouts', 'newsmag'),
+			                            esc_html__('More Slider Widget Controls', 'newsmag'),
+			                            esc_html__('More Banner Ad areas', 'newsmag') ,
+			                            esc_html__('Dedicated Support', 'newsmag'),
+			                            esc_html__('Theme Updates for 1 year', 'newsmag') ,
+		                            ),
+		                            'requirements' => array(
+			                            esc_html__('Get news ticker functionality with the PRO version of Newsmag. Showcase your most important news in style!', 'newsmag'),
+			                            esc_html__('Control the number of posts, speed, display of title and date on your related posts carousel.', 'newsmag'),
+			                            esc_html__('Multiple blog layouts are available in the PRO version of Newsmag. That includes: full-width posts and sidebars on the left.', 'newsmag'),
+			                            esc_html__('Control the number of posts displayed in the slider widget. ', 'newsmag'),
+			                            esc_html__('Get in-content banner areas - blend your ads with the posts for a better click-through rate.', 'newsmag'),
+			                            esc_html__('Theme updates and support for 1 year - included with purchase', 'newsmag') ,
+		                            ),
+		                            'button_link' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
+		                            'button_text' => esc_html__('Get the PRO version!', 'newsmag'),
 	                            )
                             )
 );
+
+
+$wp_customize->add_control( new Epsilon_Control_Upsell(
+	                            $wp_customize,
+	                            'newsmag_upsell_color_version',
+	                            array(
+		                            'section'     => 'colors',
+		                            'priority'    => 0,
+		                            'options'     => array(
+			                            esc_html__('More Color Options', 'newsmag'),
+		                            ),
+		                            'requirements' => array(
+			                            esc_html__('The PRO version of Newsmag allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'newsmag'),
+		                            ),
+		                            'button_link' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
+		                            'button_text' => esc_html__('Get the PRO version!', 'newsmag'),
+	                            )
+                            )
+);
+
 /**
  * Active Callback for breadcrumb
  */

@@ -22,7 +22,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding container">
 			<div class="row">
@@ -32,7 +31,8 @@
 						if ( has_custom_logo() ) {
 							the_custom_logo();
 						} else { ?>
-							<a class="site-title" href="<?php echo esc_url_raw( get_home_url() ) ?>"> <?php echo get_option( 'blogname', 'newsmag' ) ?></a>
+							<a class="site-title"
+							   href="<?php echo esc_url_raw( get_home_url() ) ?>"> <?php echo get_option( 'blogname', 'newsmag' ) ?></a>
 						<?php }
 					}
 					$header_textcolor = get_theme_mod( 'header_textcolor' );

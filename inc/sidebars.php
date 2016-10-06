@@ -10,6 +10,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 				'id'            => 'homepage-slider',
 				'name'          => __( 'Homepage Slider', 'newsmag' ),
+				'description'   => __( 'This sidebar is located at the top of the frontpage and holds the normal slider.', 'newsmag' ),
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3>',
@@ -29,6 +30,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 					'id'            => 'content-area',
 					'name'          => __( 'Content Area', 'newsmag' ),
+					'description'   => __( 'This sidebar holds the entire website content', 'newsmag' ),
 					'before_title'  => '<h3 class="widget-title"><span>',
 					'after_title'   => '</span></h3>',
 					'before_widget' => '<div id="%1$s" class="widget %2$s">',

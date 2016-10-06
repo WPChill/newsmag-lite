@@ -1,6 +1,16 @@
 <?php
 global $wp_customize;
 
+$wp_customize->add_setting( 'newsmag_enable_news_ticker',
+                            array(
+	                            'sanitize_callback' => array(
+		                            'Newsmag_Customizer_Helper',
+		                            'newsmag_sanitize_checkbox'
+	                            ),
+	                            'default'           => true
+                            )
+);
+
 /**
  * Show / Hide the search icon from the top bar
  */
@@ -110,9 +120,12 @@ $wp_customize->add_setting( 'newsmag_enable_go_top',
                             )
 );
 /**
- * Author box
+ * Blog posts
  */
 
+/**
+ * Author box
+ */
 $wp_customize->add_setting( 'newsmag_enable_author_box',
                             array(
 	                            'sanitize_callback' => array(
