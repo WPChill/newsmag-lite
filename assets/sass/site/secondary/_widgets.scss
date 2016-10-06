@@ -53,7 +53,7 @@
 * Select all widgets except for the search box
 */
 .widget:not(.widget_newsmag_banner) {
-  h3 {
+  > h3 {
     font-size: 18px;
     font-family: $font__alternate;
     font-weight: 600;
@@ -62,6 +62,7 @@
     margin-bottom: 25px;
     margin-top: 0;
   }
+
   margin: 0 0 50px;
   /**
   * Reset the margins for UL / OL
@@ -604,7 +605,6 @@
       margin-bottom: 25px;
       margin-top: 0;
       color: #333333;
-
     }
 
     &.widget_newsmag_recent {

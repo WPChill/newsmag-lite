@@ -90,6 +90,7 @@
       h3 {
         margin-top: 19px;
         font-size: 16px;
+        line-height: 17px;
       }
       .date {
         display: none;
@@ -100,6 +101,7 @@
       margin-top: 23px;
       font-weight: 500;
       font-family: 'Poppins';
+      text-transform: initial;
     }
     span.colored {
       margin-right: 5px;
@@ -140,8 +142,8 @@
 
   }
   .newsmag-blog-post-layout-b {
-    padding-bottom: 37px;
-    margin-bottom: 37px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     border-bottom: 1px solid #e1e1e1;
 
     &:last-of-type {
@@ -175,6 +177,8 @@
         font-size: 16px;
         font-family: $font__alternate;
         margin-top: 0;
+        text-transform: initial;
+        line-height: 16px;
         > a {
           color: inherit;
           &:hover,
@@ -184,7 +188,7 @@
           }
         }
       }
-      h5 {
+      h4 {
         font-size: 15px;
         font-family: $font__alternate;
         margin-top: 0;
@@ -208,10 +212,13 @@
     }
 
     &.wide-layout {
+      padding-bottom: 37px;
+      margin-bottom: 37px;
       .newsmag-title {
         h3 {
           font-size: 23px;
           margin-bottom: 8px;
+          line-height: 24px;
         }
       }
       p {

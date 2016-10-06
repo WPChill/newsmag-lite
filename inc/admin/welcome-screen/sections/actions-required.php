@@ -8,7 +8,6 @@
 
     <h1><?php esc_html_e( 'Actions recommended to make this theme look like in the demo.' ,'newsmag' ); ?></h1>
 
-    <!-- NEWS -->
     <hr />
 
 	<?php

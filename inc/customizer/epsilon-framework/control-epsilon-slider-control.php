@@ -28,7 +28,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		public function enqueue() {
 			wp_enqueue_script( 'jquery-ui' );
 			wp_enqueue_script( 'jquery-ui-slider' );
-			wp_enqueue_style( 'rl-slider', get_template_directory_uri() . '/inc/customizer/custom-fields/assets/css/style.css' );
+			wp_enqueue_style( 'rl-slider', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
 		}
 
 		/**

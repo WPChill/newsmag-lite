@@ -28,7 +28,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * @return void
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'newsmag-customize-controls', trailingslashit( get_template_directory_uri() ) . 'js/checkbox-multiple.js', array( 'jquery' ) );
+			wp_enqueue_script( 'newsmag-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/epsilon-framework/assets/js/checkbox-multiple.js', array( 'jquery' ) );
 		}
 
 		/**

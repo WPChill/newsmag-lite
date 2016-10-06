@@ -1,7 +1,7 @@
 <?php
 
-if ( ! class_exists( 'WP_MTE_Upsell_Control' ) ):
-	class WP_MTE_Upsell_Control extends WP_Customize_Control {
+if ( ! class_exists( 'Newsmag_MTE_Upsell_Control' ) ):
+	class Newsmag_MTE_Upsell_Control extends WP_Customize_Control {
 
 		public $type = 'mte_upsell';
 		public $button_text = 'Hello';
@@ -22,7 +22,7 @@ if ( ! class_exists( 'WP_MTE_Upsell_Control' ) ):
 		}
 
 		public function enqueue() {
-			wp_enqueue_style( 'rl-slider', get_template_directory_uri() . '/inc/customizer/custom-fields/assets/css/style.css' );
+			wp_enqueue_style( 'rl-slider', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
 		}
 
 		public function content_template() { ?>
