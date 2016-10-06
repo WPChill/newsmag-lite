@@ -1449,14 +1449,18 @@ a {
       margin-top: 19px;
       font-size: 16px;
       line-height: 17px; }
+      .newsmag_builder .newsmag-post-box-a.thumbnail-layout h3 a {
+        font-weight: 700; }
     .newsmag_builder .newsmag-post-box-a.thumbnail-layout .date {
       display: none; }
     .newsmag_builder .newsmag-post-box-a h3 {
       font-size: 23px;
       margin-top: 23px;
-      font-weight: 500;
+      font-weight: 700;
       font-family: 'Poppins';
       text-transform: initial; }
+      .newsmag_builder .newsmag-post-box-a h3 a {
+        font-weight: 700; }
     .newsmag_builder .newsmag-post-box-a span.colored {
       margin-right: 5px; }
     .newsmag_builder .newsmag-post-box-a p {
@@ -1512,21 +1516,24 @@ a {
       font-family: "Poppins", "serif";
       margin-top: 0;
       text-transform: initial;
-      line-height: 16px; }
+      line-height: 16px;
+      font-weight: 700; }
       .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h3 > a {
-        color: inherit; }
+        color: #333;
+        font-weight: 700; }
         .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h3 > a:hover, .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h3 > a:focus {
           text-decoration: none;
-          color: inherit; }
+          color: #ff3d2e; }
     .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h4 {
       font-size: 15px;
       font-family: "Poppins", "serif";
       margin-top: 0; }
       .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h4 > a {
-        color: inherit; }
+        color: #333;
+        font-weight: 700; }
         .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h4 > a:hover, .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h4 > a:focus {
           text-decoration: none;
-          color: inherit; }
+          color: #ff3d2e; }
     .newsmag_builder .newsmag-blog-post-layout-b .newsmag-post-meta {
       float: left;
       display: inline-block; }
@@ -1586,7 +1593,7 @@ a {
         .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 a {
           color: #FFF;
           font-size: 23px;
-          font-weight: 500; }
+          font-weight: 800; }
       .newsmag_builder .newsmag-blog-post-layout-banner .banner-content .date {
         font-size: 14px;
         color: #FFF; }

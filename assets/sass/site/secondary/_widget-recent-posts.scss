@@ -91,6 +91,9 @@
         margin-top: 19px;
         font-size: 16px;
         line-height: 17px;
+        a {
+          font-weight: 700;
+        }
       }
       .date {
         display: none;
@@ -99,9 +102,12 @@
     h3 {
       font-size: 23px;
       margin-top: 23px;
-      font-weight: 500;
+      font-weight: 700;
       font-family: 'Poppins';
       text-transform: initial;
+      a {
+        font-weight: 700;
+      }
     }
     span.colored {
       margin-right: 5px;
@@ -179,12 +185,14 @@
         margin-top: 0;
         text-transform: initial;
         line-height: 16px;
+        font-weight: 700;
         > a {
-          color: inherit;
+          color: #333;
+          font-weight: 700;
           &:hover,
           &:focus {
             text-decoration: none;
-            color: inherit;
+            color: $color__brand-red;
           }
         }
       }
@@ -193,11 +201,12 @@
         font-family: $font__alternate;
         margin-top: 0;
         > a {
-          color: inherit;
+          color: #333;
+          font-weight: 700;
           &:hover,
           &:focus {
             text-decoration: none;
-            color: inherit;
+            color: $color__brand-red;
           }
         }
       }
@@ -279,7 +288,7 @@
         a {
           color: #FFF;
           font-size: 23px;
-          font-weight: 500;
+          font-weight: 700;
         }
       }
       .date {
