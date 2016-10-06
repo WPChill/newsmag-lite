@@ -18,7 +18,7 @@
   margin: 10px 0 0;
 }
 
-.single-post .entry-content{
+.single-post .entry-content {
   margin-top: 0;
 }
 
@@ -207,6 +207,7 @@
   &.newsmag-custom-header-single-post {
     height: 455px;
     margin-bottom: 0;
+    background-attachment: fixed;
     .container {
       position: relative;
       top: 50%;
