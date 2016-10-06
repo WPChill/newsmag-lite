@@ -1824,6 +1824,31 @@ a {
   .newsmag-article-post-footer .newsmag-tags a:first-of-type {
     margin-left: 10px; }
 
+.newsmag-next-prev .text-left {
+  text-align: right; }
+  .newsmag-next-prev .text-left span {
+    width: 6%;
+    float: left;
+    font-size: 17px; }
+  .newsmag-next-prev .text-left a {
+    float: left;
+    width: 94%; }
+.newsmag-next-prev .text-right {
+  text-align: initial; }
+  .newsmag-next-prev .text-right span {
+    width: 6%;
+    float: left;
+    font-size: 17px; }
+  .newsmag-next-prev .text-right a {
+    float: left;
+    width: 94%; }
+.newsmag-next-prev .wrapper {
+  border: 1px solid #e1e1e1;
+  padding: 5px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: inline-block; }
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/

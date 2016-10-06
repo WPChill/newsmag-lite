@@ -53,9 +53,11 @@ $curauth = get_userdata( $post->post_author );
 				               ) );
 
 				$prev = get_previous_post_link();
-				$prev = str_replace( '&laquo;', '<span class="fa fa-caret-left"></span>', $prev );
+				$prev = str_replace( '&laquo;', '<div class="wrapper"><span class="fa fa-angle-left"></span>', $prev );
+				$prev = str_replace('</a>', '</a></div>', $prev);
 				$next = get_next_post_link();
-				$next = str_replace( '&raquo;', '<span class="fa fa-caret-right"></span>', $next );
+				$next = str_replace( '&raquo;', '<span class="fa fa-angle-right"></span></div>', $next );
+				$next = str_replace('<a', '<div class="wrapper"><a', $next);
 				?>
 				<div class="newsmag-next-prev row">
 					<div class="col-md-6 text-left">

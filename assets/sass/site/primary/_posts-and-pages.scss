@@ -304,3 +304,37 @@
     }
   }
 }
+
+.newsmag-next-prev {
+  .text-left {
+    text-align: right;
+    span {
+      width: 6%;
+      float: left;
+      font-size: 17px;
+    }
+    a {
+      float: left;
+      width: 94%;
+    }
+  }
+  .text-right {
+    text-align: initial;
+    span {
+      width: 6%;
+      float: left;
+      font-size: 17px;
+    }
+    a {
+      float: left;
+      width: 94%;
+    }
+  }
+  .wrapper {
+    border: 1px solid #e1e1e1;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+}
