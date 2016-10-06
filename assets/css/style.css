@@ -179,10 +179,10 @@ blockquote, q {
   border: none;
   margin-bottom: 1.5em; }
   blockquote > p, q > p {
-    color: #333;
+    color: #ff3d2e;
     font-size: 23px;
     font-style: italic;
-    line-height: 30px; }
+    line-height: 24px; }
 
 hr {
   background-color: #ccc;
@@ -1121,7 +1121,7 @@ a {
         .widget:not(.widget_newsmag_banner).widget_categories .children li > ul, .widget:not(.widget_newsmag_banner).widget_categories .children li > ol, .widget:not(.widget_newsmag_banner).widget_archive .children li > ul, .widget:not(.widget_newsmag_banner).widget_archive .children li > ol, .widget:not(.widget_newsmag_banner).widget_meta .children li > ul, .widget:not(.widget_newsmag_banner).widget_meta .children li > ol, .widget:not(.widget_newsmag_banner).widget_pages .children li > ul, .widget:not(.widget_newsmag_banner).widget_pages .children li > ol {
           padding-left: 20px;
           margin-bottom: 8px;
-          margin-top: 8; } }
+          margin-top: 8px; } }
       .widget:not(.widget_newsmag_banner).widget_categories .children li > ul li:before, .widget:not(.widget_newsmag_banner).widget_categories .children li > ol li:before, .widget:not(.widget_newsmag_banner).widget_archive .children li > ul li:before, .widget:not(.widget_newsmag_banner).widget_archive .children li > ol li:before, .widget:not(.widget_newsmag_banner).widget_meta .children li > ul li:before, .widget:not(.widget_newsmag_banner).widget_meta .children li > ol li:before, .widget:not(.widget_newsmag_banner).widget_pages .children li > ul li:before, .widget:not(.widget_newsmag_banner).widget_pages .children li > ol li:before {
         display: none; }
     .widget:not(.widget_newsmag_banner).widget_categories .children li a, .widget:not(.widget_newsmag_banner).widget_archive .children li a, .widget:not(.widget_newsmag_banner).widget_meta .children li a, .widget:not(.widget_newsmag_banner).widget_pages .children li a {
