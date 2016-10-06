@@ -8,7 +8,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @access public
 	 *
 	 */
-	class Newsmag_Controls_Slider_Control extends WP_Customize_Control {
+	class Epsilon_Control_Slider extends WP_Customize_Control {
 		/**
 		 * The type of customize control being rendered.
 		 *
@@ -16,7 +16,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * @access public
 		 * @var    string
 		 */
-		public $type = 'slider';
+		public $type = 'mte-slider';
 
 		/**
 		 * Enqueue scripts/styles.

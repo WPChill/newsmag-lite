@@ -8,7 +8,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @access public
 	 *
 	 */
-	class Newsmag_Control_MTE_Toggle extends WP_Customize_Control {
+	class Epsilon_Control_Toggle extends WP_Customize_Control {
 
 		/**
 		 * The type of customize control being rendered.

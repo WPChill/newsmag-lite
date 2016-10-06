@@ -4,7 +4,7 @@ global $wp_customize;
 /**
  * Enable search
  */
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+$wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_enable_menu_search',
 	                            array(
@@ -18,7 +18,7 @@ $wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
 /**
  * Enable / Disable Go top
  */
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+$wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_enable_go_top',
 	                            array(
@@ -50,7 +50,7 @@ $wp_customize->add_control(
  * Copyright enable/disable
  */
 
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+$wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_enable_copyright',
 	                            array(
@@ -61,7 +61,7 @@ $wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
                             )
 );
 
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+$wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_enable_attribution',
 	                            array(
@@ -85,7 +85,7 @@ $wp_customize->add_control(
 );
 
 
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+$wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_enable_author_box',
 	                            array(
@@ -97,7 +97,7 @@ $wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
 );
 
 
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+$wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_show_single_post_tags',
 	                            array(
@@ -111,7 +111,7 @@ $wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
 /**
  * Enable breadcrumbs on single posts
  */
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+$wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_enable_post_breadcrumbs',
 	                            array(
@@ -145,7 +145,7 @@ $wp_customize->add_control(
 /**
  *  Breadcrumbs post category
  */
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+$wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_blog_breadcrumb_menu_post_category',
 	                            array(
@@ -160,7 +160,7 @@ $wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
 /**
  * General Settings Upsell
  */
-$wp_customize->add_control( new Newsmag_MTE_Upsell_Control(
+$wp_customize->add_control( new Epsilon_Control_Upsell(
 	                            $wp_customize,
 	                            'newsmag_upsell_macho_general',
 	                            array(
@@ -172,7 +172,7 @@ $wp_customize->add_control( new Newsmag_MTE_Upsell_Control(
 	                            )
                             )
 );
-$wp_customize->add_control( new Newsmag_MTE_Upsell_Control(
+$wp_customize->add_control( new Epsilon_Control_Upsell(
 	                            $wp_customize,
 	                            'newsmag_upsell_macho_blog',
 	                            array(

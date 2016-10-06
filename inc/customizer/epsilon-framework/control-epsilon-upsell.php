@@ -1,7 +1,7 @@
 <?php
 
-if ( ! class_exists( 'Newsmag_MTE_Upsell_Control' ) ):
-	class Newsmag_MTE_Upsell_Control extends WP_Customize_Control {
+if ( ! class_exists( 'Epsilon_Control_Upsell' ) ):
+	class Epsilon_Control_Upsell extends WP_Customize_Control {
 
 		public $type = 'mte_upsell';
 		public $button_text = 'Hello';

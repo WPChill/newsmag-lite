@@ -5,7 +5,7 @@ global $wp_customize;
 /**
  * Display banner on homepage
  */
-$wp_customize->add_control( new Newsmag_Control_MTE_Toggle(
+$wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_show_banner_on_homepage',
 	                            array(
