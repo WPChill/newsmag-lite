@@ -29,23 +29,19 @@
 				<div class="col-md-4 header-logo">
 					<?php
 					if ( function_exists( 'the_custom_logo' ) ) {
-						$custom_logo = get_theme_mod( 'custom_logo' );
-						if ( ! is_customize_preview() ) {
+						if ( has_custom_logo() ) {
 							the_custom_logo();
-						}
-						if ( ! $custom_logo ) {
-							$header_textcolor = get_theme_mod( 'header_textcolor' );
-							?>
-							<a class="custom-logo-link site-title" <?php echo ( ! empty( $header_textcolor ) ) ? 'style="color:#' . esc_attr( $header_textcolor ) . '"' : ''; ?>
-							   href="<?php echo get_home_url() ?>"> <?php echo esc_html( get_option( 'blogname' ) ) ?></a>
-							<?php
-						}
+						} else { ?>
+							<a class="site-title" href="<?php echo esc_url_raw( get_home_url() ) ?>"> <?php echo get_option( 'blogname', 'newsmag' ) ?></a>
+						<?php }
 					}
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
+					$header_textcolor = get_theme_mod( 'header_textcolor' );
+					$description      = get_bloginfo( 'description', 'display' );
+					if ( $header_textcolor !== 'blank' && ! empty( $description ) ) : ?>
 						<p class="site-description" <?php echo ( ! empty( $header_textcolor ) ) ? 'style="color:#' . esc_attr( $header_textcolor ) . '"' : ''; ?>><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></p>
 						<?php
-					endif; ?>
+					endif;
+					?>
 				</div>
 
 				<?php

@@ -1,25 +1,44 @@
 ul, ol {
-	margin: 0 0 15px;
+  margin: 0 0 15px;
 }
 
 ul {
-	list-style: disc;
+  list-style: disc;
 }
 
 ol {
-	list-style: decimal;
+  list-style: decimal;
 }
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
-	margin-left: 15px;
+  margin-bottom: 0;
+  margin-left: 15px;
 }
 
 dt {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+  margin: 0 1.5em 1.5em;
+}
+
+.entry-content ul {
+  list-style-type: none;
+  margin: 0 0 1.5em;
+  padding: 0;
+  li {
+    &:before {
+      content: "\f111";
+      font-family: 'FontAwesome';
+      display: inline-block;
+      margin-left: 0;
+      width: 12px;
+      color: $color__brand-red;
+      font-size: 6px;
+      position: relative;
+      bottom: 2px;
+    }
+  }
 }

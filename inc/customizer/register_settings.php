@@ -49,7 +49,6 @@ class Newsmag_Customizer_Helper {
 
 			// Change priority for Site Title
 			$site_title4              = $wp_customize->get_control( 'blogname' );
-			$site_title4->section     = 'newsmag_general_section';
 			$site_title4->description = esc_html__( 'Company name in text format below', 'newsmag' );
 			$site_title4->priority    = 1;
 

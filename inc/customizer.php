@@ -14,10 +14,11 @@ function newsmag_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'custom_logo' )->transport     = 'refresh';
 
-	$wp_customize->get_section( 'header_image' )->panel    = 'newsmag_panel_blog';
-	$wp_customize->get_section( 'header_image' )->priority = 4;
-	$wp_customize->get_section( 'header_image' )->title    = __( 'Blog Archive Header Image', 'newsmag' );
+	$wp_customize->get_section( 'header_image' )->panel        = 'newsmag_panel_blog';
+	$wp_customize->get_section( 'header_image' )->priority     = 4;
+	$wp_customize->get_section( 'header_image' )->title        = __( 'Blog Archive Header Image', 'newsmag' );
 
 	/**
 	 * Custom controls
@@ -47,8 +48,7 @@ add_action( 'customize_register', 'newsmag_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function newsmag_customize_preview_js() {
-	wp_enqueue_script( 'newsmag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '201512151', true );
-	wp_enqueue_style( 'newsmag_media_upload_css', get_stylesheet_directory_uri() . '/css/upload-media.css' );
+	wp_enqueue_script( 'newsmag_customizer', get_template_directory_uri() . '/inc/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 
 add_action( 'customize_preview_init', 'newsmag_customize_preview_js' );
