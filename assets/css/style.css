@@ -33,6 +33,9 @@
 .newsmag-margin-top {
   margin-top: 30px; }
 
+.newsmag-margin-bottom {
+  margin-bottom: 30px; }
+
 .colored {
   color: #ff3d2e; }
 
@@ -1562,6 +1565,9 @@ a {
           color: #bbbbbb;
           font-size: 12px;
           text-transform: uppercase; }
+  .newsmag_builder .post-banner-row {
+    padding-left: 15px;
+    padding-right: 15px; }
   .newsmag_builder .newsmag-blog-post-layout-banner {
     min-height: 275px;
     background-size: cover;

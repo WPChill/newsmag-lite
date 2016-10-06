@@ -1,7 +1,7 @@
 <?php
 if ( $posts->have_posts() ):?>
 	<?php echo ( $posts->post_count > 4 ) ? '<div class="col-md-12">' : '<div class="col-md-8">' ?>
-	<div class="row">
+	<div class="row newsmag-margin-bottom post-banner-row">
 		<?php if ( ! empty( $instance['title'] ) ) { ?>
 			<h2 class="colored"><?php echo esc_html($instance['title']); ?></h2>
 		<?php } else { ?>
@@ -15,8 +15,7 @@ if ( $posts->have_posts() ):?>
 			}
 			?>
 
-			<div
-				class="newsmag-blog-post-layout-banner <?php echo ( $posts->post_count > 4 ) ? 'col-md-3' : 'col-md-6' ?>"
+			<div class="newsmag-blog-post-layout-banner <?php echo ( $posts->post_count > 4 ) ? 'col-md-3' : 'col-md-6' ?>"
 				style="background-image:url('<?php echo esc_url( $image ) ?>')">
 				<div class="banner-content">
 					<h3>
