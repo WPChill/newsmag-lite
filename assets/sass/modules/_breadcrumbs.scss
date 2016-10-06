@@ -2,8 +2,42 @@
   font-size: 14px;
   font-family: $font__main;
   font-weight: 400;
-  margin-bottom: 20px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  border-bottom: 1px solid #ebebeb;
+  color: $color__brand-red;
+  .breadcrumb-leaf{
+    color: #6b6a77;
+  }
+  a {
+    color: $color__brand-red;
+  }
   .newsmag-breadcrumb-sep {
     margin: 0 10px;
+    color: $color__brand-red;
+  }
+}
+
+.newsmag-breadcrumbs-row {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  background: #FFF;
+}
+
+.newsmag-breadcrumbs-container {
+  @media (min-width: 768px){
+    width: 750px;
+  }
+  @media (min-width: 992px){
+    width: 970px;
+  }
+  @media (min-width: 1200px){
+    width: 1200px;
+  }
+  .newsmag-breadcrumbs-row {
+    .col-xs-12 {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 }

@@ -22,7 +22,7 @@ if ( empty( $img ) ) {
 }
 ?>
 <?php if ( ! empty( $img ) ): ?>
-	<div class="newsmag-custom-header" style="background-image:url(<?php echo esc_url_raw($img) ?>)">
+	<div class="newsmag-custom-header <?php echo is_single() ? 'newsmag-custom-header-single-post': '' ?>" style="background-image:url(<?php echo esc_url_raw($img) ?>)">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -32,16 +32,18 @@ if ( empty( $img ) ) {
 		</div>
 	</div>
 <?php endif; ?>
-	<div class="container">
-		<?php
-		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
-		if ( $breadcrumbs_enabled ) { ?>
-		<div class="row">
-			<div class="col-xs-12">
-				<?php newsmag_breadcrumbs(); ?>
+<?php
+	$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+	if ( $breadcrumbs_enabled ) { ?>
+		<div class="container <?php echo is_single() ? 'newsmag-breadcrumbs-container' : ''; ?>">
+			<div class="row <?php echo is_single() ? 'newsmag-breadcrumbs-row' : ''; ?>">
+				<div class="col-xs-12">
+					<?php newsmag_breadcrumbs(); ?>
+				</div>
 			</div>
 		</div>
-		<?php } ?>
+	<?php } ?>
+	<div class="container">
 		<div class="row">
 			<?php
 			$layout = get_theme_mod( 'newsmag_blog_layout', 'right-sidebar' ); ?>

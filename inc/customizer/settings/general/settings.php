@@ -145,3 +145,8 @@ $wp_customize->add_setting( 'newsmag_upsell_macho_blog',
 	                            'sanitize_callback' => 'esc_html',
 	                            'default'           => ''
                             ) );
+$wp_customize->add_setting( 'newsmag_upsell_pro_version',
+                            array(
+	                            'sanitize_callback' => 'esc_html',
+	                            'default'           => ''
+                            ) );

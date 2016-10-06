@@ -167,3 +167,28 @@ ul.macho-upsell-requirements {
 .dashicons.dashicons-editor-help:hover > .mte-tooltip {
     display: block;
 }
+
+#accordion-section-newsmag_general_pro_version_section .accordion-section-title {
+    background: #DF4D44;
+    color: #FFF;
+}
+
+#accordion-section-newsmag_general_pro_version_section .accordion-section-title:after {
+    color: #FFF;
+}
+
+#customize-controls #accordion-section-newsmag_general_pro_version_section .accordion-section-title:hover,
+#customize-controls #accordion-section-newsmag_general_pro_version_section:hover > .accordion-section-title {
+    background: #DF4D21;
+    color: #FFF;
+}
+
+#customize-controls #accordion-section-newsmag_general_pro_version_section .accordion-section-title:hover:after,
+#customize-controls #accordion-section-newsmag_general_pro_version_section:hover > .accordion-section-title:after {
+    color: #FFF;
+}
+
+#accordion-section-newsmag_general_pro_version_section .accordion-section-content h3 {
+    background: #DF4D44;
+    color: #FFF;
+}
