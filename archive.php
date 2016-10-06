@@ -24,9 +24,9 @@ if ( ! empty( $img ) ): ?>
 					if ( is_day() ) :
 						printf( __( 'Day: %s', 'newsmag' ), get_the_date() );
 					elseif ( is_month() ) :
-						printf( __( 'Month: %s', 'newsmag' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'saiph-lite' ) ) );
+						printf( __( 'Month: %s', 'newsmag' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'newsmag' ) ) );
 					elseif ( is_year() ) :
-						printf( __( 'Year: %s', 'newsmag' ), get_the_date( _x( 'Y', 'yearly archives date format', 'saiph-lite' ) ) );
+						printf( __( 'Year: %s', 'newsmag' ), get_the_date( _x( 'Y', 'yearly archives date format', 'newsmag' ) ) );
 					elseif ( is_category() ):
 						the_archive_title();
 					else :
