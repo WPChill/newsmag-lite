@@ -1591,7 +1591,7 @@ a {
       .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 {
         font-family: 'Poppins', sans-serif;
         text-transform: initial;
-        margin-bottom: 0;
+        margin-bottom: 5px;
         line-height: 20px; }
         .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 a {
           color: #FFF;
