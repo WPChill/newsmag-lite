@@ -20,7 +20,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 				                  'id'            => 'sidebar',
 				                  'name'          => __( 'Blog Sidebar', 'newsmag' ),
-				                  'description'   => __( 'The sidebar holds the entire homepage content, place "Newsmag - Homepage builder" widgets here, please consider the column arrangement.', 'newsmag' ),
+				                  'description'   => __( 'This widget is located right side as sidebar. Only seen on the normal post query', 'newsmag' ),
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				                  'after_widget'  => '</div>',
 				                  'before_title'  => '<h3>',
@@ -30,7 +30,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 				                  'id'            => 'content-area',
 				                  'name'          => __( 'Content Area', 'newsmag' ),
-				                  'description'   => __( 'This sidebar holds the entire website content', 'newsmag' ),
+				                  'description'   => __( 'The sidebar holds the entire homepage content, place "Newsmag - Homepage builder" widgets here, please consider the column arrangement.', 'newsmag' ),
 				                  'before_title'  => '<h3 class="widget-title"><span>',
 				                  'after_title'   => '</span></h3>',
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
