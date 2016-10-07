@@ -173,6 +173,7 @@ ul.macho-upsell-requirements {
     display: none;
     padding: 12px;
     line-height: 1.5;
+    font-family:'Arial', sans-serif;
 }
 
 .dashicons.dashicons-editor-help {
