@@ -287,8 +287,12 @@
       position: absolute;
       bottom: 23px;
       left: 25px;
+      right: 25px;
       h3 {
         font-family: 'Poppins', sans-serif;
+        text-transform: initial;
+        margin-bottom:0;
+        line-height: 20px;
         a {
           color: #FFF;
           font-size: 23px;

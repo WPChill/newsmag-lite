@@ -1585,9 +1585,13 @@ a {
     .newsmag_builder .newsmag-blog-post-layout-banner .banner-content {
       position: absolute;
       bottom: 23px;
-      left: 25px; }
+      left: 25px;
+      right: 25px; }
       .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 {
-        font-family: 'Poppins', sans-serif; }
+        font-family: 'Poppins', sans-serif;
+        text-transform: initial;
+        margin-bottom: 0;
+        line-height: 20px; }
         .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 a {
           color: #FFF;
           font-size: 23px;
