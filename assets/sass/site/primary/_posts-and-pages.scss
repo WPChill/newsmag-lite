@@ -228,8 +228,7 @@
   padding-bottom: 30px;
   border-bottom: 1px solid #ebebeb;
   &:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
+    margin-bottom: 10px;
   }
   @media (min-width: 768px) {
     > .row > .col-xs-12:last-of-type {
