@@ -24,15 +24,6 @@ if ( ! empty( $img ) ): ?>
 	</div>
 <?php endif; ?>
 	<div class="container">
-		<?php
-		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
-		if ( $breadcrumbs_enabled ) { ?>
-			<div class="row">
-				<div class="col-xs-12">
-					<?php newsmag_breadcrumbs(); ?>
-				</div>
-			</div>
-		<?php } ?>
 		<div class="row">
 			<?php
 			$layout = get_theme_mod( 'newsmag_blog_layout', 'right-sidebar' ); ?>

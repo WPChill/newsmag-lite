@@ -1,4 +1,4 @@
-.customize-control-slider input[type="text"] {
+.customize-control-mte-slider input[type="text"] {
     border: none;
     text-align: center;
     padding: 0;
@@ -6,40 +6,47 @@
     font-size: 12px;
     box-shadow: none;
     color: #333;
+    width: 30px;
+    border-radius: 10px;
 }
 
-.customize-control-slider .ui-slider {
+.customize-control-mte-slider .ui-slider {
     position: relative;
     text-align: left;
-    height: 7px;
+    height: 2px;
     border-radius: 3px;
-    background: #f2f2f2;
+    background: #fff;
     border: 1px solid #dedede;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-left:5px;
+    display: inline-block;
+    width: 205px;
 }
 
-.customize-control-slider .ui-slider .ui-slider-handle {
+.customize-control-mte-slider .ui-slider .ui-slider-handle {
     position: absolute;
     z-index: 2;
     width: 15px;
     height: 15px;
-    top: -5px;
+    top: -7px;
     border-radius: 50%;
     cursor: default;
     -ms-touch-action: none;
     touch-action: none;
-    background: #333;
-    border: 1px solid #333;
+    background: #fff;
+    border: 1px solid #dedede;
 }
 
-.customize-control-slider .ui-slider .ui-slider-range {
+.customize-control-mte-slider .ui-slider .ui-slider-range {
     position: absolute;
     z-index: 1;
     font-size: 0.7em;
     display: block;
     border: 0;
     background-position: 0 0;
+    background:#E04D43;
+    top:0;
+    bottom:0;
 }
 
 .macho-upsell {

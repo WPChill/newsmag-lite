@@ -58,6 +58,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				jQuery(document).ready(function ($) {
 					$('[id="slider_<?php echo $this->id; ?>"]').slider({
 						value: <?php echo esc_attr( $this->value() ); ?>,
+						range: 'min',
 						min  : <?php echo $this->choices['min']; ?>,
 						max  : <?php echo $this->choices['max']; ?>,
 						step : <?php echo $this->choices['step']; ?>,
