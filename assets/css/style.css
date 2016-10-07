@@ -1522,7 +1522,8 @@ a {
     .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h4 {
       font-size: 15px;
       font-family: "Poppins", "serif";
-      margin-top: 0; }
+      margin-top: 0;
+      line-height: 20px; }
       .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h4 > a {
         color: #333;
         font-weight: 700; }
