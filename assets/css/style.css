@@ -991,6 +991,8 @@ a {
         .widget:not(.widget_newsmag_banner).widget_nav_menu > div > ul li ul li a:hover, .widget:not(.widget_newsmag_banner).widget_nav_menu > div > ul li ul li a:focus, .widget:not(.widget_newsmag_banner).widget_nav_menu > div > ul li ol li a:hover, .widget:not(.widget_newsmag_banner).widget_nav_menu > div > ul li ol li a:focus {
           text-decoration: none;
           color: #ff3d2e; }
+  .widget:not(.widget_newsmag_banner).popular-posts .posts-list .content {
+    margin-top: 4px; }
   .widget:not(.widget_newsmag_banner).widget_tag_cloud .tagcloud a {
     background: #fafafa;
     padding: 5px 15px;
