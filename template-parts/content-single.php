@@ -7,8 +7,8 @@
  * @package Newsmag
  */
 // Grab the current author
-$curauth = get_userdata( $post->post_author );
-$breadcrumbs_enabled = get_theme_mod('newsmag_enable_post_breadcrumbs', true);
+$curauth             = get_userdata( $post->post_author );
+$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
 ?>
 <div class="row newsmag-article-post <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top' ?> ">
 	<?php if ( get_theme_mod( 'newsmag_enable_author_box', true ) && ! empty( $curauth->description ) ): ?>
@@ -45,8 +45,16 @@ $breadcrumbs_enabled = get_theme_mod('newsmag_enable_post_breadcrumbs', true);
 				<div class="newsmag-post-meta">
 					<?php newsmag_posted_on( 'date' ); ?>
 				</div><!-- .entry-meta -->
-				<?php
-				is_single() ? the_content() : the_excerpt();
+				<?php if ( is_single() ) {
+					the_content();
+				} else {
+					$excerpt = get_the_excerpt();
+					$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
+					?>
+					<p>
+						<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
+					</p>
+				<?php }
 
 				wp_link_pages( array(
 					               'before' => '<ul class="newsmag-pager">',
@@ -55,10 +63,10 @@ $breadcrumbs_enabled = get_theme_mod('newsmag_enable_post_breadcrumbs', true);
 
 				$prev = get_previous_post_link();
 				$prev = str_replace( '&laquo;', '<div class="wrapper"><span class="fa fa-angle-left"></span>', $prev );
-				$prev = str_replace('</a>', '</a></div>', $prev);
+				$prev = str_replace( '</a>', '</a></div>', $prev );
 				$next = get_next_post_link();
 				$next = str_replace( '&raquo;', '<span class="fa fa-angle-right"></span></div>', $next );
-				$next = str_replace('<a', '<div class="wrapper"><a', $next);
+				$next = str_replace( '<a', '<div class="wrapper"><a', $next );
 				?>
 				<div class="newsmag-next-prev row">
 					<div class="col-md-6 text-left">
@@ -78,7 +86,7 @@ $breadcrumbs_enabled = get_theme_mod('newsmag_enable_post_breadcrumbs', true);
 	<div class="col-md-12">
 		<?php
 		$tags_enabled = get_theme_mod( 'newsmag_show_single_post_tags', true );
-		$has_tag = has_tag();
+		$has_tag      = has_tag();
 		if ( $tags_enabled && $has_tag ): ?>
 			<footer class="entry-footer">
 				<?php

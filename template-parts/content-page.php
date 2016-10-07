@@ -19,7 +19,7 @@
 
 		</div>
 		<div class="newsmag-content entry-content">
-			<?php the_content() ?>
+			<?php the_content(); ?>
 			<span class="newsmag-categories"><?php the_category( ', ' ) ?></span>
 
 		</div>

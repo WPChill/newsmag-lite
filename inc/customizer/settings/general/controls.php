@@ -114,6 +114,23 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            )
                             )
 );
+
+$wp_customize->add_control( new Epsilon_Control_Slider(
+	                            $wp_customize,
+	                            'newsmag_excerpt_length',
+	                            array(
+		                            'label'           => esc_html__( 'Number of words outputted by the excerpt?', 'newsmag' ),
+		                            'description'     => esc_html__( 'Minimum is 10, Maximum is 55, Incremented by 5', 'newsmag' ),
+		                            'choices'         => array(
+			                            'min'  => 10,
+			                            'max'  => 55,
+			                            'step' => 5,
+		                            ),
+		                            'section'         => 'newsmag_blog_section',
+	                            )
+                            )
+);
+
 /**
  * Enable breadcrumbs on single posts
  */

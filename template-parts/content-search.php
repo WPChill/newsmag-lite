@@ -21,7 +21,13 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
+		<?php
+		$excerpt = get_the_excerpt();
+		$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
+		?>
+		<p>
+			<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
+		</p>
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">

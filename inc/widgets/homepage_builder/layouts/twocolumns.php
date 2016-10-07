@@ -30,7 +30,13 @@ if ( $posts->have_posts() ): ?>
 								<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 15 ); ?></a>
 							</h3>
 							<span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
-							<?php the_excerpt(); ?>
+							<?php
+							$excerpt = get_the_excerpt();
+							$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
+							?>
+							<p>
+								<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
+							</p>
 							<span class="meta"><?php the_category() ?></span>
 						</div>
 					</div>

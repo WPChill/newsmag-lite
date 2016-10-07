@@ -145,6 +145,14 @@ $wp_customize->add_setting( 'newsmag_show_single_post_tags',
 	                            'default'           => true
                             )
 );
+
+$wp_customize->add_setting( 'newsmag_excerpt_length',
+                            array(
+	                            'sanitize_callback' => 'absint',
+	                            'default'           => 25
+                            )
+);
+
 /**
  * Upsell
  */
