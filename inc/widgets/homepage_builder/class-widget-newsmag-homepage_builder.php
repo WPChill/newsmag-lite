@@ -21,7 +21,7 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 		if ( isset( $instance['newsmag_category'] ) ) {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
-			$instance['newsmag_category'] = '';
+			$instance['newsmag_category'] = 'uncategorized';
 		}
 
 		if ( isset( $instance['block_style'] ) ) {
