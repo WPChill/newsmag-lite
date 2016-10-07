@@ -18,6 +18,11 @@
 	<div class="row">
 		<div class="col-sm-4 col-xs-12">
 			<div class="newsmag-image">
+				<?php if ( is_sticky() ) { ?>
+					<div class="newsmag-sticky-sign">
+						<span class="fa fa-thumb-tack"></span>
+					</div>
+				<?php } ?>
 				<a href=" <?php echo esc_url( get_the_permalink() ); ?>">
 					<?php echo wp_kses_post( $image ) ?>
 				</a>

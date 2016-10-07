@@ -1788,9 +1788,30 @@ a {
       margin-bottom: 10px; } }
   .newsmag-blog-post-layout .newsmag-image {
     display: inline-block;
-    float: left; }
+    float: left;
+    position: relative; }
     .newsmag-blog-post-layout .newsmag-image img {
       width: 100%; }
+    .newsmag-blog-post-layout .newsmag-image .newsmag-sticky-sign {
+      position: absolute;
+      display: inline-block;
+      bottom: 0;
+      left: 0;
+      color: #FFF;
+      z-index: 1;
+      background: #ff3d2e;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px; }
+      .newsmag-blog-post-layout .newsmag-image .newsmag-sticky-sign span {
+        color: #FFF;
+        font-size: 20px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg); }
   .newsmag-blog-post-layout .newsmag-title h3 {
     font-size: 20px;
     font-family: "Poppins", "serif";
