@@ -119,7 +119,7 @@ $wp_customize->add_control( new Epsilon_Control_Slider(
 	                            $wp_customize,
 	                            'newsmag_excerpt_length',
 	                            array(
-		                            'label'           => esc_html__( 'Number of words outputted by the excerpt in archive pages and widgets', 'newsmag' ),
+		                            'label'           => esc_html__( 'Post excerpt length', 'newsmag' ),
 		                            'description'     => esc_html__( 'Minimum is 10, Maximum is 55, Incremented by 5', 'newsmag' ),
 		                            'choices'         => array(
 			                            'min'  => 10,
