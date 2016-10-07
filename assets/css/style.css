@@ -734,8 +734,7 @@ a {
         content: '\f0e1'; }
 
 .top-header-icons {
-  position: relative;
-  top: 6px; }
+  position: relative; }
   .top-header-icons .separator {
     width: 1px;
     height: 20px;
