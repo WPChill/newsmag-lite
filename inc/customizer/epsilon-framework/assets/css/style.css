@@ -162,7 +162,7 @@ ul.macho-upsell-requirements {
 .mte-tooltip {
     width: 150px;
     position: absolute;
-    background: #555;
+    background: #55AAD3;
     color: #EEE;
     font-size: 12px;
     min-height: 50px;
@@ -177,6 +177,7 @@ ul.macho-upsell-requirements {
 
 .dashicons.dashicons-editor-help {
     cursor: pointer;
+    color:#55AAD3;
 }
 
 .dashicons.dashicons-editor-help:hover > .mte-tooltip {

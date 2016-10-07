@@ -46,7 +46,7 @@ $wp_customize->add_setting( 'newsmag_blog_breadcrumb_menu_separator',
 		                            'Newsmag_Customizer_Helper',
 		                            'newsmag_sanitize_radio_buttons'
 	                            ),
-	                            'default'           => 'rarr'
+	                            'default'           => '/'
                             )
 );
 

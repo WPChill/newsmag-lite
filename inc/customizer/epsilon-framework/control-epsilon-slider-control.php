@@ -42,9 +42,10 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
                 <span class="customize-control-title">
                     <?php echo esc_attr( $this->label ); ?>
-	                <?php if ( ! empty( $this->description ) ) : ?>
-		                <span
-			                class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+	                <?php if ( !empty($this->description) ): ?>
+		                <i class="dashicons dashicons-editor-help" style="vertical-align: text-bottom; position: relative;">
+						<span class="mte-tooltip"><?php echo wp_kses_post( $this->description ); ?></span>
+					</i>
 	                <?php endif; ?>
                 </span>
 
