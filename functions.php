@@ -306,6 +306,7 @@ function newsmag_widget_init() {
 
 	}
 }
+
 add_action( 'widgets_init', 'newsmag_widget_init' );
 
 function newsmag_dirname_to_classname( $dirname ) {
@@ -321,7 +322,7 @@ function newsmag_remove_specific_widget( $sidebars_widgets ) {
 
 	foreach ( $sidebars_widgets as $widget_area => $widget_list ) {
 
-		if ( $widget_area === 'homepage-slider' ) {
+		if ( $widget_area === 'homepage-slider' && ! empty( $widget_list ) ) {
 			foreach ( $widget_list as $pos => $widget_id ) {
 				if ( strpos( $widget_id, 'newsmag_slider_widget' ) !== false ) {
 					continue;
@@ -338,6 +339,7 @@ function newsmag_remove_specific_widget( $sidebars_widgets ) {
 
 	return $sidebars_widgets;
 }
+
 add_filter( 'sidebars_widgets', 'newsmag_remove_specific_widget' );
 /**
  * Customizer additions.
