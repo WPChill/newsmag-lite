@@ -331,11 +331,6 @@ class Newsmag_Breadcrumbs {
 	private function get_post_terms() {
 		$terms_markup = '';
 
-		// If terms are disabled, nothing is to do
-		if ( ! $this->show_terms ) {
-			return $terms_markup;
-		}
-
 		if ( ! $this->get_latest_post_page() ) {
 			return $terms_markup;
 		}

@@ -167,21 +167,6 @@ $wp_customize->add_control(
 );
 
 /**
- *  Breadcrumbs post category
- */
-$wp_customize->add_control( new Epsilon_Control_Toggle(
-	                            $wp_customize,
-	                            'newsmag_blog_breadcrumb_menu_post_category',
-	                            array(
-		                            'type'            => 'mte-toggle',
-		                            'label'           => esc_html__( 'Breacrumbs: Category', 'newsmag' ),
-		                            'description'     => esc_html__( 'Show the post category in the breadcrumb ?', 'newsmag' ),
-		                            'section'         => 'newsmag_blog_section',
-		                            'active_callback' => 'breadcrumbs_enabled_callback',
-	                            )
-                            )
-);
-/**
  * General Settings Upsell
  */
 $wp_customize->add_control( new Epsilon_Control_Upsell(
