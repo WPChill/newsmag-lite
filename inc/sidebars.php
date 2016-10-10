@@ -15,7 +15,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 
 			register_sidebar( array(
 				                  'id'            => 'homepage-slider',
-				                  'name'          => __( 'Homepage Slider', 'newsmag' ),
+				                  'name'          => __( 'Homepage - Header area', 'newsmag' ),
 				                  'description'   => __( 'This sidebar holds the header sidebar area on the homepage.', 'newsmag' ),
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				                  'after_widget'  => '</div>',
@@ -25,7 +25,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 
 			register_sidebar( array(
 				                  'id'            => 'content-area',
-				                  'name'          => __( 'Content Area', 'newsmag' ),
+				                  'name'          => __( 'Homepage - Content area', 'newsmag' ),
 				                  'description'   => __( 'The sidebar holds the entire homepage content, place "Newsmag - Homepage builder" widgets here, please consider the column arrangement.', 'newsmag' ),
 				                  'before_title'  => '<h3 class="widget-title"><span>',
 				                  'after_title'   => '</span></h3>',
