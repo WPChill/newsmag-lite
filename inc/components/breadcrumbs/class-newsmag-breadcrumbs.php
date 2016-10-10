@@ -163,7 +163,7 @@ class Newsmag_Breadcrumbs {
 		if ( is_singular() ) {
 			// If the post type of the current post has an archive link, display the archive breadcrumb
 			if ( isset( $this->post->post_type ) &&
-			     get_post_type_archive_link( false) &&
+			     get_post_type_archive_link( false ) &&
 			     $this->show_post_type_archive
 			) {
 				$this->html_markup .= $this->get_post_type_archive( false );
@@ -311,6 +311,18 @@ class Newsmag_Breadcrumbs {
 
 	}
 
+	public function get_latest_post_page() {
+		$page_id = get_option( 'page_for_posts', false );
+		if ( ! $page_id ) {
+			return false;
+		}
+
+		return array(
+			'link' => get_permalink( $page_id ),
+			'name' => get_post( $page_id ),
+		);
+	}
+
 	/**
 	 * Construct the full post term tree path and add its HTML markup
 	 *
@@ -324,6 +336,15 @@ class Newsmag_Breadcrumbs {
 			return $terms_markup;
 		}
 
+		if ( ! $this->get_latest_post_page() ) {
+			return $terms_markup;
+		}
+
+		$term = $this->get_latest_post_page();
+
+		$terms_markup .= $this->get_single_breadcrumb_markup($term['name']->post_title, $term['link']);
+
+		return $terms_markup;
 		// Get the post terms
 		if ( $this->post->post_type == 'post' ) {
 			$taxonomy = 'category';
