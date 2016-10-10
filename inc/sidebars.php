@@ -3,14 +3,10 @@
 if ( function_exists( 'register_sidebar' ) ) {
 	if ( ! function_exists( 'newsmag_register_sidebars' ) ) {
 		function newsmag_register_sidebars() {
-
-			#
-			#    Register sidebars
-			#
 			register_sidebar( array(
-				                  'id'            => 'homepage-slider',
-				                  'name'          => __( 'Homepage Slider', 'newsmag' ),
-				                  'description'   => __( 'This sidebar holds the header sidebar area on the homepage.', 'newsmag' ),
+				                  'id'            => 'sidebar',
+				                  'name'          => __( 'Blog Sidebar', 'newsmag' ),
+				                  'description'   => __( 'This is the blog sidebar. If you\'ve set a posts page under Settings -> Reading, that\'s where your sidebar will be showing up', 'newsmag' ),
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				                  'after_widget'  => '</div>',
 				                  'before_title'  => '<h3>',
@@ -18,9 +14,9 @@ if ( function_exists( 'register_sidebar' ) ) {
 			                  ) );
 
 			register_sidebar( array(
-				                  'id'            => 'sidebar',
-				                  'name'          => __( 'Blog Sidebar', 'newsmag' ),
-				                  'description'   => __( 'This is the blog sidebar. If you\'ve set a posts page under Settings -> Reading, that\'s where your sidebar will be showing up', 'newsmag' ),
+				                  'id'            => 'homepage-slider',
+				                  'name'          => __( 'Homepage Slider', 'newsmag' ),
+				                  'description'   => __( 'This sidebar holds the header sidebar area on the homepage.', 'newsmag' ),
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				                  'after_widget'  => '</div>',
 				                  'before_title'  => '<h3>',
