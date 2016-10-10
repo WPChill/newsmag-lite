@@ -49,7 +49,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	                <?php endif; ?>
                 </span>
 
-				<input type="text" class="rl-slider" id="input_<?php echo $this->id; ?>"
+				<input disabled type="text" class="rl-slider" id="input_<?php echo $this->id; ?>"
 				       value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?>/>
 
 			</label>

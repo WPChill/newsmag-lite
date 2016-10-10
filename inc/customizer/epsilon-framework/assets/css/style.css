@@ -1,13 +1,17 @@
 .customize-control-mte-slider input[type="text"] {
     border: none;
     text-align: center;
-    padding: 0;
+    padding: 2px;
     margin: 0;
     font-size: 12px;
-    box-shadow: none;
     color: #333;
-    width: 30px;
     border-radius: 10px;
+    background-color: rgb(248, 248, 248);
+    -webkit-box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    width: 42px;
+    height: 22px;
 }
 
 .customize-control-mte-slider .ui-slider {
@@ -15,26 +19,31 @@
     text-align: left;
     height: 2px;
     border-radius: 3px;
-    background: #fff;
-    border: 1px solid #dedede;
+    border: none;
     margin-top: 10px;
-    margin-left:5px;
+    margin-left: 10px;
     display: inline-block;
-    width: 218px;
+    width: 219px;
+    background: #d6d6d6;
 }
 
 .customize-control-mte-slider .ui-slider .ui-slider-handle {
     position: absolute;
     z-index: 2;
-    width: 15px;
-    height: 15px;
-    top: -7px;
-    border-radius: 50%;
+    top: -10px;
     cursor: default;
     -ms-touch-action: none;
     touch-action: none;
-    background: #fff;
-    border: 1px solid #dedede;
+    width: 18px;
+    height: 18px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    border: solid 1px #d7d7d7;
 }
 
 .customize-control-mte-slider .ui-slider .ui-slider-range {
@@ -44,9 +53,9 @@
     display: block;
     border: 0;
     background-position: 0 0;
-    background:#E04D43;
-    top:0;
-    bottom:0;
+    background: #E04D43;
+    top: 0;
+    bottom: 0;
 }
 
 .macho-upsell {
@@ -95,19 +104,19 @@ ul.macho-upsell-requirements {
 }
 
 .customize-control-title.onoffswitch_label {
-    width: 70%;
+    width: 72%;
 }
 
 .onoffswitch_label {
     display: inline-block;
     vertical-align: top;
-    margin-right: 20px;
+    margin-right: 21px;
     margin-top: -1px;
 }
 
 .onoffswitch {
     position: relative;
-    width: 40px;
+    width: 52px;
     display: inline-block;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -122,41 +131,51 @@ ul.macho-upsell-requirements {
     display: block;
     overflow: hidden;
     cursor: pointer;
-    height: 25px;
+    height: 22px;
     padding: 0;
     line-height: 18px;
-    border: 1px solid #BBBBBB;
-    border-radius: 30px;
-    background-color: #C4C4C4;
     transition: background-color 0.2s ease-in;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+    background-color: #c4c4c4;
+    -webkit-box-shadow: inset 0 2px 1px rgba(0, 0, 0, .11);
+    -moz-box-shadow: inset 0 2px 1px rgba(0, 0, 0, .11);
+    box-shadow: inset 0 2px 1px rgba(0, 0, 0, .11);
 }
 
 .onoffswitch-label:before {
     content: "";
     display: block;
-    width: 25px;
+    width: 17px;
+    height: 18px;
     margin: 0;
-    background: #FFFFFF;
     position: absolute;
-    top: 0;
+    top: 1px;
     bottom: 0;
-    right: 15px;
-    border: 1px solid #BBBBBB;
-    border-radius: 18px;
+    right: 30px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+    border: solid 1px #f2f2f2;
+    -webkit-border-radius: 9px 8px 8px 9px/9px;
+    -moz-border-radius: 9px 8px 8px 9px/9px;
+    border-radius: 9px 8px 8px 9px/9px;
     transition: all 0.2s ease-in 0s;
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label {
-    background-color: #64BD63;
+    background-color: #3caf0e;
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label,
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-    border-color: #64BD63;
+    border-color: #3caf0e;
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-    right: 0;
+    right: 1px;
 }
 
 .mte-tooltip {
@@ -173,12 +192,12 @@ ul.macho-upsell-requirements {
     display: none;
     padding: 12px;
     line-height: 1.5;
-    font-family:'Arial', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 .dashicons.dashicons-editor-help {
     cursor: pointer;
-    color:#55AAD3;
+    color: #55AAD3;
 }
 
 .dashicons.dashicons-editor-help:hover > .mte-tooltip {
