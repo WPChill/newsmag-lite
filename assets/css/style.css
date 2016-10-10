@@ -1374,6 +1374,8 @@ a {
   .header-banner {
     display: none; } }
 .newsmag_slider .newsmag-slider .item-image {
+  max-height: 600px;
+  overflow: hidden;
   position: relative; }
   .newsmag_slider .newsmag-slider .item-image .slider-caption {
     position: absolute;

@@ -306,6 +306,7 @@ function newsmag_widget_init() {
 
 	}
 }
+add_action( 'widgets_init', 'newsmag_widget_init' );
 
 function newsmag_dirname_to_classname( $dirname ) {
 	$class_name = explode( '-', $dirname );
@@ -315,7 +316,29 @@ function newsmag_dirname_to_classname( $dirname ) {
 	return $class_name;
 }
 
-add_action( 'widgets_init', 'newsmag_widget_init' );
+
+function newsmag_remove_specific_widget( $sidebars_widgets ) {
+
+	foreach ( $sidebars_widgets as $widget_area => $widget_list ) {
+
+		if ( $widget_area === 'homepage-slider' ) {
+			foreach ( $widget_list as $pos => $widget_id ) {
+				if ( strpos( $widget_id, 'newsmag_slider_widget' ) !== false ) {
+					continue;
+				}
+				unset( $sidebars_widgets[ $widget_area ][ $pos ] );
+			}
+
+			if ( count( $sidebars_widgets[ $widget_area ] ) > 1 ) {
+				$sidebars_widgets[ $widget_area ] = array_slice( $sidebars_widgets[ $widget_area ], 0, 1 );
+			}
+		}
+
+	}
+
+	return $sidebars_widgets;
+}
+add_filter( 'sidebars_widgets', 'newsmag_remove_specific_widget' );
 /**
  * Customizer additions.
  */

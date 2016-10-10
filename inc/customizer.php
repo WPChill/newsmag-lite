@@ -40,7 +40,16 @@ add_action( 'customize_register', 'newsmag_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function newsmag_customize_preview_js() {
-	wp_enqueue_script( 'newsmag_customizer', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'newsmag_customizer', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/previewer.js', array( 'customize-preview' ), '20151215', true );
+}
+function newsmag_customizer_enqueue_scripts() {
+	/*
+	 * Our Customizer script
+	 *
+	 * Dependencies: Customizer Controls script (core)
+	 */
+	wp_enqueue_script( 'customizer-scripts', get_stylesheet_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/customizer.js', array( 'customize-controls' ) );
 }
 
+add_action( 'customize_controls_enqueue_scripts', 'newsmag_customizer_enqueue_scripts' );
 add_action( 'customize_preview_init', 'newsmag_customize_preview_js' );
