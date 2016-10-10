@@ -33,49 +33,52 @@
         }
         /* Add hover effects for the links, the brand colors */
 
-        &[href*="wordpress.org"]::before,
-        &[href*="wordpress.com"]::before {
-          color: #21759b;
+        &:hover {
+          &[href*="wordpress.org"]::before,
+          &[href*="wordpress.com"]::before {
+            color : #21759b;
+          }
+          &[href*="facebook.com"]::before {
+            color : #3b5998;
+          }
+          &[href*="twitter.com"]::before {
+            color : #33ccff;
+          }
+          &[href*="dribbble.com"]::before {
+            color : #ea4c89;
+          }
+          &[href*="plus.google.com"]::before {
+            color : #dd4b39;
+          }
+          &[href*="pinterest.com"]::before {
+            color : #c8232c;
+          }
+          &[href*="github.com"]::before {
+            color : #171515;
+          }
+          &[href*="tumblr.com"]::before {
+            color : #34526f;
+          }
+          &[href*="youtube.com"]::before {
+            color : #c4302b;
+          }
+          &[href*="flickr.com"]::before {
+            color : #ff0084;
+          }
+          &[href*="vimeo.com"]::before {
+            color : #1AB7EA;
+          }
+          &[href*="instagram.com"]::before {
+            color : #3f729b;
+          }
+          &[href*="codepen.io"]::before {
+            color : #000;
+          }
+          &[href*="linkedin.com"]::before {
+            color : #0e76a8;
+          }
         }
-        &[href*="facebook.com"]::before {
-          color: #3b5998;
-        }
-        &[href*="twitter.com"]::before {
-          color: #33ccff;
-        }
-        &[href*="dribbble.com"]::before {
-          color: #ea4c89;
-        }
-        &[href*="plus.google.com"]::before {
-          color: #dd4b39;
-        }
-        &[href*="pinterest.com"]::before {
-          color: #c8232c;
-        }
-        &[href*="github.com"]::before {
-          color: #171515;
-        }
-        &[href*="tumblr.com"]::before {
-          color: #34526f;
-        }
-        &[href*="youtube.com"]::before {
-          color: #c4302b;
-        }
-        &[href*="flickr.com"]::before {
-          color: #ff0084;
-        }
-        &[href*="vimeo.com"]::before {
-          color: #1AB7EA;
-        }
-        &[href*="instagram.com"]::before {
-          color: #3f729b;
-        }
-        &[href*="codepen.io"]::before {
-          color: #000;
-        }
-        &[href*="linkedin.com"]::before {
-          color: #0e76a8;
-        }
+
 
         /* Add the social links depending on the link href */
         &[href*="wordpress.org"]::before,

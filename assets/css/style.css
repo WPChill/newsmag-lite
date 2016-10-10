@@ -676,33 +676,33 @@ a {
         font-size: 16px;
         vertical-align: top;
         -webkit-font-smoothing: antialiased; }
-      #menu-social ul li a[href*="wordpress.org"]::before, #menu-social ul li a[href*="wordpress.com"]::before {
+      #menu-social ul li a:hover[href*="wordpress.org"]::before, #menu-social ul li a:hover[href*="wordpress.com"]::before {
         color: #21759b; }
-      #menu-social ul li a[href*="facebook.com"]::before {
+      #menu-social ul li a:hover[href*="facebook.com"]::before {
         color: #3b5998; }
-      #menu-social ul li a[href*="twitter.com"]::before {
+      #menu-social ul li a:hover[href*="twitter.com"]::before {
         color: #33ccff; }
-      #menu-social ul li a[href*="dribbble.com"]::before {
+      #menu-social ul li a:hover[href*="dribbble.com"]::before {
         color: #ea4c89; }
-      #menu-social ul li a[href*="plus.google.com"]::before {
+      #menu-social ul li a:hover[href*="plus.google.com"]::before {
         color: #dd4b39; }
-      #menu-social ul li a[href*="pinterest.com"]::before {
+      #menu-social ul li a:hover[href*="pinterest.com"]::before {
         color: #c8232c; }
-      #menu-social ul li a[href*="github.com"]::before {
+      #menu-social ul li a:hover[href*="github.com"]::before {
         color: #171515; }
-      #menu-social ul li a[href*="tumblr.com"]::before {
+      #menu-social ul li a:hover[href*="tumblr.com"]::before {
         color: #34526f; }
-      #menu-social ul li a[href*="youtube.com"]::before {
+      #menu-social ul li a:hover[href*="youtube.com"]::before {
         color: #c4302b; }
-      #menu-social ul li a[href*="flickr.com"]::before {
+      #menu-social ul li a:hover[href*="flickr.com"]::before {
         color: #ff0084; }
-      #menu-social ul li a[href*="vimeo.com"]::before {
+      #menu-social ul li a:hover[href*="vimeo.com"]::before {
         color: #1AB7EA; }
-      #menu-social ul li a[href*="instagram.com"]::before {
+      #menu-social ul li a:hover[href*="instagram.com"]::before {
         color: #3f729b; }
-      #menu-social ul li a[href*="codepen.io"]::before {
+      #menu-social ul li a:hover[href*="codepen.io"]::before {
         color: #000; }
-      #menu-social ul li a[href*="linkedin.com"]::before {
+      #menu-social ul li a:hover[href*="linkedin.com"]::before {
         color: #0e76a8; }
       #menu-social ul li a[href*="wordpress.org"]::before, #menu-social ul li a[href*="wordpress.com"]::before {
         content: '\f19a'; }

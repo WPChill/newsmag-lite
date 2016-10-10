@@ -22,6 +22,17 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
+	<div class="top-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<?php get_template_part( 'template-parts/social' ); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding container">
 			<div class="row">
@@ -57,10 +68,13 @@
 				<?php endif; ?>
 			</div>
 		</div><!-- .site-branding -->
+		<?php
+			$enable_search = get_theme_mod( 'newsmag_enable_menu_search', true );
+		?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="<?php echo $enable_search ? 'col-md-9' : 'col-md-12' ?>">
 						<button class="menu-toggle" aria-controls="primary-menu"
 						        aria-expanded="false"><span class="fa fa-bars"></span></button>
 						<?php wp_nav_menu( array(
@@ -70,9 +84,26 @@
 						                   ) ); ?>
 					</div>
 
-					<?php
-					get_template_part( 'template-parts/social' );
-					?>
+					<?php if ( $enable_search ): ?>
+					<div class="col-md-3">
+						<div class="top-header-icons pull-right">
+							<!-- Search Form -->
+							<form role="search" method="get" class="pull-right" id="searchform_topbar"
+							      action="<?php echo esc_url_raw( home_url( '/' ) ); ?>">
+								<label>
+									<span class="screen-reader-text"><?php echo __( 'Search for:', 'newsmag' ) ?></span>
+									<input class="search-field-top-bar" id="search-field-top-bar"
+									       placeholder="<?php echo __( 'Search ...', 'newsmag' ) ?>"
+									       value="" name="s"
+									       type="search">
+								</label>
+								<button id="search-top-bar-submit" type="button" class="search-top-bar-submit"><span
+										class="fa fa-search"></span></button>
+							</form>
+							<span class="separator pull-right"></span>
+						</div>
+					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 
