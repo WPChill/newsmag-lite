@@ -31,7 +31,30 @@ foreach ( $mysidebars as $column ) {
  * If the array is empty, terminate here
  */
 if ( empty( $sidebars ) ) {
-	return false;
+	$args = array(
+		'before_title' => '<h3 class="widgettitle">',
+		'after_title'  => '</h3>'
+	); ?>
+	<div class="footer-widgets-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<?php the_widget( 'WP_Widget_Meta', array(), $args ); ?>
+				</div>
+				<div class="col-md-3">
+					<?php the_widget( 'WP_Widget_Recent_Posts', array(), $args ); ?>
+				</div>
+				<div class="col-md-3">
+					<?php the_widget( 'WP_Widget_Tag_Cloud', array(), $args ); ?>
+				</div>
+				<div class="col-md-3">
+					<?php the_widget( 'WP_Widget_Categories', array(), $args ); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php return false;
 }
 
 /**
@@ -52,7 +75,7 @@ $sidebars = array_slice( $sidebars, 0, $count );
 	<div class="container">
 		<div class="row">
 			<?php foreach ( $sidebars as $sidebar ): ?>
-				<div class="col-md-<?php echo esc_attr($size) ?> col-sm-6">
+				<div class="col-md-<?php echo esc_attr( $size ) ?> col-sm-6">
 					<?php dynamic_sidebar( $sidebar ); ?>
 				</div>
 			<?php endforeach; ?>
