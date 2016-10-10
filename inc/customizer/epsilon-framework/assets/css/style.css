@@ -40,9 +40,9 @@
     -moz-border-radius: 9px;
     border-radius: 9px;
     background-color: #fff;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
-    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
     border: solid 1px #d7d7d7;
 }
 
@@ -153,7 +153,7 @@ ul.macho-upsell-requirements {
     position: absolute;
     top: 1px;
     bottom: 0;
-    right: 30px;
+    right: 31px;
     background-color: #fff;
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .1);
@@ -163,6 +163,18 @@ ul.macho-upsell-requirements {
     -moz-border-radius: 9px 8px 8px 9px/9px;
     border-radius: 9px 8px 8px 9px/9px;
     transition: all 0.2s ease-in 0s;
+}
+
+.onoffswitch-label:after {
+    content: "OFF";
+    display: block;
+    color: #FFF;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    right: 6px;
+    font-size: 11px;
+    font-family: 'Arial';
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label {
@@ -177,6 +189,19 @@ ul.macho-upsell-requirements {
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
     right: 1px;
 }
+
+.onoffswitch-checkbox:checked + .onoffswitch-label:after {
+    content: "ON";
+    display: block;
+    color: #FFF;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    right: 25px;
+    font-size: 11px;
+    font-family: 'Arial';
+}
+
 
 .mte-tooltip {
     width: 150px;
