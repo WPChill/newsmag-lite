@@ -72,7 +72,7 @@ $wp_customize->add_setting( 'newsmag_footer_columns',
 		                            'Newsmag_Customizer_Helper',
 		                            'newsmag_sanitize_radio_buttons'
 	                            ),
-	                            'default'           => 3
+	                            'default'           => 4
                             )
 );
 
