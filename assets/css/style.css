@@ -914,15 +914,15 @@ a {
     .widget:not(.widget_newsmag_banner).popular-posts .posts-list li:last-of-type {
       border-bottom: none; }
     .widget:not(.widget_newsmag_banner).popular-posts .posts-list li > a {
-      width: 70px;
-      height: 70px;
+      width: 65px;
+      height: 65px;
       display: inline-block;
       float: left; }
     .widget:not(.widget_newsmag_banner).popular-posts .posts-list li .content {
       display: inline-block;
       float: left;
       margin-left: 20px;
-      width: 75%; }
+      width: 67%; }
       .widget:not(.widget_newsmag_banner).popular-posts .posts-list li .content a {
         font-weight: 700;
         font-size: 15px;
