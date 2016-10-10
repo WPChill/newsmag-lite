@@ -20,7 +20,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 				                  'id'            => 'sidebar',
 				                  'name'          => __( 'Blog Sidebar', 'newsmag' ),
-				                  'description'   => __( 'This widget is located right side as sidebar. Only seen on the normal post query', 'newsmag' ),
+				                  'description'   => __( 'This is the blog sidebar. If you\'ve set a posts page under Settings -> Reading, that\'s where your sidebar will be showing up', 'newsmag' ),
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				                  'after_widget'  => '</div>',
 				                  'before_title'  => '<h3>',
@@ -41,7 +41,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 				                  'id'            => 'footer-1',
 				                  'name'          => __( 'Footer 1', 'newsmag' ),
-				                  'description'   => __( 'This widget is located footer.', 'newsmag' ),
+				                  'description'   => __( 'This is your footer sidebar. By default, we\'ve defined a maximum of 4 sidebars but if you want to use less make sure you change the settings in: Footer -> Footer columns.', 'newsmag' ),
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				                  'after_widget'  => '</div>',
 				                  'before_title'  => '<h3 class="widget-title">',
@@ -51,7 +51,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 				                  'id'            => 'footer-2',
 				                  'name'          => __( 'Footer 2', 'newsmag' ),
-				                  'description'   => __( 'This widget is located footer.', 'newsmag' ),
+				                  'description'   => __( 'This is your footer sidebar. By default, we\'ve defined a maximum of 4 sidebars but if you want to use less make sure you change the settings in: Footer -> Footer columns.', 'newsmag' ),
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				                  'after_widget'  => '</div>',
 				                  'before_title'  => '<h3 class="widget-title">',
@@ -61,7 +61,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 				                  'id'            => 'footer-3',
 				                  'name'          => __( 'Footer 3', 'newsmag' ),
-				                  'description'   => __( 'This widget is located footer.', 'newsmag' ),
+				                  'description'   => __( 'This is your footer sidebar. By default, we\'ve defined a maximum of 4 sidebars but if you want to use less make sure you change the settings in: Footer -> Footer columns.', 'newsmag' ),
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				                  'after_widget'  => '</div>',
 				                  'before_title'  => '<h3 class="widget-title">',
@@ -71,7 +71,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			register_sidebar( array(
 				                  'id'            => 'footer-4',
 				                  'name'          => __( 'Footer 4', 'newsmag' ),
-				                  'description'   => __( 'This widget is located footer.', 'newsmag' ),
+				                  'description'   => __( 'This is your footer sidebar. By default, we\'ve defined a maximum of 4 sidebars but if you want to use less make sure you change the settings in: Footer -> Footer columns.', 'newsmag' ),
 				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				                  'after_widget'  => '</div>',
 				                  'before_title'  => '<h3 class="widget-title">',
