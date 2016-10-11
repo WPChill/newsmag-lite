@@ -25,13 +25,14 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 		}
 
 		?>
-
-		<label><?php _e( 'Title', 'newsmag' ); ?> :</label><br>
+		<p>
+		<label><?php _e( 'Title', 'newsmag' ); ?> :</label>
 		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
 		       id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php echo esc_attr( $title ); ?>">
-		<br>
-		<hr>
-		<label><?php _e( 'Category', 'newsmag' ); ?> :</label><br>
+		</p>
+
+		<p>
+		<label><?php _e( 'Category', 'newsmag' ); ?> :</label>
 		<select name="<?php echo $this->get_field_name( 'newsmag_category' ); ?>"
 		        id="<?php echo $this->get_field_id( 'newsmag_category' ); ?>">
 			<option value="" <?php if ( empty( $instance['newsmag_category'] ) ) {
@@ -43,7 +44,8 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 				<option
 					value="<?php echo esc_attr($category->slug); ?>" <?php selected( esc_attr($category->slug), $instance['newsmag_category'] ); ?>><?php echo esc_html($category->cat_name); ?></option>
 			<?php } ?>
-		</select><br>
+		</select>
+		</p>
 
 	<?php }
 

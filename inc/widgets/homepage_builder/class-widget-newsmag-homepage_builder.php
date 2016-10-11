@@ -37,15 +37,14 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 		}
 
 		?>
-
-		<label><?php _e( 'Title', 'newsmag' ); ?> :</label><br>
+		<p>
+		<label><?php _e( 'Title', 'newsmag' ); ?> :</label>
 		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
 		       id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php echo esc_attr( $title ); ?>">
-		<br>
+		</p>
 
-		<hr>
-
-		<label><?php _e( 'Category', 'newsmag' ); ?> :</label><br>
+		<p>
+		<label><?php _e( 'Category', 'newsmag' ); ?> :</label>
 		<select name="<?php echo esc_attr( $this->get_field_name( 'newsmag_category' ) ); ?>"
 		        id="<?php echo esc_attr( $this->get_field_id( 'newsmag_category' ) ); ?>">
 			<option value="" <?php if ( empty( $instance['newsmag_category'] ) ) {
@@ -57,11 +56,10 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 				<option
 					value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_attr( $category->cat_name ); ?></option>
 			<?php } ?>
-		</select><br>
-
-		<hr>
-
-		<label><?php _e( 'Block Style', 'newsmag' ); ?> :</label><br>
+		</select>
+		</p>
+		<p>
+		<label><?php _e( 'Block Style', 'newsmag' ); ?> :</label>
 		<select name="<?php echo esc_attr( $this->get_field_name( 'block_style' ) ); ?>"
 		        id="<?php echo esc_attr( $this->get_field_id( 'block_style' ) ); ?>">
 			<option
@@ -74,11 +72,11 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 				value="thumbnail" <?php selected( 'thumbnail', $instance['block_style'] ); ?>><?php _e( 'Thumbnail', 'newsmag' ); ?></option>
 			<option
 				value="recent" <?php selected( 'recent', $instance['block_style'] ); ?>><?php _e( 'Recent Posts', 'newsmag' ); ?></option>
-		</select><br>
+		</select>
+		</p>
 
-		<hr>
-
-		<label><?php _e( 'Posts to Show', 'newsmag' ); ?> :</label><br>
+		<p>
+		<label><?php _e( 'Posts to Show', 'newsmag' ); ?> :</label>
 		<select name="<?php echo esc_attr( $this->get_field_name( 'show_post' ) ); ?>"
 		        id="<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>">
 			<option value="2" <?php selected( 2, $instance['show_post'] ); ?>>2</option>
@@ -91,7 +89,7 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 			<option value="9" <?php selected( 9, $instance['show_post'] ); ?>>9</option>
 			<option value="10" <?php selected( 10, $instance['show_post'] ); ?>>10</option>
 		</select>
-
+		</p>
 	<?php }
 
 	public function update( $new_instance, $old_instance ) {

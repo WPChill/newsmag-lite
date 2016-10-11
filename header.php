@@ -106,7 +106,6 @@
 					<?php endif; ?>
 				</div>
 			</div>
-
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
