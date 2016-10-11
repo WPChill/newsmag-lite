@@ -22,16 +22,8 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<div class="top-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<?php get_template_part( 'template-parts/social' ); ?>
-				</div>
-			</div>
-		</div>
-	</div>
 
+	<?php get_template_part( 'template-parts/social' ); ?>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding container">
@@ -68,9 +60,7 @@
 				<?php endif; ?>
 			</div>
 		</div><!-- .site-branding -->
-		<?php
-			$enable_search = get_theme_mod( 'newsmag_enable_menu_search', true );
-		?>
+		<?php $enable_search = get_theme_mod( 'newsmag_enable_menu_search', true ); ?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="container">
 				<div class="row">

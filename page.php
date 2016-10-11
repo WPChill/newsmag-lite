@@ -12,19 +12,46 @@
  * @package Newsmag
  */
 
-get_header(); ?>
-	<div class="container">
-		<?php
-		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
-		if ( $breadcrumbs_enabled ) { ?>
+get_header();
+$image = get_custom_header();
+$title = '';
+
+while ( have_posts() ) : the_post();
+	$img   = get_the_post_thumbnail_url();
+	$title = get_the_title();
+endwhile;
+
+if ( empty( $img ) ) {
+	$img = get_custom_header();
+	$img = $img->url;
+}
+
+?>
+<?php if ( ! empty( $img ) ): ?>
+	<div class="newsmag-custom-header newsmag-custom-header-single-post"
+	     style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
+		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<?php newsmag_breadcrumbs(); ?>
+					<h2><?php echo esc_html( $title ) ?></h2>
 				</div>
 			</div>
-		<?php } ?>
+		</div>
+	</div>
+<?php endif;
+	$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+	if ( $breadcrumbs_enabled ) { ?>
+	<div class="container newsmag-breadcrumbs-container">
+		<div class="row newsmag-breadcrumbs-row">
+			<div class="col-xs-12">
+				<?php newsmag_breadcrumbs(); ?>
+			</div>
+		</div>
+	</div>
+<?php } ?>
+	<div class="container">
 		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+			<main id="main" class="site-main row" role="main">
 
 				<?php
 				while ( have_posts() ) : the_post();

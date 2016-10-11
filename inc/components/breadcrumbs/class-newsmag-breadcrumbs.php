@@ -335,9 +335,13 @@ class Newsmag_Breadcrumbs {
 			return $terms_markup;
 		}
 
+		if ( is_page() ) {
+			return $terms_markup;
+		}
+
 		$term = $this->get_latest_post_page();
 
-		$terms_markup .= $this->get_single_breadcrumb_markup($term['name']->post_title, $term['link']);
+		$terms_markup .= $this->get_single_breadcrumb_markup( $term['name']->post_title, $term['link'] );
 
 		return $terms_markup;
 		// Get the post terms
