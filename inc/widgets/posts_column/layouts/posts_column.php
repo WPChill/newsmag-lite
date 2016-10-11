@@ -4,7 +4,18 @@ if ( $posts->have_posts() ):
 	$i = 0; ?>
 	<div class="col-md-4">
 		<?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
-			<?php
+			<?php $category = get_the_category(); ?>
+
+			<?php if ( $i == 0 ) {
+				if ( ! empty( $instance['title'] ) ) { ?>
+					<h2 class="colored"><?php echo esc_html( $instance['title'] ); ?></h2>
+				<?php } else { ?>
+					<h2 class="colored">
+						<a href="<?php esc_url( $category[0]->link ) ?>"><?php echo esc_html( $category[0]->name ) ?></a>
+					</h2>
+				<?php }
+			}
+
 			$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url_raw( get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg' ) . '" />';
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
@@ -31,6 +42,7 @@ if ( $posts->have_posts() ):
 					</div>
 				</div>
 			</div>
-		<?php endwhile; ?>
+			<?php $i ++;
+		endwhile; ?>
 	</div>
 <?php endif; ?>
