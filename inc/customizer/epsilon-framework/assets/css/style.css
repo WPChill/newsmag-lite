@@ -44,6 +44,7 @@
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
     box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
     border: solid 1px #d7d7d7;
+    transform:translateX(-50%);
 }
 
 .customize-control-mte-slider .ui-slider .ui-slider-range {
