@@ -21,10 +21,6 @@ if ( ! class_exists( 'Epsilon_Control_Upsell' ) ):
 			$this->json['pro_label'] = $this->pro_label;
 		}
 
-		public function enqueue() {
-			wp_enqueue_style( 'rl-slider', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
-		}
-
 		public function content_template() { ?>
 			<div class="macho-upsell">
 				<# if ( data.options ) { #>

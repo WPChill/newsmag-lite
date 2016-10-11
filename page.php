@@ -33,7 +33,7 @@ if ( empty( $img ) ) {
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2><?php echo esc_html( $title ) ?></h2>
+					<h3><?php echo esc_html( $title ) ?></h3>
 				</div>
 			</div>
 		</div>

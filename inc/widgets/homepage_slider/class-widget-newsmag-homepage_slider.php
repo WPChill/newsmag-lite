@@ -70,12 +70,12 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 	 */
 	public function get_posts( $args ) {
 		$idObj = get_category_by_slug( $args['newsmag_category'] );
-		$atts = array(
+		$atts  = array(
 			'posts_per_page' => 2,
 		);
 
 		if ( $idObj ) {
-			$id = $idObj->term_id;
+			$id          = $idObj->term_id;
 			$atts['cat'] = $id;
 		}
 

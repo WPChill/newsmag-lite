@@ -27,7 +27,7 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 		if ( isset( $instance['show_post'] ) ) {
 			$show_post = $instance['show_post'];
 		} else {
-			$instance['show_post'] = '';
+			$instance['show_post'] = 4;
 		}
 
 		?>
@@ -54,21 +54,37 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 			</select>
 		</p>
 
-		<p>
-			<label><?php _e( 'Posts to Show', 'newsmag' ); ?> :</label>
-			<select name="<?php echo esc_attr( $this->get_field_name( 'show_post' ) ); ?>"
-			        id="<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>">
-				<option value="2" <?php selected( 2, $instance['show_post'] ); ?>>2</option>
-				<option value="3" <?php selected( 3, $instance['show_post'] ); ?>>3</option>
-				<option value="4" <?php selected( 4, $instance['show_post'] ); ?>>4</option>
-				<option value="5" <?php selected( 5, $instance['show_post'] ); ?>>5</option>
-				<option value="6" <?php selected( 6, $instance['show_post'] ); ?>>6</option>
-				<option value="7" <?php selected( 7, $instance['show_post'] ); ?>>7</option>
-				<option value="8" <?php selected( 8, $instance['show_post'] ); ?>>8</option>
-				<option value="9" <?php selected( 9, $instance['show_post'] ); ?>>9</option>
-				<option value="10" <?php selected( 10, $instance['show_post'] ); ?>>10</option>
-			</select>
-		</p>
+		<label class="block" for="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>">
+            <span class="customize-control-title">
+               <?php _e( 'Posts to Show', 'newsmag' ); ?> :
+            </span>
+		</label>
+
+		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'show_post' ) ); ?>" class="rl-slider"
+		       id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"
+		       value="<?php echo esc_attr( $instance['show_post'] ); ?>"/>
+
+		<div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" class="ss-slider"></div>
+		<script>
+			jQuery(document).ready(function ($) {
+				$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({
+					value: <?php echo esc_attr( $instance['show_post'] ); ?>,
+					range: 'min',
+					min  : 2,
+					max  : 10,
+					step : 2,
+					slide: function (event, ui) {
+						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').val(ui.value).keyup();
+					}
+				});
+				$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').val($('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider("value"));
+				$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').change(function () {
+					$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider({
+						value: $(this).val()
+					});
+				});
+			});
+		</script>
 	<?php }
 
 	public function update( $new_instance, $old_instance ) {
@@ -77,7 +93,7 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 
 		$instance['title']            = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['newsmag_category'] = ( ! empty( $new_instance['newsmag_category'] ) ) ? $new_instance['newsmag_category'] : '';
-		$instance['show_post']        = ( ! empty( $new_instance['show_post'] ) ) ? $new_instance['show_post'] : '';
+		$instance['show_post']        = ( ! empty( $new_instance['show_post'] ) ) ? strip_tags( $new_instance['show_post'] ) : '';
 
 		return $instance;
 
@@ -125,7 +141,7 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 		if ( isset( $instance['show_post'] ) ) {
 			$show_post = $instance['show_post'];
 		} else {
-			$instance['show_post'] = '';
+			$instance['show_post'] = 4;
 		}
 
 		extract( $args, EXTR_SKIP );
