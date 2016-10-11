@@ -20,22 +20,22 @@
 
 .back-to-top {
   display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   position: fixed;
   bottom: 40px;
   right: 10px;
   color: $color__brand-red;
   border: 1px solid $color__brand-red;
   border-radius: 0;
-  font-size: 40px;
+  font-size: 23px;
   text-align: center;
   white-space: nowrap;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
   transition: opacity .3s 0s, visibility 0s .3s;
-  line-height: 50px;
+  line-height: 25px;
   z-index: 100;
 }
 
@@ -64,7 +64,6 @@
 @media only screen and (max-width: 768px) {
   .back-to-top {
     line-height: 0;
-    font-size: 33px;
   }
 }
 
@@ -72,19 +71,19 @@
   .back-to-top {
     right: 20px;
     bottom: 20px;
-    width: 45px;
-    height: 45px;
-    line-height: 32px;
+    width: 30px;
+    height: 30px;
+    line-height: 25px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .back-to-top {
-    height: 60px;
-    width: 60px;
+    height: 30px;
+    width: 30px;
     right: 30px;
     bottom: 30px;
-    line-height: 50px;
+    line-height: 25px;
   }
 }
 
