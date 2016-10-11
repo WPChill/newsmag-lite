@@ -114,12 +114,14 @@ class Widget_Newsmag_homepage_builder extends WP_Widget {
 	 */
 	public function get_posts( $args ) {
 		$idObj = get_category_by_slug( $args['newsmag_category'] );
-		$id    = $idObj->term_id;
-
 		$atts = array(
-			'cat'            => $id,
-			'posts_per_page' => $args['show_post'],
+			'posts_per_page' => 2,
 		);
+
+		if ( $idObj ) {
+			$id = $idObj->term_id;
+			$atts['cat'] = $id;
+		}
 
 		$posts = new WP_Query( $atts );
 
