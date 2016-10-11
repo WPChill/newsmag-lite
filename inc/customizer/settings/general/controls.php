@@ -53,19 +53,6 @@ $wp_customize->add_control(
 
 $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
-	                            'newsmag_enable_attribution',
-	                            array(
-		                            'type'    => 'mte-toggle',
-		                            'label'   => esc_html__( 'Link attribution', 'newsmag' ),
-		                            'description' => esc_html__( 'Toggling this to off will remove the link attribution. This basically means that we, the theme authors, will not be receiving a backlink to our website.', 'newsmag' ),
-		                            'section' => 'newsmag_footer_section',
-	                            )
-                            )
-);
-
-
-$wp_customize->add_control( new Epsilon_Control_Toggle(
-	                            $wp_customize,
 	                            'newsmag_enable_copyright',
 	                            array(
 		                            'type'    => 'mte-toggle',

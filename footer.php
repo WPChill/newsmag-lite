@@ -15,7 +15,7 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
 
 	<?php get_sidebar( 'footer' ) ?>
-	<?php $go_top_enabled = get_theme_mod('newsmag_enable_go_top', true); ?>
+	<?php $go_top_enabled = get_theme_mod( 'newsmag_enable_go_top', true ); ?>
 
 	<?php if ( $go_top_enabled ): ?>
 		<a href="#0" id="back-to-top" class="back-to-top">
@@ -24,29 +24,24 @@
 	<?php endif; ?>
 
 	<?php
-	$copyright_area        = get_theme_mod( 'newsmag_enable_copyright', true );
-	$copyright_attribution = get_theme_mod( 'newsmag_enable_attribution', true );
+	$copyright_area = get_theme_mod( 'newsmag_enable_copyright', true );
 	?>
-	<?php if ( $copyright_area || $copyright_attribution ): ?>
-		<div class="site-info">
-			<div class="container">
-				<div class="row">
-					<?php if ( $copyright_area ): ?>
-						<div class="col-md-6">
-							<?php
-							echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://machothemes.com/newsmag-lite/">Newsmag</a>. All rights reserved.' ) );
-							?>
-						</div>
-					<?php endif; ?>
-					<?php if ( $copyright_attribution ): ?>
-						<div class="col-md-6 text-right">
-							<?php echo __( 'Created by <a href="https://machothemes.com">Macho Themes</a>', 'newsmag' ) ?>
-						</div>
-					<?php endif; ?>
+	<div class="site-info">
+		<div class="container">
+			<div class="row">
+				<?php if ( $copyright_area ): ?>
+					<div class="col-md-6">
+						<?php
+						echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://machothemes.com/newsmag-lite/">Newsmag</a>. All rights reserved.' ) );
+						?>
+					</div>
+				<?php endif; ?>
+				<div class="<?php echo $copyright_area ? 'col-md-6' : 'col-md-12' ?> text-right">
+					<?php echo __( 'Created by <a href="https://machothemes.com">Macho Themes</a>', 'newsmag' ) ?>
 				</div>
 			</div>
 		</div>
-	<?php endif; ?>
+	</div>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
