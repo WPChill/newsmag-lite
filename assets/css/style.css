@@ -1391,7 +1391,8 @@ a {
       .newsmag_slider .newsmag-slider .item-image .slider-caption h3 a {
         color: #FFF;
         font-size: 33px;
-        font-weight: 700; }
+        font-weight: 700;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
     .newsmag_slider .newsmag-slider .item-image .slider-caption .post-categories {
       list-style-type: none;
       padding: 0;
@@ -1595,7 +1596,8 @@ a {
         font-family: 'Poppins', sans-serif;
         text-transform: initial;
         margin-bottom: 5px;
-        line-height: 20px; }
+        line-height: 20px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
         .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 a {
           color: #FFF;
           font-size: 23px;
@@ -1758,7 +1760,7 @@ a {
   .newsmag-custom-header .container {
     position: relative;
     top: 40%; }
-  .newsmag-custom-header h2 {
+  .newsmag-custom-header h3 {
     color: #FFF;
     font-size: 33px;
     font-family: 'Poppins', serif;
@@ -2051,7 +2053,6 @@ a {
 
 .no-touch .back-to-top:hover {
   border: 1px solid #ff3d2e;
-  border-radius: #ff3d2e;
   opacity: 1;
   color: #ff3d2e; }
 

@@ -1,6 +1,6 @@
 <?php if ( $posts->have_posts() ): $i = 0; ?>
 
-	<div class="row newsmag-margin-top">
+	<div class="newsmag-margin-top">
 		<div class="col-md-12">
 			<?php if ( ! empty( $instance['title'] ) ) { ?>
 				<h2 class="colored"><?php echo esc_html( $instance['title'] ); ?></h2>
