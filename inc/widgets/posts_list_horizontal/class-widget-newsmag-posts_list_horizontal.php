@@ -3,11 +3,21 @@
 class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 
 	function __construct() {
+		add_action( 'admin_init', array( $this, 'enqueue' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue' ) );
+		add_action( 'customize_preview_init', array( $this, 'enqueue' ) );
 
 		parent::__construct( 'newsmag_widget_posts_list_horizontal', __( 'Newsmag - Posts List Horizontal', 'newsmag' ), array(
 			'classname'   => 'newsmag_builder',
-			'description' => __( 'You can customize your homepage by this widget. Don\'t use others.', 'newsmag' )
+			'description' => __( 'Images followed by their title. Very useful when used in pairs of 8 or more to draw attention to a selection of posts.', 'newsmag' )
 		) );
+	}
+
+	public function enqueue() {
+		wp_enqueue_script( 'jquery-ui' );
+		wp_enqueue_script( 'jquery-ui-slider' );
+		wp_enqueue_style( 'epsilon-styles', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
+		wp_enqueue_script( 'epsilon-object', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/epsilon.js', array( 'jquery' ) );
 	}
 
 	public function form( $instance ) {

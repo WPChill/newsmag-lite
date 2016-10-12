@@ -4,10 +4,22 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 
 	function __construct() {
 
+		add_action( 'admin_init', array( $this, 'enqueue' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue' ) );
+		add_action( 'customize_preview_init', array( $this, 'enqueue' ) );
+
+
 		parent::__construct( 'newsmag_widget_posts_grid', __( 'Newsmag - Posts Grid', 'newsmag' ), array(
 			'classname'   => 'newsmag_builder',
-			'description' => __( 'You can customize your homepage by this widget. Don\'t use others.', 'newsmag' )
+			'description' => __( 'Posts are displayed next to each other in a grid-like fashion.', 'newsmag' )
 		) );
+	}
+
+	public function enqueue() {
+		wp_enqueue_script( 'jquery-ui' );
+		wp_enqueue_script( 'jquery-ui-slider' );
+		wp_enqueue_style( 'epsilon-styles', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
+		wp_enqueue_script( 'epsilon-object', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/epsilon.js', array( 'jquery' ) );
 	}
 
 	public function form( $instance ) {
