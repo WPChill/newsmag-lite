@@ -15,13 +15,13 @@
 							?>
 						</a>
 						<div class="slider-caption hidden-xs">
+							<span class="post-categories">
+							<?php the_category( ' ' ) ?>
+							</span>
 							<h3 class="entry-title">
 								<a href="<?php the_permalink(); ?>"
 								   class="u-url"><?php the_title(); ?></a>
 							</h3>
-							<span class="post-categories">
-							<?php the_category( ' ' ) ?>
-							</span>
 						</div> <!-- end caption -->
 					</div> <!-- end image -->
 				</div> <!-- end h-entry -->
