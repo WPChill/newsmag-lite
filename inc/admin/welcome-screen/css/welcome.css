@@ -1,54 +1,68 @@
 .newsmag-nav-tabs {
     margin-bottom: 0;
+    border-bottom: 1px solid #cccccc;
 }
+
 .newsmag-nav-tabs:after {
     clear: both;
     display: table;
     content: " ";
 }
+
 .newsmag-nav-tabs > li {
     float: left;
     margin-bottom: -1px;
     display: block;
 }
+
 .newsmag-nav-tabs > li > a {
-    border: 1px solid transparent;
-    border-radius: 4px 4px 0 0;
+    border: 1px solid #cccccc;
     display: block;
-    padding: 10px 15px;
-	text-decoration: none;
+    padding: 5px 15px 8px;
+    text-decoration: none;
+    color: #32373C;
+    background: #e5e5e5;
+    margin: 0 5px;
+    font-weight: bold;
 }
+
+.newsmag-nav-tabs > li:first-of-type > a {
+    margin-left: 10px;
+}
+
 .newsmag-nav-tabs > li.active > a, .newsmag-nav-tabs > li.active > a:focus, .newsmag-nav-tabs > li.active > a:hover {
-    color: #555;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-bottom-color: transparent;
+    border: 1px solid #cccccc;
+    border-bottom-color: #f1f1f1;
+    background: transparent;
+
 }
+
 .newsmag-nav-tabs > li.newsmag-w-red-tab > a {
     color: red;
     font-weight: bold;
 }
+
 .newsmag-tab-content {
-	background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    width: 960px;
+    width: 1055px;
     float: left;
 }
+
 .newsmag-tab-content > .tab-pane {
     display: none;
 }
+
 .newsmag-tab-content > .active {
     display: block;
 }
 
 .newsmag-tab-pane {
-	padding: 30px;
+
 }
+
 .newsmag-tab-pane {
     display: none;
 }
+
 .newsmag-tab-pane.active {
     display: block;
 }
@@ -58,42 +72,61 @@
     padding: 10px;
     background: #ccc;
 }
+
 #newsmag-w-screenshot {
     border: 1px solid #ccc;
     margin-top: 30px;
 }
+
 .newsmag-w-activated {
-    cursor:not-allowed !important;
+    cursor: not-allowed !important;
 }
+
 .newsmag-tab-pane-half {
     width: 45%;
-    float:left;
+    float: left;
     border-left: 1px solid #ccc;
     padding-left: 20px;
     margin-top: 15px;
     padding-right: 20px;
     margin-bottom: 15px;
 }
+
+.newsmag-tab-pane-thirds {
+    width: 29%;
+    float: left;
+    padding-left: 20px;
+    margin-top: 15px;
+    padding-right: 20px;
+    margin-bottom: 15px;
+}
+
 .newsmag-tab-content img {
     max-width: 100%;
 }
+
 .newsmag-tab-pane-first-half {
     border-left: none;
 }
+
 .newsmag-tab-pane-center {
     text-align: center;
     margin-bottom: 30px;
     margin-top: 30px;
 }
+
 .newsmag-welcome-title {
     font-size: 32px;
 }
+
 .newsmag-clear {
     clear: both;
 }
+
 .newsmag-child-theme-container {
     position: relative;
 }
+
 .newsmag-child-theme-description {
     position: absolute;
     top: 100%;
@@ -121,9 +154,11 @@
     position: relative;
     overflow: hidden;
 }
+
 .newsmag-child-theme-image-container img {
     max-width: 100%;
 }
+
 .newsmag-child-theme-details .theme-details {
     padding: 10px;
     background: none repeat scroll 0 0 #F1F1F1;
@@ -136,38 +171,48 @@
 }
 
 .newsmag-child-theme-details .theme-details .theme-name {
-    float:left;
+    float: left;
 }
+
 .newsmag-child-theme-details .theme-details .preview {
     margin-right: 2px;
 }
+
 .newsmag-fre-pro table {
     border-collapse: collapse;
     width: 100%;
 }
+
 .newsmag-fre-pro table tr {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #cccccc;
 }
+
 .newsmag-fre-pro table td {
     padding: 30px;
 }
+
 .newsmag-fre-pro table th {
     padding-bottom: 30px;
 }
+
 .newsmag-fre-pro table td span.dashicons-before:before {
     font-size: 50px;
     width: auto;
     height: auto;
 }
+
 .newsmag-fre-pro table td span.dashicons-yes:before {
-    color:green;
+    color: green;
 }
+
 .newsmag-fre-pro table td span.dashicons-no-alt:before {
-    color:red;
+    color: red;
 }
+
 .newsmag-fre-pro table tr.newsmag-text-center {
     text-align: center;
 }
+
 .newsmag-actions-count {
     padding: 0 6px;
     display: inline-block;
@@ -182,9 +227,11 @@
     border-radius: 10px;
     z-index: 26;
 }
+
 .newsmag-action-required-box {
     position: relative;
 }
+
 .newsmag-dismiss-required-action {
     position: absolute;
     top: 0px;
@@ -196,64 +243,88 @@
     font-size: 14px;
     line-height: 20px;
 }
+
 .newsmag-dismiss-required-action:hover {
     background-color: #CC8C8C;
 }
 
 #github.newsmag-tab-pane {
-  text-align: center;
+    text-align: center;
 }
 
 #github.newsmag-tab-pane .newsmag-tab-pane-half {
-  min-height: 160px;
+    min-height: 160px;
 }
 
 #github.newsmag-tab-pane .translate-button, #github .github-button {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 #github.newsmag-tab-pane .dashicons {
-  color: #0073aa;
-  font-size: 12px;
-  width: auto;
+    color: #0073aa;
+    font-size: 12px;
+    width: auto;
 }
 
 #github.newsmag-tab-pane h4 {
-  margin:10px;;
+    margin: 10px;;
 }
 
 #github.newsmag-tab-pane p.review-link {
-  margin:0;
+    margin: 0;
 }
 
 #github.newsmag-tab-pane .newsmag-tab-pane-half hr {
-  display: none;
+    display: none;
 }
 
 /*Breakpoints*/
 
 @media (max-width: 1200px) {
-  .newsmag-tab-content {
-    width: 98%;
-  }
-  .newsmag-tab-pane-half {
-    width: 43%;
-  }
-}
-@media (max-width: 782px) {
-  #github.newsmag-tab-pane .newsmag-tab-pane-half hr {
-    display:block;
-  }
+    .newsmag-tab-content {
+        width: 98%;
+    }
 
-  .newsmag-tab-pane-half {
-    width: auto;
-    float: none;
-    border-left: none;
-  }
-  .newsmag-welcome-title, .newsmag-tab-content h1 {
-    line-height: 30px;
-  }
-  .newsmag-fre-pro table td {
-    padding: 30px 10px;
-  }
+    .newsmag-tab-pane-half {
+        width: 43%;
+    }
+
+    .newsmag-tab-pane-thirds {
+        width: 43%;
+        min-height: 175px;
+    }
+}
+
+@media (max-width: 782px) {
+    #github.newsmag-tab-pane .newsmag-tab-pane-half hr {
+        display: block;
+    }
+
+    .newsmag-tab-pane-half {
+        width: auto;
+        float: none;
+        border-left: none;
+    }
+
+    .newsmag-welcome-title, .newsmag-tab-content h1 {
+        line-height: 30px;
+    }
+
+    .newsmag-fre-pro table td {
+        padding: 30px 10px;
+    }
+}
+
+.appearance_page_newsmag-welcome #wpbody-content {
+    max-width: 1055px;
+}
+
+.appearance_page_newsmag-welcome #wpbody-content p {
+    font-size: 15px;
+    color: #555d65;
+}
+
+.appearance_page_newsmag-welcome #wpbody-content .newsmag-welcome-title {
+    margin-bottom: 30px;
+    color: #32373c;
 }

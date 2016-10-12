@@ -46,8 +46,14 @@ jQuery(document).ready(function () {
 
     /* Tabs in welcome page */
     function newsmag_welcome_page_tabs(event) {
-        jQuery(event).parent().addClass("active");
-        jQuery(event).parent().siblings().removeClass("active");
+        if(jQuery(event).hasClass('newsmag-delegate')){
+            jQuery('*[href="'+jQuery(event).attr('href')+'"]').parent().addClass("active");
+            jQuery('*[href="'+jQuery(event).attr('href')+'"]').parent().siblings().removeClass("active");
+        } else {
+            jQuery(event).parent().addClass("active");
+            jQuery(event).parent().siblings().removeClass("active");
+        }
+
         var tab = jQuery(event).attr("href");
         jQuery(".newsmag-tab-pane").not(tab).css("display", "none");
         jQuery(tab).fadeIn();
@@ -59,7 +65,7 @@ jQuery(document).ready(function () {
         newsmag_welcome_page_tabs('a[href="' + newsmag_actions_anchor + '"]');
     }
 
-    jQuery(".newsmag-nav-tabs a").click(function (event) {
+    jQuery(".newsmag-nav-tabs a, a.newsmag-delegate").click(function (event) {
         event.preventDefault();
         newsmag_welcome_page_tabs(this);
     });

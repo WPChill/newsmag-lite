@@ -226,18 +226,19 @@ class Newsmag_Welcome {
 		require_once( ABSPATH . 'wp-admin/admin-header.php' );
 		?>
 
-		<ul class="newsmag-nav-tabs" role="tablist">
+		<h1 class="newsmag-welcome-title"><?php _e( 'Welcome to Newsmag!', 'newsmag' ); ?> <?php if ( ! empty( $newsmag['Version'] ) ): ?>
+				<sup id="newsmag-theme-version"><?php echo esc_attr( $newsmag['Version'] ); ?> </sup><?php endif; ?>
+		</h1>
+
+		<p><?php esc_html_e( 'Newsmag is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using Newsmag and that is why we gathered here all the necessary information for you. We hope you will enjoy using Newsmag, as much as we enjoy creating great products.', 'newsmag' ); ?>
+		<ul class="nav-tab-wrapper newsmag-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab"
 			                                          data-toggle="tab"><?php esc_html_e( 'Getting started', 'newsmag' ); ?></a>
 			</li>
-			<li role="presentation" class="newsmag-w-red-tab"><a href="#actions_required"
-			                                                    aria-controls="actions_required" role="tab"
-			                                                    data-toggle="tab"><?php esc_html_e( 'Recommended actions', 'newsmag' ); ?></a>
+			<li role="presentation"><a href="#actions_required"
+			                                                     aria-controls="actions_required" role="tab"
+			                                                     data-toggle="tab"><?php esc_html_e( 'Recommended actions', 'newsmag' ); ?></a>
 			</li>
-			<?php if ( class_exists( 'MT_Theme_Importer' ) ) { ?>
-				<li role="presentation"><a href="#import_demo" aria-controls="import_demo" role="tab"
-				                           data-toggle="tab"><?php esc_html_e( 'Import Demo', 'newsmag' ); ?></a></li>
-			<?php } ?>
 			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab"
 			                           data-toggle="tab"><?php esc_html_e( 'Changelog', 'newsmag' ); ?></a></li>
 		</ul>
