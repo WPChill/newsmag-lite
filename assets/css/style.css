@@ -1404,7 +1404,10 @@ a {
         font-weight: 700;
         text-transform: uppercase;
         background-color: #ff3d2e;
-        padding: 8px; }
+        padding: 1px 6px;
+        font-family: 'Poppins';
+        font-size: 12px;
+        display: inline-block; }
 .newsmag_slider .newsmag-slider .main-slider-previous, .newsmag_slider .newsmag-slider .main-slider-next {
   position: absolute;
   top: 50%;
