@@ -1,11 +1,15 @@
 <?php
-if ( $posts->have_posts() ):?>
+if ( $posts->have_posts() ): ?>
 	<?php echo ( $posts->post_count > 4 ) ? '<div class="col-md-12">' : '<div class="col-md-8">' ?>
-	<div class="row newsmag-margin-bottom post-banner-row">
+	<div class="row newsmag-margin-bottom newsmag-post-banner-row">
 		<?php if ( ! empty( $instance['title'] ) ) { ?>
-			<h2 class="colored"><?php echo esc_html( $instance['title'] ); ?></h2>
-		<?php } else { ?>
-			<h2 class="colored"><?php the_category() ?></h2>
+			<h2><span><?php echo esc_html( $instance['title'] ); ?></span></h2>
+		<?php } else {
+			$idObj = get_category_by_slug( $instance['newsmag_category'] );
+			?>
+			<h2>
+				<a href="<?php echo esc_url( get_category_link( $idObj->term_id ) ); ?>"><?php echo esc_html( $idObj->name ) ?></a>
+			</h2>
 		<?php } ?>
 		<?php while ( $posts->have_posts() ): $posts->the_post(); ?>
 			<?php

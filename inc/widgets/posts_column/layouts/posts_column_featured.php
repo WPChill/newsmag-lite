@@ -14,10 +14,10 @@ if ( $posts->have_posts() ):
 				?>
 				<div class="newsmag-post-box-a">
 					<?php if ( ! empty( $instance['title'] ) ) { ?>
-						<h2 class="colored"><?php echo esc_html( $instance['title'] ); ?></h2>
+						<h2><span><?php echo esc_html( $instance['title'] ); ?></span></h2>
 					<?php } else { ?>
-						<h2 class="colored">
-							<a href="<?php esc_url( $category[0]->link ) ?>"><?php echo esc_html( $category[0]->name ) ?></a>
+						<h2>
+							<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>"><?php echo esc_html( $category[0]->name ) ?></a>
 						</h2>
 					<?php } ?>
 					<a class="newsmag-post-box-image" href="<?php echo esc_url( get_the_permalink() ); ?>">
@@ -55,7 +55,8 @@ if ( $posts->have_posts() ):
 									<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 15 ); ?></a>
 								</h3>
 								<?php if ( $instance['show_date'] === 'on' ): ?>
-									<span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+									<span
+										class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
 								<?php endif; ?>
 							</div>
 						</div>

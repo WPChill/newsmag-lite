@@ -52,7 +52,7 @@
 /**
 * Select all widgets except for the search box
 */
-.widget:not(.widget_newsmag_banner) {
+.widget:not(.widget_newsmag_banner):not(.newsmag_slider) {
   > h3 {
     font-size: 18px;
     font-family: $font__alternate;

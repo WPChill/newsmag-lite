@@ -2,16 +2,16 @@
 if ( $posts->have_posts() ):
 
 	$i = 0; ?>
-	<div class="col-md-4">
+	<div class="col-md-4 newsmag-blog-post-layout-row">
 		<?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
 			<?php $category = get_the_category(); ?>
 
 			<?php if ( $i == 0 ) {
 				if ( ! empty( $instance['title'] ) ) { ?>
-					<h2 class="colored"><?php echo esc_html( $instance['title'] ); ?></h2>
+					<h2><span><?php echo esc_html( $instance['title'] ); ?></span></h2>
 				<?php } else { ?>
-					<h2 class="colored">
-						<a href="<?php esc_url( $category[0]->link ) ?>"><?php echo esc_html( $category[0]->name ) ?></a>
+					<h2>
+						<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>"><?php echo esc_html( $category[0]->name ) ?></a>
 					</h2>
 				<?php }
 			}

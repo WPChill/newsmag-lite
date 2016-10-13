@@ -75,7 +75,7 @@ else:
 		</div>
 		<?php } ?>
 
-	<div class="container newsmag-margin-top">
+	<div class="container">
 		<div class="row">
 			<?php if ( is_active_sidebar( 'content-area' ) ) { ?>
 				<?php dynamic_sidebar( 'content-area' ); ?>

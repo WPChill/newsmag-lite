@@ -120,6 +120,7 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 	 */
 	public function get_posts( $args ) {
 		$idObj = get_category_by_slug( $args['newsmag_category'] );
+
 		$atts  = array(
 			'posts_per_page' => $args['show_post'],
 		);

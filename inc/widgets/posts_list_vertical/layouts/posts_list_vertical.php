@@ -1,10 +1,14 @@
 <?php
 if ( $posts->have_posts() ): ?>
-	<div class="col-md-8">
+	<div class="col-md-8 newsmag-post-list-vertical-row">
 		<?php if ( ! empty( $instance['title'] ) ) { ?>
-			<h2 class="colored"><?php echo esc_html( $instance['title'] ); ?></h2>
-		<?php } else { ?>
-			<h2 class="colored"><?php echo esc_html( get_category_by_slug( $instance['newsmag_category'] )->name ) ?></h2>
+			<h2><span><?php echo esc_html( $instance['title'] ); ?></span></h2>
+		<?php } else {
+			$idObj = get_category_by_slug( $instance['newsmag_category'] );
+			?>
+			<h2>
+				<a href="<?php echo esc_url( get_category_link( $idObj->term_id ) ); ?>"><?php echo esc_html( $idObj->name ) ?></a>
+			</h2>
 		<?php } ?>
 
 		<?php
@@ -13,6 +17,7 @@ if ( $posts->have_posts() ): ?>
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 			}
+			$cat = get_the_category();
 			?>
 
 			<div class="newsmag-blog-post-layout-b wide-layout">
@@ -21,6 +26,7 @@ if ( $posts->have_posts() ): ?>
 						<div class="newsmag-image">
 							<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 								<?php echo wp_kses_post( $image ) ?>
+								<span class="newsmag-post-box-b-category"><?php echo esc_html( $cat[0]->name ) ?></span>
 							</a>
 						</div>
 					</div>
@@ -37,7 +43,6 @@ if ( $posts->have_posts() ): ?>
 							<p>
 								<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
 							</p>
-							<span class="meta"><?php the_category() ?></span>
 						</div>
 					</div>
 				</div>
