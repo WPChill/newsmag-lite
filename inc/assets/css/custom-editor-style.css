@@ -1,0 +1,17 @@
+ul {
+    list-style-type: none;
+    margin: 0 0 1.5em;
+    padding: 0;
+}
+
+ul li:before {
+    content: "\f111";
+    font-family: 'FontAwesome';
+    display: inline-block;
+    margin-left: 0;
+    width: 12px;
+    color: #ff3d2e;
+    font-size: 6px;
+    position: relative;
+    bottom: 2px;
+}

@@ -307,6 +307,11 @@ function newsmag_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'newsmag_scripts' );
 
+function newsmag_add_editor_styles() {
+	add_editor_style( 'inc/assets/css/custom-editor-style.css' );
+}
+add_action( 'admin_init', 'newsmag_add_editor_styles' );
+
 function newsmag_the_posts_navigation( $args = array() ) {
 	echo get_the_posts_navigation( $args );
 }
