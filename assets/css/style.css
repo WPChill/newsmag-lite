@@ -1819,11 +1819,11 @@ a {
       float: none;
       width: 100%;
       margin-bottom: 25px; }
-    .newsmag-blog-post-layout .newsmag-image .newsmag-sticky-sign {
+    .newsmag-blog-post-layout .newsmag-image .newsmag-format-sign {
       position: absolute;
       display: inline-block;
-      bottom: 0;
-      left: 0;
+      top: 0;
+      left: 20px;
       color: #FFF;
       z-index: 1;
       background: #ff3d2e;
@@ -1831,14 +1831,9 @@ a {
       height: 40px;
       text-align: center;
       line-height: 40px; }
-      .newsmag-blog-post-layout .newsmag-image .newsmag-sticky-sign span {
+      .newsmag-blog-post-layout .newsmag-image .newsmag-format-sign span {
         color: #FFF;
-        font-size: 20px;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg); }
+        font-size: 20px; }
   .newsmag-blog-post-layout .newsmag-title h3 {
     font-size: 20px;
     font-family: "Poppins", "serif";

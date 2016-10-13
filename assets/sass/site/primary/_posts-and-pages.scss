@@ -252,11 +252,11 @@
       width: 100%;
       margin-bottom: 25px;
     }
-    .newsmag-sticky-sign {
+    .newsmag-format-sign {
       position: absolute;
       display: inline-block;
-      bottom: 0;
-      left: 0;
+      top: 0;
+      left: 20px;
       color: #FFF;
       z-index: 1;
       background: $color__brand-red;
@@ -267,11 +267,6 @@
       span {
         color: #FFF;
         font-size: 20px;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
       }
     }
   }

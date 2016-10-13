@@ -42,11 +42,23 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+
 		/*
 		 * Enable support for Post Formats.
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
-		add_theme_support( 'post-formats', array() );
+
+		add_theme_support( 'post-formats', array(
+			'aside',
+			'image',
+			'quote',
+			'link',
+			'gallery',
+			'video',
+			'status',
+			'audio',
+			'chat'
+		) );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -80,7 +92,7 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		add_image_size( 'newsmag-recent-post-big', 560, 416, true );
 		add_image_size( 'newsmag-recent-post-list-image', 65, 65, true );
 		add_image_size( 'newsmag-slider-image', 1920, 600, true );
-		
+
 		/**
 		 * Banners
 		 */
@@ -149,6 +161,27 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'newsmag_setup' );
+
+
+function newsmag_format_icon( $format = 'standard' ) {
+	if ( $format === 'standard' ) {
+		return false;
+	}
+
+	$icons = array(
+		'aside'   => 'fa fa-hashtag',
+		'image'   => 'fa fa-picture-o',
+		'quote'   => 'fa fa-quote-left',
+		'link'    => 'fa fa-link',
+		'gallery' => 'fa fa-th-large',
+		'video'   => 'fa fa-video-camera',
+		'status'  => 'fa fa-heartbeat',
+		'audio'   => 'fa fa-headphones',
+		'chat'    => 'fa fa-comment-o'
+	);
+
+	return $icons[ $format ];
+}
 
 /**
  * @return bool

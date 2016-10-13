@@ -19,6 +19,12 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="newsmag-image newsmag-sticky-post-image">
+					<?php if ( get_post_format() ): ?>
+						<div class="newsmag-format-sign">
+							<span class="<?php echo esc_attr( newsmag_format_icon( get_post_format() ) ) ?>"></span>
+						</div>
+					<?php endif; ?>
+
 					<a href=" <?php echo esc_url( get_the_permalink() ); ?>">
 						<?php echo wp_kses_post( $image ) ?>
 					</a>
@@ -50,6 +56,11 @@
 		<div class="row">
 			<div class="col-sm-4 col-xs-12">
 				<div class="newsmag-image">
+					<?php if ( get_post_format() ): ?>
+						<div class="newsmag-format-sign">
+							<span class="<?php echo esc_attr( newsmag_format_icon( get_post_format() ) ) ?>"></span>
+						</div>
+					<?php endif; ?>
 					<a href=" <?php echo esc_url( get_the_permalink() ); ?>">
 						<?php echo wp_kses_post( $image ) ?>
 					</a>
