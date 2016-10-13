@@ -76,11 +76,11 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		/**
 		 * Post Thumbs
 		 */
-		add_image_size( 'newsmag-single-post', 760, 490, true );
+		add_image_size( 'newsmag-single-post', 730, 330, true );
 		add_image_size( 'newsmag-recent-post-big', 560, 416, true );
 		add_image_size( 'newsmag-recent-post-list-image', 65, 65, true );
 		add_image_size( 'newsmag-slider-image', 1920, 600, true );
-
+		
 		/**
 		 * Banners
 		 */
