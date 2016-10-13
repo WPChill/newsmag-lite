@@ -30,13 +30,13 @@
 		<div class="container">
 			<div class="row">
 				<?php if ( $copyright_area ): ?>
-					<div class="col-md-6">
+					<div class="col-lg-9 col-sm-8">
 						<?php
 						echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://machothemes.com/newsmag-lite/">Newsmag</a>. All rights reserved.' ) );
 						?>
 					</div>
 				<?php endif; ?>
-				<div class="<?php echo $copyright_area ? 'col-md-6' : 'col-md-12' ?> text-right">
+				<div class="<?php echo $copyright_area ? 'col-lg-3 col-sm-4' : 'col-md-12' ?> text-right">
 					<?php echo __( 'Created by <a href="https://machothemes.com">Macho Themes</a>', 'newsmag' ) ?>
 				</div>
 			</div>
