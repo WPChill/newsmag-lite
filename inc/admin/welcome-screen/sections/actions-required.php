@@ -6,10 +6,6 @@
 
 <div id="actions_required" class="newsmag-tab-pane">
 
-    <h1><?php esc_html_e( 'Actions recommended to make this theme look like in the demo.' ,'newsmag' ); ?></h1>
-
-    <hr />
-
 	<?php
 	global $newsmag_required_actions;
 

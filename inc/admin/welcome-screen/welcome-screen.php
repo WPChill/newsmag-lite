@@ -224,36 +224,55 @@ class Newsmag_Welcome {
 		require_once( ABSPATH . 'wp-load.php' );
 		require_once( ABSPATH . 'wp-admin/admin.php' );
 		require_once( ABSPATH . 'wp-admin/admin-header.php' );
+
+		$newsmag = wp_get_theme();
+		$active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'getting_started';
 		?>
 
-		<h1 class="newsmag-welcome-title"><?php _e( 'Welcome to Newsmag!', 'newsmag' ); ?> <?php if ( ! empty( $newsmag['Version'] ) ): ?>
-				<sup id="newsmag-theme-version"><?php echo esc_attr( $newsmag['Version'] ); ?> </sup><?php endif; ?>
-		</h1>
+		<div class="wrap about-wrap epsilon-wrap">
 
-		<p><?php esc_html_e( 'Newsmag is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using Newsmag and that is why we gathered here all the necessary information for you. We hope you will enjoy using Newsmag, as much as we enjoy creating great products.', 'newsmag' ); ?>
-		<ul class="nav-tab-wrapper newsmag-nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab"
-			                                          data-toggle="tab"><?php esc_html_e( 'Getting started', 'newsmag' ); ?></a>
-			</li>
-			<li role="presentation"><a href="#actions_required"
-			                                                     aria-controls="actions_required" role="tab"
-			                                                     data-toggle="tab"><?php esc_html_e( 'Recommended actions', 'newsmag' ); ?></a>
-			</li>
-			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab"
-			                           data-toggle="tab"><?php esc_html_e( 'Changelog', 'newsmag' ); ?></a></li>
-		</ul>
+			<h1><?php _e( 'Welcome to Newsmag!', 'newsmag' ); ?></h1>
 
-		<div class="newsmag-tab-content">
+			<div
+				class="about-text"><?php esc_html_e( 'Newsmag is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using Newsmag and that is why we gathered here all the necessary information for you. We hope you will enjoy using Newsmag, as much as we enjoy creating great products.', 'newsmag' ); ?></div>
+
+			<div class="wp-badge epsilon-welcome-logo"><?php echo esc_html( $newsmag['Version'] ); ?></div>
+
+
+			<h2 class="nav-tab-wrapper wp-clearfix">
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=getting_started' ); ?>"
+				   class="nav-tab <?php echo $active_tab == 'getting_started' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html__( 'Getting Started', 'newsmag' ); ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"
+				   class="nav-tab <?php echo $active_tab == 'recommended_actions' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Actions', 'newsmag' ); ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=support' ); ?>"
+				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'newsmag' ); ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=changelog' ); ?>"
+				   class="nav-tab"><?php echo esc_html__( 'Changelog', 'newsmag' ); ?></a>
+			</h2>
 
 			<?php
-			/**
-			 * @hooked newsmag_welcome_getting_started - 10
-			 * @hooked newsmag_welcome_actions_required - 20
-			 * @hooked newsmag_welcome_changelog - 50
-			 */
-			do_action( 'newsmag_welcome' ); ?>
+			switch ( $active_tab ) {
+				case 'getting_started':
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php';
+					break;
+				case 'recommended_actions':
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/actions-required.php';
+					break;
+				case 'support':
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/support.php';
+					break;
+				case 'changelog':
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/changelog.php';
+					break;
+				default:
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php';
+					break;
+			}
+			?>
 
-		</div>
+
+		</div><!--/.wrap.about-wrap-->
+
 		<?php
 	}
 
