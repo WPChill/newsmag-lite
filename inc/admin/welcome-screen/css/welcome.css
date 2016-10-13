@@ -17,3 +17,45 @@
     position: relative;
     top: 3px;
 }
+
+.feature-section.action-required {
+    background: #FFF;
+    margin-top: 20px;
+    padding-bottom: 0;
+}
+
+.action-required span.hooray {
+    padding: 10px;
+    display: inline-block;
+}
+
+.action-required span.red {
+    color: #a00;
+}
+
+.newsmag-action-required-box:last-of-type {
+    border-bottom: none;
+}
+
+.newsmag-action-required-box {
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    padding-top: 15px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.about-wrap .newsmag-action-required-box h4 {
+    display: inline-block;
+    width: 35%;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.about-wrap .newsmag-action-required-box p {
+    width: 65%;
+    float: left;
+    display: inline-block;
+    margin-top: 0;
+}
