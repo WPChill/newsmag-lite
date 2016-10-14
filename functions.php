@@ -140,7 +140,27 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					'title'       => esc_html__( 'Build your homepage!', 'newsmag' ),
 					'description' => esc_html__( 'Get started with Newsmag by adding a Slider Widget to the Header Area or by adding a Content widget. To achieve any of these actions, please head on to Customize -> Widgets -> Homepage : Header Area or Content Area and select any of the widgets presented there.', 'newsmag' ),
 					'check'       => newsmag_has_widgets()
-				)
+				),
+				array(
+					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
+					"title"       => esc_html__( 'Install WordPress Importer', 'newsmag-pro' ),
+					"description" => esc_html__( 'Please install the WordPress Importer to create the demo content.', 'newsmag-pro' ),
+					"check"       => ! class_exists( 'WP_Importer' ),
+					"plugin_slug" => 'wordpress-importer'
+				),
+				array(
+					"id"          => 'newsmag-req-ac-install-wp-import-widget-plugin',
+					"title"       => esc_html__( 'Install Widget Importer Exporter', 'newsmag-pro' ),
+					"description" => esc_html__( 'Please install the WordPress widget importer to create the demo content', 'newsmag-pro' ),
+					"check"       => defined( "WIE_VERSION" ),
+					"plugin_slug" => 'widget-importer-exporter'
+				),
+				array(
+					"id"          => 'newsmag-req-ac-install-data',
+					"title"       => esc_html__( 'Run the import!', 'newsmag-pro' ),
+					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag-pro' ),
+					"help"        => wp_kses( '<a target="_blank"  href="http://machothemes.s3.amazonaws.com/newsmag-pro-posts.xml">Posts</a>, <a target="_blank"  href="http://machothemes.s3.amazonaws.com/newsmag-pro-widgets.json">Widgets</a>', 'newsmag-pro' ),
+				),
 			);
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 		}
