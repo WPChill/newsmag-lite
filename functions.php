@@ -143,23 +143,24 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 				),
 				array(
 					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
-					"title"       => esc_html__( 'Install WordPress Importer', 'newsmag-pro' ),
-					"description" => esc_html__( 'Please install the WordPress Importer to create the demo content.', 'newsmag-pro' ),
-					"check"       => ! class_exists( 'WP_Importer' ),
+					"title"       => esc_html__( 'Install WordPress Importer', 'newsmag' ),
+					"description" => esc_html__( 'Please install the WordPress Importer to create the demo content.', 'newsmag' ),
+					"check"       => defined("IMPORT_DEBUG" ),
 					"plugin_slug" => 'wordpress-importer'
 				),
 				array(
 					"id"          => 'newsmag-req-ac-install-wp-import-widget-plugin',
-					"title"       => esc_html__( 'Install Widget Importer Exporter', 'newsmag-pro' ),
-					"description" => esc_html__( 'Please install the WordPress widget importer to create the demo content', 'newsmag-pro' ),
+					"title"       => esc_html__( 'Install Widget Importer Exporter', 'newsmag' ),
+					"description" => esc_html__( 'Please install the WordPress widget importer to create the demo content', 'newsmag' ),
 					"check"       => defined( "WIE_VERSION" ),
 					"plugin_slug" => 'widget-importer-exporter'
 				),
 				array(
 					"id"          => 'newsmag-req-ac-install-data',
-					"title"       => esc_html__( 'Run the import!', 'newsmag-pro' ),
-					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag-pro' ),
-					"help"        => wp_kses( '<a target="_blank"  href="http://machothemes.s3.amazonaws.com/newsmag-pro-posts.xml">Posts</a>, <a target="_blank"  href="http://machothemes.s3.amazonaws.com/newsmag-pro-widgets.json">Widgets</a>', 'newsmag-pro' ),
+					"title"       => esc_html__( 'Run the import!', 'newsmag' ),
+					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
+					"help"        =>  '<a target="_blank"  href="https//www.machothemes.com/sample-data/newsmag-lite-posts.xml">'.__('Posts', 'newsmag').'</a>, 
+									   <a target="_blank"  href="https//www.machothemes.com/sample-data/newsmag-lite-widgets.json">'.__('Widgets', 'newsmag').'</a>' 
 				),
 			);
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';

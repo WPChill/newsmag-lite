@@ -32,7 +32,7 @@
 				</p>
 				<?php
 				if ( ! empty( $newsmag_required_action_value['plugin_slug'] ) ):
-					?><p><a
+					?><p style="float: right;"><a
 						href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $newsmag_required_action_value['plugin_slug'] ), 'install-plugin_' . $newsmag_required_action_value['plugin_slug'] ) ); ?>"
 						class="button button-primary"><?php if ( ! empty( $newsmag_required_action_value['title'] ) ): echo $newsmag_required_action_value['title']; endif; ?></a>
 					</p><?php

@@ -221,9 +221,9 @@ class Newsmag_Welcome {
 			<h1><?php _e( 'Welcome to Newsmag!', 'newsmag' ); ?></h1>
 
 			<div
-				class="about-text"><?php esc_html_e( 'Newsmag is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using Newsmag and that is why we gathered here all the necessary information for you. We hope you will enjoy using Newsmag, as much as we enjoy creating great products.', 'newsmag' ); ?></div>
+				class="about-text"><?php echo esc_html__( 'Newsmag is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using Newsmag and that is why we gathered here all the necessary information for you. We hope you will enjoy using Newsmag, as much as we enjoy creating great products.', 'newsmag' ); ?></div>
 
-			<div class="wp-badge epsilon-welcome-logo"><?php echo esc_html( $newsmag['Version'] ); ?></div>
+			<div class="wp-badge epsilon-welcome-logo"></div>
 
 
 			<h2 class="nav-tab-wrapper wp-clearfix">
