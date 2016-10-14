@@ -132,9 +132,15 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"id"          => 'newsmag-req-ac-static-latest-news',
 					"title"       => esc_html__( 'Set front page to static', 'newsmag' ),
 					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'newsmag' ),
-					"help"        => wp_kses( 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>', 'newsmag' ),
+					"help"        => wp_kses( 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>,', 'newsmag' ),
 					"check"       => newsmag_is_not_static_page()
 				),
+				array(
+					'id'          => 'newsmag-req-ac-add-widgets',
+					'title'       => esc_html__( 'Build your homepage!', 'newsmag' ),
+					'description' => esc_html__( 'Get started with Newsmag by adding a Slider Widget to the Header Area or by adding a Content widget. To achieve any of these actions, please head on to Customize -> Widgets -> Homepage : Header Area or Content Area and select any of the widgets presented there.', 'newsmag' ),
+					'check'       => newsmag_has_widgets()
+				)
 			);
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 		}
@@ -168,6 +174,17 @@ function newsmag_format_icon( $format = 'standard' ) {
  */
 function newsmag_is_not_static_page() {
 	return 'page' == get_option( 'show_on_front' ) ? true : false;
+}
+
+/**
+ * @return bool
+ */
+function newsmag_has_widgets() {
+	if ( ! is_active_sidebar( 'homepage-slider' ) && ! is_active_sidebar( 'content-area' ) ) {
+		return false;
+	}
+
+	return true;
 }
 
 /**
