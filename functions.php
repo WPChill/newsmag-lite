@@ -99,20 +99,6 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		add_image_size( 'newsmag-wide-banner', 728, 90, true );
 		add_image_size( 'newsmag-square-banner', 300, 250, true );
 		add_image_size( 'newsmag-skyscraper-banner', 300, 600, true );
-
-		add_filter( 'image_size_names_choose', 'newsmag_image_sizes' );
-		function newsmag_image_sizes( $sizes ) {
-			$addsizes = array(
-				'newsmag-single-post'       => __( 'Single Post Size', 'newsmag' ),
-				'newsmag-wide-banner'       => __( 'Wide Banner', 'newsmag' ),
-				'newsmag-square-banner'     => __( 'Square Banner', 'newsmag' ),
-				'newsmag-skyscraper-banner' => __( 'Sky scraper Banner', 'newsmag' )
-			);
-			$newsizes = array_merge( $sizes, $addsizes );
-
-			return $newsizes;
-		}
-
 		/**
 		 * Add support for the custom logo functionality
 		 */
@@ -152,7 +138,7 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"id"          => 'newsmag-req-ac-static-latest-news',
 					"title"       => esc_html__( 'Set front page to static', 'newsmag' ),
 					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'newsmag' ),
-					"help"        => wp_kses( 'If you need more help understanding how this works, check out the following <a href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>', 'newsmag' ),
+					"help"        => wp_kses( 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>', 'newsmag' ),
 					"check"       => newsmag_is_not_static_page()
 				),
 			);
