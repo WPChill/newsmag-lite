@@ -21,17 +21,6 @@ class Newsmag_Welcome {
 		/* enqueue script for customizer */
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'newsmag_welcome_scripts_for_customizer' ) );
 
-		/* load welcome screen */
-		add_action( 'newsmag_welcome', array( $this, 'newsmag_welcome_getting_started' ), 10 );
-		add_action( 'newsmag_welcome', array( $this, 'newsmag_welcome_actions_required' ), 20 );
-
-		if ( class_exists( 'MT_Theme_Importer' ) ) {
-			add_action( 'newsmag_welcome', array( $this, 'newsmag_welcome_import_demo' ), 30 );
-		}
-
-		add_action( 'newsmag_welcome', array( $this, 'newsmag_welcome_changelog' ), 50 );
-
-
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_newsmag_dismiss_required_action', array(
 			$this,
@@ -41,7 +30,6 @@ class Newsmag_Welcome {
 			$this,
 			'newsmag_dismiss_required_action_callback'
 		) );
-
 	}
 
 	/**
@@ -220,7 +208,6 @@ class Newsmag_Welcome {
 	 * @since 1.8.2.4
 	 */
 	public function newsmag_welcome_screen() {
-
 		require_once( ABSPATH . 'wp-load.php' );
 		require_once( ABSPATH . 'wp-admin/admin.php' );
 		require_once( ABSPATH . 'wp-admin/admin-header.php' );
@@ -275,43 +262,6 @@ class Newsmag_Welcome {
 
 		<?php
 	}
-
-	/**
-	 * Getting started
-	 *
-	 * @since 1.8.2.4
-	 */
-	public function newsmag_welcome_getting_started() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php' );
-	}
-
-	/**
-	 * Actions required
-	 *
-	 * @since 1.8.2.4
-	 */
-	public function newsmag_welcome_actions_required() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/actions-required.php' );
-	}
-
-	/**
-	 * Changelog
-	 *
-	 * @since 1.8.2.4
-	 */
-	public function newsmag_welcome_import_demo() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/import-demo.php' );
-	}
-
-	/**
-	 * Changelog
-	 *
-	 * @since 1.8.2.4
-	 */
-	public function newsmag_welcome_changelog() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/changelog.php' );
-	}
-
 }
 
 new Newsmag_Welcome();
