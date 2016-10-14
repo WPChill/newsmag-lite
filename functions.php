@@ -92,13 +92,7 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		add_image_size( 'newsmag-recent-post-big', 560, 416, true );
 		add_image_size( 'newsmag-recent-post-list-image', 65, 65, true );
 		add_image_size( 'newsmag-slider-image', 1920, 600, true );
-
-		/**
-		 * Banners
-		 */
-		add_image_size( 'newsmag-wide-banner', 728, 90, true );
-		add_image_size( 'newsmag-square-banner', 300, 250, true );
-		add_image_size( 'newsmag-skyscraper-banner', 300, 600, true );
+		
 		/**
 		 * Add support for the custom logo functionality
 		 */
