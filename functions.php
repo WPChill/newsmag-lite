@@ -92,7 +92,7 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		add_image_size( 'newsmag-recent-post-big', 560, 416, true );
 		add_image_size( 'newsmag-recent-post-list-image', 65, 65, true );
 		add_image_size( 'newsmag-slider-image', 1920, 600, true );
-		
+
 		/**
 		 * Add support for the custom logo functionality
 		 */
@@ -245,7 +245,7 @@ function newsmag_scripts() {
 	 * Load the fonts
 	 */
 	$query_args = array(
-		'family' => 'Hind:400,700|Lato:400,600,700|Poppins:400,500,600,700'
+		'family' => 'Lato:400,600,700|Poppins:400,500,600,700'
 	);
 
 	wp_enqueue_style( 'newsmag-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), 1, 'all' );
