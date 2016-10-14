@@ -1275,7 +1275,7 @@ a {
     font-size: 15px;
     font-family: "Lato", sans-serif;
     margin-bottom: 40px; }
-    .site-footer .widget h3 {
+    .site-footer .widget > h3.widget-title {
       font-family: "Poppins", "serif";
       font-size: 17px;
       text-transform: uppercase;

@@ -604,7 +604,7 @@
     font-size: 15px;
     font-family: $font__main;
     margin-bottom: 40px;
-    h3 {
+    > h3.widget-title {
       font-family: $font__alternate;
       font-size: 17px;
       text-transform: uppercase;
