@@ -1567,7 +1567,8 @@ a {
       font-size: 16px;
       color: #FFF;
       padding: 0 20px;
-      background: #ff3d2e; }
+      background: #ff3d2e;
+      font-weight: bold; }
   .newsmag_builder .newsmag-blog-post-layout-b {
     padding-bottom: 20px;
     margin-bottom: 20px;

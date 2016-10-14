@@ -226,6 +226,7 @@
         color: #FFF;
         padding: 0 20px;
         background: $color__brand-red;
+        font-weight: bold;
       }
     }
   }
@@ -324,7 +325,7 @@
             background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
             content: '';
-            z-index:1;
+            z-index: 1;
           }
         }
       }
@@ -339,7 +340,7 @@
         font-family: 'Poppins', serif;
         background: $color__brand-red;
         padding: 2px 7px;
-        z-index:2;
+        z-index: 2;
       }
 
       .newsmag-title {
