@@ -32,7 +32,7 @@ foreach ( $mysidebars as $column ) {
  */
 if ( empty( $sidebars ) ) {
 	$args = array(
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title'  => '</h3>'
 	); ?>
 	<div class="footer-widgets-area">
