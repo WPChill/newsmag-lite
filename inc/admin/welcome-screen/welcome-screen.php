@@ -143,8 +143,8 @@ class Newsmag_Welcome {
 
 		wp_localize_script( 'newsmag-welcome-screen-customizer-js', 'newsmagWelcomeScreenCustomizerObject', array(
 			'nr_actions_required' => $nr_actions_required,
-			'aboutpage'           => esc_url( admin_url( 'themes.php?page=newsmag-welcome#actions_required' ) ),
-			'customizerpage'      => esc_url( admin_url( 'customize.php#actions_required' ) ),
+			'aboutpage'           => esc_url( admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ) ),
+			'customizerpage'      => esc_url( admin_url( 'customize.php#recommended_actions' ) ),
 			'themeinfo'           => __( 'View Theme Info', 'newsmag' ),
 		) );
 	}
