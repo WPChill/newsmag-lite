@@ -325,6 +325,18 @@ function newsmag_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'newsmag_scripts' );
 
+function newsmag_admin_scripts() {
+	/**
+	 * Load the fonts
+	 */
+	$query_args = array(
+		'family' => 'Lato:400,600,700|Poppins:400,500,600,700'
+	);
+
+	wp_enqueue_style( 'newsmag-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), 1, 'all' );
+}
+add_action( 'admin_enqueue_scripts', 'newsmag_admin_scripts' );
+
 function newsmag_add_editor_styles() {
 	add_editor_style( 'inc/assets/css/custom-editor-style.css' );
 }
@@ -374,6 +386,18 @@ function newsmag_dirname_to_classname( $dirname ) {
 	return $class_name;
 }
 
+add_action( 'wp_ajax_newsmag_get_attachment_image', 'newsmag_get_attachment_image' );
+add_action( 'wp_ajax_nopriv_newsmag_get_attachment_image', 'newsmag_get_attachment_image' );
+
+function newsmag_get_attachment_image() {
+	$id   = intval( $_POST['attachment_id'] );
+	$size = esc_html( $_POST['attachment_size'] );
+
+	$src = wp_get_attachment_image( $id, false );
+
+	echo $src;
+	die();
+}
 
 function newsmag_remove_specific_widget( $sidebars_widgets ) {
 
@@ -407,6 +431,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load lazyload
+ */
+require get_template_directory() . '/inc/components/lazyload/class-newsmag-lazyload.php';
 
 /**
  * Sidebars

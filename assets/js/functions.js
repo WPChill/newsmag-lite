@@ -2,10 +2,21 @@ jQuery(document).ready(function ($) {
 	Newsmag.initGoToTop($);
 	Newsmag.initSearchForm($);
 	Newsmag.initMainSlider($);
+	Newsmag.initLazyLoad($);
 });
 
 
 var Newsmag = {
+	initLazyLoad   : function ($) {
+		$(".lazy").lazyload({
+			effect        : "fadeIn",
+			skip_invisible: false
+		});
+		$("img.lazy").each(function() {
+			$(this).attr("src", $(this).attr("data-original"));
+			$(this).removeAttr("data-original");
+		});
+	},
 	initMainSlider: function ($) {
 		if ( $('.newsmag-slider').length ) {
 			owl = $('.newsmag-slider');

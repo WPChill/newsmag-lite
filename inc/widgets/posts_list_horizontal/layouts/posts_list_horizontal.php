@@ -18,24 +18,25 @@
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 			}
+			$new_image = apply_filters( 'newsmag_widget_image', $image );
+			$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
 			?>
 
 			<div class="col-md-3 col-sm-6">
 				<div class="newsmag-post-box-a thumbnail-layout">
 					<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-						<?php echo wp_kses_post( $image ) ?>
+						<?php echo wp_kses( $new_image, $allowed_tags ); ?>
 					</a>
 					<h3>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
-					<div class="date"><span
-							class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?></div>
+					<div class="date"><span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?></div>
 				</div>
 			</div>
 			<?php
 
 			if ( fmod( $i, 4 ) == 0 && $i != (int) $posts->post_count ) {
-				echo '</div><div class="newsmag-blog-post-layout-row">';
+				echo '</div><div class="row">';
 			} elseif ( $i == (int) $posts->post_count ) {
 				continue;
 			}

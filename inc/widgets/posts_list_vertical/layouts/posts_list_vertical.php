@@ -9,12 +9,15 @@ if ( $posts->have_posts() ): ?>
 				<?php echo empty( $instance['title'] ) ? esc_html( $idObj->name ) : esc_html( $instance['title'] ); ?>
 			</a>
 		</h2>
+
 		<?php
 		while ( $posts->have_posts() ) : $posts->the_post();
 			$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url( get_template_directory_uri() . '/assets/images/picture_placeholder.jpg' ) . ' " />';
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 			}
+			$new_image = apply_filters( 'newsmag_widget_image', $image );
+			$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
 			$cat = get_the_category();
 			?>
 
@@ -23,7 +26,7 @@ if ( $posts->have_posts() ): ?>
 					<div class="col-sm-5 col-xs-12">
 						<div class="newsmag-image">
 							<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-								<?php echo wp_kses_post( $image ) ?>
+								<?php echo wp_kses( $new_image, $allowed_tags ); ?>
 								<span class="newsmag-post-box-b-category"><?php echo esc_html( $cat[0]->name ) ?></span>
 							</a>
 						</div>

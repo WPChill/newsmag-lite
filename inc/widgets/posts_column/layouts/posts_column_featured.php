@@ -10,7 +10,8 @@ if ( $posts->have_posts() ):
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 				}
-
+				$new_image = apply_filters( 'newsmag_widget_image', $image );
+				$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
 				?>
 				<div class="newsmag-post-box-a">
 					<h2>
@@ -19,7 +20,7 @@ if ( $posts->have_posts() ):
 						</a>
 					</h2>
 					<a class="newsmag-post-box-image" href="<?php echo esc_url( get_the_permalink() ); ?>">
-						<?php echo wp_kses_post( $image ); ?>
+						<?php echo wp_kses($new_image, $allowed_tags); ?>
 						<span class="newsmag-post-box-a-category"><?php echo esc_html( $category[0]->name ) ?></span>
 					</a>
 					<h3>
@@ -36,6 +37,8 @@ if ( $posts->have_posts() ):
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
 				}
+				$new_image = apply_filters( 'newsmag_widget_image', $image );
+				$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
 
 				?>
 				<div class="newsmag-blog-post-layout-b">
@@ -43,7 +46,7 @@ if ( $posts->have_posts() ):
 						<div class="col-sm-3 col-xs-4">
 							<div class="newsmag-image">
 								<a href=" <?php echo esc_url( get_the_permalink() ); ?>">
-									<?php echo wp_kses_post( $image ) ?>
+									<?php echo wp_kses($new_image, $allowed_tags); ?>
 								</a>
 							</div>
 						</div>
