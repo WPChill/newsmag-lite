@@ -96,9 +96,10 @@
   }
 }
 
-.newsmag-image {
+.newsmag-image, .newsmag-post-box-image {
   overflow: hidden;
   display: block;
+  position: relative;
   > img,
   > a > img {
     -moz-transition: all 0.3s;

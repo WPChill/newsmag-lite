@@ -18,8 +18,7 @@ if ( $posts->have_posts() ): ?>
 			}
 			?>
 
-			<div
-				class="newsmag-blog-post-layout-banner <?php echo ( $posts->post_count > 4 ) ? 'col-md-3' : 'col-md-6' ?>"
+			<div class="newsmag-blog-post-layout-banner <?php echo ( $posts->post_count > 4 ) ? 'col-md-3' : 'col-md-6' ?>"
 				style="background-image:url('<?php echo esc_url( $image ) ?>')">
 				<div class="banner-content">
 					<h3>
