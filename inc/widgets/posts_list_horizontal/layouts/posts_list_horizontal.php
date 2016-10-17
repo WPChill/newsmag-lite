@@ -1,6 +1,6 @@
 <?php if ( $posts->have_posts() ): $i = 0; ?>
 
-	<div class="newsmag-margin-top newsmag-blog-post-layout-row">
+	<div class="newsmag-margin-top post-list-horizontal newsmag-blog-post-layout-row">
 		<div class="col-md-12">
 			<?php
 			$idObj = get_category_by_slug( $instance['newsmag_category'] );

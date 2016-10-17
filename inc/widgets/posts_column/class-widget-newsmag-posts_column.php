@@ -229,13 +229,8 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 			$sticky->posts[] = $post;
 		}
 
-		/**
-		 * Another check to make sure we don't return more posts then needed.
-		 */
-		if ( count( $sticky->posts ) > $args['show_post'] ) {
-			$sticky->posts      = array_slice( $sticky->posts, 0, $args['show_post'] );
-			$sticky->post_count = count( $sticky->posts );
-		}
+		$sticky->posts      = array_slice( $sticky->posts, 0, (int) $args['show_post'] );
+		$sticky->post_count = count( $sticky->posts );
 
 		return $sticky;
 	}
