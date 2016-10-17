@@ -387,11 +387,20 @@
   }
   .newsmag-blog-post-layout-banner {
     min-height: 275px;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
     border: 2px solid #FFF;
     position: relative;
+    &:hover{
+      background-size: 115% 115%;
+      -moz-transition: all 0.2s;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+    }
     &:before {
       position: absolute;
       bottom: 0;
