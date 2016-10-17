@@ -194,6 +194,7 @@
   margin-bottom: 40px;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
   .container {
     position: relative;
     top: 40%;
@@ -210,6 +211,23 @@
     height: 455px;
     margin-bottom: 0;
     background-attachment: fixed;
+    &:before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background: transparent;
+      background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, rgba(0, 0, 0, 1)));
+      background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+      content: '';
+      z-index: 0;
+    }
     .container {
       position: relative;
       top: 50%;
@@ -217,6 +235,7 @@
       transform: translateY(-50%);
     }
   }
+
 }
 
 .newsmag-archive-page {
@@ -293,7 +312,7 @@
       margin-right: 5px;
     }
     &.newsmag-sticky-post-title {
-      h3{
+      h3 {
         margin-bottom: 0;
       }
     }
@@ -392,5 +411,26 @@
     display: inline-block;
     width: 100%;
     position: relative;
+  }
+}
+
+.newsmag-image {
+  position: relative;
+  a {
+    &:before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background-color: rgba(41,41,41,0);
+      background-image: -webkit-linear-gradient(bottom, #000, rgba(0,0,0,0));
+      background-image: -moz-linear-gradient(bottom, #000, rgba(0,0,0,0));
+      background-image: -o-linear-gradient(bottom, #000, rgba(0,0,0,0));
+      background-image: -ms-linear-gradient(bottom, #000, rgba(0,0,0,0));
+      background-image: linear-gradient(to top, #000, rgba(0,0,0,0));
+      content: '';
+      z-index: 1;
+    }
   }
 }

@@ -917,7 +917,22 @@ a {
       width: 65px;
       height: 65px;
       display: inline-block;
-      float: left; }
+      float: left;
+      position: relative; }
+      .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .posts-list li > a:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 45%;
+        background-color: rgba(41, 41, 41, 0);
+        background-image: -webkit-linear-gradient(bottom, #000, transparent);
+        background-image: -moz-linear-gradient(bottom, #000, transparent);
+        background-image: -o-linear-gradient(bottom, #000, transparent);
+        background-image: -ms-linear-gradient(bottom, #000, transparent);
+        background-image: linear-gradient(to top, #000, transparent);
+        content: '';
+        z-index: 1; }
     .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .posts-list li .content {
       display: inline-block;
       float: left;
@@ -1516,14 +1531,12 @@ a {
         left: 0;
         width: 100%;
         height: 45%;
-        background: transparent;
-        background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, rgba(0, 0, 0, 0.4)));
-        background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-        background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-        background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-        background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+        background-color: rgba(41, 41, 41, 0);
+        background-image: -webkit-linear-gradient(bottom, #000, transparent);
+        background-image: -moz-linear-gradient(bottom, #000, transparent);
+        background-image: -o-linear-gradient(bottom, #000, transparent);
+        background-image: -ms-linear-gradient(bottom, #000, transparent);
+        background-image: linear-gradient(to top, #000, transparent);
         content: '';
         z-index: 1; }
       .newsmag_builder .newsmag-post-box-a .newsmag-post-box-image .newsmag-post-box-a-category {
@@ -1630,14 +1643,12 @@ a {
           left: 0;
           width: 100%;
           height: 45%;
-          background: transparent;
-          background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, rgba(0, 0, 0, 0.4)));
-          background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-          background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-          background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-          background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+          background-color: rgba(41, 41, 41, 0);
+          background-image: -webkit-linear-gradient(bottom, #000, transparent);
+          background-image: -moz-linear-gradient(bottom, #000, transparent);
+          background-image: -o-linear-gradient(bottom, #000, transparent);
+          background-image: -ms-linear-gradient(bottom, #000, transparent);
+          background-image: linear-gradient(to top, #000, transparent);
           content: '';
           z-index: 1; }
       .newsmag_builder .newsmag-blog-post-layout-b.wide-layout .newsmag-post-box-b-category {
@@ -1689,14 +1700,12 @@ a {
       left: 0;
       width: 100%;
       height: 45%;
-      background: transparent;
-      background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, rgba(0, 0, 0, 0.4)));
-      background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-      background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-      background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+      background-color: rgba(41, 41, 41, 0);
+      background-image: -webkit-linear-gradient(bottom, #000, transparent);
+      background-image: -moz-linear-gradient(bottom, #000, transparent);
+      background-image: -o-linear-gradient(bottom, #000, transparent);
+      background-image: -ms-linear-gradient(bottom, #000, transparent);
+      background-image: linear-gradient(to top, #000, transparent);
       content: ''; }
     .newsmag_builder .newsmag-blog-post-layout-banner .banner-content {
       position: absolute;
@@ -2156,7 +2165,8 @@ a {
   height: 200px;
   margin-bottom: 40px;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  position: relative; }
   .newsmag-custom-header .container {
     position: relative;
     top: 40%; }
@@ -2171,6 +2181,22 @@ a {
     height: 455px;
     margin-bottom: 0;
     background-attachment: fixed; }
+    .newsmag-custom-header.newsmag-custom-header-single-post:before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background: transparent;
+      background: -moz-linear-gradient(top, transparent 0%, black 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, black));
+      background: -webkit-linear-gradient(top, transparent 0%, black 100%);
+      background: -o-linear-gradient(top, transparent 0%, black 100%);
+      background: -ms-linear-gradient(top, transparent 0%, black 100%);
+      background: linear-gradient(to bottom, transparent 0%, black 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+      content: '';
+      z-index: 0; }
     .newsmag-custom-header.newsmag-custom-header-single-post .container {
       position: relative;
       top: 50%;
@@ -2300,6 +2326,23 @@ a {
   display: inline-block;
   width: 100%;
   position: relative; }
+
+.newsmag-image {
+  position: relative; }
+  .newsmag-image a:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background-color: rgba(41, 41, 41, 0);
+    background-image: -webkit-linear-gradient(bottom, #000, transparent);
+    background-image: -moz-linear-gradient(bottom, #000, transparent);
+    background-image: -o-linear-gradient(bottom, #000, transparent);
+    background-image: -ms-linear-gradient(bottom, #000, transparent);
+    background-image: linear-gradient(to top, #000, transparent);
+    content: '';
+    z-index: 1; }
 
 /*--------------------------------------------------------------
 ## Asides

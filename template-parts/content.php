@@ -25,7 +25,7 @@
 						</div>
 					<?php endif; ?>
 
-					<a href=" <?php echo esc_url( get_the_permalink() ); ?>">
+					<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 						<?php echo wp_kses_post( $image ) ?>
 					</a>
 				</div>

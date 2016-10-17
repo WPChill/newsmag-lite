@@ -34,11 +34,9 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 					}
 					?>
 					<li>
-
-						<a href="<?php the_permalink() ?>">
+						<a class="newsmag-image" href="<?php the_permalink() ?>">
 							<?php echo wp_kses_post( $image ); ?>
 						</a>
-
 						<div class="content">
 
 							<a href="<?php the_permalink(); ?>"
