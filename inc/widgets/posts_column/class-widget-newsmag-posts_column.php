@@ -165,21 +165,79 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 	 * @return WP_Query
 	 */
 	public function get_posts( $args ) {
-		$idObj = get_category_by_slug( $args['newsmag_category'] );
-		$atts  = array(
+		/**
+		 * Arguments for the normal query
+		 */
+		$atts = array(
 			'posts_per_page' => $args['show_post'],
 		);
 
+		/**
+		 * Grab the sticky posts
+		 */
+		$sticky_atts = array(
+			'posts_per_page' => $args['show_post'],
+			'post__in'       => get_option( 'sticky_posts' ),
+		);
+
+		/**
+		 * Grab category and add the new argument
+		 */
+		$idObj = get_category_by_slug( $args['newsmag_category'] );
 		if ( $idObj ) {
-			$id          = $idObj->term_id;
-			$atts['cat'] = $id;
+			$id                 = $idObj->term_id;
+			$atts['cat']        = $id;
+			$sticky_atts['cat'] = $id;
 		}
 
-		$posts = new WP_Query( $atts );
+		/**
+		 * Initiate WP Query for the sticky posts
+		 */
+		$sticky          = new WP_Query( $sticky_atts );
+		$sticky_post_ids = array();
 
+		/**
+		 * Start adding the IDS of the sticky posts in a new array
+		 */
+		if ( ! empty( $sticky->posts ) ) {
+			foreach ( $sticky->posts as $post ) {
+				$sticky_post_ids[] = $post->ID;
+			}
+		}
 		wp_reset_postdata();
 
-		return $posts;
+		/**
+		 * Run the normal query
+		 */
+		$normal_posts = new WP_Query( $atts );
+
+		/**
+		 * In case we do not have sticky posts, we terminate here and return this result
+		 */
+		if ( empty( $sticky->posts ) ) {
+			return $normal_posts;
+		}
+
+		/**
+		 * We check if the post id is in the sticky post id array, and if not - we add it to the sticky posts result
+		 */
+		foreach ( $normal_posts->posts as $post ) {
+			if ( in_array( $post->ID, $sticky_post_ids ) ) {
+				continue;
+			}
+
+			$sticky->posts[] = $post;
+		}
+
+		/**
+		 * Another check to make sure we don't return more posts then needed.
+		 */
+		if ( count( $sticky->posts ) > $args['show_post'] ) {
+			$sticky->posts      = array_slice( $sticky->posts, 0, $args['show_post'] );
+			$sticky->post_count = count( $sticky->posts );
+		}
+
+		return $sticky;
 	}
 
 	public function widget( $args, $instance ) {
