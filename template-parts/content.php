@@ -33,7 +33,7 @@
 					<h3>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
 					</h3>
-					<span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+					<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
 
 				</div>
 				<div class="newsmag-content entry-content">
@@ -71,7 +71,7 @@
 					<h3>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
 					</h3>
-					<span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+					<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
 
 				</div>
 				<div class="newsmag-content entry-content">

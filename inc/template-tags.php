@@ -31,7 +31,7 @@ if ( ! function_exists( 'newsmag_posted_on' ) ) :
 				echo '<a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a>';
 				break;
 			case 'comments':
-				echo esc_html($comments->approved);
+				echo '<icon class="sep-left fa fa-comment-o"></icon> ' . esc_html($comments->approved);
 				break;
 			case 'date':
 				echo '<div class="newsmag-date">' . esc_html($date) . '</div>';

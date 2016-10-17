@@ -36,7 +36,8 @@ if ( $posts->have_posts() ): ?>
 							<h3>
 								<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 15 ); ?></a>
 							</h3>
-							<span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+							<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+							<?php newsmag_posted_on('comments'); ?>
 							<?php
 							$excerpt = get_the_excerpt();
 							$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );

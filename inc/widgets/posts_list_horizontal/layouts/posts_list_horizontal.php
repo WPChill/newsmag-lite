@@ -30,7 +30,7 @@
 					<h3>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
-					<div class="date"><span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?></div>
+					<div class="date"><span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?></div>
 				</div>
 			</div>
 			<?php
