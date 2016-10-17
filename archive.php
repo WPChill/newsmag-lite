@@ -30,7 +30,7 @@ if ( ! empty( $img ) ): ?>
 					elseif ( is_category() ):
 						the_archive_title();
 					else :
-						_e( 'Archives', 'newsmag' );
+						_e( 'Tags', 'newsmag' );
 					endif;
 					?>
 					</h2>
