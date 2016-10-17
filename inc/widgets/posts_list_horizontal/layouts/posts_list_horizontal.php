@@ -35,7 +35,7 @@
 			<?php
 
 			if ( fmod( $i, 4 ) == 0 && $i != (int) $posts->post_count ) {
-				echo '</div><div class="row">';
+				echo '</div><div class="newsmag-blog-post-layout-row">';
 			} elseif ( $i == (int) $posts->post_count ) {
 				continue;
 			}

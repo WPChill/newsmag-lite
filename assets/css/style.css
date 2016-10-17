@@ -1551,6 +1551,9 @@ a {
         background: #ff3d2e;
         padding: 2px 7px;
         z-index: 2; }
+  .newsmag_builder .newsmag-blog-post-layout-row {
+    display: inline-block;
+    width: 100%; }
   .newsmag_builder .newsmag-blog-post-layout-row h2,
   .newsmag_builder .newsmag-post-banner-row h2,
   .newsmag_builder .newsmag-post-list-vertical-row h2 {
