@@ -159,8 +159,8 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"id"          => 'newsmag-req-ac-install-data',
 					"title"       => esc_html__( 'Run the import!', 'newsmag' ),
 					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
-					"help"        =>  '<a target="_blank"  href="https//www.machothemes.com/sample-data/newsmag-lite-posts.xml">'.__('Posts', 'newsmag').'</a>, 
-									   <a target="_blank"  href="https//www.machothemes.com/sample-data/newsmag-lite-widgets.json">'.__('Widgets', 'newsmag').'</a>' 
+					"help"        =>  '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">'.__('Posts', 'newsmag').'</a>, 
+									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.json">'.__('Widgets', 'newsmag').'</a>'
 				),
 			);
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
