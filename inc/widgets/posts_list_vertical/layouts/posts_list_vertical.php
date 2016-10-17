@@ -1,16 +1,14 @@
 <?php
 if ( $posts->have_posts() ): ?>
 	<div class="col-md-8 newsmag-post-list-vertical-row">
-		<?php if ( ! empty( $instance['title'] ) ) { ?>
-			<h2><span><?php echo esc_html( $instance['title'] ); ?></span></h2>
-		<?php } else {
-			$idObj = get_category_by_slug( $instance['newsmag_category'] );
-			?>
-			<h2>
-				<a href="<?php echo esc_url( get_category_link( $idObj->term_id ) ); ?>"><?php echo esc_html( $idObj->name ) ?></a>
-			</h2>
-		<?php } ?>
-
+		<?php
+		$idObj = get_category_by_slug( $instance['newsmag_category'] );
+		?>
+		<h2>
+			<a href="<?php echo esc_url( get_category_link( $idObj->term_id ) ) ?>">
+				<?php echo empty( $instance['title'] ) ? esc_html( $idObj->name ) : esc_html( $instance['title'] ); ?>
+			</a>
+		</h2>
 		<?php
 		while ( $posts->have_posts() ) : $posts->the_post();
 			$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url( get_template_directory_uri() . '/assets/images/picture_placeholder.jpg' ) . ' " />';

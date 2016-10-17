@@ -13,13 +13,11 @@ if ( $posts->have_posts() ):
 
 				?>
 				<div class="newsmag-post-box-a">
-					<?php if ( ! empty( $instance['title'] ) ) { ?>
-						<h2><span><?php echo esc_html( $instance['title'] ); ?></span></h2>
-					<?php } else { ?>
-						<h2>
-							<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>"><?php echo esc_html( $category[0]->name ) ?></a>
-						</h2>
-					<?php } ?>
+					<h2>
+						<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>">
+							<?php echo empty( $instance['title'] ) ? esc_html( $category[0]->name ) : esc_html( $instance['title'] ); ?>
+						</a>
+					</h2>
 					<a class="newsmag-post-box-image" href="<?php echo esc_url( get_the_permalink() ); ?>">
 						<?php echo wp_kses_post( $image ); ?>
 						<span class="newsmag-post-box-a-category"><?php echo esc_html( $category[0]->name ) ?></span>

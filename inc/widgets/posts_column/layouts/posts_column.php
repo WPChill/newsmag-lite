@@ -6,15 +6,13 @@ if ( $posts->have_posts() ):
 		<?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
 			<?php $category = get_the_category(); ?>
 
-			<?php if ( $i == 0 ) {
-				if ( ! empty( $instance['title'] ) ) { ?>
-					<h2><span><?php echo esc_html( $instance['title'] ); ?></span></h2>
-				<?php } else { ?>
-					<h2>
-						<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>"><?php echo esc_html( $category[0]->name ) ?></a>
-					</h2>
-				<?php }
-			}
+			<?php if ( $i == 0 ) { ?>
+				<h2>
+					<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>">
+						<?php echo empty( $instance['title'] ) ? esc_html( $category[0]->name ) : esc_html( $instance['title'] ); ?>
+					</a>
+				</h2>
+			<?php }
 
 			$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url_raw( get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg' ) . '" />';
 			if ( has_post_thumbnail() ) {
