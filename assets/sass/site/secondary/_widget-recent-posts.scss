@@ -195,7 +195,7 @@
         font-weight: 700;
         font-family: 'Poppins', serif;
         background: $color__brand-red;
-        padding: 5px 7px;
+        padding: 6px 7px 5px 7px;
         z-index: 2;
       }
     }
@@ -258,6 +258,7 @@
     .newsmag-image {
       display: inline-block;
       float: left;
+      width: 100%;
       img {
         width: 100%;
       }
@@ -395,7 +396,7 @@
     transition: all 0.2s;
     border: 2px solid #FFF;
     position: relative;
-    &:hover{
+    &:hover {
       background-size: 115% 115%;
       -moz-transition: all 0.2s;
       -webkit-transition: all 0.2s;

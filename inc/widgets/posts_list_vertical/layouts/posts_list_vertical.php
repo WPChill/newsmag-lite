@@ -26,7 +26,7 @@ if ( $posts->have_posts() ): ?>
 					<div class="col-sm-5 col-xs-12">
 						<div class="newsmag-image">
 							<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-								<?php echo wp_kses( $new_image, $allowed_tags ); ?>
+								<?php  echo $new_image; ?>
 								<span class="newsmag-post-box-b-category"><?php echo esc_html( $cat[0]->name ) ?></span>
 							</a>
 						</div>

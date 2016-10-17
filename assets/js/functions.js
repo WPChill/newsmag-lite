@@ -12,10 +12,6 @@ var Newsmag = {
 			effect        : "fadeIn",
 			skip_invisible: false
 		});
-		$("img.lazy").each(function() {
-			$(this).attr("src", $(this).attr("data-original"));
-			$(this).removeAttr("data-original");
-		});
 	},
 	initMainSlider: function ($) {
 		if ( $('.newsmag-slider').length ) {
