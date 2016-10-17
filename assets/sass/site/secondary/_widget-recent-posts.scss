@@ -188,19 +188,20 @@
         bottom: 20px;
         left: 20px;
         font-size: 12px;
+        line-height: 12px;
         text-transform: uppercase;
         color: #FFF;
         font-weight: 700;
         font-family: 'Poppins', serif;
         background: $color__brand-red;
-        padding: 2px 7px;
+        padding: 5px 7px;
         z-index: 2;
       }
     }
   }
-  .newsmag-blog-post-layout-row{
+  .newsmag-blog-post-layout-row {
     display: inline-block;
-    width:100%;
+    width: 100%;
   }
   .newsmag-blog-post-layout-row,
   .newsmag-post-banner-row,
