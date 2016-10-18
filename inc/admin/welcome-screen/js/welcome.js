@@ -24,20 +24,8 @@ jQuery(document).ready(function () {
                 location.reload();
                 jQuery("#temp_load").remove();
                 /* Remove loading gif */
-                jQuery('#' + data).parent().remove();
+                jQuery('#' + data).parent().slideToggle().remove();
                 /* Remove required action box */
-
-                var newsmag_actions_count = jQuery('.newsmag-actions-count').text();
-                /* Decrease or remove the counter for required actions */
-                if (typeof newsmag_actions_count !== 'undefined') {
-                    if (newsmag_actions_count == '1') {
-                        jQuery('.newsmag-actions-count').remove();
-                        jQuery('.newsmag-tab-pane#actions_required').append('<p>' + newsmagWelcomeScreenObject.no_required_actions_text + '</p>');
-                    }
-                    else {
-                        jQuery('.newsmag-actions-count').text(parseInt(newsmag_actions_count) - 1);
-                    }
-                }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);
