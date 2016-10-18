@@ -3,7 +3,6 @@
  * Getting started template
  */
 $customizer_url = admin_url() . 'customize.php';
-global $nr_actions_required;
 $count = $this->count_actions();
 ?>
 
