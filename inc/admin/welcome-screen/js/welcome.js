@@ -21,6 +21,7 @@ jQuery(document).ready(function () {
                 jQuery('.newsmag-tab-pane#actions_required h1').append('<div id="temp_load" style="text-align:center"><img src="' + newsmagWelcomeScreenObject.template_directory + '/inc/admin/welcome-screen/img/ajax-loader.gif" /></div>');
             },
             success: function (data) {
+                location.reload();
                 jQuery("#temp_load").remove();
                 /* Remove loading gif */
                 jQuery('#' + data).parent().remove();

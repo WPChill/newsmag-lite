@@ -127,6 +127,7 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 				$imported = true;
 			}
 
+
 			$newsmag_required_actions = array(
 				array(
 					"id"          => 'newsmag-req-ac-static-latest-news',
@@ -145,7 +146,7 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
 					"title"       => esc_html__( 'Install WordPress Importer', 'newsmag' ),
 					"description" => esc_html__( 'Please install the WordPress Importer to create the demo content.', 'newsmag' ),
-					"check"       => defined("IMPORT_DEBUG" ),
+					"check"       => class_exists( 'Widget_Importer_Exporter' ),
 					"plugin_slug" => 'wordpress-importer'
 				),
 				array(
@@ -159,8 +160,9 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"id"          => 'newsmag-req-ac-install-data',
 					"title"       => esc_html__( 'Run the import!', 'newsmag' ),
 					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
-					"help"        =>  '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">'.__('Posts', 'newsmag').'</a>, 
-									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.json">'.__('Widgets', 'newsmag').'</a>'
+					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>, 
+									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.json">' . __( 'Widgets', 'newsmag' ) . '</a>',
+					"check"       => newsmag_has_content(),
 				),
 			);
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
@@ -206,6 +208,31 @@ function newsmag_has_widgets() {
 	}
 
 	return true;
+}
+
+/**
+ * @return bool
+ */
+function newmsag_has_posts() {
+	$count_posts = wp_count_posts();
+	if ( (int) $count_posts->publish > 4 ) {
+		return true;
+	}
+
+	return false;
+}
+
+function newsmag_has_content() {
+	$check = array(
+		'widgets' => newsmag_has_widgets(),
+		'posts'   => newmsag_has_posts(),
+	);
+
+	if ( $check['widgets'] && $check['posts'] ) {
+		return true;
+	}
+
+	return false;
 }
 
 /**
@@ -335,6 +362,7 @@ function newsmag_admin_scripts() {
 
 	wp_enqueue_style( 'newsmag-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), 1, 'all' );
 }
+
 add_action( 'admin_enqueue_scripts', 'newsmag_admin_scripts' );
 
 function newsmag_add_editor_styles() {
