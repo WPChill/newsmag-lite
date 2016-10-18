@@ -271,7 +271,7 @@ class Newsmag_Welcome {
 				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=support' ); ?>"
 				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'newsmag' ); ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=changelog' ); ?>"
-				   class="nav-tab"><?php echo esc_html__( 'Changelog', 'newsmag' ); ?></a>
+				   class="nav-tab <?php echo $active_tab == 'changelog' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Changelog', 'newsmag' ); ?></a>
 			</h2>
 
 			<?php
