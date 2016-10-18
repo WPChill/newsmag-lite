@@ -177,26 +177,14 @@ $wp_customize->add_control( new Epsilon_Control_Upsell(
 );
 $wp_customize->add_control( new Epsilon_Control_Upsell(
 	                            $wp_customize,
-	                            'newsmag_upsell_pro_version',
+	                            'newsmag_upsell_pro_banners',
 	                            array(
-		                            'section'     => 'newsmag_general_pro_version_section',
-		                            'priority'    => 0,
+		                            'section'     => 'newsmag_general_banners_controls',
 		                            'options'     => array(
-			                            esc_html__('News Ticker', 'newsmag'),
-			                            esc_html__('Related Posts Carousel', 'newsmag'),
-			                            esc_html__('Extra Blog Layouts', 'newsmag'),
-			                            esc_html__('More Slider Widget Controls', 'newsmag'),
-			                            esc_html__('More Banner Ad areas', 'newsmag') ,
-			                            esc_html__('Dedicated Support', 'newsmag'),
-			                            esc_html__('Theme Updates for 1 year', 'newsmag') ,
+			                            esc_html__('Extra Banner Ads', 'newsmag'),
 		                            ),
 		                            'requirements' => array(
-			                            esc_html__('Get news ticker functionality with the PRO version of Newsmag. Showcase your most important news in style!', 'newsmag'),
-			                            esc_html__('Control the number of posts, speed, display of title and date on your related posts carousel.', 'newsmag'),
-			                            esc_html__('Multiple blog layouts are available in the PRO version of Newsmag. That includes: full-width posts and sidebars on the left.', 'newsmag'),
-			                            esc_html__('Control the number of posts displayed in the slider widget. ', 'newsmag'),
-			                            esc_html__('Get in-content banner areas - blend your ads with the posts for a better click-through rate.', 'newsmag'),
-			                            esc_html__('Theme updates and support for 1 year - included with purchase', 'newsmag') ,
+			                            esc_html__('The PRO version of Newsmag comes with dedicated banner widgets which you can place where you want on the homepage.', 'newsmag'),
 		                            ),
 		                            'button_url' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
 		                            'button_text' => esc_html__('Get the PRO version!', 'newsmag'),
@@ -210,7 +198,6 @@ $wp_customize->add_control( new Epsilon_Control_Upsell(
 	                            'newsmag_upsell_color_version',
 	                            array(
 		                            'section'     => 'colors',
-		                            'priority'    => 0,
 		                            'options'     => array(
 			                            esc_html__('More Color Options', 'newsmag'),
 		                            ),

@@ -127,7 +127,6 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 				$imported = true;
 			}
 
-
 			$newsmag_required_actions = array(
 				array(
 					"id"          => 'newsmag-req-ac-static-latest-news',
@@ -146,7 +145,7 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
 					"title"       => esc_html__( 'Install WordPress Importer', 'newsmag' ),
 					"description" => esc_html__( 'Please install the WordPress Importer to create the demo content.', 'newsmag' ),
-					"check"       => class_exists( 'Widget_Importer_Exporter' ),
+					"check"       => newsmag_check_wordpress_importer(),
 					"plugin_slug" => 'wordpress-importer'
 				),
 				array(
@@ -171,7 +170,11 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'newsmag_setup' );
 
-
+/**
+ * @param string $format
+ *
+ * @return bool|mixed
+ */
 function newsmag_format_icon( $format = 'standard' ) {
 	if ( $format === 'standard' ) {
 		return false;
@@ -230,6 +233,16 @@ function newsmag_has_content() {
 
 	if ( $check['widgets'] && $check['posts'] ) {
 		return true;
+	}
+
+	return false;
+}
+
+function newsmag_check_wordpress_importer() {
+	if ( file_exists( ABSPATH . 'wp-content/plugins/wordpress-importer/wordpress-importer.php' ) ) {
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+		return is_plugin_active( 'wordpress-importer/wordpress-importer.php' );
 	}
 
 	return false;

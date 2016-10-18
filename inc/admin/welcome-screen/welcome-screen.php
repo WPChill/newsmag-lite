@@ -86,27 +86,8 @@ class Newsmag_Welcome {
 		wp_enqueue_style( 'newsmag-welcome-screen-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css' );
 		wp_enqueue_script( 'newsmag-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array( 'jquery' ) );
 
-		global $newsmag_required_actions;
-
-		$nr_actions_required = 0;
-
-		/* get number of required actions */
-		if ( get_option( 'newsmag_show_required_actions' ) ):
-			$newsmag_show_required_actions = get_option( 'newsmag_show_required_actions' );
-		else:
-			$newsmag_show_required_actions = array();
-		endif;
-
-		if ( ! empty( $newsmag_required_actions ) ):
-			foreach ( $newsmag_required_actions as $newsmag_required_action_value ):
-				if ( ( ! isset( $newsmag_required_action_value['check'] ) || ( isset( $newsmag_required_action_value['check'] ) && ( $newsmag_required_action_value['check'] == false ) ) ) && ( ( isset( $newsmag_show_required_actions[ $newsmag_required_action_value['id'] ] ) && ( $newsmag_show_required_actions[ $newsmag_required_action_value['id'] ] == true ) ) || ! isset( $newsmag_show_required_actions[ $newsmag_required_action_value['id'] ] ) ) ) :
-					$nr_actions_required ++;
-				endif;
-			endforeach;
-		endif;
-
 		wp_localize_script( 'newsmag-welcome-screen-js', 'newsmagWelcomeScreenObject', array(
-			'nr_actions_required'      => $nr_actions_required,
+			'nr_actions_required'      => $this->count_actions(),
 			'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
 			'template_directory'       => get_template_directory_uri(),
 			'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.', 'newsmag' )

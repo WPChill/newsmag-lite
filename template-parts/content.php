@@ -14,6 +14,9 @@
 	if ( has_post_thumbnail() ) {
 		$image = is_sticky() ? get_the_post_thumbnail( get_the_ID(), 'newsmag-single-post' ) : get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 	}
+	$new_image = apply_filters( 'newsmag_widget_image', $image );
+	$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
+
 	?>
 	<?php if ( is_sticky() ): ?>
 		<div class="row">
@@ -26,7 +29,7 @@
 					<?php endif; ?>
 
 					<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-						<?php echo wp_kses_post( $image ) ?>
+						<?php echo wp_kses( $new_image, $allowed_tags ) ?>
 					</a>
 				</div>
 				<div class="newsmag-title newsmag-sticky-post-title">
@@ -61,8 +64,8 @@
 							<span class="<?php echo esc_attr( newsmag_format_icon( get_post_format() ) ) ?>"></span>
 						</div>
 					<?php endif; ?>
-					<a href=" <?php echo esc_url( get_the_permalink() ); ?>">
-						<?php echo wp_kses_post( $image ) ?>
+					<a href="<?php echo esc_url( get_the_permalink() ); ?>">
+						<?php echo wp_kses( $new_image, $allowed_tags ) ?>
 					</a>
 				</div>
 			</div>
