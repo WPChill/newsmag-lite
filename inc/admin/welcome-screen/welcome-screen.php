@@ -223,7 +223,7 @@ class Newsmag_Welcome {
 				$true = true;
 			}
 
-			if ( ! empty( $newsmag_show_required_actions ) && ! $newsmag_show_required_actions[ $action['id'] ] ) {
+			if ( ! empty( $newsmag_show_required_actions ) && isset( $newsmag_show_required_actions[ $action['id'] ] ) && ! $newsmag_show_required_actions[ $action['id'] ] ) {
 				$true = false;
 			}
 
