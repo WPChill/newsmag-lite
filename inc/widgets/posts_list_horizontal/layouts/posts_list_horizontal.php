@@ -13,7 +13,7 @@
 		</div>
 		<?php while ( $posts->have_posts() ) : $posts->the_post();
 			$i ++;
-
+			$category = get_the_category();
 			$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url( get_template_directory_uri() . '/assets/images/picture_placeholder.jpg' ) . '" />';
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
@@ -26,11 +26,12 @@
 				<div class="newsmag-post-box-a thumbnail-layout">
 					<a class="newsmag-image" href="<?php echo esc_url( get_the_permalink() ); ?>">
 						<?php echo wp_kses( $new_image, $allowed_tags ); ?>
+						<span class="newsmag-post-box-a-category"><?php echo esc_html( $category[0]->name ) ?></span>
 					</a>
 					<h3>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
-					<div class="date"><span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?></div>
+					<div class="meta"><span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?> <?php newsmag_posted_on('comments'); ?></div>
 				</div>
 			</div>
 			<?php

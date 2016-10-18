@@ -146,9 +146,6 @@
           font-weight: 700;
         }
       }
-      .date {
-        display: none;
-      }
     }
     h3 {
       font-size: 23px;
@@ -166,7 +163,7 @@
     p {
       margin-top: 9px;
     }
-    .newsmag-post-box-image {
+    .newsmag-post-box-image, .newsmag-image {
       display: block;
       position: relative;
       &:before {
@@ -433,7 +430,7 @@
           font-weight: 700;
         }
       }
-      .date {
+      .meta {
         font-size: 14px;
         color: #FFF;
       }

@@ -17,6 +17,10 @@ var Newsmag = {
 		if ( $('.newsmag-slider').length ) {
 			owl = $('.newsmag-slider');
 
+			owl.on('initialized.owl.carousel', function(){
+				$('.owl-nav-list').addClass('active');
+			});
+
 			owl.owlCarousel({
 				loop           : true,
 				items          : 1,
@@ -57,7 +61,6 @@ var Newsmag = {
 
 			});
 
-
 			$('.owl-nav-list li').click(function () {
 				var slide_index = $(this).index();
 
@@ -66,7 +69,6 @@ var Newsmag = {
 			})
 
 		}
-
 	},
 	initSearchForm: function ($) {
 		$('#search-top-bar-submit').on('click', function (e) {

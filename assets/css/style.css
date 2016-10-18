@@ -1512,8 +1512,6 @@ a {
       line-height: 17px; }
       .newsmag_builder .newsmag-post-box-a.thumbnail-layout h3 a {
         font-weight: 700; }
-    .newsmag_builder .newsmag-post-box-a.thumbnail-layout .date {
-      display: none; }
     .newsmag_builder .newsmag-post-box-a h3 {
       font-size: 23px;
       margin-top: 23px;
@@ -1526,10 +1524,10 @@ a {
       margin-right: 5px; }
     .newsmag_builder .newsmag-post-box-a p {
       margin-top: 9px; }
-    .newsmag_builder .newsmag-post-box-a .newsmag-post-box-image {
+    .newsmag_builder .newsmag-post-box-a .newsmag-post-box-image, .newsmag_builder .newsmag-post-box-a .newsmag-image {
       display: block;
       position: relative; }
-      .newsmag_builder .newsmag-post-box-a .newsmag-post-box-image:before {
+      .newsmag_builder .newsmag-post-box-a .newsmag-post-box-image:before, .newsmag_builder .newsmag-post-box-a .newsmag-image:before {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -1543,7 +1541,7 @@ a {
         background-image: linear-gradient(to top, #000, transparent);
         content: '';
         z-index: 1; }
-      .newsmag_builder .newsmag-post-box-a .newsmag-post-box-image .newsmag-post-box-a-category {
+      .newsmag_builder .newsmag-post-box-a .newsmag-post-box-image .newsmag-post-box-a-category, .newsmag_builder .newsmag-post-box-a .newsmag-image .newsmag-post-box-a-category {
         position: absolute;
         bottom: 20px;
         left: 20px;
@@ -1740,7 +1738,7 @@ a {
           color: #FFF;
           font-size: 23px;
           font-weight: 700; }
-      .newsmag_builder .newsmag-blog-post-layout-banner .banner-content .date {
+      .newsmag_builder .newsmag-blog-post-layout-banner .banner-content .meta {
         font-size: 14px;
         color: #FFF; }
     .newsmag_builder .newsmag-blog-post-layout-banner.col-md-3 .banner-content h3 a {
@@ -1900,6 +1898,53 @@ a {
 
   #content .owl-dots .owl-dot span {
     height: 4px; } }
+.newsmag_slider .category a {
+  -webkit-transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  -moz-transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.newsmag_slider .category a:hover {
+  background: #000; }
+
+.newsmag_slider .owl-nav-list.active h4 {
+  animation: anim-newsmag-nav-list 1000ms linear both; }
+
+.newsmag_slider .owl-nav-list li:nth-child(1) {
+  animation: anim-newsmag-nav-list 810ms linear .45s both; }
+
+.newsmag_slider .owl-nav-list li:nth-child(2) {
+  animation: anim-newsmag-nav-list 810ms linear .65s both; }
+
+.newsmag_slider .owl-nav-list li:nth-child(3) {
+  animation: anim-newsmag-nav-list 810ms linear .85s both; }
+
+.newsmag_slider .owl-nav-list li:nth-child(4) {
+  animation: anim-newsmag-nav-list 810ms linear 1.1s both; }
+
+.newsmag_slider .owl-nav-list li:nth-child(5) {
+  animation: anim-newsmag-nav-list 810ms linear 1.3s both; }
+
+.newsmag_slider .owl-nav-list li:nth-child(6) {
+  animation: anim-newsmag-nav-list 810ms linear 1.5s both; }
+
+.newsmag_slider .owl-nav-list li:nth-child(7) {
+  animation: anim-newsmag-nav-list 810ms linear 1.7s both; }
+
+.newsmag_slider .owl-nav-list li:nth-child(8) {
+  animation: anim-newsmag-nav-list 810ms linear 1.9s both; }
+
+.newsmag_slider .owl-nav-list ul,
+.newsmag_slider .owl-nav-list li {
+  display: block; }
+
+.newsmag_slider .owl-nav-list li.active {
+  -animation: anim-newsmag-nav-list-active 650ms linear both; }
+
 @keyframes anim_newsmag_sliderPro_image {
   0% {
     opacity: .4; }
@@ -2035,6 +2080,168 @@ a {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.391, 0, 0, 1); }
   39.14% {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.113, 0, 0, 1); }
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
+@keyframes anim-newsmag-nav-list-active {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  3.4% {
+    transform: matrix3d(1.032, 0, 0, 0, 0, 1.041, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.7% {
+    transform: matrix3d(1.045, 0, 0, 0, 0, 1.06, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  6.81% {
+    transform: matrix3d(1.066, 0, 0, 0, 0, 1.089, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  9.41% {
+    transform: matrix3d(1.088, 0, 0, 0, 0, 1.117, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  10.21% {
+    transform: matrix3d(1.094, 0, 0, 0, 0, 1.123, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  13.61% {
+    transform: matrix3d(1.112, 0, 0, 0, 0, 1.133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  14.11% {
+    transform: matrix3d(1.114, 0, 0, 0, 0, 1.133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  17.52% {
+    transform: matrix3d(1.121, 0, 0, 0, 0, 1.124, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  18.72% {
+    transform: matrix3d(1.121, 0, 0, 0, 0, 1.119, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  21.32% {
+    transform: matrix3d(1.12, 0, 0, 0, 0, 1.107, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  24.32% {
+    transform: matrix3d(1.115, 0, 0, 0, 0, 1.096, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  25.23% {
+    transform: matrix3d(1.113, 0, 0, 0, 0, 1.094, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  29.03% {
+    transform: matrix3d(1.106, 0, 0, 0, 0, 1.09, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  29.93% {
+    transform: matrix3d(1.105, 0, 0, 0, 0, 1.09, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  35.54% {
+    transform: matrix3d(1.098, 0, 0, 0, 0, 1.096, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  36.74% {
+    transform: matrix3d(1.097, 0, 0, 0, 0, 1.098, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  41.04% {
+    transform: matrix3d(1.096, 0, 0, 0, 0, 1.102, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  44.44% {
+    transform: matrix3d(1.097, 0, 0, 0, 0, 1.103, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  52.15% {
+    transform: matrix3d(1.099, 0, 0, 0, 0, 1.101, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  59.86% {
+    transform: matrix3d(1.101, 0, 0, 0, 0, 1.099, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  63.26% {
+    transform: matrix3d(1.101, 0, 0, 0, 0, 1.099, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  75.28% {
+    transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  85.49% {
+    transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  90.69% {
+    transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% {
+    transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
+@keyframes anim-newsmag-nav-list {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -200, 0, 1);
+    opacity: 0; }
+  1.3% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -158.014, 0, 1); }
+  2.55% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -121.865, 0, 1); }
+  4.1% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -83.942, 0, 1); }
+  5.71% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -53.064, 0, 1); }
+  8.11% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -21.098, 0, 1); }
+  8.81% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -14.56, 0, 1);
+    opacity: 0; }
+  11.96% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 3.217, 0, 1); }
+  12.11% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 3.687, 0, 1); }
+  15.07% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 8.441, 0, 1); }
+  16.12% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 8.671, 0, 1); }
+  27.23% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.568, 0, 1);
+    opacity: 1; }
+  27.58% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.414, 0, 1); }
+  38.34% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.207, 0, 1); }
+  40.09% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.194, 0, 1); }
+  50% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.032, 0, 1); }
+  60.56% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.005, 0, 1); }
+  82.78% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
+@keyframes anim-back-to-top {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 100, 0, 0, 1); }
+  2.92% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 45.073, 0, 0, 1); }
+  3.37% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 38.29, 0, 0, 1); }
+  3.47% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 36.865, 0, 0, 1); }
+  4.58% {
+    transform: matrix3d(2.061, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 22.883, 0, 0, 1); }
+  5.69% {
+    transform: matrix3d(2.321, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 12.184, 0, 0, 1); }
+  5.76% {
+    transform: matrix3d(2.32, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 11.589, 0, 0, 1); }
+  7.41% {
+    transform: matrix3d(1.99, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1.268, 0, 0, 1); }
+  7.51% {
+    transform: matrix3d(1.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.818, 0, 0, 1); }
+  7.88% {
+    transform: matrix3d(1.771, 0, 0, 0, 0, 1.062, 0, 0, 0, 0, 1, 0, -0.669, 0, 0, 1); }
+  8.68% {
+    transform: matrix3d(1.408, 0, 0, 0, 0, 1.181, 0, 0, 0, 0, 1, 0, -3.215, 0, 0, 1); }
+  10.03% {
+    transform: matrix3d(0.982, 0, 0, 0, 0, 1.333, 0, 0, 0, 0, 1, 0, -5.618, 0, 0, 1); }
+  10.85% {
+    transform: matrix3d(0.822, 0, 0, 0, 0, 1.398, 0, 0, 0, 0, 1, 0, -6.204, 0, 0, 1); }
+  11.53% {
+    transform: matrix3d(0.732, 0, 0, 0, 0, 1.439, 0, 0, 0, 0, 1, 0, -6.331, 0, 0, 1); }
+  12.22% {
+    transform: matrix3d(0.672, 0, 0, 0, 0, 1.469, 0, 0, 0, 0, 1, 0, -6.206, 0, 0, 1); }
+  14.18% {
+    transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, -5.018, 0, 0, 1); }
+  14.37% {
+    transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, -4.868, 0, 0, 1); }
+  19.23% {
+    transform: matrix3d(0.737, 0, 0, 0, 0, 1.371, 0, 0, 0, 0, 1, 0, -1.285, 0, 0, 1); }
+  20.01% {
+    transform: matrix3d(0.763, 0, 0, 0, 0, 1.338, 0, 0, 0, 0, 1, 0, -0.908, 0, 0, 1); }
+  23.05% {
+    transform: matrix3d(0.856, 0, 0, 0, 0, 1.211, 0, 0, 0, 0, 1, 0, -0.012, 0, 0, 1); }
+  25.75% {
+    transform: matrix3d(0.923, 0, 0, 0, 0, 1.114, 0, 0, 0, 0, 1, 0, 0.236, 0, 0, 1); }
+  26.94% {
+    transform: matrix3d(0.947, 0, 0, 0, 0, 1.078, 0, 0, 0, 0, 1, 0, 0.253, 0, 0, 1); }
+  31.58% {
+    transform: matrix3d(1.009, 0, 0, 0, 0, 0.987, 0, 0, 0, 0, 1, 0, 0.135, 0, 0, 1); }
+  31.73% {
+    transform: matrix3d(1.01, 0, 0, 0, 0, 0.986, 0, 0, 0, 0, 1, 0, 0.131, 0, 0, 1); }
+  37.32% {
+    transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 0.01, 0, 0, 1); }
+  38.15% {
+    transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 0.003, 0, 0, 1); }
+  42.35% {
+    transform: matrix3d(1.022, 0, 0, 0, 0, 0.969, 0, 0, 0, 0, 1, 0, -0.01, 0, 0, 1); }
+  48.9% {
+    transform: matrix3d(1.007, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, -0.003, 0, 0, 1); }
+  57.77% {
+    transform: matrix3d(0.998, 0, 0, 0, 0, 1.003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  60.47% {
+    transform: matrix3d(0.998, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  69.36% {
+    transform: matrix3d(0.999, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  83.61% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
 /*--------------------------------------------------------------
@@ -2349,6 +2556,19 @@ a {
 
 .newsmag-image {
   position: relative; }
+  .newsmag-image .newsmag-post-box-a-category {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #FFF;
+    font-weight: 700;
+    font-family: 'Poppins', serif;
+    background: #ff3d2e;
+    padding: 6px 7px 5px 7px;
+    z-index: 2; }
   .newsmag-image a:before {
     position: absolute;
     bottom: 0;
@@ -2537,6 +2757,22 @@ a {
     right: 30px;
     bottom: 30px;
     line-height: 25px; } }
+.back-to-top {
+  background: #FF3D2E;
+  color: #fff;
+  border: none; }
+
+.back-to-top:hover {
+  background: #000;
+  color: #fff; }
+
+.back-to-top span {
+  display: block;
+  line-height: 27px; }
+
+.back-to-top.back-to-top-is-visible {
+  animation: anim-back-to-top 850ms linear both; }
+
 .site-footer > .widgets-area {
   padding: 40px 0 0 0; }
 .site-footer p.no-margin {

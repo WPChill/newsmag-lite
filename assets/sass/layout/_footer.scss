@@ -86,6 +86,27 @@
   }
 }
 
+.back-to-top {
+  background:#FF3D2E;
+  color:#fff;
+  border:none;
+}
+
+.back-to-top:hover {
+  background:#000;
+  color:#fff;
+}
+
+.back-to-top span {
+  display:block;
+  line-height:27px;
+}
+
+.back-to-top.back-to-top-is-visible {
+  animation: anim-back-to-top 850ms linear both;
+}
+
+
 .site-footer {
   > .widgets-area {
     padding: 40px 0 0 0;
@@ -148,3 +169,4 @@
     }
   }
 }
+

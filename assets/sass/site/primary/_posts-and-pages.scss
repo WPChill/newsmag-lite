@@ -417,6 +417,20 @@
 
 .newsmag-image {
   position: relative;
+  .newsmag-post-box-a-category {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #FFF;
+    font-weight: 700;
+    font-family: 'Poppins', serif;
+    background: $color__brand-red;
+    padding: 6px 7px 5px 7px;
+    z-index: 2;
+  }
   a {
     &:before {
       position: absolute;

@@ -24,7 +24,8 @@ if ( $posts->have_posts() ): ?>
 					<h3>
 						<a href="<?php echo esc_url_raw( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
-					<span class="date"><?php echo esc_html( get_the_date() ); ?></span>
+					<span class="meta"><span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?> <?php newsmag_posted_on('comments'); ?></span>
+
 				</div>
 			</div>
 		<?php endwhile; ?>
