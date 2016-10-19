@@ -1606,7 +1606,7 @@ a {
       bottom: 0;
       left: 0;
       right: 0;
-      height: 00px;
+      height: 0;
       background-image: -webkit-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, 0.98) 2%, rgba(247, 254, 255, 0));
       background-image: -moz-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, 0.98) 2%, rgba(247, 254, 255, 0));
       background-image: -o-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, 0.98) 2%, rgba(247, 254, 255, 0));
@@ -1618,7 +1618,7 @@ a {
     .newsmag_builder .newsmag-blog-post-layout-b:hover {
       border-bottom-color: #D0EDF3; }
       .newsmag_builder .newsmag-blog-post-layout-b:hover:after {
-        height: 50px;
+        height: 25px;
         -webkit-transition: all .2s ease-in;
         transition: all .2s ease-in; }
     .newsmag_builder .newsmag-blog-post-layout-b:last-of-type {
