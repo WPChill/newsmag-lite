@@ -16,6 +16,7 @@ if ( $posts->have_posts() ): ?>
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail_url( get_the_ID(), 'newsmag-recent-post-big' );
 			}
+			$category = get_the_category();
 			?>
 
 			<div class="newsmag-blog-post-layout-banner <?php echo ( $posts->post_count > 4 ) ? 'col-md-3' : 'col-md-6' ?>"
@@ -25,7 +26,7 @@ if ( $posts->have_posts() ): ?>
 						<a href="<?php echo esc_url_raw( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
 					<span class="meta"><span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?> <?php newsmag_posted_on('comments'); ?></span>
-
+					<span class="newsmag-post-layout-category"><?php echo esc_html( $category[0]->name ) ?></span>
 				</div>
 			</div>
 		<?php endwhile; ?>
