@@ -24,12 +24,12 @@ if ( $posts->have_posts() ): ?>
 				class="newsmag-blog-post-layout-banner <?php echo ( $posts->post_count > 4 ) ? 'col-md-3' : 'col-md-6' ?>"
 				style="background-image:url('<?php echo esc_url( $image ) ?>')">
 				<div class="banner-content">
+					<span class="newsmag-post-layout-category"><?php echo esc_html( $category[0]->name ) ?></span>
 					<h3>
 						<a href="<?php echo esc_url_raw( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
 					<span class="meta"><span
 							class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?> <?php newsmag_posted_on( 'comments' ); ?></span>
-					<span class="newsmag-post-layout-category"><?php echo esc_html( $category[0]->name ) ?></span>
 				</div>
 			</div>
 		<?php endwhile; ?>

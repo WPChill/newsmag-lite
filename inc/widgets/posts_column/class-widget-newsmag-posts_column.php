@@ -95,7 +95,7 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 				$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({
 					value: <?php echo esc_attr( $instance['show_post'] ); ?>,
 					range: 'min',
-					min  : 2,
+					min  : 1,
 					max  : 10,
 					step : 1,
 					slide: function (event, ui) {

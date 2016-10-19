@@ -82,9 +82,9 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 				$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({
 					value: <?php echo esc_attr( $instance['show_post'] ); ?>,
 					range: 'min',
-					min  : 2,
+					min  : 1,
 					max  : 8,
-					step : 2,
+					step : 1,
 					slide: function (event, ui) {
 						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').val(ui.value).keyup();
 					}
