@@ -28,7 +28,7 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 			$title = '';
 		}
 
-		if ( isset( $instance['newsmag_category'] ) ) {
+		if ( ! empty( $instance['newsmag_category'] ) ) {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = 'uncategorized';
@@ -142,7 +142,7 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 			$title = '';
 		}
 
-		if ( isset( $instance['newsmag_category'] ) ) {
+		if ( ! empty( $instance['newsmag_category'] ) ) {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = 'uncategorized';

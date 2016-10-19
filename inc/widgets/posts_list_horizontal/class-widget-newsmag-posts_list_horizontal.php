@@ -28,11 +28,12 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 			$title = '';
 		}
 
-		if ( isset( $instance['newsmag_category'] ) ) {
+		if ( ! empty( $instance['newsmag_category'] ) ) {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = 'uncategorized';
 		}
+
 
 		if ( isset( $instance['show_post'] ) ) {
 			$show_post = $instance['show_post'];
@@ -142,11 +143,12 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 			$title = '';
 		}
 
-		if ( isset( $instance['newsmag_category'] ) ) {
+		if ( ! empty( $instance['newsmag_category'] ) ) {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = 'uncategorized';
 		}
+
 
 		if ( isset( $instance['show_post'] ) ) {
 			$show_post = $instance['show_post'];
