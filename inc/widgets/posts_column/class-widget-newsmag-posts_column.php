@@ -89,7 +89,7 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 		       id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"
 		       value="<?php echo esc_attr( $instance['show_post'] ); ?>"/>
 
-		<div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" class="ss-slider"></div>
+		<div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="1" data-attr-max="10" data-attr-step="1" class="ss-slider"></div>
 		<script>
 			jQuery(document).ready(function ($) {
 				$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({

@@ -13,14 +13,17 @@
 				slider = context.find('.ss-slider'),
 				input = context.find('.rl-slider'),
 				input_id = input.attr('id'),
-				id = slider.attr('id');
+				id = slider.attr('id'),
+				min = $('#' + id).attr('data-attr-min'),
+				max = $('#' + id).attr('data-attr-max'),
+				step = $('#' + id).attr('data-attr-step');
 
 		$('#' + id).slider({
 			value: $('#' + input_id).attr('value'),
 			range: 'min',
-			min  : 2,
-			max  : 10,
-			step : 2,
+			min  : parseFloat(min),
+			max  : parseFloat(max),
+			step : parseFloat(step),
 			slide: function (event, ui) {
 				$('#' + input_id).attr('value', ui.value).change();
 			}
