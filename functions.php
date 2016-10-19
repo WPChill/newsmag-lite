@@ -160,7 +160,7 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"title"       => esc_html__( 'Run the import!', 'newsmag' ),
 					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
 					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>, 
-									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.json">' . __( 'Widgets', 'newsmag' ) . '</a>',
+									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.wie">' . __( 'Widgets', 'newsmag' ) . '</a>',
 					"check"       => newsmag_has_content(),
 				),
 			);
