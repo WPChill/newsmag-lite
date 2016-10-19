@@ -30,7 +30,7 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 			$title = '';
 		}
 
-		if ( isset( $instance['newsmag_category'] ) ) {
+		if ( ! empty( $instance['newsmag_category'] ) ) {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = 'uncategorized';
@@ -83,7 +83,7 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 					value: <?php echo esc_attr( $instance['show_post'] ); ?>,
 					range: 'min',
 					min  : 2,
-					max  : 10,
+					max  : 8,
 					step : 2,
 					slide: function (event, ui) {
 						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').val(ui.value).keyup();
@@ -121,7 +121,7 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 	public function get_posts( $args ) {
 		$idObj = get_category_by_slug( $args['newsmag_category'] );
 
-		$atts  = array(
+		$atts = array(
 			'posts_per_page' => $args['show_post'],
 		);
 
@@ -145,12 +145,11 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 			$title = '';
 		}
 
-		if ( isset( $instance['newsmag_category'] ) ) {
+		if ( ! empty( $instance['newsmag_category'] ) ) {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = 'uncategorized';
 		}
-
 
 		if ( isset( $instance['show_post'] ) ) {
 			$show_post = $instance['show_post'];
