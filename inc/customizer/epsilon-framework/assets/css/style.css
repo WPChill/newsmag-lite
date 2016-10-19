@@ -351,3 +351,9 @@ ul.macho-upsell-requirements {
     content: url('../img/posts_grid.png');
     top: 0px;
 }
+
+#available-widgets [class^='newsmag_slider_widget-'] .widget-title::before,
+#available-widgets [class*=' newsmag_slider_widget-'] .widget-title::before {
+    content: url('../img/posts_slider.png');
+    top: 0px;
+}
