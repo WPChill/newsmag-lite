@@ -2812,6 +2812,12 @@ a {
 .back-to-top.back-to-top-is-visible {
   animation: anim-back-to-top 850ms linear both; }
 
+#back-to-top span,
+#back-top-top:active,
+#back-top-top:focus,
+#back-top-top:link {
+  color: #fff; }
+
 .site-footer > .widgets-area {
   padding: 40px 0 0 0; }
 .site-footer p.no-margin {

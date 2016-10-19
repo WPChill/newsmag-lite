@@ -106,6 +106,12 @@
   animation: anim-back-to-top 850ms linear both;
 }
 
+#back-to-top span,
+#back-top-top:active,
+#back-top-top:focus,
+#back-top-top:link {
+  color:#fff;
+}
 
 .site-footer {
   > .widgets-area {

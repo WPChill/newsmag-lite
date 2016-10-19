@@ -57,10 +57,3 @@
 .owl-nav-list.active {
 	display:block;
 }
-
-#back-to-top span,
-#back-top-top:active,
-#back-top-top:focus,
-#back-top-top:link {
-	color:#fff;
-}
