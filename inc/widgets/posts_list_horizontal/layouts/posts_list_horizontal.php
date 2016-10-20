@@ -24,10 +24,16 @@
 
 			<div class="col-md-3 col-sm-6">
 				<div class="newsmag-post-box-a thumbnail-layout">
-					<a class="newsmag-image" href="<?php echo esc_url( get_the_permalink() ); ?>">
-						<?php echo wp_kses( $new_image, $allowed_tags ); ?>
-						<span class="newsmag-post-box-a-category"><?php echo esc_html( $category[0]->name ) ?></span>
-					</a>
+					<div class="newsmag-image">
+						<a href="<?php echo esc_url( get_the_permalink() ); ?>">
+							<?php echo wp_kses( $new_image, $allowed_tags ); ?>
+						</a>
+						<span class="newsmag-post-box-a-category">
+							<a href="<?php echo esc_url_raw( get_category_link( $category[0] ) ) ?>">
+								<?php echo esc_html( $category[0]->name ) ?>
+							</a>
+						</span>
+					</div>
 					<h3>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
