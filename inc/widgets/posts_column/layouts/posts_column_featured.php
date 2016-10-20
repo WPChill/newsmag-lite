@@ -13,7 +13,7 @@ if ( $posts->have_posts() ):
 				$new_image = apply_filters( 'newsmag_widget_image', $image );
 				$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
 				?>
-				<div class="newsmag-post-box-a">
+				<div class="newsmag-post-box-a posts-column-layout">
 					<h2>
 						<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>">
 							<?php echo empty( $instance['title'] ) ? esc_html( $category[0]->name ) : esc_html( $instance['title'] ); ?>

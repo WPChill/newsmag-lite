@@ -138,6 +138,14 @@
         font-weight: 700;
       }
     }
+    &.posts-column-layout {
+      h3 {
+        font-weight: 700;
+        a {
+          font-weight: 700;
+        }
+      }
+    }
     &.thumbnail-layout {
       h3 {
         margin-top: 19px;
@@ -151,7 +159,7 @@
     h3 {
       font-size: 23px;
       margin-top: 23px;
-      font-weight: 700;
+      font-weight: 600;
       font-family: 'Poppins';
       text-transform: initial;
       a {

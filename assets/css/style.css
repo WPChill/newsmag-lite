@@ -1509,6 +1509,10 @@ a {
         padding: 0 20px;
         background: #ff3d2e;
         font-weight: 700; }
+    .newsmag_builder .newsmag-post-box-a.posts-column-layout h3 {
+      font-weight: 700; }
+      .newsmag_builder .newsmag-post-box-a.posts-column-layout h3 a {
+        font-weight: 700; }
     .newsmag_builder .newsmag-post-box-a.thumbnail-layout h3 {
       margin-top: 19px;
       font-size: 16px;
@@ -1518,7 +1522,7 @@ a {
     .newsmag_builder .newsmag-post-box-a h3 {
       font-size: 23px;
       margin-top: 23px;
-      font-weight: 700;
+      font-weight: 600;
       font-family: 'Poppins';
       text-transform: initial; }
       .newsmag_builder .newsmag-post-box-a h3 a {
