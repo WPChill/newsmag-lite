@@ -76,15 +76,15 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 		       id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"
 		       value="<?php echo esc_attr( $instance['show_post'] ); ?>"/>
 
-		<div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="1" data-attr-max="8" data-attr-step="1" class="ss-slider"></div>
+		<div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="2" data-attr-max="8" data-attr-step="2" class="ss-slider"></div>
 		<script>
 			jQuery(document).ready(function ($) {
 				$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({
 					value: <?php echo esc_attr( $instance['show_post'] ); ?>,
 					range: 'min',
-					min  : 1,
+					min  : 2,
 					max  : 8,
-					step : 1,
+					step : 2,
 					slide: function (event, ui) {
 						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').val(ui.value).keyup();
 					}
