@@ -416,7 +416,7 @@ textarea {
   padding: 10px;
   border-radius: 3px; }
 
-.error-404.not-found input[type="submit"], .newsmag-search-page input[type="submit"] {
+.error-404.not-found input[type="submit"], .newsmag-search-page input[type="submit"], .post-password-form input[type="submit"] {
   border: 1px solid;
   border-color: #ff3d2e;
   border-radius: 3px;
@@ -424,7 +424,7 @@ textarea {
   color: #ff3d2e;
   font-size: 15px;
   padding: 14px 30px; }
-  .error-404.not-found input[type="submit"]:hover, .error-404.not-found input[type="submit"]:active, .error-404.not-found input[type="submit"]:focus, .newsmag-search-page input[type="submit"]:hover, .newsmag-search-page input[type="submit"]:active, .newsmag-search-page input[type="submit"]:focus {
+  .error-404.not-found input[type="submit"]:hover, .error-404.not-found input[type="submit"]:active, .error-404.not-found input[type="submit"]:focus, .newsmag-search-page input[type="submit"]:hover, .newsmag-search-page input[type="submit"]:active, .newsmag-search-page input[type="submit"]:focus, .post-password-form input[type="submit"]:hover, .post-password-form input[type="submit"]:active, .post-password-form input[type="submit"]:focus {
     border-color: #ff3d2e;
     color: #ff3d2e; }
 
