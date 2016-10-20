@@ -19,10 +19,10 @@ if ( ! function_exists( 'newsmag_posted_on' ) ) :
 
 		$html = '<ul>';
 		$html .= '<li class="post-category"><icon class="fa fa-folder"></icon> <a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a></li>';
-		$html .= '<li class="post-comments"><icon class="fa fa-comments"></icon> ' . esc_html($comments->approved) . ' </li>';
+		$html .= '<li class="post-comments"><icon class="fa fa-comments"></icon> ' . esc_html( $comments->approved ) . ' </li>';
 		$html .= '<li class="post-date">' . $date . ' </li>';
 		if ( $tags_list ) {
-			$html .= '<li class="post-tags"><icon class="fa fa-tags"></icon> ' . esc_html($tags_list) . '</li>';
+			$html .= '<li class="post-tags"><icon class="fa fa-tags"></icon> ' . esc_html( $tags_list ) . '</li>';
 		}
 		$html .= '</ul>';
 
@@ -31,10 +31,10 @@ if ( ! function_exists( 'newsmag_posted_on' ) ) :
 				echo '<a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a>';
 				break;
 			case 'comments':
-				echo '<icon class="sep-left fa fa-comment-o"></icon> ' . esc_html($comments->approved);
+				echo '<a class="newsmag-comments-link" href="' . get_the_permalink( get_the_ID() ) . '/#comments"><icon class="sep-left fa fa-comment-o"></icon> ' . esc_html( $comments->approved ) . '</a>';
 				break;
 			case 'date':
-				echo '<div class="newsmag-date">' . esc_html($date) . '</div>';
+				echo '<div class="newsmag-date">' . esc_html( $date ) . '</div>';
 				break;
 			case 'tags':
 				echo ! empty( $tags_list ) ? '<div class="newsmag-tags"><strong>' . __( 'TAGS: ', 'newsmag' ) . '</strong>' . $tags_list . '</div>' : '';
@@ -55,11 +55,11 @@ function newsmag_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'newsmag_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
+			                                     'fields'     => 'ids',
+			                                     'hide_empty' => 1,
+			                                     // We only need to know if there is more than one category.
+			                                     'number'     => 2,
+		                                     ) );
 
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
