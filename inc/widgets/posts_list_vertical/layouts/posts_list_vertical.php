@@ -27,8 +27,12 @@ if ( $posts->have_posts() ): ?>
 						<div class="newsmag-image">
 							<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 								<?php  echo $new_image; ?>
-								<span class="newsmag-post-box-b-category"><?php echo esc_html( $cat[0]->name ) ?></span>
 							</a>
+							<span class="newsmag-post-box-category">
+							<a href="<?php echo esc_url_raw( get_category_link( $cat[0] ) ) ?>">
+								<?php echo esc_html( $cat[0]->name ) ?>
+							</a>
+						</span>
 						</div>
 					</div>
 					<div class="col-sm-7 col-xs-12">
