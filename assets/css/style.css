@@ -2632,7 +2632,7 @@ a {
 
 .newsmag-image {
   position: relative; }
-  .newsmag-image .newsmag-post-box-a-category, .newsmag-image .newsmag-post-box-b-category, .newsmag-image .newsmag-post-box-category {
+  .newsmag-image .newsmag-post-box-a-category, .newsmag-image .newsmag-post-box-category {
     position: absolute;
     bottom: 20px;
     left: 20px;
