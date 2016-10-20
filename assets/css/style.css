@@ -1751,9 +1751,9 @@ a {
       .newsmag_builder .newsmag-blog-post-layout-banner > a img {
         width: 100%; }
     .newsmag_builder .newsmag-blog-post-layout-banner.col-md-3 > a {
-      min-height: 210px; }
+      height: 210px; }
     .newsmag_builder .newsmag-blog-post-layout-banner.col-md-6 > a {
-      min-height: 270px; }
+      height: 270px; }
     .newsmag_builder .newsmag-blog-post-layout-banner:hover {
       background-size: 115% 115%;
       -moz-transition: all 0.2s;

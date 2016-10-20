@@ -13,7 +13,7 @@ if ( $posts->have_posts() ): ?>
 		</h2>
 		<?php while ( $posts->have_posts() ): $posts->the_post(); ?>
 			<?php
-			$image = get_template_directory_uri() . '/assets/images/picture_placeholder.jpg';
+			$image = '<img src="'.get_template_directory_uri() . '/assets/images/picture_placeholder.jpg" />';
 			if ( has_post_thumbnail() ) {
 				$size  = $posts->post_count > 4 ? 'newsmag-post-grid-small' : 'newsmag-post-grid';
 				$image = get_the_post_thumbnail( get_the_ID(), $size );

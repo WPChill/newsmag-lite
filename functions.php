@@ -327,6 +327,7 @@ function newsmag_scripts() {
 	$query_args = array(
 		'family' => 'Lato:400,600,700|Poppins:400,500,600,700'
 	);
+	$newsmag    = wp_get_theme();
 
 	wp_enqueue_style( 'newsmag-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), 1, 'all' );
 	wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/assets/vendors/fontawesome//font-awesome.min.css' );
@@ -342,7 +343,7 @@ function newsmag_scripts() {
 	 * Theme styling
 	 */
 	wp_enqueue_style( 'newsmag-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'newsmag-stylesheet', get_template_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( 'newsmag-stylesheet', get_template_directory_uri() . '/assets/css/style.css', array(), $newsmag['Version'] );
 	/**
 	 * Load menu script & skip-link-focus-fix
 	 */
