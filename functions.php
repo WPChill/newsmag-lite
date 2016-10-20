@@ -90,6 +90,8 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		 */
 		add_image_size( 'newsmag-single-post', 730, 330, true );
 		add_image_size( 'newsmag-recent-post-big', 560, 416, true );
+		add_image_size( 'newsmag-post-grid', 360, 270, true );
+		add_image_size( 'newsmag-post-grid-small', 275, 210, true );
 		add_image_size( 'newsmag-recent-post-list-image', 65, 65, true );
 		add_image_size( 'newsmag-slider-image', 1920, 600, true );
 

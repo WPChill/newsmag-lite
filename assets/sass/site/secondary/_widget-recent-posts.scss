@@ -194,6 +194,13 @@
         background: $color__brand-red;
         padding: 6px 7px 5px 7px;
         z-index: 2;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        &:hover {
+          background-color: #000;
+          -webkit-transition: all .2s ease-in;
+          transition: all .2s ease-in;
+        }
       }
     }
   }
@@ -372,6 +379,13 @@
         background: $color__brand-red;
         padding: 3px 7px 1px 7px;
         z-index: 2;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        &:hover {
+          background-color: #000;
+          -webkit-transition: all .2s ease-in;
+          transition: all .2s ease-in;
+        }
       }
 
       .newsmag-title {
@@ -413,7 +427,7 @@
     padding-right: 15px;
   }
   .newsmag-blog-post-layout-banner {
-    min-height: 275px;
+    padding: 0;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -422,7 +436,25 @@
     transition: all 0.2s;
     border: 2px solid #FFF;
     position: relative;
-
+    > a {
+      display: block;
+      width: 100%;
+      padding: 0;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    &.col-md-3 {
+      > a {
+        min-height: 210px;
+      }
+    }
+    &.col-md-6 {
+      > a {
+        min-height: 270px;
+      }
+    }
     &:hover {
       background-size: 115% 115%;
       -moz-transition: all 0.2s;
@@ -478,6 +510,13 @@
         background: $color__brand-red;
         padding: 2px 7px 0 7px;
         z-index: 2;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        &:hover {
+          background-color: #000;
+          -webkit-transition: all .2s ease-in;
+          transition: all .2s ease-in;
+        }
       }
     }
 
