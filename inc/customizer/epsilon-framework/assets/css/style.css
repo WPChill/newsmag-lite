@@ -23,7 +23,7 @@
     margin-top: 10px;
     margin-left: 10px;
     display: inline-block;
-    width: 219px;
+    width: 202px;
     background: #d6d6d6;
 }
 
@@ -89,7 +89,8 @@
     margin-top: 10px;
     margin-left: 15px;
     display: inline-block;
-    width: 192px;
+    width: 175px;
+    float: right;
     background: #d6d6d6;
 }
 
@@ -171,7 +172,7 @@ ul.macho-upsell-requirements {
 }
 
 .customize-control-title.onoffswitch_label {
-    width: 72%;
+    width: 71%;
 }
 
 .onoffswitch_label {
@@ -185,6 +186,7 @@ ul.macho-upsell-requirements {
     position: relative;
     width: 52px;
     display: inline-block;
+    float: right;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -273,7 +275,7 @@ ul.macho-upsell-requirements {
 }
 
 .widget-content .customize-control-title.onoffswitch_label {
-    width: 67%;
+    width: 65%;
     margin-right: 26px;
 }
 
@@ -349,11 +351,11 @@ ul.macho-upsell-requirements {
 #available-widgets [class^='newsmag_widget_posts_grid-'] .widget-title::before,
 #available-widgets [class*=' newsmag_widget_posts_grid-'] .widget-title::before {
     content: url('../img/posts_grid.png');
-    top: 0px;
+    top: 0;
 }
 
 #available-widgets [class^='newsmag_slider_widget-'] .widget-title::before,
 #available-widgets [class*=' newsmag_slider_widget-'] .widget-title::before {
     content: url('../img/posts_slider.png');
-    top: 0px;
+    top: 0;
 }
