@@ -1512,7 +1512,7 @@ a {
       font-size: 16px;
       line-height: 17px; }
       .newsmag_builder .newsmag-post-box-a.thumbnail-layout h3 a {
-        font-weight: 700; }
+        font-weight: 600; }
     .newsmag_builder .newsmag-post-box-a h3 {
       font-size: 23px;
       margin-top: 23px;
@@ -1520,7 +1520,7 @@ a {
       font-family: 'Poppins';
       text-transform: initial; }
       .newsmag_builder .newsmag-post-box-a h3 a {
-        font-weight: 700; }
+        font-weight: 600; }
     .newsmag_builder .newsmag-post-box-a span.colored {
       margin-right: 5px; }
     .newsmag_builder .newsmag-post-box-a p {
@@ -1653,7 +1653,7 @@ a {
       font-weight: 700; }
       .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h3 > a {
         color: #333;
-        font-weight: 700; }
+        font-weight: 600; }
         .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h3 > a:hover, .newsmag_builder .newsmag-blog-post-layout-b .newsmag-title h3 > a:focus {
           text-decoration: none;
           color: #ff3d2e; }
@@ -1871,7 +1871,7 @@ a {
     outline: none;
     font-family: "poppins";
     font-size: 12px;
-    font-weight: bold; }
+    font-weight: 600; }
     .owl-nav-list a:active {
       outline: none; }
 
