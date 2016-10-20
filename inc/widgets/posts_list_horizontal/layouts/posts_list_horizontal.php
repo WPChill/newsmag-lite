@@ -53,7 +53,7 @@
 						<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
 						<?php newsmag_posted_on( 'comments' ); ?>
 						<?php if ( current_user_can( 'manage_options' ) ) { ?>
-							<a class="newsmag-comments-link sep-left" target="_blank" href="<?php echo get_admin_url() . 'widgets.php' ?>">
+							<a class="newsmag-comments-link sep-left" target="_blank" href="<?php echo get_admin_url() . 'post.php?post=' . get_the_ID() . '&action=edit' ?>">
 								<span class="fa fa-edit"></span> <?php echo __( 'Edit', 'newsmag' ) ?>
 							</a>
 						<?php } ?>

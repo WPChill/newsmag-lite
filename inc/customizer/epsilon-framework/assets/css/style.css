@@ -171,6 +171,12 @@ ul.macho-upsell-requirements {
     background: rgba(0, 115, 170, 0.05) !important;
 }
 
+.wp-admin .checkbox_switch {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
 .customize-control-title.onoffswitch_label {
     width: 71%;
 }
