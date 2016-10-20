@@ -1505,7 +1505,8 @@ a {
         font-size: 16px;
         color: #FFF;
         padding: 0 20px;
-        background: #ff3d2e; }
+        background: #ff3d2e;
+        font-weight: 700; }
     .newsmag_builder .newsmag-post-box-a.thumbnail-layout h3 {
       margin-top: 19px;
       font-size: 16px;
