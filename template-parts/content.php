@@ -54,6 +54,7 @@
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
 					</h3>
 					<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+					<?php newsmag_posted_on('comments'); ?>
 				</div>
 				<div class="newsmag-content entry-content">
 					<?php if ( is_single() ) {
