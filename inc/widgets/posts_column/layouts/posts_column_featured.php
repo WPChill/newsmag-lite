@@ -28,8 +28,8 @@ if ( $posts->have_posts() ):
 					</h3>
 					<?php if ( $instance['show_date'] === 'on' ): ?>
 						<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+						<?php newsmag_posted_on('comments'); ?>
 					<?php endif; ?>
-					<?php newsmag_posted_on('comments'); ?>
 					<p><?php echo wp_trim_words( get_the_content(), 20, ' <a href="' . esc_url( get_the_permalink() ) . '">…</a>' ) ?></p>
 				</div>
 				<?php
@@ -58,8 +58,8 @@ if ( $posts->have_posts() ):
 								</h3>
 								<?php if ( $instance['show_date'] === 'on' ): ?>
 									<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+									<?php newsmag_posted_on('comments'); ?>
 								<?php endif; ?>
-								<?php newsmag_posted_on('comments'); ?>
 							</div>
 						</div>
 					</div>

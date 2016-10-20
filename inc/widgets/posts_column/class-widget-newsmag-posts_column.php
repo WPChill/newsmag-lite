@@ -128,7 +128,7 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 
 		<div class="checkbox_switch">
 				<span class="customize-control-title onoffswitch_label">
-                    <?php _e( 'Show Date', 'newsmag' ); ?>
+                    <?php _e( 'Show Date and Comments', 'newsmag' ); ?>
 				</span>
 			<div class="onoffswitch">
 				<input type="checkbox" id="<?php echo esc_attr( $this->get_field_name( 'show_date' ) ); ?>"

@@ -37,8 +37,8 @@ if ( $posts->have_posts() ):
 							</h3>
 							<?php if ( $instance['show_date'] === 'on' ): ?>
 								<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+								<?php newsmag_posted_on('comments'); ?>
 							<?php endif; ?>
-							<?php newsmag_posted_on('comments'); ?>
 						</div>
 					</div>
 				</div>
