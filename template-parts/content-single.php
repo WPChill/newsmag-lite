@@ -28,7 +28,7 @@ $breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
 					<div class="newsmag-image">
 						<?php
 						if ( has_post_thumbnail() ) {
-							the_post_thumbnail( 'newsmag-recent-post-big' );
+							the_post_thumbnail( 'newsmag-vertical-post' );
 						} else {
 							echo '<img src=' . esc_url( get_template_directory_uri() . '/assets/images/picture_placeholder.jpg' ) . '" />';
 						}

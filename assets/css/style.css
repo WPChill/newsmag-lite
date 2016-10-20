@@ -1753,7 +1753,7 @@ a {
     .newsmag_builder .newsmag-blog-post-layout-banner.col-md-3 > a {
       height: 210px; }
     .newsmag_builder .newsmag-blog-post-layout-banner.col-md-6 > a {
-      height: 270px; }
+      min-height: 270px; }
     .newsmag_builder .newsmag-blog-post-layout-banner:hover {
       background-size: 115% 115%;
       -moz-transition: all 0.2s;
@@ -2625,7 +2625,7 @@ a {
 
 .newsmag-image {
   position: relative; }
-  .newsmag-image .newsmag-post-box-a-category {
+  .newsmag-image .newsmag-post-box-a-category, .newsmag-image .newsmag-post-box-b-category, .newsmag-image .newsmag-post-box-category {
     position: absolute;
     bottom: 20px;
     left: 20px;

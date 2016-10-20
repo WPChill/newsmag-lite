@@ -14,7 +14,7 @@ if ( $posts->have_posts() ): ?>
 		while ( $posts->have_posts() ) : $posts->the_post();
 			$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url( get_template_directory_uri() . '/assets/images/picture_placeholder.jpg' ) . ' " />';
 			if ( has_post_thumbnail() ) {
-				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
+				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-vertical-post' );
 			}
 			$new_image = apply_filters( 'newsmag_widget_image', $image );
 			$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());

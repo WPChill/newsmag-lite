@@ -452,7 +452,7 @@
     }
     &.col-md-6 {
       > a {
-        height: 270px;
+        min-height: 270px;
       }
     }
     &:hover {
