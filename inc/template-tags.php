@@ -18,7 +18,9 @@ if ( ! function_exists( 'newsmag_posted_on' ) ) :
 		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'newsmag' ) );
 
 		$html = '<ul>';
-		$html .= '<li class="post-category"><icon class="fa fa-folder"></icon> <a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a></li>';
+		if ( ! empty( $cat ) ) {
+			$html .= '<li class="post-category"><icon class="fa fa-folder"></icon> <a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a></li>';
+		}
 		$html .= '<li class="post-comments"><icon class="fa fa-comments"></icon> ' . esc_html( $comments->approved ) . ' </li>';
 		$html .= '<li class="post-date">' . $date . ' </li>';
 		if ( $tags_list ) {

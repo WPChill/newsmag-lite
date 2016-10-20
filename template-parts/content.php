@@ -15,17 +15,18 @@
 		$image = is_sticky() ? get_the_post_thumbnail( get_the_ID(), 'newsmag-single-post' ) : get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 	}
 	$new_image    = apply_filters( 'newsmag_widget_image', $image );
-	$allowed_tags = array( 'img'      => array(
-		'data-original' => true,
-		'srcset'        => true,
-		'sizes'         => true,
-		'src'           => true,
-		'class'         => true,
-		'alt'           => true,
-		'width'         => true,
-		'height'        => true
-	),
-	                       'noscript' => array()
+	$allowed_tags = array(
+		'img'      => array(
+			'data-original' => true,
+			'srcset'        => true,
+			'sizes'         => true,
+			'src'           => true,
+			'class'         => true,
+			'alt'           => true,
+			'width'         => true,
+			'height'        => true
+		),
+		'noscript' => array()
 	);
 	$categories   = get_the_category();
 
@@ -54,7 +55,7 @@
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
 					</h3>
 					<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
-					<?php newsmag_posted_on('comments'); ?>
+					<?php newsmag_posted_on( 'comments' ); ?>
 				</div>
 				<div class="newsmag-content entry-content">
 					<?php if ( is_single() ) {
@@ -71,45 +72,47 @@
 			</div>
 		</div>
 	<?php else: ?>
-		<div class="row">
-			<div class="col-sm-4 col-xs-12">
-				<div class="newsmag-image">
-					<?php if ( get_post_format() ): ?>
-						<div class="newsmag-format-sign">
-							<span class="<?php echo esc_attr( newsmag_format_icon( get_post_format() ) ) ?>"></span>
-						</div>
-					<?php endif; ?>
-					<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-						<?php echo wp_kses( $new_image, $allowed_tags ) ?>
-					</a>
-					<span class="newsmag-post-box-category">
+	<div class="row">
+		<div class="col-sm-4 col-xs-12">
+			<div class="newsmag-image">
+				<?php if ( get_post_format() ): ?>
+					<div class="newsmag-format-sign">
+						<span class="<?php echo esc_attr( newsmag_format_icon( get_post_format() ) ) ?>"></span>
+					</div>
+				<?php endif; ?>
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>">
+					<?php echo wp_kses( $new_image, $allowed_tags ) ?>
+				</a>
+				<?php if ( ! empty( $categories ) ){ ?>
+				<span class="newsmag-post-box-category">
 						<a href="<?php echo esc_url_raw( get_category_link( $categories[0] ) ) ?>">
-							<?php echo esc_html( $categories[0]->name ) ?>
+							<?php echo esc_html( $categories[0]->name ); ?>
 						</a>
 					</span>
-				</div>
-			</div>
-			<div class="col-sm-8 col-xs-12">
-				<div class="newsmag-title">
-					<h3>
-						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
-					</h3>
-					<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
-
-				</div>
-				<div class="newsmag-content entry-content">
-					<?php if ( is_single() ) {
-						the_content();
-					} else {
-						$excerpt = get_the_excerpt();
-						$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
-						?>
-						<p>
-							<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
-						</p>
-					<?php } ?>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
+		<div class="col-sm-8 col-xs-12">
+			<div class="newsmag-title">
+				<h3>
+					<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
+				</h3>
+				<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+				<?php newsmag_posted_on( 'comments' ); ?>
+			</div>
+			<div class="newsmag-content entry-content">
+				<?php if ( is_single() ) {
+					the_content();
+				} else {
+					$excerpt = get_the_excerpt();
+					$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
+					?>
+					<p>
+						<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
+					</p>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
 	<?php endif; ?>
 </article><!-- #post-## -->

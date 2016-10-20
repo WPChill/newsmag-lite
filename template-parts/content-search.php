@@ -30,7 +30,4 @@
 		</p>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer">
-		<?php newsmag_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
