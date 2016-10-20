@@ -205,7 +205,8 @@
       padding-right: 40px;
       position: relative;
       &.active,
-      &:hover {
+      &:hover,
+      &:focus{
         > a {
           color: $color__brand-red;
         }
@@ -229,14 +230,16 @@
           padding-left: 5px;
           color: $color__text-title;
         }
-        &:hover {
+        &:hover,
+        &:focus{
           &:after {
             color: $color__brand-red;
           }
         }
         > ul {
           li {
-            &:hover {
+            &:hover
+            &:focus{
               color: $color__brand-red;
               > a, &:after {
                 color: $color__brand-red;
@@ -257,7 +260,8 @@
                 bottom: 12px;
                 color: #333;
               }
-              &:hover {
+              &:hover
+              &:focus{
                 &:after {
                   color: $color__brand-red;
                 }

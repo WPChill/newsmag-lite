@@ -91,6 +91,7 @@ textarea {
     box-shadow: none;
     bottom: 8px;
     position: relative;
+    padding: 7px 5px;
   }
 }
 
@@ -117,5 +118,20 @@ textarea {
       background-color: #333333;
     }
   }
+}
 
+input[type="submit"] {
+  border: 1px solid;
+  border-color: $color__brand-red;
+  border-radius: 0;
+  background: $color__brand-red;
+  color: #FFF;
+  font-size: 15px;
+  padding: 9px 30px;
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: #333333;
+    background-color: #333333;
+  }
 }
