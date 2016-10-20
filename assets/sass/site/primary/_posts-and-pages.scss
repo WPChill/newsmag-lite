@@ -309,8 +309,14 @@
       }
     }
     color: #767676;
-    .colored {
+    span {
       margin-right: 5px;
+    }
+    .newsmag-comments-link {
+      color: #767676;
+      &:hover {
+        color: $color__brand-red;
+      }
     }
     &.newsmag-sticky-post-title {
       h3 {

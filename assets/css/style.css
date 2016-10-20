@@ -2587,8 +2587,12 @@ a {
         .newsmag-blog-post-layout .newsmag-title h3 > a:hover, .newsmag-blog-post-layout .newsmag-title h3 > a:focus {
           text-decoration: none;
           color: #ff3d2e; }
-    .newsmag-blog-post-layout .newsmag-title .colored {
+    .newsmag-blog-post-layout .newsmag-title span {
       margin-right: 5px; }
+    .newsmag-blog-post-layout .newsmag-title .newsmag-comments-link {
+      color: #767676; }
+      .newsmag-blog-post-layout .newsmag-title .newsmag-comments-link:hover {
+        color: #ff3d2e; }
     .newsmag-blog-post-layout .newsmag-title.newsmag-sticky-post-title h3 {
       margin-bottom: 0; }
   .newsmag-blog-post-layout .newsmag-content {
