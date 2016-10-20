@@ -49,8 +49,13 @@ if ( $posts->have_posts() ): ?>
 						<a href="<?php echo esc_url_raw( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
 					<span class="meta">
-						<span
-							class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?> <?php newsmag_posted_on( 'comments' ); ?>
+						<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+						<?php newsmag_posted_on( 'comments' ); ?>
+						<?php if ( current_user_can( 'manage_options' ) ) { ?>
+							<a class="newsmag-comments-link sep-left" target="_blank" href="<?php echo get_admin_url() . 'widgets.php' ?>">
+									<span class="fa fa-edit"></span> <?php echo __( 'Edit', 'newsmag' ) ?>
+								</a>
+						<?php } ?>
 					</span>
 				</div>
 			</div>

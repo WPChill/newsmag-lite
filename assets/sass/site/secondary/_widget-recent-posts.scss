@@ -110,6 +110,20 @@
     margin-bottom: 45px;
     position: relative;
     color: #767676;
+    a.newsmag-comments-link {
+      color: #767676;
+      &:hover {
+        color: $color__brand-red;
+      }
+    }
+    .meta {
+      a {
+        color: #767676;
+        &:hover {
+          color: $color__brand-red;
+        }
+      }
+    }
     h2 {
       font-family: 'Poppins';
       font-size: 16px;
@@ -165,9 +179,6 @@
       a {
         font-weight: 600;
       }
-    }
-    span.colored {
-      margin-right: 5px;
     }
     p {
       margin-top: 9px;
@@ -295,6 +306,14 @@
     &:last-of-type {
       border-bottom: 0;
     }
+
+    a.newsmag-comments-link {
+      color: #767676;
+      &:hover {
+        color: $color__brand-red;
+      }
+    }
+
     @media (min-width: 768px) {
       > .row > .col-sm-9 {
         padding-left: 0;
@@ -314,11 +333,7 @@
         width: 100%;
       }
     }
-
-    span.colored {
-      margin-right: 5px;
-    }
-
+    
     .newsmag-title {
       h3 {
         font-size: 16px;

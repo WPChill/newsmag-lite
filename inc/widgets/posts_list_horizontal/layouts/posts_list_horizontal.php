@@ -14,12 +14,24 @@
 		<?php while ( $posts->have_posts() ) : $posts->the_post();
 			$i ++;
 			$category = get_the_category();
-			$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url( get_template_directory_uri() . '/assets/images/picture_placeholder.jpg' ) . '" />';
+			$image    = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url( get_template_directory_uri() . '/assets/images/picture_placeholder.jpg' ) . '" />';
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-post-horizontal' );
 			}
-			$new_image = apply_filters( 'newsmag_widget_image', $image );
-			$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
+			$new_image    = apply_filters( 'newsmag_widget_image', $image );
+			$allowed_tags = array(
+				'img'      => array(
+					'data-original' => true,
+					'srcset'        => true,
+					'sizes'         => true,
+					'src'           => true,
+					'class'         => true,
+					'alt'           => true,
+					'width'         => true,
+					'height'        => true
+				),
+				'noscript' => array()
+			);
 			?>
 
 			<div class="col-md-3 col-sm-6">
@@ -37,7 +49,15 @@
 					<h3>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
-					<div class="meta"><span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?> <?php newsmag_posted_on('comments'); ?></div>
+					<div class="meta">
+						<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+						<?php newsmag_posted_on( 'comments' ); ?>
+						<?php if ( current_user_can( 'manage_options' ) ) { ?>
+							<a class="newsmag-comments-link sep-left" target="_blank" href="<?php echo get_admin_url() . 'widgets.php' ?>">
+								<span class="fa fa-edit"></span> <?php echo __( 'Edit', 'newsmag' ) ?>
+							</a>
+						<?php } ?>
+					</div>
 				</div>
 			</div>
 			<?php

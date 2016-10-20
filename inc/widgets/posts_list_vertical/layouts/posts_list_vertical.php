@@ -42,6 +42,11 @@ if ( $posts->have_posts() ): ?>
 							</h3>
 							<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
 							<?php newsmag_posted_on('comments'); ?>
+							<?php if ( current_user_can( 'manage_options' ) ) { ?>
+								<a class="newsmag-comments-link sep-left" target="_blank" href="<?php echo get_admin_url() . 'widgets.php' ?>">
+									<span class="fa fa-edit"></span> <?php echo __( 'Edit', 'newsmag' ) ?>
+								</a>
+							<?php } ?>
 							<?php
 							$excerpt = get_the_excerpt();
 							$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
