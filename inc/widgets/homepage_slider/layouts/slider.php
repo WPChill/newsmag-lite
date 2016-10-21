@@ -57,7 +57,7 @@
 	<!-- article navigation list -->
 	<div class="owl-nav-list hidden-xs">
 		<?php if ( empty( $instance['title'] ) ) { ?>
-			<h4><?php esc_html_e( 'Today’s  hot  topics', 'newsmag-pro' ); ?></h4>
+			<h4><?php esc_html_e( 'Today’s  hot  topics', 'newsmag' ); ?></h4>
 		<?php } else { ?>
 			<h4><?php echo esc_html( $instance['title'] ); ?></h4>
 		<?php } ?>

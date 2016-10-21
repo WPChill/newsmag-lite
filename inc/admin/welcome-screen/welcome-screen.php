@@ -216,7 +216,7 @@ class Newsmag_Welcome {
 
 		<div class="wrap about-wrap epsilon-wrap">
 
-			<h1><?php _e( 'Welcome to Newsmag! - Version ' . $newsmag['Version'], 'newsmag' ); ?></h1>
+			<h1><?php echo __( 'Welcome to Newsmag! - Version ', 'newsmag') . $newsmag['Version']; ?></h1>
 
 			<div
 				class="about-text"><?php echo esc_html__( 'Newsmag is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using Newsmag and that is why we gathered here all the necessary information for you. We hope you will enjoy using Newsmag, as much as we enjoy creating great products.', 'newsmag' ); ?></div>

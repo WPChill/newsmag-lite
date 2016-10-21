@@ -26,7 +26,7 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 
 		?>
 		<p>
-			<label><?php _e( 'Headline', 'newsmag-pro' ); ?> </label>
+			<label><?php _e( 'Headline', 'newsmag' ); ?> </label>
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
 			       id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
 			       value="<?php echo esc_attr( $title ); ?>">
