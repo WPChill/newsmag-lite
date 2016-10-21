@@ -524,6 +524,11 @@
           color: #FFF;
           font-size: 23px;
           font-weight: 700;
+          &:hover,
+          &:focus{
+            color:$color__brand-red;
+            text-shadow: 1px 1px 2px rgba(255, 61, 46, 0.3);
+          }
         }
       }
       .meta {
@@ -536,7 +541,7 @@
           color: #FFF;
           &.newsmag-comments-link {
             color: #FFF;
-            &:hover {
+            &:hover,&:focus {
               color: $color__brand-red;
             }
           }

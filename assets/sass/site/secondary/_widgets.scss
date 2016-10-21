@@ -123,6 +123,9 @@
             font-weight: 700;
             font-size: 15px;
             color: #333333;
+            &:hover, &:focus {
+              color: $color__brand-red;
+            }
           }
         }
       }
@@ -139,7 +142,7 @@
           font-weight: 700;
           font-size: 15px;
           color: #333333;
-          &:hover {
+          &:hover, &:focus {
             color: $color__brand-red;
           }
         }
@@ -246,7 +249,7 @@
         font-size: 14px !important;
         border-radius: 3px;
         color: #767676;
-        &:hover {
+        &:hover, &:focus {
           background: $color__brand-red;
           color: #FFF;
         }
@@ -307,6 +310,10 @@
     }
   }
   &.widget_rss {
+    .rss-widget-icon {
+      display: none;
+    }
+
     h3 {
       margin-top: 0;
       > a {
@@ -316,6 +323,16 @@
         color: $color__brand-red;
         text-transform: uppercase;
         margin-bottom: 25px;
+        &:first-of-type {
+          &:before {
+            content: '\f143';
+            font-family: 'FontAwesome';
+            display: inline-block;
+            position: relative;
+            margin-right: 5px;
+            color:#767676;
+          }
+        }
       }
     }
     ul {
@@ -327,18 +344,18 @@
           color: #333;
           font-family: 'Poppins';
           font-weight: 700;
-          &:hover {
+          &:hover, &:focus {
             color: $color__brand-red;
           }
         }
         .rss-date {
           display: block;
           position: relative;
-          color: #a0a0a0;
+          color: #767676;
           margin-bottom: 10px;
           &:before {
             font-family: 'FontAwesome';
-            color: $color__brand-red;
+            color: #767676;
             content: '\f017';
             display: inline-block;
             position: relative;
@@ -350,7 +367,7 @@
         }
         cite {
           margin-top: 15px;
-          color: #a0a0a0;
+          color: #767676;
           font-style: normal;
           font-size: 15px;
         }
