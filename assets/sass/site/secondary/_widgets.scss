@@ -41,6 +41,9 @@
     border: none;
     text-indent: -99999999999px;
     text-align: center;
+    &:hover, &:focus{
+      background:transparent;
+    }
   }
 }
 

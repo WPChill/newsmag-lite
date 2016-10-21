@@ -891,6 +891,8 @@ a {
     border: none;
     text-indent: -99999999999px;
     text-align: center; }
+    .widget_search .search-submit:hover, .widget_search .search-submit:focus {
+      background: transparent; }
 
 .widget_newsmag_banner, .widget_text {
   margin-bottom: 30px; }
