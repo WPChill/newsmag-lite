@@ -221,8 +221,10 @@ function newsmag_has_widgets() {
  * @return bool
  */
 function newmsag_has_posts() {
-	$count_posts = wp_count_posts();
-	if ( (int) $count_posts->publish > 4 ) {
+	$args  = array( "s" => 'Gary Johns: \'What is Aleppo\'' );
+	$query = get_posts( $args );
+
+	if ( ! empty( $query ) ) {
 		return true;
 	}
 
