@@ -1,3 +1,10 @@
+### V2.1.2
+- Implemented everything in here: https://github.com/MachoThemes/newsmag-pro/milestone/3?closed=1 (5 bug fixes & improvements )
+
+### V2.1.1
+Implemented everything i nhere: https://github.com/MachoThemes/newsmag-pro/milestone/2?closed=1 (13 bug fixes & improvements )
+
+
 ### V2.0.1
     - Implemented everything in here: https://github.com/MachoThemes/newsmag-lite/milestone/1?closed=1 (44 bug fixes & improvements )
 
