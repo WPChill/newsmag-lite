@@ -111,9 +111,13 @@ textarea {
     font-size: 15px;
     padding: 6px 30px 5px;
     margin-left: 15px;
-    &:hover{
+    &:hover {
       border-color: #333333;
       background-color: #333333;
+    }
+    &:active {
+      border-color: $color__brand-red;
+      background-color: $color__brand-red;
     }
   }
 }
@@ -126,8 +130,12 @@ input[type="submit"] {
   color: #FFF;
   font-size: 15px;
   padding: 9px 30px;
-  &:hover{
+  &:hover {
     border-color: #333333;
     background-color: #333333;
+  }
+  &:active {
+    border-color: $color__brand-red;
+    background-color: $color__brand-red;
   }
 }

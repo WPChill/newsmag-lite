@@ -425,6 +425,9 @@ textarea {
   .error-404.not-found input[type="submit"]:hover, .newsmag-search-page input[type="submit"]:hover, .post-password-form input[type="submit"]:hover {
     border-color: #333333;
     background-color: #333333; }
+  .error-404.not-found input[type="submit"]:active, .newsmag-search-page input[type="submit"]:active, .post-password-form input[type="submit"]:active {
+    border-color: #ff3d2e;
+    background-color: #ff3d2e; }
 
 input[type="submit"] {
   border: 1px solid;
@@ -437,6 +440,9 @@ input[type="submit"] {
   input[type="submit"]:hover {
     border-color: #333333;
     background-color: #333333; }
+  input[type="submit"]:active {
+    border-color: #ff3d2e;
+    background-color: #ff3d2e; }
 
 /*--------------------------------------------------------------
 # Navigation
