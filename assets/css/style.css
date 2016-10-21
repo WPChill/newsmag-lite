@@ -69,6 +69,8 @@ a {
     text-decoration: none; }
   a.newsmag-comments-link {
     color: #767676; }
+    a.newsmag-comments-link:focus, a.newsmag-comments-link:hover {
+      color: #ff3d2e; }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
@@ -1512,7 +1514,7 @@ a {
     color: #767676; }
     .newsmag_builder .newsmag-post-box-a a.newsmag-comments-link {
       color: #767676; }
-      .newsmag_builder .newsmag-post-box-a a.newsmag-comments-link:hover {
+      .newsmag_builder .newsmag-post-box-a a.newsmag-comments-link:hover, .newsmag_builder .newsmag-post-box-a a.newsmag-comments-link:focus {
         color: #ff3d2e; }
     .newsmag_builder .newsmag-post-box-a .meta a {
       color: #767676; }
@@ -1677,7 +1679,7 @@ a {
       border-bottom: 0; }
     .newsmag_builder .newsmag-blog-post-layout-b a.newsmag-comments-link {
       color: #767676; }
-      .newsmag_builder .newsmag-blog-post-layout-b a.newsmag-comments-link:hover {
+      .newsmag_builder .newsmag-blog-post-layout-b a.newsmag-comments-link:hover, .newsmag_builder .newsmag-blog-post-layout-b a.newsmag-comments-link:focus {
         color: #ff3d2e; }
     @media (min-width: 768px) {
       .newsmag_builder .newsmag-blog-post-layout-b > .row > .col-sm-9 {
@@ -2614,7 +2616,7 @@ a {
           color: #ff3d2e; }
     .newsmag-blog-post-layout .newsmag-title .newsmag-comments-link {
       color: #767676; }
-      .newsmag-blog-post-layout .newsmag-title .newsmag-comments-link:hover {
+      .newsmag-blog-post-layout .newsmag-title .newsmag-comments-link:hover, .newsmag-blog-post-layout .newsmag-title .newsmag-comments-link:focus {
         color: #ff3d2e; }
     .newsmag-blog-post-layout .newsmag-title.newsmag-sticky-post-title h3 {
       margin-bottom: 0; }

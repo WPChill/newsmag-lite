@@ -28,6 +28,9 @@ a {
   }
   &.newsmag-comments-link {
     color: #767676;
+    &:focus, &:hover {
+      color: $color__brand-red;
+    }
   }
 }
 

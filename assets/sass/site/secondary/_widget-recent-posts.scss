@@ -112,7 +112,7 @@
     color: #767676;
     a.newsmag-comments-link {
       color: #767676;
-      &:hover {
+      &:hover,&:focus {
         color: $color__brand-red;
       }
     }
@@ -309,7 +309,7 @@
 
     a.newsmag-comments-link {
       color: #767676;
-      &:hover {
+      &:hover,&:focus {
         color: $color__brand-red;
       }
     }

@@ -311,7 +311,7 @@
     color: #767676;
     .newsmag-comments-link {
       color: #767676;
-      &:hover {
+      &:hover, &:focus {
         color: $color__brand-red;
       }
     }
