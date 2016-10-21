@@ -111,9 +111,7 @@ textarea {
     font-size: 15px;
     padding: 9px 30px;
     margin-left: 15px;
-    &:hover,
-    &:active,
-    &:focus {
+    &:hover{
       border-color: #333333;
       background-color: #333333;
     }
@@ -128,9 +126,7 @@ input[type="submit"] {
   color: #FFF;
   font-size: 15px;
   padding: 9px 30px;
-  &:hover,
-  &:active,
-  &:focus {
+  &:hover{
     border-color: #333333;
     background-color: #333333;
   }
