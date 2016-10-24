@@ -92,6 +92,9 @@ textarea {
     bottom: 8px;
     position: relative;
     padding: 7px 5px;
+    &:hover, &:focus {
+      color: #333;
+    }
   }
 }
 

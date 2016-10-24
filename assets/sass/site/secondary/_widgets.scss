@@ -268,7 +268,7 @@
         padding: 0;
         font-size: 15px;
         color: $color__text-main;
-        > li {
+        li {
           margin-bottom: 10px;
           &:before {
             content: "\f105";
@@ -277,6 +277,23 @@
             margin-left: 0;
             width: 15px;
             color: $color__brand-red;
+
+            -webkit-transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            -moz-transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            -o-transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+
+            -webkit-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            -moz-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            -o-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+
+          }
+
+          &:hover {
+            &:before{
+              padding-left: 7px;
+            }
           }
           a {
             color: $color__text-main;

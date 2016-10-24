@@ -173,6 +173,12 @@
         border-bottom-color: $color__brand-red;
         color: $color__brand-red;
       }
+      &:not(.dots):not(.next):not(.prev) {
+        &:hover, &:focus {
+          border-bottom-color: $color__brand-red;
+          color: $color__brand-red;
+        }
+      }
       &.next {
         border: 1px solid #e1e1e1;
         padding: 5px 10px;
@@ -247,6 +253,7 @@
 .newsmag-blog-post-layout {
   margin-bottom: 30px;
   padding-bottom: 30px;
+  position: relative;
   border-bottom: 1px solid #ebebeb;
   &:last-of-type {
     margin-bottom: 10px;
@@ -340,6 +347,12 @@
   }
 
   &:hover, &:focus {
+    border-bottom-color: #D0EDF3;
+    &:after {
+      height: 25px;
+      -webkit-transition: all .2s ease-in;
+      transition: all .2s ease-in;
+    }
     .newsmag-post-box-category {
       bottom: 20px;
       opacity: 1;
@@ -347,6 +360,24 @@
       -webkit-transition: all .2s ease-in;
       transition: all .2s ease-in;
     }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-image: -webkit-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
+    background-image: -moz-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
+    background-image: -o-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
+    background-image: -ms-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
+    background-image: linear-gradient(to top, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    z-index: 1;
   }
 }
 

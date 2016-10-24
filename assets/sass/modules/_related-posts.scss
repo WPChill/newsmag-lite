@@ -58,6 +58,10 @@
       text-transform: uppercase;
       font-family: $font__alternate;
       color: $color__text-title;
+      &:hover, &:focus {
+        color: $color__brand-red;
+        outline: none;
+      }
     }
   }
 }
