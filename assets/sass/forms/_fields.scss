@@ -92,7 +92,7 @@ textarea {
     bottom: 8px;
     position: relative;
     padding: 7px 5px;
-    &:hover, &:focus {
+    &:hover, &.input-open {
       color: #333;
     }
   }

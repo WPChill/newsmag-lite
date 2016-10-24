@@ -408,7 +408,7 @@ textarea {
   bottom: 8px;
   position: relative;
   padding: 7px 5px; }
-  #searchform_topbar .search-top-bar-submit:hover, #searchform_topbar .search-top-bar-submit:focus {
+  #searchform_topbar .search-top-bar-submit:hover, #searchform_topbar .search-top-bar-submit.input-open {
     color: #333; }
 
 #cat {

@@ -73,7 +73,9 @@ var Newsmag = {
 	initSearchForm: function ($) {
 		$('#search-top-bar-submit').on('click', function (e) {
 			e.preventDefault();
-			$('#search-field-top-bar').toggleClass('opened');
+			var element = $('#search-field-top-bar');
+			element.toggleClass('opened');
+			element.parent().siblings('button').toggleClass('input-open');
 		});
 	},
 	initGoToTop   : function ($) {
