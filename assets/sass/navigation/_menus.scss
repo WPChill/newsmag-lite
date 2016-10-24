@@ -217,8 +217,9 @@
         text-transform: uppercase;
         font-family: "Poppins";
         font-weight: 500;
-        &:focus {
+        &:hover, &:focus {
           color: $color__brand-red;
+          outline: none;
         }
       }
       &:last-of-type {
@@ -268,7 +269,7 @@
                 &:after {
                   color: $color__brand-red;
                 }
-                > a{
+                > a {
                   color: $color__brand-red;
                   outline: none;
                 }

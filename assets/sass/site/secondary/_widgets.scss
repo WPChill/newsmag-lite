@@ -41,8 +41,8 @@
     border: none;
     text-indent: -99999999999px;
     text-align: center;
-    &:hover, &:focus{
-      background:transparent;
+    &:hover, &:focus {
+      background: transparent;
     }
   }
 }
@@ -333,7 +333,7 @@
             display: inline-block;
             position: relative;
             margin-right: 5px;
-            color:#767676;
+            color: #767676;
           }
         }
       }
@@ -399,6 +399,15 @@
           margin-left: 0;
           width: 15px;
           color: $color__brand-red;
+          -webkit-transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          -moz-transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          -o-transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+
+          -webkit-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          -moz-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          -o-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
         }
         a {
           color: $color__text-main;
@@ -416,6 +425,12 @@
           float: right;
           color: #ccc;
         }
+
+        &:hover {
+          &:before{
+            padding-left: 7px;
+          }
+        }
       }
     }
     .children {
@@ -431,6 +446,20 @@
           margin-left: 0;
           width: 15px;
           color: $color__brand-red;
+          -webkit-transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          -moz-transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          -o-transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          transition: padding 250ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+
+          -webkit-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          -moz-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          -o-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+        }
+        &:hover {
+          &:before{
+            padding-left: 7px;
+          }
         }
         > ul, > ol {
           margin-top: 0;
