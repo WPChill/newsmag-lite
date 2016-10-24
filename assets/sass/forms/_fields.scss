@@ -142,3 +142,15 @@ input[type="submit"] {
     background-color: $color__brand-red;
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  .comment-form-author, .comment-form-email, .comment-form-url {
+    width: 30%;
+    float: left;
+    display: inline-block;
+    margin-right: 5%;
+  }
+  .comment-form-url {
+    margin-right: 0;
+  }
+}

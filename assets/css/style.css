@@ -446,6 +446,15 @@ input[type="submit"] {
     border-color: #ff3d2e;
     background-color: #ff3d2e; }
 
+@media only screen and (min-width: 1024px) {
+  .comment-form-author, .comment-form-email, .comment-form-url {
+    width: 30%;
+    float: left;
+    display: inline-block;
+    margin-right: 5%; }
+
+  .comment-form-url {
+    margin-right: 0; } }
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -511,12 +520,16 @@ a {
   display: block;
   width: 35px;
   height: 35px;
-  color: "Lato", sans-serif;
-  border-color: "Lato", sans-serif;
+  color: #333;
+  border-color: #333;
   background: transparent;
   margin: 0 auto;
   margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  padding: 0; }
+  .menu-toggle:hover, .menu-toggle:focus {
+    background: #333;
+    color: #FFF; }
 
 #site-navigation.toggled ul {
   display: block;
@@ -1543,17 +1556,77 @@ a {
 
 .newsmag_builder {
   margin: initial !important; }
-  .newsmag_builder h2.colored {
-    margin-top: 0;
-    text-transform: uppercase;
-    font-size: 26px;
-    color: #ff3d2e;
-    margin-bottom: 26px;
-    font-weight: 700;
-    font-family: 'Poppins'; }
-    .newsmag_builder h2.colored a {
-      font-weight: 700;
-      color: #ff3d2e; }
+  .newsmag_builder .newsmag-posts-carousel {
+    position: relative; }
+    .newsmag_builder .newsmag-posts-carousel h2 {
+      font-family: 'Poppins';
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+      position: relative;
+      line-height: 27px;
+      margin-bottom: 15px; }
+      .newsmag_builder .newsmag-posts-carousel h2:after {
+        position: absolute;
+        height: 2px;
+        background: #ff3d2e;
+        display: block;
+        content: '';
+        bottom: 0;
+        left: 0;
+        right: 0; }
+      .newsmag_builder .newsmag-posts-carousel h2 a, .newsmag_builder .newsmag-posts-carousel h2 span {
+        font-family: 'Poppins';
+        font-size: 16px;
+        color: #FFF;
+        padding: 0 20px;
+        background: #ff3d2e;
+        font-weight: 700; }
+    .newsmag_builder .newsmag-posts-carousel .newsmag-carousel-arrows {
+      position: absolute;
+      top: 12px;
+      right: 5px;
+      list-style-type: none;
+      display: inline-block;
+      margin: 0;
+      padding: 0; }
+      .newsmag_builder .newsmag-posts-carousel .newsmag-carousel-arrows li {
+        display: inline-block; }
+        .newsmag_builder .newsmag-posts-carousel .newsmag-carousel-arrows li a {
+          font-size: 15px;
+          color: #9a9a9a;
+          padding: 10px; }
+          .newsmag_builder .newsmag-posts-carousel .newsmag-carousel-arrows li a:hover {
+            color: #ff3d2e; }
+          .newsmag_builder .newsmag-posts-carousel .newsmag-carousel-arrows li a:active, .newsmag_builder .newsmag-posts-carousel .newsmag-carousel-arrows li a:focus {
+            color: #9a9a9a; }
+        .newsmag_builder .newsmag-posts-carousel .newsmag-carousel-arrows li:first-of-type a {
+          font-size: 12px;
+          padding-right: 0; }
+    .newsmag_builder .newsmag-posts-carousel .item h3 {
+      font-family: 'Poppins';
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: bold;
+      color: #333;
+      text-transform: initial;
+      margin-bottom: 5px; }
+      .newsmag_builder .newsmag-posts-carousel .item h3 a:hover, .newsmag_builder .newsmag-posts-carousel .item h3 a:focus {
+        outline: none; }
+    .newsmag_builder .newsmag-posts-carousel .item .meta {
+      color: #767676; }
+      .newsmag_builder .newsmag-posts-carousel .item .meta a {
+        color: #767676; }
+        .newsmag_builder .newsmag-posts-carousel .item .meta a:hover, .newsmag_builder .newsmag-posts-carousel .item .meta a:focus {
+          color: #ff3d2e;
+          outline: none; }
+    .newsmag_builder .newsmag-posts-carousel .item:hover .newsmag-post-box-category, .newsmag_builder .newsmag-posts-carousel .item:focus .newsmag-post-box-category {
+      bottom: 20px;
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+      -webkit-transition: all .2s ease-in;
+      transition: all .2s ease-in; }
   .newsmag_builder .newsmag-post-box-a {
     margin-bottom: 45px;
     position: relative;
@@ -1561,7 +1634,8 @@ a {
     .newsmag_builder .newsmag-post-box-a a.newsmag-comments-link {
       color: #767676; }
       .newsmag_builder .newsmag-post-box-a a.newsmag-comments-link:hover, .newsmag_builder .newsmag-post-box-a a.newsmag-comments-link:focus {
-        color: #ff3d2e; }
+        color: #ff3d2e;
+        outline: none; }
     .newsmag_builder .newsmag-post-box-a .meta a {
       color: #767676; }
       .newsmag_builder .newsmag-post-box-a .meta a:hover {
@@ -1740,7 +1814,8 @@ a {
     .newsmag_builder .newsmag-blog-post-layout-b a.newsmag-comments-link {
       color: #767676; }
       .newsmag_builder .newsmag-blog-post-layout-b a.newsmag-comments-link:hover, .newsmag_builder .newsmag-blog-post-layout-b a.newsmag-comments-link:focus {
-        color: #ff3d2e; }
+        color: #ff3d2e;
+        outline: none; }
     @media (min-width: 768px) {
       .newsmag_builder .newsmag-blog-post-layout-b > .row > .col-sm-9 {
         padding-left: 0; } }
@@ -1912,7 +1987,8 @@ a {
           .newsmag_builder .newsmag-blog-post-layout-banner .banner-content .meta a.newsmag-comments-link {
             color: #FFF; }
             .newsmag_builder .newsmag-blog-post-layout-banner .banner-content .meta a.newsmag-comments-link:hover, .newsmag_builder .newsmag-blog-post-layout-banner .banner-content .meta a.newsmag-comments-link:focus {
-              color: #ff3d2e; }
+              color: #ff3d2e;
+              outline: none; }
       .newsmag_builder .newsmag-blog-post-layout-banner .banner-content .newsmag-post-layout-category {
         font-size: 12px;
         line-height: 12px;
@@ -2914,8 +2990,6 @@ a {
 .comment-notes {
   display: none; }
 
-.comment-form [class^="comment-form-"] > label {
-  display: none; }
 .comment-form [class^="comment-form-"] > input {
   width: 100%; }
 

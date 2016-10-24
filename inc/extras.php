@@ -101,54 +101,6 @@ function newsmag_get_attachment_id( $url ) {
 	return (int) $attachment_id;
 }
 
-/**
- * Change default fields, add placeholder and change type attributes.
- *
- * @param  array $fields
- *
- * @return array
- */
-function newsmag_comment_placeholders( $fields ) {
-	$fields['author'] = str_replace(
-		'<input',
-		'<input placeholder="'
-		. _x(
-			'Name *',
-			'comment form placeholder',
-			'newsmag'
-		)
-		. '"',
-		$fields['author']
-	);
-	$fields['email']  = str_replace(
-		'<input id="email" name="email"',
-		'<input placeholder="'
-		. _x(
-			'Email *',
-			'comment form placeholder',
-			'newsmag'
-		)
-		. '"  id="email" name="email"',
-		$fields['email']
-	);
-	$fields['url']    = str_replace(
-		'<input id="url" name="url"',
-		'<input placeholder="'
-		. _x(
-			'Website',
-			'comment form placeholder',
-			'newsmag'
-		)
-		. '" id="url" name="url"',
-		$fields['url']
-	);
-
-	return $fields;
-}
-
-add_filter( 'comment_form_default_fields', 'newsmag_comment_placeholders' );
-
-
 /*
 /* Add responsive container to embeds
 */

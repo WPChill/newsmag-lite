@@ -79,12 +79,17 @@
   display: block;
   width: 35px;
   height: 35px;
-  color: $font__main;
-  border-color: $font__main;
+  color: $color__text-main;
+  border-color: $color__text-main;
   background: transparent;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 0;
+  &:hover, &:focus {
+    background:$color__text-main;
+    color: #FFF;
+  }
 }
 
 #site-navigation.toggled ul {
