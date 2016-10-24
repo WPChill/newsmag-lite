@@ -1597,7 +1597,7 @@ a {
         z-index: 1; }
       .newsmag_builder .newsmag-post-box-a .newsmag-post-box-image .newsmag-post-box-a-category, .newsmag_builder .newsmag-post-box-a .newsmag-image .newsmag-post-box-a-category {
         position: absolute;
-        bottom: 20px;
+        bottom: 0;
         left: 20px;
         font-size: 12px;
         line-height: 12px;
@@ -1609,7 +1609,9 @@ a {
         padding: 6px 7px 5px 7px;
         z-index: 2;
         -webkit-transition: all .2s ease-in;
-        transition: all .2s ease-in; }
+        transition: all .2s ease-in;
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
         .newsmag_builder .newsmag-post-box-a .newsmag-post-box-image .newsmag-post-box-a-category a, .newsmag_builder .newsmag-post-box-a .newsmag-image .newsmag-post-box-a-category a {
           color: #FFF;
           font-weight: 700;
@@ -1621,6 +1623,12 @@ a {
           background-color: #000;
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in; }
+    .newsmag_builder .newsmag-post-box-a:hover .newsmag-post-box-a-category, .newsmag_builder .newsmag-post-box-a:focus .newsmag-post-box-a-category {
+      bottom: 20px;
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+      -webkit-transition: all .2s ease-in;
+      transition: all .2s ease-in; }
   .newsmag_builder .newsmag-blog-post-layout-row.post-list-horizontal {
     display: inline-block;
     width: 100%; }
@@ -1684,6 +1692,12 @@ a {
       z-index: 1; }
     .newsmag_builder .newsmag-blog-post-layout-b:hover {
       border-bottom-color: #D0EDF3; }
+      .newsmag_builder .newsmag-blog-post-layout-b:hover .newsmag-post-box-a-category, .newsmag_builder .newsmag-blog-post-layout-b:hover .newsmag-post-box-category {
+        bottom: 20px;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in; }
       .newsmag_builder .newsmag-blog-post-layout-b:hover:after {
         height: 25px;
         -webkit-transition: all .2s ease-in;
@@ -1876,8 +1890,12 @@ a {
         background: #ff3d2e;
         padding: 2px 7px 0 7px;
         z-index: 2;
+        position: relative;
+        bottom: -20px;
         -webkit-transition: all .2s ease-in;
-        transition: all .2s ease-in; }
+        transition: all .2s ease-in;
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
         .newsmag_builder .newsmag-blog-post-layout-banner .banner-content .newsmag-post-layout-category:hover {
           background-color: #000;
           -webkit-transition: all .2s ease-in;
@@ -1891,6 +1909,12 @@ a {
             display: none; }
     .newsmag_builder .newsmag-blog-post-layout-banner.col-md-3 .banner-content h3 a {
       font-size: 16px; }
+    .newsmag_builder .newsmag-blog-post-layout-banner:hover .newsmag-post-layout-category, .newsmag_builder .newsmag-blog-post-layout-banner:focus .newsmag-post-layout-category {
+      bottom: 0;
+      -webkit-transition: all .2s ease-in;
+      transition: all .2s ease-in;
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)"; }
 
 .newsmag-blog-sidebar .widget_newsmag_recent .newsmag-recent-post-widget, .newsmag-sidebar .widget_newsmag_recent .newsmag-recent-post-widget {
   border-bottom: 1px dashed #e1e1e1; }
@@ -2646,6 +2670,12 @@ a {
         color: #bbbbbb;
         font-size: 12px;
         text-transform: uppercase; }
+  .newsmag-blog-post-layout:hover .newsmag-post-box-category, .newsmag-blog-post-layout:focus .newsmag-post-box-category {
+    bottom: 20px;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in; }
 
 .newsmag-article-post .newsmag-date {
   color: #9a9a9a;
@@ -2712,7 +2742,7 @@ a {
   position: relative; }
   .newsmag-image .newsmag-post-box-a-category, .newsmag-image .newsmag-post-box-category {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     left: 20px;
     font-size: 12px;
     line-height: 12px;
@@ -2723,6 +2753,8 @@ a {
     background: #ff3d2e;
     padding: 6px 7px 5px 7px;
     z-index: 2;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-transition: all .2s ease-in;
     transition: all .2s ease-in; }
     .newsmag-image .newsmag-post-box-a-category:hover, .newsmag-image .newsmag-post-box-category:hover {
