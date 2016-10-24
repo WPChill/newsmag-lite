@@ -263,10 +263,14 @@
                 bottom: 12px;
                 color: #333;
               }
-              &:hover
+              &:hover,
               &:focus {
                 &:after {
                   color: $color__brand-red;
+                }
+                > a{
+                  color: $color__brand-red;
+                  outline: none;
                 }
               }
             }
@@ -274,6 +278,10 @@
               padding: 10px 15px;
               font-size: 15px;
               border-bottom: 1px solid #f6f6f6;
+              &:hover, &:focus {
+                color: $color__brand-red;
+                outline: none;
+              }
             }
             &:last-of-type {
               a {
