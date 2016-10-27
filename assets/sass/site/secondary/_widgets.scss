@@ -130,6 +130,15 @@
               color: $color__brand-red;
             }
           }
+          .meta {
+            color: #767676;
+            font-size: 14px;
+            a {
+              font-size: 14px;
+              font-weight: 400;
+              color: #767676;
+            }
+          }
         }
       }
     }
@@ -234,8 +243,55 @@
 
   &.popular-posts {
     .posts-list {
+      padding-left: 0;
       .content {
         margin-top: 4px;
+      }
+    }
+    position: relative;
+    .newsmag-popular-posts-filter {
+      font-size: 12px;
+      color: #9a9a9a;
+      position: absolute;
+      top: 25px;
+      right: 15px;
+      a {
+        font-size: 12px;
+        color: #9a9a9a;
+        &:hover, &:focus, &.active {
+          outline: none;
+          color: $color__brand-red;
+        }
+      }
+    }
+    .newsmag-popular-posts {
+      h2 {
+        font-family: 'Poppins';
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+        position: relative;
+        line-height: 27px;
+        margin-bottom: 15px;
+        &:after {
+          position: absolute;
+          height: 2px;
+          background: $color__brand-red;
+          display: block;
+          content: '';
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+        a, span {
+          font-family: 'Poppins';
+          font-size: 16px;
+          color: #FFF;
+          padding: 2px 20px 0;
+          background: $color__brand-red;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -291,7 +347,7 @@
           }
 
           &:hover {
-            &:before{
+            &:before {
               padding-left: 7px;
             }
           }
@@ -444,7 +500,7 @@
         }
 
         &:hover {
-          &:before{
+          &:before {
             padding-left: 7px;
           }
         }
@@ -474,7 +530,7 @@
           transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
         }
         &:hover {
-          &:before{
+          &:before {
             padding-left: 7px;
           }
         }

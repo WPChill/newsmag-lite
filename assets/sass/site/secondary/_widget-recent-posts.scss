@@ -316,6 +316,13 @@
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in;
         }
+        &.dynamic{
+          &:hover{
+            background-color: #000 !important;
+            -webkit-transition: all .2s ease-in;
+            transition: all .2s ease-in;
+          }
+        }
       }
     }
     &:hover, &:focus {
@@ -676,6 +683,13 @@
           background-color: #000;
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in;
+        }
+        &.dynamic{
+          &:hover{
+            background-color: #000 !important;
+            -webkit-transition: all .2s ease-in;
+            transition: all .2s ease-in;
+          }
         }
         a {
           color: #FFF;

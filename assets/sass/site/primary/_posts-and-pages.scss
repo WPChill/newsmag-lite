@@ -488,6 +488,13 @@
       -webkit-transition: all .2s ease-in;
       transition: all .2s ease-in;
     }
+    &.dynamic{
+      &:hover{
+        background-color: #000 !important;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+      }
+    }
     a {
       color: #FFF;
       font-weight: 700;
