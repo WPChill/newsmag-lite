@@ -148,7 +148,7 @@
         &:first-of-type {
           a {
             font-size: 12px;
-            padding-right:0;
+            padding-right: 0;
           }
         }
       }
@@ -332,6 +332,11 @@
     display: inline-block;
     width: 100%;
   }
+
+  .newsmag-post-list-vertical-row {
+    clear: both;
+  }
+
   .newsmag-blog-post-layout-row,
   .newsmag-post-banner-row,
   .newsmag-post-list-vertical-row {
@@ -694,7 +699,7 @@
       }
     }
 
-    &:hover, &:focus{
+    &:hover, &:focus {
       .newsmag-post-layout-category {
         bottom: 0;
         -webkit-transition: all .2s ease-in;

@@ -1741,6 +1741,8 @@ a {
   .newsmag_builder .newsmag-blog-post-layout-row.post-list-horizontal {
     display: inline-block;
     width: 100%; }
+  .newsmag_builder .newsmag-post-list-vertical-row {
+    clear: both; }
   .newsmag_builder .newsmag-blog-post-layout-row h2,
   .newsmag_builder .newsmag-post-banner-row h2,
   .newsmag_builder .newsmag-post-list-vertical-row h2 {
