@@ -67,14 +67,14 @@ class Newsmag_Breadcrumbs {
 
 		// Setup default array for changeable variables
 		$defaults = array(
-			'home_prefix'            => get_theme_mod( 'newsmag_blog_breadcrumb_menu_prefix', __( '', 'newsmag' ) ),
+			'home_prefix'            => get_theme_mod( 'newsmag_blog_breadcrumb_menu_prefix', __( '', 'newsmag-pro' ) ),
 			'separator'              => get_theme_mod( 'newsmag_blog_breadcrumb_menu_separator', '/' ),
 			'show_post_type_archive' => '1',
 			'show_terms'             => get_theme_mod( 'newsmag_blog_breadcrumb_menu_post_category', true ),
-			'home_label'             => esc_html__( 'Home', 'newsmag' ),
-			'tag_archive_prefix'     => esc_html__( 'Tag:', 'newsmag' ),
-			'search_prefix'          => esc_html__( 'Search:', 'newsmag' ),
-			'error_prefix'           => esc_html__( '404 - Page not Found', 'newsmag' ),
+			'home_label'             => esc_html__( 'Home', 'newsmag-pro' ),
+			'tag_archive_prefix'     => esc_html__( 'Tag:', 'newsmag-pro' ),
+			'search_prefix'          => esc_html__( 'Search:', 'newsmag-pro' ),
+			'error_prefix'           => esc_html__( '404 - Page not Found', 'newsmag-pro' ),
 		);
 
 		// Setup a filter for changeable variables and merge it with the defaults
@@ -98,7 +98,7 @@ class Newsmag_Breadcrumbs {
 			'/'         => '/'
 		);
 
-		$this->home_label = __( 'Home ', 'newsmag' );
+		$this->home_label = __( 'Home ', 'newsmag-pro' );
 		// Set separator
 		$this->separator = $separators[ $this->separator ];
 
@@ -204,10 +204,30 @@ class Newsmag_Breadcrumbs {
 			} elseif ( is_date() ) {
 				global $wp_locale;
 				// Set variables
-				$year = esc_html( get_query_var( 'year' ) );
-				if ( is_month() ||
-				     is_day()
-				) {
+				$year      = esc_html( get_query_var( 'year' ) );
+				$permalink = get_option( 'permalink_structure' );
+				if ( $permalink === '' ) {
+					$query = get_query_var( 'm' );
+
+					switch ( strlen( $query ) ) {
+						case 8:
+							$year       = substr( $query, 0, 4 );
+							$month      = substr( $query, 4, 2 );
+							$month_name = $wp_locale->get_month( $month );
+							$day        = substr( $query, 6, 2 );
+							break;
+						case 6:
+							$year       = substr( $query, 0, 4 );
+							$month      = substr( $query, 4, 2 );
+							$month_name = $wp_locale->get_month( $month );
+							break;
+						case 4:
+							$year = substr( $query, 0, 4 );
+							break;
+					}
+				}
+
+				if ( ( is_month() || is_day() ) && ! empty( $permalink ) ) {
 					$month      = get_query_var( 'monthnum' );
 					$month_name = $wp_locale->get_month( $month );
 				}
@@ -607,13 +627,32 @@ class Newsmag_Breadcrumbs {
 				$title = $term->name;
 				break;
 			case 'year':
-				$title = esc_html( get_query_var( 'year' ) );
+				$permalink = get_option( 'permalink_structure' );
+				if ( empty( $permalink ) ) {
+					$query = get_query_var( 'm' );
+					$title = substr( $query, 0, 4 );
+				} else {
+					$title = esc_html( get_query_var( 'year' ) );
+				}
 				break;
 			case 'month':
-				$title = $wp_locale->get_month( get_query_var( 'monthnum' ) );
+				$permalink = get_option( 'permalink_structure' );
+				if ( empty( $permalink ) ) {
+					$query = get_query_var( 'm' );
+					$month = substr( $query, 4, 2 );
+					$title = $wp_locale->get_month( $month );
+				} else {
+					$title = $wp_locale->get_month( get_query_var( 'monthnum' ) );
+				}
 				break;
 			case 'day':
-				$title = get_query_var( 'day' );
+				$permalink = get_option( 'permalink_structure' );
+				if ( empty( $permalink ) ) {
+					$query = get_query_var( 'm' );
+					$title = substr( $query, 6, 2 );
+				} else {
+					$title = get_query_var( 'day' );
+				}
 				break;
 			case 'author':
 				$user  = $wp_query->get_queried_object();

@@ -398,6 +398,8 @@ textarea {
     transition: all 0.3s;
     width: 100%;
     padding-left: 10px; }
+  #searchform_topbar #search-field-top-bar:focus {
+    outline: none; }
 #searchform_topbar .search-top-bar-submit {
   background: transparent;
   color: #a9a9a9;
@@ -1580,7 +1582,7 @@ a {
         font-family: 'Poppins';
         font-size: 16px;
         color: #FFF;
-        padding: 0 20px;
+        padding: 2px 20px 0;
         background: #ff3d2e;
         font-weight: 700; }
     .newsmag_builder .newsmag-posts-carousel .newsmag-carousel-arrows {
@@ -1662,7 +1664,7 @@ a {
         font-family: 'Poppins';
         font-size: 16px;
         color: #FFF;
-        padding: 0 20px;
+        padding: 2px 20px 0;
         background: #ff3d2e;
         font-weight: 700; }
     .newsmag_builder .newsmag-post-box-a.posts-column-layout h3 {
@@ -1769,7 +1771,7 @@ a {
       font-family: 'Poppins';
       font-size: 16px;
       color: #FFF;
-      padding: 0 20px;
+      padding: 2px 20px 0;
       background: #ff3d2e;
       font-weight: bold; }
   .newsmag_builder .newsmag-blog-post-layout-b {

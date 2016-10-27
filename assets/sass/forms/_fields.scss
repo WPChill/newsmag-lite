@@ -81,6 +81,9 @@ textarea {
       width: 100%;
       padding-left: 10px;
     }
+    &:focus {
+      outline: none;
+    }
   }
   .search-top-bar-submit {
     background: transparent;
