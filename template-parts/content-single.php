@@ -9,7 +9,21 @@
 // Grab the current author
 $curauth             = get_userdata( $post->post_author );
 $breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+$image_in_content    = get_theme_mod( 'newsmag_featured_image_in_content', true );
 ?>
+<?php if ( $image_in_content ): ?>
+	<div class="row <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top' ?> ">
+		<div class="col-md-12">
+			<div class="newsmag-image">
+				<?php
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail( 'newsmag-recent-post-big' );
+				}
+				?>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>
 <div class="row newsmag-article-post <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top' ?> ">
 	<?php if ( get_theme_mod( 'newsmag_enable_author_box', true ) && ! empty( $curauth->description ) ): ?>
 		<div class="col-md-3">
@@ -22,25 +36,6 @@ $breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
 	<div
 		class="<?php echo ( get_theme_mod( 'newsmag_enable_author_box', true ) && ! empty( $curauth->description ) ) ? 'col-md-9' : 'col-md-12'; ?>">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<?php if ( ! is_single() ): ?>
-				<header class="entry-header">
-
-					<div class="newsmag-image">
-						<?php
-						if ( has_post_thumbnail() ) {
-							the_post_thumbnail( 'newsmag-recent-post-big' );
-						} else {
-							echo '<img src=' . esc_url( get_template_directory_uri() . '/assets/images/picture_placeholder.jpg' ) . '" />';
-						}
-						?>
-					</div>
-					<?php
-					if ( ! is_single() ) {
-						echo '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . wp_trim_words( get_the_title(), 8 ) . '</a></h4>';
-					}
-					?>
-				</header><!-- .entry-header -->
-			<?php endif; ?>
 			<div class="entry-content">
 				<div class="newsmag-post-meta">
 					<?php newsmag_posted_on( 'date' ); ?>

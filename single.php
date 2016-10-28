@@ -8,41 +8,47 @@
  */
 
 get_header();
-$image = get_custom_header();
-$title = '';
+$image            = get_custom_header();
+$img              = $image->url;
+$title            = '';
+$image_in_content = get_theme_mod( 'newsmag_featured_image_in_content', true );
+if ( ! $image_in_content ) {
+	while ( have_posts() ) : the_post();
+		$img   = get_the_post_thumbnail_url();
+		$title = get_the_title();
+	endwhile;
 
-while ( have_posts() ) : the_post();
-	$img   = get_the_post_thumbnail_url();
-	$title = get_the_title();
-endwhile;
-
-if ( empty( $img ) ) {
-	$img = get_custom_header();
-	$img = $img->url;
+	if ( empty( $img ) ) {
+		$img = get_custom_header();
+		$img = $img->url;
+	}
 }
+
 ?>
 <?php if ( ! empty( $img ) ): ?>
-	<div class="newsmag-custom-header <?php echo is_single() ? 'newsmag-custom-header-single-post': '' ?>" style="background-image:url(<?php echo esc_url_raw($img) ?>)">
+	<div class="newsmag-custom-header <?php echo is_single() ? 'newsmag-custom-header-single-post' : '' ?>"
+	     style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2><?php echo esc_html($title) ?></h2>
+					<h2><?php echo esc_html( $title ) ?></h2>
 				</div>
 			</div>
 		</div>
 	</div>
 <?php endif; ?>
+
 <?php
-	$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
-	if ( $breadcrumbs_enabled ) { ?>
-		<div class="container <?php echo is_single() ? 'newsmag-breadcrumbs-container' : ''; ?>">
-			<div class="row <?php echo is_single() ? 'newsmag-breadcrumbs-row' : ''; ?>">
-				<div class="col-xs-12">
-					<?php newsmag_breadcrumbs(); ?>
-				</div>
+$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+if ( $breadcrumbs_enabled ) { ?>
+	<div class="container <?php echo is_single() ? 'newsmag-breadcrumbs-container' : ''; ?>">
+		<div class="row <?php echo is_single() ? 'newsmag-breadcrumbs-row' : ''; ?>">
+			<div class="col-xs-12">
+				<?php newsmag_breadcrumbs(); ?>
 			</div>
 		</div>
-	<?php } ?>
+	</div>
+<?php } ?>
 	<div class="container">
 		<div class="row">
 			<?php
@@ -52,7 +58,8 @@ if ( empty( $img ) ) {
 				<?php get_sidebar( 'sidebar' ); ?>
 			<?php endif; ?>
 
-			<div id="primary" class="content-area <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-xs-12 newsmag-sidebar">
+			<div id="primary"
+			     class="content-area <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-xs-12 newsmag-sidebar">
 				<main id="main" class="site-main" role="main">
 					<?php
 					while ( have_posts() ) : the_post();

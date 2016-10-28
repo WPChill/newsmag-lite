@@ -76,6 +76,17 @@ $wp_customize->add_control(
 	)
 );
 
+$wp_customize->add_control( new Epsilon_Control_Toggle(
+	                            $wp_customize,
+	                            'newsmag_featured_image_in_content',
+	                            array(
+		                            'type'        => 'mte-toggle',
+		                            'label'       => esc_html__( 'Featured image in content', 'newsmag' ),
+		                            'description' => esc_html__( 'Set this to ON to display the image in the blog post content. Else it will be shown in the header', 'newsmag' ),
+		                            'section'     => 'newsmag_blog_section',
+	                            )
+                            )
+);
 
 $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
