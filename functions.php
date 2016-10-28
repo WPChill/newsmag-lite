@@ -167,6 +167,12 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.wie">' . __( 'Widgets', 'newsmag' ) . '</a>',
 					"check"       => newsmag_has_content(),
 				),
+				array(
+					"id"          => 'newsmag-req-regen-thumbs',
+					'title'       => esc_html__( 'Regen Thumbnails', 'newsmag-pro' ),
+					'description' => esc_html__( 'Regenerate your thumbnails after updating to this version', 'newsmag-pro' ),
+					'check'       => !newsmag_version_check( '2.1.3' ),
+				),
 			);
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 		}
@@ -174,6 +180,10 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'newsmag_setup' );
 
+function newsmag_version_check( $ver ) {
+	$newsmag = wp_get_theme();
+	return version_compare( $newsmag['Version'], $ver, '>=' );
+}
 /**
  * @param string $format
  *

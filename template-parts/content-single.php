@@ -10,9 +10,10 @@
 $curauth             = get_userdata( $post->post_author );
 $breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
 $image_in_content    = get_theme_mod( 'newsmag_featured_image_in_content', true );
+$author              = get_theme_mod( 'newsmag_enable_author_box', true );
 ?>
 <?php if ( $image_in_content ): ?>
-	<div class="row <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top' ?> ">
+	<div class="row newsmag-margin-bottom <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top' ?> ">
 		<div class="col-md-12">
 			<div class="newsmag-image">
 				<?php
@@ -24,8 +25,9 @@ $image_in_content    = get_theme_mod( 'newsmag_featured_image_in_content', true 
 		</div>
 	</div>
 <?php endif; ?>
-<div class="row newsmag-article-post <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top' ?> ">
-	<?php if ( get_theme_mod( 'newsmag_enable_author_box', true ) && ! empty( $curauth->description ) ): ?>
+<div
+	class="row newsmag-article-post <?php echo ( !$breadcrumbs_enabled && !$image_in_content ) ? 'newsmag-margin-top' : '' ?>">
+	<?php if ( $author && ! empty( $curauth->description ) ): ?>
 		<div class="col-md-3">
 			<?php
 			// Include author information
