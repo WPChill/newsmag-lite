@@ -87,7 +87,7 @@
   margin-bottom: 10px;
   padding: 0;
   &:hover, &:focus {
-    background:$color__text-main;
+    background: $color__text-main;
     color: #FFF;
   }
 }
@@ -192,7 +192,7 @@
 
 /* Newsmag Menu Customization starts here */
 #site-navigation {
-  border-top: 1px solid #e1e1e1;
+  background: $color__brand-red;
 
   a {
     font-family: 'Lato', serif;
@@ -200,8 +200,9 @@
     padding-top: 11px;
     padding-bottom: 11px;
     position: relative;
-    color: $color__text-title;
+    color: #FFF;
     display: inline-block;
+    border-bottom: 2px solid transparent;
   }
 
   .nav-menu {
@@ -213,17 +214,20 @@
       &:hover,
       &:focus {
         > a {
-          color: $color__brand-red;
+          border-bottom-color: $color__text-main;
+          color: $color__text-main;
         }
       }
       > a {
+        padding-left: 8px;
+        padding-right: 8px;
         font-size: 15px;
         position: relative;
         text-transform: uppercase;
         font-family: "Poppins";
         font-weight: 500;
         &:hover, &:focus {
-          color: $color__brand-red;
+          color: $color__text-main;
           outline: none;
         }
       }
@@ -237,12 +241,12 @@
           font-size: 16px;
           display: inline-block;
           padding-left: 5px;
-          color: $color__text-title;
+          color: #fff;
         }
         &:hover,
         &:focus {
           &:after {
-            color: $color__brand-red;
+            color: $color__text-main;
           }
         }
         > ul {
@@ -254,6 +258,7 @@
                 color: $color__brand-red;
               }
               > a {
+                color: $color__text-main;
                 border-color: #cbcbcb;
               }
             }
@@ -267,7 +272,7 @@
                 position: absolute;
                 right: 5px;
                 bottom: 12px;
-                color: #333;
+                color: $color__text-main;;
               }
               &:hover,
               &:focus {
@@ -284,6 +289,7 @@
               padding: 10px 15px;
               font-size: 15px;
               border-bottom: 1px solid #f6f6f6;
+              color: $color__text-main;
               &:hover, &:focus {
                 color: $color__brand-red;
                 outline: none;

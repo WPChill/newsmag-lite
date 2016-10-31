@@ -140,12 +140,6 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"check"       => newsmag_is_not_static_page()
 				),
 				array(
-					'id'          => 'newsmag-req-ac-add-widgets',
-					'title'       => esc_html__( 'Build your homepage!', 'newsmag' ),
-					'description' => esc_html__( 'Get started with Newsmag by adding a Slider Widget to the Header Area or by adding a Content widget. To achieve any of these actions, please head on to Customize -> Widgets -> Homepage : Header Area or Content Area and select any of the widgets presented there.', 'newsmag' ),
-					'check'       => newsmag_has_widgets()
-				),
-				array(
 					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
 					"title"       => esc_html__( 'Install WordPress Importer', 'newsmag' ),
 					"description" => esc_html__( 'Please install the WordPress Importer to create the demo content.', 'newsmag' ),

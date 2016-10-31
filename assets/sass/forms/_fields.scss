@@ -62,12 +62,12 @@ textarea {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid transparentize(#a9a9a9, .8);
+    border-bottom: 1px solid #fff;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 5px;
     border-radius: 0;
-    color: #a9a9a9;
+    color: #fff;
     width: 0;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
@@ -87,7 +87,7 @@ textarea {
   }
   .search-top-bar-submit {
     background: transparent;
-    color: #a9a9a9;
+    color: #FFF;
     font-size: 14px;
     border: none;
     outline: none;
@@ -95,6 +95,7 @@ textarea {
     bottom: 8px;
     position: relative;
     padding: 7px 5px;
+    vertical-align: middle;
     &:hover, &.input-open {
       color: #333;
     }
