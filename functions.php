@@ -169,8 +169,8 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 				),
 				array(
 					"id"          => 'newsmag-req-regen-thumbs',
-					'title'       => esc_html__( 'Regen Thumbnails', 'newsmag-pro' ),
-					'description' => esc_html__( 'Regenerate your thumbnails after updating to this version', 'newsmag-pro' ),
+					'title'       => esc_html__( 'Regen Thumbnails', 'newsmag' ),
+					'description' => esc_html__( 'Regenerate your thumbnails after updating to this version. We recommend using Force Regenerate Thumbnails plugin', 'newsmag' ),
 					'check'       => !newsmag_version_check( '2.1.3' ),
 				),
 			);

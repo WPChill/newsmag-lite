@@ -252,15 +252,43 @@
     .newsmag-popular-posts-filter {
       font-size: 12px;
       color: #9a9a9a;
+      display: inline-block;
       position: absolute;
-      top: 25px;
-      right: 15px;
+      top: 28px;
+      right: 0;
+      width: 66px;
+      @media (max-width: 991px) {
+        top: 8px;
+      }
+
+      .holder {
+        position: absolute;
+        top: 0;
+        right: 70px;
+      }
+      .newsmag-popular-filters {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+
+        }
+      }
       a {
         font-size: 12px;
         color: #9a9a9a;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all .2s linear;
+        transition: all .2s linear;
+        display: block;
         &:hover, &:focus, &.active {
           outline: none;
           color: $color__brand-red;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .2s linear;
+          transition: all .2s linear;
         }
       }
     }

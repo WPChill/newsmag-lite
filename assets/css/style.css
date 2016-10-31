@@ -1077,15 +1077,37 @@ a {
     .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .newsmag-popular-posts-filter {
       font-size: 12px;
       color: #9a9a9a;
+      display: inline-block;
       position: absolute;
-      top: 25px;
-      right: 15px; }
+      top: 28px;
+      right: 0;
+      width: 66px; }
+      @media (max-width: 991px) {
+        .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .newsmag-popular-posts-filter {
+          top: 8px; } }
+      .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .newsmag-popular-posts-filter .holder {
+        position: absolute;
+        top: 0;
+        right: 70px; }
+      .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .newsmag-popular-posts-filter .newsmag-popular-filters {
+        list-style-type: none;
+        padding: 0;
+        margin: 0; }
       .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .newsmag-popular-posts-filter a {
         font-size: 12px;
-        color: #9a9a9a; }
+        color: #9a9a9a;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all .2s linear;
+        transition: all .2s linear;
+        display: block; }
         .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .newsmag-popular-posts-filter a:hover, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .newsmag-popular-posts-filter a:focus, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .newsmag-popular-posts-filter a.active {
           outline: none;
-          color: #ff3d2e; }
+          color: #ff3d2e;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .2s linear;
+          transition: all .2s linear; }
     .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .newsmag-popular-posts h2 {
       font-family: 'Poppins';
       font-size: 16px;
