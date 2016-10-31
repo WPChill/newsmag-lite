@@ -170,8 +170,15 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 				array(
 					"id"          => 'newsmag-req-regen-thumbs',
 					'title'       => esc_html__( 'Regen Thumbnails', 'newsmag' ),
-					'description' => esc_html__( 'Regenerate your thumbnails after updating to this version. We recommend using Force Regenerate Thumbnails plugin', 'newsmag' ),
+					'description' => esc_html__( 'Regenerate your thumbnails after updating to this version.', 'newsmag' ),
 					'check'       => !newsmag_version_check( '2.1.3' ),
+				),
+				array(
+					"id"          => 'newsmag-req-regen-thumbs-install-plugin',
+					'title'       => esc_html__( 'Install Force Regenerate Thumbnails', 'newsmag' ),
+					'description' => esc_html__( 'Please install this plugin to regenerate your images using our custom image sizes.', 'newsmag' ),
+					'check'       => class_exists( 'ForceRegenerateThumbnails' ),
+					'plugin_slug' => 'force-regenerate-thumbnails'
 				),
 			);
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
