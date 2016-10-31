@@ -67,14 +67,14 @@ class Newsmag_Breadcrumbs {
 
 		// Setup default array for changeable variables
 		$defaults = array(
-			'home_prefix'            => get_theme_mod( 'newsmag_blog_breadcrumb_menu_prefix', __( '', 'newsmag-pro' ) ),
+			'home_prefix'            => get_theme_mod( 'newsmag_blog_breadcrumb_menu_prefix', __( '', 'newsmag' ) ),
 			'separator'              => get_theme_mod( 'newsmag_blog_breadcrumb_menu_separator', '/' ),
 			'show_post_type_archive' => '1',
 			'show_terms'             => get_theme_mod( 'newsmag_blog_breadcrumb_menu_post_category', true ),
-			'home_label'             => esc_html__( 'Home', 'newsmag-pro' ),
-			'tag_archive_prefix'     => esc_html__( 'Tag:', 'newsmag-pro' ),
-			'search_prefix'          => esc_html__( 'Search:', 'newsmag-pro' ),
-			'error_prefix'           => esc_html__( '404 - Page not Found', 'newsmag-pro' ),
+			'home_label'             => esc_html__( 'Home', 'newsmag' ),
+			'tag_archive_prefix'     => esc_html__( 'Tag:', 'newsmag' ),
+			'search_prefix'          => esc_html__( 'Search:', 'newsmag' ),
+			'error_prefix'           => esc_html__( '404 - Page not Found', 'newsmag' ),
 		);
 
 		// Setup a filter for changeable variables and merge it with the defaults
@@ -98,7 +98,7 @@ class Newsmag_Breadcrumbs {
 			'/'         => '/'
 		);
 
-		$this->home_label = __( 'Home ', 'newsmag-pro' );
+		$this->home_label = __( 'Home ', 'newsmag' );
 		// Set separator
 		$this->separator = $separators[ $this->separator ];
 
