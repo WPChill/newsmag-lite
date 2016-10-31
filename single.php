@@ -10,12 +10,10 @@
 get_header();
 $image            = get_custom_header();
 $img              = $image->url;
-$title            = '';
 $image_in_content = get_theme_mod( 'newsmag_featured_image_in_content', true );
 if ( ! $image_in_content ) {
 	while ( have_posts() ) : the_post();
-		$img   = get_the_post_thumbnail_url();
-		$title = get_the_title();
+		$img = get_the_post_thumbnail_url();
 	endwhile;
 
 	if ( empty( $img ) ) {
@@ -23,11 +21,12 @@ if ( ! $image_in_content ) {
 		$img = $img->url;
 	}
 }
-
+$title = get_the_title( get_the_ID() );
 ?>
 <?php if ( ! empty( $img ) ): ?>
-	<div class="newsmag-custom-header <?php echo is_single() ? 'newsmag-custom-header-single-post' : '' ?>"
-	     style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
+	<div
+		class="newsmag-custom-header <?php echo ( is_single() && ! $image_in_content ) ? 'newsmag-custom-header-single-post' : '' ?>"
+		style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
