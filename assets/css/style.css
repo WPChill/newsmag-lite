@@ -693,7 +693,8 @@ a {
 .top-header {
   background: #272f32;
   color: #fff;
-  max-height: 45px; }
+  max-height: 45px;
+  overflow: hidden; }
   .top-header ul {
     list-style: none;
     padding-left: 0;
@@ -3431,38 +3432,40 @@ a {
       color: #ff3d2e;
       outline: none; }
 
-@media (max-width: 767px) {
-  .newsmag-news-ticker {
-    text-align: center; } }
-.newsmag-news-ticker .newsmag-module-title {
-  color: #FFF;
-  padding: 12px 25px;
-  font-weight: 600;
-  background: #ff3d2e;
-  display: inline-block; }
+.newsmag-news-ticker {
+  max-height: 45px; }
   @media (max-width: 767px) {
-    .newsmag-news-ticker .newsmag-module-title {
-      display: inline-block;
-      margin-bottom: 20px; } }
-  .newsmag-news-ticker .newsmag-module-title icon.fa {
+    .newsmag-news-ticker {
+      text-align: center; } }
+  .newsmag-news-ticker .newsmag-module-title {
     color: #FFF;
-    margin-right: 10px; }
-.newsmag-news-ticker ul {
-  vertical-align: middle;
-  margin: 0;
-  padding: 0;
-  margin-left: 10px;
-  list-style-type: none;
-  position: relative; }
-  @media (min-width: 768px) {
-    .newsmag-news-ticker ul {
-      width: 73%;
-      display: inline-block !important; } }
-  .newsmag-news-ticker ul li a {
-    color: "Lato", sans-serif;
-    font-size: 14px;
-    font-family: 'Lato';
-    font-weight: 400; }
+    padding: 12px 25px;
+    font-weight: 600;
+    background: #ff3d2e;
+    display: inline-block; }
+    @media (max-width: 767px) {
+      .newsmag-news-ticker .newsmag-module-title {
+        display: inline-block;
+        margin-bottom: 20px; } }
+    .newsmag-news-ticker .newsmag-module-title icon.fa {
+      color: #FFF;
+      margin-right: 10px; }
+  .newsmag-news-ticker ul {
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    list-style-type: none;
+    position: relative; }
+    @media (min-width: 768px) {
+      .newsmag-news-ticker ul {
+        width: 73%;
+        display: inline-block !important; } }
+    .newsmag-news-ticker ul li a {
+      color: "Lato", sans-serif;
+      font-size: 14px;
+      font-family: 'Lato';
+      font-weight: 400; }
 
 .newsmag-breadcrumbs {
   font-size: 14px;
