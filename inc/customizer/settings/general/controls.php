@@ -25,7 +25,7 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            array(
 		                            'type'        => 'mte-toggle',
 		                            'label'       => esc_html__( 'Sticky Menu', 'newsmag' ),
-		                            'description' => esc_html__( '@cristianraiber baga text :) .', 'newsmag' ),
+		                            'description' => esc_html__( 'Toggling this to on will make the navigation menu stick to the top of header when scrolling.', 'newsmag' ),
 		                            'section'     => 'newsmag_general_section',
 	                            )
                             )
