@@ -807,14 +807,10 @@ a {
 
 .top-header-icons {
   position: relative; }
-  .top-header-icons .separator {
-    width: 1px;
-    height: 20px;
-    background: #ebebeb;
-    position: relative;
-    top: 12px;
-    margin-left: 15px;
-    margin-right: 10px; }
+  @media (max-width: 767px) {
+    .top-header-icons.pull-right {
+      text-align: center;
+      float: none !important; } }
 
 #site-navigation.toggled #menu-social ul li {
   width: initial; }

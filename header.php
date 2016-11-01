@@ -89,7 +89,7 @@
 						<div class="col-md-3">
 							<div class="top-header-icons pull-right">
 								<!-- Search Form -->
-								<form role="search" method="get" class="pull-right" id="searchform_topbar"
+								<form role="search" method="get" id="searchform_topbar"
 								      action="<?php echo esc_url_raw( home_url( '/' ) ); ?>">
 									<label>
 										<span
