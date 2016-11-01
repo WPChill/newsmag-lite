@@ -380,12 +380,12 @@ textarea {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid rgba(169, 169, 169, 0.2);
+  border-bottom: 1px solid #fff;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 5px;
   border-radius: 0;
-  color: #a9a9a9;
+  color: #fff;
   width: 0;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
@@ -402,14 +402,15 @@ textarea {
     outline: none; }
 #searchform_topbar .search-top-bar-submit {
   background: transparent;
-  color: #a9a9a9;
+  color: #FFF;
   font-size: 14px;
   border: none;
   outline: none;
   box-shadow: none;
   bottom: 8px;
   position: relative;
-  padding: 7px 5px; }
+  padding: 7px 5px;
+  vertical-align: middle; }
   #searchform_topbar .search-top-bar-submit:hover, #searchform_topbar .search-top-bar-submit.input-open {
     color: #333; }
 
@@ -596,29 +597,45 @@ a {
 
 /* Newsmag Menu Customization starts here */
 #site-navigation {
-  border-top: 1px solid #e1e1e1; }
+  background: #ff3d2e; }
+  #site-navigation.stick-menu {
+    z-index: 99999 !important; }
+  #site-navigation .stick-menu-logo {
+    display: inline-block;
+    float: left;
+    line-height: 48px;
+    margin-right: 0; }
+    #site-navigation .stick-menu-logo img {
+      width: 0;
+      max-width: 150px;
+      max-height: 35px; }
   #site-navigation a {
-    font-family: 'Lato', serif;
     line-height: 26px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-top: 12px;
+    padding-bottom: 9px;
     position: relative;
-    color: #333;
-    display: inline-block; }
+    color: #FFF;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    font-family: 'Poppins';
+    font-size: 14px;
+    text-transform: uppercase;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3); }
   #site-navigation .nav-menu > li {
     display: inline-block;
     padding-right: 40px;
     position: relative; }
-    #site-navigation .nav-menu > li.active > a, #site-navigation .nav-menu > li:hover > a, #site-navigation .nav-menu > li:focus > a {
-      color: #ff3d2e; }
+    #site-navigation .nav-menu > li.active > a, #site-navigation .nav-menu > li.current-menu-item > a, #site-navigation .nav-menu > li:hover > a, #site-navigation .nav-menu > li:focus > a {
+      border-bottom-color: #333; }
     #site-navigation .nav-menu > li > a {
+      padding-left: 8px;
+      padding-right: 8px;
       font-size: 15px;
       position: relative;
       text-transform: uppercase;
       font-family: "Poppins";
       font-weight: 500; }
       #site-navigation .nav-menu > li > a:hover, #site-navigation .nav-menu > li > a:focus {
-        color: #ff3d2e;
         outline: none; }
     #site-navigation .nav-menu > li:last-of-type {
       padding-right: 0; }
@@ -628,9 +645,7 @@ a {
       font-size: 16px;
       display: inline-block;
       padding-left: 5px;
-      color: #333; }
-    #site-navigation .nav-menu > li.menu-item-has-children:hover:after, #site-navigation .nav-menu > li.menu-item-has-children:focus:after {
-      color: #ff3d2e; }
+      color: #fff; }
     #site-navigation .nav-menu > li.menu-item-has-children > ul li:hover
     #site-navigation .nav-menu > li.menu-item-has-children > ul li:focus {
       color: #ff3d2e; }
@@ -640,6 +655,7 @@ a {
         color: #ff3d2e; }
       #site-navigation .nav-menu > li.menu-item-has-children > ul li:hover
       #site-navigation .nav-menu > li.menu-item-has-children > ul li:focus > a {
+        color: #333;
         border-color: #cbcbcb; }
     #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children {
       position: relative; }
@@ -660,7 +676,10 @@ a {
     #site-navigation .nav-menu > li.menu-item-has-children > ul li a {
       padding: 10px 15px;
       font-size: 15px;
-      border-bottom: 1px solid #f6f6f6; }
+      border-bottom: 1px solid #f6f6f6;
+      color: #333;
+      text-transform: initial;
+      text-shadow: none; }
       #site-navigation .nav-menu > li.menu-item-has-children > ul li a:hover, #site-navigation .nav-menu > li.menu-item-has-children > ul li a:focus {
         color: #ff3d2e;
         outline: none; }
@@ -673,7 +692,8 @@ a {
 /* Top header */
 .top-header {
   background: #272f32;
-  color: #fff; }
+  color: #fff;
+  max-height: 45px; }
   .top-header ul {
     list-style: none;
     padding-left: 0;

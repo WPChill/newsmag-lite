@@ -60,11 +60,22 @@
 				<?php endif; ?>
 			</div>
 		</div><!-- .site-branding -->
-		<?php $enable_search = get_theme_mod( 'newsmag_enable_menu_search', true ); ?>
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<?php
+		$enable_search  = get_theme_mod( 'newsmag_enable_menu_search', true );
+		$enable_sticky  = get_theme_mod( 'newsmag_enable_sticky_menu', false );
+		$custom_logo_id = get_theme_mod( 'custom_logo' );
+		$image          = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+		?>
+		<nav id="site-navigation" class="main-navigation <?php echo $enable_sticky ? 'stick-menu' : '' ?>"
+		     role="navigation">
 			<div class="container">
 				<div class="row">
 					<div class="<?php echo $enable_search ? 'col-md-9' : 'col-md-12' ?>">
+						<?php if ( $enable_sticky && ! empty( $image[0] ) ): ?>
+							<div class="stick-menu-logo">
+								<img src="<?php echo esc_url( $image[0] ); ?>"/>
+							</div>
+						<?php endif; ?>
 						<button class="menu-toggle" aria-controls="primary-menu"
 						        aria-expanded="false"><span class="fa fa-bars"></span></button>
 						<?php wp_nav_menu( array(
@@ -75,24 +86,24 @@
 					</div>
 
 					<?php if ( $enable_search ): ?>
-					<div class="col-md-3">
-						<div class="top-header-icons pull-right">
-							<!-- Search Form -->
-							<form role="search" method="get" class="pull-right" id="searchform_topbar"
-							      action="<?php echo esc_url_raw( home_url( '/' ) ); ?>">
-								<label>
-									<span class="screen-reader-text"><?php echo __( 'Search for:', 'newsmag' ) ?></span>
-									<input class="search-field-top-bar" id="search-field-top-bar"
-									       placeholder="<?php echo __( 'Search ...', 'newsmag' ) ?>"
-									       value="" name="s"
-									       type="search">
-								</label>
-								<button id="search-top-bar-submit" type="button" class="search-top-bar-submit"><span
-										class="fa fa-search"></span></button>
-							</form>
-							<span class="separator pull-right"></span>
+						<div class="col-md-3">
+							<div class="top-header-icons pull-right">
+								<!-- Search Form -->
+								<form role="search" method="get" class="pull-right" id="searchform_topbar"
+								      action="<?php echo esc_url_raw( home_url( '/' ) ); ?>">
+									<label>
+										<span
+											class="screen-reader-text"><?php echo __( 'Search for:', 'newsmag' ) ?></span>
+										<input class="search-field-top-bar" id="search-field-top-bar"
+										       placeholder="<?php echo __( 'Search ...', 'newsmag' ) ?>"
+										       value="" name="s"
+										       type="search">
+									</label>
+									<button id="search-top-bar-submit" type="button" class="search-top-bar-submit"><span
+											class="fa fa-search"></span></button>
+								</form>
+							</div>
 						</div>
-					</div>
 					<?php endif; ?>
 				</div>
 			</div>

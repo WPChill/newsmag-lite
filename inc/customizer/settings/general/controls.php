@@ -15,6 +15,22 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            )
                             )
 );
+
+/**
+ * Enable / Disable sticky menu
+ */
+$wp_customize->add_control( new Epsilon_Control_Toggle(
+	                            $wp_customize,
+	                            'newsmag_enable_sticky_menu',
+	                            array(
+		                            'type'        => 'mte-toggle',
+		                            'label'       => esc_html__( 'Sticky Menu', 'newsmag' ),
+		                            'description' => esc_html__( '@cristianraiber baga text :) .', 'newsmag' ),
+		                            'section'     => 'newsmag_general_section',
+	                            )
+                            )
+);
+
 /**
  * Enable / Disable Go top
  */

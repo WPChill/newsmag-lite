@@ -193,16 +193,35 @@
 /* Newsmag Menu Customization starts here */
 #site-navigation {
   background: $color__brand-red;
+  &.stick-menu {
+    z-index: 99999 !important;
+  }
+
+  .stick-menu-logo {
+    display: inline-block;
+    float: left;
+    line-height: 48px;
+    margin-right: 0;
+
+    img {
+      width: 0;
+      max-width: 150px;
+      max-height: 35px;
+    }
+  }
 
   a {
-    font-family: 'Lato', serif;
     line-height: 26px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-top: 12px;
+    padding-bottom: 9px;
     position: relative;
     color: #FFF;
     display: inline-block;
     border-bottom: 2px solid transparent;
+    font-family: 'Poppins';
+    font-size: 14px;
+    text-transform: uppercase;
+    text-shadow: 0 1px rgba(0, 0, 0, .3);
   }
 
   .nav-menu {
@@ -211,11 +230,11 @@
       padding-right: 40px;
       position: relative;
       &.active,
+      &.current-menu-item,
       &:hover,
       &:focus {
         > a {
           border-bottom-color: $color__text-main;
-          color: $color__text-main;
         }
       }
       > a {
@@ -227,7 +246,6 @@
         font-family: "Poppins";
         font-weight: 500;
         &:hover, &:focus {
-          color: $color__text-main;
           outline: none;
         }
       }
@@ -246,7 +264,6 @@
         &:hover,
         &:focus {
           &:after {
-            color: $color__text-main;
           }
         }
         > ul {
@@ -290,6 +307,8 @@
               font-size: 15px;
               border-bottom: 1px solid #f6f6f6;
               color: $color__text-main;
+              text-transform: initial;
+              text-shadow: none;
               &:hover, &:focus {
                 color: $color__brand-red;
                 outline: none;
