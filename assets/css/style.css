@@ -2021,7 +2021,7 @@ a {
     -moz-transition: all 0.2s;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
-    border: 2px solid #FFF;
+    border: 2px solid transparent;
     position: relative; }
     .newsmag_builder .newsmag-blog-post-layout-banner > a {
       display: block;

@@ -316,8 +316,8 @@
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in;
         }
-        &.dynamic{
-          &:hover{
+        &.dynamic {
+          &:hover {
             background-color: #000 !important;
             -webkit-transition: all .2s ease-in;
             transition: all .2s ease-in;
@@ -582,7 +582,7 @@
     -moz-transition: all 0.2s;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
-    border: 2px solid #FFF;
+    border: 2px solid transparent;
     position: relative;
     > a {
       display: block;
@@ -684,8 +684,8 @@
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in;
         }
-        &.dynamic{
-          &:hover{
+        &.dynamic {
+          &:hover {
             background-color: #000 !important;
             -webkit-transition: all .2s ease-in;
             transition: all .2s ease-in;
