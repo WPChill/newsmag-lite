@@ -11,7 +11,6 @@ jQuery(document).ready(function () {
     jQuery(".newsmag-dismiss-required-action").click(function () {
 
         var id = jQuery(this).attr('id');
-        console.log(id);
         jQuery.ajax({
             type: "GET",
             data: {action: 'newsmag_dismiss_required_action', dismiss_id: id},

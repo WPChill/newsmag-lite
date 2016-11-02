@@ -124,19 +124,19 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"title"       => esc_html__( 'Set front page to static', 'newsmag' ),
 					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'newsmag' ),
 					"help"        => wp_kses( 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>,', 'newsmag' ),
-					"check"       => MT_Notify_System::newsmag_is_not_static_page()
+					"check"       => MT_Notify_System::is_not_static_page()
 				),
 				array(
 					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
 					"title"       => esc_html__( 'Install WordPress Importer', 'newsmag' ),
-					"description" => esc_html__( 'Please install the WordPress Importer to create the demo content.', 'newsmag' ),
-					"check"       => MT_Notify_System::newsmag_check_wordpress_importer(),
+					"description" => MT_Notify_System::wordpress_importer_description(),
+					"check"       => MT_Notify_System::check_wordpress_importer(),
 					"plugin_slug" => 'wordpress-importer'
 				),
 				array(
 					"id"          => 'newsmag-req-ac-install-wp-import-widget-plugin',
 					"title"       => esc_html__( 'Install Widget Importer Exporter', 'newsmag' ),
-					"description" => esc_html__( 'Please install the WordPress widget importer to create the demo content', 'newsmag' ),
+					'description' => MT_Notify_System::widget_importer_exporter_description(),
 					"check"       => defined( "WIE_VERSION" ),
 					"plugin_slug" => 'widget-importer-exporter'
 				),
@@ -146,22 +146,23 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
 					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>, 
 									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.wie">' . __( 'Widgets', 'newsmag' ) . '</a>',
-					"check"       => MT_Notify_System::newsmag_has_content(),
+					"check"       => MT_Notify_System::has_content(),
 				),
 				array(
 					"id"          => 'newsmag-req-regen-thumbs',
 					'title'       => esc_html__( 'Regen Thumbnails', 'newsmag' ),
 					'description' => esc_html__( 'Regenerate your thumbnails after updating to this version.', 'newsmag' ),
-					'check'       => ! MT_Notify_System::newsmag_version_check( '2.1.3' ),
+					'check'       => ! MT_Notify_System::version_check( '2.1.3' ),
 				),
 				array(
 					"id"          => 'newsmag-req-regen-thumbs-install-plugin',
 					'title'       => esc_html__( 'Install Force Regenerate Thumbnails', 'newsmag' ),
-					'description' => esc_html__( 'Please install this plugin to regenerate your images using our custom image sizes.', 'newsmag' ),
+					'description' => MT_Notify_System::force_regenerate_thumbnails_description(),
 					'check'       => class_exists( 'ForceRegenerateThumbnails' ),
 					'plugin_slug' => 'force-regenerate-thumbnails'
 				),
 			);
+
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 		}
 	}
@@ -178,4 +179,5 @@ add_action( 'after_setup_theme', 'newsmag_setup' );
 function newsmag_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'newsmag_content_width', 1110 );
 }
+
 add_action( 'after_setup_theme', 'newsmag_content_width', 0 );

@@ -207,6 +207,11 @@ function newsmag_get_first_posts( $array ) {
 
 }
 
+/**
+ * Render the image banner ( in header )
+ *
+ * @return string
+ */
 function newsmag_render_banner() {
 	$banner_type = get_theme_mod( 'newsmag_banner_type', 'image' );
 
