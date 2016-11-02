@@ -40,14 +40,24 @@ add_action( 'customize_register', 'newsmag_customize_register' );
  */
 function newsmag_customize_preview_js() {
 	wp_enqueue_script( 'newsmag_customizer', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/previewer.js', array( 'customize-preview' ), '20151215', true );
+
+	wp_localize_script( 'newsmag_customizer', 'WPUrls', array(
+		'siteurl' => get_option( 'siteurl' ),
+		'theme'   => get_template_directory_uri(),
+		'ajaxurl' => admin_url( 'admin-ajax.php' )
+	) );
+
 	wp_enqueue_style( 'epsilon-styles', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
+
 }
+
 function newsmag_customizer_enqueue_scripts() {
 	/*
 	 * Our Customizer script
 	 *
 	 * Dependencies: Customizer Controls script (core)
 	 */
+	wp_enqueue_script( 'epsilon-object', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/epsilon.js', array( 'jquery' ) );
 	wp_enqueue_script( 'customizer-scripts', get_stylesheet_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/customizer.js', array( 'customize-controls' ) );
 	wp_enqueue_style( 'epsilon-styles', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
 }

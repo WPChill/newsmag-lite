@@ -91,3 +91,53 @@ function newsmag_category_transient_flusher() {
 
 add_action( 'edit_category', 'newsmag_category_transient_flusher' );
 add_action( 'save_post', 'newsmag_category_transient_flusher' );
+
+
+function newsmag_the_posts_navigation( $args = array() ) {
+	echo get_the_posts_navigation( $args );
+}
+
+function newsmag_remove_from_archive_title( $title ) {
+	if ( is_category() ) {
+
+		$title = single_cat_title( '', false );
+
+	} elseif ( is_tag() ) {
+
+		$title = single_tag_title( '', false );
+
+	} elseif ( is_author() ) {
+
+		$title = '<span class="vcard">' . get_the_author() . '</span>';
+
+	}
+
+	return $title;
+}
+
+add_filter( 'get_the_archive_title', 'newsmag_remove_from_archive_title' );
+
+/**
+ * Filter the categories widget to add a <span> element before the count
+ *
+ * @param $links
+ *
+ * @return mixed
+ */
+function newsmag_add_span_cat_count( $links ) {
+	$links = str_replace( '</a> (', '</a> <span class="newsmag-cat-count">', $links );
+	$links = str_replace( ')', '</span>', $links );
+
+	return $links;
+}
+
+add_filter( 'wp_list_categories', 'newsmag_add_span_cat_count' );
+
+function newsmag_add_span_archive_count( $links ) {
+	$links = str_replace( '</a>&nbsp;(', '</a> <span class="newsmag-cat-count">', $links );
+	$links = str_replace( ')', '</span>', $links );
+
+	return $links;
+}
+
+add_filter( 'get_archives_link', 'newsmag_add_span_archive_count' );

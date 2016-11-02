@@ -231,3 +231,41 @@ function newsmag_render_banner() {
 
 	return $html;
 }
+
+/**
+ * @param string $format
+ *
+ * @return bool|mixed
+ */
+function newsmag_format_icon( $format = 'standard' ) {
+	if ( $format === 'standard' ) {
+		return false;
+	}
+
+	$icons = array(
+		'aside'   => 'fa fa-hashtag',
+		'image'   => 'fa fa-picture-o',
+		'quote'   => 'fa fa-quote-left',
+		'link'    => 'fa fa-link',
+		'gallery' => 'fa fa-th-large',
+		'video'   => 'fa fa-video-camera',
+		'status'  => 'fa fa-heartbeat',
+		'audio'   => 'fa fa-headphones',
+		'chat'    => 'fa fa-comment-o'
+	);
+
+	return $icons[ $format ];
+}
+
+add_action( 'wp_ajax_newsmag_get_attachment_image', 'newsmag_get_attachment_image' );
+add_action( 'wp_ajax_nopriv_newsmag_get_attachment_image', 'newsmag_get_attachment_image' );
+
+function newsmag_get_attachment_image() {
+	$id   = intval( $_POST['attachment_id'] );
+	$size = esc_html( $_POST['attachment_size'] );
+
+	$src = wp_get_attachment_image( $id, false );
+
+	echo $src;
+	die();
+}
