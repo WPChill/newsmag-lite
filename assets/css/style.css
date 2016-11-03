@@ -695,6 +695,9 @@ a {
   color: #fff;
   max-height: 45px;
   overflow: hidden; }
+  @media (max-width: 767px) {
+    .top-header {
+      max-height: initial; } }
   .top-header ul {
     list-style: none;
     padding-left: 0;
@@ -3432,7 +3435,8 @@ a {
   max-height: 45px; }
   @media (max-width: 767px) {
     .newsmag-news-ticker {
-      text-align: center; } }
+      text-align: center;
+      max-height: initial; } }
   .newsmag-news-ticker .newsmag-module-title {
     color: #FFF;
     padding: 12px 25px;

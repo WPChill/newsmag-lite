@@ -2,7 +2,7 @@
   max-height: 45px;
   @media (max-width: 767px) {
     text-align: center;
-
+    max-height: initial;
   }
   .newsmag-module-title {
     color: #FFF;

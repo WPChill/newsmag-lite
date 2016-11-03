@@ -4,6 +4,9 @@
   color: #fff;
   max-height: 45px;
   overflow: hidden;
+  @media (max-width: 767px) {
+    max-height: initial;
+  }
   ul {
     list-style: none;
     padding-left: 0;
