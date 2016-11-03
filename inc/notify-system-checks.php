@@ -99,20 +99,51 @@ if ( ! class_exists( 'MT_Notify_System' ) ) {
 			}
 		}
 
+		public static function has_import_plugin( $slug = NULL ) {
+			$return = self::has_content();
+
+			if ( $return ) {
+				return true;
+			}
+			$check = array(
+				'installed' => self::check_plugin_is_installed( $slug ),
+				'active'    => self::check_plugin_is_active( $slug )
+			);
+
+			if ( ! $check['installed'] || ! $check['active'] ) {
+				return false;
+			}
+
+			return true;
+		}
+
 		public static function has_import_plugins() {
 			$check = array(
 				'wordpress-importer'       => array( 'installed' => false, 'active' => false ),
 				'widget-importer-exporter' => array( 'installed' => false, 'active' => false )
 			);
 
-			$return = true;
+			$content = self::has_content();
+			$return  = true;
+
+			if ( $content ) {
+				return true;
+			}
+
+			$stop = false;
 			foreach ( $check as $plugin => $val ) {
+				if ( $stop ) {
+					continue;
+				}
+
 				$check[ $plugin ]['installed'] = self::check_plugin_is_installed( $plugin );
 				$check[ $plugin ]['active']    = self::check_plugin_is_active( $plugin );
 
-				if ( ! $check[$plugin]['installed'] || ! $check[$plugin]['active'] ) {
-					$return = false;
+				if ( ! $check[ $plugin ]['installed'] || ! $check[ $plugin ]['active'] ) {
+					$return = true;
+					$stop   = true;
 				}
+
 			}
 
 			return $return;

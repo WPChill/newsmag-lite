@@ -24,6 +24,9 @@
     margin: 0;
     padding: 0;
     margin-left: 10px;
+    @media (max-width: 767px) {
+      height: 45px;
+    }
     @media (min-width: 768px) {
       width: 73%;
       display: inline-block !important;

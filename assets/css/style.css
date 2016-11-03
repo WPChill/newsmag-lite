@@ -3457,6 +3457,9 @@ a {
     margin-left: 10px;
     list-style-type: none;
     position: relative; }
+    @media (max-width: 767px) {
+      .newsmag-news-ticker ul {
+        -height: 45px; } }
     @media (min-width: 768px) {
       .newsmag-news-ticker ul {
         width: 73%;

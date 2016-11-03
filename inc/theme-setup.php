@@ -123,19 +123,20 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 			 * plugin_slug - the plugin's slug (used for installing the plugin)
 			 *
 			 */
+
 			$newsmag_required_actions = array(
 				array(
 					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
 					"title"       => MT_Notify_System::wordpress_importer_title(),
 					"description" => MT_Notify_System::wordpress_importer_description(),
-					"check"       => MT_Notify_System::check_wordpress_importer(),
+					"check"       => MT_Notify_System::has_import_plugin( 'wordpress-importer' ),
 					"plugin_slug" => 'wordpress-importer'
 				),
 				array(
 					"id"          => 'newsmag-req-ac-install-wp-import-widget-plugin',
 					"title"       => MT_Notify_System::widget_importer_exporter_title(),
 					'description' => MT_Notify_System::widget_importer_exporter_description(),
-					"check"       => defined( "WIE_VERSION" ),
+					"check"       => MT_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
 					"plugin_slug" => 'widget-importer-exporter'
 				),
 				array(
@@ -151,13 +152,13 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"title" => esc_html__( 'Import Sample Data', 'newsmag' ),
 					"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'newsmag' ) . '</a> 
 									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'newsmag' ) . '</a>',
-					"check" => ! MT_Notify_System::has_import_plugins(),
+					"check" => MT_Notify_System::has_import_plugins(),
 				),
 				array(
 					"id"          => 'newsmag-req-ac-static-latest-news',
 					"title"       => esc_html__( 'Set front page to static', 'newsmag' ),
 					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'newsmag' ),
-					"help"        => wp_kses( 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>,', 'newsmag' ),
+					"help"        => __('If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/> <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'newsmag-pro' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'newsmag-pro' ) . '</a>', 'newsmag' ),
 					"check"       => MT_Notify_System::is_not_static_page()
 				),
 				array(

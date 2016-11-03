@@ -33,7 +33,29 @@ class Newsmag_Welcome {
 
 		add_action( 'admin_init', array( $this, 'newsmag_activate_plugin' ) );
 		add_action( 'admin_init', array( $this, 'newsmag_deactivate_plugin' ) );
+		add_action( 'admin_init', array( $this, 'newsmag_set_pages' ) );
 	}
+
+	public function newsmag_set_pages() {
+		if ( ! empty( $_GET ) ) {
+			/**
+			 * Check action
+			 */
+			if ( ! empty( $_GET['action'] ) && $_GET['action'] === 'set_page_automatic' ) {
+				$active_tab = $_GET['tab'];
+				$about      = get_page_by_title( 'Homepage' );
+				update_option( 'page_on_front', $about->ID );
+				update_option( 'show_on_front', 'page' );
+
+				// Set the blog page
+				$blog = get_page_by_title( 'Blog' );
+				update_option( 'page_for_posts', $blog->ID );
+
+				wp_redirect( self_admin_url( 'themes.php?page=newsmag-welcome&tab=' . $active_tab ) );
+			}
+		}
+	}
+
 
 	public function newsmag_activate_plugin() {
 		if ( ! empty( $_GET ) ) {
@@ -289,7 +311,6 @@ class Newsmag_Welcome {
 	}
 
 	public function create_action_link( $state, $slug ) {
-
 		switch ( $state ) {
 			case 'install':
 				return wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
