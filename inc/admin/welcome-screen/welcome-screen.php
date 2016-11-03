@@ -30,6 +30,40 @@ class Newsmag_Welcome {
 			$this,
 			'newsmag_dismiss_required_action_callback'
 		) );
+
+		add_action( 'admin_init', array( $this, 'newsmag_activate_plugin' ) );
+		add_action( 'admin_init', array( $this, 'newsmag_deactivate_plugin' ) );
+	}
+
+	public function newsmag_activate_plugin() {
+		if ( ! empty( $_GET ) ) {
+			/**
+			 * Check action
+			 */
+			if ( ! empty( $_GET['action'] ) && ! empty( $_GET['plugin'] ) && $_GET['action'] === 'activate_plugin' ) {
+				$active_tab = $_GET['tab'];
+				$url        = self_admin_url( 'themes.php?page=newsmag-welcome&tab=' . $active_tab );
+				activate_plugin( $_GET['plugin'], $url );
+			}
+		}
+	}
+
+	public function newsmag_deactivate_plugin() {
+		if ( ! empty( $_GET ) ) {
+			/**
+			 * Check action
+			 */
+			if ( ! empty( $_GET['action'] ) && ! empty( $_GET['plugin'] ) && $_GET['action'] === 'deactivate_plugin' ) {
+				$active_tab = $_GET['tab'];
+				$url        = self_admin_url( 'themes.php?page=newsmag-welcome&tab=' . $active_tab );
+				$current    = get_option( 'active_plugins', array() );
+				$search     = array_search( $_GET['plugin'], $current );
+				if ( array_key_exists( $search, $current ) ) {
+					unset( $current[ $search ] );
+				}
+				update_option( 'active_plugins', $current );
+			}
+		}
 	}
 
 	/**
@@ -198,6 +232,77 @@ class Newsmag_Welcome {
 		return $i;
 	}
 
+	public function call_plugin_api( $slug ) {
+		include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+
+		if ( false === ( $call_api = get_transient( 'newsmag_plugin_information_transient_' . $slug ) ) ) {
+			$call_api = plugins_api( 'plugin_information', array(
+				'slug'   => $slug,
+				'fields' => array(
+					'downloaded'        => false,
+					'rating'            => false,
+					'description'       => false,
+					'short_description' => true,
+					'donate_link'       => false,
+					'tags'              => false,
+					'sections'          => true,
+					'homepage'          => true,
+					'added'             => false,
+					'last_updated'      => false,
+					'compatibility'     => false,
+					'tested'            => false,
+					'requires'          => false,
+					'downloadlink'      => false,
+					'icons'             => true
+				)
+			) );
+			set_transient( 'newsmag_plugin_information_transient_' . $slug, $call_api, 30 * MINUTE_IN_SECONDS );
+		}
+
+		return $call_api;
+	}
+
+	public function check_active( $slug ) {
+		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+			$needs = is_plugin_active( $slug . '/' . $slug . '.php' ) ? 'deactivate' : 'activate';
+
+			return array( 'status' => is_plugin_active( $slug . '/' . $slug . '.php' ), 'needs' => $needs );
+		}
+
+		return array( 'status' => false, 'needs' => 'install' );
+	}
+
+	public function check_for_icon( $arr ) {
+		if ( ! empty( $arr['svg'] ) ) {
+			$plugin_icon_url = $arr['svg'];
+		} elseif ( ! empty( $arr['2x'] ) ) {
+			$plugin_icon_url = $arr['2x'];
+		} elseif ( ! empty( $arr['1x'] ) ) {
+			$plugin_icon_url = $arr['1x'];
+		} else {
+			$plugin_icon_url = $arr['default'];
+		}
+
+		return $plugin_icon_url;
+	}
+
+	public function create_action_link( $state, $slug ) {
+
+		switch ( $state ) {
+			case 'install':
+				return wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
+				break;
+			case 'deactivate':
+				return wp_nonce_url( self_admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_plugins&action=deactivate_plugin&plugin=' . $slug . '/' . $slug . '.php' ), 'activate_plugin_' . $slug );
+				break;
+			case 'activate':
+				return wp_nonce_url( self_admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_plugins&action=activate_plugin&plugin=' . $slug . '/' . $slug . '.php' ), 'activate_plugin_' . $slug );
+				break;
+		}
+	}
+
 	/**
 	 * Welcome screen content
 	 *
@@ -216,7 +321,7 @@ class Newsmag_Welcome {
 
 		<div class="wrap about-wrap epsilon-wrap">
 
-			<h1><?php echo __( 'Welcome to Newsmag! - Version ', 'newsmag') . $newsmag['Version']; ?></h1>
+			<h1><?php echo __( 'Welcome to Newsmag! - Version ', 'newsmag' ) . $newsmag['Version']; ?></h1>
 
 			<div
 				class="about-text"><?php echo esc_html__( 'Newsmag is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using Newsmag and that is why we gathered here all the necessary information for you. We hope you will enjoy using Newsmag, as much as we enjoy creating great products.', 'newsmag' ); ?></div>
@@ -230,6 +335,8 @@ class Newsmag_Welcome {
 				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"
 				   class="nav-tab <?php echo $active_tab == 'recommended_actions' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Actions', 'newsmag' ); ?>
 					<?php echo $action_count > 0 ? '<span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : '' ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_plugins' ); ?>"
+				   class="nav-tab <?php echo $active_tab == 'recommended_plugins' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Plugins', 'newsmag' ); ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=support' ); ?>"
 				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'newsmag' ); ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=changelog' ); ?>"
@@ -243,6 +350,9 @@ class Newsmag_Welcome {
 					break;
 				case 'recommended_actions':
 					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/actions-required.php';
+					break;
+				case 'recommended_plugins':
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/recommended-plugins.php';
 					break;
 				case 'support':
 					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/support.php';
