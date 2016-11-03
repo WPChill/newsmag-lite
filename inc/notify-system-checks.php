@@ -124,8 +124,7 @@ if ( ! class_exists( 'MT_Notify_System' ) ) {
 			);
 
 			$content = self::has_content();
-			$return  = true;
-
+			$return  = false;
 			if ( $content ) {
 				return true;
 			}
