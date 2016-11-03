@@ -112,8 +112,8 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 			global $newsmag_required_actions, $newsmag_recommended_plugins;
 
 			$newsmag_recommended_plugins = array(
-				'kiwi-social-share' => array('recommended' => false),
-				'force-regenerate-thumbnails' => array('recommended' => true)
+				'kiwi-social-share'           => array( 'recommended' => false ),
+				'force-regenerate-thumbnails' => array( 'recommended' => true )
 			);
 			/*
 			 * id - unique id; required
@@ -126,25 +126,32 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 			$newsmag_required_actions = array(
 				array(
 					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
-					"title"       => esc_html__( 'Install WordPress Importer', 'newsmag' ),
+					"title"       => MT_Notify_System::wordpress_importer_title(),
 					"description" => MT_Notify_System::wordpress_importer_description(),
 					"check"       => MT_Notify_System::check_wordpress_importer(),
 					"plugin_slug" => 'wordpress-importer'
 				),
 				array(
 					"id"          => 'newsmag-req-ac-install-wp-import-widget-plugin',
-					"title"       => esc_html__( 'Install Widget Importer Exporter', 'newsmag' ),
+					"title"       => MT_Notify_System::widget_importer_exporter_title(),
 					'description' => MT_Notify_System::widget_importer_exporter_description(),
 					"check"       => defined( "WIE_VERSION" ),
 					"plugin_slug" => 'widget-importer-exporter'
 				),
 				array(
-					"id"          => 'newsmag-req-ac-install-data',
-					"title"       => esc_html__( 'Run the import!', 'newsmag' ),
+					"id"          => 'newsmag-req-ac-download-data',
+					"title"       => esc_html__( 'Download theme sample data', 'newsmag' ),
 					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
 					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>, 
 									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.wie">' . __( 'Widgets', 'newsmag' ) . '</a>',
 					"check"       => MT_Notify_System::has_content(),
+				),
+				array(
+					"id"    => 'newsmag-req-ac-install-data',
+					"title" => esc_html__( 'Import Sample Data', 'newsmag' ),
+					"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'newsmag' ) . '</a> 
+									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'newsmag' ) . '</a>',
+					"check" => ! MT_Notify_System::has_import_plugins(),
 				),
 				array(
 					"id"          => 'newsmag-req-ac-static-latest-news',

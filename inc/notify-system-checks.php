@@ -99,6 +99,53 @@ if ( ! class_exists( 'MT_Notify_System' ) ) {
 			}
 		}
 
+		public static function has_import_plugins() {
+			$check = array(
+				'wordpress-importer'       => array( 'installed' => false, 'active' => false ),
+				'widget-importer-exporter' => array( 'installed' => false, 'active' => false )
+			);
+
+			$return = true;
+			foreach ( $check as $plugin => $val ) {
+				$check[ $plugin ]['installed'] = self::check_plugin_is_installed( $plugin );
+				$check[ $plugin ]['active']    = self::check_plugin_is_active( $plugin );
+
+				if ( ! $check[$plugin]['installed'] || ! $check[$plugin]['active'] ) {
+					$return = false;
+				}
+			}
+
+			return $return;
+		}
+
+		public static function widget_importer_exporter_title() {
+			$installed = self::check_plugin_is_installed( 'widget-importer-exporter' );
+			if ( ! $installed ) {
+				return __( 'Install: Widget Importer Exporter Plugin', 'newsmag' );
+			}
+
+			$active = self::check_plugin_is_active( 'widget-importer-exporter' );
+			if ( $installed && ! $active ) {
+				return __( 'Activate: Widget Importer Exporter Plugin', 'newsmag' );
+			}
+
+			return __( 'Install: Widget Importer Exporter Plugin', 'newsmag' );
+		}
+
+		public static function wordpress_importer_title() {
+			$installed = self::check_plugin_is_installed( 'wordpress-importer' );
+			if ( ! $installed ) {
+				return __( 'Install: WordPress Importer', 'newsmag' );
+			}
+
+			$active = self::check_plugin_is_active( 'wordpress-importer' );
+			if ( $installed && ! $active ) {
+				return __( 'Activate: WordPress Importer', 'newsmag' );
+			}
+
+			return __( 'Install: WordPress Importer', 'newsmag' );
+		}
+
 		/**
 		 * @return string
 		 */
@@ -114,21 +161,6 @@ if ( ! class_exists( 'MT_Notify_System' ) ) {
 			}
 
 			return __( 'Please install the WordPress Importer to create the demo content.', 'newsmag' );
-		}
-
-		public static function force_regenerate_thumbnails_description() {
-			$installed = self::check_plugin_is_installed( 'force-regenerate-thumbnails' );
-			if ( ! $installed ) {
-				return __( 'Please install this plugin to regenerate your images using our custom image sizes.', 'newsmag' );
-			}
-
-			$active = self::check_plugin_is_active( 'force-regenerate-thumbnails' );
-			if ( $installed && ! $active ) {
-				return __( 'Please activate this plugin and regenerate your images using our custom image sizes.', 'newsmag' );
-			}
-
-			return __( 'Please install this plugin to regenerate your images using our custom image sizes.', 'newsmag' );
-
 		}
 
 		public static function widget_importer_exporter_description() {
