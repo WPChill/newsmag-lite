@@ -309,13 +309,16 @@
                 right: 5px;
                 bottom: 12px;
               }
-              &:hover,
-              &:focus {
-                &:after {
-
-                }
-                > a {
-
+              @media screen and (min-width: 37.5em) {
+                &:hover,
+                &:focus {
+                  &:after {
+                    color: $color__brand-red;
+                  }
+                  > a {
+                    color: $color__brand-red;
+                    outline: none;
+                  }
                 }
               }
             }
@@ -323,6 +326,11 @@
               padding: 10px 15px;
               font-size: 15px;
               color: #FFF;
+
+              @media screen and (min-width: 37.5em) {
+                border-bottom: 1px solid #f6f6f6;
+                color: $color__text-main;
+              }
               text-transform: initial;
               text-shadow: none;
               &:hover, &:focus {
