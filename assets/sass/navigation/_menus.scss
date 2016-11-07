@@ -93,7 +93,9 @@
 }
 
 #site-navigation.toggled ul {
-  display: block;
+  display: inline-block;
+  width: 100%;
+  background: $color__brand-red;
   > li {
     > a {
       /* Remove after element for small screens */
@@ -167,6 +169,10 @@
   .main-navigation ul {
     display: block;
   }
+
+  .main-navigation .menu {
+    display: initial;
+  }
 }
 
 .comment-navigation,
@@ -229,14 +235,28 @@
       display: inline-block;
       padding-right: 40px;
       position: relative;
+
       &.active,
       &.current-menu-item,
       &:hover,
       &:focus {
         > a {
-          border-bottom-color: $color__text-main;
+          color: $color__text-main;
         }
       }
+
+      @media screen and (min-width: 37.5em) {
+        &.active,
+        &.current-menu-item,
+        &:hover,
+        &:focus {
+          > a {
+            color: #fff;
+            border-bottom-color: $color__text-main;
+          }
+        }
+      }
+
       > a {
         padding-left: 8px;
         padding-right: 8px;
@@ -270,13 +290,12 @@
           li {
             &:hover
             &:focus {
-              color: $color__brand-red;
+
               > a, &:after {
-                color: $color__brand-red;
+
               }
               > a {
-                color: $color__text-main;
-                border-color: #cbcbcb;
+
               }
             }
             &.menu-item-has-children {
@@ -289,28 +308,24 @@
                 position: absolute;
                 right: 5px;
                 bottom: 12px;
-                color: $color__text-main;;
               }
               &:hover,
               &:focus {
                 &:after {
-                  color: $color__brand-red;
+
                 }
                 > a {
-                  color: $color__brand-red;
-                  outline: none;
+
                 }
               }
             }
             a {
               padding: 10px 15px;
               font-size: 15px;
-              border-bottom: 1px solid #f6f6f6;
-              color: $color__text-main;
+              color: #FFF;
               text-transform: initial;
               text-shadow: none;
               &:hover, &:focus {
-                color: $color__brand-red;
                 outline: none;
               }
             }

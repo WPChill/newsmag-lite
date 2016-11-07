@@ -535,7 +535,9 @@ a {
     color: #FFF; }
 
 #site-navigation.toggled ul {
-  display: block;
+  display: inline-block;
+  width: 100%;
+  background: #ff3d2e;
   /* List items will be 100% wide, spanning across the whole width of device */ }
   #site-navigation.toggled ul > li {
     /* Remove hover effects for small screens */ }
@@ -577,7 +579,10 @@ a {
     display: none; }
 
   .main-navigation ul {
-    display: block; } }
+    display: block; }
+
+  .main-navigation .menu {
+    display: initial; } }
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -626,7 +631,11 @@ a {
     padding-right: 40px;
     position: relative; }
     #site-navigation .nav-menu > li.active > a, #site-navigation .nav-menu > li.current-menu-item > a, #site-navigation .nav-menu > li:hover > a, #site-navigation .nav-menu > li:focus > a {
-      border-bottom-color: #333; }
+      color: #333; }
+    @media screen and (min-width: 37.5em) {
+      #site-navigation .nav-menu > li.active > a, #site-navigation .nav-menu > li.current-menu-item > a, #site-navigation .nav-menu > li:hover > a, #site-navigation .nav-menu > li:focus > a {
+        color: #fff;
+        border-bottom-color: #333; } }
     #site-navigation .nav-menu > li > a {
       padding-left: 8px;
       padding-right: 8px;
@@ -646,17 +655,6 @@ a {
       display: inline-block;
       padding-left: 5px;
       color: #fff; }
-    #site-navigation .nav-menu > li.menu-item-has-children > ul li:hover
-    #site-navigation .nav-menu > li.menu-item-has-children > ul li:focus {
-      color: #ff3d2e; }
-      #site-navigation .nav-menu > li.menu-item-has-children > ul li:hover
-      #site-navigation .nav-menu > li.menu-item-has-children > ul li:focus > a, #site-navigation .nav-menu > li.menu-item-has-children > ul li:hover
-      #site-navigation .nav-menu > li.menu-item-has-children > ul li:focus:after {
-        color: #ff3d2e; }
-      #site-navigation .nav-menu > li.menu-item-has-children > ul li:hover
-      #site-navigation .nav-menu > li.menu-item-has-children > ul li:focus > a {
-        color: #333;
-        border-color: #cbcbcb; }
     #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children {
       position: relative; }
       #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:after {
@@ -666,22 +664,14 @@ a {
         display: inline-block;
         position: absolute;
         right: 5px;
-        bottom: 12px;
-        color: #333; }
-      #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:hover:after, #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:focus:after {
-        color: #ff3d2e; }
-      #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:hover > a, #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:focus > a {
-        color: #ff3d2e;
-        outline: none; }
+        bottom: 12px; }
     #site-navigation .nav-menu > li.menu-item-has-children > ul li a {
       padding: 10px 15px;
       font-size: 15px;
-      border-bottom: 1px solid #f6f6f6;
-      color: #333;
+      color: #FFF;
       text-transform: initial;
       text-shadow: none; }
       #site-navigation .nav-menu > li.menu-item-has-children > ul li a:hover, #site-navigation .nav-menu > li.menu-item-has-children > ul li a:focus {
-        color: #ff3d2e;
         outline: none; }
     #site-navigation .nav-menu > li.menu-item-has-children > ul li:last-of-type a {
       border-bottom: none; }
@@ -3459,7 +3449,7 @@ a {
     position: relative; }
     @media (max-width: 767px) {
       .newsmag-news-ticker ul {
-        -height: 45px; } }
+        height: 45px; } }
     @media (min-width: 768px) {
       .newsmag-news-ticker ul {
         width: 73%;
