@@ -3459,6 +3459,8 @@ a {
       font-size: 14px;
       font-family: 'Lato';
       font-weight: 400; }
+      .newsmag-news-ticker ul li a:hover, .newsmag-news-ticker ul li a:focus, .newsmag-news-ticker ul li a:active {
+        color: #ff3d2e; }
 
 .newsmag-breadcrumbs {
   font-size: 14px;

@@ -39,6 +39,11 @@
         font-size: 14px;
         font-family: 'Lato';
         font-weight: 400;
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color__brand-red;
+        }
       }
     }
   }
