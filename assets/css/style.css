@@ -194,6 +194,12 @@ blockquote, q {
     font-style: italic;
     line-height: 24px; }
 
+.entry-content blockquote > p, .entry-content q > p {
+  color: #ff3d2e;
+  font-size: 23px;
+  font-style: italic;
+  line-height: 24px; }
+
 hr {
   background-color: #ccc;
   border: 0;
@@ -2935,6 +2941,15 @@ a {
     transition: all .2s ease-in;
     z-index: 1; }
 
+.newsmag-article-post .newsmag-post-meta {
+  color: #9a9a9a; }
+  .newsmag-article-post .newsmag-post-meta .sep {
+    margin-left: 10px;
+    margin-right: 10px; }
+  .newsmag-article-post .newsmag-post-meta a {
+    color: #9a9a9a; }
+    .newsmag-article-post .newsmag-post-meta a:hover, .newsmag-article-post .newsmag-post-meta a:focus, .newsmag-article-post .newsmag-post-meta a:active {
+      color: #8d8d8d; }
 .newsmag-article-post .newsmag-date {
   color: #9a9a9a;
   margin-bottom: 30px;

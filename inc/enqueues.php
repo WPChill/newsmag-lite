@@ -62,7 +62,7 @@ add_action( 'wp_enqueue_scripts', 'newsmag_scripts' );
  */
 function newsmag_admin_scripts() {
 	$query_args = array(
-		'family' => 'Lato:400,600,700|Poppins:400,500,600,700'
+		'family' => 'Lato:100,300,400,700,900|Poppins:400,500,600,700'
 	);
 
 	wp_enqueue_style( 'newsmag-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), 1, 'all' );

@@ -176,9 +176,26 @@ $wp_customize->add_setting( 'newsmag_excerpt_length',
                             )
 );
 
+$wp_customize->add_setting( 'newsmag_headings_typography',
+                            array(
+	                            'sanitize_callback' => 'esc_js',
+	                            'transport'         => 'postMessage',
+                            ) );
+$wp_customize->add_setting( 'newsmag_paragraphs_typography',
+                            array(
+	                            'sanitize_callback' => 'esc_js',
+	                            'transport'         => 'postMessage',
+                            ) );
+
 /**
  * Upsell
  */
+$wp_customize->add_setting( 'newsmag_upsell_macho_typography',
+                            array(
+	                            'sanitize_callback' => 'esc_html',
+	                            'default'           => ''
+                            ) );
+
 $wp_customize->add_setting( 'newsmag_upsell_macho_blog',
                             array(
 	                            'sanitize_callback' => 'esc_html',

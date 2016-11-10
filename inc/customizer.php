@@ -19,6 +19,7 @@ function newsmag_customize_register( $wp_customize ) {
 	require_once get_template_directory() . '/inc/customizer/epsilon-framework/control-epsilon-slider-control.php';
 	require_once get_template_directory() . '/inc/customizer/epsilon-framework/control-epsilon-upsell.php';
 	require_once get_template_directory() . '/inc/customizer/epsilon-framework/control-epsilon-toggle.php';
+	require_once get_template_directory() . '/inc/customizer/epsilon-framework/control-epsilon-typography.php';
 
 	$wp_customize->register_control_type( 'Epsilon_Control_Upsell' );
 

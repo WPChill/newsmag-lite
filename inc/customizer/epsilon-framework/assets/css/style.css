@@ -311,6 +311,108 @@ ul.macho-upsell-requirements {
     display: block;
 }
 
+.mte-color-scheme-palette span {
+    height: 20px;
+    width: 25px;
+    float: left;
+}
+
+.mte-color-scheme-palette {
+    cursor: pointer;
+    padding: 2px;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.mte-color-scheme-palette:hover,
+.mte-color-scheme-palette:focus,
+.mte-color-option.selected > .mte-color-scheme-palette {
+    border: 1px solid #55AAD3;
+}
+
+.mte-color-scheme-name {
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
+    min-width: 75px;
+}
+
+.mte-typography-font-size, .mte-typography-line-height {
+    width: 45%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.mte-typography-font-size .arrow-up, .mte-typography-line-height .arrow-up,
+.mte-typography-font-size .arrow-down, .mte-typography-line-height .arrow-down {
+    position: absolute;
+    bottom: 17px;
+    right: 0;
+    height: 17px;
+    width: 20px;
+    border-right: 1px solid #ddd;
+    background: #FFF;
+    color: #808080;
+}
+
+.mte-typography-font-size .dashicons, .mte-typography-line-height .dashicons {
+    width: 20px;
+    height: 17px;
+    font-size: 18px;
+    color: #808080;
+}
+
+.mte-typography-font-size .arrow-down, .mte-typography-line-height .arrow-down {
+    top: initial;
+    bottom: 1px;
+}
+
+.mte-number-field a:focus, .mte-number-field a:active, .mte-number-field a:hover {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.mte-number-field a:focus > .dashicons, .mte-number-field a:active > .dashicons, .mte-number-field a:hover > .dashicons {
+    color: #000;
+}
+
+.mte-number-field .unit {
+    position: absolute;
+    bottom: 9px;
+    left: 25px;
+}
+
+textarea.mte-typography-input {
+    display: block;
+    width: 100%;
+}
+
+.customize-control .mte-typography-font-size input, .customize-control .mte-typography-line-height input {
+    width: 118%;
+    height: 36px;
+}
+
+.customize-control .mte-typography-font-size input:focus, .customize-control .mte-typography-line-height input:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: #ddd;
+}
+
+.mte-typography-font-size {
+    margin-right: 10%;
+}
+
+.mte-typography-container > div {
+    margin-bottom: 15px;
+}
+
+.mte-typography-container > div > label {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
 #accordion-section-newsmag_general_pro_version_section .accordion-section-title {
     background: #DF4D44;
     color: #FFF;
@@ -363,5 +465,11 @@ ul.macho-upsell-requirements {
 #available-widgets [class^='newsmag_slider_widget-'] .widget-title::before,
 #available-widgets [class*=' newsmag_slider_widget-'] .widget-title::before {
     content: url('../img/posts_slider.png');
+    top: 0;
+}
+
+#available-widgets [class^='newsmag_widget_posts_carousel-'] .widget-title::before,
+#available-widgets [class*=' newsmag_widget_posts_carousel-'] .widget-title::before {
+    content: url('../img/posts_carousel.png');
     top: 0;
 }

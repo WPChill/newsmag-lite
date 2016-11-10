@@ -408,6 +408,21 @@
 }
 
 .newsmag-article-post {
+  .newsmag-post-meta {
+    .sep {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    color: #9a9a9a;
+    a {
+      color: #9a9a9a;
+      &:hover,
+      &:focus,
+      &:active {
+        color: darken(#9a9a9a, 5%);
+      }
+    }
+  }
   .newsmag-date {
     color: #9a9a9a;
     margin-bottom: 30px;

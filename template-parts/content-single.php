@@ -26,7 +26,7 @@ $author              = get_theme_mod( 'newsmag_enable_author_box', true );
 	</div>
 <?php endif; ?>
 <div
-	class="row newsmag-article-post <?php echo ( !$breadcrumbs_enabled && !$image_in_content ) ? 'newsmag-margin-top' : '' ?>">
+	class="row newsmag-article-post <?php echo ( ! $breadcrumbs_enabled && ! $image_in_content ) ? 'newsmag-margin-top' : '' ?>">
 	<?php if ( $author && ! empty( $curauth->description ) ): ?>
 		<div class="col-md-3">
 			<?php
@@ -40,7 +40,7 @@ $author              = get_theme_mod( 'newsmag_enable_author_box', true );
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="entry-content">
 				<div class="newsmag-post-meta">
-					<?php newsmag_posted_on( 'date' ); ?>
+					<span class="fa fa-folder-o"></span> <?php the_category( ',' ); ?> <span class="sep">|</span> <span class="fa fa-clock-o"></span>  <?php newsmag_posted_on( 'date' ); ?>
 				</div><!-- .entry-meta -->
 				<?php if ( is_single() ) {
 					the_content();

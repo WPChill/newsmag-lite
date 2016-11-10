@@ -53,6 +53,11 @@ require get_template_directory() . '/inc/components/breadcrumbs/class-newsmag-br
 require get_template_directory() . '/inc/components/lazyload/class-newsmag-lazyload.php';
 
 /**
+ * Typography
+ */
+require get_template_directory() . '/inc/class-epsilon-typography.php';
+
+/**
  * Widgets
  */
 require get_template_directory() . '/inc/widgets.php';

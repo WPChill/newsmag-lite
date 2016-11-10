@@ -9,6 +9,15 @@ $wp_customize->add_panel( 'newsmag_panel_general',
                           )
 );
 
+$wp_customize->add_panel( 'newsmag_panel_typography',
+                          array(
+	                          'priority'       => 26,
+	                          'capability'     => 'edit_theme_options',
+	                          'theme_supports' => '',
+	                          'title'          => esc_html__( 'Typography', 'newsmag-pro' )
+                          )
+);
+
 $wp_customize->add_panel( 'newsmag_panel_blog',
                           array(
 	                          'priority'       => 25,

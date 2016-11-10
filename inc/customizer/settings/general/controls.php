@@ -180,6 +180,69 @@ $wp_customize->add_control(
 	)
 );
 
+$wp_customize->add_control( new Epsilon_Control_Typography(
+	                            $wp_customize,
+	                            'newsmag_headings_typography',
+	                            array(
+		                            'label'   => esc_html__( 'Headings', 'newsmag-pro' ),
+		                            'section' => 'newsmag_typography',
+		                            'choices' => array(
+			                            'font-family',
+			                            'font-weight',
+			                            'font-style'
+		                            ),
+		                            'selectors' => array(
+		                            	'.entry-content h1',
+			                            '.entry-content h2',
+			                            '.entry-content h3',
+			                            '.entry-content h4',
+			                            '.entry-content h5',
+			                            '.entry-content h6'
+		                            )
+	                            )
+                            )
+);
+
+$wp_customize->add_control( new Epsilon_Control_Typography(
+	                            $wp_customize,
+	                            'newsmag_paragraphs_typography',
+	                            array(
+		                            'label'   => esc_html__( 'Paragraphs', 'newsmag-pro' ),
+		                            'section' => 'newsmag_typography',
+		                            'choices' => array(
+			                            'font-family',
+			                            'font-weight',
+			                            'font-style',
+			                            'font-size',
+			                            'line-height'
+		                            ),
+		                            'selectors' => array('.entry-content p')
+	                            )
+                            )
+);
+
+/**
+ * Tyopography Settings Upsell
+ */
+$wp_customize->add_control( new Epsilon_Control_Upsell(
+	                            $wp_customize,
+	                            'newsmag_upsell_macho_typography',
+	                            array(
+		                            'section'     => 'newsmag_typography',
+		                            'options'     => array(
+			                            esc_html__('Widget Heading Settings', 'newsmag'),
+			                            esc_html__('Widget Paragraph Settings', 'newsmag')
+		                            ),
+		                            'requirements' => array(
+			                            esc_html__('Various typography controls.', 'newsmag'),
+		                            ),
+		                            'priority'    => 0,
+		                            'button_url' => esc_url('https://www.machothemes.com/themes/newsmag-pro/'), // xss ok
+		                            'button_text' => esc_html__('Get the PRO version!', 'newsmag'),
+	                            )
+                            )
+);
+
 /**
  * General Settings Upsell
  */
