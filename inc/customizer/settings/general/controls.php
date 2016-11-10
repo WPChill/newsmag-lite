@@ -184,7 +184,7 @@ $wp_customize->add_control( new Epsilon_Control_Typography(
 	                            $wp_customize,
 	                            'newsmag_headings_typography',
 	                            array(
-		                            'label'   => esc_html__( 'Headings', 'newsmag-pro' ),
+		                            'label'   => esc_html__( 'Headings', 'newsmag' ),
 		                            'section' => 'newsmag_typography',
 		                            'choices' => array(
 			                            'font-family',
@@ -207,7 +207,7 @@ $wp_customize->add_control( new Epsilon_Control_Typography(
 	                            $wp_customize,
 	                            'newsmag_paragraphs_typography',
 	                            array(
-		                            'label'   => esc_html__( 'Paragraphs', 'newsmag-pro' ),
+		                            'label'   => esc_html__( 'Paragraphs', 'newsmag' ),
 		                            'section' => 'newsmag_typography',
 		                            'choices' => array(
 			                            'font-family',
