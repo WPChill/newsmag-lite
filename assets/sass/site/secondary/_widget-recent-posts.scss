@@ -93,9 +93,9 @@
 
 .newsmag_builder {
   margin: initial !important;
-
   .newsmag-posts-carousel {
     position: relative;
+    margin-bottom: 45px;
     h2 {
       font-family: 'Poppins';
       font-size: 16px;
@@ -119,9 +119,11 @@
         font-family: 'Poppins';
         font-size: 16px;
         color: #FFF;
-        padding: 2px 20px 0;
         background: $color__brand-red;
         font-weight: 700;
+        padding: 1px 20px 2px;
+        background: #ff3d2e;
+        display: inline-block;
       }
     }
     .newsmag-carousel-arrows {
@@ -189,6 +191,13 @@
       }
     }
   }
+
+  &:last-of-type {
+    .newsmag-posts-carousel {
+      margin-bottom: 0;
+    }
+  }
+
   .newsmag-post-box-a {
     margin-bottom: 45px;
     position: relative;
@@ -231,9 +240,11 @@
         font-family: 'Poppins';
         font-size: 16px;
         color: #FFF;
-        padding: 2px 20px 0;
         background: $color__brand-red;
         font-weight: 700;
+        padding: 1px 20px 2px;
+        background: #ff3d2e;
+        display: inline-block;
       }
     }
     &.posts-column-layout {
@@ -370,9 +381,11 @@
         font-family: 'Poppins';
         font-size: 16px;
         color: #FFF;
-        padding: 2px 20px 0;
         background: $color__brand-red;
-        font-weight: bold;
+        font-weight: 700;
+        padding: 1px 20px 2px;
+        background: #ff3d2e;
+        display: inline-block;
       }
     }
   }
