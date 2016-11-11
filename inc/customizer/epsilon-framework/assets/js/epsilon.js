@@ -98,6 +98,11 @@
 						if ( $(this).val() < 0 ) {
 							$(this).val(0).trigger('change');
 						}
+
+						if ( $(this).attr('id') === uniqueId + '-font-size' && $(this).val() > 16 ) {
+							$(this).val(16).trigger('change');
+						}
+
 					});
 
 					/**
