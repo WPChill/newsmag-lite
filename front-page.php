@@ -30,6 +30,7 @@ if ( $show_on_front == 'posts' ):
 			</div>
 		</div>
 	<?php endif; ?>
+
 	<div class="container">
 		<div class="row">
 			<?php

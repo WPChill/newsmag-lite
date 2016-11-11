@@ -2821,9 +2821,9 @@ a {
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%); }
 
-.single-post .newsmag-custom-header {
+.single-post .newsmag-custom-header, .page .newsmag-custom-header, .blog .newsmag-custom-header {
   margin-bottom: 0; }
-  .single-post .newsmag-custom-header:before {
+  .single-post .newsmag-custom-header:before, .page .newsmag-custom-header:before, .blog .newsmag-custom-header:before {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -2839,7 +2839,7 @@ a {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
     content: '';
     z-index: 0; }
-  .single-post .newsmag-custom-header .container {
+  .single-post .newsmag-custom-header .container, .page .newsmag-custom-header .container, .blog .newsmag-custom-header .container {
     top: 25%; }
 
 .newsmag-archive-page .newsmag-blog-post-layout {

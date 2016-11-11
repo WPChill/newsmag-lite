@@ -28,7 +28,7 @@ if ( empty( $img ) ) {
 
 ?>
 <?php if ( ! empty( $img ) ): ?>
-	<div class="newsmag-custom-header newsmag-custom-header-single-post"
+	<div class="newsmag-custom-header"
 	     style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
 		<div class="container">
 			<div class="row">
