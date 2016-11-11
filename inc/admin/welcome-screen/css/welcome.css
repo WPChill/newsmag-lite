@@ -98,6 +98,7 @@
     background: #FFF;
     position: relative;
     border: 1px solid rgba(0, 0, 0, .1);
+    float: left;
 }
 
 .plugin_box .recommended {
@@ -120,7 +121,7 @@
     height: 155px;
     padding-top: 50px;
     margin: 0 auto;
-    margin-bottom:15px;
+    margin-bottom: 15px;
     display: block;
 }
 

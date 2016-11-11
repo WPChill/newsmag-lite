@@ -139,9 +139,9 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				<?php if ( in_array( 'font-family', $this->choices ) ): ?>
 					<div class="mte-typography-font-family">
 						<label
-							for="<?php echo $this->id; ?>-font-family"><?php echo __( 'Font Family', 'newsmag-pro' ); ?></label>
+							for="<?php echo $this->id; ?>-font-family"><?php echo __( 'Font Family', 'newsmag' ); ?></label>
 						<select id="<?php echo $this->id; ?>-font-family" class="mte-typography-input">
-							<option><?php echo __( 'Select font', 'newsmag-pro' ); ?></option>
+							<option><?php echo __( 'Select font', 'newsmag' ); ?></option>
 							<?php foreach ( $fonts as $font => $properties ) { ?>
 								<option <?php echo $inputs['font-family'] === $properties->family ? 'selected' : ''; ?>
 									value="<?php echo $properties->family ?>"><?php echo $properties->family ?></option>
@@ -152,9 +152,9 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				<?php if ( in_array( 'font-weight', $this->choices ) ): ?>
 					<div class="mte-typography-font-weight">
 						<label
-							for="<?php echo $this->id; ?>-font-weight"><?php echo __( 'Font Weight', 'newsmag-pro' ); ?></label>
+							for="<?php echo $this->id; ?>-font-weight"><?php echo __( 'Font Weight', 'newsmag' ); ?></label>
 						<select id="<?php echo $this->id; ?>-font-weight" class="mte-typography-input">
-							<option value="initial"><?php echo __( 'Select Font Weight', 'newsmag-pro' ); ?></option>
+							<option value="initial"><?php echo __( 'Select Font Weight', 'newsmag' ); ?></option>
 							<option <?php echo $inputs['font-weight'] === '100' ? 'selected' : ''; ?>
 								value="100">100
 							</option>
@@ -188,7 +188,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				<?php if ( in_array( 'font-style', $this->choices ) ): ?>
 					<div class="mte-typography-font-style">
 						<label
-							for="<?php echo $this->id; ?>-font-style"><?php echo __( 'Font Style', 'newsmag-pro' ); ?></label>
+							for="<?php echo $this->id; ?>-font-style"><?php echo __( 'Font Style', 'newsmag' ); ?></label>
 						<select id="<?php echo $this->id; ?>-font-style" class="mte-typography-input">
 							<option value="initial"><?php echo __( 'Select Font Style' ); ?></option>
 							<option <?php echo $inputs['font-style'] === 'normal' ? 'selected' : ''; ?>
@@ -203,7 +203,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				<?php if ( in_array( 'font-size', $this->choices ) ): ?>
 					<div class="mte-typography-font-size mte-number-field">
 						<label
-							for="<?php echo $this->id; ?>-font-size"><?php echo __( 'Font Size', 'newsmag-pro' ); ?></label>
+							for="<?php echo $this->id; ?>-font-size"><?php echo __( 'Font Size', 'newsmag' ); ?></label>
 						<input class="mte-typography-input" id="<?php echo $this->id; ?>-font-size"
 						       value="<?php echo $inputs['font-size'] ?>" type="number" min="0"
 						       step="any"/>
@@ -213,14 +213,14 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				<?php if ( in_array( 'line-height', $this->choices ) ): ?>
 					<div class="mte-typography-line-height mte-number-field">
 						<label
-							for="<?php echo $this->id; ?>-line-height"><?php echo __( 'Line Height', 'newsmag-pro' ); ?></label>
+							for="<?php echo $this->id; ?>-line-height"><?php echo __( 'Line Height', 'newsmag' ); ?></label>
 						<input class="mte-typography-input" id="<?php echo $this->id; ?>-line-height"
 						       value="<?php echo $inputs['line-height'] ?>" type="number" min="0"
 						       step="any"/>
 						<span class="unit">px</span>
 					</div>
 				<?php endif; ?>
-				<!-- <a href="#" class="mte-typography-default"><?php echo __( 'Reset to default', 'newsmag-pro' ) ?></a> -->
+				<!-- <a href="#" class="mte-typography-default"><?php echo __( 'Reset to default', 'newsmag' ) ?></a> -->
 			</div>
 			<?php
 		}

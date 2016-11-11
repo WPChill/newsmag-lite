@@ -195,7 +195,6 @@ blockquote, q {
     line-height: 24px; }
 
 .entry-content blockquote > p, .entry-content q > p {
-  color: #ff3d2e;
   font-size: 23px;
   font-style: italic;
   line-height: 24px; }
@@ -2005,6 +2004,8 @@ a {
         text-transform: initial; }
       .newsmag_builder .newsmag-blog-post-layout-b.wide-layout p:first-of-type {
         margin-top: 9px; }
+      .newsmag_builder .newsmag-blog-post-layout-b.wide-layout:last-of-type {
+        margin-bottom: 0; }
     .newsmag_builder .newsmag-blog-post-layout-b .post-categories {
       margin: 0;
       padding: 0;

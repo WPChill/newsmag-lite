@@ -229,10 +229,12 @@
 		EpsilonFramework.rangeSliders(selector);
 	});
 
-	if ( typeof(wp.customize) !== 'undefined' ) {
-		wp.customize.bind('ready', function () {
-			EpsilonFramework.typography._init($('.mte-typography-container'));
-		});
+	if ( typeof(wp) !== 'undefined' ) {
+		if ( typeof(wp.customize) !== 'undefined' ) {
+			wp.customize.bind('ready', function () {
+				EpsilonFramework.typography._init($('.mte-typography-container'));
+			});
+		}
 	}
 
 })(jQuery);

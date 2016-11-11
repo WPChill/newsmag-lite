@@ -313,13 +313,34 @@ class Newsmag_Welcome {
 	public function create_action_link( $state, $slug ) {
 		switch ( $state ) {
 			case 'install':
-				return wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
+				return wp_nonce_url(
+					add_query_arg(
+						array(
+							'action' => 'install-plugin',
+							'plugin' => $slug
+						),
+						network_admin_url( 'update.php' )
+					),
+					'install-plugin_' . $slug
+				);
 				break;
 			case 'deactivate':
-				return wp_nonce_url( self_admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_plugins&action=deactivate_plugin&plugin=' . $slug . '/' . $slug . '.php' ), 'activate_plugin_' . $slug );
+				return add_query_arg( array(
+					                      'action'        => 'deactivate',
+					                      'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
+					                      'plugin_status' => 'all',
+					                      'paged'         => '1',
+					                      '_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/' . $slug . '.php' ),
+				                      ), network_admin_url( 'plugins.php' ) );
 				break;
 			case 'activate':
-				return wp_nonce_url( self_admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_plugins&action=activate_plugin&plugin=' . $slug . '/' . $slug . '.php' ), 'activate_plugin_' . $slug );
+				return add_query_arg( array(
+					                      'action'        => 'activate',
+					                      'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
+					                      'plugin_status' => 'all',
+					                      'paged'         => '1',
+					                      '_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/' . $slug . '.php' ),
+				                      ), network_admin_url( 'plugins.php' ) );
 				break;
 		}
 	}

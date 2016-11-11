@@ -14,7 +14,7 @@ $wp_customize->add_panel( 'newsmag_panel_typography',
 	                          'priority'       => 26,
 	                          'capability'     => 'edit_theme_options',
 	                          'theme_supports' => '',
-	                          'title'          => esc_html__( 'Typography', 'newsmag-pro' )
+	                          'title'          => esc_html__( 'Typography', 'newsmag' )
                           )
 );
 

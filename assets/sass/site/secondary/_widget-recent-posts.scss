@@ -549,6 +549,9 @@
           margin-top: 9px;
         }
       }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     .post-categories {

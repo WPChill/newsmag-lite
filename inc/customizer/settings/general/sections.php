@@ -25,7 +25,7 @@ $wp_customize->add_section( 'newsmag_blog_section',
 );
 $wp_customize->add_section( 'newsmag_typography',
                             array(
-	                            'title'    => esc_html__( 'Typography', 'newsmag-pro' ),
+	                            'title'    => esc_html__( 'Typography', 'newsmag' ),
 	                            'priority' => 51,
                             )
 );
