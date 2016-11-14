@@ -7,19 +7,6 @@
  */
 
 (function ($) {
-
-	// Site title and description.
-	wp.customize('blogname', function (value) {
-		value.bind(function (to) {
-			$('.site-title').text(to);
-		});
-	});
-	wp.customize('blogdescription', function (value) {
-		value.bind(function (to) {
-			$('.site-description').text(to);
-		});
-	});
-
 	// Header text color.
 	wp.customize('header_textcolor', function (value) {
 		value.bind(function (to) {
@@ -65,6 +52,28 @@
 					style.html(json.responseText);
 				}
 			});
+		});
+	});
+
+
+	$(document).ready(function () {
+		if ( 'undefined' === typeof wp || !wp.customize || !wp.customize.selectiveRefresh ) {
+			return;
+		}
+
+		wp.customize.selectiveRefresh.bind('widget-updated', function (placement) {
+			switch ( placement.widgetIdParts.idBase ) {
+				case 'newsmag_widget_posts_carousel':
+					Newsmag.initOwlCarousel($);
+					break;
+				case 'newsmag_slider_widget':
+					Newsmag.initMainSlider($);
+					break;
+
+				default:
+					return false;
+					break;
+			}
 		});
 	});
 })(jQuery);

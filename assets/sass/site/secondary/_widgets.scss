@@ -65,7 +65,7 @@
     margin-bottom: 25px;
     margin-top: 0;
   }
-
+  position: relative;
   margin: 0 0 50px;
   /**
   * Reset the margins for UL / OL
@@ -846,6 +846,29 @@
       float: left;
       display: inline-block;
       margin: 1px;
+    }
+  }
+}
+
+.customize-partial-edit-shortcuts-shown {
+  [id^='newsmag_widget_posts_carousel-'], [id^='newsmag_widget_posts_list_horizontal-'] {
+    width: 100%;
+    display: inline-block;
+  }
+
+  [id^='newsmag_banner-'] {
+    position: relative;
+    .customize-partial-edit-shortcut {
+      right: -10px;
+      top: -30px;
+    }
+  }
+
+  [id^='newsmag_slider_widget-'] {
+    position: relative;
+    .customize-partial-edit-shortcut {
+      right: 0;
+      top: 0;
     }
   }
 }

@@ -11,7 +11,8 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 
 		parent::__construct( 'newsmag_widget_posts_grid', __( 'Newsmag - Posts Grid', 'newsmag' ), array(
 			'classname'   => 'newsmag_builder',
-			'description' => __( 'Posts are displayed next to each other in a grid-like fashion.', 'newsmag' )
+			'description' => __( 'Posts are displayed next to each other in a grid-like fashion.', 'newsmag' ),
+			'customize_selective_refresh' => true
 		) );
 	}
 

@@ -63,6 +63,25 @@ class Newsmag_Customizer_Helper {
 			$site_title5           = $wp_customize->get_control( 'blogdescription' );
 			$site_title5->priority = 17;
 		}
+
+		// Abort if selective refresh is not available.
+		if ( ! isset( $wp_customize->selective_refresh ) ) {
+			return;
+		}
+
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+			'selector' => '.site-title',
+			'render_callback' => function() {
+				bloginfo( 'name' );
+			},
+		) );
+
+		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+			'selector' => '.site-description',
+			'render_callback' => function() {
+				bloginfo( 'description' );
+			},
+		) );
 	}
 
 	/**

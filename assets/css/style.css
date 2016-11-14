@@ -962,6 +962,7 @@ a {
 * Select all widgets except for the search box
 */
 .widget:not(.widget_newsmag_banner):not(.newsmag_slider) {
+  position: relative;
   margin: 0 0 50px;
   /**
   * Reset the margins for UL / OL
@@ -1540,6 +1541,18 @@ a {
     float: left;
     display: inline-block;
     margin: 1px; }
+
+.customize-partial-edit-shortcuts-shown [id^='newsmag_widget_posts_carousel-'], .customize-partial-edit-shortcuts-shown [id^='newsmag_widget_posts_list_horizontal-'] {
+  width: 100%;
+  display: inline-block; }
+.customize-partial-edit-shortcuts-shown [id^='newsmag_banner-'] {
+  position: relative; }
+  .customize-partial-edit-shortcuts-shown [id^='newsmag_banner-'] .customize-partial-edit-shortcut {
+    right: -10px;
+    top: -30px; }
+.customize-partial-edit-shortcuts-shown [id^='newsmag_slider_widget-'] .customize-partial-edit-shortcut {
+  right: 0;
+  top: 0; }
 
 .newsmag-post-meta > ul {
   list-style-type: none;

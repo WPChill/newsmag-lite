@@ -7,7 +7,8 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 			__( 'Newsmag - Popular Posts', 'newsmag' ),
 			array(
 				'description' => __( 'Displays posts with most comments.', 'newsmag' ),
-				'classname'   => 'popular-posts'
+				'classname'   => 'popular-posts',
+				'customize_selective_refresh' => true
 			)
 		);
 	}

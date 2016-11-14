@@ -10,7 +10,8 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 
 		parent::__construct( 'newsmag_widget_posts_column', __( 'Newsmag - Posts Column', 'newsmag' ), array(
 			'classname'   => 'newsmag_builder',
-			'description' => __( 'Layout consists of a featured post thumbnail, followed by a handful of posts that are smaller in size. Perfect for emphasising important news.', 'newsmag' )
+			'description' => __( 'Layout consists of a featured post thumbnail, followed by a handful of posts that are smaller in size. Perfect for emphasising important news.', 'newsmag' ),
+			'customize_selective_refresh' => true
 		) );
 
 	}

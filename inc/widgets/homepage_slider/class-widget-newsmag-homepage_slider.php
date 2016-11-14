@@ -6,7 +6,8 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 
 		parent::__construct( 'newsmag_slider_widget', __( 'Newsmag - Homepage Slider', 'newsmag' ), array(
 			'classname'   => 'newsmag_slider',
-			'description' => __( 'You can add a fullwidth slider with this widget.', 'newsmag' )
+			'description' => __( 'You can add a fullwidth slider with this widget.', 'newsmag' ),
+			'customize_selective_refresh' => true
 		) );
 	}
 

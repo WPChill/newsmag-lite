@@ -9,7 +9,8 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 
 		parent::__construct( 'newsmag_widget_posts_list_horizontal', __( 'Newsmag - Posts List Horizontal', 'newsmag' ), array(
 			'classname'   => 'newsmag_builder',
-			'description' => __( 'Images followed by their title. Very useful when used in pairs of 8 or more to draw attention to a selection of posts.', 'newsmag' )
+			'description' => __( 'Images followed by their title. Very useful when used in pairs of 8 or more to draw attention to a selection of posts.', 'newsmag' ),
+			'customize_selective_refresh' => true
 		) );
 	}
 

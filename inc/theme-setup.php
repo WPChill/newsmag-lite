@@ -107,6 +107,8 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
 		// Welcome screen
 		if ( is_admin() ) {
 			global $newsmag_required_actions, $newsmag_recommended_plugins;
