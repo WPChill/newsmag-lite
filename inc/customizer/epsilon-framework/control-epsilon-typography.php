@@ -190,12 +190,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 						<label
 							for="<?php echo $this->id; ?>-font-style"><?php echo __( 'Font Style', 'newsmag' ); ?></label>
 						<select id="<?php echo $this->id; ?>-font-style" class="mte-typography-input">
-							<option value="initial"><?php echo __( 'Select Font Style' ); ?></option>
+							<option value="initial"><?php echo __( 'Select Font Style', 'newsmag' ); ?></option>
 							<option <?php echo $inputs['font-style'] === 'normal' ? 'selected' : ''; ?>
-								value="normal"><?php echo __( 'Normal' ); ?>
+								value="normal"><?php echo __( 'Normal', 'newsmag' ); ?>
 							</option>
 							<option <?php echo $inputs['font-style'] === 'italic' ? 'selected' : ''; ?>
-								value="italic"><?php echo __( 'Italic' ); ?>
+								value="italic"><?php echo __( 'Italic', 'newsmag' ); ?>
 							</option>
 						</select>
 					</div>

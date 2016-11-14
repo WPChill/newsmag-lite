@@ -11,4 +11,3 @@ Implemented everything i nhere: https://github.com/MachoThemes/newsmag-pro/miles
 ### V2.0.0
   - Newsmag Lite - redesign 
   - Implemented everything in here: https://github.com/MachoThemes/newsmag-lite/milestone/2?closed=1 ( 98 bug fixes & improvements )
-
