@@ -21,7 +21,7 @@
 
 							?>
 						</a>
-						<div class="slider-caption hidden-xss">
+						<div class="slider-caption">
 
 							<?php
 
