@@ -58,6 +58,10 @@ class Newsmag_Breadcrumbs {
 	private $html_markup;
 
 	/**
+	 * @var
+	 */
+	private $options;
+	/**
 	 * Class Constructor
 	 */
 	public function __construct() {
@@ -324,7 +328,7 @@ class Newsmag_Breadcrumbs {
 			$home_link = $this->get_single_breadcrumb_markup( esc_html( $this->home_label ), esc_url( get_home_url() ) );
 			// If the home page is the main blog page
 		} elseif ( is_home() ) {
-			$home_link = $this->get_single_breadcrumb_markup( esc_html( $this->options['blog_title'] ) );
+			$home_link = $this->get_single_breadcrumb_markup( esc_html( $this->home_label ) );
 		}
 
 		return $home_link;

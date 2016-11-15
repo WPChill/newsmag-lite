@@ -2,9 +2,13 @@
 /**
  * Actions required
  */
+
+wp_enqueue_style( 'plugin-install' );
+wp_enqueue_script( 'plugin-install' );
+wp_enqueue_script( 'updates' );
 ?>
 
-<div class="feature-section action-required">
+<div class="feature-section action-required demo-import-boxed" id="plugin-filter">
 
 	<?php
 	global $newsmag_required_actions;
@@ -32,18 +36,30 @@
 				</p>
 				<?php
 				if ( ! empty( $newsmag_required_action_value['plugin_slug'] ) ) {
-					$installed = false;
-					$url       = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $newsmag_required_action_value['plugin_slug'] ), 'install-plugin_' . $newsmag_required_action_value['plugin_slug'] );
+					$active = $this->check_active( $newsmag_required_action_value['plugin_slug'] );
+					$url    = $this->create_action_link( $active['needs'], $newsmag_required_action_value['plugin_slug'] );
+					$label  = '';
 
-
-					if ( file_exists( ABSPATH . 'wp-content/plugins/' . $newsmag_required_action_value['plugin_slug'] . '/' . $newsmag_required_action_value['plugin_slug'] . '.php' ) ) {
-						$installed = true;
-						$url       = wp_nonce_url( self_admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions&action=activate_plugin&plugin=' . $newsmag_required_action_value['plugin_slug'] . '/' . $newsmag_required_action_value['plugin_slug'] . '.php' ), 'activate_plugin_' . $newsmag_required_action_value['plugin_slug'] );
+					switch ( $active['needs'] ) {
+						case 'install':
+							$class = 'install-now button';
+							$label = __( 'Install', 'newsmag' );
+							break;
+						case 'activate':
+							$class = 'activate-now button button-primary';
+							$label = __( 'Activate', 'newsmag' );
+							break;
+						case 'deactivate':
+							$class = 'deactivate-now button';
+							$label = __( 'Deactivate', 'newsmag' );
+							break;
 					}
+
 					?>
-					<p>
-						<a href="<?php echo esc_url( $url ); ?>"
-						   class="button button-primary"><?php if ( ! empty( $newsmag_required_action_value['title'] ) ): echo $newsmag_required_action_value['title']; endif; ?></a>
+					<p class="plugin-card-<?php echo esc_attr( $newsmag_required_action_value['plugin_slug'] ) ?> action_button <?php echo ( $active['needs'] !== 'install' && $active['status'] ) ? 'active' : '' ?>">
+						<a data-slug="<?php echo esc_attr( $newsmag_required_action_value['plugin_slug'] ) ?>"
+						   class="<?php echo $class; ?>"
+						   href="<?php echo esc_url( $url ) ?>"> <?php echo $label ?> </a>
 					</p>
 					<?php
 				};
