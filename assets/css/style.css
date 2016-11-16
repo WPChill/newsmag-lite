@@ -691,7 +691,8 @@ a {
           border-bottom: 1px solid #f6f6f6;
           color: #333; } }
       #site-navigation .nav-menu > li.menu-item-has-children > ul li a:hover, #site-navigation .nav-menu > li.menu-item-has-children > ul li a:focus {
-        outline: none; }
+        outline: none;
+        color: #ff3d2e; }
     #site-navigation .nav-menu > li.menu-item-has-children > ul li:last-of-type a {
       border-bottom: none; }
 
