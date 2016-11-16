@@ -615,6 +615,10 @@ a {
     float: left;
     line-height: 48px;
     margin-right: 0; }
+    #site-navigation .stick-menu-logo a {
+      line-height: initial;
+      padding-top: 0;
+      padding-bottom: 0; }
     #site-navigation .stick-menu-logo img {
       width: 0;
       max-width: 150px;

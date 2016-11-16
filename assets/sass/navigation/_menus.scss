@@ -209,6 +209,12 @@
     line-height: 48px;
     margin-right: 0;
 
+    a{
+      line-height: initial;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     img {
       width: 0;
       max-width: 150px;
