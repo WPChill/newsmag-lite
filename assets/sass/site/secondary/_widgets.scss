@@ -850,25 +850,23 @@
   }
 }
 
-.customize-partial-edit-shortcuts-shown {
-  [id^='newsmag_widget_posts_carousel-'], [id^='newsmag_widget_posts_list_horizontal-'] {
-    width: 100%;
-    display: inline-block;
-  }
+[id^='newsmag_widget_posts_carousel-'], [id^='newsmag_widget_posts_list_horizontal-'] {
+  width: 100%;
+  display: inline-block;
+}
 
-  [id^='newsmag_banner-'] {
-    position: relative;
-    .customize-partial-edit-shortcut {
-      right: -10px;
-      top: -30px;
-    }
+[id^='newsmag_banner-'] {
+  position: relative;
+  .customize-partial-edit-shortcut {
+    right: -10px;
+    top: -30px;
   }
+}
 
-  [id^='newsmag_slider_widget-'] {
-    position: relative;
-    .customize-partial-edit-shortcut {
-      right: 0;
-      top: 0;
-    }
+[id^='newsmag_slider_widget-'] {
+  position: relative;
+  .customize-partial-edit-shortcut {
+    right: 0;
+    top: 0;
   }
 }

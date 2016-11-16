@@ -42,6 +42,11 @@ function newsmag_scripts() {
 	 *Load the theme's core Javascript
 	 */
 	wp_enqueue_script( 'newsmag-functions', get_template_directory_uri() . '/assets/js/functions.js', array(), $newsmag['Version'], true );
+	wp_localize_script( 'newsmag-functions', 'WPUrls', array(
+		'siteurl' => get_option( 'siteurl' ),
+		'theme'   => get_template_directory_uri(),
+		'ajaxurl' => admin_url( 'admin-ajax.php' )
+	) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

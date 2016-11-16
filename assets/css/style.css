@@ -1542,17 +1542,21 @@ a {
     display: inline-block;
     margin: 1px; }
 
-.customize-partial-edit-shortcuts-shown [id^='newsmag_widget_posts_carousel-'], .customize-partial-edit-shortcuts-shown [id^='newsmag_widget_posts_list_horizontal-'] {
+[id^='newsmag_widget_posts_carousel-'], [id^='newsmag_widget_posts_list_horizontal-'] {
   width: 100%;
   display: inline-block; }
-.customize-partial-edit-shortcuts-shown [id^='newsmag_banner-'] {
+
+[id^='newsmag_banner-'] {
   position: relative; }
-  .customize-partial-edit-shortcuts-shown [id^='newsmag_banner-'] .customize-partial-edit-shortcut {
+  [id^='newsmag_banner-'] .customize-partial-edit-shortcut {
     right: -10px;
     top: -30px; }
-.customize-partial-edit-shortcuts-shown [id^='newsmag_slider_widget-'] .customize-partial-edit-shortcut {
-  right: 0;
-  top: 0; }
+
+[id^='newsmag_slider_widget-'] {
+  position: relative; }
+  [id^='newsmag_slider_widget-'] .customize-partial-edit-shortcut {
+    right: 0;
+    top: 0; }
 
 .newsmag-post-meta > ul {
   list-style-type: none;
