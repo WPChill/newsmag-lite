@@ -210,9 +210,7 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 	 */
 	$options = array(
 		'newsmag_headings_typography',
-		'newsmag_paragraphs_typography',
-		'newsmag_widget_headings_typography',
-		'newsmag_widget_paragraphs_typography'
+		'newsmag_paragraphs_typography'
 	);
 
 	Epsilon_Typography::get_instance( $options );
