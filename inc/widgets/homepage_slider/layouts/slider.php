@@ -54,7 +54,7 @@
 	</div> <!-- end slider swipe -->
 
 	<!-- article navigation list -->
-	<div class="owl-nav-list hidden-xs">
+	<div class="owl-nav-list hidden-xs hidden-sm">
 		<?php if ( empty( $instance['title'] ) ) { ?>
 			<h4><?php esc_html_e( 'Today’s  hot  topics', 'newsmag' ); ?></h4>
 		<?php } else { ?>
