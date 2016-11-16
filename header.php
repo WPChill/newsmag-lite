@@ -30,16 +30,20 @@
 			<div class="row">
 				<div class="col-md-4 header-logo">
 					<?php
+					$header_textcolor = get_theme_mod( 'header_textcolor' );
 					if ( function_exists( 'the_custom_logo' ) ) {
 						if ( has_custom_logo() ) {
 							the_custom_logo();
 						} else { ?>
-							<a class="site-title"
-							   href="<?php echo esc_url_raw( get_home_url() ) ?>"> <?php echo get_option( 'blogname', 'newsmag' ) ?></a>
+							<?php
+							if ( $header_textcolor !== 'blank' ):
+								?>
+								<a class="site-title"
+								   href="<?php echo esc_url_raw( get_home_url() ) ?>"> <?php echo get_option( 'blogname', 'newsmag' ) ?></a>
+							<?php endif; ?>
 						<?php }
 					}
-					$header_textcolor = get_theme_mod( 'header_textcolor' );
-					$description      = get_bloginfo( 'description', 'display' );
+					$description = get_bloginfo( 'description', 'display' );
 					if ( $header_textcolor !== 'blank' && ! empty( $description ) ) : ?>
 						<p class="site-description" <?php echo ( ! empty( $header_textcolor ) ) ? 'style="color:#' . esc_attr( $header_textcolor ) . '"' : ''; ?>><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></p>
 						<?php
@@ -73,7 +77,8 @@
 					<div class="<?php echo $enable_search ? 'col-md-9' : 'col-md-12' ?>">
 						<?php if ( $enable_sticky && ! empty( $image[0] ) ): ?>
 							<div class="stick-menu-logo">
-								<a href="<?php echo esc_url_raw( get_home_url() ) ?>"><img src="<?php echo esc_url( $image[0] ); ?>"/></a>
+								<a href="<?php echo esc_url_raw( get_home_url() ) ?>"><img
+										src="<?php echo esc_url( $image[0] ); ?>"/></a>
 							</div>
 						<?php endif; ?>
 						<button class="menu-toggle" aria-controls="primary-menu"
