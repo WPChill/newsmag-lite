@@ -30,7 +30,17 @@ if ( $show_on_front == 'posts' ):
 			</div>
 		</div>
 	<?php endif; ?>
-
+	<?php
+	$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+	if ( $breadcrumbs_enabled ) { ?>
+		<div class="container newsmag-breadcrumbs-container">
+			<div class="row newsmag-breadcrumbs-row">
+				<div class="col-xs-12">
+					<?php newsmag_breadcrumbs(); ?>
+				</div>
+			</div>
+		</div>
+	<?php } ?>
 	<div class="container">
 		<div class="row">
 			<?php
