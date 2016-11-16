@@ -39,29 +39,27 @@ class Newsmag_Customizer_Helper {
 		$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'custom_logo' )->transport     = 'refresh';
-		$wp_customize->get_section( 'header_image' )->panel     = 'newsmag_panel_blog';
-		$wp_customize->get_section( 'header_image' )->priority  = 4;
-		$wp_customize->get_section( 'header_image' )->title     = __( 'Blog Archive Header Image', 'newsmag' );
-		$wp_customize->get_section( 'background_image' )->panel = 'newsmag_panel_general';
+		$wp_customize->get_section( 'header_image' )->panel        = 'newsmag_panel_blog';
+		$wp_customize->get_section( 'header_image' )->priority     = 4;
+		$wp_customize->get_section( 'header_image' )->title        = __( 'Blog Archive Header Image', 'newsmag' );
+		$wp_customize->get_section( 'background_image' )->panel    = 'newsmag_panel_general';
 
 		if ( ! newsmag_on_iis() ) {
 
 			// Change panel for Site Title & Tagline Section
-			$site_title        = $wp_customize->get_section( 'title_tagline' );
-			$site_title->panel = 'newsmag_panel_general';
+			$wp_customize->get_section( 'title_tagline' )->panel = 'newsmag_panel_general';
 
 			// Change panel for Static Front Page
-			$site_title3        = $wp_customize->get_section( 'static_front_page' );
-			$site_title3->panel = 'newsmag_panel_general';
+			$wp_customize->get_section( 'static_front_page' )->panel = 'newsmag_panel_general';
 
 			// Change priority for Site Title
-			$site_title4              = $wp_customize->get_control( 'blogname' );
-			$site_title4->description = esc_html__( 'Company name in text format below', 'newsmag' );
-			$site_title4->priority    = 1;
+			$wp_customize->get_control( 'custom_logo' )->priority = 0;
+			$wp_customize->get_control( 'custom_logo' )->description = esc_html__( 'The image logo, if set, will override the text logo. You can not have both at the same time. A tagline can be displayed under both the image or the text logo.', 'newsmag' );
+
+			$wp_customize->get_control( 'blogname' )->priority = 2;
 
 			// Change priority for Site Tagline
-			$site_title5           = $wp_customize->get_control( 'blogdescription' );
-			$site_title5->priority = 17;
+			$wp_customize->get_control( 'blogdescription' )->priority = 17;
 		}
 
 		// Abort if selective refresh is not available.
@@ -70,15 +68,15 @@ class Newsmag_Customizer_Helper {
 		}
 
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector' => '.site-title',
-			'render_callback' => function() {
+			'selector'        => '.site-title',
+			'render_callback' => function () {
 				bloginfo( 'name' );
 			},
 		) );
 
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector' => '.site-description',
-			'render_callback' => function() {
+			'selector'        => '.site-description',
+			'render_callback' => function () {
 				bloginfo( 'description' );
 			},
 		) );
