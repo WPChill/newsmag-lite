@@ -579,7 +579,7 @@ a {
         position: relative;
         padding-left: 20px; }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 768px) {
   .menu-toggle {
     display: none; }
 
@@ -641,7 +641,7 @@ a {
     position: relative; }
     #site-navigation .nav-menu > li.active > a, #site-navigation .nav-menu > li.current-menu-item > a, #site-navigation .nav-menu > li:hover > a, #site-navigation .nav-menu > li:focus > a {
       color: #333; }
-    @media screen and (min-width: 37.5em) {
+    @media screen and (min-width: 768px) {
       #site-navigation .nav-menu > li.active > a, #site-navigation .nav-menu > li.current-menu-item > a, #site-navigation .nav-menu > li:hover > a, #site-navigation .nav-menu > li:focus > a {
         color: #fff;
         border-bottom-color: #333; } }
@@ -674,11 +674,17 @@ a {
         position: absolute;
         right: 5px;
         bottom: 12px; }
-      @media screen and (min-width: 37.5em) {
+      @media screen and (min-width: 768px) {
         #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:hover:after, #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:focus:after {
           color: #ff3d2e; }
         #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:hover > a, #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:focus > a {
           color: #ff3d2e;
+          outline: none; } }
+      @media screen and (max-width: 767px) {
+        #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:hover:after, #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:focus:after {
+          color: #333; }
+        #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:hover > a, #site-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:focus > a {
+          color: #333;
           outline: none; } }
     #site-navigation .nav-menu > li.menu-item-has-children > ul li a {
       padding: 10px 15px;
@@ -686,7 +692,7 @@ a {
       color: #FFF;
       text-transform: initial;
       text-shadow: none; }
-      @media screen and (min-width: 37.5em) {
+      @media screen and (min-width: 768px) {
         #site-navigation .nav-menu > li.menu-item-has-children > ul li a {
           border-bottom: 1px solid #f6f6f6;
           color: #333; } }

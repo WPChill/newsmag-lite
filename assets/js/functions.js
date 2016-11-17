@@ -14,24 +14,20 @@ var Newsmag = {
 				img = container.find('img');
 
 		if ( selector.length ) {
-			selector.sticky();
+			var window_w = jQuery(window).width();
+			if ( window_w > 768 ) {
+				selector.sticky();
 
-			selector.on('sticky-start', function () {
-				var window_w = jQuery(window).width();
-				if (window_w > 768) {
+				selector.on('sticky-start', function () {
 					img.animate({ width: 150 });
-					container.animate({'margin-right': '60px'});
-				}
+					container.animate({ 'margin-right': '60px' });
+				});
 
-			});
-
-			selector.on('sticky-end', function () {
-				var window_w = jQuery(window).width();
-				if (window_w > 768) {
+				selector.on('sticky-end', function () {
 					img.animate({ width: 0 });
-					container.animate({'margin-right': '0'});
-				}
-			});
+					container.animate({ 'margin-right': '0' });
+				});
+			}
 
 		}
 	},
