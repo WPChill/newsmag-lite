@@ -141,7 +141,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 						<label
 							for="<?php echo $this->id; ?>-font-family"><?php echo __( 'Font Family', 'newsmag' ); ?></label>
 						<select id="<?php echo $this->id; ?>-font-family" class="mte-typography-input">
-							<option><?php echo __( 'Select font', 'newsmag' ); ?></option>
+							<option value="Select font"><?php echo __( 'Theme default', 'newsmag' ); ?></option>
 							<?php foreach ( $fonts as $font => $properties ) { ?>
 								<option <?php echo $inputs['font-family'] === $properties->family ? 'selected' : ''; ?>
 									value="<?php echo $properties->family ?>"><?php echo $properties->family ?></option>
@@ -154,7 +154,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 						<label
 							for="<?php echo $this->id; ?>-font-weight"><?php echo __( 'Font Weight', 'newsmag' ); ?></label>
 						<select id="<?php echo $this->id; ?>-font-weight" class="mte-typography-input">
-							<option value="initial"><?php echo __( 'Select Font Weight', 'newsmag' ); ?></option>
+							<option value="initial"><?php echo __( 'Theme default', 'newsmag' ); ?></option>
 							<option <?php echo $inputs['font-weight'] === '100' ? 'selected' : ''; ?>
 								value="100">100
 							</option>
@@ -190,7 +190,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 						<label
 							for="<?php echo $this->id; ?>-font-style"><?php echo __( 'Font Style', 'newsmag' ); ?></label>
 						<select id="<?php echo $this->id; ?>-font-style" class="mte-typography-input">
-							<option value="initial"><?php echo __( 'Select Font Style', 'newsmag' ); ?></option>
+							<option value="initial"><?php echo __( 'Theme default', 'newsmag' ); ?></option>
 							<option <?php echo $inputs['font-style'] === 'normal' ? 'selected' : ''; ?>
 								value="normal"><?php echo __( 'Normal', 'newsmag' ); ?>
 							</option>

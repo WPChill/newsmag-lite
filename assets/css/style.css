@@ -1501,7 +1501,7 @@ a {
     .site-footer .widget > h3.widget-title {
       font-family: "Poppins", "serif";
       font-size: 17px;
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-weight: 600;
       margin-bottom: 25px;
       margin-top: 0;

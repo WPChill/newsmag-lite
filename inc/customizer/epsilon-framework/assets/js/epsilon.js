@@ -29,6 +29,10 @@
 			}
 		});
 
+		$(input).on('focus', function () {
+			$(this).blur();
+		});
+
 		$('#' + input_id).attr('value', ($('#' + id).slider("value")));
 		$('#' + input_id).change(function () {
 			$('#' + id).slider({

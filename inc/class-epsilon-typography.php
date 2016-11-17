@@ -146,6 +146,7 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 			}
 
 			$this->font_imports[] = $font->import;
+
 			return true;
 		}
 
