@@ -19,7 +19,7 @@ var Newsmag = {
 				selector.sticky();
 
 				selector.on('sticky-start', function () {
-					img.animate({ width: 150 });
+					img.animate({ width: '100%' });
 					container.animate({ 'margin-right': '60px' });
 				});
 
