@@ -8,16 +8,14 @@ $count = $this->count_actions();
 
 <div class="feature-section three-col">
 	<div class="col">
-		<h3><?php esc_html_e( 'Step 1 - Fix recommended actions.', 'newsmag' ); ?></h3>
+		<h3><?php esc_html_e( 'Step 1 - Implement recommended actions.', 'newsmag' ); ?></h3>
 		<p><?php esc_html_e( 'We\'ve compiled a list of steps for you, to take make sure the experience you\'ll have using one of our products is very easy to follow.', 'newsmag' ); ?></p>
 		<?php if ( $count == 0 ) { ?>
 			<p><span class="dashicons dashicons-yes"></span>
-				<a target="_blank"
-				   href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'No recommended actions left to perform.', 'newsmag' ); ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'No recommended actions left to perform.', 'newsmag' ); ?></a>
 			</p>
 		<?php } else { ?>
-			<p><span class="dashicons dashicons-no-alt"></span> <a target="_blank"
-			                                                       href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'Check recommended actions.', 'newsmag' ); ?></a>
+			<p><span class="dashicons dashicons-no-alt"></span> <a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'Check recommended actions.', 'newsmag' ); ?></a>
 			</p> <?php
 		}; ?>
 	</div><!--/.col-->
@@ -34,7 +32,7 @@ $count = $this->count_actions();
 	<div class="col">
 		<h3><?php esc_html_e( 'Step 3 - Customize everything.', 'newsmag' ); ?></h3>
 		<p><?php esc_html_e( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'newsmag' ); ?></p>
-		<p><a target="_blank" href="<?php echo esc_url( $customizer_url ); ?>"
+		<p><a href="<?php echo esc_url( $customizer_url ); ?>"
 		      class="button button-primary"><?php esc_html_e( 'Go to Customizer', 'newsmag' ); ?></a>
 		</p>
 	</div><!--/.col-->
