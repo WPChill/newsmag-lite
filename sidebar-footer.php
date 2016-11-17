@@ -28,36 +28,6 @@ foreach ( $mysidebars as $column ) {
 };
 
 /**
- * If the array is empty, terminate here
- */
-if ( empty( $sidebars ) ) {
-	$args = array(
-		'before_title' => '<h3 class="widget-title">',
-		'after_title'  => '</h3>'
-	); ?>
-	<div class="footer-widgets-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<?php the_widget( 'WP_Widget_Meta', array(), $args ); ?>
-				</div>
-				<div class="col-md-3">
-					<?php the_widget( 'WP_Widget_Recent_Posts', array(), $args ); ?>
-				</div>
-				<div class="col-md-3">
-					<?php the_widget( 'WP_Widget_Tag_Cloud', array(), $args ); ?>
-				</div>
-				<div class="col-md-3">
-					<?php the_widget( 'WP_Widget_Categories', array(), $args ); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<?php return false;
-}
-
-/**
  * Handle the sizing of the footer columns based on the user selection
  */
 $count = get_theme_mod( 'newsmag_footer_columns', 4 );
@@ -66,6 +36,35 @@ $count = get_theme_mod( 'newsmag_footer_columns', 4 );
  * $size = 12 / count($sidebars);
  */
 $size = 12 / (int) $count;
+
+/**
+ * If the array is empty, terminate here
+ */
+if ( empty( $sidebars ) ) {
+	$args = array(
+		'before_title' => '<h3 class="widget-title">',
+		'after_title'  => '</h3>'
+	);
+
+	$widgets = array( 'WP_Widget_Meta', 'WP_Widget_Recent_Posts', 'WP_Widget_Tag_Cloud', 'WP_Widget_Categories' );
+	$widgets = array_slice( $widgets, 0, $count );
+	?>
+	<div class="footer-widgets-area">
+		<div class="container">
+			<div class="row">
+				<?php foreach ( $widgets as $widget ) { ?>
+					<div class="col-md-<?php echo esc_attr( $size ) ?> col-sm-6">
+						<?php the_widget( $widget, array(), $args ); ?>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+
+	<?php return false;
+}
+
+
 /**
  * In case all the sidebars have widgets attached, we slice the array it.
  */
