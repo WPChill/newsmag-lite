@@ -221,7 +221,7 @@
       font-family: 'Poppins';
       font-size: 16px;
       font-weight: bold;
-      text-transform: uppercase;
+      text-transform: initial;
       color: #fff;
       position: relative;
       line-height: 27px;
@@ -245,6 +245,7 @@
         padding: 1px 20px 2px;
         background: #ff3d2e;
         display: inline-block;
+        text-transform: initial;
       }
     }
     &.posts-column-layout {
@@ -362,7 +363,7 @@
       font-family: 'Poppins';
       font-size: 16px;
       font-weight: bold;
-      text-transform: uppercase;
+      text-transform: initial;
       color: #fff;
       position: relative;
       line-height: 27px;

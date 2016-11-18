@@ -1501,7 +1501,7 @@ a {
     .site-footer .widget > h3.widget-title {
       font-family: "Poppins", "serif";
       font-size: 17px;
-      text-transform: capitalize;
+      text-transform: initial;
       font-weight: 600;
       margin-bottom: 25px;
       margin-top: 0;
@@ -1781,7 +1781,7 @@ a {
       font-family: 'Poppins';
       font-size: 16px;
       font-weight: bold;
-      text-transform: uppercase;
+      text-transform: o;
       color: #fff;
       position: relative;
       line-height: 27px;
@@ -1803,7 +1803,8 @@ a {
         font-weight: 700;
         padding: 1px 20px 2px;
         background: #ff3d2e;
-        display: inline-block; }
+        display: inline-block;
+        text-transform: initial; }
     .newsmag_builder .newsmag-post-box-a.posts-column-layout h3 {
       font-weight: 700; }
       .newsmag_builder .newsmag-post-box-a.posts-column-layout h3 a {
@@ -1890,7 +1891,7 @@ a {
     font-family: 'Poppins';
     font-size: 16px;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: initial;
     color: #fff;
     position: relative;
     line-height: 27px;
