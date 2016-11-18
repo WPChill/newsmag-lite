@@ -3201,6 +3201,8 @@ a {
   @media (min-width: 768px) {
     .site-branding {
       padding: 15px 15px; }
+      .site-branding.centered-branding {
+        line-height: 90px; }
       .site-branding .site-description {
         margin-bottom: 0; } }
   @media (max-width: 767px) {
@@ -3209,9 +3211,6 @@ a {
 
 .header-banner {
   text-align: right; }
-
-.custom-logo {
-  margin-top: 25px; }
 
 .site-title {
   font-weight: 700;

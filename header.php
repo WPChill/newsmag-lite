@@ -25,8 +25,14 @@
 
 	<?php get_template_part( 'template-parts/social' ); ?>
 
+	<?php
+	$center_class = false;
+	if ( has_custom_logo() ) {
+		$center_class = true;
+	}
+	?>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding container">
+		<div class="site-branding container <?php echo $center_class ? 'centered-branding' : '' ?>">
 			<div class="row">
 				<div class="col-md-4 header-logo">
 					<?php
@@ -41,13 +47,14 @@
 								<a class="site-title"
 								   href="<?php echo esc_url_raw( get_home_url() ) ?>"> <?php echo get_option( 'blogname', 'newsmag' ) ?></a>
 							<?php endif; ?>
-						<?php }
+							<?php
+							$description = get_bloginfo( 'description', 'display' );
+							if ( $header_textcolor !== 'blank' && ! empty( $description ) ) : ?>
+								<p class="site-description" <?php echo ( ! empty( $header_textcolor ) ) ? 'style="color:#' . esc_attr( $header_textcolor ) . '"' : ''; ?>><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></p>
+								<?php
+							endif;
+						}
 					}
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $header_textcolor !== 'blank' && ! empty( $description ) ) : ?>
-						<p class="site-description" <?php echo ( ! empty( $header_textcolor ) ) ? 'style="color:#' . esc_attr( $header_textcolor ) . '"' : ''; ?>><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></p>
-						<?php
-					endif;
 					?>
 				</div>
 

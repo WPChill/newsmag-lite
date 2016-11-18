@@ -96,8 +96,8 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		 * Add support for the custom logo functionality
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'     => 45,
-			'width'      => 150,
+			'height'     => 90,
+			'width'      => 300,
 			'flex-width' => true,
 		) );
 

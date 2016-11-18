@@ -7,6 +7,9 @@
   padding: 15px;
   @media (min-width: 768px) {
     padding: 15px 15px;
+    &.centered-branding{
+      line-height: 90px;
+    }
     .site-description {
       margin-bottom: 0;
     }
@@ -20,10 +23,6 @@
 
 .header-banner {
   text-align: right;
-}
-
-.custom-logo {
-  margin-top: 25px;
 }
 
 .site-title {
