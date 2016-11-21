@@ -247,4 +247,34 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 		echo $typography->generate_css( $args );
 		wp_die();
 	}
+
+	add_action( 'wp_ajax_epsilon_retrieve_font_weights', 'epsilon_retrieve_font_weights' );
+	add_action( 'wp_ajax_nopriv_epsilon_retrieve_font_weights', 'epsilon_retrieve_font_weights' );
+	function epsilon_retrieve_font_weights() {
+		if ( empty( $_POST ) || empty( $_POST['args'] ) || $_POST['action'] !== 'epsilon_retrieve_font_weights' ) {
+			wp_die();
+		}
+
+		global $wp_filesystem;
+		if ( empty( $wp_filesystem ) ) {
+			require_once( ABSPATH . '/wp-admin/includes/file.php' );
+			WP_Filesystem();
+		}
+
+		$path   = get_template_directory() . '/inc/customizer/epsilon-framework/assets/data/gfonts.json';
+		$gfonts = $wp_filesystem->get_contents( $path );
+		$gfonts = json_decode( $gfonts );
+		$return = array();
+
+		$family   = $gfonts->{$_POST['args']};
+		$return[] = array( 'text' => 'Theme default', 'value' => 'initial' );
+
+		foreach ( $family->variants as $weight ) {
+			$return[] = array( 'text' => $weight, 'value' => $weight );
+		}
+
+		echo json_encode( $return );
+		wp_die();
+
+	}
 }

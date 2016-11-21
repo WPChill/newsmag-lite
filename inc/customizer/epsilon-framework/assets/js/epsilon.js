@@ -48,6 +48,11 @@
 		_selectize: null,
 
 		/**
+		 * K/V Pair
+		 */
+		_linkedFonts: {},
+
+		/**
 		 * Initiate function
 		 * @private
 		 */
@@ -76,6 +81,11 @@
 					 */
 					try {
 						self._selectize = selects.selectize();
+
+						$.each(selects, function () {
+							self._linkedFonts[ $(selects[ 0 ]).attr('id') ] = $(selects[ 1 ]).attr('id');
+						});
+
 						$.each(numbers, function () {
 							EpsilonFramework.typography._number($(this));
 						});
@@ -117,7 +127,49 @@
 						$('#hidden_input_' + uniqueId).val(val).trigger('change');
 					});
 				});
+
+				$.each(self._linkedFonts, function ($id, $target) {
+					$('#' + $id).on('change', function () {
+						if ( $(this).val() === 'Select font' ) {
+							return false;
+						}
+
+						EpsilonFramework.typography._setSelects($(this).val(), $target);
+					});
+				});
 			}
+		},
+
+		/**
+		 *
+		 * @param value
+		 * @param target
+		 * @private
+		 */
+		_setSelects: function (value, target) {
+			var data = {
+						'action': 'epsilon_retrieve_font_weights',
+						'args'  : value
+					},
+					selectize = $('#' + target),
+					instance = selectize[0].selectize;
+
+
+			jQuery.ajax({
+				dataType: 'json',
+				type    : 'POST',
+				url     : WPUrls.ajaxurl,
+				data    : data,
+				complete: function (json) {
+					var json = $.parseJSON(json.responseText);
+					instance.clear();
+					instance.clearOptions();
+					instance.load(function(callback) {
+						callback(json);
+					});
+					instance.setValue('initial');
+				}
+			});
 		},
 
 		/**

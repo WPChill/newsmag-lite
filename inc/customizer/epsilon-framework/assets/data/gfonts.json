@@ -4,7 +4,7 @@
     "import": "Poppins:300,400,500,600,700&subset=latin-ext",
     "variants": [
       "300",
-      "regular",
+      "400",
       "500",
       "700"
     ],
@@ -15,20 +15,14 @@
   },
   "Roboto": {
     "family": "Roboto",
-    "import": "Roboto:100,300,regular,500,700,900&subset=latin-ext",
+    "import": "Roboto:100,300,400,500,700,900&subset=latin-ext",
     "variants": [
       "100",
-      "100italic",
       "300",
-      "300italic",
-      "regular",
-      "italic",
+      "400",
       "500",
-      "500italic",
       "700",
-      "700italic",
-      "900",
-      "900italic"
+      "900"
     ],
     "subsets": [
       "cyrillic",
@@ -42,18 +36,13 @@
   },
   "Lato": {
     "family": "Lato",
-    "import": "Lato:100,300,regular,700,900&subset=latin-ext",
+    "import": "Lato:100,300,400,700,900&subset=latin-ext",
     "variants": [
       "100",
-      "100italic",
       "300",
-      "300italic",
-      "regular",
-      "italic",
+      "400",
       "700",
-      "700italic",
-      "900",
-      "900italic"
+      "900"
     ],
     "subsets": [
       "latin-ext",
