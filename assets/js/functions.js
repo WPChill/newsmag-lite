@@ -29,6 +29,14 @@ var Newsmag = {
 				});
 			}
 
+			$(window).resize(function () {
+				window_w = $(window).width();
+				if ( window_w < 768 ) {
+					selector.unstick();
+				} else {
+					selector.sticky();
+				}
+			});
 		}
 	},
 
