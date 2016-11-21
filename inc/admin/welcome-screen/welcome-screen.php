@@ -178,18 +178,25 @@ class Newsmag_Welcome {
 
 		global $newsmag_required_actions;
 
-		$newsmag_dismiss_id = ( isset( $_GET['dismiss_id'] ) ) ? $_GET['dismiss_id'] : 0;
+		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
 
-		echo $newsmag_dismiss_id; /* this is needed and it's the id of the dismissable required action */
+		echo $action_id; /* this is needed and it's the id of the dismissable required action */
 
-		if ( ! empty( $newsmag_dismiss_id ) ):
+		if ( ! empty( $action_id ) ):
 
 			/* if the option exists, update the record for the specified id */
 			if ( get_option( 'newsmag_show_required_actions' ) ):
 
 				$newsmag_show_required_actions = get_option( 'newsmag_show_required_actions' );
 
-				$newsmag_show_required_actions[ $newsmag_dismiss_id ] = false;
+				switch($_GET['todo']){
+					case 'add';
+						$newsmag_show_required_actions[ $action_id ] = true;
+						break;
+					case 'dismiss';
+						$newsmag_show_required_actions[ $action_id ] = false;
+						break;
+				}
 
 				update_option( 'newsmag_show_required_actions', $newsmag_show_required_actions );
 
@@ -202,7 +209,7 @@ class Newsmag_Welcome {
 
 					foreach ( $newsmag_required_actions as $newsmag_required_action ):
 
-						if ( $newsmag_required_action['id'] == $newsmag_dismiss_id ):
+						if ( $newsmag_required_action['id'] == $action_id ):
 							$newsmag_show_required_actions_new[ $newsmag_required_action['id'] ] = false;
 						else:
 							$newsmag_show_required_actions_new[ $newsmag_required_action['id'] ] = true;
