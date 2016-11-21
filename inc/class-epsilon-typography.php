@@ -135,7 +135,7 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 				$args = $args['font-family'];
 			}
 
-			if ( $args === 'Select font' ) {
+			if ( $args === 'Select font' || $args === 'Theme default') {
 				return false;
 			}
 
