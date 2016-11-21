@@ -9,8 +9,23 @@ class Newsmag_Customizer_Helper {
 	 * Newsmag_Customizer_Helper constructor.
 	 */
 	public function __construct() {
+		wp_enqueue_style( 'epsilon-style', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
+		/**
+		 * Custom controls
+		 */
+		$path = get_template_directory() . '/inc/customizer/epsilon-framework';
+		$dirs = glob( $path . '/*', GLOB_ONLYDIR );
+
+		foreach ( glob( $path . '/*.php' ) as $filename ) {
+			if ( file_exists( $filename ) ) {
+				require_once $filename;
+			}
+		}
+
+
 		$this->change_default_panels();
 	}
+
 
 	/**
 	 * Loads the settings for the panels

@@ -3,13 +3,18 @@
 if ( ! class_exists( 'Epsilon_Control_Upsell' ) ):
 	class Epsilon_Control_Upsell extends WP_Customize_Control {
 
-		public $type = 'mte_upsell';
+		public $type = 'mte-upsell';
 		public $button_text = 'Hello';
 		public $button_url = '#';
 		public $options = array();
 		public $requirements = array();
 
 		public $pro_label = 'Pro';//__( 'Pro Option', 'macho' );
+
+		public function __construct( WP_Customize_Manager $manager, $id, array $args ) {
+			$manager->register_control_type( 'Epsilon_Control_Upsell' );
+			parent::__construct( $manager, $id, $args );
+		}
 
 		public function to_json() {
 			parent::to_json();

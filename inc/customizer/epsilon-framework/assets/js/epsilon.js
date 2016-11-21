@@ -131,10 +131,10 @@
 				$.each(self._linkedFonts, function ($id, $target) {
 					$('#' + $id).on('change', function () {
 						if ( $(this).val() === 'Select font' ) {
-							return false;
+							EpsilonFramework.typography._setSelects($(this).val(), $target, true);
 						}
 
-						EpsilonFramework.typography._setSelects($(this).val(), $target);
+						EpsilonFramework.typography._setSelects($(this).val(), $target, false);
 					});
 				});
 			}
@@ -144,16 +144,28 @@
 		 *
 		 * @param value
 		 * @param target
+		 * @param reset
 		 * @private
 		 */
-		_setSelects: function (value, target) {
+		_setSelects: function (value, target, reset) {
 			var data = {
 						'action': 'epsilon_retrieve_font_weights',
 						'args'  : value
 					},
 					selectize = $('#' + target),
-					instance = selectize[0].selectize;
+					instance = selectize[ 0 ].selectize;
 
+			if ( reset ) {
+				instance.clear();
+				instance.clearOptions();
+				instance.load(function (callback) {
+					var obj = { 'text': 'Theme default', 'value': 'initial' };
+					callback(obj);
+				});
+				instance.setValue('initial');
+
+				return;
+			}
 
 			jQuery.ajax({
 				dataType: 'json',
@@ -164,7 +176,7 @@
 					var json = $.parseJSON(json.responseText);
 					instance.clear();
 					instance.clearOptions();
-					instance.load(function(callback) {
+					instance.load(function (callback) {
 						callback(json);
 					});
 					instance.setValue('initial');

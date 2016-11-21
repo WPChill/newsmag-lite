@@ -130,11 +130,10 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			</label>
 
 			<?php
-
 			$inputs = $this->get_values( $this->id );
 			$fonts  = $this->google_fonts();
-
 			?>
+
 			<div class="mte-typography-container" data-unique-id="<?php echo $this->id ?>">
 				<?php if ( in_array( 'font-family', $this->choices ) ): ?>
 					<div class="mte-typography-font-family">
@@ -150,38 +149,21 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					</div>
 				<?php endif; ?>
 				<?php if ( in_array( 'font-weight', $this->choices ) ): ?>
+					<?php
+					$defaults = array( 'Select font', 'Theme default', 'initial' );
+					?>
 					<div class="mte-typography-font-weight">
 						<label
 							for="<?php echo $this->id; ?>-font-weight"><?php echo __( 'Font Weight', 'newsmag' ); ?></label>
 						<select id="<?php echo $this->id; ?>-font-weight" class="mte-typography-input">
 							<option value="initial"><?php echo __( 'Theme default', 'newsmag' ); ?></option>
-							<option <?php echo $inputs['font-weight'] === '100' ? 'selected' : ''; ?>
-								value="100">100
-							</option>
-							<option <?php echo $inputs['font-weight'] === '200' ? 'selected' : ''; ?>
-								value="200">200
-							</option>
-							<option <?php echo $inputs['font-weight'] === '300' ? 'selected' : ''; ?>
-								value="300">300
-							</option>
-							<option <?php echo $inputs['font-weight'] === '400' ? 'selected' : ''; ?>
-								value="400">400
-							</option>
-							<option <?php echo $inputs['font-weight'] === '500' ? 'selected' : ''; ?>
-								value="500">500
-							</option>
-							<option <?php echo $inputs['font-weight'] === '600' ? 'selected' : ''; ?>
-								value="600">600
-							</option>
-							<option <?php echo $inputs['font-weight'] === '700' ? 'selected' : ''; ?>
-								value="700">700
-							</option>
-							<option <?php echo $inputs['font-weight'] === '800' ? 'selected' : ''; ?>
-								value="800">800
-							</option>
-							<option <?php echo $inputs['font-weight'] === '900' ? 'selected' : ''; ?>
-								value="900">900
-							</option>
+							<?php
+							if ( ! in_array( $inputs['font-family'], $defaults ) ) {
+								foreach ( $fonts->{$inputs['font-family']}->variants as $variant ) { ?>
+									<option value="<?php echo $variant ?>" <?php echo $inputs['font-weight'] === $variant ? 'selected' : '' ?>><?php echo $variant ?></option>
+								<?php }
+							}
+							?>
 						</select>
 					</div>
 				<?php endif; ?>
