@@ -140,7 +140,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 						<label
 							for="<?php echo $this->id; ?>-font-family"><?php echo __( 'Font Family', 'newsmag' ); ?></label>
 						<select id="<?php echo $this->id; ?>-font-family" class="mte-typography-input">
-							<option value="Select font"><?php echo __( 'Theme default', 'newsmag' ); ?></option>
+							<option value="default_font"><?php echo __( 'Theme default', 'newsmag' ); ?></option>
 							<?php foreach ( $fonts as $font => $properties ) { ?>
 								<option <?php echo $inputs['font-family'] === $properties->family ? 'selected' : ''; ?>
 									value="<?php echo $properties->family ?>"><?php echo $properties->family ?></option>
@@ -160,7 +160,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 							<?php
 							if ( ! in_array( $inputs['font-family'], $defaults ) ) {
 								foreach ( $fonts->{$inputs['font-family']}->variants as $variant ) { ?>
-									<option value="<?php echo $variant ?>" <?php echo $inputs['font-weight'] === $variant ? 'selected' : '' ?>><?php echo $variant ?></option>
+									<option value="<?php echo esc_attr( $variant ) ?>" <?php echo $inputs['font-weight'] === $variant ? 'selected' : '' ?>><?php echo esc_html( $variant ) ?></option>
 								<?php }
 							}
 							?>

@@ -135,13 +135,14 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 				$args = $args['font-family'];
 			}
 
-			if ( $args === 'Select font' || $args === 'Theme default') {
+			$defaults = array( 'Select font', 'Theme default', 'default_font' );
+			if ( in_array( $args, $defaults ) ) {
 				return false;
 			}
 
 			$font = $this->google_fonts( $args );
 
-			if ( $font->family === 'Select font' ) {
+			if ( in_array( $args, $defaults ) ) {
 				$this->font_imports = false;
 			}
 
@@ -157,7 +158,7 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 		 */
 		public function generate_css( $options ) {
 			$css      = '';
-			$defaults = array( 'Select font', 'Theme default', 'initial' );
+			$defaults = array( 'Select font', 'Theme default', 'initial', 'default_font' );
 
 			$css .= $options['selectors'] . '{' . "\n";
 			foreach ( $options['json'] as $property => $value ) {
@@ -267,7 +268,7 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 		$return = array();
 
 		$family   = $gfonts->{$_POST['args']};
-		$return[] = array( 'text' => 'Theme default', 'value' => 'initial' );
+		$return[] = array( 'text' => __( 'Theme default', 'newsmag' ), 'value' => 'initial' );
 
 		foreach ( $family->variants as $weight ) {
 			$return[] = array( 'text' => $weight, 'value' => $weight );

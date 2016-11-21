@@ -4,23 +4,25 @@ if ( ! class_exists( 'Epsilon_Control_Upsell' ) ):
 	class Epsilon_Control_Upsell extends WP_Customize_Control {
 
 		public $type = 'mte-upsell';
-		public $button_text = 'Hello';
+		public $button_text = '';
 		public $button_url = '#';
 		public $options = array();
 		public $requirements = array();
-
-		public $pro_label = 'Pro';//__( 'Pro Option', 'macho' );
+		public $pro_label = '';
 
 		public function __construct( WP_Customize_Manager $manager, $id, array $args ) {
+			$this->button_text = __( 'Hello', 'newsmag' );
+			$this->pro_label   = __( 'Pro', 'newsmag' );
+
 			$manager->register_control_type( 'Epsilon_Control_Upsell' );
 			parent::__construct( $manager, $id, $args );
 		}
 
 		public function to_json() {
 			parent::to_json();
-			$this->json['button_text'] = $this->button_text;
-			$this->json['button_url'] = $this->button_url;
-			$this->json['options'] = $this->options;
+			$this->json['button_text']  = $this->button_text;
+			$this->json['button_url']   = $this->button_url;
+			$this->json['options']      = $this->options;
 			$this->json['requirements'] = $this->requirements;
 
 			$this->json['pro_label'] = $this->pro_label;

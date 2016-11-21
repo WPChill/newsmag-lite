@@ -210,7 +210,7 @@
 					},
 					api = wp.customize;
 
-			fontFamily.setValue('Select font');
+			fontFamily.setValue('default_font');
 			fontWeight.setValue('initial');
 			fontStyle.setValue('initial');
 
@@ -223,7 +223,7 @@
 			}
 
 
-			object.data.json[ 'font-family' ] = 'Select font';
+			object.data.json[ 'font-family' ] = 'default_font';
 			object.data.json[ 'font-weight' ] = 'initial';
 			object.data.json[ 'font-style' ] = 'initial';
 			object.data.json[ 'font-size' ] = '15';
