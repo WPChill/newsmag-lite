@@ -15,11 +15,11 @@ function newsmag_customize_register( $wp_customize ) {
 	 * Customizer settings
 	 */
 	require_once get_template_directory() . '/inc/customizer/register_settings.php';
-
+	$controls = array( 'checkbox-multiple', 'slider-control', 'toggle', 'typography', 'upsell' );
 	/**
 	 * Initiate the setting helper
 	 */
-	$newsmag_customizer = new Newsmag_Customizer_Helper();
+	$newsmag_customizer = new Newsmag_Customizer_Helper($controls);
 	$newsmag_customizer->add_theme_options();
 }
 

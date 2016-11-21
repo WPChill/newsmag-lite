@@ -1,5 +1,4 @@
 <?php
-
 class Newsmag_Customizer_Helper {
 
 	/**
@@ -8,20 +7,18 @@ class Newsmag_Customizer_Helper {
 	 *
 	 * Newsmag_Customizer_Helper constructor.
 	 */
-	public function __construct() {
+	public function __construct( $controls ) {
 		wp_enqueue_style( 'epsilon-style', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
 		/**
 		 * Custom controls
 		 */
 		$path = get_template_directory() . '/inc/customizer/epsilon-framework';
-		$dirs = glob( $path . '/*', GLOB_ONLYDIR );
 
-		foreach ( glob( $path . '/*.php' ) as $filename ) {
-			if ( file_exists( $filename ) ) {
-				require_once $filename;
+		foreach ( $controls as $control ) {
+			if ( file_exists( $path . '/control-epsilon-' . $control . '.php' ) ) {
+				require_once $path . '/control-epsilon-' . $control . '.php';
 			}
 		}
-
 
 		$this->change_default_panels();
 	}
@@ -68,7 +65,7 @@ class Newsmag_Customizer_Helper {
 			$wp_customize->get_section( 'static_front_page' )->panel = 'newsmag_panel_general';
 
 			// Change priority for Site Title
-			$wp_customize->get_control( 'custom_logo' )->priority = 0;
+			$wp_customize->get_control( 'custom_logo' )->priority    = 0;
 			$wp_customize->get_control( 'custom_logo' )->description = esc_html__( 'The image logo, if set, will override the text logo. You can not have both at the same time. A tagline can be displayed under both the image or the text logo.', 'newsmag' );
 
 			$wp_customize->get_control( 'blogname' )->priority = 2;
