@@ -98,6 +98,7 @@
 					</div>
 
 					<?php if ( $enable_search ): ?>
+						<?php $search_query = get_search_query(); ?>
 						<div class="col-md-3">
 							<div class="top-header-icons pull-right">
 								<!-- Search Form -->
@@ -106,12 +107,12 @@
 									<label>
 										<span
 											class="screen-reader-text"><?php echo __( 'Search for:', 'newsmag' ) ?></span>
-										<input class="search-field-top-bar" id="search-field-top-bar"
+										<input class="search-field-top-bar <?php echo $search_query === '' ? '' : 'opened'; ?>" id="search-field-top-bar"
 										       placeholder="<?php echo __( 'Search ...', 'newsmag' ) ?>"
-										       value="" name="s"
+										       value="<?php echo esc_attr($search_query); ?>" name="s"
 										       type="search">
 									</label>
-									<button id="search-top-bar-submit" type="button" class="search-top-bar-submit"><span
+									<button id="search-top-bar-submit" type="button" class="search-top-bar-submit  <?php echo $search_query === '' ? '' : 'input-open'; ?>"><span
 											class="fa fa-search"></span></button>
 								</form>
 							</div>

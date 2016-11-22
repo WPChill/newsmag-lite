@@ -109,6 +109,10 @@ var Newsmag = {
 		$('#search-top-bar-submit').on('click', function (e) {
 			e.preventDefault();
 			var element = $('#search-field-top-bar');
+			if ( element.val().trim() !== '' ){
+				element.parents('form').submit();
+				return;
+			}
 			element.toggleClass('opened');
 			element.parent().siblings('button').toggleClass('input-open');
 		});

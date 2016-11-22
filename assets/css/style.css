@@ -376,6 +376,18 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
+#searchform_topbar ::-webkit-input-placeholder {
+  color: #FFF;
+  opacity: 1; }
+#searchform_topbar :-moz-placeholder {
+  color: #FFF;
+  opacity: 1; }
+#searchform_topbar ::-moz-placeholder {
+  color: #FFF;
+  opacity: 1; }
+#searchform_topbar :-ms-input-placeholder {
+  color: #FFF;
+  opacity: 1; }
 #searchform_topbar label {
   margin-bottom: 0;
   bottom: -4px;
@@ -3064,12 +3076,12 @@ a {
   width: 100%;
   position: relative; }
 
-.ensign-video-container {
+.newsmag-video {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden; }
-  .ensign-video-container embed, .ensign-video-container iframe, .ensign-video-container object, .ensign-video-container video {
+  .newsmag-video embed, .newsmag-video iframe, .newsmag-video object, .newsmag-video video {
     position: absolute;
     top: 0;
     left: 0;

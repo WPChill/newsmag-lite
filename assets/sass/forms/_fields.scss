@@ -52,6 +52,25 @@ textarea {
 }
 
 #searchform_topbar {
+  ::-webkit-input-placeholder {
+    color: #FFF;
+    opacity:1;
+  }
+
+  :-moz-placeholder {
+    color: #FFF;
+    opacity:1;
+  }
+
+  ::-moz-placeholder {
+    color: #FFF;
+    opacity:1;
+  }
+
+  :-ms-input-placeholder {
+    color: #FFF;
+    opacity:1;
+  }
   label {
     margin-bottom: 0;
     bottom: -4px;
