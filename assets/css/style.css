@@ -3334,9 +3334,6 @@ a {
   visibility: visible;
   opacity: 1; }
 
-.back-to-top.back-to-top-fade-out {
-  opacity: .5; }
-
 .no-touch .back-to-top:hover {
   border: 1px solid #ff3d2e;
   opacity: 1;
