@@ -202,7 +202,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 						<span class="unit">px</span>
 					</div>
 				<?php endif; ?>
-				<!-- <a href="#" class="mte-typography-default"><?php echo __( 'Reset to default', 'newsmag' ) ?></a> -->
+				<a href="#" class="mte-typography-default"><?php echo __( 'Reset to default', 'newsmag' ) ?></a>
 			</div>
 			<?php
 		}

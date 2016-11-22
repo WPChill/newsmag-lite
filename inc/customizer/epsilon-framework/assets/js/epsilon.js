@@ -59,14 +59,6 @@
 		_init: function (selector) {
 			if ( selector.length ) {
 				var self = this;
-				/**
-				 * Reset button
-				 */
-				$('.mte-typography-default').on('click', function (e) {
-					e.preventDefault();
-					var element = $(this);
-					EpsilonFramework.typography._resetDefault(element);
-				});
 
 				$.each(selector, function () {
 					var container = $(this),
@@ -136,6 +128,15 @@
 
 						EpsilonFramework.typography._setSelects($(this).val(), $target, false);
 					});
+				});
+
+				/**
+				 * Reset button
+				 */
+				$('.mte-typography-default').on('click', function (e) {
+					e.preventDefault();
+					var element = $(this);
+					EpsilonFramework.typography._resetDefault(element);
 				});
 			}
 		},
@@ -211,23 +212,21 @@
 					api = wp.customize;
 
 			fontFamily.setValue('default_font');
-			fontWeight.setValue('initial');
 			fontStyle.setValue('initial');
 
 			if ( $('#' + uniqueId + '-font-size').length ) {
 				$('#' + uniqueId + '-font-size').val('15');
+				object.data.json[ 'font-size' ] = '15';
 			}
 
 			if ( $('#' + uniqueId + '-line-height').length ) {
-				$('#' + uniqueId + '-line-height').val('22');
+				$('#' + uniqueId + '-line-height').val('22').trigger('change');
+				object.data.json[ 'line-height' ] = '22';
 			}
-
 
 			object.data.json[ 'font-family' ] = 'default_font';
 			object.data.json[ 'font-weight' ] = 'initial';
 			object.data.json[ 'font-style' ] = 'initial';
-			object.data.json[ 'font-size' ] = '15';
-			object.data.json[ 'line-height' ] = '22';
 
 			api.previewer.send('update-inline-css', object);
 		},
