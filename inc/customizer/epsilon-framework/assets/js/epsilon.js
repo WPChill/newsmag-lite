@@ -61,10 +61,6 @@
 				var self = this,
 						numbers = $('.mte-number-field');
 
-				$.each(numbers, function () {
-					EpsilonFramework.typography._number($(this));
-				});
-
 				$.each(selector, function () {
 					var container = $(this),
 							uniqueId = container.attr('data-unique-id'),
@@ -89,29 +85,6 @@
 						 */
 						console.warn('selectize not yet loaded');
 					}
-
-					/**
-					 * Add/subtract from the input type number fields
-					 */
-					$('.incrementor').on('click', function (e) {
-						e.preventDefault();
-						EpsilonFramework.typography._calcValue($(this));
-					});
-
-					/**
-					 * Don't allow a value smaller than 0 in number fields
-					 */
-					numbers.find('input').on('change', function () {
-						if ( $(this).val() < 0 ) {
-							$(this).val(0).trigger('change');
-						}
-
-						if ( $(this).attr('id') === uniqueId + '-font-size' && $(this).val() > 16 ) {
-							$(this).val(16).trigger('change');
-						}
-
-					});
-
 					/**
 					 * On triggering the change event, create a json with the values and send it to the preview window
 					 */
@@ -119,6 +92,26 @@
 						var val = EpsilonFramework.typography._parseJson(inputs, uniqueId);
 						$('#hidden_input_' + uniqueId).val(val).trigger('change');
 					});
+				});
+
+				$.each(numbers, function () {
+					EpsilonFramework.typography._number($(this));
+				});
+				/**
+				 * Add/subtract from the input type number fields
+				 */
+				$('.incrementor').on('click', function (e) {
+					e.preventDefault();
+					EpsilonFramework.typography._calcValue($(this));
+				});
+
+				/**
+				 * Don't allow a value smaller than 0 in number fields
+				 */
+				numbers.find('input').on('change', function () {
+					if ( $(this).val() < 0 ) {
+						$(this).val(0).trigger('change');
+					}
 				});
 
 				$.each(self._linkedFonts, function ($id, $target) {
@@ -216,12 +209,12 @@
 			fontStyle.setValue('initial');
 
 			if ( $('#' + uniqueId + '-font-size').length ) {
-				$('#' + uniqueId + '-font-size').val('15');
+				$('#' + uniqueId + '-font-size').val('15').trigger('blur');
 				object.data.json[ 'font-size' ] = '15';
 			}
 
 			if ( $('#' + uniqueId + '-line-height').length ) {
-				$('#' + uniqueId + '-line-height').val('22').trigger('change');
+				$('#' + uniqueId + '-line-height').val('22').trigger('change').trigger('blur');
 				object.data.json[ 'line-height' ] = '22';
 			}
 
@@ -271,6 +264,14 @@
 		 */
 		_number: function (el) {
 			var input = el.find('input');
+			input.on('blur', function(){
+				var unit = $(this).siblings('span');
+				if ( $(this).val() > 99 ) {
+					unit.animate({ 'left': 35 });
+				} else {
+					unit.animate({ 'left': 25 });
+				}
+			});
 
 			el.append('<a href="#" class="arrow-up incrementor"  data-increment="up"><span class="dashicons dashicons-arrow-up"></span></a>' +
 					'<a href="#" class="arrow-down incrementor" data-increment="down"><span class="dashicons dashicons-arrow-down"></span></a>');
@@ -283,16 +284,24 @@
 		 * @private
 		 */
 		_calcValue: function (el) {
-			var input = $(el.siblings('input'));
+			var input = $(el.siblings('input')),
+					unit = input.siblings('span');
+
 			switch ( $(el).attr('data-increment') ) {
 				case 'up':
 					input.val(parseInt(input.val()) + 1).trigger('change');
+					if ( input.val() == 100 ) {
+						unit.animate({ 'left': 35 });
+					}
 					break;
 				case 'down':
 					if ( input.val() == 0 ) {
 						return;
 					}
 					input.val(parseInt(input.val()) - 1).trigger('change');
+					if ( input.val() == 99 ) {
+						unit.animate({ 'left': 25 });
+					}
 					break;
 			}
 		}

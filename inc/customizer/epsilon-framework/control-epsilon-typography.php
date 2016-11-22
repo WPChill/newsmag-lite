@@ -189,7 +189,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 						<input class="mte-typography-input" id="<?php echo $this->id; ?>-font-size"
 						       value="<?php echo $inputs['font-size'] ?>" type="number" min="0"
 						       step="any"/>
-						<span class="unit">px</span>
+						<span class="unit <?php echo (int) $inputs['font-size'] > 99 ? 'go-right' : '' ?>">px</span>
 					</div>
 				<?php endif; ?>
 				<?php if ( in_array( 'line-height', $this->choices ) ): ?>
@@ -199,7 +199,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 						<input class="mte-typography-input" id="<?php echo $this->id; ?>-line-height"
 						       value="<?php echo $inputs['line-height'] ?>" type="number" min="0"
 						       step="any"/>
-						<span class="unit">px</span>
+						<span class="unit <?php echo (int) $inputs['line-height'] > 99 ? 'go-right' : '' ?>">px</span>
 					</div>
 				<?php endif; ?>
 				<a href="#" class="mte-typography-default"><?php echo __( 'Reset to default', 'newsmag' ) ?></a>

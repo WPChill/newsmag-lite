@@ -385,6 +385,10 @@ ul.macho-upsell-requirements {
     left: 25px;
 }
 
+.mte-number-field .unit.go-right {
+    left: 35px;
+}
+
 textarea.mte-typography-input {
     display: block;
     width: 100%;
