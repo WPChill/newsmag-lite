@@ -83,7 +83,7 @@
 				<div class="row">
 					<div class="<?php echo $enable_search ? 'col-md-9' : 'col-md-12' ?>">
 						<?php if ( $enable_sticky && ! empty( $image[0] ) ): ?>
-							<div class="stick-menu-logo">
+							<div class="stick-menu-logo hidden-xs hidden-sm">
 								<a href="<?php echo esc_url_raw( get_home_url() ) ?>"><img
 										src="<?php echo esc_url( $image[0] ); ?>"/></a>
 							</div>
