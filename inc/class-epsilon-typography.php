@@ -135,7 +135,7 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 				$args = $args['font-family'];
 			}
 
-			$defaults = array( 'Select font', 'Theme default', 'default_font' );
+			$defaults = array( 'Select font', 'Theme default', 'default_font', 'Lato' );
 			if ( in_array( $args, $defaults ) ) {
 				return false;
 			}
@@ -192,7 +192,6 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 
 			if ( $css !== '' ) {
 				$this->font_imports = array_unique( $this->font_imports );
-
 				foreach ( $this->font_imports as $font ) {
 					if ( $font !== NULL ) {
 						$fonts .= '@import url("https://fonts.googleapis.com/css?family=' . $font . '");' . "\n";
