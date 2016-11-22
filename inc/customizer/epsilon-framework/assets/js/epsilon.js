@@ -58,13 +58,17 @@
 		 */
 		_init: function (selector) {
 			if ( selector.length ) {
-				var self = this;
+				var self = this,
+						numbers = $('.mte-number-field');
+
+				$.each(numbers, function () {
+					EpsilonFramework.typography._number($(this));
+				});
 
 				$.each(selector, function () {
 					var container = $(this),
 							uniqueId = container.attr('data-unique-id'),
 							selects = container.find('select'),
-							numbers = $('.mte-number-field'),
 							inputs = container.find('.mte-typography-input');
 
 					/**
@@ -78,9 +82,6 @@
 							self._linkedFonts[ $(selects[ 0 ]).attr('id') ] = $(selects[ 1 ]).attr('id');
 						});
 
-						$.each(numbers, function () {
-							EpsilonFramework.typography._number($(this));
-						});
 					}
 					catch ( err ) {
 						/**
