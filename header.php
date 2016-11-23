@@ -99,7 +99,7 @@
 
 					<?php if ( $enable_search ): ?>
 						<?php $search_query = get_search_query(); ?>
-						<div class="col-md-3">
+						<div class="col-md-3 hidden-xs">
 							<div class="top-header-icons pull-right">
 								<!-- Search Form -->
 								<form role="search" method="get" id="searchform_topbar"

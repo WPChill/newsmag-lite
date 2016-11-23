@@ -25,6 +25,12 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 - Font Awesome Code
     -- Copyright Font Awesome by Dave Gandy - http://fontawesome.io
     -- License: MIT License (http://opensource.org/licenses/mit-license.html)
+- Lazyload
+		-- Copyright (c) 2007-2015 Mika Tuupola http://www.appelsiini.net/projects/lazyload
+		-- License: MIT License (http://opensource.org/licenses/mit-license.html)
+- Sticky
+		-- Anthony Garand http://stickyjs.com/
+		-- License: MIT License (http://opensource.org/licenses/mit-license.html)
 
 === Fonts ===
 
