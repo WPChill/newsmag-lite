@@ -198,7 +198,9 @@ $wp_customize->add_control( new Epsilon_Control_Typography(
 			                            '.entry-content h3',
 			                            '.entry-content h4',
 			                            '.entry-content h5',
-			                            '.entry-content h6'
+			                            '.entry-content h6',
+			                            '.newsmag-blog-post-layout .newsmag-title h3',
+			                            '.newsmag-blog-post-layout .newsmag-title h3 a'
 		                            )
 	                            )
                             )
