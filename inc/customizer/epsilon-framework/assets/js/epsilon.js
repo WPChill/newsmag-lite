@@ -116,7 +116,7 @@
 
 				$.each(self._linkedFonts, function ($id, $target) {
 					$('#' + $id).on('change', function () {
-						if ( $(this).val() === 'Select font' ) {
+						if ( $(this).val() === 'Select font' || $(this).val() === 'default_font' ) {
 							EpsilonFramework.typography._setSelects($(this).val(), $target, true);
 						}
 
@@ -264,12 +264,12 @@
 		 */
 		_number: function (el) {
 			var input = el.find('input');
-			input.on('blur', function(){
+			input.on('blur keypress keyup change', function () {
 				var unit = $(this).siblings('span');
 				if ( $(this).val() > 99 ) {
-					unit.animate({ 'left': 35 });
+					unit.animate({ 'left': 35 }, 0);
 				} else {
-					unit.animate({ 'left': 25 });
+					unit.animate({ 'left': 25 }, 0);
 				}
 			});
 
@@ -289,19 +289,19 @@
 
 			switch ( $(el).attr('data-increment') ) {
 				case 'up':
-					input.val(parseInt(input.val()) + 1).trigger('change');
-					if ( input.val() == 100 ) {
-						unit.animate({ 'left': 35 });
+					if ( input.val() == 99 ) {
+						unit.animate({ 'left': 35 }, 10);
 					}
+					input.val(parseInt(input.val()) + 1).trigger('change');
 					break;
 				case 'down':
 					if ( input.val() == 0 ) {
 						return;
 					}
-					input.val(parseInt(input.val()) - 1).trigger('change');
-					if ( input.val() == 99 ) {
-						unit.animate({ 'left': 25 });
+					if ( input.val() == 100 ) {
+						unit.animate({ 'left': 25 }, 10);
 					}
+					input.val(parseInt(input.val()) - 1).trigger('change');
 					break;
 			}
 		}
