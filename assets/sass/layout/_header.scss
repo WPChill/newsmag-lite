@@ -7,7 +7,7 @@
   padding: 15px;
   @media (min-width: 768px) {
     padding: 15px 15px;
-    &.centered-branding{
+    &.centered-branding {
       line-height: 90px;
     }
     .site-description {
@@ -23,6 +23,50 @@
 
 .header-banner {
   text-align: right;
+
+  .newsmag-adsense {
+    width: 728px;
+    height: 90px;
+    display: block;
+  }
+  .newsmag-adsense:before {
+    display: none !important;
+  }
+  .newsmag-adsense ins {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent;
+  }
+
+  @media screen and (max-width: 991px) {
+    .newsmag-adsense {
+      width: 720px;
+      height: 90px;
+    }
+    .newsmag-adsense:before {
+      content: '991';
+    }
+  }
+
+  .adsense__loading {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .9);
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .adsense--loaded .adsense__loading {
+    display: none;
+  }
+
+  .adsense__loading span {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+  }
 }
 
 .site-title {

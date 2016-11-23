@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
 	Newsmag.initMainSlider($);
 	Newsmag.initLazyLoad($);
 	Newsmag.initStickyMenu($);
+	Newsmag.initAdsenseLoader($);
 });
 
 
@@ -109,7 +110,7 @@ var Newsmag = {
 		$('#search-top-bar-submit').on('click', function (e) {
 			e.preventDefault();
 			var element = $('#search-field-top-bar');
-			if ( element.val().trim() !== '' ){
+			if ( element.val().trim() !== '' ) {
 				element.parents('form').submit();
 				return;
 			}
@@ -132,5 +133,19 @@ var Newsmag = {
 					}, scroll_top_duration
 			);
 		});
+	},
+
+	initAdsenseLoader: function ($) {
+		var selector = $('.newsmag-adsense');
+		if ( selector.length ) {
+
+			// jQuery
+			selector.adsenseLoader(
+					{
+						onLoad: function ($ad) {
+							$ad.addClass('adsense--loaded');
+						}
+					});
+		}
 	}
 };

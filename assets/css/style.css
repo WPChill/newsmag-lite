@@ -3286,6 +3286,37 @@ a {
 
 .header-banner {
   text-align: right; }
+  .header-banner .newsmag-adsense {
+    width: 728px;
+    height: 90px;
+    display: block; }
+  .header-banner .newsmag-adsense:before {
+    display: none !important; }
+  .header-banner .newsmag-adsense ins {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent; }
+  @media screen and (max-width: 991px) {
+    .header-banner .newsmag-adsense {
+      width: 720px;
+      height: 90px; }
+    .header-banner .newsmag-adsense:before {
+      content: '99'; } }
+  .header-banner .adsense__loading {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .header-banner .adsense--loaded .adsense__loading {
+    display: none; }
+  .header-banner .adsense__loading span {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell; }
 
 .site-title {
   font-weight: 700;

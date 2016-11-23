@@ -36,6 +36,11 @@ function newsmag_scripts() {
 	wp_enqueue_script( 'newsmag-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), $newsmag['Version'], true );
 
 	/**
+	 * Adsense loader
+	 */
+	wp_enqueue_script( 'newsmag-adsense-loader', get_template_directory_uri() . '/assets/vendors/adsenseloader/jquery.adsenseloader.js', array('jquery'), $newsmag['Version'], true );
+
+	/**
 	 *Load the theme's core Javascript
 	 */
 	wp_enqueue_script( 'newsmag-functions', get_template_directory_uri() . '/assets/js/functions.js', array(), $newsmag['Version'], true );

@@ -8,5 +8,10 @@ $code = get_theme_mod( 'newsmag_banner_adsense_code', '' );
 if ( empty( $code ) ) {
 	return false;
 }
-
-echo htmlspecialchars_decode( $code );
+?>
+<div class="newsmag-adsense">
+	<?php
+	echo htmlspecialchars_decode( $code );
+	?>
+	<p class="adsense__loading"><span><?php echo __( 'Loading', 'newsmag' ); ?></span></p>
+</div>

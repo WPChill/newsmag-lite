@@ -12,15 +12,6 @@ $wp_customize->add_setting( 'newsmag_banner_type',
 	                            'default'           => 'image'
                             )
 );
-/**
- * After how many posts you want to show the banner
- */
-$wp_customize->add_setting( 'newsmag_show_banner_after',
-                            array(
-	                            'sanitize_callback' => 'absint',
-	                            'default'           => 4
-                            )
-);
 
 /**
  * Display banner on homepage
@@ -63,7 +54,7 @@ $wp_customize->add_setting( 'newsmag_banner_link',
  */
 $wp_customize->add_setting( 'newsmag_banner_adsense_code',
                             array(
-	                            'sanitize_callback' => 'esc_html',
-	                            'default'           => ''
+	                            'default'           => '',
+	                            'sanitize_callback' => 'esc_html'
                             )
 );
