@@ -142,6 +142,24 @@ $wp_customize->add_setting( 'newsmag_enable_go_top',
 	                            'default'           => true
                             )
 );
+$wp_customize->add_setting( 'newsmag_before_footer_fullwidth',
+                            array(
+	                            'sanitize_callback' => array(
+		                            'Newsmag_Customizer_Helper',
+		                            'newsmag_sanitize_checkbox'
+	                            ),
+	                            'default'           => false
+                            )
+);
+$wp_customize->add_setting( 'newsmag_after_footer_fullwidth',
+                            array(
+	                            'sanitize_callback' => array(
+		                            'Newsmag_Customizer_Helper',
+		                            'newsmag_sanitize_checkbox'
+	                            ),
+	                            'default'           => false
+                            )
+);
 /**
  * Blog posts
  */

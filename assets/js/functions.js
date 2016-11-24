@@ -5,6 +5,7 @@ jQuery(document).ready(function ($) {
 	Newsmag.initLazyLoad($);
 	Newsmag.initStickyMenu($);
 	Newsmag.initAdsenseLoader($);
+	Newsmag.initStyleSelects($);
 });
 
 
@@ -147,5 +148,12 @@ var Newsmag = {
 						}
 					});
 		}
+	},
+
+	initStyleSelects: function ($) {
+		var selects = $('select');
+		$.each(selects, function(){
+			$(this).wrap( '<div class="styled-select"></div>' );
+		});
 	}
 };

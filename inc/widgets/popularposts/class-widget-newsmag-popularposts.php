@@ -17,6 +17,9 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 		extract( $args );
 		extract( $instance );
 
+		$number = empty($number) ? 5 : $number;
+		$instance['title'] = empty($instance['title']) ? '' : $instance['title'];
+
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 
 		$r = new WP_Query( array( 'posts_per_page' => $number, 'offset' => 0, 'orderby' => 'comment_count' ) );

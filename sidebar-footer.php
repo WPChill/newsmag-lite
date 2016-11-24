@@ -49,7 +49,7 @@ if ( empty( $sidebars ) ) {
 	$widgets = array( 'WP_Widget_Meta', 'WP_Widget_Recent_Posts', 'WP_Widget_Tag_Cloud', 'WP_Widget_Categories' );
 	$widgets = array_slice( $widgets, 0, $count );
 	?>
-	<div class="footer-widgets-area">
+	<div class="footer-widgets-area regular-footer-area">
 		<div class="container">
 			<div class="row">
 				<?php foreach ( $widgets as $widget ) { ?>
@@ -70,7 +70,7 @@ if ( empty( $sidebars ) ) {
  */
 $sidebars = array_slice( $sidebars, 0, $count );
 ?>
-<div class="footer-widgets-area">
+<div class="footer-widgets-area regular-footer-area">
 	<div class="container">
 		<div class="row">
 			<?php foreach ( $sidebars as $sidebar ): ?>

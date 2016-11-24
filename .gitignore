@@ -1,11 +1,6 @@
 *.log
 
 /css/style.css.map
-.idea/copyright/profiles_settings.xml
-.idea/newsmag-lite.iml
-.idea/watcherTasks.xml
-.idea/deployment.xml
-.idea/modules.xml
-.idea/webServers.xml
-.idea/workspace.xml
-.idea/vcs.xml
+/node_modules/
+.idea/
+/.standard.json

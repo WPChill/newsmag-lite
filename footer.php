@@ -14,7 +14,9 @@
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 
+	<?php //get_sidebar( 'before-footer' ) ?>
 	<?php get_sidebar( 'footer' ) ?>
+	<?php //get_sidebar( 'after-footer' ) ?>
 	<?php $go_top_enabled = get_theme_mod( 'newsmag_enable_go_top', true ); ?>
 
 	<?php if ( $go_top_enabled ): ?>

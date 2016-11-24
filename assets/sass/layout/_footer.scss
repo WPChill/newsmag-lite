@@ -5,16 +5,29 @@
 #colophon {
   border-top: 1px solid #e1e1e1;
   background-color: #fff;
-  margin-top: 50px;
+  .footer-widgets-area {
+    background: #272f32;
+    padding-top: 40px;
+  }
+  .before-footer-area {
+    background: #242b2f;
+    padding-top: 40px;
+  }
+  .regular-footer-area {
+    > .container {
+      border-bottom: 1px solid #2f383c;
+    }
+  }
 }
 
 .site-info {
-  background-color: #f4f4f4;
+  background-color: $color__brand-red;
   padding: 15px 0;
   *, a {
     font-size: 15px;
     line-height: 25px;
     font-family: "Lato";
+    color: #FFF;
   }
 }
 
@@ -83,19 +96,19 @@
 }
 
 .back-to-top {
-  background:#FF3D2E;
-  color:#fff;
-  border:none;
+  background: #FF3D2E;
+  color: #fff;
+  border: none;
 }
 
 .back-to-top:hover {
-  background:#000;
-  color:#fff;
+  background: #000;
+  color: #fff;
 }
 
 .back-to-top span {
-  display:block;
-  line-height:27px;
+  display: block;
+  line-height: 27px;
 }
 
 .back-to-top.back-to-top-is-visible {
@@ -106,7 +119,7 @@
 #back-top-top:active,
 #back-top-top:focus,
 #back-top-top:link {
-  color:#fff;
+  color: #fff;
 }
 
 .site-footer {
@@ -123,7 +136,7 @@
     li {
       display: inline-block;
       margin-right: 15px;
-      a{
+      a {
         &[href*="wordpress.org"],
         &[href*="wordpress.com"] {
           color: #21759b;
@@ -143,7 +156,7 @@
         &[href*="pinterest.com"] {
           color: #c8232c;
         }
-        &[href*="github.com"]{
+        &[href*="github.com"] {
           color: #171515;
         }
         &[href*="tumblr.com"] {
@@ -155,16 +168,16 @@
         &[href*="flickr.com"] {
           color: #ff0084;
         }
-        &[href*="vimeo.com"]{
+        &[href*="vimeo.com"] {
           color: #1AB7EA;
         }
         &[href*="instagram.com"] {
           color: #3f729b;
         }
-        &[href*="codepen.io"]{
+        &[href*="codepen.io"] {
           color: #000;
         }
-        &[href*="linkedin.com"]{
+        &[href*="linkedin.com"] {
           color: #0e76a8;
         }
       }
