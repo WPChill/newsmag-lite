@@ -51,7 +51,7 @@ if ( $show_on_front == 'posts' ):
 			<?php endif; ?>
 
 			<div id="primary"
-			     class="newsmag-content newsmag-archive-page <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-sm-12 col-xs-12">
+			     class="newsmag-content newsmag-archive-page <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top' ?> <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-sm-12 col-xs-12">
 				<main id="main" class="site-main" role="main">
 					<?php
 					if ( have_posts() ) :

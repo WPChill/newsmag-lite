@@ -182,26 +182,6 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
                             )
 );
 
-/**
- *  Breadcrumbs separator
- */
-$wp_customize->add_control(
-	'newsmag_blog_breadcrumb_menu_separator',
-	array(
-		'type'            => 'select',
-		'choices'         => array(
-			'/'         => esc_html( '/' ),
-			'rarr'      => esc_html( '&rarr;' ),
-			'middot'    => esc_html( '&middot;' ),
-			'diez'      => esc_html( '&#35;' ),
-			'ampersand' => esc_html( '&#38;' ),
-		),
-		'label'           => esc_html__( 'Breadcrumbs: Separator', 'newsmag' ),
-		'section'         => 'newsmag_blog_section',
-		'active_callback' => 'breadcrumbs_enabled_callback',
-	)
-);
-
 $wp_customize->add_control( new Epsilon_Control_Typography(
 	                            $wp_customize,
 	                            'newsmag_headings_typography',

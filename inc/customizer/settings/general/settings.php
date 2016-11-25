@@ -61,19 +61,6 @@ $wp_customize->add_setting( 'newsmag_enable_post_breadcrumbs',
 );
 
 /**
- * Breadcrumbs separator
- */
-$wp_customize->add_setting( 'newsmag_blog_breadcrumb_menu_separator',
-                            array(
-	                            'sanitize_callback' => array(
-		                            'Newsmag_Customizer_Helper',
-		                            'newsmag_sanitize_radio_buttons'
-	                            ),
-	                            'default'           => '/'
-                            )
-);
-
-/**
  * Breadcrumb post category
  */
 $wp_customize->add_setting( 'newsmag_blog_breadcrumb_menu_post_category',

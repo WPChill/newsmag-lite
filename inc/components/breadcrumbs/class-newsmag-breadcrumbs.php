@@ -72,7 +72,7 @@ class Newsmag_Breadcrumbs {
 		// Setup default array for changeable variables
 		$defaults = array(
 			'home_prefix'            => get_theme_mod( 'newsmag_blog_breadcrumb_menu_prefix', __( '', 'newsmag' ) ),
-			'separator'              => get_theme_mod( 'newsmag_blog_breadcrumb_menu_separator', '/' ),
+			'separator'              => '/',
 			'show_post_type_archive' => '1',
 			'show_terms'             => get_theme_mod( 'newsmag_blog_breadcrumb_menu_post_category', true ),
 			'home_label'             => esc_html__( 'Home', 'newsmag' ),
@@ -94,18 +94,7 @@ class Newsmag_Breadcrumbs {
 		$this->search_prefix          = $defaults['search_prefix'];
 		$this->error_prefix           = $defaults['error_prefix'];
 
-		$separators = array(
-			'rarr'      => '&rarr;',
-			'middot'    => '&middot;',
-			'diez'      => '&#35;',
-			'ampersand' => '&#38;',
-			'/'         => '/'
-		);
-
 		$this->home_label = __( 'Home ', 'newsmag' );
-		// Set separator
-		$this->separator = $separators[ $this->separator ];
-
 	}
 
 	/**
