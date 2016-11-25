@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NewsMag 2.1.5\n"
 "Report-Msgid-Bugs-To: https://www.machothemes.com/\n"
-"POT-Creation-Date: 2016-11-24 12:39:26+00:00\n"
+"POT-Creation-Date: 2016-11-25 16:47:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:42
+#: footer.php:46
 msgid ""
 "Created by <a href=\"https://www.machothemes.com\" rel=\"dofollow\" "
 "title=\"Professional WordPress Themes\">Macho Themes</a>"
@@ -259,7 +259,7 @@ msgstr ""
 msgid "404 - Page not Found"
 msgstr ""
 
-#: inc/components/breadcrumbs/class-newsmag-breadcrumbs.php:105
+#: inc/components/breadcrumbs/class-newsmag-breadcrumbs.php:97
 msgid "Home "
 msgstr ""
 
@@ -416,200 +416,185 @@ msgid ""
 "higher the number, the more widgets you will be able to place here."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:71
-msgid "Before Footer Full Width"
-msgstr ""
-
 #: inc/customizer/settings/general/controls.php:72
-#: inc/customizer/settings/general/controls.php:83
-msgid ""
-"Toggle the width of the before footer area. Setting this to ON, the sidebar "
-"will be stretched full width."
+msgid "Enable After Footer Section"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:82
-msgid "After Footer Full Width"
-msgstr ""
-
-#: inc/customizer/settings/general/controls.php:97
+#: inc/customizer/settings/general/controls.php:86
 msgid "Copyright Area"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:98
+#: inc/customizer/settings/general/controls.php:87
 msgid ""
 "Toggle the copyright area on or off. By setting it on the off position, you "
 "will not be able to display a copyright message in the footer"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:111
+#: inc/customizer/settings/general/controls.php:100
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:122
+#: inc/customizer/settings/general/controls.php:111
 msgid "Thumbnail in content"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:123
+#: inc/customizer/settings/general/controls.php:112
 msgid ""
 "Set this to ON to display the image in the blog post content. Else it will "
 "be shown in the header"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:134
+#: inc/customizer/settings/general/controls.php:123
 msgid "Posta meta: Author"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:135
+#: inc/customizer/settings/general/controls.php:124
 msgid ""
 "Toggle the display of the author box, at the left side of the post. Will "
 "only display if the author has a description defined."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:147
+#: inc/customizer/settings/general/controls.php:136
 msgid "Post Meta: Tags"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:148
+#: inc/customizer/settings/general/controls.php:137
 msgid "This will disable the tags zone at the end of the post."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:158
+#: inc/customizer/settings/general/controls.php:147
 msgid "Post excerpt length"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:159
+#: inc/customizer/settings/general/controls.php:148
 msgid "Minimum is 10, Maximum is 55, Incremented by 5"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:178
+#: inc/customizer/settings/general/controls.php:167
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:179
+#: inc/customizer/settings/general/controls.php:168
 msgid ""
 "Toggle the display of the breadcrumbs. Affects the whole blog - single "
 "posts as well as the blog archive."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:199
-msgid "Breadcrumbs: Separator"
-msgstr ""
-
-#: inc/customizer/settings/general/controls.php:209
+#: inc/customizer/settings/general/controls.php:178
 msgid "Headings"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:211
-#: inc/customizer/settings/general/controls.php:237
+#: inc/customizer/settings/general/controls.php:180
+#: inc/customizer/settings/general/controls.php:206
 msgid "Note: Current typography controls will only be affecting the blog."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:235
+#: inc/customizer/settings/general/controls.php:204
 msgid "Paragraphs"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:257
+#: inc/customizer/settings/general/controls.php:226
 msgid "News Ticker"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:258
-#: inc/customizer/settings/general/controls.php:312
+#: inc/customizer/settings/general/controls.php:227
+#: inc/customizer/settings/general/controls.php:281
 msgid "Related Posts Carousel"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:259
-#: inc/customizer/settings/general/controls.php:313
+#: inc/customizer/settings/general/controls.php:228
+#: inc/customizer/settings/general/controls.php:282
 msgid "Extra Blog Layouts"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:260
+#: inc/customizer/settings/general/controls.php:229
 msgid "More Slider Widget Controls"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:261
+#: inc/customizer/settings/general/controls.php:230
 msgid "More Banner Ad areas"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:262
+#: inc/customizer/settings/general/controls.php:231
 msgid "Dedicated Support"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:263
+#: inc/customizer/settings/general/controls.php:232
 msgid "Theme Updates for 1 year"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:266
+#: inc/customizer/settings/general/controls.php:235
 msgid ""
 "Get news ticker functionality with the PRO version of Newsmag. Showcase "
 "your most important news in style!"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:267
-#: inc/customizer/settings/general/controls.php:316
+#: inc/customizer/settings/general/controls.php:236
+#: inc/customizer/settings/general/controls.php:285
 msgid ""
 "Control the number of posts, speed, display of title and date on your "
 "related posts carousel."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:268
-#: inc/customizer/settings/general/controls.php:317
+#: inc/customizer/settings/general/controls.php:237
+#: inc/customizer/settings/general/controls.php:286
 msgid ""
 "Multiple blog layouts are available in the PRO version of Newsmag. That "
 "includes: full-width posts and sidebars on the left."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:269
+#: inc/customizer/settings/general/controls.php:238
 msgid "Control the number of posts displayed in the slider widget. "
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:270
+#: inc/customizer/settings/general/controls.php:239
 msgid ""
 "Get in-content banner areas - blend your ads with the posts for a better "
 "click-through rate."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:271
+#: inc/customizer/settings/general/controls.php:240
 msgid "Theme updates and support for 1 year - included with purchase"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:275
-#: inc/customizer/settings/general/controls.php:298
-#: inc/customizer/settings/general/controls.php:322
-#: inc/customizer/settings/general/controls.php:339
-#: inc/customizer/settings/general/controls.php:358
+#: inc/customizer/settings/general/controls.php:244
+#: inc/customizer/settings/general/controls.php:267
+#: inc/customizer/settings/general/controls.php:291
+#: inc/customizer/settings/general/controls.php:308
+#: inc/customizer/settings/general/controls.php:327
 msgid "Get the PRO version!"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:289
+#: inc/customizer/settings/general/controls.php:258
 msgid "Widget Heading Settings"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:290
+#: inc/customizer/settings/general/controls.php:259
 msgid "Widget Paragraph Settings"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:293
+#: inc/customizer/settings/general/controls.php:262
 msgid ""
 "The PRO version of NewsMag offers more typography controls. You will be "
 "able to change the font-sizes, line-heights of the selected fonts. Also, "
 "more font families are included in the PRO version of NewsMag."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:332
+#: inc/customizer/settings/general/controls.php:301
 msgid "Extra Banner Ads"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:335
+#: inc/customizer/settings/general/controls.php:304
 msgid ""
 "The PRO version of Newsmag comes with dedicated banner widgets which you "
 "can place where you want on the homepage."
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:351
+#: inc/customizer/settings/general/controls.php:320
 msgid "More Color Options"
 msgstr ""
 
-#: inc/customizer/settings/general/controls.php:354
+#: inc/customizer/settings/general/controls.php:323
 msgid ""
 "The PRO version of Newsmag allows for a greater degree of customisability. "
 "Get multiple professionally designed color schemes with the purchase of the "
@@ -852,11 +837,11 @@ msgstr ""
 msgid "Displays posts with most comments."
 msgstr ""
 
-#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:78
+#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:81
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:86
+#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:89
 msgid "Number of posts to show:"
 msgstr ""
 

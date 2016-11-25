@@ -282,21 +282,6 @@
     .newsmag-post-box-image, .newsmag-image {
       display: block;
       position: relative;
-      &:before {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 45%;
-        background-color: rgba(41, 41, 41, 0);
-        background-image: -webkit-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-        background-image: -moz-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-        background-image: -o-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-        background-image: -ms-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-        content: '';
-        z-index: 1;
-      }
       .newsmag-post-box-a-category {
         position: absolute;
         bottom: 0;
@@ -399,23 +384,6 @@
     transition: all .2s ease-in;
     position: relative;
     z-index: 0;
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 0;
-      background-image: -webkit-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
-      background-image: -moz-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
-      background-image: -o-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
-      background-image: -ms-linear-gradient(bottom, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
-      background-image: linear-gradient(to top, #e9f0f1, rgba(247, 254, 255, .98) 2%, rgba(247, 254, 255, 0));
-      -webkit-transition: all .2s ease-in;
-      transition: all .2s ease-in;
-      z-index: 1;
-    }
     &:hover {
       border-bottom-color: #D0EDF3;
       .newsmag-post-box-a-category, .newsmag-post-box-category {
@@ -511,23 +479,6 @@
       margin-bottom: 37px;
       .newsmag-image {
         position: relative;
-        a {
-          &:before {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 45%;
-            background-color: rgba(41, 41, 41, 0);
-            background-image: -webkit-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-            background-image: -moz-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-            background-image: -o-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-            background-image: -ms-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-            background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-            content: '';
-            z-index: 1;
-          }
-        }
       }
       .newsmag-post-box-b-category {
         position: absolute;

@@ -80,6 +80,9 @@
         }
 
         /* Add the social links depending on the link href */
+        &::before {
+          content: '\f0c1';
+        }
         &[href*="wordpress.org"]::before,
         &[href*="wordpress.com"]::before {
           content: '\f19a';
@@ -148,6 +151,8 @@
     margin-top: 20px;
     li {
       border: 1px solid #2f383c;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
       border-radius: 3px;
       text-align: center;
       line-height: 33px;

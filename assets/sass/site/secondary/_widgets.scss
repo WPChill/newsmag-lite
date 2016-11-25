@@ -9,6 +9,8 @@
   }
   input {
     height: 35px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
     border-radius: 0;
     padding-left: 10px;
     padding-right: 50px;
@@ -21,9 +23,9 @@
   .search-form::before {
     position: absolute;
     z-index: 0;
-    font-size: 18px;
+    font-size: 14px;
     right: 15px;
-    top: 2px;
+    top: 7px;
     content: '\f002';
     color: $color__brand-red;
     display: block;
@@ -333,6 +335,8 @@
         display: inline-block;
         margin: 0 7px 9px 0;
         font-size: 14px !important;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
         border-radius: 3px;
         color: #767676;
         &:hover, &:focus {
@@ -500,6 +504,8 @@
         background: transparent;
         &#cat {
           padding: 5px;
+          -webkit-border-radius: 0;
+          -moz-border-radius: 0;
           border-radius: 0;
         }
       }
@@ -622,6 +628,8 @@
   */
   &.widget_calendar {
     border: 1px solid #e1e1e1;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     border-radius: 3px;
     padding: 5px;
     position: relative;
@@ -910,6 +918,8 @@
         cursor: pointer;
         z-index: 1;
         &#cat {
+          -webkit-border-radius: 0;
+          -moz-border-radius: 0;
           border-radius: 0;
           padding: 5px;
         }

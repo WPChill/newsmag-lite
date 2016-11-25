@@ -51,6 +51,8 @@
   right: 10px;
   color: $color__brand-red;
   border: 1px solid $color__brand-red;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
   border-radius: 0;
   font-size: 23px;
   text-align: center;
