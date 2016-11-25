@@ -10,7 +10,7 @@ class Newsmag_Lazy_Load_Images {
 
 	function enqueue_lazyload() {
 		// Make sure to load in the lazy load script
-		wp_enqueue_script( 'jquery_lazy_load', get_stylesheet_directory_uri() . '/assets/vendors/lazyload/jquery.lazyload.min.js', array( 'jquery' ), '1.9.1' );
+		wp_enqueue_script( 'jquery_lazy_load', get_template_directory_uri() . '/assets/vendors/lazyload/jquery.lazyload.min.js', array( 'jquery' ), '1.9.1' );
 	}
 
 	function filter_lazyload( $content ) {
@@ -24,7 +24,7 @@ class Newsmag_Lazy_Load_Images {
 
 	function preg_replace_callback( $matches ) {
 		// Step 1: Replace our source attribute with a placeholder, and add a "data-original" attribute with our image source
-		$img_replace = $matches[1] . 'src="' . get_stylesheet_directory_uri() . '/assets/images/grey.gif" data-original' . substr( $matches[2], 3 ) . $matches[3];
+		$img_replace = $matches[1] . 'src="' . get_template_directory_uri() . '/assets/images/grey.gif" data-original' . substr( $matches[2], 3 ) . $matches[3];
 		// Step 2: Add the class "lazy" to the image
 		$img_replace = preg_replace( '/class\s*=\s*"/i', 'class="lazy ', $img_replace );
 		// Step 3: Add a noscript tag as a fallback

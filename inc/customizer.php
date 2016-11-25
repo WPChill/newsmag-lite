@@ -52,7 +52,7 @@ function newsmag_customizer_enqueue_scripts() {
 		'theme'   => get_template_directory_uri(),
 		'ajaxurl' => admin_url( 'admin-ajax.php' )
 	) );
-	wp_enqueue_script( 'customizer-scripts', get_stylesheet_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/customizer.js', array( 'customize-controls' ) );
+	wp_enqueue_script( 'customizer-scripts', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/js/customizer.js', array( 'customize-controls' ) );
 	wp_enqueue_style( 'epsilon-styles', get_template_directory_uri() . '/inc/customizer/epsilon-framework/assets/css/style.css' );
 }
 
