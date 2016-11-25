@@ -63,24 +63,13 @@ $wp_customize->add_control(
 		'section'     => 'newsmag_footer_section',
 	)
 );
+
 $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
-	                            'newsmag_before_footer_fullwidth',
+	                            'newsmag_after_footer_enable',
 	                            array(
 		                            'type'        => 'mte-toggle',
-		                            'label'       => esc_html__( 'Before Footer Full Width', 'newsmag' ),
-		                            'description' => esc_html__( 'Toggle the width of the before footer area. Setting this to ON, the sidebar will be stretched full width.', 'newsmag' ),
-		                            'section'     => 'newsmag_footer_section',
-	                            )
-                            )
-);
-$wp_customize->add_control( new Epsilon_Control_Toggle(
-	                            $wp_customize,
-	                            'newsmag_after_footer_fullwidth',
-	                            array(
-		                            'type'        => 'mte-toggle',
-		                            'label'       => esc_html__( 'After Footer Full Width', 'newsmag' ),
-		                            'description' => esc_html__( 'Toggle the width of the before footer area. Setting this to ON, the sidebar will be stretched full width.', 'newsmag' ),
+		                            'label'       => esc_html__( 'Enable After Footer Section', 'newsmag' ),
 		                            'section'     => 'newsmag_footer_section',
 	                            )
                             )

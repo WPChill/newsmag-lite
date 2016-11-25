@@ -10,7 +10,7 @@
 }
 
 /* The social links are actually a menu */
-#menu-social {
+#menu-social, #menu-social-footer {
   ul {
     list-style: none;
     margin: 0;
@@ -140,4 +140,24 @@
 
 #site-navigation.toggled #menu-social ul li {
   width: initial;
+}
+
+#menu-social-footer {
+  ul {
+    padding-left: 0;
+    margin-top: 20px;
+    li {
+      border: 1px solid #2f383c;
+      border-radius: 3px;
+      text-align: center;
+      line-height: 33px;
+      margin: 5px;
+      width: 33px;
+      height: 33px;
+      a {
+        font-size: 12px;
+        padding: 0;
+      }
+    }
+  }
 }

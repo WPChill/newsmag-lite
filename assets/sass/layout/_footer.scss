@@ -13,6 +13,17 @@
     background: #242b2f;
     padding-top: 40px;
   }
+  .after-footer-area {
+    background: #272f32;
+    padding-top: 40px;
+    padding-bottom: 55px;
+    .site-title {
+      color: #FFF;
+      &:hover, &:focus, &:active {
+        color: $color__brand-red;
+      }
+    }
+  }
   .regular-footer-area {
     > .container {
       border-bottom: 1px solid #2f383c;
