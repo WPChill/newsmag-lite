@@ -502,6 +502,10 @@
         margin-bottom: 0;
         border-color: #e1e1e1;
         background: transparent;
+        -webkit-appearance: none;
+        &:focus {
+          outline-color: transparent;
+        }
         &#cat {
           padding: 5px;
           -webkit-border-radius: 0;
@@ -917,6 +921,10 @@
         max-width: 106%;
         cursor: pointer;
         z-index: 1;
+        -webkit-appearance: none;
+        &:focus {
+          outline-color: transparent;
+        }
         &#cat {
           -webkit-border-radius: 0;
           -moz-border-radius: 0;
@@ -1040,7 +1048,7 @@
     &.popular-posts {
       .posts-list {
         li {
-          border-color:#2f383c;
+          border-color: #2f383c;
           .content {
             a {
               color: #FFF;

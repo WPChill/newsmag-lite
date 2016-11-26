@@ -50,7 +50,9 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 								} else {
 									the_ID();
 								} ?></a>
-
+							<div class="meta">
+								<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+							</div>
 						</div>
 
 					</li>

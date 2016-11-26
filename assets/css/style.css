@@ -1345,7 +1345,10 @@ a {
       max-width: 106%;
       margin-bottom: 0;
       border-color: #e1e1e1;
-      background: transparent; }
+      background: transparent;
+      -webkit-appearance: none; }
+      .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories .styled-select select:focus, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_archive .styled-select select:focus, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_meta .styled-select select:focus, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_pages .styled-select select:focus {
+        outline-color: transparent; }
       .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories .styled-select select#cat, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_archive .styled-select select#cat, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_meta .styled-select select#cat, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_pages .styled-select select#cat {
         padding: 5px;
         -webkit-border-radius: 0;
@@ -1645,7 +1648,10 @@ a {
     width: 106%;
     max-width: 106%;
     cursor: pointer;
-    z-index: 1; }
+    z-index: 1;
+    -webkit-appearance: none; }
+    .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories > select:focus, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories .styled-select > select:focus, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_archive > select:focus, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_archive .styled-select > select:focus, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_meta > select:focus, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_meta .styled-select > select:focus, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_pages > select:focus, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_pages .styled-select > select:focus {
+      outline-color: transparent; }
     .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories > select#cat, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories .styled-select > select#cat, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_archive > select#cat, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_archive .styled-select > select#cat, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_meta > select#cat, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_meta .styled-select > select#cat, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_pages > select#cat, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_pages .styled-select > select#cat {
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
