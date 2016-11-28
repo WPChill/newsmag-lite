@@ -396,3 +396,20 @@
 .main-navigation {
   height: 48px;
 }
+
+.copyright-menu {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  li {
+    display: inline-block;
+    text-align: right;
+    margin-left: 12px;
+    a {
+      color: #FFF;
+      &:hover, &:focus, &:active {
+        color: $color__text-main;
+      }
+    }
+  }
+}

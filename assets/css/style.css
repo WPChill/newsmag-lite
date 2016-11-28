@@ -691,6 +691,19 @@ a {
 .main-navigation {
   height: 48px; }
 
+.copyright-menu {
+  padding: 0;
+  margin: 0;
+  list-style-type: none; }
+  .copyright-menu li {
+    display: inline-block;
+    text-align: right;
+    margin-left: 12px; }
+    .copyright-menu li a {
+      color: #FFF; }
+      .copyright-menu li a:hover, .copyright-menu li a:focus, .copyright-menu li a:active {
+        color: #333; }
+
 /*--------------------------------------------------------------
 ## Top Header Menu
 --------------------------------------------------------------*/
@@ -3577,7 +3590,7 @@ a {
   transition: opacity .3s 0s, visibility 0s .3s;
   line-height: 25px;
   z-index: 100;
-  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15); }
 

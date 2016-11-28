@@ -31,20 +31,35 @@
 
 	<?php
 	$copyright_area = get_theme_mod( 'newsmag_enable_copyright', true );
+	$copyright_menu = has_nav_menu( 'copyright' );
 	?>
 	<div class="site-info">
 		<div class="container">
 			<div class="row">
-				<?php if ( $copyright_area ): ?>
-					<div class="col-lg-9 col-sm-8">
+				<div class="<?php echo $copyright_menu ? 'col-lg-7 col-sm-8' : 'col-sm-12'; ?>">
+					<?php if ( $copyright_area ): ?>
 						<?php
 						echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://www.machothemes.com/newsmag-lite/">Newsmag</a>. All rights reserved.' ) );
 						?>
-					</div>
-				<?php endif; ?>
-				<div class="<?php echo $copyright_area ? 'col-lg-3 col-sm-4' : 'col-md-12' ?> text-right">
+
+					<span class="sep">|</span>
+					<?php endif; ?>
 					<?php echo __( 'Created by <a href="https://www.machothemes.com" rel="dofollow" title="Professional WordPress Themes">Macho Themes</a>', 'newsmag' ) ?>
 				</div>
+
+				<?php
+				if ( has_nav_menu( 'copyright' ) ) {
+					?>
+					<div class="col-lg-5 col-sm-4 text-right">
+						<?php
+						wp_nav_menu( array(
+							             'theme_location' => 'copyright',
+							             'menu_id'        => 'copyright-menu',
+							             'items_wrap'     => '<ul id="%1$s" class="copyright-menu %2$s">%3$s</ul>'
+						             ) );
+						?>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
