@@ -209,7 +209,7 @@
     line-height: 48px;
     margin-right: 0;
 
-    a{
+    a {
       line-height: initial;
       padding-top: 0;
       padding-bottom: 0;
@@ -229,11 +229,23 @@
     position: relative;
     color: #FFF;
     display: inline-block;
-    border-bottom: 2px solid transparent;
     font-family: 'Poppins';
     font-size: 14px;
     text-transform: uppercase;
     text-shadow: 0 1px rgba(0, 0, 0, .3);
+    &:after {
+      content: '';
+      background: $color__text-main;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      width: 0;
+      -webkit-transition: all .1s linear;
+      transition: all .1s linear;
+      height: 2px;
+      margin: 0 auto;
+    }
   }
 
   .nav-menu {
@@ -258,7 +270,11 @@
         &:focus {
           > a {
             color: #fff;
-            border-bottom-color: $color__text-main;
+            &:after {
+              width: 100%;
+              -webkit-transition: all .1s linear;
+              transition: all .1s linear;
+            }
           }
         }
       }
@@ -354,7 +370,7 @@
               text-shadow: none;
               &:hover, &:focus {
                 outline: none;
-                color:$color__brand-red;
+                color: $color__brand-red;
               }
             }
             &:last-of-type {

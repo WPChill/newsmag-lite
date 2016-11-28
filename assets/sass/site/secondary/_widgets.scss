@@ -103,21 +103,6 @@
           display: inline-block;
           float: left;
           position: relative;
-          &:before {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 45%;
-            background-color: rgba(41, 41, 41, 0);
-            background-image: -webkit-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-            background-image: -moz-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-            background-image: -o-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-            background-image: -ms-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
-            background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-            content: '';
-            z-index: 1;
-          }
         }
         .content {
           display: inline-block;
@@ -501,6 +486,7 @@
         max-width: 106%;
         margin-bottom: 0;
         border-color: #e1e1e1;
+        cursor: pointer;
         background: transparent;
         -webkit-appearance: none;
         &:focus {
@@ -522,6 +508,7 @@
         right: 15px;
         font-family: 'FontAwesome';
         font-size: 20px;
+        cursor: pointer;
       }
     }
     > ul {

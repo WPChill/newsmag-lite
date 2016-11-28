@@ -12,10 +12,10 @@ $count = $this->count_actions();
 		<p><?php esc_html_e( 'We\'ve compiled a list of steps for you, to take make sure the experience you\'ll have using one of our products is very easy to follow.', 'newsmag' ); ?></p>
 		<?php if ( $count == 0 ) { ?>
 			<p><span class="dashicons dashicons-yes"></span>
-				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'No recommended actions left to perform.', 'newsmag' ); ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'No recommended actions left to perform', 'newsmag' ); ?></a>
 			</p>
 		<?php } else { ?>
-			<p><span class="dashicons dashicons-no-alt"></span> <a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'Check recommended actions.', 'newsmag' ); ?></a>
+			<p><span class="dashicons dashicons-no-alt"></span> <a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'Check recommended actions', 'newsmag' ); ?></a>
 			</p> <?php
 		}; ?>
 	</div><!--/.col-->
