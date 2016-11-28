@@ -18,7 +18,7 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 		extract( $instance );
 
 		$number = empty($number) ? 5 : $number;
-		$instance['title'] = empty($instance['title']) ? '' : $instance['title'];
+		$instance['title'] = empty($instance['title']) ? __('Popular posts', 'newsmag') : $instance['title'];
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 
@@ -31,7 +31,6 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 
 			<ul class="posts-list">
 				<?php while ( $r->have_posts() ) : $r->the_post();
-					global $post;
 					$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url_raw( get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg' ) . '" />';
 					if ( has_post_thumbnail() ) {
 						$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
