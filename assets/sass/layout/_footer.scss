@@ -63,6 +63,9 @@
   transition: opacity .3s 0s, visibility 0s .3s;
   line-height: 25px;
   z-index: 100;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
 }
 
 .back-to-top.back-to-top-is-visible, .back-to-top.back-to-top-fade-out, .no-touch .back-to-top:hover {

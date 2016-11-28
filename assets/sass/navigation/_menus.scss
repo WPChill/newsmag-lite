@@ -27,8 +27,13 @@
 
       li {
         &:hover > ul,
-        &.focus > ul {
+        &.focus > ul,
+        &:focus > ul {
           left: 100%;
+          &.right-edge {
+            left: 50%;
+            top: 100%;
+          }
         }
       }
 
@@ -37,16 +42,19 @@
       }
 
       :hover > a,
-      .focus > a {
+      .focus > a,
+      :focus > a {
       }
 
       a:hover,
-      a.focus {
+      a.focus,
+      a:focus {
       }
     }
 
     li:hover > ul,
-    li.focus > ul {
+    li.focus > ul,
+    &:focus > ul {
       left: auto;
     }
   }
@@ -383,4 +391,8 @@
       }
     }
   }
+}
+
+.main-navigation {
+  height: 48px;
 }

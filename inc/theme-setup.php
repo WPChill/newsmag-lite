@@ -57,8 +57,9 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			                    'primary' => esc_html__( 'Primary', 'newsmag' ),
-			                    'social'  => esc_html__( 'Social', 'newsmag' ),
+			                    'primary'   => esc_html__( 'Primary', 'newsmag' ),
+			                    'social'    => esc_html__( 'Social', 'newsmag' ),
+			                    'copyright' => esc_html__( 'Copyright', 'newsmag' )
 		                    ) );
 
 		/*

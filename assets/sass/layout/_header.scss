@@ -115,7 +115,10 @@
     left: 0;
     right: 0;
     height: 0;
-    background: #2c2c2c;
+    background: transparentize(#000, .2);
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, .35);
+    -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, .35);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .35);
     z-index: 2;
     -webkit-transition: all .2s linear;
     transition: all .2s linear;
@@ -134,26 +137,26 @@
     #searchform_topbar {
       ::-webkit-input-placeholder {
         color: #FFF;
-        opacity: 1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+        opacity: .8;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"
       }
 
       :-moz-placeholder {
         color: #FFF;
-        opacity: 1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+        opacity: .8;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"
       }
 
       ::-moz-placeholder {
         color: #FFF;
-        opacity: 1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+        opacity: .8;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"
       }
 
       :-ms-input-placeholder {
         color: #FFF;
-        opacity: 1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+        opacity: .8;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"
       }
       position: relative;
       label {
@@ -167,8 +170,9 @@
         margin-top: 20px;
         background: transparent;
         border: none;
-        border-left: 1px solid #565656;
         padding-left: 10px;
+        padding-top: 0;
+        padding-bottom: 0;
         font-size: 23px;
         color: #FFF;
         font-weight: 400;
