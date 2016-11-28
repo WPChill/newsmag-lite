@@ -91,28 +91,20 @@ module.exports = function (grunt) {
 		},
 
 		uglify: {
-			options         : {
-				sourceMap: true,
-				compress : true,
-			},
-			dynamic_mappings: {
-				files: [
-					{
-						expand: true,     // Enable dynamic expansion.
-						cwd   : 'layout/js/',      // Src matches are relative to this path.
-						src   : [ '**/*.js' ], // Actual pattern(s) to match.
-						dest  : 'layout/js/',   // Destination path prefix.
-						ext   : '.min.js',   // Dest filepaths will have this extension.
-						extDot: 'first'   // Extensions in filenames begin after the first dot
-					},
-				],
-			},
+			all_src: {
+				options: {
+					sourceMap    : false,
+					sourceMapName: 'sourceMap.map'
+				},
+				src    : 'assets/vendors/machothemes/**/*.js',
+				dest   : 'assets/vendors/machothemes/app.min.js'
+			}
 		},
 
 		checktextdomain: {
 			standard: {
 				options: {
-					text_domain       : [ 'newsmag-pro' ], //Specify allowed domain(s)
+					text_domain       : [ 'newsmag' ], //Specify allowed domain(s)
 					create_report_file: "true",
 					keywords          : [ //List keyword specifications
 						'__:1,2d',
