@@ -81,7 +81,7 @@
 		     role="navigation">
 			<div class="container">
 				<div class="row">
-					<div class="<?php echo $enable_search ? 'col-md-9' : 'col-md-12' ?>">
+					<div class="col-md-12">
 						<?php if ( $enable_sticky && ! empty( $image[0] ) ): ?>
 							<div class="stick-menu-logo hidden-xs hidden-sm">
 								<a href="<?php echo esc_url_raw( get_home_url() ) ?>"><img
@@ -93,34 +93,39 @@
 						<?php wp_nav_menu( array(
 							                   'theme_location' => 'primary',
 							                   'menu_id'        => 'primary-menu',
-							                   'items_wrap'     => '<ul id="%1$s" class="menu %2$s">%3$s</ul>'
+							                   'items_wrap'     => '<ul id="%1$s" class="menu nav-menu %2$s">%3$s</ul>'
 						                   ) ); ?>
+						<?php if ( $enable_search ): ?>
+							<button href="#" class="search-form-opener" type="button"><span class="fa fa-search"></span>
+							</button>
+						<?php endif; ?>
 					</div>
-
-					<?php if ( $enable_search ): ?>
-						<?php $search_query = get_search_query(); ?>
-						<div class="col-md-3 hidden-xs">
-							<div class="top-header-icons pull-right">
-								<!-- Search Form -->
-								<form role="search" method="get" id="searchform_topbar"
-								      action="<?php echo esc_url_raw( home_url( '/' ) ); ?>">
-									<label>
-										<span
-											class="screen-reader-text"><?php echo __( 'Search for:', 'newsmag' ) ?></span>
-										<input class="search-field-top-bar <?php echo $search_query === '' ? '' : 'opened'; ?>" id="search-field-top-bar"
-										       placeholder="<?php echo __( 'Search ...', 'newsmag' ) ?>"
-										       value="<?php echo esc_attr($search_query); ?>" name="s"
-										       type="search">
-									</label>
-									<button id="search-top-bar-submit" type="button" class="search-top-bar-submit  <?php echo $search_query === '' ? '' : 'input-open'; ?>"><span
-											class="fa fa-search"></span></button>
-								</form>
-							</div>
-						</div>
-					<?php endif; ?>
 				</div>
 			</div>
 		</nav><!-- #site-navigation -->
+		<?php if ( $enable_search ): ?>
+			<?php $search_query = get_search_query(); ?>
+			<div class="header-search-form hidden-xs">
+				<div class="container">
+					<!-- Search Form -->
+					<form role="search" method="get" id="searchform_topbar"
+					      action="<?php echo esc_url_raw( home_url( '/' ) ); ?>">
+						<label><span class="screen-reader-text"><?php echo __( 'Search for:', 'newsmag' ) ?></span>
+							<input
+								class="search-field-top-bar <?php echo $search_query === '' ? '' : 'opened'; ?>"
+								id="search-field-top-bar"
+								placeholder="<?php echo __( 'Type the search term', 'newsmag' ) ?>"
+								value="<?php echo esc_attr( $search_query ); ?>" name="s"
+								type="search">
+						</label>
+						<button id="search-top-bar-submit" type="button"
+						        class="search-top-bar-submit <?php echo $search_query === '' ? '' : 'submit-button'; ?>"><span
+								class="first-bar"></span><span
+								class="second-bar"></span></button>
+					</form>
+				</div>
+			</div>
+		<?php endif; ?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

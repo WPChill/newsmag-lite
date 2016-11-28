@@ -92,7 +92,7 @@
   }
 }
 
-#site-navigation.toggled ul {
+.main-navigation.toggled ul {
   display: inline-block;
   width: 100%;
   background: $color__brand-red;
@@ -197,7 +197,7 @@
 }
 
 /* Newsmag Menu Customization starts here */
-#site-navigation {
+.main-navigation {
   background: $color__brand-red;
   &.stick-menu {
     z-index: 99999 !important;

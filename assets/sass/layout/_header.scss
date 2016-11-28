@@ -79,3 +79,145 @@
   font-size: 40px;
   color: #333;
 }
+
+.search-form-opener {
+  position: absolute;
+  right: 15px;
+  top: 3px;
+  border: none;
+  padding-left: 2px;
+  padding-right: 2px;
+  &:hover, &:focus, &:active {
+    background: transparent;
+    border: none;
+  }
+}
+
+.site-header {
+  position: relative;
+  .search-form-opener {
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    visibility: visible;
+    &.hide {
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear;
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      visibility: hidden;
+    }
+  }
+  .header-search-form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: #2c2c2c;
+    z-index: 2;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    visibility: hidden;
+    &.opened {
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      visibility: visible;
+      bottom: -78px;
+      height: 78px;
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear;
+    }
+    #searchform_topbar {
+      ::-webkit-input-placeholder {
+        color: #FFF;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+      }
+
+      :-moz-placeholder {
+        color: #FFF;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+      }
+
+      ::-moz-placeholder {
+        color: #FFF;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+      }
+
+      :-ms-input-placeholder {
+        color: #FFF;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+      }
+      position: relative;
+      label {
+        margin-bottom: 0;
+        bottom: -4px;
+        position: relative;
+        font-weight: 400;
+        width: 97%;
+      }
+      #search-field-top-bar {
+        margin-top: 20px;
+        background: transparent;
+        border: none;
+        border-left: 1px solid #565656;
+        padding-left: 10px;
+        font-size: 23px;
+        color: #FFF;
+        font-weight: 400;
+        height: 32px;
+        width: 100%;
+        &.opened {
+
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .search-top-bar-submit {
+        background: transparent;
+        color: #FFF;
+        font-size: 17px;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        position: absolute;
+        padding: 0;
+        top: 28px;
+        right: 0;
+        vertical-align: middle;
+        width: 23px;
+        height: 23px;
+        &:hover, &.input-open {
+          color: darken(#FFF, 5%);
+        }
+
+        .first-bar, .second-bar {
+          width: 2px;
+          height: 22px;
+          background: #FFF;
+          display: block;
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 10px;
+        }
+
+        .first-bar {
+          @include transform(rotate(-45deg));
+        }
+
+        .second-bar {
+          @include transform(rotate(45deg));
+        }
+      }
+    }
+  }
+}

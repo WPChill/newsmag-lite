@@ -13,12 +13,23 @@ var Newsmag = {
 	initStickyMenu: function ($) {
 		var selector = $('.stick-menu'),
 				container = selector.find('.stick-menu-logo'),
-				img = container.find('img');
+				img = container.find('img'),
+				lists = selector.find('.nav-menu > li'),
+				width = 0,
+				maxWidth = container.parents('.container').outerWidth() - 200;
+
+		$.each(lists, function(){
+			width += $(this).outerWidth();
+		});
 
 		if ( selector.length ) {
 			var window_w = jQuery(window).width();
 			if ( window_w > 768 ) {
 				selector.sticky();
+
+				if(width >= maxWidth){
+					return false;
+				}
 
 				selector.on('sticky-start', function () {
 					img.animate({ width: '100%' });
@@ -108,16 +119,40 @@ var Newsmag = {
 	},
 
 	initSearchForm: function ($) {
-		$('#search-top-bar-submit').on('click', function (e) {
+		var element = $('.header-search-form'),
+				input = $('#search-field-top-bar'),
+				inputSubmit = $('#search-top-bar-submit'),
+				trigger = $('.search-form-opener');
+
+		trigger.on('click', function (e) {
 			e.preventDefault();
-			var element = $('#search-field-top-bar');
-			if ( element.val().trim() !== '' ) {
-				element.parents('form').submit();
-				return;
-			}
+			trigger.toggleClass('hide');
 			element.toggleClass('opened');
-			element.parent().siblings('button').toggleClass('input-open');
+			if ( input.val() !== '' ) {
+				inputSubmit.addClass('submit-button').removeClass('close-button');
+				inputSubmit.html('<span class="fa fa-search"></span>');
+			}
 		});
+
+		input.on('keyup', function () {
+			if ( $(this).val() !== '' ) {
+				inputSubmit.addClass('submit-button').removeClass('close-button');
+				inputSubmit.html('<span class="fa fa-search"></span>');
+			} else {
+				inputSubmit.addClass('close-button').removeClass('submit-button');
+				inputSubmit.html('<span class="first-bar"></span><span class="second-bar"></span>');
+			}
+		});
+
+		inputSubmit.on('click', function () {
+			if ( $(this).hasClass('submit-button') ) {
+				$(this).parent().submit();
+			} else {
+				trigger.toggleClass('hide');
+				element.toggleClass('opened');
+			}
+		});
+
 	},
 
 	initGoToTop: function ($) {
@@ -152,8 +187,8 @@ var Newsmag = {
 
 	initStyleSelects: function ($) {
 		var selects = $('select');
-		$.each(selects, function(){
-			$(this).wrap( '<div class="styled-select"></div>' );
+		$.each(selects, function () {
+			$(this).wrap('<div class="styled-select"></div>');
 		});
 	}
 };
