@@ -9,12 +9,12 @@ module.exports = function (grunt) {
 		makepot      : {
 			target: {
 				options: {
-					domainPath     : '/languages/',    // Where to save the POT file.
-					potFilename    : '<%= pkg.name %>.pot',   // Name of the POT file.
+					domainPath     : '/languages/',
+					potFilename    : '<%= pkg.name %>.pot',
 					potHeaders     : {
-						poedit                 : true,                 // Includes common Poedit headers.
-						'x-poedit-keywordslist': true // Include a list of all possible gettext functions.
-					},                                // Headers to add to the generated POT file.
+						poedit                 : true,
+						'x-poedit-keywordslist': true
+					},
 					processPot     : function (pot, options) {
 						pot.headers[ 'report-msgid-bugs-to' ] = 'https://www.machothemes.com/';
 						pot.headers[ 'language-team' ] = 'Macho Themes <office@machothemes.com>';
@@ -22,11 +22,11 @@ module.exports = function (grunt) {
 						pot.headers[ 'language-team' ] = 'Macho Themes <office@machothemes.com>';
 						return pot;
 					},
-					updateTimestamp: true,             // Whether the POT-Creation-Date should be updated without other changes.
-					type           : 'wp-theme',  // Type of project (wp-plugin or wp-theme).
+					updateTimestamp: true,
+					type           : 'wp-theme'
 
 				}
-			},
+			}
 		},
 		addtextdomain: {
 			target: {
@@ -37,7 +37,7 @@ module.exports = function (grunt) {
 				files  : {
 					src: [
 						'*.php',
-						'!node_modules/**',
+						'!node_modules/**'
 					]
 				}
 			}
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
 		compress: {
 			build: {
 				options: {
-					pretty : true,                           // Pretty print file sizes when logging.
+					pretty : true,
 					archive: 'build/<%= pkg.name %>.zip'
 				},
 				expand : true,
@@ -91,13 +91,13 @@ module.exports = function (grunt) {
 		},
 
 		uglify: {
-			all_src: {
+			macho: {
 				options: {
 					sourceMap    : false,
 					sourceMapName: 'sourceMap.map'
 				},
-				src    : 'assets/vendors/machothemes/**/*.js',
-				dest   : 'assets/vendors/machothemes/app.min.js'
+				src    : [ 'assets/vendors/machothemes/**/*.js', '!assets/vendors/machothemes/machothemes.min.js' ],
+				dest   : 'assets/vendors/machothemes/machothemes.min.js'
 			}
 		},
 
@@ -129,8 +129,8 @@ module.exports = function (grunt) {
 						'!**/node_modules/**',
 						'!**/framework/**'
 					], //all php
-					expand: true,
-				} ],
+					expand: true
+				} ]
 			}
 		},
 
@@ -138,19 +138,19 @@ module.exports = function (grunt) {
 			jpg    : {
 				options: {
 					progressive: true
-				},
+				}
 			},
 			png    : {
 				options: {
 					optimizationLevel: 7
-				},
+				}
 			},
 			dynamic: {
 				files: [ {
 					expand: true,
-					cwd   : 'layout/images/',
+					cwd   : 'assets/images/',
 					src   : [ '**/*.{png,jpg,gif}' ],
-					dest  : 'layout/images/'
+					dest  : 'assets/images/'
 				} ]
 			}
 		},
@@ -159,15 +159,46 @@ module.exports = function (grunt) {
 			target: {
 				files: [ {
 					expand: true,
-					cwd   : 'layout/css',
+					cwd   : 'assets/css',
 					src   : [ '*.css', '!*.min.css' ],
-					dest  : 'layout/css',
+					dest  : 'assets/css',
 					ext   : '.min.css'
 				} ]
 			}
 		}
 
 
+	});
+
+	grunt.config('watch', {
+		js: {
+			files  : 'assets/vendors/machothemes/**/*.js',
+			tasks  : [ 'uglify' ],
+			options: {
+				spawn: false
+			}
+		}
+	});
+	grunt.event.on('watch', function (action, filepath) {
+		// Determine task based on filepath
+		var get_ext = function (path) {
+			var ret = '';
+			var i = path.lastIndexOf('.');
+			if ( -1 !== i && i <= path.length ) {
+				ret = path.substr(i + 1);
+			}
+			return ret;
+		};
+		switch ( get_ext(filepath) ) {
+				// PHP
+			case 'php' :
+				grunt.config('paths.php.files', [ filepath ]);
+				break;
+				// JavaScript
+			case 'js' :
+				grunt.config('paths.js.files', [ filepath ]);
+				break;
+		}
 	});
 
 	grunt.registerTask('default', []);
@@ -214,4 +245,6 @@ module.exports = function (grunt) {
 		'compress:build',
 		'clean:build'
 	]);
+
+	grunt.registerTask('watch_all', [ 'watch:js' ]);
 };

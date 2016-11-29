@@ -3,20 +3,18 @@ if ( typeof(MachoThemes) === 'undefined' ) {
 }
 
 MachoThemes.init = function ($) {
-	var object = {
-		gotop        : 'initGoToTop',
-		searchform   : 'initSearchForm',
-		mainslider   : 'initMainSlider',
-		lazyload     : 'initLazyLoad',
-		stickymenu   : 'initStickyMenu',
-		adsenseloader: 'initAdsenseLoader',
-		styleselects : 'initStyleSelects',
-		offscreen    : 'initOffscreen',
-		newsticker   : 'initNewsTicker',
-		owlcarousel  : 'initOwlCarousel'
-	};
+	function getOwnMethods(obj) {
+		var props = Object.getOwnPropertyNames(obj);
+		return props.filter(function (prop) {
+			return obj[ prop ] && obj[ prop ].constructor &&
+					obj[ prop ].call && obj[ prop ].apply;
+		});
+	}
 
-	$.each(object, function () {
+	var methods = getOwnMethods(MachoThemes);
+	methods.pop();
+
+	$.each(methods, function () {
 		var init = this;
 		if ( typeof(MachoThemes[ init ]) === 'function' ) {
 			MachoThemes[ init ]($);

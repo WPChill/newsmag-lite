@@ -36,5 +36,4 @@ MachoThemes.initSearchForm = function ($) {
 			element.toggleClass('opened');
 		}
 	});
-
 };

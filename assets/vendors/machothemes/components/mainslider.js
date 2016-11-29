@@ -4,7 +4,7 @@ if ( typeof(MachoThemes) === 'undefined' ) {
 
 MachoThemes.initMainSlider = function ($) {
 	if ( $('.newsmag-slider').length ) {
-		owl = $('.newsmag-slider');
+		var owl = $('.newsmag-slider');
 
 		owl.on('initialized.owl.carousel', function () {
 			$('.owl-nav-list').addClass('active');

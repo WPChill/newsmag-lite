@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NewsMag 2.1.5\n"
 "Report-Msgid-Bugs-To: https://www.machothemes.com/\n"
-"POT-Creation-Date: 2016-11-25 16:47:15+00:00\n"
+"POT-Creation-Date: 2016-11-29 12:50:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,18 +68,18 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:46
+#: footer.php:47
 msgid ""
 "Created by <a href=\"https://www.machothemes.com\" rel=\"dofollow\" "
 "title=\"Professional WordPress Themes\">Macho Themes</a>"
 msgstr ""
 
-#: header.php:109
+#: header.php:113
 msgid "Search for:"
 msgstr ""
 
-#: header.php:111
-msgid "Search ..."
+#: header.php:117
+msgid "Type the search term"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/actions-required.php:52
@@ -113,11 +113,11 @@ msgid ""
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:15
-msgid "No recommended actions left to perform."
+msgid "No recommended actions left to perform"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:18
-msgid "Check recommended actions."
+msgid "Check recommended actions"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:24
@@ -742,50 +742,54 @@ msgstr ""
 msgid "Social"
 msgstr ""
 
-#: inc/theme-setup.php:146
-msgid "Download theme sample data"
+#: inc/theme-setup.php:62
+msgid "Copyright"
 msgstr ""
 
 #: inc/theme-setup.php:147
-msgid "Head over to our website and download the sample content data."
+msgid "Download theme sample data"
 msgstr ""
 
 #: inc/theme-setup.php:148
-msgid "Posts"
+msgid "Head over to our website and download the sample content data."
 msgstr ""
 
 #: inc/theme-setup.php:149
+msgid "Posts"
+msgstr ""
+
+#: inc/theme-setup.php:150
 msgid "Widgets"
 msgstr ""
 
-#: inc/theme-setup.php:154
+#: inc/theme-setup.php:155
 msgid "Import Sample Data"
 msgstr ""
 
-#: inc/theme-setup.php:155
+#: inc/theme-setup.php:156
 msgid "Import Posts"
 msgstr ""
 
-#: inc/theme-setup.php:156
+#: inc/theme-setup.php:157
 msgid "Import Widgets"
 msgstr ""
 
-#: inc/theme-setup.php:161
+#: inc/theme-setup.php:162
 msgid "Set front page to static"
 msgstr ""
 
-#: inc/theme-setup.php:162
+#: inc/theme-setup.php:163
 msgid ""
 "If you just installed Newsmag, and are not able to see the front-page demo, "
 "you need to go to Settings -> Reading , Front page displays and select "
 "\"Static Page\"."
 msgstr ""
 
-#: inc/theme-setup.php:163
+#: inc/theme-setup.php:164
 msgid "Set manually"
 msgstr ""
 
-#: inc/theme-setup.php:163
+#: inc/theme-setup.php:164
 msgid "Set automatically"
 msgstr ""
 
@@ -837,11 +841,15 @@ msgstr ""
 msgid "Displays posts with most comments."
 msgstr ""
 
-#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:81
+#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:21
+msgid "Popular posts"
+msgstr ""
+
+#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:82
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:89
+#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:90
 msgid "Number of posts to show:"
 msgstr ""
 

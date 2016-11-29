@@ -3,7 +3,7 @@ if ( typeof(MachoThemes) === 'undefined' ) {
 }
 
 MachoThemes.initStyleSelects = function ($) {
-	var selects = $('select');
+	var selects = $('.widget select');
 	$.each(selects, function () {
 		$(this).wrap('<div class="styled-select"></div>');
 	});
