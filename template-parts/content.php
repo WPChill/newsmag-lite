@@ -14,17 +14,19 @@
 	if ( has_post_thumbnail() ) {
 		$image = is_sticky() ? get_the_post_thumbnail( get_the_ID(), 'newsmag-single-post' ) : get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 	}
-	$new_image    = apply_filters( 'newsmag_widget_image', $image );
+	$image_obj    = array( 'id' => get_the_ID(), 'image' => $image );
+	$new_image    = apply_filters( 'newsmag_widget_image', $image_obj );
 	$allowed_tags = array(
 		'img'      => array(
-			'data-original' => true,
-			'srcset'        => true,
-			'sizes'         => true,
-			'src'           => true,
-			'class'         => true,
-			'alt'           => true,
-			'width'         => true,
-			'height'        => true
+			'data-src'    => true,
+			'data-srcset' => true,
+			'srcset'      => true,
+			'sizes'       => true,
+			'src'         => true,
+			'class'       => true,
+			'alt'         => true,
+			'width'       => true,
+			'height'      => true
 		),
 		'noscript' => array()
 	);
@@ -69,7 +71,7 @@
 					<?php if ( is_single() ) {
 						the_content();
 					} else {
-						$excerpt = get_the_excerpt();
+						$excerpt = get_the_content();
 						$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
 						?>
 						<p>
@@ -120,7 +122,7 @@
 					<?php if ( is_single() ) {
 						the_content();
 					} else {
-						$excerpt = get_the_excerpt();
+						$excerpt = get_the_content();
 						$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
 						?>
 						<p>

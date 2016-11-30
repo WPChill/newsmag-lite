@@ -52,3 +52,23 @@ img {
 }
 
 @import "tables";
+
+.blazy {
+  -webkit-filter: blur(50px);
+  filter: blur(50px);
+  /* this is needed so Safari keeps sharp edges */
+  @include transform(scale(1));
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
+  &.b-loaded {
+    -webkit-filter: initial;
+    filter: initial;
+    @include transform(initial);
+    -webkit-transition: all .4s linear;
+    transition: all .4s linear;
+  }
+}
+
+.entry-content p {
+  overflow: hidden;
+}

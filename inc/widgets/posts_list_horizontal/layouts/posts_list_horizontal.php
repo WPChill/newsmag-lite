@@ -18,17 +18,19 @@
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-post-horizontal' );
 			}
-			$new_image    = apply_filters( 'newsmag_widget_image', $image );
+			$image_obj    = array( 'id' => get_the_ID(), 'image' => $image );
+			$new_image    = apply_filters( 'newsmag_widget_image', $image_obj );
 			$allowed_tags = array(
 				'img'      => array(
-					'data-original' => true,
-					'srcset'        => true,
-					'sizes'         => true,
-					'src'           => true,
-					'class'         => true,
-					'alt'           => true,
-					'width'         => true,
-					'height'        => true
+					'data-src'    => true,
+					'data-srcset' => true,
+					'srcset'      => true,
+					'sizes'       => true,
+					'src'         => true,
+					'class'       => true,
+					'alt'         => true,
+					'width'       => true,
+					'height'      => true
 				),
 				'noscript' => array()
 			);
@@ -53,7 +55,8 @@
 						<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
 						<?php newsmag_posted_on( 'comments' ); ?>
 						<?php if ( current_user_can( 'manage_options' ) ) { ?>
-							<a class="newsmag-comments-link " target="_blank" href="<?php echo get_admin_url() . 'post.php?post=' . get_the_ID() . '&action=edit' ?>">
+							<a class="newsmag-comments-link " target="_blank"
+							   href="<?php echo get_admin_url() . 'post.php?post=' . get_the_ID() . '&action=edit' ?>">
 								<span class="fa fa-edit"></span> <?php echo __( 'Edit', 'newsmag' ) ?>
 							</a>
 						<?php } ?>

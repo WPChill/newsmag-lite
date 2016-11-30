@@ -16,9 +16,24 @@ if ( $posts->have_posts() ): ?>
 			if ( has_post_thumbnail() ) {
 				$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-vertical-post' );
 			}
-			$new_image = apply_filters( 'newsmag_widget_image', $image );
-			$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
-			$cat = get_the_category();
+
+			$image_obj = array( 'id' => get_the_ID(), 'image' => $image );
+			$new_image = apply_filters( 'newsmag_widget_image', $image_obj );
+
+			$allowed_tags = array( 'img'      => array(
+				'data-src'    => true,
+				'data-srcset' => true,
+				'srcset'      => true,
+				'sizes'       => true,
+				'src'         => true,
+				'class'       => true,
+				'alt'         => true,
+				'width'       => true,
+				'height'      => true
+			),
+			                       'noscript' => array()
+			);
+			$cat          = get_the_category();
 			?>
 
 			<div class="newsmag-blog-post-layout-b wide-layout">
@@ -26,7 +41,7 @@ if ( $posts->have_posts() ): ?>
 					<div class="col-sm-5 col-xs-12">
 						<div class="newsmag-image">
 							<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-								<?php  echo $new_image; ?>
+								<?php echo $new_image; ?>
 							</a>
 							<span class="newsmag-post-box-category">
 							<a href="<?php echo esc_url_raw( get_category_link( $cat[0] ) ) ?>">
@@ -42,15 +57,16 @@ if ( $posts->have_posts() ): ?>
 							</h3>
 							<div class="meta">
 								<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
-								<?php newsmag_posted_on('comments'); ?>
+								<?php newsmag_posted_on( 'comments' ); ?>
 								<?php if ( current_user_can( 'manage_options' ) ) { ?>
-									<a class="newsmag-comments-link " target="_blank" href="<?php echo get_admin_url() . 'post.php?post=' . get_the_ID() . '&action=edit' ?>">
+									<a class="newsmag-comments-link " target="_blank"
+									   href="<?php echo get_admin_url() . 'post.php?post=' . get_the_ID() . '&action=edit' ?>">
 										<span class="fa fa-edit"></span> <?php echo __( 'Edit', 'newsmag' ) ?>
 									</a>
 								<?php } ?>
 							</div>
 							<?php
-							$excerpt = get_the_excerpt();
+							$excerpt = get_the_content();
 							$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
 							?>
 							<p>

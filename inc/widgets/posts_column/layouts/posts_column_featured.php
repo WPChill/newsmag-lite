@@ -10,18 +10,21 @@ if ( $posts->have_posts() ):
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-post-horizontal' );
 				}
-				$new_image    = apply_filters( 'newsmag_widget_image', $image );
-				$allowed_tags = array( 'img'      => array(
-					'data-original' => true,
-					'srcset'        => true,
-					'sizes'         => true,
-					'src'           => true,
-					'class'         => true,
-					'alt'           => true,
-					'width'         => true,
-					'height'        => true
-				),
-				                       'noscript' => array()
+				$image_obj    = array( 'id' => get_the_ID(), 'image' => $image );
+				$new_image    = apply_filters( 'newsmag_widget_image', $image_obj );
+				$allowed_tags = array(
+					'img'      => array(
+						'data-srcset' => true,
+						'data-src'    => true,
+						'srcset'      => true,
+						'sizes'       => true,
+						'src'         => true,
+						'class'       => true,
+						'alt'         => true,
+						'width'       => true,
+						'height'      => true
+					),
+					'noscript' => array()
 				);
 				?>
 				<div class="newsmag-post-box-a posts-column-layout">
@@ -63,18 +66,21 @@ if ( $posts->have_posts() ):
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
 				}
-				$new_image    = apply_filters( 'newsmag_widget_image', $image );
-				$allowed_tags = array( 'img'      => array(
-					'data-original' => true,
-					'srcset'        => true,
-					'sizes'         => true,
-					'src'           => true,
-					'class'         => true,
-					'alt'           => true,
-					'width'         => true,
-					'height'        => true
-				),
-				                       'noscript' => array()
+				$image_obj    = array( 'id' => get_the_ID(), 'image' => $image );
+				$new_image    = apply_filters( 'newsmag_widget_image', $image_obj );
+				$allowed_tags = array(
+					'img'      => array(
+						'data-src'    => true,
+						'data-srcset' => true,
+						'srcset'      => true,
+						'sizes'       => true,
+						'src'         => true,
+						'class'       => true,
+						'alt'         => true,
+						'width'       => true,
+						'height'      => true
+					),
+					'noscript' => array()
 				);
 
 				?>

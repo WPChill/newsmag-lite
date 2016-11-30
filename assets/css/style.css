@@ -280,6 +280,33 @@ table:not(#wp-calendar) {
   table:not(#wp-calendar) > tbody + tbody {
     border-top: 2px solid #e1e1e1; }
 
+.blazy {
+  -webkit-filter: blur(50px);
+  filter: blur(50px);
+  /* this is needed so Safari keeps sharp edges */
+  -webkit-transform: scale(1);
+  -khtml-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear; }
+  .blazy.b-loaded {
+    -webkit-filter: initial;
+    filter: initial;
+    -webkit-transform: initial;
+    -khtml-transform: initial;
+    -moz-transform: initial;
+    -ms-transform: initial;
+    -o-transform: initial;
+    transform: initial;
+    -webkit-transition: all .4s linear;
+    transition: all .4s linear; }
+
+.entry-content p {
+  overflow: hidden; }
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -884,7 +911,7 @@ a {
       #menu-social-footer ul li a:hover[href*="codepen.io"]::before {
         color: #FFF; }
       #menu-social-footer ul li a:hover[href*="linkedin.com"]::before {
-        background: #0e76a8; }
+        color: #FFF; }
       #menu-social-footer ul li a:hover[href*="wordpress.org"], #menu-social-footer ul li a:hover[href*="wordpress.com"] {
         background: #21759b;
         color: #fff; }
