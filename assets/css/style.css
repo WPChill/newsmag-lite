@@ -1649,6 +1649,8 @@ a {
     margin-bottom: 25px;
     margin-top: 0;
     color: #fff; }
+  .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).newsmag_identity {
+    margin-bottom: 0; }
   .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_newsmag_recent .newsmag-recent-post-widget {
     height: 65px;
     margin-left: 0;
@@ -2139,6 +2141,7 @@ a {
     width: 100%; }
   .newsmag_builder .newsmag-post-list-vertical-row {
     clear: both; }
+  .newsmag_builder .newsmag-posts-carousel h2,
   .newsmag_builder .newsmag-blog-post-layout-row h2,
   .newsmag_builder .newsmag-post-banner-row h2,
   .newsmag_builder .newsmag-post-list-vertical-row h2 {
@@ -2150,6 +2153,7 @@ a {
     position: relative;
     line-height: 27px;
     margin-bottom: 15px; }
+    .newsmag_builder .newsmag-posts-carousel h2:after,
     .newsmag_builder .newsmag-blog-post-layout-row h2:after,
     .newsmag_builder .newsmag-post-banner-row h2:after,
     .newsmag_builder .newsmag-post-list-vertical-row h2:after {
@@ -2161,7 +2165,9 @@ a {
       bottom: 0;
       left: 0;
       right: 0; }
-    .newsmag_builder .newsmag-blog-post-layout-row h2 a, .newsmag_builder .newsmag-blog-post-layout-row h2 span,
+    .newsmag_builder .newsmag-posts-carousel h2 a, .newsmag_builder .newsmag-posts-carousel h2 span,
+    .newsmag_builder .newsmag-blog-post-layout-row h2 a,
+    .newsmag_builder .newsmag-blog-post-layout-row h2 span,
     .newsmag_builder .newsmag-post-banner-row h2 a,
     .newsmag_builder .newsmag-post-banner-row h2 span,
     .newsmag_builder .newsmag-post-list-vertical-row h2 a,
