@@ -834,7 +834,7 @@
           color: #545e65;
           &:hover, &:focus, &:active {
             background: $color__brand-red;
-            color: #FFF;
+            color: #FFF !important;
           }
         }
       }

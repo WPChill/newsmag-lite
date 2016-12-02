@@ -92,8 +92,6 @@ $author              = get_theme_mod( 'newsmag_enable_author_box', true );
 						<?php echo wp_kses_post( $next ) ?>
 					</div>
 				</div>
-				<?php
-				?>
 			</div>
 		</article><!-- #post-## -->
 	</div>

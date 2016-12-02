@@ -3,8 +3,12 @@ if ( typeof(MachoThemes) === 'undefined' ) {
 }
 
 MachoThemes.initStyleSelects = function ($) {
-	var selects = $('.widget select');
+	var selects = $('select');
 	$.each(selects, function () {
+		if ( $(this).parent().hasClass('styled-select') ) {
+			return false;
+		}
+
 		$(this).wrap('<div class="styled-select"></div>');
 	});
 };

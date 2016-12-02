@@ -1668,7 +1668,7 @@ a {
     color: #545e65; }
     .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_tag_cloud .tagcloud a:hover, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_tag_cloud .tagcloud a:focus, .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_tag_cloud .tagcloud a:active {
       background: #ff3d2e;
-      color: #FFF; }
+      color: #FFF !important; }
   .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_calendar {
     border: none;
     background: #30383e; }
