@@ -6,8 +6,8 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 			'newsmag-popular-posts-widget',
 			__( 'Newsmag - Popular Posts', 'newsmag' ),
 			array(
-				'description' => __( 'Displays posts with most comments.', 'newsmag' ),
-				'classname'   => 'popular-posts',
+				'description'                 => __( 'Displays posts with most comments.', 'newsmag' ),
+				'classname'                   => 'popular-posts',
 				'customize_selective_refresh' => true
 			)
 		);
@@ -17,8 +17,8 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 		extract( $args );
 		extract( $instance );
 
-		$number = empty($number) ? 5 : $number;
-		$instance['title'] = empty($instance['title']) ? __('Popular posts', 'newsmag') : $instance['title'];
+		$number            = empty( $number ) ? 5 : $number;
+		$instance['title'] = empty( $instance['title'] ) ? __( 'Popular posts', 'newsmag' ) : $instance['title'];
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 
@@ -31,14 +31,30 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 
 			<ul class="posts-list">
 				<?php while ( $r->have_posts() ) : $r->the_post();
-					$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url_raw( get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg' ) . '" />';
+					$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg" />';
 					if ( has_post_thumbnail() ) {
 						$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
 					}
+					$image_obj    = array( 'id' => get_the_ID(), 'image' => $image );
+					$new_image    = apply_filters( 'newsmag_widget_image', $image_obj );
+					$allowed_tags = array(
+						'img'      => array(
+							'data-srcset' => true,
+							'data-src'    => true,
+							'srcset'      => true,
+							'sizes'       => true,
+							'src'         => true,
+							'class'       => true,
+							'alt'         => true,
+							'width'       => true,
+							'height'      => true
+						),
+						'noscript' => array()
+					);
 					?>
 					<li>
 						<a class="newsmag-image" href="<?php the_permalink() ?>">
-							<?php echo wp_kses_post( $image ); ?>
+							<?php echo wp_kses( $new_image, $allowed_tags ); ?>
 						</a>
 						<div class="content">
 

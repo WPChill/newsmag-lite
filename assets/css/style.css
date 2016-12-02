@@ -290,8 +290,8 @@ table:not(#wp-calendar) {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear; }
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear; }
   .blazy.b-loaded {
     -webkit-filter: initial;
     filter: initial;
@@ -301,8 +301,8 @@ table:not(#wp-calendar) {
     -ms-transform: initial;
     -o-transform: initial;
     transform: initial;
-    -webkit-transition: all .4s linear;
-    transition: all .4s linear; }
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear; }
 
 .entry-content p {
   overflow: hidden; }

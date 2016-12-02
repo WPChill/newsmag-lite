@@ -3,8 +3,8 @@ if ( typeof(MachoThemes) === 'undefined' ) {
 }
 
 MachoThemes.initMainSlider = function ($) {
-	if ( $('.newsmag-slider').length ) {
-		var owl = $('.newsmag-slider');
+	var owl = $('.newsmag-slider');
+	if ( owl.length ) {
 
 		owl.on('initialized.owl.carousel', function () {
 			$('.owl-nav-list').addClass('active');
