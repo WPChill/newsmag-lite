@@ -62,7 +62,7 @@ if ( $posts->have_posts() ):
 				</div>
 				<?php
 			} else {
-				$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url_raw( get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg' ) . '" />';
+				$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg" />';
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
 				}

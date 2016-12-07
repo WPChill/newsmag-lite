@@ -41,9 +41,8 @@
 						<?php
 						echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://www.machothemes.com/newsmag-lite/">Newsmag</a>. All rights reserved.' ) );
 						?>
-
-					<span class="sep">|</span>
 					<?php endif; ?>
+
 					<?php echo __( 'Created by <a href="https://www.machothemes.com" rel="dofollow" title="Professional WordPress Themes">Macho Themes</a>', 'newsmag' ) ?>
 				</div>
 
