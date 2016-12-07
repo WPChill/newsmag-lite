@@ -1120,6 +1120,9 @@
 
 [id^='newsmag_banner-'] {
   position: relative;
+  display: inline-block;
+  padding-right: 15px;
+  padding-left: 15px;
   .customize-partial-edit-shortcut {
     right: -10px;
     top: -30px;

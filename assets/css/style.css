@@ -1828,7 +1828,10 @@ a {
   display: inline-block; }
 
 [id^='newsmag_banner-'] {
-  position: relative; }
+  position: relative;
+  display: inline-block;
+  padding-right: 15px;
+  padding-left: 15px; }
   [id^='newsmag_banner-'] .customize-partial-edit-shortcut {
     right: -10px;
     top: -30px; }

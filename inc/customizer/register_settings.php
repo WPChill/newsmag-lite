@@ -66,7 +66,7 @@ class Newsmag_Customizer_Helper {
 
 			// Change priority for Site Title
 			$wp_customize->get_control( 'custom_logo' )->priority    = 0;
-			$wp_customize->get_control( 'custom_logo' )->description = esc_html__( 'The image logo, if set, will override the text logo. You can not have both at the same time. A tagline can be displayed under both the image or the text logo.', 'newsmag' );
+			$wp_customize->get_control( 'custom_logo' )->description = esc_html__( 'The image logo, if set, will override the text logo. You can not have both at the same time. A tagline can be displayed under the text logo.', 'newsmag' );
 
 			$wp_customize->get_control( 'blogname' )->priority = 2;
 

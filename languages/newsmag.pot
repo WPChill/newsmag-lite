@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License version 3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: NewsMag 2.1.5\n"
+"Project-Id-Version: NewsMag 2.1.6\n"
 "Report-Msgid-Bugs-To: https://www.machothemes.com/\n"
-"POT-Creation-Date: 2016-11-29 12:50:10+00:00\n"
+"POT-Creation-Date: 2016-12-07 13:19:11+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -310,8 +310,7 @@ msgstr ""
 #: inc/customizer/register_settings.php:69
 msgid ""
 "The image logo, if set, will override the text logo. You can not have both "
-"at the same time. A tagline can be displayed under both the image or the "
-"text logo."
+"at the same time. A tagline can be displayed under the text logo."
 msgstr ""
 
 #: inc/customizer/settings/banners/controls.php:13
@@ -845,11 +844,11 @@ msgstr ""
 msgid "Popular posts"
 msgstr ""
 
-#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:82
+#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:98
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:90
+#: inc/widgets/popularposts/class-widget-newsmag-popularposts.php:106
 msgid "Number of posts to show:"
 msgstr ""
 
@@ -885,13 +884,13 @@ msgstr ""
 msgid "Show Date and Comments"
 msgstr ""
 
-#: inc/widgets/posts_column/layouts/posts_column.php:45
-#: inc/widgets/posts_column/layouts/posts_column_featured.php:54
-#: inc/widgets/posts_column/layouts/posts_column_featured.php:103
-#: inc/widgets/posts_grid/layouts/posts_grid.php:56
-#: inc/widgets/posts_list_horizontal/layouts/posts_list_horizontal.php:57
-#: inc/widgets/posts_list_vertical/layouts/posts_list_vertical.php:48
-#: template-parts/content.php:63 template-parts/content.php:114
+#: inc/widgets/posts_column/layouts/posts_column.php:47
+#: inc/widgets/posts_column/layouts/posts_column_featured.php:57
+#: inc/widgets/posts_column/layouts/posts_column_featured.php:109
+#: inc/widgets/posts_grid/layouts/posts_grid.php:60
+#: inc/widgets/posts_list_horizontal/layouts/posts_list_horizontal.php:60
+#: inc/widgets/posts_list_vertical/layouts/posts_list_vertical.php:64
+#: template-parts/content.php:65 template-parts/content.php:116
 msgid "Edit"
 msgstr ""
 
