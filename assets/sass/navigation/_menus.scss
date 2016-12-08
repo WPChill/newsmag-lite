@@ -395,6 +395,9 @@
 
 .main-navigation {
   height: 48px;
+  @media (max-width: 768px) {
+    height: initial;
+  }
 }
 
 .copyright-menu {

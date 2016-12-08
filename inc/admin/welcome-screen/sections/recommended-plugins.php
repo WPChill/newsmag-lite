@@ -15,8 +15,7 @@ wp_enqueue_script( 'updates' );
 		$icon   = $this->check_for_icon( $info->icons );
 		$active = $this->check_active( $plugin );
 		$url    = $this->create_action_link( $active['needs'], $plugin );
-
-		$label = '';
+		$label  = '';
 
 		switch ( $active['needs'] ) {
 			case 'install':
@@ -35,6 +34,9 @@ wp_enqueue_script( 'updates' );
 
 		?>
 		<div class="col plugin_box">
+			<?php if ( $prop['recommended'] ): ?>
+				<span class="recommended"><?php _e( 'Recommended', 'newsmag' ); ?></span>
+			<?php endif; ?>
 			<img src="<?php echo esc_attr( $icon ) ?>" alt="plugin box image">
 			<span class="version"><?php echo __( 'Version:', 'newsmag' ); ?><?php echo $info->version ?></span>
 			<span

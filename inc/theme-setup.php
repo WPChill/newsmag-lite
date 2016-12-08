@@ -116,7 +116,10 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 
 			$newsmag_recommended_plugins = array(
 				'kiwi-social-share'           => array( 'recommended' => false ),
-				'force-regenerate-thumbnails' => array( 'recommended' => true )
+				'force-regenerate-thumbnails' => array( 'recommended' => true ),
+				'wp-product-review'           => array( 'recommended' => false ),
+				'pirate-forms'                => array( 'recommended' => false ),
+				'visualizer'                  => array( 'recommended' => false )
 			);
 			/*
 			 * id - unique id; required

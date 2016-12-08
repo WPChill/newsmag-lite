@@ -105,7 +105,7 @@
 		</nav><!-- #site-navigation -->
 		<?php if ( $enable_search ): ?>
 			<?php $search_query = get_search_query(); ?>
-			<div class="header-search-form hidden-xs">
+			<div class="header-search-form">
 				<div class="container">
 					<!-- Search Form -->
 					<form role="search" method="get" id="searchform_topbar"
