@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NewsMag 2.1.6\n"
 "Report-Msgid-Bugs-To: https://www.machothemes.com/\n"
-"POT-Creation-Date: 2016-12-07 13:19:11+00:00\n"
+"POT-Creation-Date: 2016-12-09 16:31:19+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:47
+#: footer.php:46
 msgid ""
 "Created by <a href=\"https://www.machothemes.com\" rel=\"dofollow\" "
 "title=\"Professional WordPress Themes\">Macho Themes</a>"
@@ -83,17 +83,17 @@ msgid "Type the search term"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/actions-required.php:52
-#: inc/admin/welcome-screen/sections/recommended-plugins.php:24
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:23
 msgid "Install"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/actions-required.php:56
-#: inc/admin/welcome-screen/sections/recommended-plugins.php:28
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:27
 msgid "Activate"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/actions-required.php:60
-#: inc/admin/welcome-screen/sections/recommended-plugins.php:32
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:31
 msgid "Deactivate"
 msgstr ""
 
@@ -148,7 +148,11 @@ msgstr ""
 msgid "Go to Customizer"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/recommended-plugins.php:39
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:38
+msgid "Recommended"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:41
 msgid "Version:"
 msgstr ""
 
@@ -313,48 +317,50 @@ msgid ""
 "at the same time. A tagline can be displayed under the text logo."
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:13
+#: inc/customizer/settings/banners/controls.php:11
 msgid "Enable banner"
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:27
+#: inc/customizer/settings/banners/controls.php:25
 msgid "Image"
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:28
+#: inc/customizer/settings/banners/controls.php:26
 msgid "AdSense"
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:30
+#: inc/customizer/settings/banners/controls.php:28
 msgid "The type of the banner"
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:31
+#: inc/customizer/settings/banners/controls.php:29
 msgid "Select what type of banner you want to use: normal image or adsense script"
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:45
+#: inc/customizer/settings/banners/controls.php:43
 msgid "Banner Image:"
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:46
+#: inc/customizer/settings/banners/controls.php:44
 msgid "Recommended size: 728 x 90"
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:59
+#: inc/customizer/settings/banners/controls.php:57
 msgid "Banner Link:"
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:60
+#: inc/customizer/settings/banners/controls.php:58
 msgid "Add the link for banner image."
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:73
+#: inc/customizer/settings/banners/controls.php:71
 msgid "AdSense Code:"
 msgstr ""
 
-#: inc/customizer/settings/banners/controls.php:74
-msgid "Add the code you retrieved from your AdSense account."
+#: inc/customizer/settings/banners/controls.php:72
+msgid ""
+"Add the code you retrieved from your AdSense account. You only need to "
+"insert the <ins> tag."
 msgstr ""
 
 #: inc/customizer/settings/banners/sections.php:7
@@ -745,50 +751,50 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: inc/theme-setup.php:147
+#: inc/theme-setup.php:150
 msgid "Download theme sample data"
 msgstr ""
 
-#: inc/theme-setup.php:148
+#: inc/theme-setup.php:151
 msgid "Head over to our website and download the sample content data."
 msgstr ""
 
-#: inc/theme-setup.php:149
+#: inc/theme-setup.php:152
 msgid "Posts"
 msgstr ""
 
-#: inc/theme-setup.php:150
+#: inc/theme-setup.php:153
 msgid "Widgets"
 msgstr ""
 
-#: inc/theme-setup.php:155
+#: inc/theme-setup.php:158
 msgid "Import Sample Data"
 msgstr ""
 
-#: inc/theme-setup.php:156
+#: inc/theme-setup.php:159
 msgid "Import Posts"
 msgstr ""
 
-#: inc/theme-setup.php:157
+#: inc/theme-setup.php:160
 msgid "Import Widgets"
 msgstr ""
 
-#: inc/theme-setup.php:162
+#: inc/theme-setup.php:165
 msgid "Set front page to static"
 msgstr ""
 
-#: inc/theme-setup.php:163
+#: inc/theme-setup.php:166
 msgid ""
 "If you just installed Newsmag, and are not able to see the front-page demo, "
 "you need to go to Settings -> Reading , Front page displays and select "
 "\"Static Page\"."
 msgstr ""
 
-#: inc/theme-setup.php:164
+#: inc/theme-setup.php:167
 msgid "Set manually"
 msgstr ""
 
-#: inc/theme-setup.php:164
+#: inc/theme-setup.php:167
 msgid "Set automatically"
 msgstr ""
 
@@ -884,12 +890,12 @@ msgstr ""
 msgid "Show Date and Comments"
 msgstr ""
 
-#: inc/widgets/posts_column/layouts/posts_column.php:47
+#: inc/widgets/posts_column/layouts/posts_column.php:60
 #: inc/widgets/posts_column/layouts/posts_column_featured.php:57
 #: inc/widgets/posts_column/layouts/posts_column_featured.php:109
 #: inc/widgets/posts_grid/layouts/posts_grid.php:60
 #: inc/widgets/posts_list_horizontal/layouts/posts_list_horizontal.php:60
-#: inc/widgets/posts_list_vertical/layouts/posts_list_vertical.php:64
+#: inc/widgets/posts_list_vertical/layouts/posts_list_vertical.php:65
 #: template-parts/content.php:65 template-parts/content.php:116
 msgid "Edit"
 msgstr ""

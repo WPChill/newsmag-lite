@@ -1,7 +1,5 @@
 <?php
 global $wp_customize;
-
-
 /**
  * Display banner on homepage
  */
@@ -71,7 +69,7 @@ $wp_customize->add_control(
 	'newsmag_banner_adsense_code',
 	array(
 		'label'           => esc_html__( 'AdSense Code:', 'newsmag' ),
-		'description'     => esc_html__( 'Add the code you retrieved from your AdSense account.', 'newsmag' ),
+		'description'     => esc_html__( 'Add the code you retrieved from your AdSense account. You only need to insert the <ins> tag.', 'newsmag' ),
 		'section'         => 'newsmag_general_banners_controls',
 		'settings'        => 'newsmag_banner_adsense_code',
 		'type'            => 'textarea',
