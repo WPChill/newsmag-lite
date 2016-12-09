@@ -20,18 +20,19 @@ if ( $posts->have_posts() ): ?>
 			$image_obj = array( 'id' => get_the_ID(), 'image' => $image );
 			$new_image = apply_filters( 'newsmag_widget_image', $image_obj );
 
-			$allowed_tags = array( 'img'      => array(
-				'data-src'    => true,
-				'data-srcset' => true,
-				'srcset'      => true,
-				'sizes'       => true,
-				'src'         => true,
-				'class'       => true,
-				'alt'         => true,
-				'width'       => true,
-				'height'      => true
-			),
-			                       'noscript' => array()
+			$allowed_tags = array(
+				'img'      => array(
+					'data-src'    => true,
+					'data-srcset' => true,
+					'srcset'      => true,
+					'sizes'       => true,
+					'src'         => true,
+					'class'       => true,
+					'alt'         => true,
+					'width'       => true,
+					'height'      => true
+				),
+				'noscript' => array()
 			);
 			$cat          = get_the_category();
 			?>
@@ -70,7 +71,7 @@ if ( $posts->have_posts() ): ?>
 							$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
 							?>
 							<p>
-								<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
+								<?php echo wp_kses_post( wp_trim_words( strip_shortcodes( $excerpt ), $length ) ); ?>
 							</p>
 						</div>
 					</div>

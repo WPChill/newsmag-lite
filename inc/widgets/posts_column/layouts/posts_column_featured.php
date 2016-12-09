@@ -58,7 +58,7 @@ if ( $posts->have_posts() ):
 							</a>
 						<?php } ?>
 					</div>
-					<p><?php echo wp_trim_words( get_the_content(), 20, ' <a href="' . esc_url( get_the_permalink() ) . '">…</a>' ) ?></p>
+					<p><?php echo wp_kses_post( wp_trim_words( strip_shortcodes( get_the_content() ), 20, ' <a href="' . esc_url( get_the_permalink() ) . '">…</a>' ) ) ?></p>
 				</div>
 				<?php
 			} else {

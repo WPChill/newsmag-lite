@@ -75,7 +75,7 @@
 						$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
 						?>
 						<p>
-							<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
+							<?php echo wp_kses_post( wp_trim_words( strip_shortcodes( $excerpt ), $length ) ); ?>
 						</p>
 					<?php } ?>
 				</div>
@@ -126,7 +126,7 @@
 						$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
 						?>
 						<p>
-							<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
+							<?php echo wp_kses_post( wp_trim_words( strip_shortcodes( $excerpt ), $length ) ); ?>
 						</p>
 					<?php } ?>
 				</div>
