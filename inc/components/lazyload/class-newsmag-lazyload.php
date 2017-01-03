@@ -12,7 +12,7 @@ class Newsmag_Lazy_Load_Images {
 
 	function enqueue_lazyload() {
 		// Make sure to load in the lazy load script
-		wp_enqueue_script( 'jquery_lazy_load', get_template_directory_uri() . '/assets/vendors/blazy/blazy.min.js', array( 'jquery' ), '1.9.1' );
+		wp_enqueue_script( 'jquery_lazy_load', get_template_directory_uri() . '/assets/vendors/blazy/blazy.js', array( 'jquery' ), '1.9.1' );
 	}
 
 	function filter_lazyload_content( $content ) {

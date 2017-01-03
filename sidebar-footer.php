@@ -66,7 +66,7 @@ if ( empty( $sidebars ) ) {
 
 
 /**
- * In case all the sidebars have widgets attached, we slice the array it.
+ * In case all the sidebars have widgets attached, we slice the array.
  */
 $sidebars = array_slice( $sidebars, 0, $count );
 ?>

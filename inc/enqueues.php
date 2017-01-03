@@ -15,9 +15,9 @@ function newsmag_scripts() {
 	/**
 	 * Load the bootstrap framework
 	 */
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap.min.css' );
-	wp_enqueue_style( 'bootstrap-theme-style', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap-theme.min.css' );
-	wp_enqueue_script( 'newsmag-bootstrap', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap.min.js', array( 'jquery' ), $newsmag['Version'], true );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap.min.css' );
+	wp_enqueue_style( 'bootstrap-theme', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap-theme.min.css' );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap.min.js', array( 'jquery' ), $newsmag['Version'], true );
 
 	/**
 	 * Load offscreen helper
@@ -44,7 +44,7 @@ function newsmag_scripts() {
 	/**
 	 * Adsense loader
 	 */
-	wp_enqueue_script( 'newsmag-adsense-loader', get_template_directory_uri() . '/assets/vendors/adsenseloader/jquery.adsenseloader.js', array( 'jquery' ), $newsmag['Version'], true );
+	wp_enqueue_script( 'adsense-loader', get_template_directory_uri() . '/assets/vendors/adsenseloader/jquery.adsenseloader.js', array( 'jquery' ), $newsmag['Version'], true );
 
 	/**
 	 *Load the theme's core Javascript

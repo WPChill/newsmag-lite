@@ -58,7 +58,13 @@ if ( $posts->have_posts() ):
 							</a>
 						<?php } ?>
 					</div>
-					<p><?php echo wp_kses_post( wp_trim_words( strip_shortcodes( get_the_content() ), 20, ' <a href="' . esc_url( get_the_permalink() ) . '">…</a>' ) ) ?></p>
+					<?php
+					$excerpt = get_the_content();
+					$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
+					?>
+					<p>
+						<?php echo wp_kses_post( wp_trim_words( strip_shortcodes( $excerpt ), $length ) ); ?>
+					</p>
 				</div>
 				<?php
 			} else {

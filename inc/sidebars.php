@@ -35,16 +35,6 @@ if ( function_exists( 'register_sidebar' ) ) {
 			);
 
 			register_sidebar( array(
-				                  'id'            => 'before-footer',
-				                  'name'          => __( 'Before Footer', 'newsmag' ),
-				                  'description'   => __( 'Insert description here', 'newsmag' ),
-				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-				                  'after_widget'  => '</div>',
-				                  'before_title'  => '<h3 class="widget-title">',
-				                  'after_title'   => '</h3>',
-			                  ) );
-
-			register_sidebar( array(
 				                  'id'            => 'footer-1',
 				                  'name'          => __( 'Footer 1', 'newsmag' ),
 				                  'description'   => __( 'This is your footer sidebar. By default, we\'ve defined a maximum of 4 sidebars but if you want to use less make sure you change the settings in: Footer -> Footer columns.', 'newsmag' ),
@@ -84,15 +74,6 @@ if ( function_exists( 'register_sidebar' ) ) {
 				                  'after_title'   => '</h3>',
 			                  ) );
 
-			register_sidebar( array(
-				                  'id'            => 'after-footer',
-				                  'name'          => __( 'After Footer', 'newsmag' ),
-				                  'description'   => __( 'Insert description here', 'newsmag' ),
-				                  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-				                  'after_widget'  => '</div>',
-				                  'before_title'  => '<h3 class="widget-title">',
-				                  'after_title'   => '</h3>',
-			                  ) );
 		} // function newsmag_register_sidebars end
 
 		add_action( 'widgets_init', 'newsmag_register_sidebars' );
