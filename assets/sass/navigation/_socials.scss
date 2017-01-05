@@ -14,7 +14,7 @@
   ul {
     list-style: none;
     margin: 0;
-    text-align: center;
+    text-align: right;
     display: block;
     li {
       display: inline-block;
@@ -22,6 +22,11 @@
       a {
         padding: 9px 5px;
         color: #FFF;
+        width: 35px;
+        text-align: center;
+        &:focus {
+          outline: none;
+        }
         &:before {
           content: '\f408';
           display: inline-block;
@@ -147,6 +152,7 @@
 
 #menu-social-footer {
   ul {
+    text-align: center;
     padding-left: 0;
     margin-top: 20px;
     li {
@@ -168,46 +174,46 @@
         &:hover {
           &[href*="wordpress.org"]::before,
           &[href*="wordpress.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="facebook.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="twitter.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="dribbble.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="plus.google.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="pinterest.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="github.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="tumblr.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="youtube.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="flickr.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="vimeo.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="instagram.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="codepen.io"]::before {
-            color:#FFF;
+            color: #FFF;
           }
           &[href*="linkedin.com"]::before {
-            color:#FFF;
+            color: #FFF;
           }
 
           &[href*="wordpress.org"],
@@ -271,4 +277,37 @@
       }
     }
   }
+}
+
+.mt-navigation-opener {
+  &::before {
+    content: '\f0c9' !important;
+  }
+}
+
+.mt-navigation-hidden {
+  position: absolute;
+  background: #272F32;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+  width: 120px;
+  right: 0;
+  top: 40px;
+  text-align: center !important;
+  &.opened {
+    visibility: visible;
+    opacity: 1;
+    top: 45px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+  }
+  li {
+    display: inline-block;
+  }
+
 }

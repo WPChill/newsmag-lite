@@ -1,5 +1,6 @@
 .newsmag-news-ticker {
   max-height: 45px;
+  overflow: hidden;
   @media (max-width: 767px) {
     text-align: center;
     max-height: initial;

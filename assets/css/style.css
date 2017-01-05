@@ -715,12 +715,6 @@ a {
     .main-navigation .nav-menu > li.menu-item-has-children > ul li:last-of-type a {
       border-bottom: none; }
 
-.main-navigation {
-  height: 48px; }
-  @media (max-width: 768px) {
-    .main-navigation {
-      height: initial; } }
-
 .copyright-menu {
   padding: 0;
   margin: 0;
@@ -740,9 +734,7 @@ a {
 /* Top header */
 .top-header {
   background: #272f32;
-  color: #fff;
-  max-height: 45px;
-  overflow: hidden; }
+  color: #fff; }
   @media (max-width: 767px) {
     .top-header {
       max-height: initial; } }
@@ -781,7 +773,7 @@ a {
 #menu-social ul, #menu-social-footer ul {
   list-style: none;
   margin: 0;
-  text-align: center;
+  text-align: right;
   display: block; }
   #menu-social ul li, #menu-social-footer ul li {
     display: inline-block;
@@ -789,8 +781,12 @@ a {
     #menu-social ul li a, #menu-social-footer ul li a {
       padding: 9px 5px;
       color: #FFF;
+      width: 35px;
+      text-align: center;
       /* Add hover effects for the links, the brand colors */
       /* Add the social links depending on the link href */ }
+      #menu-social ul li a:focus, #menu-social-footer ul li a:focus {
+        outline: none; }
       #menu-social ul li a:before, #menu-social-footer ul li a:before {
         content: '\f408';
         display: inline-block;
@@ -869,6 +865,7 @@ a {
   width: initial; }
 
 #menu-social-footer ul {
+  text-align: center;
   padding-left: 0;
   margin-top: 20px; }
   #menu-social-footer ul li {
@@ -957,6 +954,32 @@ a {
       #menu-social-footer ul li a:hover[href*="linkedin.com"] {
         background: #0e76a8;
         color: #fff; }
+
+.mt-navigation-opener::before {
+  content: '\f0c9' !important; }
+
+.mt-navigation-hidden {
+  position: absolute;
+  background: #272F32;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+  width: 120px;
+  right: 0;
+  top: 40px;
+  text-align: center !important; }
+  .mt-navigation-hidden.opened {
+    visibility: visible;
+    opacity: 1;
+    top: 45px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear; }
+  .mt-navigation-hidden li {
+    display: inline-block; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -3534,7 +3557,7 @@ a {
   padding-right: 2px; }
   @media (max-width: 768px) {
     .search-form-opener {
-      top: 0; } }
+      top: 0px; } }
   .search-form-opener:hover, .search-form-opener:focus, .search-form-opener:active {
     background: transparent;
     border: none; }
@@ -3953,7 +3976,8 @@ a {
       outline: none; }
 
 .newsmag-news-ticker {
-  max-height: 45px; }
+  max-height: 45px;
+  overflow: hidden; }
   @media (max-width: 767px) {
     .newsmag-news-ticker {
       text-align: center;
