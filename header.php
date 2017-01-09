@@ -84,17 +84,33 @@
 					<div class="col-md-12">
 						<?php if ( $enable_sticky && ! empty( $image[0] ) ): ?>
 							<div class="stick-menu-logo hidden-xs hidden-sm">
-								<a href="<?php echo esc_url_raw( get_home_url() ) ?>"><img
+								<a href="<?php echo esc_url( get_home_url() ) ?>"><img
 										src="<?php echo esc_url( $image[0] ); ?>"/></a>
 							</div>
 						<?php endif; ?>
 						<button class="menu-toggle" aria-controls="primary-menu"
 						        aria-expanded="false"><span class="fa fa-bars"></span></button>
-						<?php wp_nav_menu( array(
-							                   'theme_location' => 'primary',
-							                   'menu_id'        => 'primary-menu',
-							                   'items_wrap'     => '<ul id="%1$s" class="menu nav-menu %2$s">%3$s</ul>'
-						                   ) ); ?>
+						<?php
+						if ( has_nav_menu( 'primary' ) ) {
+							wp_nav_menu( array(
+								             'theme_location' => 'primary',
+								             'menu_id'        => 'primary-menu',
+								             'items_wrap'     => '<ul id="%1$s" class="menu nav-menu %2$s">%3$s</ul>'
+							             ) );
+
+						} else {
+							?>
+							<div class="menu-all-pages-container">
+								<ul id="primary-menu" class="menu nav-menu menu" aria-expanded="false">
+									<li id="menu-item-1636"
+									    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1636">
+										<a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ) ?>"><?php echo __( 'Add a menu', 'newsmag' ); ?></a>
+									</li>
+								</ul>
+							</div>
+							<?php
+						}
+						?>
 						<?php if ( $enable_search ): ?>
 							<button href="#" class="search-form-opener" type="button"><span class="fa fa-search"></span>
 							</button>

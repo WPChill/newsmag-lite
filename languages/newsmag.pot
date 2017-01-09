@@ -1,14 +1,14 @@
-# Copyright (C) 2016 MachoThemes
+# Copyright (C) 2017 MachoThemes
 # This file is distributed under the GNU General Public License version 3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: NewsMag 2.1.6\n"
+"Project-Id-Version: NewsMag 2.2.0\n"
 "Report-Msgid-Bugs-To: https://www.machothemes.com/\n"
-"POT-Creation-Date: 2016-12-09 16:31:19+00:00\n"
+"POT-Creation-Date: 2017-01-09 13:45:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Macho Themes <office@machothemes.com>\n"
 "Language-Team: Macho Themes <office@machothemes.com>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -74,30 +74,35 @@ msgid ""
 "title=\"Professional WordPress Themes\">Macho Themes</a>"
 msgstr ""
 
-#: header.php:113
+#: header.php:107
+msgid "Add a menu"
+msgstr ""
+
+#: header.php:129
 msgid "Search for:"
 msgstr ""
 
-#: header.php:117
+#: header.php:133
 msgid "Type the search term"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/actions-required.php:52
-#: inc/admin/welcome-screen/sections/recommended-plugins.php:23
+#: inc/admin/welcome-screen/sections/actions-required.php:53
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:25
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:40
 msgid "Install"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/actions-required.php:56
-#: inc/admin/welcome-screen/sections/recommended-plugins.php:27
+#: inc/admin/welcome-screen/sections/actions-required.php:57
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:29
 msgid "Activate"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/actions-required.php:60
-#: inc/admin/welcome-screen/sections/recommended-plugins.php:31
+#: inc/admin/welcome-screen/sections/actions-required.php:61
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:33
 msgid "Deactivate"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/actions-required.php:80
+#: inc/admin/welcome-screen/sections/actions-required.php:81
 #: inc/admin/welcome-screen/welcome-screen.php:149
 msgid "Hooray! There are no required actions for you right now."
 msgstr ""
@@ -116,43 +121,43 @@ msgstr ""
 msgid "No recommended actions left to perform"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:18
+#: inc/admin/welcome-screen/sections/getting-started.php:19
 msgid "Check recommended actions"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:24
+#: inc/admin/welcome-screen/sections/getting-started.php:25
 msgid "Step 2 - Check our documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:25
+#: inc/admin/welcome-screen/sections/getting-started.php:26
 msgid ""
 "Even if you're a long-time WordPress user, we still believe you should give "
 "our documentation a very quick Read."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:28
+#: inc/admin/welcome-screen/sections/getting-started.php:29
 msgid "Full documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:33
+#: inc/admin/welcome-screen/sections/getting-started.php:34
 msgid "Step 3 - Customize everything"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:34
+#: inc/admin/welcome-screen/sections/getting-started.php:35
 msgid ""
 "Using the WordPress Customizer you can easily customize every aspect of the "
 "theme."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:36
+#: inc/admin/welcome-screen/sections/getting-started.php:37
 msgid "Go to Customizer"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/recommended-plugins.php:38
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:46
 msgid "Recommended"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/recommended-plugins.php:41
+#: inc/admin/welcome-screen/sections/recommended-plugins.php:50
 msgid "Version:"
 msgstr ""
 
@@ -195,6 +200,11 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/support.php:29
 msgid "See changelog"
+msgstr ""
+
+#: inc/admin/welcome-screen/welcome-screen.php:99
+#: inc/admin/welcome-screen/welcome-screen.php:101
+msgid "About Newsmag"
 msgstr ""
 
 #: inc/admin/welcome-screen/welcome-screen.php:128
@@ -696,39 +706,27 @@ msgid ""
 msgstr ""
 
 #: inc/sidebars.php:39
-msgid "Before Footer"
-msgstr ""
-
-#: inc/sidebars.php:40 inc/sidebars.php:90
-msgid "Insert description here"
-msgstr ""
-
-#: inc/sidebars.php:49
 msgid "Footer 1"
 msgstr ""
 
-#: inc/sidebars.php:50 inc/sidebars.php:60 inc/sidebars.php:70
-#: inc/sidebars.php:80
+#: inc/sidebars.php:40 inc/sidebars.php:50 inc/sidebars.php:60
+#: inc/sidebars.php:70
 msgid ""
 "This is your footer sidebar. By default, we've defined a maximum of 4 "
 "sidebars but if you want to use less make sure you change the settings in: "
 "Footer -> Footer columns."
 msgstr ""
 
-#: inc/sidebars.php:59
+#: inc/sidebars.php:49
 msgid "Footer 2"
 msgstr ""
 
-#: inc/sidebars.php:69
+#: inc/sidebars.php:59
 msgid "Footer 3"
 msgstr ""
 
-#: inc/sidebars.php:79
+#: inc/sidebars.php:69
 msgid "Footer 4"
-msgstr ""
-
-#: inc/sidebars.php:89
-msgid "After Footer"
 msgstr ""
 
 #: inc/template-tags.php:18
@@ -890,12 +888,12 @@ msgstr ""
 msgid "Show Date and Comments"
 msgstr ""
 
-#: inc/widgets/posts_column/layouts/posts_column.php:60
-#: inc/widgets/posts_column/layouts/posts_column_featured.php:57
-#: inc/widgets/posts_column/layouts/posts_column_featured.php:109
-#: inc/widgets/posts_grid/layouts/posts_grid.php:60
-#: inc/widgets/posts_list_horizontal/layouts/posts_list_horizontal.php:60
-#: inc/widgets/posts_list_vertical/layouts/posts_list_vertical.php:65
+#: inc/widgets/posts_column/layouts/posts_column.php:69
+#: inc/widgets/posts_column/layouts/posts_column_featured.php:65
+#: inc/widgets/posts_column/layouts/posts_column_featured.php:123
+#: inc/widgets/posts_grid/layouts/posts_grid.php:67
+#: inc/widgets/posts_list_horizontal/layouts/posts_list_horizontal.php:68
+#: inc/widgets/posts_list_vertical/layouts/posts_list_vertical.php:72
 #: template-parts/content.php:65 template-parts/content.php:116
 msgid "Edit"
 msgstr ""

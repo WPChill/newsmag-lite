@@ -1,13 +1,15 @@
+### V2.2.0
+	Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-lite/milestone/3?closed=1"> Newsmag 2.2.0 </a> (bug fixes & improvements )
+
 ### V2.1.2
-- Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-pro/milestone/3?closed=1"> Newsmag 2.1.2 </a> (5 bug fixes & improvements )
+	Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-pro/milestone/3?closed=1"> Newsmag 2.1.2 </a> (5 bug fixes & improvements )
 
 ### V2.1.1
-Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-pro/milestone/2?closed=1"> Newsmag 2.1.1 </a> (13 bug fixes & improvements )
-
+	Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-pro/milestone/2?closed=1"> Newsmag 2.1.1 </a> (13 bug fixes & improvements )
 
 ### V2.0.1
-    - Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-lite/milestone/1?closed=1"> Newsmag 2.1.0 </a> (44 bug fixes & improvements )
+	Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-lite/milestone/1?closed=1"> Newsmag 2.1.0 </a> (44 bug fixes & improvements )
 
 ### V2.0.0
-  - Newsmag Lite - redesign 
-  - Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-lite/milestone/2?closed=1"> Newsmag 2.0.0 </a> ( 98 bug fixes & improvements )
+  Newsmag Lite - redesign
+  Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-lite/milestone/2?closed=1"> Newsmag 2.0.0 </a> ( 98 bug fixes & improvements )

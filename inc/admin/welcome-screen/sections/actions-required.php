@@ -31,14 +31,15 @@ wp_enqueue_script( 'updates' );
 			<div class="newsmag-action-required-box">
 				<?php if ( ! $hidden ): ?>
 					<span data-action="dismiss" class="dashicons dashicons-visibility newsmag-required-action-button"
-					      id="<?php echo $newsmag_required_action_value['id']; ?>"></span>
+					      id="<?php echo esc_attr( $newsmag_required_action_value['id'] ); ?>"></span>
 				<?php else: ?>
-					<span data-action="add" class="dashicons dashicons-hidden newsmag-required-action-button" id="<?php echo $newsmag_required_action_value['id']; ?>"></span>
+					<span data-action="add" class="dashicons dashicons-hidden newsmag-required-action-button"
+					      id="<?php echo esc_attr( $newsmag_required_action_value['id'] ); ?>"></span>
 				<?php endif; ?>
-				<h3><?php if ( ! empty( $newsmag_required_action_value['title'] ) ): echo $newsmag_required_action_value['title']; endif; ?></h3>
+				<h3><?php if ( ! empty( $newsmag_required_action_value['title'] ) ): echo esc_html( $newsmag_required_action_value['title'] ); endif; ?></h3>
 				<p>
-					<?php if ( ! empty( $newsmag_required_action_value['description'] ) ): echo $newsmag_required_action_value['description']; endif; ?>
-					<?php if ( ! empty( $newsmag_required_action_value['help'] ) ): echo '<br/>' . $newsmag_required_action_value['help']; endif; ?>
+					<?php if ( ! empty( $newsmag_required_action_value['description'] ) ): echo esc_html( $newsmag_required_action_value['description'] ); endif; ?>
+					<?php if ( ! empty( $newsmag_required_action_value['help'] ) ): echo '<br/>' . wp_kses_post( $newsmag_required_action_value['help'] ); endif; ?>
 				</p>
 				<?php
 				if ( ! empty( $newsmag_required_action_value['plugin_slug'] ) ) {
@@ -64,8 +65,8 @@ wp_enqueue_script( 'updates' );
 					?>
 					<p class="plugin-card-<?php echo esc_attr( $newsmag_required_action_value['plugin_slug'] ) ?> action_button <?php echo ( $active['needs'] !== 'install' && $active['status'] ) ? 'active' : '' ?>">
 						<a data-slug="<?php echo esc_attr( $newsmag_required_action_value['plugin_slug'] ) ?>"
-						   class="<?php echo $class; ?>"
-						   href="<?php echo esc_url( $url ) ?>"> <?php echo $label ?> </a>
+						   class="<?php echo esc_attr( $class ); ?>"
+						   href="<?php echo esc_url( $url ) ?>"> <?php echo esc_html( $label ) ?> </a>
 					</p>
 					<?php
 				};

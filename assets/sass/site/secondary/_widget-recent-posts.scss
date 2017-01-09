@@ -499,6 +499,13 @@
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in;
         }
+        &.dynamic {
+          &:hover {
+            background-color: #000 !important;
+            -webkit-transition: all .2s ease-in;
+            transition: all .2s ease-in;
+          }
+        }
       }
 
       .newsmag-title {
@@ -606,6 +613,7 @@
         a {
           color: #FFF;
           font-size: 23px;
+          line-height: 26px;
           font-weight: 700;
           &:hover,
           &:focus {

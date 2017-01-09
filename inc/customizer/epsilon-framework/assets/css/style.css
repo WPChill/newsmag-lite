@@ -295,7 +295,7 @@ ul.macho-upsell-requirements {
     min-height: 50px;
     border-radius: 5px;
     left: -75px; /* half of its width */
-    top: 25px;
+    bottom: 25px;
     z-index: 10;
     display: none;
     padding: 12px;

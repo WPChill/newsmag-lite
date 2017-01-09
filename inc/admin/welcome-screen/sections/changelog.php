@@ -7,7 +7,7 @@ $newsmag = wp_get_theme( 'newsmag' );
 
 ?>
 <div class="featured-section changelog">
-	
+
 
 	<?php
 	WP_Filesystem();
@@ -18,7 +18,7 @@ $newsmag = wp_get_theme( 'newsmag' );
 		if ( substr( $newsmag_changelog_line, 0, 3 ) === "###" ) {
 			echo '<h4>' . substr( $newsmag_changelog_line, 3 ) . '</h4>';
 		} else {
-			echo $newsmag_changelog_line, '<br/>';
+			echo esc_html( $newsmag_changelog_line ), '<br/>';
 		}
 
 

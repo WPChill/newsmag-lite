@@ -616,3 +616,38 @@
     margin-left: 15px;
   }
 }
+
+.pingback {
+  .comment-body {
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    &:before {
+      width: 3px;
+      height: 27px;
+      background: #e1e1e1;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+    }
+    &:hover {
+      &:before {
+        background: $color__brand-red;
+      }
+    }
+    a {
+      font-weight: normal;
+      color: #767676;
+    }
+    .edit-link {
+      a {
+        color: $color__brand-red;
+      }
+    }
+  }
+}

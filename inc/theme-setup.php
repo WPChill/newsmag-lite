@@ -117,9 +117,9 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 			$newsmag_recommended_plugins = array(
 				'kiwi-social-share'           => array( 'recommended' => false ),
 				'force-regenerate-thumbnails' => array( 'recommended' => true ),
-				'wp-product-review'           => array( 'recommended' => false ),
-				'pirate-forms'                => array( 'recommended' => false ),
-				'visualizer'                  => array( 'recommended' => false )
+				'wp-product-review'           => array( 'recommended' => false, 'tracking_url' => 'http://bit.ly/2iuuqs8' ),
+				'pirate-forms'                => array( 'recommended' => false, 'tracking_url' => 'http://bit.ly/2iTSm9n' ),
+				'visualizer'                  => array( 'recommended' => false, 'tracking_url' => 'bit.ly/2iupxzf' )
 			);
 			/*
 			 * id - unique id; required

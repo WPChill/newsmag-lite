@@ -2302,6 +2302,10 @@ a {
           background-color: #000;
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in; }
+        .newsmag_builder .newsmag-blog-post-layout-b.wide-layout .newsmag-post-box-b-category.dynamic:hover {
+          background-color: #000 !important;
+          -webkit-transition: all .2s ease-in;
+          transition: all .2s ease-in; }
       .newsmag_builder .newsmag-blog-post-layout-b.wide-layout .newsmag-title h3 {
         font-size: 23px;
         margin-bottom: 8px;
@@ -2382,6 +2386,7 @@ a {
         .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 a {
           color: #FFF;
           font-size: 23px;
+          line-height: 26px;
           font-weight: 700; }
           .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 a:hover, .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 a:focus {
             color: #ff3d2e;
@@ -3415,6 +3420,30 @@ a {
 
 .meta a {
   margin-left: 15px; }
+
+.pingback .comment-body {
+  font-size: 15px;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px; }
+  .pingback .comment-body:before {
+    width: 3px;
+    height: 27px;
+    background: #e1e1e1;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: ''; }
+  .pingback .comment-body:hover:before {
+    background: #ff3d2e; }
+  .pingback .comment-body a {
+    font-weight: normal;
+    color: #767676; }
+  .pingback .comment-body .edit-link a {
+    color: #ff3d2e; }
 
 /*--------------------------------------------------------------
 ## Asides
