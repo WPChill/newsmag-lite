@@ -212,6 +212,10 @@
     font-family: 'Poppins', serif;
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    @media(max-width: 767px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
   &.newsmag-custom-header-single-post {
     height: 455px;
@@ -488,12 +492,13 @@
     position: relative;
   }
 }
-.newsmag-video{
+
+.newsmag-video {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  embed, iframe, object, video{
+  embed, iframe, object, video {
     position: absolute;
     top: 0;
     left: 0;
@@ -501,6 +506,7 @@
     height: 100%
   }
 }
+
 .newsmag-video {
   position: relative;
   .newsmag-format-sign {
