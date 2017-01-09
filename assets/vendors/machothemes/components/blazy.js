@@ -5,9 +5,6 @@ if ( typeof(MachoThemes) === 'undefined' ) {
 MachoThemes.initBlazyLoad = function ($) {
 	var selector = new Blazy({
 		selector: '.blazy',
-		offset  : -50,
-		success: function () {
-			selector.revalidate();
-		}
+		offset  : 250
 	});
 };
