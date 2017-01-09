@@ -4,12 +4,19 @@ if ( $posts->have_posts() ): ?>
 	<div class="row newsmag-margin-bottom newsmag-post-banner-row">
 		<?php
 		$idObj = get_category_by_slug( $instance['newsmag_category'] );
-
 		?>
 		<h2>
-			<a href="<?php echo esc_url( get_category_link( $idObj->term_id ) ) ?>">
-				<?php echo ( empty( $instance['title'] ) && $idObj !== false ) ? esc_html( $idObj->name ) : esc_html( $instance['title'] ); ?>
-			</a>
+			<?php
+			if ( ! empty( $instance['title'] ) ) {
+				?>
+				<span><?php echo esc_html( $instance['title'] ); ?></span>
+				<?php
+			} else {
+				?>
+				<a href="<?php echo esc_url( get_category_link( $idObj->term_id ) ) ?>">
+					<?php echo ( empty( $instance['title'] ) && $idObj !== false ) ? esc_html( $idObj->name ) : esc_html( $instance['title'] ); ?>
+				</a>
+			<?php } ?>
 		</h2>
 		<?php while ( $posts->have_posts() ): $posts->the_post(); ?>
 			<?php

@@ -8,9 +8,17 @@ if ( $posts->have_posts() ):
 
 			<?php if ( $i == 0 ) { ?>
 				<h2>
-					<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>">
-						<?php echo empty( $instance['title'] ) ? esc_html( $category[0]->name ) : esc_html( $instance['title'] ); ?>
-					</a>
+					<?php
+					if ( ! empty( $instance['title'] ) ) {
+						?>
+						<span><?php echo esc_html( $instance['title'] ); ?></span>
+						<?php
+					} else {
+						?>
+						<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>">
+							<?php echo empty( $instance['title'] ) ? esc_html( $category[0]->name ) : esc_html( $instance['title'] ); ?>
+						</a>
+					<?php } ?>
 				</h2>
 			<?php }
 
@@ -21,18 +29,19 @@ if ( $posts->have_posts() ):
 			$image_obj = array( 'id' => get_the_ID(), 'image' => $image );
 			$new_image = apply_filters( 'newsmag_widget_image', $image_obj );
 
-			$allowed_tags = array( 'img'      => array(
-				'data-src'    => true,
-				'data-srcset' => true,
-				'srcset'      => true,
-				'sizes'       => true,
-				'src'         => true,
-				'class'       => true,
-				'alt'         => true,
-				'width'       => true,
-				'height'      => true
-			),
-			                       'noscript' => array()
+			$allowed_tags = array(
+				'img'      => array(
+					'data-src'    => true,
+					'data-srcset' => true,
+					'srcset'      => true,
+					'sizes'       => true,
+					'src'         => true,
+					'class'       => true,
+					'alt'         => true,
+					'width'       => true,
+					'height'      => true
+				),
+				'noscript' => array()
 			);
 			?>
 			<div class="newsmag-blog-post-layout-b">

@@ -29,9 +29,17 @@ if ( $posts->have_posts() ):
 				?>
 				<div class="newsmag-post-box-a posts-column-layout">
 					<h2>
-						<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>">
-							<?php echo empty( $instance['title'] ) ? esc_html( $category[0]->name ) : esc_html( $instance['title'] ); ?>
-						</a>
+						<?php
+						if ( ! empty( $instance['title'] ) ) {
+							?>
+							<span><?php echo esc_html( $instance['title'] ); ?></span>
+							<?php
+						} else {
+							?>
+							<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>">
+								<?php echo empty( $instance['title'] ) ? esc_html( $category[0]->name ) : esc_html( $instance['title'] ); ?>
+							</a>
+						<?php } ?>
 					</h2>
 					<div class="newsmag-image">
 						<a class="newsmag-post-box-image" href="<?php echo esc_url( get_the_permalink() ); ?>">
