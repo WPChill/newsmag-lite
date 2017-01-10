@@ -86,6 +86,15 @@
     }
   }
 
+  &.newsmag_builder {
+    margin: 0;
+  }
+
+  &.widget_text {
+    display: inline-block;
+    width: 100%;
+  }
+
   &.popular-posts {
     .posts-list {
       li {

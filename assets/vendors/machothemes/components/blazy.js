@@ -3,8 +3,10 @@ if ( typeof(MachoThemes) === 'undefined' ) {
 }
 
 MachoThemes.initBlazyLoad = function ($) {
-	var selector = new Blazy({
-		selector: '.blazy',
-		offset  : 250
-	});
+	setTimeout(function(){
+		var selector = new Blazy({
+			selector: '.blazy',
+			offset  : 250
+		});
+	}, 500);
 };

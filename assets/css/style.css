@@ -1153,6 +1153,11 @@ a {
     max-width: 100%; }
     .widget:not(.widget_newsmag_banner):not(.newsmag_slider) select option {
       max-width: 233px; }
+  .widget:not(.widget_newsmag_banner):not(.newsmag_slider).newsmag_builder {
+    margin: 0; }
+  .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_text {
+    display: inline-block;
+    width: 100%; }
   .widget:not(.widget_newsmag_banner):not(.newsmag_slider).popular-posts .posts-list li {
     display: inline-block;
     margin-bottom: 11px;
