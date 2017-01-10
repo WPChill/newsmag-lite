@@ -303,6 +303,11 @@ ul.macho-upsell-requirements {
     font-family: 'Arial', sans-serif;
 }
 
+.accordion-section-content > li:nth-of-type(2) .mte-tooltip {
+    bottom: initial;
+    top: 25px;
+}
+
 .dashicons.dashicons-editor-help {
     cursor: pointer;
     color: #55AAD3;
