@@ -61,6 +61,7 @@ class Newsmag_Breadcrumbs {
 	 * @var
 	 */
 	private $options;
+
 	/**
 	 * Class Constructor
 	 */
@@ -344,21 +345,8 @@ class Newsmag_Breadcrumbs {
 	private function get_post_terms() {
 		$terms_markup = '';
 
-		if ( ! $this->get_latest_post_page() ) {
-			return $terms_markup;
-		}
-
-		if ( is_page() ) {
-			return $terms_markup;
-		}
-
-		$term = $this->get_latest_post_page();
-
-		$terms_markup .= $this->get_single_breadcrumb_markup( $term['name']->post_title, $term['link'] );
-
-		return $terms_markup;
 		// Get the post terms
-		if ( $this->post->post_type == 'post' ) {
+		if ( $this->post->post_type == 'post' || $this->post->post_type == 'page' ) {
 			$taxonomy = 'category';
 
 			/*
