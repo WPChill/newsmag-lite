@@ -1,0 +1,127 @@
+.newsmag_widget_posts_video {
+  .meta {
+    display: inline-block;
+    margin-top: 25px;
+    color: #767676;
+    font-size: 14px;
+    a {
+      font-size: 14px;
+      color: #767676;
+    }
+  }
+
+  .newsmag-post-format-video {
+    margin-bottom: 30px;
+
+    h3 {
+      font-size: 15px;
+      text-transform: initial;
+      font-weight: bold;
+
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover, .plyr__play-large {
+    background: rgba(0, 0, 0, .6);
+    border: 2px solid #fff;
+  }
+
+  .plyr__controls {
+    opacity: 0;
+  }
+
+  .newsmag-post-format-video:hover {
+    .plyr__controls {
+      opacity: 1;
+    }
+  }
+
+  .plyr__play-large svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .plyr__play-large {
+    padding: 25px;
+  }
+
+  &.grid {
+    .plyr__controls {
+      display: none;
+    }
+
+    .plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover, .plyr__play-large {
+      background: rgba(0, 0, 0, 1);
+      border: 2px solid #fff;
+    }
+
+    .plyr__play-large svg {
+      width: 7px;
+      height: 7px;
+    }
+
+    .plyr__play-large {
+      padding: 7px;
+      bottom: -11px;
+      right: 15px;
+      top: initial;
+      left: initial;
+      transform: initial;
+    }
+
+    .plyr {
+      min-width: initial;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+}
+
+.type-post {
+  .plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover, .plyr__play-large {
+    background: rgba(0, 0, 0, .6);
+    border: 2px solid #fff;
+  }
+
+  .plyr--video .plyr__controls {
+    opacity: 0;
+  }
+
+  .plyr--video:hover {
+    .plyr__controls {
+      opacity: 1;
+    }
+  }
+
+  .plyr__play-large svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .plyr__play-large {
+    padding: 25px;
+  }
+}
+
+.newsmag-image {
+  .plyr__controls {
+    display: none;
+  }
+
+  .plyr__play-large {
+    background: rgba(0, 0, 0, .6);
+    border: 2px solid #fff;
+    padding: 10px;
+  }
+
+  .plyr__play-large svg {
+    width: 10px;
+    height: 10px;
+    left: 1px;
+  }
+}

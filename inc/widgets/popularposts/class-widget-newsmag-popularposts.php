@@ -14,22 +14,28 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		extract( $args );
-		extract( $instance );
+		$defaults = array(
+			'title'  => __( 'Popular posts', 'newsmag' ),
+			'number' => 5,
+		);
 
-		$number            = empty( $number ) ? 5 : $number;
-		$instance['title'] = empty( $instance['title'] ) ? __( 'Popular posts', 'newsmag' ) : $instance['title'];
+		$instance = wp_parse_args( (array) $instance, $defaults );
 
-		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+		$instance['title'] = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 
-		$r = new WP_Query( array( 'posts_per_page' => $number, 'offset' => 0, 'orderby' => 'comment_count' ) );
+		$r = new WP_Query( array(
+			                   'posts_per_page' => $instance['number'],
+			                   'offset'         => 0,
+			                   'orderby'        => 'comment_count'
+		                   ) );
 
+		wp_reset_postdata();
 		if ( $r->have_posts() ) :
 			?>
-			<?php echo $before_widget; ?>
-			<?php echo $before_title . $title . $after_title; ?>
+			<?php echo $args['before_widget']; ?>
+			<?php echo $args['before_title'] . $instance['title'] . $args['after_title']; ?>
 
-			<ul class="posts-list">
+            <ul class="posts-list">
 				<?php while ( $r->have_posts() ) : $r->the_post();
 					$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg" />';
 					if ( has_post_thumbnail() ) {
@@ -52,63 +58,66 @@ class Widget_Newsmag_PopularPosts extends WP_Widget {
 						'noscript' => array()
 					);
 					?>
-					<li>
-						<a class="newsmag-image" href="<?php the_permalink() ?>">
+                    <li>
+                        <a class="newsmag-image" href="<?php the_permalink() ?>">
 							<?php echo wp_kses( $new_image, $allowed_tags ); ?>
-						</a>
-						<div class="content">
+                        </a>
+                        <div class="content">
 
-							<a href="<?php the_permalink(); ?>"
-							   title="<?php echo esc_attr( get_the_title() ? get_the_title() : get_the_ID() ); ?>">
+                            <a href="<?php the_permalink(); ?>"
+                               title="<?php echo esc_attr( get_the_title() ? get_the_title() : get_the_ID() ); ?>">
 								<?php if ( get_the_title() ) {
 									the_title();
 								} else {
 									the_ID();
 								} ?></a>
-							<div class="meta">
-								<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
-							</div>
-						</div>
+                            <div class="meta">
+                                <span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+                            </div>
+                        </div>
 
-					</li>
+                    </li>
 				<?php endwhile; ?>
-			</ul>
+            </ul>
 
-			<?php echo $after_widget; ?>
+			<?php echo $args['after_widget']; ?>
 
 			<?php
-			// reset global data
-			wp_reset_postdata();
-
 		endif;
 	}
 
 	public function update( $new, $old ) {
-		$new['title']  = strip_tags( $new['title'] );
-		$new['number'] = intval( $new['number'] );
+		$instance = array(
+			'title'     => ! empty( $new['title'] ) ? strip_tags( $new['title'] ) : '',
+			'number' => ! empty( $new['show_post'] ) ? absint( $new['number'] ) : '',
+		);
 
-		return $new;
+		return $instance;
 	}
 
 	public function form( $instance ) {
-		$title  = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
-		?>
-		<p><label
-				for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'newsmag' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-			       name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
-			       value="<?php echo esc_attr( $title ); ?>"/>
-		</p>
+		$defaults = array(
+			'title'  => __( 'Popular posts', 'newsmag' ),
+			'number' => 5,
+		);
 
-		<p>
-			<label
-				for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of posts to show:', 'newsmag' ); ?></label>
-			<input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"
-			       name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="text"
-			       value="<?php echo esc_attr( $number ); ?>"
-			       size="3"/>
-		</p>
+		$instance = wp_parse_args( (array) $instance, $defaults );
+		?>
+        <p><label
+                    for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'newsmag' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+                   name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+                   value="<?php echo esc_attr( $instance['title'] ); ?>"/>
+        </p>
+
+        <p>
+            <label
+                    for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of posts to show:', 'newsmag' ); ?></label>
+            <input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"
+                   name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="text"
+                   value="<?php echo esc_attr( $instance['number'] ); ?>"
+                   size="3"/>
+        </p>
 		<?php
 	}
 

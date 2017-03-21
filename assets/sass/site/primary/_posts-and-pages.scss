@@ -285,6 +285,7 @@
   padding-bottom: 30px;
   position: relative;
   border-bottom: 1px solid #ebebeb;
+
   &:last-of-type {
     margin-bottom: 10px;
   }
@@ -325,6 +326,13 @@
         color: #FFF;
         font-size: 20px;
       }
+    }
+  }
+
+  &.video {
+    .newsmag-image {
+      float: initial;
+      display: block;
     }
   }
 

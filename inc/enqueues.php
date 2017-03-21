@@ -47,6 +47,19 @@ function newsmag_scripts() {
 	wp_enqueue_script( 'adsense-loader', get_template_directory_uri() . '/assets/vendors/adsenseloader/jquery.adsenseloader.js', array( 'jquery' ), $newsmag['Version'], true );
 
 	/**
+	 * OwlCarousel Library
+	 */
+	wp_enqueue_script( 'owlCarousel', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.carousel.min.js', array( 'jquery' ), $newsmag['Version'], true );
+	wp_enqueue_style( 'owlCarousel', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.carousel.min.css' );
+	wp_enqueue_style( 'owlCarousel-themes', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.theme.default.css' );
+
+	/**
+	 * Load Plyr
+	 */
+	wp_enqueue_script( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.js', array(), $newsmag['Version'], true );
+	wp_enqueue_style( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.css' );
+
+	/**
 	 *Load the theme's core Javascript
 	 */
 	wp_enqueue_script( 'machothemes-object', get_template_directory_uri() . '/assets/vendors/machothemes/machothemes.min.js', array(), $newsmag['Version'], true );
@@ -61,12 +74,6 @@ function newsmag_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	/**
-	 * OwlCarousel Library
-	 */
-	wp_enqueue_script( 'owlCarousel-js', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.carousel.min.js', array( 'jquery' ), $newsmag['Version'], true );
-	wp_enqueue_style( 'owlCarousel-main-css', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.carousel.min.css' );
-	wp_enqueue_style( 'owlCarousel-theme-css', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.theme.default.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'newsmag_scripts' );

@@ -6,6 +6,7 @@ class Newsmag_Lazy_Load_Images {
 	function __construct() {
 		// Add Our Filters and actions for the plugin
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_lazyload' ) );
+
 		$browser = $this->check_browser_version();
 		if ( $browser['name'] === 'Internet Explorer' ) {
 			add_filter( 'wp_get_attachment_image_attributes', function ( $attr ) {

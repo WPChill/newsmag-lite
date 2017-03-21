@@ -392,6 +392,35 @@
       }
     }
   }
+  &.newsmag_widget_posts_video {
+    h2 {
+      font-family: 'Poppins';
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      position: relative;
+      line-height: 27px;
+      margin-bottom: 15px;
+      &:after {
+        position: absolute;
+        height: 2px;
+        background: $color__brand-red;
+        display: block;
+        content: '';
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      a, span {
+        font-family: 'Poppins';
+        font-size: 16px;
+        color: #FFF;
+        padding: 2px 20px 0;
+        background: $color__brand-red;
+        font-weight: bold;
+      }
+    }
+  }
   &.widget_recent_comments {
     ul {
       li {

@@ -8,8 +8,8 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 		add_action( 'customize_preview_init', array( $this, 'enqueue' ) );
 
 		parent::__construct( 'newsmag_widget_posts_list_vertical', __( 'Newsmag - Posts List Vertical', 'newsmag' ), array(
-			'classname'   => 'newsmag_builder',
-			'description' => __( 'Very similar to the blog layout. It\'s a versatile layout that can be displayed side-by-side to the Posts Column widget to create a great content combination.', 'newsmag' ),
+			'classname'                   => 'newsmag_builder',
+			'description'                 => __( 'Very similar to the blog layout. It\'s a versatile layout that can be displayed side-by-side to the Posts Column widget to create a great content combination.', 'newsmag' ),
 			'customize_selective_refresh' => true
 		) );
 	}
@@ -22,83 +22,73 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 	}
 
 	public function form( $instance ) {
+		$defaults = array(
+			'title'            => __( 'Recent posts', 'newsmag' ),
+			'show_post'        => 4,
+			'newsmag_category' => 'uncategorized'
+		);
 
-		if ( isset( $instance['title'] ) ) {
-			$title = $instance['title'];
-		} else {
-			$title = '';
-		}
-
-		if ( ! empty( $instance['newsmag_category'] ) ) {
-			$newsmag_category = $instance['newsmag_category'];
-		} else {
-			$instance['newsmag_category'] = 'uncategorized';
-		}
-
-		if ( isset( $instance['show_post'] ) ) {
-			$show_post = $instance['show_post'];
-		} else {
-			$instance['show_post'] = 4;
-		}
+		$instance = wp_parse_args( (array) $instance, $defaults );
 
 		?>
-		<p>
-			<label><?php _e( 'Title', 'newsmag' ); ?> :</label>
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
-			       id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-			       value="<?php echo esc_attr( $title ); ?>">
-		</p>
+        <p>
+            <label><?php _e( 'Title', 'newsmag' ); ?> :</label>
+            <input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+                   id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+                   value="<?php echo esc_attr( $instance['title'] ); ?>">
+        </p>
 
-		<p>
-			<label><?php _e( 'Category', 'newsmag' ); ?> :</label>
-			<select name="<?php echo esc_attr( $this->get_field_name( 'newsmag_category' ) ); ?>"
-			        id="<?php echo esc_attr( $this->get_field_id( 'newsmag_category' ) ); ?>">
-				<option value="" <?php if ( empty( $instance['newsmag_category'] ) ) {
+        <p>
+            <label><?php _e( 'Category', 'newsmag' ); ?> :</label>
+            <select name="<?php echo esc_attr( $this->get_field_name( 'newsmag_category' ) ); ?>"
+                    id="<?php echo esc_attr( $this->get_field_id( 'newsmag_category' ) ); ?>">
+                <option value="" <?php if ( empty( $instance['newsmag_category'] ) ) {
 					echo 'selected="selected"';
 				} ?>><?php _e( '&ndash; Select a category &ndash;', 'newsmag' ) ?></option>
 				<?php
 				$categories = get_categories( 'hide_empty=0' );
 				foreach ( $categories as $category ) { ?>
-					<option
-						value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_attr( $category->cat_name ); ?></option>
+                    <option
+                            value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_attr( $category->cat_name ); ?></option>
 				<?php } ?>
-			</select>
-		</p>
+            </select>
+        </p>
 
-		<label class="block" for="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>">
+        <label class="block" for="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>">
             <span class="customize-control-title">
                <?php _e( 'Posts to Show', 'newsmag' ); ?> :
             </span>
-		</label>
+        </label>
 
-		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'show_post' ) ); ?>" class="rl-slider"
-		       id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"
-		       value="<?php echo esc_attr( $instance['show_post'] ); ?>"/>
+        <input type="text" name="<?php echo esc_attr( $this->get_field_name( 'show_post' ) ); ?>" class="rl-slider"
+               id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"
+               value="<?php echo esc_attr( $instance['show_post'] ); ?>"/>
 
-		<div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="1" data-attr-max="10" data-attr-step="1" class="ss-slider"></div>
-		<script>
-			jQuery(document).ready(function ($) {
-				$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({
-					value: <?php echo esc_attr( $instance['show_post'] ); ?>,
-					range: 'min',
-					min  : 1,
-					max  : 10,
-					step : 1,
-					slide: function (event, ui) {
-						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').val(ui.value).keyup();
-					}
-				});
-				$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').on('focus', function(){
-					$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').trigger('blur');
-				});
-				$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').val($('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider("value"));
-				$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').change(function () {
-					$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider({
-						value: $(this).val()
+        <div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="1"
+             data-attr-max="10" data-attr-step="1" class="ss-slider"></div>
+        <script>
+					jQuery(document).ready(function ($) {
+						$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({
+							value: <?php echo esc_attr( $instance['show_post'] ); ?>,
+							range: 'min',
+							min  : 1,
+							max  : 10,
+							step : 1,
+							slide: function (event, ui) {
+								$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').val(ui.value).keyup();
+							}
+						});
+						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').on('focus', function () {
+							$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').trigger('blur');
+						});
+						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').val($('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider("value"));
+						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').change(function () {
+							$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider({
+								value: $(this).val()
+							});
+						});
 					});
-				});
-			});
-		</script>
+        </script>
 	<?php }
 
 	public function update( $new_instance, $old_instance ) {
@@ -106,7 +96,7 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 		$instance = array();
 
 		$instance['title']            = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['newsmag_category'] = ( ! empty( $new_instance['newsmag_category'] ) ) ? $new_instance['newsmag_category'] : '';
+		$instance['newsmag_category'] = ( ! empty( $new_instance['newsmag_category'] ) ) ? strip_tags( $new_instance['newsmag_category'] ) : '';
 		$instance['show_post']        = ( ! empty( $new_instance['show_post'] ) ) ? strip_tags( $new_instance['show_post'] ) : '';
 
 		return $instance;
@@ -140,27 +130,15 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 
 	public function widget( $args, $instance ) {
 
-		if ( isset( $instance['title'] ) ) {
-			$title = $instance['title'];
-		} else {
-			$title = '';
-		}
+		$defaults = array(
+			'title'            => __( 'Recent posts', 'newsmag' ),
+			'show_post'        => 4,
+			'newsmag_category' => 'uncategorized'
+		);
 
-		if ( ! empty( $instance['newsmag_category'] ) ) {
-			$newsmag_category = $instance['newsmag_category'];
-		} else {
-			$instance['newsmag_category'] = 'uncategorized';
-		}
+		$instance = wp_parse_args( (array) $instance, $defaults );
 
-		if ( isset( $instance['show_post'] ) ) {
-			$show_post = $instance['show_post'];
-		} else {
-			$instance['show_post'] = 4;
-		}
-
-		extract( $args, EXTR_SKIP );
-
-		echo $before_widget;
+		echo $args['before_widget'];
 		$filepath = get_template_directory() . '/inc/widgets/posts_list_vertical/layouts/posts_list_vertical.php';
 
 		$posts = $this->get_posts( $instance );
@@ -168,11 +146,10 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 		if ( file_exists( $filepath ) ) {
 			include $filepath;
 		} else {
-			echo _e( 'Please configure your widget', 'newsmag' );
+			esc_html_e( 'Please configure your widget', 'newsmag' );
 		}
 
-		wp_reset_query();
-		echo $after_widget;
+		echo $args['after_widget'];
 
 	}
 

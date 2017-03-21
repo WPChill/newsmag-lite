@@ -1,0 +1,57 @@
+.newsmag-posts-timeline {
+  h3 {
+    font-size: 14px;
+    text-transform: initial;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: 'Lato';
+    a {
+      font-weight: bold;
+    }
+  }
+
+  .meta {
+    display: inline-block;
+    margin-top: 0;
+    color: #767676;
+    font-size: 14px;
+    a {
+      font-size: 14px;
+      color: #767676;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    position: relative;
+    padding-left: 20px;
+    &:before {
+      width: 1px;
+      background: #e1e1e1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      content: '';
+      display: block;
+    }
+
+    li {
+      position: relative;
+      &:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 5px solid #fff;
+        position: absolute;
+        left: -29px;
+        top: 2px;
+        display:block;
+        background:#fff;
+        -webkit-box-shadow: inset 1px 1px 0 0 transparentize($color__brand-red, .25), inset -1px -1px 0 0 transparentize($color__brand-red, .25);
+        -moz-box-shadow: inset 1px 1px 0 0 transparentize($color__brand-red, .25), inset -1px -1px 0 0 transparentize($color__brand-red, .25);
+        box-shadow: inset 1px 1px 0 0 transparentize($color__brand-red, .25), inset -1px -1px 0 0 transparentize($color__brand-red, .25);
+      }
+    }
+  }
+}

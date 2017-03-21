@@ -6,6 +6,12 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		pkg          : grunt.file.readJSON('package.json'),
+
+		dirs: {
+			css: 'assets/css',
+			js : 'assets/js'
+		},
+
 		makepot      : {
 			target: {
 				options: {
@@ -54,25 +60,34 @@ module.exports = function (grunt) {
 				]
 			},
 			cssmin: {
-				src: [ 'layout/css/*.min.css' ]
+				target: {
+					files: [ {
+						expand: true,
+						cwd   : 'assets/css',
+						src   : [ '*.css', '!*.min.css' ],
+						dest  : 'assets/css',
+						ext   : '.min.css'
+					} ]
+				}
 			},
 			jsmin : {
 				src: [
-					'layout/js/*.min.js',
-					'layout/js/*.min.js.map',
-					'layout/js/**/*.min.js',
-					'layout/js/**/*.min.js.map'
+					'assets/js/*.min.js',
+					'assets/js/*.min.js.map',
+					'assets/js/**/*.min.js',
+					'assets/js/**/*.min.js.map'
 				]
 			}
 		},
-		copy : {
+
+		copy: {
 			readme: {
 				src : 'readme.md',
 				dest: 'build/readme.txt'
 			},
 			build : {
 				expand: true,
-				src   : [ '**', '!node_modules/**', '!build/**', '!readme.md', '!Gruntfile.js', '!package.json', '!nbproject/**' ],
+				src   : [ '**', '!node_modules/**', '!build/**', '!readme.md', '!gruntfile.js', '!package.json', '!nbproject/**' ],
 				dest  : 'build/'
 			}
 		},
@@ -91,6 +106,19 @@ module.exports = function (grunt) {
 		},
 
 		uglify: {
+			jsfiles: {
+				files: [ {
+					expand: true,
+					cwd   : '<%= dirs.js %>/',
+					src   : [
+						'*.js',
+						'!*.min.js',
+						'!Gruntfile.js',
+					],
+					dest  : '<%= dirs.js %>/',
+					ext   : '.min.js'
+				} ]
+			},
 			macho: {
 				options: {
 					sourceMap    : false,
@@ -239,12 +267,11 @@ module.exports = function (grunt) {
 
 	// Build task
 	grunt.registerTask('build-archive', [
+		'uglify',
 		'allmin',
 		'clean:init',
 		'copy',
 		'compress:build',
 		'clean:build'
 	]);
-
-	grunt.registerTask('watch_all', [ 'watch:js' ]);
 };

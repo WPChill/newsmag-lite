@@ -15,6 +15,7 @@
     ## Newsmag Posts Widget
     ## Newsmag Banners Widget
     ## Newsmag Recent Posts Widget
+    ## Newsmag Video Posts Widget
 # Content
     ## Posts and pages
       ## Author Box
@@ -75,7 +76,9 @@
 @import "site/secondary/widget-posts";
 @import "site/secondary/widget-banner";
 @import "site/secondary/widget-recent-posts";
+@import "site/secondary/widget-video-posts";
 @import "site/secondary/widget-slider";
+@import "site/secondary/widget-posts-timeline";
 
 /*--------------------------------------------------------------
 # Content

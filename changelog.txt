@@ -1,3 +1,9 @@
+### V2.2.2
+	Updated recommended plugins
+
+### V2.2.1
+	Fixed a bug with lazy loading images
+
 ### V2.2.0
 	Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-lite/milestone/3?closed=1"> Newsmag 2.2.0 </a> (bug fixes & improvements )
 

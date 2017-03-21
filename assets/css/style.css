@@ -15,6 +15,7 @@
     ## Newsmag Posts Widget
     ## Newsmag Banners Widget
     ## Newsmag Recent Posts Widget
+    ## Newsmag Video Posts Widget
 # Content
     ## Posts and pages
       ## Author Box
@@ -1365,6 +1366,30 @@ a {
         .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_nav_menu > div > ul li a:hover, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_nav_menu > div > ul li a:focus {
           text-decoration: none;
           color: #ff3d2e; }
+  .widget:not(.widget_newsmag_banner):not(.newsmag_slider).newsmag_widget_posts_video h2 {
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    line-height: 27px;
+    margin-bottom: 15px; }
+    .widget:not(.widget_newsmag_banner):not(.newsmag_slider).newsmag_widget_posts_video h2:after {
+      position: absolute;
+      height: 2px;
+      background: #ff3d2e;
+      display: block;
+      content: '';
+      bottom: 0;
+      left: 0;
+      right: 0; }
+    .widget:not(.widget_newsmag_banner):not(.newsmag_slider).newsmag_widget_posts_video h2 a, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).newsmag_widget_posts_video h2 span {
+      font-family: 'Poppins';
+      font-size: 16px;
+      color: #FFF;
+      padding: 2px 20px 0;
+      background: #ff3d2e;
+      font-weight: bold; }
   .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_recent_comments ul li {
     color: #767676;
     margin-bottom: 10px; }
@@ -2454,6 +2479,78 @@ a {
   .newsmag-blog-sidebar .widget_newsmag_recent .newsmag-recent-post-widget:last-of-type, .newsmag-sidebar .widget_newsmag_recent .newsmag-recent-post-widget:last-of-type {
     border: none; }
 
+.newsmag_widget_posts_video .meta {
+  display: inline-block;
+  margin-top: 25px;
+  color: #767676;
+  font-size: 14px; }
+  .newsmag_widget_posts_video .meta a {
+    font-size: 14px;
+    color: #767676; }
+.newsmag_widget_posts_video .newsmag-post-format-video {
+  margin-bottom: 30px; }
+  .newsmag_widget_posts_video .newsmag-post-format-video h3 {
+    font-size: 15px;
+    text-transform: initial;
+    font-weight: bold; }
+    .newsmag_widget_posts_video .newsmag-post-format-video h3 a {
+      font-weight: bold; }
+.newsmag_widget_posts_video .plyr--audio .plyr__controls button.tab-focus:focus, .newsmag_widget_posts_video .plyr--audio .plyr__controls button:hover, .newsmag_widget_posts_video .plyr__play-large {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #fff; }
+.newsmag_widget_posts_video .plyr__controls {
+  opacity: 0; }
+.newsmag_widget_posts_video .newsmag-post-format-video:hover .plyr__controls {
+  opacity: 1; }
+.newsmag_widget_posts_video .plyr__play-large svg {
+  width: 15px;
+  height: 15px; }
+.newsmag_widget_posts_video .plyr__play-large {
+  padding: 25px; }
+.newsmag_widget_posts_video.grid .plyr__controls {
+  display: none; }
+.newsmag_widget_posts_video.grid .plyr--audio .plyr__controls button.tab-focus:focus, .newsmag_widget_posts_video.grid .plyr--audio .plyr__controls button:hover, .newsmag_widget_posts_video.grid .plyr__play-large {
+  background: black;
+  border: 2px solid #fff; }
+.newsmag_widget_posts_video.grid .plyr__play-large svg {
+  width: 7px;
+  height: 7px; }
+.newsmag_widget_posts_video.grid .plyr__play-large {
+  padding: 7px;
+  bottom: -11px;
+  right: 15px;
+  top: initial;
+  left: initial;
+  transform: initial; }
+.newsmag_widget_posts_video.grid .plyr {
+  min-width: initial; }
+.newsmag_widget_posts_video.grid h3 {
+  margin-top: 0; }
+
+.type-post .plyr--audio .plyr__controls button.tab-focus:focus, .type-post .plyr--audio .plyr__controls button:hover, .type-post .plyr__play-large {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #fff; }
+.type-post .plyr--video .plyr__controls {
+  opacity: 0; }
+.type-post .plyr--video:hover .plyr__controls {
+  opacity: 1; }
+.type-post .plyr__play-large svg {
+  width: 15px;
+  height: 15px; }
+.type-post .plyr__play-large {
+  padding: 25px; }
+
+.newsmag-image .plyr__controls {
+  display: none; }
+.newsmag-image .plyr__play-large {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #fff;
+  padding: 10px; }
+.newsmag-image .plyr__play-large svg {
+  width: 10px;
+  height: 10px;
+  left: 1px; }
+
 .primary-slider {
   position: relative; }
 
@@ -2958,6 +3055,51 @@ a {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
+.newsmag-posts-timeline h3 {
+  font-size: 14px;
+  text-transform: initial;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-family: 'Lato'; }
+  .newsmag-posts-timeline h3 a {
+    font-weight: bold; }
+.newsmag-posts-timeline .meta {
+  display: inline-block;
+  margin-top: 0;
+  color: #767676;
+  font-size: 14px; }
+  .newsmag-posts-timeline .meta a {
+    font-size: 14px;
+    color: #767676; }
+.newsmag-posts-timeline ul {
+  list-style-type: none;
+  position: relative;
+  padding-left: 20px; }
+  .newsmag-posts-timeline ul:before {
+    width: 1px;
+    background: #e1e1e1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    content: '';
+    display: block; }
+  .newsmag-posts-timeline ul li {
+    position: relative; }
+    .newsmag-posts-timeline ul li:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 5px solid #fff;
+      position: absolute;
+      left: -29px;
+      top: 2px;
+      display: block;
+      background: #fff;
+      -webkit-box-shadow: inset 1px 1px 0 0 rgba(255, 61, 46, 0.75), inset -1px -1px 0 0 rgba(255, 61, 46, 0.75);
+      -moz-box-shadow: inset 1px 1px 0 0 rgba(255, 61, 46, 0.75), inset -1px -1px 0 0 rgba(255, 61, 46, 0.75);
+      box-shadow: inset 1px 1px 0 0 rgba(255, 61, 46, 0.75), inset -1px -1px 0 0 rgba(255, 61, 46, 0.75); }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -3208,6 +3350,9 @@ a {
       .newsmag-blog-post-layout .newsmag-image .newsmag-format-sign span {
         color: #FFF;
         font-size: 20px; }
+  .newsmag-blog-post-layout.video .newsmag-image {
+    float: initial;
+    display: block; }
   .newsmag-blog-post-layout .newsmag-title {
     color: #767676; }
     .newsmag-blog-post-layout .newsmag-title h3 {

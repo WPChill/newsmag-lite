@@ -111,6 +111,37 @@ function newsmag_fix_responsive_videos( $html ) {
 add_filter( 'embed_oembed_html', 'newsmag_fix_responsive_videos', 10, 3 );
 add_filter( 'video_embed_html', 'newsmag_fix_responsive_videos' ); // Jetpack
 
+function newsmag_add_plyr_layout( $content ) {
+	if ( ! is_single() ) {
+		return $content;
+	}
+
+	// has normal video
+	// remove video tag
+	preg_match( '/\[video.*?\]/', $content, $matches );
+	if ( ! empty( $matches ) ) {
+		preg_match_all( '#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $matches[0], $match );
+		if ( ! empty( $match ) && filter_var( $match[0][0], FILTER_VALIDATE_URL ) ) {
+			$content = preg_replace( '/\[video.*?\]/', '', $content );
+			$content = preg_replace( '/\[\/video.*?\]/', '', $content );
+
+			$html = '<div>';
+			$html .= '<video class="plyr">';
+			$html .= '<source src=' . $match[0][0] . '>';
+			$html .= '</video>';
+			$html .= '</div>';
+
+			return $html . $content;
+		}
+	};
+
+	//$embeds  = get_media_embedded_in_content( $content );
+
+	return $content;
+}
+
+add_filter( 'the_content', 'newsmag_add_plyr_layout' );
+
 
 /**
  * Helper function to determine what kind of archive page we are viewing and return an array
@@ -273,4 +304,55 @@ function newsmag_get_attachment_image() {
 
 	echo $src;
 	die();
+}
+
+function newsmag_get_first_media( $post_id ) {
+	$post    = get_post( $post_id );
+	$content = do_shortcode( apply_filters( 'the_content', $post->post_content, 1 ) );
+	$embeds  = get_media_embedded_in_content( $content );
+	$href    = '';
+	$type    = '';
+	$html    = '';
+
+	if ( empty( $embeds ) ) {
+		return false;
+	}
+
+	foreach ( $embeds as $embed ) {
+		if ( strpos( $embed, 'youtube' ) ) {
+			preg_match( '/src="([^"]+)"/', $embed, $match );
+			$href = $match[1];
+
+			$type = 'youtube';
+		} elseif ( strpos( $embed, 'vimeo' ) ) {
+			preg_match( '/src="([^"]+)"/', $embed, $match );
+			$href = $match[1];
+
+			$type = 'vimeo';
+		} else {
+			$element = new SimpleXMLElement( $embeds[0] );
+			$href    = (string) $element->a->attributes()->href;
+			$type    = 'local';
+		}
+	}
+
+	if ( ! empty( $href ) ) {
+		switch ( $type ) {
+			case 'local':
+				$html = '<div>';
+				$html .= '<video class="plyr">';
+				$html .= '<source src=' . $href . '>';
+				$html .= '</video>';
+				$html .= '</div>';
+				break;
+			default:
+				$html = '<div class="plyr" data-type="' . $type . '" data-video-id="' . $href . '">';
+				$html .= '</div>';
+				break;
+		}
+
+		return $html;
+	}
+
+	return false;
 }

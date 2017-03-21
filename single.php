@@ -62,7 +62,6 @@ if ( $breadcrumbs_enabled ) { ?>
 				<main id="main" class="site-main" role="main">
 					<?php
 					while ( have_posts() ) : the_post();
-
 						get_template_part( 'template-parts/content', 'single' );
 
 						// If comments are open or we have at least one comment, load up the comment template.
