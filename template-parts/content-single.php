@@ -20,25 +20,11 @@ $author              = get_theme_mod( 'newsmag_enable_author_box', true );
             <div class="newsmag-image">
 				<?php
 				if ( has_post_thumbnail() ) {
-					$image        = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
-					$image_obj    = array( 'id' => get_the_ID(), 'image' => $image );
-					$new_image    = apply_filters( 'newsmag_widget_image', $image_obj );
-					$allowed_tags = array(
-						'img'      => array(
-							'data-src'    => true,
-							'data-srcset' => true,
-							'srcset'      => true,
-							'sizes'       => true,
-							'src'         => true,
-							'class'       => true,
-							'alt'         => true,
-							'width'       => true,
-							'height'      => true
-						),
-						'noscript' => array()
-					);
+					$image     = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
+					$image_obj = array( 'id' => get_the_ID(), 'image' => $image );
+					$image     = Newsmag_Helper::get_lazy_image( $image_obj );
 
-					echo wp_kses( $new_image, $allowed_tags );
+					echo wp_kses( $image['image'], $image['tags'] );
 				}
 				?>
             </div>
@@ -60,7 +46,7 @@ $author              = get_theme_mod( 'newsmag_enable_author_box', true );
             <div class="entry-content">
                 <div class="newsmag-post-meta">
                     <span class="fa fa-folder-o"></span> <?php the_category( ',' ); ?> <span class="sep">|</span> <span
-                            class="fa fa-clock-o"></span> <?php newsmag_posted_on( 'date' ); ?>
+                            class="fa fa-clock-o"></span> <?php Newsmag_Helper::posted_on( 'date' ); ?>
                 </div><!-- .entry-meta -->
 				<?php if ( is_single() ) {
 					the_content();

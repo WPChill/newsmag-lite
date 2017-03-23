@@ -1,7 +1,3 @@
-if ( typeof(MachoThemes) === 'undefined' ) {
-	var MachoThemes = {};
-}
-
 MachoThemes.initGoToTop = function ($) {
 	var offset = 300,
 			scroll_top_duration = 700,

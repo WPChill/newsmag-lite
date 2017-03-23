@@ -1,7 +1,3 @@
-if ( typeof(MachoThemes) === 'undefined' ) {
-	var MachoThemes = {};
-}
-
 MachoThemes.init = function ($) {
 	function getOwnMethods(obj) {
 		var props = Object.getOwnPropertyNames(obj);

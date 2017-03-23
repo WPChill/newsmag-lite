@@ -1,7 +1,3 @@
-if ( typeof(MachoThemes) === 'undefined' ) {
-	var MachoThemes = {};
-}
-
 MachoThemes.initStyleSelects = function ($) {
 	var selects = $('select');
 	$.each(selects, function () {

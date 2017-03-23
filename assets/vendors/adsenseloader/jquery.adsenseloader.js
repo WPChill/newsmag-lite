@@ -7,8 +7,6 @@
 
 ;( function( $, window, document, undefined )
 {
-	'use strict';
-
 	var $win			= $( window ),
 		throttle		= function(a,b){var c,d;return function(){var e=this,f=arguments,g=+new Date;c&&g<c+a?(clearTimeout(d),d=setTimeout(function(){c=g,b.apply(e,f)},a)):(c=g,b.apply(e,f))}},
 

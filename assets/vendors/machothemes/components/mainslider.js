@@ -1,7 +1,3 @@
-if ( typeof(MachoThemes) === 'undefined' ) {
-	var MachoThemes = {};
-}
-
 MachoThemes.initMainSlider = function ($) {
 	var owl = $('.newsmag-slider');
 	if ( owl.length ) {

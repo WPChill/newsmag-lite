@@ -13,23 +13,9 @@
 	if ( has_post_thumbnail() ) {
 		$image = is_sticky() ? get_the_post_thumbnail( get_the_ID(), 'newsmag-single-post' ) : get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 	}
-	$image_obj    = array( 'id' => get_the_ID(), 'image' => $image );
-	$new_image    = apply_filters( 'newsmag_widget_image', $image_obj );
-	$allowed_tags = array(
-		'img'      => array(
-			'data-src'    => true,
-			'data-srcset' => true,
-			'srcset'      => true,
-			'sizes'       => true,
-			'src'         => true,
-			'class'       => true,
-			'alt'         => true,
-			'width'       => true,
-			'height'      => true
-		),
-		'noscript' => array()
-	);
-	$categories   = get_the_category();
+	$image_obj  = array( 'id' => get_the_ID(), 'image' => $image );
+	$image      = Newsmag_Helper::get_lazy_image( $image_obj );
+	$categories = get_the_category();
 
 	?>
 	<?php if ( is_sticky() ): ?>
@@ -38,15 +24,15 @@
                 <div class="newsmag-image newsmag-sticky-post-image">
 					<?php if ( get_post_format() ): ?>
                         <div class="newsmag-format-sign">
-                            <span class="<?php echo esc_attr( newsmag_format_icon( get_post_format() ) ) ?>"></span>
+                            <span class="<?php echo esc_attr( Newsmag_Helper::format_icon( get_post_format() ) ) ?>"></span>
                         </div>
 					<?php endif; ?>
 
-					<?php $media = newsmag_get_first_media( get_the_ID() );
+					<?php $media = Newsmag_Helper::get_first_media( get_the_ID() );
 
 					if ( ! $media ) { ?>
                         <a href="<?php echo esc_url( get_the_permalink() ); ?>">
-							<?php echo wp_kses( $new_image, $allowed_tags ) ?>
+							<?php echo wp_kses( $image['image'], $image['tags'] ) ?>
                         </a>
 					<?php } else { ?>
 						<?php echo $media ?>
@@ -74,19 +60,19 @@
                     </div>
                 </div>
                 <div class="newsmag-content entry-content">
-	                <?php if ( is_single() ) {
-		                the_content();
-	                } else {
-		                $excerpt = get_the_content();
-		                $excerpt = strip_shortcodes( $excerpt );
-		                $excerpt = preg_replace( '~http(s)?://[^\s]*~i', '', $excerpt );
+					<?php if ( is_single() ) {
+						the_content();
+					} else {
+						$excerpt = get_the_content();
+						$excerpt = strip_shortcodes( $excerpt );
+						$excerpt = preg_replace( '~http(s)?://[^\s]*~i', '', $excerpt );
 
-		                $length = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
-		                ?>
+						$length = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
+						?>
                         <p>
-			                <?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
+							<?php echo wp_kses_post( wp_trim_words( $excerpt, $length ) ); ?>
                         </p>
-	                <?php } ?>
+					<?php } ?>
                 </div>
             </div>
         </div>
@@ -96,14 +82,14 @@
                 <div class="newsmag-image">
 					<?php if ( get_post_format() ): ?>
                         <div class="newsmag-format-sign">
-                            <span class="<?php echo esc_attr( newsmag_format_icon( get_post_format() ) ) ?>"></span>
+                            <span class="<?php echo esc_attr( Newsmag_Helper::format_icon( get_post_format() ) ) ?>"></span>
                         </div>
 					<?php endif; ?>
 
-					<?php $media = newsmag_get_first_media( get_the_ID() );
+					<?php $media = Newsmag_Helper::get_first_media( get_the_ID() );
 					if ( ! $media ) { ?>
                         <a href="<?php echo esc_url( get_the_permalink() ); ?>">
-							<?php echo wp_kses( $new_image, $allowed_tags ) ?>
+							<?php echo wp_kses( $image['image'], $image['tags'] ) ?>
                         </a>
 					<?php } else { ?>
 						<?php echo $media ?>

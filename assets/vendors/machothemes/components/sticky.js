@@ -1,7 +1,3 @@
-if ( typeof(MachoThemes) === 'undefined' ) {
-	var MachoThemes = {};
-}
-
 MachoThemes.initStickyMenu = function ($) {
 	var selector = $('.stick-menu'),
 			container = selector.find('.stick-menu-logo'),

@@ -43,7 +43,7 @@ if ( $breadcrumbs_enabled ) { ?>
 	<div class="container <?php echo is_single() ? 'newsmag-breadcrumbs-container' : ''; ?>">
 		<div class="row <?php echo is_single() ? 'newsmag-breadcrumbs-row' : ''; ?>">
 			<div class="col-xs-12">
-				<?php newsmag_breadcrumbs(); ?>
+				<?php Newsmag_Helper::add_breadcrumbs(); ?>
 			</div>
 		</div>
 	</div>

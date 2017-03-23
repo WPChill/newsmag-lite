@@ -1,7 +1,3 @@
-if ( typeof(MachoThemes) === 'undefined' ) {
-	var MachoThemes = {};
-}
-
 MachoThemes.initSearchForm = function ($) {
 	var element = $('.header-search-form'),
 			input = $('#search-field-top-bar'),

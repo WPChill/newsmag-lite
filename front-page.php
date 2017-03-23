@@ -20,7 +20,7 @@ if ( $show_on_front == 'posts' ):
 	$img = $img->url;
 
 	if ( ! empty( $img ) ): ?>
-		<div class="newsmag-custom-header" style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
+		<div class="newsmag-custom-header" style="background-image:url(<?php echo esc_url( $img ) ?>)">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
@@ -36,7 +36,7 @@ if ( $show_on_front == 'posts' ):
 		<div class="container newsmag-breadcrumbs-container">
 			<div class="row newsmag-breadcrumbs-row">
 				<div class="col-xs-12">
-					<?php newsmag_breadcrumbs(); ?>
+					<?php Newsmag_Helper::add_breadcrumbs(); ?>
 				</div>
 			</div>
 		</div>

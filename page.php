@@ -44,7 +44,7 @@ if ( empty( $img ) ) {
 	<div class="container newsmag-breadcrumbs-container">
 		<div class="row newsmag-breadcrumbs-row">
 			<div class="col-xs-12">
-				<?php newsmag_breadcrumbs(); ?>
+				<?php Newsmag_Helper::add_breadcrumbs(); ?>
 			</div>
 		</div>
 	</div>

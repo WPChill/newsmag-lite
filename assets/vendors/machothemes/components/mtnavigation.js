@@ -1,7 +1,3 @@
-if ( typeof(MachoThemes) === 'undefined' ) {
-	var MachoThemes = {};
-}
-
 MachoThemes.initMTNavigation = function ($) {
 	/**
 	 * Calculate the width of an element

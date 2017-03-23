@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
 
 	grunt.initConfig({
-		pkg          : grunt.file.readJSON('package.json'),
+		pkg: grunt.file.readJSON('package.json'),
 
 		dirs: {
 			css: 'assets/css',
@@ -46,6 +46,34 @@ module.exports = function (grunt) {
 						'!node_modules/**'
 					]
 				}
+			}
+		},
+
+		concat: {
+			dist: {
+				src : [
+					'assets/vendors/machothemes/components/machothemeobject.js',
+					'assets/vendors/machothemes/**/*.js',
+					'assets/vendors/machothemes/machothemes.js',
+					'!assets/vendors/machothemes/machothemes.min.js',
+					'!assets/vendors/machothemes/machothemes-concat.js'
+				],
+				dest: 'assets/vendors/machothemes/machothemes-concat.js'
+			},
+			prod: {
+				src : [
+					'assets/vendors/**/*.min.js'
+				],
+				dest: 'assets/js/plugins.min.js'
+			},
+			css : {
+				src : [
+					'assets/vendors/bootstrap/bootstrap.min.css',
+					'assets/vendors/**/*.min.css',
+					'assets/css/style.min.css',
+					'!assets/vendors/fontawesome/font-awesome.min.css'
+				],
+				dest: 'assets/css/plugins.min.css'
 			}
 		},
 
@@ -119,12 +147,12 @@ module.exports = function (grunt) {
 					ext   : '.min.js'
 				} ]
 			},
-			macho: {
+			macho  : {
 				options: {
 					sourceMap    : false,
 					sourceMapName: 'sourceMap.map'
 				},
-				src    : [ 'assets/vendors/machothemes/**/*.js', '!assets/vendors/machothemes/machothemes.min.js' ],
+				src    : [ 'assets/vendors/machothemes/machothemes-concat.js', '!assets/vendors/machothemes/machothemes.min.js' ],
 				dest   : 'assets/vendors/machothemes/machothemes.min.js'
 			}
 		},
@@ -229,6 +257,8 @@ module.exports = function (grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-concat');
+
 	grunt.registerTask('default', []);
 
 	// Build .pot file
@@ -267,8 +297,11 @@ module.exports = function (grunt) {
 
 	// Build task
 	grunt.registerTask('build-archive', [
+		'concat:dist',
 		'uglify',
 		'allmin',
+		'concat:prod',
+		'concat:css',
 		'clean:init',
 		'copy',
 		'compress:build',

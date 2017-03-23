@@ -1,7 +1,3 @@
-if ( typeof(MachoThemes) === 'undefined' ) {
-	var MachoThemes = {};
-}
-
 MachoThemes.initOffscreen = function ($) {
 	$('.sub-menu').on('hover', function () {
 		$(this).find('.sub-menu').offscreen({
