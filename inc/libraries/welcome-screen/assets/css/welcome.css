@@ -23,6 +23,33 @@
     padding-bottom: 0;
 }
 
+.featured-section.features .row{
+    display:inline-block;
+    width:97%;
+    padding:15px;
+    border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.featured-section.features .row .dashicons-yes{
+    color: #2cbe4e;
+}
+
+.featured-section.features .row .dashicons-no-alt{
+    color:#FF3D2E;
+}
+
+.featured-section.features .row > div{
+    display:inline-block;
+    float:left;
+    width:15%;
+    text-align:center;
+}
+
+.featured-section.features .row > .feature{
+    width:70%;
+    text-align:left;
+}
+
 .action-required span.hooray {
     padding: 10px;
     display: inline-block;

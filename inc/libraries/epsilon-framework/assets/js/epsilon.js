@@ -145,6 +145,7 @@
 		_setSelects: function (value, target, reset) {
 			var data = {
 						'action': 'epsilon_retrieve_font_weights',
+						'class' : 'Epsilon_Typography',
 						'args'  : value
 					},
 					selectize = $('#' + target),
@@ -197,6 +198,7 @@
 
 			var object = {
 						action: 'epsilon_generate_typography_css',
+						class : 'Epsilon_Typography',
 						id    : uniqueId,
 						data  : {
 							'selectors': $('#selectors_' + uniqueId).val(),
@@ -235,6 +237,7 @@
 		_parseJson: function (inputs, id) {
 			var object = {
 						action: 'epsilon_generate_typography_css',
+						class : 'Epsilon_Typography',
 						id    : id,
 						data  : {
 							'selectors': $('#selectors_' + id).val(),
@@ -242,7 +245,6 @@
 						}
 					},
 					api = wp.customize;
-
 
 			$.each(inputs, function (index, value) {
 				var key = $(value).attr('id'),
@@ -320,3 +322,18 @@
 	}
 
 })(jQuery);
+
+
+( function( api ) {
+	/**
+	 * Load the pro section
+	 */
+	api.sectionConstructor['epsilon-section-pro'] = api.Section.extend( {
+
+		attachEvents: function () {},
+		isContextuallyActive: function () {
+			return true;
+		}
+	} );
+
+} )( wp.customize );

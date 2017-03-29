@@ -124,7 +124,7 @@ class Widget_Newsmag_Posts_Timeline extends WP_Widget {
 		$defaults = array(
 			'title'     => __( 'Recent posts', 'newsmag' ),
 			'show_post' => __( 4, 'newsmag' ),
-			'category'  => 'uncategorized'
+			'category'  => ''
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );

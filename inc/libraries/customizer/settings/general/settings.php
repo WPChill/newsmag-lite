@@ -140,18 +140,6 @@ $wp_customize->add_setting( 'newsmag_enable_go_top',
 	                            'default'           => true
                             )
 );
-/**
- * Enable script/styles concatenation
- */
-$wp_customize->add_setting( 'newsmag_concatenate_scripts',
-                            array(
-	                            'sanitize_callback' => array(
-		                            'Newsmag_Customizer_Helper',
-		                            'newsmag_sanitize_checkbox'
-	                            ),
-	                            'default'           => true
-                            )
-);
 $wp_customize->add_setting( 'newsmag_after_footer_enable',
                             array(
 	                            'sanitize_callback' => array(
@@ -209,12 +197,6 @@ $wp_customize->add_setting( 'newsmag_paragraphs_typography',
 /**
  * Upsell
  */
-$wp_customize->add_setting( 'newsmag_upsell_pro_version',
-                            array(
-	                            'sanitize_callback' => 'esc_html',
-	                            'default'           => ''
-                            ) );
-
 $wp_customize->add_setting( 'newsmag_upsell_macho_typography',
                             array(
 	                            'sanitize_callback' => 'esc_html',

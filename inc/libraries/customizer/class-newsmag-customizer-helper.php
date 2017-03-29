@@ -15,16 +15,8 @@ class Newsmag_Customizer_Helper {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_enqueue_scripts' ) );
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
 
-		$this->init_epsilon();
 		$this->change_default_panels();
 		$this->add_theme_options();
-	}
-
-	/**
-	 * Initiate epsilon framework
-	 */
-	public function init_epsilon() {
-		new Epsilon_Framework();
 	}
 
 	/**
@@ -200,11 +192,7 @@ class Newsmag_Customizer_Helper {
 	 * @return int
 	 */
 	public static function newsmag_sanitize_checkbox( $value ) {
-		if ( $value == 1 ) {
-			return true;
-		} else {
-			return false;
-		}
+		return (bool) $value;
 	}
 
 	/**

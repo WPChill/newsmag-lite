@@ -22,5 +22,4 @@
 			MachoThemes.initStyleSelects($);
 		});
 	});
-
 })(jQuery);

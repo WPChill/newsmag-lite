@@ -19,6 +19,7 @@ class Newsmag_Lite {
 		 * Grab all class methods and initiate automatically
 		 */
 		$methods = get_class_methods( 'Newsmag_Lite' );
+
 		foreach ( $methods as $method ) {
 			if ( strpos( $method, 'init_' ) !== false ) {
 				$this->$method();
@@ -62,6 +63,24 @@ class Newsmag_Lite {
 	}
 
 	/**
+	 * Initiate epsilon framework
+	 */
+	public function init_epsilon() {
+		new Epsilon_Framework();
+
+		/**
+		 * Instantiate the object
+		 */
+		$options = array(
+			'newsmag_headings_typography',
+			'newsmag_paragraphs_typography'
+		);
+
+		$handler = 'newsmag-stylesheet';
+		Epsilon_Typography::get_instance( $options, $handler );
+	}
+
+	/**
 	 * Register Scripts and Styles for the theme
 	 */
 	public function enqueues() {
@@ -71,68 +90,59 @@ class Newsmag_Lite {
 		 * Load Google Fonts
 		 */
 		wp_enqueue_style( 'newsmag-fonts', '//fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:400,500,600,700', array(), $newsmag['Version'], 'all' );
-		wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/assets/vendors/fontawesome//font-awesome.min.css' );
+		wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/assets/vendors/fontawesome/font-awesome.min.css' );
 
-		$concatenated = get_theme_mod( 'newsmag_concatenate_scripts', '' );
-		if ( $concatenated ) {
+		/**
+		 * Load the bootstrap framework
+		 */
+		wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap.min.css' );
+		wp_enqueue_style( 'bootstrap-theme', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap-theme.min.css' );
+		wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap.min.js', array( 'jquery' ), $newsmag['Version'], true );
 
-			wp_enqueue_style( 'concated-styles', get_template_directory_uri() . '/assets/css/plugins.min.css' );
-			wp_enqueue_script( 'concated-scripts', get_template_directory_uri() . '/assets/js/plugins.min.js', array( 'jquery' ), $newsmag['Version'], true );
+		/**
+		 * Load offscreen helper
+		 */
+		wp_enqueue_script( 'newsmag-offscreen', get_template_directory_uri() . '/assets/vendors/offscreen/offscreen.min.js', array( 'jquery' ), $newsmag['Version'], true );
 
-		} else {
+		/**
+		 * Load the Sticky library
+		 */
+		wp_enqueue_script( 'newsmag-sticky', get_template_directory_uri() . '/assets/vendors/sticky/jquery.sticky.js', array( 'jquery' ), $newsmag['Version'], true );
 
-			/**
-			 * Load the bootstrap framework
-			 */
-			wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap.min.css' );
-			wp_enqueue_style( 'bootstrap-theme', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap-theme.min.css' );
-			wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/vendors/bootstrap/bootstrap.min.js', array( 'jquery' ), $newsmag['Version'], true );
+		/**
+		 * Theme styling
+		 */
+		wp_enqueue_style( 'newsmag-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'newsmag-stylesheet', get_template_directory_uri() . '/assets/css/style.css', array(), $newsmag['Version'] );
 
-			/**
-			 * Load offscreen helper
-			 */
-			wp_enqueue_script( 'newsmag-offscreen', get_template_directory_uri() . '/assets/vendors/offscreen/offscreen.min.js', array( 'jquery' ), $newsmag['Version'], true );
+		/**
+		 * Load menu script & skip-link-focus-fix
+		 */
+		wp_enqueue_script( 'newsmag-navigation', get_template_directory_uri() . '/assets/vendors/navigation/navigation.min.js', array(), $newsmag['Version'], true );
+		wp_enqueue_script( 'newsmag-skip-link-focus-fix', get_template_directory_uri() . '/assets/vendors/skip-link-focus/skip-link-focus-fix.js', array(), $newsmag['Version'], true );
 
-			/**
-			 * Load the Sticky library
-			 */
-			wp_enqueue_script( 'newsmag-sticky', get_template_directory_uri() . '/assets/vendors/sticky/jquery.sticky.js', array( 'jquery' ), $newsmag['Version'], true );
+		/**
+		 * Adsense loader
+		 */
+		wp_enqueue_script( 'adsense-loader', get_template_directory_uri() . '/assets/vendors/adsenseloader/jquery.adsenseloader.min.js', array( 'jquery' ), $newsmag['Version'], true );
 
-			/**
-			 * Theme styling
-			 */
-			wp_enqueue_style( 'newsmag-style', get_stylesheet_uri() );
-			wp_enqueue_style( 'newsmag-stylesheet', get_template_directory_uri() . '/assets/css/style.css', array(), $newsmag['Version'] );
+		/**
+		 * OwlCarousel Library
+		 */
+		wp_enqueue_script( 'owlCarousel', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.carousel.min.js', array( 'jquery' ), $newsmag['Version'], true );
+		wp_enqueue_style( 'owlCarousel', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.carousel.min.css' );
+		wp_enqueue_style( 'owlCarousel-themes', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.theme.default.css' );
 
-			/**
-			 * Load menu script & skip-link-focus-fix
-			 */
-			wp_enqueue_script( 'newsmag-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), $newsmag['Version'], true );
-			wp_enqueue_script( 'newsmag-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), $newsmag['Version'], true );
+		/**
+		 * Load Plyr
+		 */
+		wp_enqueue_script( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.js', array(), $newsmag['Version'], true );
+		wp_enqueue_style( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.css' );
 
-			/**
-			 * Adsense loader
-			 */
-			wp_enqueue_script( 'adsense-loader', get_template_directory_uri() . '/assets/vendors/adsenseloader/jquery.adsenseloader.js', array( 'jquery' ), $newsmag['Version'], true );
-
-			/**
-			 * OwlCarousel Library
-			 */
-			wp_enqueue_script( 'owlCarousel', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.carousel.min.js', array( 'jquery' ), $newsmag['Version'], true );
-			wp_enqueue_style( 'owlCarousel', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.carousel.min.css' );
-			wp_enqueue_style( 'owlCarousel-themes', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.theme.default.css' );
-
-			/**
-			 * Load Plyr
-			 */
-			wp_enqueue_script( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.js', array(), $newsmag['Version'], true );
-			wp_enqueue_style( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.css' );
-
-			/**
-			 * Load the theme's core Javascript
-			 */
-			wp_enqueue_script( 'machothemes-object', get_template_directory_uri() . '/assets/vendors/machothemes/machothemes.min.js', array(), $newsmag['Version'], true );
-		}
+		/**
+		 * Load the theme's core Javascript
+		 */
+		wp_enqueue_script( 'machothemes-object', get_template_directory_uri() . '/assets/vendors/machothemes/machothemes.min.js', array(), $newsmag['Version'], true );
 
 		wp_enqueue_script( 'newsmag-functions', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), $newsmag['Version'], true );
 		wp_localize_script( 'newsmag-functions', 'WPUrls', array(

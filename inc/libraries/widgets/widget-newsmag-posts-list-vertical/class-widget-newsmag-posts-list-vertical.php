@@ -135,7 +135,7 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'newsmag' ),
 			'show_post'        => 4,
-			'newsmag_category' => 'uncategorized'
+			'newsmag_category' => ''
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );

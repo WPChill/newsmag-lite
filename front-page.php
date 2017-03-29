@@ -13,6 +13,8 @@
  */
 
 get_header();
+$lazy = get_theme_mod( 'newsmag_enable_blazy', '' );
+
 $show_on_front = get_option('show_on_front');
 if ( $show_on_front == 'posts' ):
 

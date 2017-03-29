@@ -91,7 +91,7 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'newsmag' ),
-			'newsmag_category' => 'uncategorized'
+			'newsmag_category' => ''
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );

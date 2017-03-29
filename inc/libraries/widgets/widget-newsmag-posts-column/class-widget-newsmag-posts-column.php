@@ -2,6 +2,7 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
 class Widget_Newsmag_Posts_Column extends WP_Widget {
 
 	function __construct() {
@@ -223,14 +224,12 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'newsmag' ),
 			'show_post'        => 4,
-			'newsmag_category' => 'uncategorized',
+			'newsmag_category' => '',
 			'featured_article' => 'on',
 			'show_date'        => 'on',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
-
-		extract( $args, EXTR_SKIP );
 
 		echo $args['before_widget'];
 

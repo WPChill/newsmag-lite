@@ -8,8 +8,10 @@ class Newsmag_LazyLoad {
 	function __construct() {
 		// Add Our Filters and actions for the plugin
 		$lazy = get_theme_mod( 'newsmag_enable_blazy', '' );
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_lazyload' ) );
+
 		if ( $lazy ) {
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_lazyload' ) );
 
 			$browser = $this->check_browser_version();
 			if ( $browser['name'] === 'Internet Explorer' ) {
@@ -36,7 +38,7 @@ class Newsmag_LazyLoad {
 
 	function enqueue_lazyload() {
 		// Make sure to load in the lazy load script
-		wp_enqueue_script( 'jquery_lazy_load', get_template_directory_uri() . '/assets/vendors/blazy/blazy.js', array( 'jquery' ), '1.9.1' );
+		wp_enqueue_script( 'jquery_lazy_load', get_template_directory_uri() . '/assets/vendors/blazy/blazy.min.js', array( 'jquery' ), '1.9.1' );
 	}
 
 	function filter_lazyload_content( $content ) {

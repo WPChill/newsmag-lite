@@ -24,14 +24,4 @@ if ( ! defined( 'WPINC' ) ) {
 			<a target="_blank" href="<?php echo esc_url( 'http://docs.machothemes.com/' ); ?>"><?php esc_html_e( 'See our full documentation', 'newsmag' ); ?></a>
 		</p>
 	</div><!--/.col-->
-
-	<div class="col">
-		<h3><i class="dashicons dashicons-portfolio"></i><?php esc_html_e( 'Changelog', 'newsmag' ); ?></h3>
-		<p>
-			<i><?php esc_html_e( 'Want to get the gist on the latest theme changes? Just consult our changelog below to get a taste of the recent fixes and features implemented.', 'newsmag' ) ?></i>
-		</p>
-		<p>
-			<a href="<?php echo esc_url( admin_url( 'themes.php?page=newsmag-welcome&tab=changelog' ) ); ?>"><?php esc_html_e( 'See changelog', 'newsmag' ); ?></a>
-		</p>
-	</div><!--/.col-->
 </div><!--/.feature-section-->
