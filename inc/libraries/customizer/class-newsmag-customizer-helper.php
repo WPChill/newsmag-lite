@@ -223,6 +223,27 @@ class Newsmag_Customizer_Helper {
 		);
 
 	}
+	/**
+	 * @param $input
+	 *
+	 * @return string|void
+	 */
+	public static function newsmag_color_escaping_option_sanitize( $input ) {
+		$input = esc_attr( $input );
+		return $input;
+	}
+
+	/**
+	 * @param $color
+	 *
+	 * @return string
+	 */
+	public static function newsmag_color_option_hex_sanitize( $color ) {
+		if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
+			return '#' . $unhashed;
+		}
+		return $color;
+	}
 
 	/**
 	 * @param $values

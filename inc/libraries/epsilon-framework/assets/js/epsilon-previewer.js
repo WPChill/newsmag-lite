@@ -14,11 +14,11 @@ wp.customize.bind('preview-ready', function () {
 			url     : WPUrls.ajaxurl,
 			data    : data,
 			complete: function (json) {
-				var sufix = object.action + object.id;
-				var style = jQuery('#newsmag-stylesheet-' + sufix);
+				var sufix = object.action + object.id,
+						style = jQuery('#epsilon-stylesheet-' + sufix);
 
 				if ( !style.length ) {
-					style = jQuery('head').append('<style type="text/css" id="newsmag-stylesheet-' + sufix + '" />').find('#newsmag-stylesheet-' + sufix);
+					style = jQuery('body').append('<style type="text/css" id="epsilon-stylesheet-' + sufix + '" />').find('#epsilon-stylesheet-' + sufix);
 				}
 
 				style.html(json.responseText);

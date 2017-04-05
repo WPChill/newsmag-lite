@@ -5,7 +5,7 @@ if ( ! defined( 'WPINC' ) ) {
 if ( class_exists( 'WP_Customize_Control' ) ):
 	class Epsilon_Control_Upsell extends WP_Customize_Control {
 
-		public $type = 'mte-upsell';
+		public $type = 'epsilon-upsell';
 		public $button_text = '';
 		public $button_url = '#';
 		public $second_button_text = '';
@@ -17,8 +17,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 		public $json = array();
 
 		public function __construct( WP_Customize_Manager $manager, $id, array $args ) {
-			$this->button_text = __( 'Hello', 'newsmag' );
-			$this->pro_label   = __( 'Pro', 'newsmag' );
+			$this->pro_label   = __( 'Pro', 'newsmag-pro' );
 
 			$manager->register_control_type( 'Epsilon_Control_Upsell' );
 			parent::__construct( $manager, $id, $args );
@@ -50,9 +49,9 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 		}
 
 		public function content_template() { ?>
-            <div class="macho-upsell">
+            <div class="epsilon-upsell">
                 <# if ( data.options ) { #>
-                <ul class="macho-upsell-options">
+                <ul class="epsilon-upsell-options">
                     <# _.each(data.options, function( option, index) { #>
                         <li><span class="wp-ui-notification">{{ data.pro_label }}</span>{{ option.option }}
                             <i class="dashicons dashicons-editor-help" style="vertical-align: text-bottom; position: relative;">
@@ -70,12 +69,11 @@ if ( class_exists( 'WP_Customize_Control' ) ):
                 <# } #>
 
                 <# if ( data.separator ) { #>
-                    {{ data.separator }}
+                    <span class="button-separator">{{ data.separator }}</span>
                 <# } #>
 
                 <# if ( data.second_button_text && data.second_button_url ) { #>
-                <a href="{{ data.second_button_url }}" class="button button-primary" target="_blank">{{
-                    data.second_button_text }}</a>
+                <a href="{{ data.second_button_url }}" class="button button-primary" target="_blank"> {{data.second_button_text }}</a>
                 <# } #>
                 </div>
             </div>

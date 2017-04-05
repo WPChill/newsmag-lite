@@ -3,13 +3,18 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+/**
+ * Class Newsmag_Lite
+ */
 class Newsmag_Lite {
+	/**
+	 * Newsmag_Lite constructor.
+	 */
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueues' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueues' ) );
 		add_action( 'admin_init', array( $this, 'editor_enqueues' ) );
-
 		/**
 		 * Customizer enqueues & controls
 		 */
@@ -81,6 +86,71 @@ class Newsmag_Lite {
 	}
 
 	/**
+	 * Initiate the welcome screen
+	 */
+	public function init_welcome_screen(){
+		// Welcome screen
+		if ( is_admin() ) {
+			global $newsmag_required_actions, $newsmag_recommended_plugins;
+
+			$newsmag_recommended_plugins = array(
+				'kiwi-social-share'        => array( 'recommended' => false ),
+				'modula-best-grid-gallery' => array( 'recommended' => true ),
+				'pirate-forms'             => array( 'recommended' => false )
+			);
+
+			/*
+			 * id - unique id; required
+			 * title
+			 * description
+			 * check - check for plugins (if installed)
+			 * plugin_slug - the plugin's slug (used for installing the plugin)
+			 *
+			 */
+			$newsmag_required_actions = array(
+				array(
+					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
+					"title"       => Epsilon_Notify_System::wordpress_importer_title(),
+					"description" => Epsilon_Notify_System::wordpress_importer_description(),
+					"check"       => Epsilon_Notify_System::has_import_plugin( 'wordpress-importer' ),
+					"plugin_slug" => 'wordpress-importer'
+				),
+				array(
+					"id"          => 'newsmag-req-ac-install-wp-import-widget-plugin',
+					"title"       => Epsilon_Notify_System::widget_importer_exporter_title(),
+					'description' => Epsilon_Notify_System::widget_importer_exporter_description(),
+					"check"       => Epsilon_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
+					"plugin_slug" => 'widget-importer-exporter'
+				),
+				array(
+					"id"          => 'newsmag-req-ac-download-data',
+					"title"       => esc_html__( 'Download theme sample data', 'newsmag' ),
+					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
+					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>, 
+									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.wie">' . __( 'Widgets', 'newsmag' ) . '</a>',
+					"check"       => Epsilon_Notify_System::has_content(),
+				),
+				array(
+					"id"    => 'newsmag-req-ac-install-data',
+					"title" => esc_html__( 'Import Sample Data', 'newsmag' ),
+					"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'newsmag' ) . '</a> 
+									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'newsmag' ) . '</a>',
+					"check" => Epsilon_Notify_System::has_import_plugins(),
+				),
+				array(
+					"id"          => 'newsmag-req-ac-static-latest-news',
+					"title"       => esc_html__( 'Set front page to static', 'newsmag' ),
+					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'newsmag' ),
+					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'newsmag' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'newsmag' ) . '</a>',
+					"check"       => Epsilon_Notify_System::is_not_static_page()
+				)
+			);
+
+			new Newsmag_Welcome_Screen();
+		}
+	}
+
+	/**
 	 * Register Scripts and Styles for the theme
 	 */
 	public function enqueues() {
@@ -90,7 +160,7 @@ class Newsmag_Lite {
 		 * Load Google Fonts
 		 */
 		wp_enqueue_style( 'newsmag-fonts', '//fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:400,500,600,700', array(), $newsmag['Version'], 'all' );
-		wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/assets/vendors/fontawesome/font-awesome.min.css' );
+		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/vendors/fontawesome/font-awesome.min.css' );
 
 		/**
 		 * Load the bootstrap framework
@@ -250,65 +320,5 @@ class Newsmag_Lite {
 		// Add theme support for Responsive Videos.
 		add_theme_support( 'jetpack-responsive-videos' );
 
-		// Welcome screen
-		if ( is_admin() ) {
-			global $newsmag_required_actions, $newsmag_recommended_plugins;
-
-			$newsmag_recommended_plugins = array(
-				'kiwi-social-share'           => array( 'recommended' => false ),
-				'force-regenerate-thumbnails' => array( 'recommended' => true ),
-				'modula-best-grid-gallery'    => array( 'recommended' => true ),
-				'pirate-forms'                => array( 'recommended' => false ),
-			);
-
-			/*
-			 * id - unique id; required
-			 * title
-			 * description
-			 * check - check for plugins (if installed)
-			 * plugin_slug - the plugin's slug (used for installing the plugin)
-			 *
-			 */
-			$newsmag_required_actions = array(
-				array(
-					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
-					"title"       => Epsilon_Notify_System::wordpress_importer_title(),
-					"description" => Epsilon_Notify_System::wordpress_importer_description(),
-					"check"       => Epsilon_Notify_System::has_import_plugin( 'wordpress-importer' ),
-					"plugin_slug" => 'wordpress-importer'
-				),
-				array(
-					"id"          => 'newsmag-req-ac-install-wp-import-widget-plugin',
-					"title"       => Epsilon_Notify_System::widget_importer_exporter_title(),
-					'description' => Epsilon_Notify_System::widget_importer_exporter_description(),
-					"check"       => Epsilon_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
-					"plugin_slug" => 'widget-importer-exporter'
-				),
-				array(
-					"id"          => 'newsmag-req-ac-download-data',
-					"title"       => esc_html__( 'Download theme sample data', 'newsmag' ),
-					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
-					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>, 
-									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.wie">' . __( 'Widgets', 'newsmag' ) . '</a>',
-					"check"       => Epsilon_Notify_System::has_content(),
-				),
-				array(
-					"id"    => 'newsmag-req-ac-install-data',
-					"title" => esc_html__( 'Import Sample Data', 'newsmag' ),
-					"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'newsmag' ) . '</a> 
-									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'newsmag' ) . '</a>',
-					"check" => Epsilon_Notify_System::has_import_plugins(),
-				),
-				array(
-					"id"          => 'newsmag-req-ac-static-latest-news',
-					"title"       => esc_html__( 'Set front page to static', 'newsmag' ),
-					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'newsmag' ),
-					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'newsmag' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'newsmag' ) . '</a>',
-					"check"       => Epsilon_Notify_System::is_not_static_page()
-				)
-			);
-
-			new Newsmag_Welcome_Screen();
-		}
 	}
 }

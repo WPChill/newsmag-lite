@@ -20,9 +20,6 @@ class Newsmag_Welcome_Screen {
 		/* enqueue script and style for welcome screen */
 		add_action( 'admin_enqueue_scripts', array( $this, 'newsmag_welcome_style_and_scripts' ) );
 
-		/* enqueue script for customizer */
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'newsmag_welcome_scripts_for_customizer' ) );
-
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_newsmag_dismiss_required_action', array(
 			$this,
@@ -33,11 +30,15 @@ class Newsmag_Welcome_Screen {
 			'newsmag_dismiss_required_action_callback'
 		) );
 
-		add_action( 'admin_init', array( $this, 'newsmag_activate_plugin' ) );
-		add_action( 'admin_init', array( $this, 'newsmag_deactivate_plugin' ) );
+		/**
+		 * Set the blog / static page automatically
+		 */
 		add_action( 'admin_init', array( $this, 'newsmag_set_pages' ) );
 	}
 
+	/**
+	 * Set the latest blog / static page automatically
+	 */
 	public function newsmag_set_pages() {
 		if ( ! empty( $_GET ) ) {
 			/**
@@ -54,38 +55,6 @@ class Newsmag_Welcome_Screen {
 				update_option( 'page_for_posts', $blog->ID );
 
 				wp_redirect( self_admin_url( 'themes.php?page=newsmag-welcome&tab=' . $active_tab ) );
-			}
-		}
-	}
-
-
-	public function newsmag_activate_plugin() {
-		if ( ! empty( $_GET ) ) {
-			/**
-			 * Check action
-			 */
-			if ( ! empty( $_GET['action'] ) && ! empty( $_GET['plugin'] ) && $_GET['action'] === 'activate_plugin' ) {
-				$active_tab = $_GET['tab'];
-				$url        = self_admin_url( 'themes.php?page=newsmag-welcome&tab=' . $active_tab );
-				activate_plugin( $_GET['plugin'], $url );
-			}
-		}
-	}
-
-	public function newsmag_deactivate_plugin() {
-		if ( ! empty( $_GET ) ) {
-			/**
-			 * Check action
-			 */
-			if ( ! empty( $_GET['action'] ) && ! empty( $_GET['plugin'] ) && $_GET['action'] === 'deactivate_plugin' ) {
-				$active_tab = $_GET['tab'];
-				$url        = self_admin_url( 'themes.php?page=newsmag-welcome&tab=' . $active_tab );
-				$current    = get_option( 'active_plugins', array() );
-				$search     = array_search( $_GET['plugin'], $current );
-				if ( array_key_exists( $search, $current ) ) {
-					unset( $current[ $search ] );
-				}
-				update_option( 'active_plugins', $current );
 			}
 		}
 	}
@@ -109,7 +78,6 @@ class Newsmag_Welcome_Screen {
 	/**
 	 * Adds an admin notice upon successful activation.
 	 *
-	 * @since 1.8.2.4
 	 */
 	public function newsmag_activation_admin_notice() {
 		global $pagenow;
@@ -122,7 +90,6 @@ class Newsmag_Welcome_Screen {
 	/**
 	 * Display an admin notice linking to the welcome screen
 	 *
-	 * @since 1.8.2.4
 	 */
 	public function newsmag_welcome_admin_notice() {
 		?>
@@ -137,7 +104,6 @@ class Newsmag_Welcome_Screen {
 	/**
 	 * Load welcome screen css and javascript
 	 *
-	 * @since  1.8.2.4
 	 */
 	public function newsmag_welcome_style_and_scripts( $hook_suffix ) {
 
@@ -156,7 +122,6 @@ class Newsmag_Welcome_Screen {
 	/**
 	 * Load scripts for customizer page
 	 *
-	 * @since  1.8.2.4
 	 */
 	public function newsmag_welcome_scripts_for_customizer() {
 
@@ -230,6 +195,7 @@ class Newsmag_Welcome_Screen {
 		die(); // this is required to return a proper result
 	}
 
+
 	/**
 	 *
 	 */
@@ -263,6 +229,12 @@ class Newsmag_Welcome_Screen {
 		return $i;
 	}
 
+
+	/**
+	 * @param $slug
+	 *
+	 * @return array|mixed|object|WP_Error
+	 */
 	public function call_plugin_api( $slug ) {
 		include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 
@@ -293,6 +265,11 @@ class Newsmag_Welcome_Screen {
 		return $call_api;
 	}
 
+	/**
+	 * @param $slug
+	 *
+	 * @return array
+	 */
 	public function check_active( $slug ) {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -305,6 +282,11 @@ class Newsmag_Welcome_Screen {
 		return array( 'status' => false, 'needs' => 'install' );
 	}
 
+	/**
+	 * @param $arr
+	 *
+	 * @return mixed
+	 */
 	public function check_for_icon( $arr ) {
 		if ( ! empty( $arr['svg'] ) ) {
 			$plugin_icon_url = $arr['svg'];
@@ -319,6 +301,12 @@ class Newsmag_Welcome_Screen {
 		return $plugin_icon_url;
 	}
 
+	/**
+	 * @param $state
+	 * @param $slug
+	 *
+	 * @return string
+	 */
 	public function create_action_link( $state, $slug ) {
 		switch ( $state ) {
 			case 'install':
@@ -383,8 +371,6 @@ class Newsmag_Welcome_Screen {
 			<h2 class="nav-tab-wrapper wp-clearfix">
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=newsmag-welcome&tab=getting_started' ) ); ?>"
 				   class="nav-tab <?php echo $active_tab == 'getting_started' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html__( 'Getting Started', 'newsmag' ); ?></a>
-                <a href="<?php echo esc_url( admin_url( 'themes.php?page=newsmag-welcome&tab=features' ) ); ?>"
-                   class="nav-tab <?php echo $active_tab == 'features' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Features', 'newsmag' ); ?></a>
                 <a href="<?php echo esc_url( admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ) ); ?>"
 				   class="nav-tab <?php echo $active_tab == 'recommended_actions' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Actions', 'newsmag' ); ?>
                     <?php echo $action_count > 0 ? '<span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : '' ?></a>
@@ -392,6 +378,8 @@ class Newsmag_Welcome_Screen {
 				   class="nav-tab <?php echo $active_tab == 'recommended_plugins' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Plugins', 'newsmag' ); ?></a>
                 <a href="<?php echo esc_url( admin_url( 'themes.php?page=newsmag-welcome&tab=support' ) ); ?>"
 				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'newsmag' ); ?></a>
+                <a href="<?php echo esc_url( admin_url( 'themes.php?page=newsmag-welcome&tab=features' ) ); ?>"
+                   class="nav-tab <?php echo $active_tab == 'features' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Lite vs PRO', 'newsmag' ); ?></a>
 			</h2>
 
 			<?php

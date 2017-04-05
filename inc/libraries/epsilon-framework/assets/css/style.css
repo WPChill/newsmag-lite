@@ -1,4 +1,4 @@
-.customize-control-mte-slider input[type="text"] {
+.customize-control-epsilon-slider input[type="text"] {
     border: none;
     text-align: center;
     padding: 2px;
@@ -14,7 +14,7 @@
     height: 22px;
 }
 
-.customize-control-mte-slider .ui-slider {
+.customize-control-epsilon-slider .ui-slider {
     position: relative;
     text-align: left;
     height: 2px;
@@ -27,7 +27,7 @@
     background: #d6d6d6;
 }
 
-.customize-control-mte-slider .ui-slider .ui-slider-handle {
+.customize-control-epsilon-slider .ui-slider .ui-slider-handle {
     position: absolute;
     z-index: 2;
     top: -10px;
@@ -47,7 +47,7 @@
     transform: translateX(-50%);
 }
 
-.customize-control-mte-slider .ui-slider .ui-slider-range {
+.customize-control-epsilon-slider .ui-slider .ui-slider-range {
     position: absolute;
     z-index: 1;
     font-size: 0.7em;
@@ -127,13 +127,13 @@
     bottom: 0;
 }
 
-.macho-upsell {
+.epsilon-upsell {
     background: #fff;
     border-radius: 10px;
     padding: 20px;
 }
 
-.macho-upsell span.wp-ui-notification {
+.epsilon-upsell span.wp-ui-notification {
     padding: 2px 8px;
     text-transform: uppercase;
     font-size: 10px;
@@ -143,28 +143,36 @@
     display: inline-block;
 }
 
-.macho-upsell-options {
+.epsilon-upsell-options {
 
 }
 
-.macho-upsell-options li {
+.epsilon-upsell-options li {
     margin-bottom: 20px;
     display: inline-block;
 
 }
 
-.macho-upsell .button {
-    display: inline-block;
+.epsilon-upsell .button {
+    display: block;
     text-align: center;
-    font-size:12px;
     vertical-align: middle;
 }
 
-ul.macho-upsell-requirements {
+.epsilon-upsell .button-separator {
+    font-style: italic;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+ul.epsilon-upsell-requirements {
     font-size: 12px;
 }
 
-.macho-upsell-requirements li {
+.epsilon-upsell-requirements li {
     line-height: 1.75;
     margin-bottom: 10px;
     font-style: italic;
@@ -323,41 +331,41 @@ ul.macho-upsell-requirements {
     display: block;
 }
 
-.mte-color-scheme-palette span {
+.epsilon-color-scheme-palette span {
     height: 20px;
     width: 25px;
     float: left;
 }
 
-.mte-color-scheme-palette {
+.epsilon-color-scheme-palette {
     cursor: pointer;
     padding: 2px;
     display: inline-block;
     border: 1px solid transparent;
 }
 
-.mte-color-scheme-palette:hover,
-.mte-color-scheme-palette:focus,
-.mte-color-option.selected > .mte-color-scheme-palette {
+.epsilon-color-scheme-palette:hover,
+.epsilon-color-scheme-palette:focus,
+.epsilon-color-scheme-option.selected > .epsilon-color-scheme-palette {
     border: 1px solid #55AAD3;
 }
 
-.mte-color-scheme-name {
+.epsilon-color-scheme-name {
     display: inline-block;
     float: left;
     margin-right: 15px;
     min-width: 75px;
 }
 
-.mte-typography-font-size, .mte-typography-line-height {
+.epsilon-typography-font-size, .epsilon-typography-line-height {
     width: 45%;
     float: left;
     overflow: hidden;
     position: relative;
 }
 
-.mte-typography-font-size .arrow-up, .mte-typography-line-height .arrow-up,
-.mte-typography-font-size .arrow-down, .mte-typography-line-height .arrow-down {
+.epsilon-typography-font-size .arrow-up, .epsilon-typography-line-height .arrow-up,
+.epsilon-typography-font-size .arrow-down, .epsilon-typography-line-height .arrow-down {
     position: absolute;
     bottom: 17px;
     right: 0;
@@ -368,63 +376,63 @@ ul.macho-upsell-requirements {
     color: #808080;
 }
 
-.mte-typography-font-size .dashicons, .mte-typography-line-height .dashicons {
+.epsilon-typography-font-size .dashicons, .epsilon-typography-line-height .dashicons {
     width: 20px;
     height: 17px;
     font-size: 18px;
     color: #808080;
 }
 
-.mte-typography-font-size .arrow-down, .mte-typography-line-height .arrow-down {
+.epsilon-typography-font-size .arrow-down, .epsilon-typography-line-height .arrow-down {
     top: initial;
     bottom: 1px;
 }
 
-.mte-number-field a:focus, .mte-number-field a:active, .mte-number-field a:hover {
+.epsilon-number-field a:focus, .epsilon-number-field a:active, .epsilon-number-field a:hover {
     outline: none;
     box-shadow: none;
     -webkit-box-shadow: none;
 }
 
-.mte-number-field a:focus > .dashicons, .mte-number-field a:active > .dashicons, .mte-number-field a:hover > .dashicons {
+.epsilon-number-field a:focus > .dashicons, .epsilon-number-field a:active > .dashicons, .epsilon-number-field a:hover > .dashicons {
     color: #000;
 }
 
-.mte-number-field .unit {
+.epsilon-number-field .unit {
     position: absolute;
     bottom: 9px;
     left: 25px;
 }
 
-.mte-number-field .unit.go-right {
+.epsilon-number-field .unit.go-right {
     left: 35px;
 }
 
-textarea.mte-typography-input {
+textarea.epsilon-typography-input {
     display: block;
     width: 100%;
 }
 
-.customize-control .mte-typography-font-size input, .customize-control .mte-typography-line-height input {
+.customize-control .epsilon-typography-font-size input, .customize-control .epsilon-typography-line-height input {
     width: 118%;
     height: 36px;
 }
 
-.customize-control .mte-typography-font-size input:focus, .customize-control .mte-typography-line-height input:focus {
+.customize-control .epsilon-typography-font-size input:focus, .customize-control .epsilon-typography-line-height input:focus {
     box-shadow: none;
     -webkit-box-shadow: none;
     border-color: #ddd;
 }
 
-.mte-typography-font-size {
+.epsilon-typography-font-size {
     margin-right: 10%;
 }
 
-.mte-typography-container > div {
+.epsilon-typography-container > div {
     margin-bottom: 15px;
 }
 
-.mte-typography-container > div > label {
+.epsilon-typography-container > div > label {
     margin-bottom: 5px;
     display: inline-block;
 }
@@ -517,11 +525,100 @@ textarea.mte-typography-input {
 }
 
 #customize-theme-controls .accordion-section-title.epsilon-pro-section-title {
-    background: #DF4D44;
+    background: #008ec2;
     color: #FFF;
 }
 
 #customize-theme-controls .accordion-section-title.epsilon-pro-section-title:hover {
     background: #DF4D21;
     color: #FFF;
+}
+
+/**
+* Recommended section
+ */
+div.recommended-actions_container {
+    padding: 0 10px;
+    margin-bottom: 2em;
+}
+.epsilon-recommended-actions{
+    position: relative;
+    padding:10px;
+}
+.epsilon-recommended-plugins{
+    position: relative;
+}
+
+.epsilon-recommended-actions .epsilon-dismiss-required-action,
+.epsilon-recommended-plugins .epsilon-recommended-plugin-button{
+    position: absolute;
+    bottom:5px;
+    right:5px;
+    cursor:pointer;
+}
+
+.epsilon-recommended-plugins p.title,
+.epsilon-recommended-actions p.title {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #555d66;
+    font-weight: 600;
+    padding-right: 20px;
+}
+.epsilon-recommended-plugins div.description,
+.epsilon-recommended-actions div.description {
+    font-size: 12px;
+}
+.epsilon-recommended-plugins .custom-plugin,
+.epsilon-recommended-actions .custom-action {
+    border-top: 1px solid #fafafa;
+    margin-top: 1em;
+    padding-top: 1em;
+}
+.epsilon-recommended-plugins .custom-plugin p,
+.epsilon-recommended-actions .custom-action p {
+    margin-top: 0;
+}
+.recommended-actions_container .epsilon-recommended-actions-container:not(:first-child) {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+.recommended-actions_container .epsilon-recommended-actions-container:first-child {
+    height: auto;
+    opacity: 1;
+}
+.recommended-actions_container .epsilon-recommended-actions-container {
+    -webkit-transition: opacity 2s; /* Safari */
+    transition: opacity 2s;
+}
+.recommended-actions_container .hide {
+    display: none;
+}
+.epsilon-actions-count.complete {
+    background-color: #79ba49;
+}
+.recommended-actions_container #demo_content .button {
+    display: block;
+    margin-bottom: 1em;
+    text-align: center;
+}
+.recommended-actions_container .succes a {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+.recommended-actions_container .succes a.social {
+    width: 49%;
+    margin-bottom: 1em;
+    line-height: 20px;
+    padding-top: 4px;
+}
+.recommended-actions_container .succes a.social span,
+.recommended-actions_container .succes a.epsilon-wordpress span {
+    margin-right: 5px;
+}
+.recommended-actions_container .succes a.epsilon-wordpress {
+    line-height: 20px;
+    padding-top: 4px;
 }

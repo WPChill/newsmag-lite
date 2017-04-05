@@ -14,7 +14,7 @@ $features = array(
 		'newsmag-pro' => '<span class="dashicons dashicons-yes"></span></i>'
 	),
 	'slider-layouts'   => array(
-		'label'       => 'Slide layouts',
+		'label'       => 'Slider layouts',
 		'newsmag'     => '1',
 		'newsmag-pro' => '4'
 	),
@@ -66,29 +66,35 @@ $features = array(
 );
 ?>
 <div class="featured-section features">
-    <div class="row">
-        <div class="feature">
-            Features
-        </div>
-
-        <div class="newsmag-feature">
-            <strong>Newsmag</strong>
-        </div>
-        <div class="newsmag-pro-features">
-            <strong>Newsmag Pro</strong>
-        </div>
-    </div>
-	<?php foreach ( $features as $feature ): ?>
-        <div class="row">
-            <div class="feature">
-				<?php echo $feature['label']; ?>
-            </div>
-            <div class="newsmag-feature">
-				<?php echo $feature['newsmag']; ?>
-            </div>
-            <div class="newsmag-pro-feature">
-				<?php echo $feature['newsmag-pro']; ?>
-            </div>
-        </div>
-	<?php endforeach; ?>
+    <table class="free-pro-table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Newsmag</th>
+            <th>Newsmag PRO</th>
+        </tr>
+        </thead>
+        <tbody>
+		<?php foreach ( $features as $feature ): ?>
+            <tr>
+                <td class="feature">
+                    <h3>
+						<?php echo $feature['label']; ?>
+                    </h3>
+                </td>
+                <td class="newsmag-feature">
+					<?php echo $feature['newsmag']; ?>
+                </td>
+                <td class="newsmag-pro-feature">
+					<?php echo $feature['newsmag-pro']; ?>
+                </td>
+            </tr>
+		<?php endforeach; ?>
+        <tr>
+            <td></td>
+            <td colspan="2" class="text-right"><a href="https://www.machothemes.com/theme/newsmag-pro/?utm_source=worg&utm_medium=about-page&utm_campaign=upsell" target="_blank"
+                               class="button button-primary button-hero"><span class="dashicons dashicons-cart"></span> Get Newsmag Pro!</a></td>
+        </tr>
+        </tbody>
+    </table>
 </div>

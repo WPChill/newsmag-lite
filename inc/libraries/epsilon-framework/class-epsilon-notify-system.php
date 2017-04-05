@@ -2,6 +2,7 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
 /**
  * Class Epsilon_Notify_System
  */
@@ -152,29 +153,29 @@ class Epsilon_Notify_System {
 	public static function widget_importer_exporter_title() {
 		$installed = self::check_plugin_is_installed( 'widget-importer-exporter' );
 		if ( ! $installed ) {
-			return __( 'Install: Widget Importer Exporter Plugin', 'newsmag' );
+			return __( 'Install: Widget Importer Exporter Plugin', 'newsmag-pro' );
 		}
 
 		$active = self::check_plugin_is_active( 'widget-importer-exporter' );
 		if ( $installed && ! $active ) {
-			return __( 'Activate: Widget Importer Exporter Plugin', 'newsmag' );
+			return __( 'Activate: Widget Importer Exporter Plugin', 'newsmag-pro' );
 		}
 
-		return __( 'Install: Widget Importer Exporter Plugin', 'newsmag' );
+		return __( 'Install: Widget Importer Exporter Plugin', 'newsmag-pro' );
 	}
 
 	public static function wordpress_importer_title() {
 		$installed = self::check_plugin_is_installed( 'wordpress-importer' );
 		if ( ! $installed ) {
-			return __( 'Install: WordPress Importer', 'newsmag' );
+			return __( 'Install: WordPress Importer', 'newsmag-pro' );
 		}
 
 		$active = self::check_plugin_is_active( 'wordpress-importer' );
 		if ( $installed && ! $active ) {
-			return __( 'Activate: WordPress Importer', 'newsmag' );
+			return __( 'Activate: WordPress Importer', 'newsmag-pro' );
 		}
 
-		return __( 'Install: WordPress Importer', 'newsmag' );
+		return __( 'Install: WordPress Importer', 'newsmag-pro' );
 	}
 
 	/**
@@ -183,29 +184,29 @@ class Epsilon_Notify_System {
 	public static function wordpress_importer_description() {
 		$installed = self::check_plugin_is_installed( 'wordpress-importer' );
 		if ( ! $installed ) {
-			return __( 'Please install the WordPress Importer to create the demo content.', 'newsmag' );
+			return __( 'Please install the WordPress Importer to create the demo content.', 'newsmag-pro' );
 		}
 
 		$active = self::check_plugin_is_active( 'wordpress-importer' );
 		if ( $installed && ! $active ) {
-			return __( 'Please activate the WordPress Importer to create the demo content.', 'newsmag' );
+			return __( 'Please activate the WordPress Importer to create the demo content.', 'newsmag-pro' );
 		}
 
-		return __( 'Please install the WordPress Importer to create the demo content.', 'newsmag' );
+		return __( 'Please install the WordPress Importer to create the demo content.', 'newsmag-pro' );
 	}
 
 	public static function widget_importer_exporter_description() {
 		$installed = self::check_plugin_is_installed( 'widget-importer-exporter' );
 		if ( ! $installed ) {
-			return __( 'Please install the WordPress widget importer to create the demo content', 'newsmag' );
+			return __( 'Please install the WordPress widget importer to create the demo content', 'newsmag-pro' );
 		}
 
 		$active = self::check_plugin_is_active( 'widget-importer-exporter' );
 		if ( $installed && ! $active ) {
-			return __( 'Please activate the WordPress Widget Importer to create the demo content.', 'newsmag' );
+			return __( 'Please activate the WordPress Widget Importer to create the demo content.', 'newsmag-pro' );
 		}
 
-		return __( 'Please install the WordPress widget importer to create the demo content', 'newsmag' );
+		return __( 'Please install the WordPress widget importer to create the demo content', 'newsmag-pro' );
 
 	}
 
@@ -217,4 +218,5 @@ class Epsilon_Notify_System {
 
 		return get_page_template_slug( $page_id ) == 'page-templates/frontpage-template.php' ? true : false;
 	}
+
 }

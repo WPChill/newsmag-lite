@@ -22,21 +22,21 @@ if ( ! $image_in_content ) {
 	}
 }
 $title = get_the_title( get_the_ID() );
-?>
-<?php if ( ! empty( $img ) ): ?>
-	<div
-		class="newsmag-custom-header <?php echo ( is_single() && ! $image_in_content ) ? 'newsmag-custom-header-single-post' : '' ?>"
-		style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2><?php echo esc_html( $title ) ?></h2>
-				</div>
-			</div>
-		</div>
-	</div>
+
+$additional = '';
+if ( ! empty( $img ) ): ?>
+	<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '">' ?>
 <?php endif; ?>
 
+    <div class="newsmag-custom-header <?php echo ( is_single() && ! $image_in_content ) ? 'newsmag-custom-header-single-post' : '' ?>" <?php echo $additional; ?>>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2><?php echo esc_html( $title ) ?></h2>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php
 $breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
 if ( $breadcrumbs_enabled ) { ?>

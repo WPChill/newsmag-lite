@@ -22,7 +22,14 @@ class Epsilon_Section_Pro extends WP_Customize_Section {
 	 * @var    string
 	 */
 	public $button_url = '';
-
+	/**
+	 * Custom pro button text.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @var    string
+	 */
+	public $button_text = '';
 	/**
 	 * Epsilon_Section_Pro constructor.
 	 *
@@ -43,7 +50,8 @@ class Epsilon_Section_Pro extends WP_Customize_Section {
 	 */
 	public function json() {
 		$json = parent::json();
-		$json['button_url']  = esc_url( $this->button_url );
+		$json['button_url']  = $this->button_url;
+		$json['button_text'] = esc_html( $this->button_text );
 
 		return $json;
 	}
@@ -62,7 +70,7 @@ class Epsilon_Section_Pro extends WP_Customize_Section {
 				{{ data.title }}
 
 				<# if ( data.button_url ) { #>
-					<a href="{{ data.button_url }}" class="epsilon-full-section-button" target="_blank"> </a>
+					<a href="{{ data.button_url }}" class="button alignright" target="_blank"> {{ data.button_text }}</a>
 				<# } #>
 			</h3>
 		</li>

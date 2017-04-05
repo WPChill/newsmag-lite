@@ -11,7 +11,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * @access public
 		 * @var    string
 		 */
-		public $type = 'mte-typography';
+		public $type = 'epsilon-typography';
 
 		/**
 		 * @since  1.0.0
@@ -128,7 +128,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				</span>
 				<input disabled type="hidden" id="selectors_<?php echo $this->id ?>"
 				       value="<?php echo $this->set_selectors(); ?>"/>
-				<input disabled type="hidden" class="mte-typography-input" id="hidden_input_<?php echo $this->id; ?>"
+				<input disabled type="hidden" class="epsilon-typography-input" id="hidden_input_<?php echo $this->id; ?>"
 				       value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?>/>
 			</label>
 
@@ -137,13 +137,13 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			$fonts  = $this->google_fonts();
 			?>
 
-			<div class="mte-typography-container" data-unique-id="<?php echo $this->id ?>">
+			<div class="epsilon-typography-container" data-unique-id="<?php echo $this->id ?>">
 				<?php if ( in_array( 'font-family', $this->choices ) ): ?>
-					<div class="mte-typography-font-family">
+					<div class="epsilon-typography-font-family">
 						<label
-							for="<?php echo $this->id; ?>-font-family"><?php echo __( 'Font Family', 'newsmag' ); ?></label>
-						<select id="<?php echo $this->id; ?>-font-family" class="mte-typography-input">
-							<option value="default_font"><?php echo __( 'Theme default', 'newsmag' ); ?></option>
+							for="<?php echo $this->id; ?>-font-family"><?php echo __( 'Font Family', 'newsmag-pro' ); ?></label>
+						<select id="<?php echo $this->id; ?>-font-family" class="epsilon-typography-input">
+							<option value="default_font"><?php echo __( 'Theme default', 'newsmag-pro' ); ?></option>
 							<?php foreach ( $fonts as $font => $properties ) { ?>
 								<option <?php echo $inputs['font-family'] === $properties->family ? 'selected' : ''; ?>
 									value="<?php echo $properties->family ?>"><?php echo $properties->family ?></option>
@@ -155,11 +155,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					<?php
 					$defaults = array( 'Select font', 'Theme default', 'initial' );
 					?>
-					<div class="mte-typography-font-weight">
+					<div class="epsilon-typography-font-weight">
 						<label
-							for="<?php echo $this->id; ?>-font-weight"><?php echo __( 'Font Weight', 'newsmag' ); ?></label>
-						<select id="<?php echo $this->id; ?>-font-weight" class="mte-typography-input">
-							<option value="initial"><?php echo __( 'Theme default', 'newsmag' ); ?></option>
+							for="<?php echo $this->id; ?>-font-weight"><?php echo __( 'Font Weight', 'newsmag-pro' ); ?></label>
+						<select id="<?php echo $this->id; ?>-font-weight" class="epsilon-typography-input">
+							<option value="initial"><?php echo __( 'Theme default', 'newsmag-pro' ); ?></option>
 							<?php
 							if ( ! in_array( $inputs['font-family'], $defaults ) ) {
 								foreach ( $fonts->{$inputs['font-family']}->variants as $variant ) { ?>
@@ -171,41 +171,41 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					</div>
 				<?php endif; ?>
 				<?php if ( in_array( 'font-style', $this->choices ) ): ?>
-					<div class="mte-typography-font-style">
+					<div class="epsilon-typography-font-style">
 						<label
-							for="<?php echo $this->id; ?>-font-style"><?php echo __( 'Font Style', 'newsmag' ); ?></label>
-						<select id="<?php echo $this->id; ?>-font-style" class="mte-typography-input">
-							<option value="initial"><?php echo __( 'Theme default', 'newsmag' ); ?></option>
+							for="<?php echo $this->id; ?>-font-style"><?php echo __( 'Font Style', 'newsmag-pro' ); ?></label>
+						<select id="<?php echo $this->id; ?>-font-style" class="epsilon-typography-input">
+							<option value="initial"><?php echo __( 'Theme default', 'newsmag-pro' ); ?></option>
 							<option <?php echo $inputs['font-style'] === 'normal' ? 'selected' : ''; ?>
-								value="normal"><?php echo __( 'Normal', 'newsmag' ); ?>
+								value="normal"><?php echo __( 'Normal', 'newsmag-pro' ); ?>
 							</option>
 							<option <?php echo $inputs['font-style'] === 'italic' ? 'selected' : ''; ?>
-								value="italic"><?php echo __( 'Italic', 'newsmag' ); ?>
+								value="italic"><?php echo __( 'Italic', 'newsmag-pro' ); ?>
 							</option>
 						</select>
 					</div>
 				<?php endif; ?>
 				<?php if ( in_array( 'font-size', $this->choices ) ): ?>
-					<div class="mte-typography-font-size mte-number-field">
+					<div class="epsilon-typography-font-size epsilon-number-field">
 						<label
-							for="<?php echo $this->id; ?>-font-size"><?php echo __( 'Font Size', 'newsmag' ); ?></label>
-						<input class="mte-typography-input" id="<?php echo $this->id; ?>-font-size"
+							for="<?php echo $this->id; ?>-font-size"><?php echo __( 'Font Size', 'newsmag-pro' ); ?></label>
+						<input class="epsilon-typography-input" id="<?php echo $this->id; ?>-font-size"
 						       value="<?php echo $inputs['font-size'] ?>" type="number" min="0"
 						       step="any"/>
 						<span class="unit <?php echo (int) $inputs['font-size'] > 99 ? 'go-right' : '' ?>">px</span>
 					</div>
 				<?php endif; ?>
 				<?php if ( in_array( 'line-height', $this->choices ) ): ?>
-					<div class="mte-typography-line-height mte-number-field">
+					<div class="epsilon-typography-line-height epsilon-number-field">
 						<label
-							for="<?php echo $this->id; ?>-line-height"><?php echo __( 'Line Height', 'newsmag' ); ?></label>
-						<input class="mte-typography-input" id="<?php echo $this->id; ?>-line-height"
+							for="<?php echo $this->id; ?>-line-height"><?php echo __( 'Line Height', 'newsmag-pro' ); ?></label>
+						<input class="epsilon-typography-input" id="<?php echo $this->id; ?>-line-height"
 						       value="<?php echo $inputs['line-height'] ?>" type="number" min="0"
 						       step="any"/>
 						<span class="unit <?php echo (int) $inputs['line-height'] > 99 ? 'go-right' : '' ?>">px</span>
 					</div>
 				<?php endif; ?>
-				<a href="#" class="mte-typography-default"><?php echo __( 'Reset to default', 'newsmag' ) ?></a>
+				<a href="#" class="epsilon-typography-default"><?php echo __( 'Reset to default', 'newsmag-pro' ) ?></a>
 			</div>
 			<?php
 		}

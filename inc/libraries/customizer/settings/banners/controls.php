@@ -11,7 +11,7 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
 	                            'newsmag_show_banner_on_homepage',
 	                            array(
-		                            'type'    => 'mte-toggle',
+		                            'type'    => 'epsilon-toggle',
 		                            'label'   => esc_html__( 'Enable banner', 'newsmag' ),
 		                            'section' => 'newsmag_general_banners_controls',
 	                            )

@@ -19,7 +19,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * @access public
 		 * @var    string
 		 */
-		public $type = 'mte-toggle';
+		public $type = 'epsilon-toggle';
 
 		/**
 		 * Displays the control content.

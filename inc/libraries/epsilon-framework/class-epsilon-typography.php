@@ -236,6 +236,9 @@ class Epsilon_Typography {
 		wp_add_inline_style( $this->handler, $css );
 	}
 
+	/**
+	 * Generate typography CSS
+	 */
 	public function epsilon_generate_typography_css() {
 		$args = array(
 			'selectors',

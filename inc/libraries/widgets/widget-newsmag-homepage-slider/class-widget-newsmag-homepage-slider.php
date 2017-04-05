@@ -96,8 +96,6 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
-		extract( $args, EXTR_SKIP );
-
 		echo $args['before_widget'];
 		$filepath = get_template_directory() . '/inc/libraries/widgets/widget-newsmag-homepage-slider/layouts/slider.php';
 

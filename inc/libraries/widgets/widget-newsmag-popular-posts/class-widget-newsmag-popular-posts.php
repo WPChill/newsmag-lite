@@ -2,6 +2,7 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
 class Widget_Newsmag_Popular_Posts extends WP_Widget {
 	public function __construct() {
 		parent::__construct(

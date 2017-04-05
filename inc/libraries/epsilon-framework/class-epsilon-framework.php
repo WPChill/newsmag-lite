@@ -16,6 +16,19 @@ class Epsilon_Framework {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_enqueue_scripts' ), 25 );
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_styles' ), 25 );
 
+		/**
+		 *
+		 */
+		add_action( 'wp_ajax_epsilon_framework_ajax_action', array(
+			$this,
+			'epsilon_framework_ajax_action'
+		) );
+		add_action( 'wp_ajax_nopriv_epsilon_framework_ajax_action', array(
+			$this,
+			'epsilon_framework_ajax_action'
+		) );
+
+
 	}
 
 	/**
@@ -24,8 +37,8 @@ class Epsilon_Framework {
 	 * @param object $wp_customize
 	 */
 	public function init_controls( $wp_customize ) {
-		$controls = array( 'checkbox-multiple', 'slider', 'toggle', 'typography', 'upsell' );
-		$sections = array( 'pro' );
+		$controls = array( 'slider', 'toggle', 'typography', 'upsell', 'color-scheme' );
+		$sections = array( 'pro', 'recommended-actions' );
 
 		$path = get_template_directory() . '/inc/libraries/epsilon-framework';
 
@@ -72,5 +85,56 @@ class Epsilon_Framework {
 			'ajaxurl' => admin_url( 'admin-ajax.php' )
 		) );
 		wp_enqueue_style( 'epsilon-styles', get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/css/style.css' );
+
+	}
+
+	/**
+	 * Ajax handler
+	 */
+	public function epsilon_framework_ajax_action() {
+		if ( $_POST['action'] !== 'epsilon_framework_ajax_action' ) {
+			wp_die( json_encode( array( 'status' => false, 'error' => 'Not allowed' ) ) );
+		}
+
+		if ( count( $_POST['args']['action'] ) !== 2 ) {
+			wp_die( json_encode( array( 'status' => false, 'error' => 'Not allowed' ) ) );
+		}
+
+		if ( ! class_exists( $_POST['args']['action'][0] ) ) {
+			wp_die( json_encode( array( 'status' => false, 'error' => 'Class does not exist' ) ) );
+		}
+
+		$class  = $_POST['args']['action'][0];
+		$method = $_POST['args']['action'][1];
+		$args   = $_POST['args']['args'];
+
+		$response = $class::$method( $args );
+
+		if ( 'ok' == $response ) {
+			wp_die( json_encode( array( 'status' => true, 'message' => 'ok' ) ) );
+		}
+
+		wp_die( json_encode( array( 'status' => false, 'message' => 'nok' ) ) );
+	}
+
+	/**
+	 * @param $args
+	 *
+	 * @return string
+	 */
+	public static function dismiss_required_action( $args ) {
+		$option = get_option( $args['option'] );
+
+		if ( $option ):
+			$option[ $args['id'] ] = false;
+			update_option( $args['option'], $option );
+		else:
+			$option = array(
+				$args['id'] => false,
+			);
+			update_option( $args['option'], $option );
+		endif;
+
+		return 'ok';
 	}
 }

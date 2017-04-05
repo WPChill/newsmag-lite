@@ -49,6 +49,9 @@ $wp_customize->add_setting( 'newsmag_enable_sticky_menu',
 	                            'default'           => false
                             )
 );
+/*
+ * Lazy loading
+ */
 $wp_customize->add_setting( 'newsmag_enable_blazy',
                             array(
 	                            'sanitize_callback' => array(
@@ -202,6 +205,11 @@ $wp_customize->add_setting( 'newsmag_upsell_macho_typography',
 	                            'sanitize_callback' => 'esc_html',
 	                            'default'           => ''
                             ) );
+$wp_customize->add_setting( 'newsmag_upsell_macho_typography_b',
+                            array(
+	                            'sanitize_callback' => 'esc_html',
+	                            'default'           => ''
+                            ) );
 
 $wp_customize->add_setting( 'newsmag_upsell_macho_blog',
                             array(
@@ -215,6 +223,16 @@ $wp_customize->add_setting( 'newsmag_upsell_pro_banners',
                             ) );
 
 $wp_customize->add_setting( 'newsmag_upsell_color_version',
+                            array(
+	                            'sanitize_callback' => 'esc_html',
+	                            'default'           => ''
+                            ) );
+$wp_customize->add_setting( 'newsmag_upsell_newsticker_version',
+                            array(
+	                            'sanitize_callback' => 'esc_html',
+	                            'default'           => ''
+                            ) );
+$wp_customize->add_setting( 'newsmag_upsell_footer_attribution',
                             array(
 	                            'sanitize_callback' => 'esc_html',
 	                            'default'           => ''

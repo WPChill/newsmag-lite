@@ -29,3 +29,12 @@ $wp_customize->add_panel( 'newsmag_panel_blog',
 	                          'title'          => esc_html__( 'Blog', 'newsmag' )
                           )
 );
+
+$wp_customize->add_panel( 'newsmag_panel_typography',
+                          array(
+	                          'priority'       => 26,
+	                          'capability'     => 'edit_theme_options',
+	                          'theme_supports' => '',
+	                          'title'          => esc_html__( 'Typography', 'newsmag' )
+                          )
+);

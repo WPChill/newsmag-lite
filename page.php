@@ -26,32 +26,34 @@ if ( empty( $img ) ) {
 	$img = $img->url;
 }
 
-?>
-<?php if ( ! empty( $img ) ): ?>
-	<div class="newsmag-custom-header"
-	     style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h3><?php echo esc_html( $title ) ?></h3>
-				</div>
-			</div>
-		</div>
-	</div>
-<?php endif;
-	$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
-	if ( $breadcrumbs_enabled ) { ?>
-	<div class="container newsmag-breadcrumbs-container">
-		<div class="row newsmag-breadcrumbs-row">
-			<div class="col-xs-12">
+$additional = '';
+if ( ! empty( $img ) ): ?>
+	<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '">' ?>
+<?php endif; ?>
+
+    <div class="newsmag-custom-header" <?php echo $additional ?>>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2><?php echo esc_html( $title ) ?></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+if ( $breadcrumbs_enabled ) { ?>
+    <div class="container newsmag-breadcrumbs-container">
+        <div class="row newsmag-breadcrumbs-row">
+            <div class="col-xs-12">
 				<?php Newsmag_Helper::add_breadcrumbs(); ?>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 <?php } ?>
-	<div class="container">
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main row" role="main">
+    <div class="container">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main row" role="main">
 
 				<?php
 				while ( have_posts() ) : the_post();
@@ -66,8 +68,8 @@ if ( empty( $img ) ) {
 				endwhile; // End of the loop.
 				?>
 
-			</main><!-- #main -->
-		</div><!-- #primary -->
-	</div>
+            </main><!-- #main -->
+        </div><!-- #primary -->
+    </div>
 <?php
 get_footer();

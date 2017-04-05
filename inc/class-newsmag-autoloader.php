@@ -23,15 +23,15 @@ class Newsmag_Autoloader {
 
 		$directories = array(
 			get_template_directory() . '/inc/',
-			get_template_directory() . '/inc/libraries',
-			get_template_directory() . '/inc/libraries/customizer',
-			get_template_directory() . '/inc/libraries/epsilon-framework',
-			get_template_directory() . '/inc/libraries/welcome-screen'
+			get_template_directory() . '/inc/libraries/',
+			get_template_directory() . '/inc/libraries/customizer/',
+			get_template_directory() . '/inc/libraries/epsilon-framework/',
+			get_template_directory() . '/inc/libraries/welcome-screen/'
 		);
 
 		foreach ( $directories as $directory ) {
-			if ( file_exists( $directory . '/class-' . $bind . '.php' ) ) {
-				require_once( $directory . '/class-' . $bind . '.php' );
+			if ( file_exists( $directory . '/class-' . strtolower( $bind ) . '.php' ) ) {
+				require_once $directory . '/class-' . strtolower( $bind ) . '.php';
 
 				return;
 			}

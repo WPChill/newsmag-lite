@@ -13,32 +13,35 @@ get_header(); ?>
 
 $img = get_custom_header();
 $img = $img->url;
-
+$additional = '';
 if ( ! empty( $img ) ): ?>
-	<div class="newsmag-custom-header" style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2 class="page-title">
+	<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '">' ?>
+<?php endif; ?>
+
+    <div class="newsmag-custom-header" <?php echo $additional ?>>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="page-title">
 						<?php
 						if ( is_day() ) :
 							printf( __( 'Day: %s', 'newsmag' ), get_the_date() );
-						elseif ( is_month() ) :
+                        elseif ( is_month() ) :
 							printf( __( 'Month: %s', 'newsmag' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'newsmag' ) ) );
-						elseif ( is_year() ) :
+                        elseif ( is_year() ) :
 							printf( __( 'Year: %s', 'newsmag' ), get_the_date( _x( 'Y', 'yearly archives date format', 'newsmag' ) ) );
-						elseif ( is_category() ):
+                        elseif ( is_category() ):
 							the_archive_title();
 						else :
 							single_tag_title( __( 'Tags archive: ', 'newsmag' ) );
 						endif;
 						?>
-					</h2>
-				</div>
-			</div>
-		</div>
-	</div>
-<?php endif; ?>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <?php $breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
 	if ( $breadcrumbs_enabled ) { ?>
 	<div class="container newsmag-breadcrumbs-container">

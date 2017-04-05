@@ -92,7 +92,7 @@ module.exports = function (grunt) {
 					files: [ {
 						expand: true,
 						cwd   : 'assets/css',
-						src   : [ '*.css', '!*.min.css' ],
+						src: [ '*.css', '!*.min.css', '!custom-editor-style.css' ],
 						dest  : 'assets/css',
 						ext   : '.min.css'
 					} ]
@@ -216,7 +216,7 @@ module.exports = function (grunt) {
 				files: [ {
 					expand: true,
 					cwd   : 'assets/css',
-					src   : [ '*.css', '!*.min.css' ],
+					src   : [ '*.css', '!*.min.css', '!custom-editor-style.css' ],
 					dest  : 'assets/css',
 					ext   : '.min.css'
 				} ]
@@ -300,11 +300,21 @@ module.exports = function (grunt) {
 		'concat:dist',
 		'uglify',
 		'allmin',
-		'concat:prod',
-		'concat:css',
 		'clean:init',
 		'copy',
 		'compress:build',
 		'clean:build'
 	]);
+
+	// grunt.registerTask('build-archive', [
+	// 	'concat:dist',
+	// 	'uglify',
+	// 	'allmin',
+	// 	'concat:prod',
+	// 	'concat:css',
+	// 	'clean:init',
+	// 	'copy',
+	// 	'compress:build',
+	// 	'clean:build'
+	// ]);
 };

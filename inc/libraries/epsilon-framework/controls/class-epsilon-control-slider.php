@@ -18,7 +18,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * @access public
 		 * @var    string
 		 */
-		public $type = 'mte-slider';
+		public $type = 'epsilon-slider';
 
 		/**
 		 * Enqueue scripts/styles.

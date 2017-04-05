@@ -247,7 +247,6 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 			esc_html_e( 'Please configure your widget', 'newsmag' );
 		}
 
-
 		echo $args['after_widget'];
 
 	}
