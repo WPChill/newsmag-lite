@@ -93,7 +93,7 @@ $author              = get_theme_mod( 'newsmag_enable_author_box', true );
 				<?php
 				if ( 'post' === get_post_type() ) : ?>
                     <div class="newsmag-post-meta">
-						<?php newsmag_posted_on( 'tags' ); ?>
+						<?php Newsmag_Helper::posted_on( 'tags' ); ?>
                     </div><!-- .entry-meta -->
 				<?php endif; ?>
             </footer><!-- .entry-footer -->

@@ -45,7 +45,7 @@
                     </h3>
                     <div class="meta">
                         <span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
-						<?php newsmag_posted_on( 'comments' ); ?>
+						<?php Newsmag_Helper::posted_on( 'comments' ); ?>
 						<?php if ( current_user_can( 'manage_options' ) ) { ?>
                             <a class="newsmag-comments-link " target="_blank"
                                href="<?php echo get_admin_url() . 'post.php?post=' . get_the_ID() . '&action=edit' ?>">
@@ -96,7 +96,7 @@
                     </h3>
                     <div class="meta">
                         <span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
-						<?php newsmag_posted_on( 'comments' ); ?>
+						<?php Newsmag_Helper::posted_on( 'comments' ); ?>
 						<?php if ( current_user_can( 'manage_options' ) ) { ?>
                             <a class="newsmag-comments-link " target="_blank"
                                href="<?php echo get_admin_url() . 'post.php?post=' . get_the_ID() . '&action=edit' ?>">
