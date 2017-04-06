@@ -94,6 +94,56 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 );
 
 /**
+ * Enable / Disable preloader effect
+ */
+
+$wp_customize->add_control( new Epsilon_Control_Toggle(
+	                            $wp_customize,
+	                            'newsmag_preloader_effect',
+	                            array(
+		                            'label'       => esc_html__( 'Enable preloader', 'newsmag' ),
+		                            'description' => esc_html__( 'Toggle the preloader functionality.', 'newsmag' ),
+		                            'section'     => 'newsmag_preloader_section',
+	                            )
+                            )
+);
+
+$wp_customize->add_control(
+	'newsmag_preloader_effect_text',
+	array(
+		'label'           => esc_html__( 'Preloader Text', 'newsmag' ),
+		'section'         => 'newsmag_preloader_section',
+		'active_callback' => 'preloader_enabled_callback',
+	)
+);
+
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'newsmag_preloader_color',
+		array(
+			'label'           => esc_html__( 'Preloader accent color', 'newsmag' ),
+			'section'         => 'newsmag_preloader_section',
+			'settings'        => 'newsmag_preloader_color',
+			'active_callback' => 'preloader_enabled_callback',
+		) )
+);
+
+$wp_customize->add_control(
+	'newsmag_preloader_effect_type',
+	array(
+		'type'            => 'select',
+		'label'           => esc_html__( 'Preloader effect type', 'newsmag' ),
+		'section'         => 'newsmag_preloader_section',
+		'choices'         => array(
+			'fade'  => esc_html__( 'Fade', 'newsmag' ),
+			'slide' => esc_html__( 'Slide', 'newsmag' ),
+		),
+		'active_callback' => 'preloader_enabled_callback',
+	)
+);
+
+/**
  * Copyright enable/disable
  */
 $wp_customize->add_control( new Epsilon_Control_Toggle(
@@ -107,7 +157,6 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            )
                             )
 );
-
 
 /**
  * Copyright content
@@ -243,7 +292,7 @@ $wp_customize->add_control( new Epsilon_Control_Upsell(
 	                            $wp_customize,
 	                            'newsmag_upsell_macho_typography',
 	                            array(
-		                            'section'     => 'newsmag_typography_paragraph',
+		                            'section'      => 'newsmag_typography_paragraph',
 		                            'options'      => array(
 			                            esc_html__( 'Typography Settings', 'newsmag' ),
 		                            ),
@@ -265,7 +314,7 @@ $wp_customize->add_control( new Epsilon_Control_Upsell(
 	                            $wp_customize,
 	                            'newsmag_upsell_macho_typography_b',
 	                            array(
-		                            'section'     => 'newsmag_typography_headings',
+		                            'section'      => 'newsmag_typography_headings',
 		                            'options'      => array(
 			                            esc_html__( 'Typography Settings', 'newsmag' ),
 		                            ),
@@ -419,6 +468,14 @@ function breadcrumbs_enabled_callback( $control ) {
  */
 function copyright_enabled_callback( $control ) {
 	if ( $control->manager->get_setting( 'newsmag_enable_copyright' )->value() == true ) {
+		return true;
+	}
+
+	return false;
+}
+
+function preloader_enabled_callback( $control ) {
+	if ( $control->manager->get_setting( 'newsmag_preloader_effect' )->value() == true ) {
 		return true;
 	}
 

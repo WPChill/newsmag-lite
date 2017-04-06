@@ -30,21 +30,62 @@ class Newsmag_Sidebars {
 	 * @return mixed
 	 */
 	public function remove_specific_widget( $sidebars_widgets ) {
+		/**
+		 * Start filtering the widgets
+		 */
 		foreach ( $sidebars_widgets as $widget_area => $widget_list ) {
-
+			/**
+			 * On the homepage-slider sidebar, we don't allow more any other sidebar, except the newsmag_slider_widget
+			 */
 			if ( $widget_area === 'homepage-slider' && ! empty( $widget_list ) ) {
 				foreach ( $widget_list as $pos => $widget_id ) {
-					if ( strpos( $widget_id, 'newsmag_slider_widget' ) !== false ) {
-						continue;
+					if ( strpos( $widget_id, 'newsmag_slider_widget' ) === false ) {
+						unset( $sidebars_widgets[ $widget_area ][ $pos ] );;
 					}
-					unset( $sidebars_widgets[ $widget_area ][ $pos ] );
 				}
 
+				/**
+				 * And there can be only one #highlander
+				 */
 				if ( count( $sidebars_widgets[ $widget_area ] ) > 1 ) {
 					$sidebars_widgets[ $widget_area ] = array_slice( $sidebars_widgets[ $widget_area ], 0, 1 );
 				}
 			}
 
+			/**
+			 * In the content area of the frontend page, we can only use builder widgets
+			 */
+			if ( $widget_area === 'content-area' && ! empty( $widget_list ) ) {
+				foreach ( $widget_list as $pos => $widget_id ) {
+					if ( strpos( $widget_id, 'newsmag_widget_posts_' ) === false ) {
+						/**
+						 * Special case, banner widget
+						 */
+						if ( strpos( $widget_id, 'newsmag_banner' ) !== false ) {
+							continue;
+						}
+						unset( $sidebars_widgets[ $widget_area ][ $pos ] );
+					}
+				}
+			}
+
+			/**
+			 * Footer sidebars
+			 */
+			if ( in_array( $widget_area, array(
+					'footer-1',
+					'footer-2',
+					'footer-3',
+					'footer-4',
+					'sidebar'
+				) ) && ! empty( $widget_list )
+			) {
+				foreach ( $widget_list as $pos => $widget_id ) {
+					if ( strpos( $widget_id, 'newsmag_' ) !== false ) {
+						unset( $sidebars_widgets[ $widget_area ][ $pos ] );;
+					}
+				}
+			}
 		}
 
 		return $sidebars_widgets;

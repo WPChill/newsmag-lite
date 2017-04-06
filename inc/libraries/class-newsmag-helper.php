@@ -255,6 +255,30 @@ class Newsmag_Helper {
 	}
 
 	/**
+	 * @param $hex
+	 * @param $steps
+	 *
+	 * @return string
+	 */
+	public static function adjust_brightness( $hex, $steps ) {
+		$steps = max( - 255, min( 255, $steps ) );
+		$hex   = str_replace( '#', '', $hex );
+		if ( strlen( $hex ) == 3 ) {
+			$hex = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
+		}
+
+		$color_parts = str_split( $hex, 2 );
+		$return      = '#';
+		foreach ( $color_parts as $color ) {
+			$color  = hexdec( $color ); // Convert to decimal
+			$color  = max( 0, min( 255, $color + $steps ) ); // Adjust color
+			$return .= str_pad( dechex( $color ), 2, '0', STR_PAD_LEFT ); // Make two char hex code
+		}
+
+		return $return;
+	}
+
+	/**
 	 * @param string $element
 	 */
 	public static function posted_on( $element = 'default' ) {

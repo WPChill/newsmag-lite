@@ -17,7 +17,7 @@
       font-size: 15px;
       text-transform: initial;
       font-weight: bold;
-
+      line-height:20px;
       a {
         font-weight: bold;
       }
@@ -124,4 +124,8 @@
     height: 10px;
     left: 1px;
   }
+}
+
+.plyr__play-large:focus {
+  outline: none;
 }

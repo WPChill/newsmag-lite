@@ -99,6 +99,34 @@ $wp_customize->add_setting( 'newsmag_footer_columns',
 	                            'default'           => 4
                             )
 );
+$wp_customize->add_setting( 'newsmag_preloader_effect',
+                            array(
+	                            'sanitize_callback' => array(
+		                            'Newsmag_Customizer_Helper',
+		                            'newsmag_sanitize_checkbox'
+	                            ),
+	                            'default'           => false
+                            )
+);
+
+$wp_customize->add_setting( 'newsmag_preloader_effect_text',
+                            array(
+	                            'sanitize_callback' => 'esc_html',
+	                            'default'           => 'Loading...'
+                            )
+);
+$wp_customize->add_setting( 'newsmag_preloader_color',
+                            array(
+	                            'sanitize_callback' => 'sanitize_hex_color',
+	                            'default'           => '#ff3d2e'
+                            )
+);
+$wp_customize->add_setting( 'newsmag_preloader_effect_type',
+                            array(
+	                            'sanitize_callback' => 'esc_html',
+	                            'default'           => 'fade'
+                            )
+);
 
 /**
  * Copyright Options

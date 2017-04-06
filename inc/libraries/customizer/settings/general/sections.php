@@ -26,12 +26,23 @@ $wp_customize->add_section( 'newsmag_blog_section',
 	                            'priority' => 1,
                             )
 );
+
+$wp_customize->add_section( 'newsmag_preloader_section',
+                            array(
+	                            'title'    => esc_html__( 'Preloader', 'newsmag' ),
+	                            'panel'    => 'newsmag_panel_general',
+	                            'priority' => 1,
+                            )
+);
+
+
 $wp_customize->add_section( 'newsmag_typography',
                             array(
 	                            'title'    => esc_html__( 'Typography', 'newsmag' ),
 	                            'priority' => 51,
                             )
 );
+
 $wp_customize->add_section( 'newsmag_typography_headings',
                             array(
 	                            'title'    => esc_html__( 'Headings', 'newsmag' ),
