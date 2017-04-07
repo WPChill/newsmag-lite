@@ -76,7 +76,7 @@ global $newsmag_required_actions, $newsmag_recommended_plugins;
 $wp_customize->add_section(
 	new Epsilon_Section_Recommended_Actions(
 		$wp_customize,
-		'epsilon_recomended_section',
+		'epsilon_recommended_section',
 		array(
 			'title'                        => esc_html__( 'Recomended Actions', 'newsmag' ),
 			'social_text'                  => esc_html__( 'We are social :', 'newsmag' ),
