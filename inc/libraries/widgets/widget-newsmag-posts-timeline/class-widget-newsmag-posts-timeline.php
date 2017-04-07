@@ -42,7 +42,7 @@ class Widget_Newsmag_Posts_Timeline extends WP_Widget {
 		?>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title', 'sigma-labs' ); ?> </label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title', 'newsmag' ); ?> </label>
             <input class="widefat" type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
                    id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
                    value="<?php echo esc_attr( $instance['title'] ); ?>">

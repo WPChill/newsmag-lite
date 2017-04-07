@@ -1,3 +1,13 @@
+### V2.3.0
+	New: Timeline widget
+	New: Site preloader togglable from the customizer
+
+	Enhancement: A better support for video posts ( copy / paste youtube/vimeo link in your post )
+	Enhacement: Lazyloading has a toggle in the customizer
+
+	Bug fixes
+	Code optimization
+
 ### V2.2.2
 	Updated recommended plugins
 

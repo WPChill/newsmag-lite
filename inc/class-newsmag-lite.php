@@ -20,6 +20,7 @@ class Newsmag_Lite {
 		 */
 		add_action( 'customize_register', array( $this, 'customize_register_init' ) );
 
+		add_action( 'after_setup_theme', array( $this, 'content_width' ), 10 );
 		/**
 		 * Grab all class methods and initiate automatically
 		 */
@@ -336,5 +337,14 @@ class Newsmag_Lite {
 		// Add theme support for Responsive Videos.
 		add_theme_support( 'jetpack-responsive-videos' );
 
+	}
+
+	/**
+	 * Content width
+	 */
+	public function content_width() {
+		if ( ! isset( $GLOBALS['content_width'] ) ) {
+			$GLOBALS['content_width'] = 600;
+		}
 	}
 }
