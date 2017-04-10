@@ -15,7 +15,7 @@
       display: inline-block;
       margin-bottom: 20px;
     }
-    icon.fa {
+    i.fa {
       color: #FFF;
       margin-right: 10px;
     }
@@ -35,6 +35,7 @@
     list-style-type: none;
     position: relative;
     li {
+      padding:0 2px;
       a {
         color: $font__main;
         font-size: 14px;

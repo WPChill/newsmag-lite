@@ -3,7 +3,7 @@
     font-size: 14px;
     text-transform: initial;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 14px;
     font-family: 'Lato';
     a {
       font-weight: bold;
@@ -38,10 +38,25 @@
 
     li {
       position: relative;
+      &:last-of-type{
+        h3{
+          position: relative;
+          &:before{
+            width:2px;
+            position: absolute;
+            left:-21px;
+            top:0;
+            bottom:0;
+            background:#fff;
+            content:'';
+            display:block;
+          }
+        }
+      }
       &:before {
         content: '';
-        width: 20px;
-        height: 20px;
+        width: 19px;
+        height: 19px;
         border: 5px solid #fff;
         position: absolute;
         left: -29px;

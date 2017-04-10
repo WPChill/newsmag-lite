@@ -230,7 +230,7 @@ dd {
   list-style-type: none;
   margin: 0 0 1.5em;
   padding: 0; }
-  .entry-content ul li:before {
+  .entry-content ul > li:before {
     content: "\f111";
     font-family: 'FontAwesome';
     display: inline-block;
@@ -3063,7 +3063,7 @@ a {
   font-size: 14px;
   text-transform: initial;
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 14px;
   font-family: 'Lato'; }
   .newsmag-posts-timeline h3 a {
     font-weight: bold; }
@@ -3090,10 +3090,21 @@ a {
     display: block; }
   .newsmag-posts-timeline ul li {
     position: relative; }
+    .newsmag-posts-timeline ul li:last-of-type h3 {
+      position: relative; }
+      .newsmag-posts-timeline ul li:last-of-type h3:before {
+        width: 2px;
+        position: absolute;
+        left: -21px;
+        top: 0;
+        bottom: 0;
+        background: #fff;
+        content: '';
+        display: block; }
     .newsmag-posts-timeline ul li:before {
       content: '';
-      width: 20px;
-      height: 20px;
+      width: 19px;
+      height: 19px;
       border: 5px solid #fff;
       position: absolute;
       left: -29px;
@@ -4182,7 +4193,7 @@ a {
       .newsmag-news-ticker .newsmag-module-title {
         display: inline-block;
         margin-bottom: 20px; } }
-    .newsmag-news-ticker .newsmag-module-title icon.fa {
+    .newsmag-news-ticker .newsmag-module-title i.fa {
       color: #FFF;
       margin-right: 10px; }
   .newsmag-news-ticker ul {
@@ -4199,13 +4210,15 @@ a {
       .newsmag-news-ticker ul {
         width: 73%;
         display: inline-block !important; } }
-    .newsmag-news-ticker ul li a {
-      color: "Lato", sans-serif;
-      font-size: 14px;
-      font-family: 'Lato';
-      font-weight: 400; }
-      .newsmag-news-ticker ul li a:hover, .newsmag-news-ticker ul li a:focus, .newsmag-news-ticker ul li a:active {
-        color: #ff3d2e; }
+    .newsmag-news-ticker ul li {
+      padding: 0 2px; }
+      .newsmag-news-ticker ul li a {
+        color: "Lato", sans-serif;
+        font-size: 14px;
+        font-family: 'Lato';
+        font-weight: 400; }
+        .newsmag-news-ticker ul li a:hover, .newsmag-news-ticker ul li a:focus, .newsmag-news-ticker ul li a:active {
+          color: #ff3d2e; }
 
 .newsmag-breadcrumbs {
   font-size: 14px;

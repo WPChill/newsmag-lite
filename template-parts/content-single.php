@@ -60,8 +60,12 @@ $author              = get_theme_mod( 'newsmag_enable_author_box', true );
 				<?php }
 
 				wp_link_pages( array(
-					               'before' => '<ul class="newsmag-pager">',
-					               'after'  => '</ul>',
+					               'before'           => '<nav class="nav-links">',
+					               'after'            => '</nav>',
+					               'separator'        => '<span class="sep"></span>',
+					               'next_or_number'   => 'next',
+					               'nextpagelink'     => __( 'Next page <span class="fa fa-caret-right"></span>', 'newsmag' ),
+					               'previouspagelink' => __( '<span class="fa fa-caret-left"></span> Previous page', 'newsmag' ),
 				               ) );
 
 				$prev = get_previous_post_link();

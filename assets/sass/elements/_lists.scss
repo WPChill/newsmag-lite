@@ -28,7 +28,7 @@ dd {
   list-style-type: none;
   margin: 0 0 1.5em;
   padding: 0;
-  li {
+  > li {
     &:before {
       content: "\f111";
       font-family: 'FontAwesome';

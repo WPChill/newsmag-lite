@@ -4,7 +4,7 @@ ul {
     padding: 0;
 }
 
-ul li:before {
+ul > li:before {
     content: "\f111";
     font-family: 'FontAwesome';
     display: inline-block;

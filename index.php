@@ -34,16 +34,16 @@ if ( ! empty( $img ) ): ?>
 
 <?php $breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
 if ( $breadcrumbs_enabled ) { ?>
-	<div class="container newsmag-breadcrumbs-container">
-		<div class="row newsmag-breadcrumbs-row">
-			<div class="col-xs-12">
+    <div class="container newsmag-breadcrumbs-container">
+        <div class="row newsmag-breadcrumbs-row">
+            <div class="col-xs-12">
 				<?php Newsmag_Helper::add_breadcrumbs(); ?>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 <?php } ?>
-	<div class="container">
-		<div class="row">
+    <div class="container">
+        <div class="row">
 			<?php
 			$layout = get_theme_mod( 'newsmag_blog_layout', 'right-sidebar' ); ?>
 
@@ -51,9 +51,9 @@ if ( $breadcrumbs_enabled ) { ?>
 				<?php get_sidebar( 'sidebar' ); ?>
 			<?php endif; ?>
 
-			<div id="primary"
-			     class="newsmag-content newsmag-archive-page <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-sm-12 col-xs-12">
-				<main id="main" class="site-main" role="main">
+            <div id="primary"
+                 class="newsmag-content newsmag-archive-page <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-sm-12 col-xs-12">
+                <main id="main" class="site-main" role="main">
 					<?php
 					if ( have_posts() ) :
 						while ( have_posts() ) : the_post();
@@ -68,15 +68,15 @@ if ( $breadcrumbs_enabled ) { ?>
 
 					endif;
 					?>
-				</main><!-- #main -->
-				<?php the_posts_pagination(array('prev_text' => 'prev', 'next_text' => 'next')); ?>
-			</div><!-- #primary -->
+                </main><!-- #main -->
+				<?php the_posts_pagination( array( 'prev_text' => 'prev', 'next_text' => 'next' ) ); ?>
+            </div><!-- #primary -->
 			<?php if ( $layout === 'right-sidebar' ): ?>
 				<?php get_sidebar( 'sidebar' ); ?>
 			<?php endif; ?>
 
-		</div>
-	</div>
+        </div>
+    </div>
 <?php
 get_footer();
 
