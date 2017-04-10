@@ -181,8 +181,7 @@ class Newsmag_Sidebars {
 			'Widget_Newsmag_Posts_Column',
 			'Widget_Newsmag_Posts_Grid',
 			'Widget_Newsmag_Posts_List_Horizontal',
-			'Widget_Newsmag_Posts_List_Vertical',
-			'Widget_Newsmag_Posts_Timeline'
+			'Widget_Newsmag_Posts_List_Vertical'
 		);
 
 		foreach ( $widgets as $widget ) {
