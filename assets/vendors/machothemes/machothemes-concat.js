@@ -351,6 +351,9 @@ MachoThemes.initSearchForm = function ($) {
 		e.preventDefault();
 		trigger.toggleClass('hide');
 		element.toggleClass('opened');
+		setTimeout(function () {
+			input.focus();
+		}, 300);
 		if ( input.val() !== '' ) {
 			inputSubmit.addClass('submit-button').removeClass('close-button');
 			inputSubmit.html('<span class="fa fa-search"></span>');
