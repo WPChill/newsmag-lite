@@ -11,6 +11,12 @@ MachoThemes.initMTNavigation = function ($) {
 	};
 
 	/**
+	 *
+	 * @type {number}
+	 */
+	var toggled = 0;
+
+	/**
 	 * Check the resize direction ( LEFT OR RIGHT )
 	 *
 	 * @param ref
@@ -151,6 +157,23 @@ MachoThemes.initMTNavigation = function ($) {
 		});
 	});
 
+	/**
+	 * Close menu on click
+	 */
+	$(document).on('click', function (e) {
+		var menuToggled = $('.mt-navigation-opener').next('ul');
+
+		if ( menuToggled.hasClass('opened') ) {
+			toggled++;
+		}
+
+		if ( !menuToggled.is(e.target) ) {
+			if ( toggled > 1 ) {
+				menuToggled.removeClass('opened');
+				toggled = 0;
+			}
+		}
+	});
 
 	/**
 	 * Window resize handling
