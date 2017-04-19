@@ -379,6 +379,7 @@ MachoThemes.initSearchForm = function ($) {
 		}
 	});
 };
+
 MachoThemes.initStickyMenu = function ($) {
 	var selector = $('.stick-menu'),
 			container = selector.find('.stick-menu-logo'),

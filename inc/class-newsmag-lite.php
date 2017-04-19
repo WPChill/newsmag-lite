@@ -72,7 +72,13 @@ class Newsmag_Lite {
 	 * Initiate epsilon framework
 	 */
 	public function init_epsilon() {
-		new Epsilon_Framework();
+		$args = array(
+			'controls' => array( 'slider', 'toggle', 'typography', 'upsell', 'color-scheme' ),
+			'sections' => array( 'pro', 'recommended-actions' ),
+			'path'     => '/inc/libraries'
+		);
+
+		new Epsilon_Framework( $args );
 
 		/**
 		 * Instantiate the object

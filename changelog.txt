@@ -1,3 +1,7 @@
+### V2.3.1
+	Fixed: Recommended action index was not working properly in the customizer
+	Enhacement: Added autofocus to input search - contribution @edgardmessias
+
 ### V2.3.0
 	New: Timeline widget
 	New: Site preloader togglable from the customizer
