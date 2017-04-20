@@ -95,15 +95,15 @@ class Newsmag_Helper {
 		}
 
 		$icons = array(
-			'aside'   => 'fa fa-hashtag',
-			'image'   => 'fa fa-picture-o',
-			'quote'   => 'fa fa-quote-left',
-			'link'    => 'fa fa-link',
-			'gallery' => 'fa fa-th-large',
-			'video'   => 'fa fa-video-camera',
-			'status'  => 'fa fa-heartbeat',
-			'audio'   => 'fa fa-headphones',
-			'chat'    => 'fa fa-comment-o'
+			'aside'   => 'nmicon-hashtag',
+			'image'   => 'nmicon-picture-o',
+			'quote'   => 'nmicon-quote-left',
+			'link'    => 'nmicon-link',
+			'gallery' => 'nmicon-th-large',
+			'video'   => 'nmicon-video-camera',
+			'status'  => 'nmicon-heartbeat',
+			'audio'   => 'nmicon-headphones',
+			'chat'    => 'nmicon-comment-o'
 		);
 
 		return $icons[ $format ];
@@ -289,12 +289,12 @@ class Newsmag_Helper {
 
 		$html = '<ul>';
 		if ( ! empty( $cat ) ) {
-			$html .= '<li class="post-category"><icon class="fa fa-folder"></icon> <a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a></li>';
+			$html .= '<li class="post-category"><icon class="nmicon-folder"></icon> <a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a></li>';
 		}
-		$html .= '<li class="post-comments"><icon class="fa fa-comments"></icon> ' . esc_html( $comments->approved ) . ' </li>';
+		$html .= '<li class="post-comments"><icon class="nmicon-comments"></icon> ' . esc_html( $comments->approved ) . ' </li>';
 		$html .= '<li class="post-date">' . $date . ' </li>';
 		if ( $tags_list ) {
-			$html .= '<li class="post-tags"><icon class="fa fa-tags"></icon> ' . esc_html( $tags_list ) . '</li>';
+			$html .= '<li class="post-tags"><icon class="nmicon-tags"></icon> ' . esc_html( $tags_list ) . '</li>';
 		}
 		$html .= '</ul>';
 
@@ -303,7 +303,7 @@ class Newsmag_Helper {
 				echo '<a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a>';
 				break;
 			case 'comments':
-				echo '<a class="newsmag-comments-link" href="' . get_the_permalink( get_the_ID() ) . '/#comments"><span class=" fa fa-comment-o"></span> ' . esc_html( $comments->approved ) . '</a>';
+				echo '<a class="newsmag-comments-link" href="' . get_the_permalink( get_the_ID() ) . '/#comments"><span class=" nmicon-comment-o"></span> ' . esc_html( $comments->approved ) . '</a>';
 				break;
 			case 'date':
 				echo '<div class="newsmag-date">' . esc_html( $date ) . '</div>';

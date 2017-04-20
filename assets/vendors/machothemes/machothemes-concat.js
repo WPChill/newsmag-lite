@@ -53,7 +53,7 @@ MachoThemes.initMainSlider = function ($) {
 			dots           : false,
 			mouseDrag      : true,
 			navText        : '',
-			// navText     : [ "<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>" ],
+			// navText     : [ "<i class='nmicon-angle-left'></i>", "<i class='nmicon-angle-right'></i>" ],
 			navClass       : [ "main-slider-previous", "main-slider-next" ],
 			autoplay       : true,
 			autoplayTimeout: 17000,
@@ -356,14 +356,14 @@ MachoThemes.initSearchForm = function ($) {
 		}, 300);
 		if ( input.val() !== '' ) {
 			inputSubmit.addClass('submit-button').removeClass('close-button');
-			inputSubmit.html('<span class="fa fa-search"></span>');
+			inputSubmit.html('<span class="nmicon-search"></span>');
 		}
 	});
 
 	input.on('keyup', function () {
 		if ( $(this).val() !== '' ) {
 			inputSubmit.addClass('submit-button').removeClass('close-button');
-			inputSubmit.html('<span class="fa fa-search"></span>');
+			inputSubmit.html('<span class="nmicon-search"></span>');
 		} else {
 			inputSubmit.addClass('close-button').removeClass('submit-button');
 			inputSubmit.html('<span class="first-bar"></span><span class="second-bar"></span>');

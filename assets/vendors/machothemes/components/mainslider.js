@@ -12,7 +12,7 @@ MachoThemes.initMainSlider = function ($) {
 			dots           : false,
 			mouseDrag      : true,
 			navText        : '',
-			// navText     : [ "<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>" ],
+			// navText     : [ "<i class='nmicon-angle-left'></i>", "<i class='nmicon-angle-right'></i>" ],
 			navClass       : [ "main-slider-previous", "main-slider-next" ],
 			autoplay       : true,
 			autoplayTimeout: 17000,

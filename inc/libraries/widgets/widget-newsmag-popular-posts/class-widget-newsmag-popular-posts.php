@@ -61,7 +61,7 @@ class Widget_Newsmag_Popular_Posts extends WP_Widget {
 									the_ID();
 								} ?></a>
                             <div class="meta">
-                                <span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+                                <span class="nmicon-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
                             </div>
                         </div>
 

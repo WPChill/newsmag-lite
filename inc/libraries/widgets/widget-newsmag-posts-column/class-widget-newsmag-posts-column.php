@@ -33,6 +33,7 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 			'newsmag_category' => 'uncategorized',
 			'featured_article' => 'on',
 			'show_date'        => 'on',
+			'order' 		   => 'Descending'
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults );
 		?>
@@ -58,7 +59,15 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 				<?php } ?>
             </select>
         </p>
-
+        <p>
+            <label><?php _e( 'Order', 'newsmag' ); ?> :</label>
+            <select name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>"
+                    id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" class="pull-right">
+                <option value ="Descending" <?php echo ($instance['order'] == 'Descending') ? 'selected' : '';?> ><?php echo esc_html__( 'Descending', 'newsmag' )?></option>
+                <option value ="Ascending" <?php echo ($instance['order'] == 'Ascending') ? 'selected' : '';?> ><?php echo esc_html__( 'Ascending', 'newsmag' )?></option>
+                <option value ="Random" <?php echo ($instance['order'] == 'Random') ? 'selected' : '';?> ><?php echo esc_html__( 'Random', 'newsmag' )?></option>
+            </select>
+        </p>
 
         <label class="block" for="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>">
             <span class="customize-control-title">
@@ -137,6 +146,7 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 		$instance['show_post']        = ( ! empty( $new_instance['show_post'] ) ) ? strip_tags( $new_instance['show_post'] ) : '';
 		$instance['featured_article'] = ( ! empty( $new_instance['featured_article'] ) ) ? strip_tags( $new_instance['featured_article'] ) : '';
 		$instance['show_date']        = ( ! empty( $new_instance['show_date'] ) ) ? strip_tags( $new_instance['show_date'] ) : '';
+		$instance['order'] = ( ! empty( $new_instance['order'] ) ) ? strip_tags( $new_instance['order'] ) : '';
 
 		return $instance;
 
@@ -150,11 +160,24 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 	 * @return WP_Query
 	 */
 	public function get_posts( $args ) {
+
+		if($args['order'] == 'Descending' ){
+			$order = 'desc';
+			$orderby = 'date';
+		}elseif($args['order'] == 'Ascending'){
+			$order = 'asc';
+			$orderby = 'date';		
+		}elseif($args['order'] == 'Random'){
+			$order = '';
+			$orderby = 'rand';
+		}
 		/**
 		 * Arguments for the normal query
 		 */
 		$atts = array(
 			'posts_per_page' => $args['show_post'],
+			'order'          => $order,
+			'orderby'        => $orderby
 		);
 
 		/**
@@ -163,6 +186,8 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 		$sticky_atts = array(
 			'posts_per_page' => $args['show_post'],
 			'post__in'       => get_option( 'sticky_posts' ),
+			'order'          => $order,
+			'orderby'        => $orderby
 		);
 
 		/**
@@ -227,6 +252,7 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 			'newsmag_category' => '',
 			'featured_article' => 'on',
 			'show_date'        => 'on',
+			'order' 		   => 'Descending'
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );

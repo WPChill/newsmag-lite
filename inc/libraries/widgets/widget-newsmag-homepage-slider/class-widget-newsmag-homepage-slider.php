@@ -17,7 +17,8 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 	public function form( $instance ) {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'newsmag' ),
-			'newsmag_category' => 'uncategorized'
+			'newsmag_category' => 'uncategorized',
+			'order' 		   => 'Descending'
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -45,6 +46,15 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 				<?php } ?>
             </select>
         </p>
+        <p>
+            <label><?php _e( 'Order', 'newsmag' ); ?> :</label>
+            <select name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>"
+                    id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" class="pull-right">
+                <option value ="Descending" <?php echo ($instance['order'] == 'Descending') ? 'selected' : '';?> ><?php echo esc_html__( 'Descending', 'newsmag' )?></option>
+                <option value ="Ascending" <?php echo ($instance['order'] == 'Ascending') ? 'selected' : '';?> ><?php echo esc_html__( 'Ascending', 'newsmag' )?></option>
+                <option value ="Random" <?php echo ($instance['order'] == 'Random') ? 'selected' : '';?> ><?php echo esc_html__( 'Random', 'newsmag' )?></option>
+            </select>
+        </p>
 
 	<?php }
 
@@ -54,6 +64,7 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 
 		$instance['title']            = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['newsmag_category'] = ( ! empty( $new_instance['newsmag_category'] ) ) ? strip_tags( $new_instance['newsmag_category'] ) : '';
+		$instance['order']            = ( ! empty( $new_instance['order'] ) ) ? strip_tags( $new_instance['order'] ) : '';
 
 		return $instance;
 
@@ -67,9 +78,22 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 	 * @return WP_Query
 	 */
 	public function get_posts( $args ) {
+
+		if($args['order'] == 'Descending' ){
+			$order = 'desc';
+			$orderby = 'date';
+		}elseif($args['order'] == 'Ascending'){
+			$order = 'asc';
+			$orderby = 'date';		
+		}elseif($args['order'] == 'Random'){
+			$order = '';
+			$orderby = 'rand';
+		}
 		$idObj = get_category_by_slug( $args['newsmag_category'] );
 		$atts  = array(
 			'posts_per_page' => 2,
+			'order'          => $order,
+			'orderby'        => $orderby
 		);
 
 		if ( $idObj ) {

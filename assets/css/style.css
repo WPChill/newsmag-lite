@@ -232,7 +232,7 @@ dd {
   padding: 0; }
   .entry-content ul > li:before {
     content: "\f111";
-    font-family: 'FontAwesome';
+    font-family: 'newsmag';
     display: inline-block;
     margin-left: 0;
     width: 12px;
@@ -673,7 +673,7 @@ a {
       padding-right: 0; }
     .main-navigation .nav-menu > li.menu-item-has-children:after {
       content: "\f107";
-      font-family: "FontAwesome";
+      font-family: "newsmag";
       font-size: 16px;
       display: inline-block;
       padding-left: 5px;
@@ -682,7 +682,7 @@ a {
       position: relative; }
       .main-navigation .nav-menu > li.menu-item-has-children > ul li.menu-item-has-children:after {
         content: "\f105";
-        font-family: "FontAwesome";
+        font-family: "newsmag";
         font-size: 16px;
         display: inline-block;
         position: absolute;
@@ -792,7 +792,7 @@ a {
         content: '\f408';
         display: inline-block;
         padding: 0 5px;
-        font-family: 'FontAwesome';
+        font-family: 'newsmag';
         font-size: 16px;
         vertical-align: top;
         -webkit-font-smoothing: antialiased; }
@@ -1103,7 +1103,7 @@ a {
     content: '\f002';
     color: #ff3d2e;
     display: block;
-    font-family: 'FontAwesome'; }
+    font-family: 'newsmag'; }
   .widget_search .search-submit {
     width: 46px;
     height: 35px;
@@ -1212,7 +1212,7 @@ a {
         display: block;
         position: relative; }
         .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_recent_entries ul li .post-date:before {
-          font-family: 'FontAwesome';
+          font-family: 'newsmag';
           color: #ff3d2e;
           content: '\f017';
           display: inline-block;
@@ -1238,7 +1238,7 @@ a {
       margin-bottom: 10px; }
       .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_nav_menu > div > ul li ul li:before, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_nav_menu > div > ul li ol li:before {
         content: "\f105";
-        font-family: 'FontAwesome';
+        font-family: 'newsmag';
         display: inline-block;
         margin-left: 0;
         width: 15px;
@@ -1343,7 +1343,7 @@ a {
       margin-bottom: 10px; }
       .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_nav_menu > div > ul li:before {
         content: "\f105";
-        font-family: 'FontAwesome';
+        font-family: 'newsmag';
         display: inline-block;
         margin-left: 0;
         width: 15px;
@@ -1414,7 +1414,7 @@ a {
       margin-bottom: 25px; }
       .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_rss h3 > a:first-of-type:before {
         content: '\f143';
-        font-family: 'FontAwesome';
+        font-family: 'newsmag';
         display: inline-block;
         position: relative;
         margin-right: 5px;
@@ -1435,7 +1435,7 @@ a {
       color: #767676;
       margin-bottom: 10px; }
       .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_rss ul li .rss-date:before {
-        font-family: 'FontAwesome';
+        font-family: 'newsmag';
         color: #767676;
         content: '\f017';
         display: inline-block;
@@ -1481,7 +1481,7 @@ a {
       color: #ff3d2e;
       top: 3px;
       right: 15px;
-      font-family: 'FontAwesome';
+      font-family: 'newsmag';
       font-size: 20px;
       cursor: pointer; }
   .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories > ul, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_archive > ul, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_meta > ul, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_pages > ul {
@@ -1494,7 +1494,7 @@ a {
       margin-bottom: 10px; }
       .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories > ul > li:before, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_archive > ul > li:before, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_meta > ul > li:before, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_pages > ul > li:before {
         content: "\f105";
-        font-family: 'FontAwesome';
+        font-family: 'newsmag';
         display: inline-block;
         margin-left: 0;
         width: 15px;
@@ -1527,7 +1527,7 @@ a {
     margin-bottom: 8px; }
     .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories .children li:before, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_archive .children li:before, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_meta .children li:before, .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_pages .children li:before {
       content: "\f105";
-      font-family: 'FontAwesome';
+      font-family: 'newsmag';
       display: inline-block;
       margin-left: 0;
       width: 15px;
@@ -1636,7 +1636,7 @@ a {
           text-align: center;
           position: relative;
           color: #FFF;
-          font-family: 'FontAwesome'; }
+          font-family: 'newsmag'; }
         .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_calendar #wp-calendar #prev > a {
           top: 6px;
           position: absolute;
@@ -1662,7 +1662,7 @@ a {
           text-align: center;
           position: relative;
           color: #FFF;
-          font-family: 'FontAwesome'; }
+          font-family: 'newsmag'; }
         .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_calendar #wp-calendar #next > a {
           top: 6px;
           position: absolute;
@@ -1746,7 +1746,7 @@ a {
         margin-bottom: 10px; }
         .site-footer .widget:not(.widget_newsmag_banner):not(.newsmag_slider).widget_categories > ul > li:before {
           content: "\f105";
-          font-family: 'FontAwesome';
+          font-family: 'newsmag';
           display: inline-block;
           margin-left: 0;
           width: 15px;
@@ -1789,7 +1789,7 @@ a {
       color: #fff;
       top: 3px;
       right: 15px;
-      font-family: 'FontAwesome';
+      font-family: 'newsmag';
       font-size: 20px;
       cursor: pointer;
       z-index: 0; }
