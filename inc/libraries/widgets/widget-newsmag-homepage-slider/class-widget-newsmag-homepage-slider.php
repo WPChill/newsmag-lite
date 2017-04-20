@@ -18,7 +18,7 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'newsmag' ),
 			'newsmag_category' => 'uncategorized',
-			'order' 		   => 'Descending'
+			'order' 		   => 'desc'
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -50,9 +50,9 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
             <label><?php _e( 'Order', 'newsmag' ); ?> :</label>
             <select name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>"
                     id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" class="pull-right">
-                <option value ="Descending" <?php echo ($instance['order'] == 'Descending') ? 'selected' : '';?> ><?php echo esc_html__( 'Descending', 'newsmag' )?></option>
-                <option value ="Ascending" <?php echo ($instance['order'] == 'Ascending') ? 'selected' : '';?> ><?php echo esc_html__( 'Ascending', 'newsmag' )?></option>
-                <option value ="Random" <?php echo ($instance['order'] == 'Random') ? 'selected' : '';?> ><?php echo esc_html__( 'Random', 'newsmag' )?></option>
+                <option value ="desc" <?php echo ($instance['order'] == 'desc') ? 'selected' : '';?> ><?php echo esc_html__( 'Descending', 'newsmag' )?></option>
+                <option value ="asc" <?php echo ($instance['order'] == 'asc') ? 'selected' : '';?> ><?php echo esc_html__( 'Ascending', 'newsmag' )?></option>
+                <option value ="rand" <?php echo ($instance['order'] == 'rand') ? 'selected' : '';?> ><?php echo esc_html__( 'Random', 'newsmag' )?></option>
             </select>
         </p>
 
@@ -79,22 +79,19 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 	 */
 	public function get_posts( $args ) {
 
-		if($args['order'] == 'Descending' ){
-			$order = 'desc';
-			$orderby = 'date';
-		}elseif($args['order'] == 'Ascending'){
-			$order = 'asc';
-			$orderby = 'date';		
-		}elseif($args['order'] == 'Random'){
-			$order = '';
-			$orderby = 'rand';
-		}
+
 		$idObj = get_category_by_slug( $args['newsmag_category'] );
 		$atts  = array(
-			'posts_per_page' => 2,
-			'order'          => $order,
-			'orderby'        => $orderby
+			'posts_per_page' => 2
 		);
+
+		$atts['order'] = $args['order'];
+		$atts['orderby'] = 'date';
+
+		if('rand' == $atts['order']){
+			$atts['order'] = '';
+			$atts['orderby'] = 'rand';
+		}
 
 		if ( $idObj ) {
 			$id          = $idObj->term_id;
@@ -115,7 +112,8 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'newsmag' ),
-			'newsmag_category' => ''
+			'newsmag_category' => '',
+			'order'            => 'desc'
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
