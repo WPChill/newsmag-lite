@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'newsmag';
-  src:  url('fonts/newsmag.eot?nuogm1');
-  src:  url('fonts/newsmag.eot?nuogm1#iefix') format('embedded-opentype'),
-    url('fonts/newsmag.ttf?nuogm1') format('truetype'),
-    url('fonts/newsmag.woff?nuogm1') format('woff'),
-    url('fonts/newsmag.svg?nuogm1#newsmag') format('svg');
+  src:  url('fonts/newsmag.eot?lse38e');
+  src:  url('fonts/newsmag.eot?lse38e#iefix') format('embedded-opentype'),
+    url('fonts/newsmag.ttf?lse38e') format('truetype'),
+    url('fonts/newsmag.woff?lse38e') format('woff'),
+    url('fonts/newsmag.svg?lse38e#newsmag') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -126,6 +126,12 @@
 .nmicon-github:before {
   content: "\f09b";
 }
+.nmicon-feed:before {
+  content: "\f09e";
+}
+.nmicon-rss:before {
+  content: "\f09e";
+}
 .nmicon-bullhorn:before {
   content: "\f0a1";
 }
@@ -203,6 +209,9 @@
 }
 .nmicon-folder-open-o:before {
   content: "\f115";
+}
+.nmicon-rss-square:before {
+  content: "\f143";
 }
 .nmicon-youtube-square:before {
   content: "\f166";
