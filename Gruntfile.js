@@ -71,7 +71,7 @@ module.exports = function (grunt) {
 					'assets/vendors/bootstrap/bootstrap.min.css',
 					'assets/vendors/**/*.min.css',
 					'assets/css/style.min.css',
-					'!assets/vendors/fontawesome/font-awesome.min.css'
+					'!assets/vendors/newsmag-icon/style.min.css'
 				],
 				dest: 'assets/css/plugins.min.css'
 			}

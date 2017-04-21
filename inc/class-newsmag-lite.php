@@ -167,7 +167,7 @@ class Newsmag_Lite {
 		 * Load Google Fonts
 		 */
 		wp_enqueue_style( 'newsmag-fonts', '//fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:400,500,600,700', array(), $newsmag['Version'], 'all' );
-		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/vendors/fontawesome/font-awesome.min.css' );
+		wp_enqueue_style( 'newsmag-icon', get_template_directory_uri() . '/assets/vendors/newsmag-icon/style.min.css' );
 
 		/**
 		 * Load the bootstrap framework

@@ -97,7 +97,7 @@ endif;
                             </div>
 						<?php endif; ?>
                         <button class="menu-toggle" aria-controls="primary-menu"
-                                aria-expanded="false"><span class="fa fa-bars"></span></button>
+                                aria-expanded="false"><span class="nmicon-bars"></span></button>
 						<?php
 						if ( has_nav_menu( 'primary' ) ) {
 							wp_nav_menu( array(
@@ -120,7 +120,7 @@ endif;
 						}
 						?>
 						<?php if ( $enable_search ): ?>
-                            <button href="#" class="search-form-opener" type="button"><span class="fa fa-search"></span>
+                            <button href="#" class="search-form-opener" type="button"><span class="nmicon-search"></span>
                             </button>
 						<?php endif; ?>
                     </div>

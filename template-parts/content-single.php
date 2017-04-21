@@ -45,8 +45,8 @@ $author              = get_theme_mod( 'newsmag_enable_author_box', true );
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="entry-content">
                 <div class="newsmag-post-meta">
-                    <span class="fa fa-folder-o"></span> <?php the_category( ',' ); ?> <span class="sep">|</span> <span
-                            class="fa fa-clock-o"></span> <?php Newsmag_Helper::posted_on( 'date' ); ?>
+                    <span class="nmicon-folder-o"></span> <?php the_category( ',' ); ?> <span class="sep">|</span> <span
+                            class="nmicon-clock-o"></span> <?php Newsmag_Helper::posted_on( 'date' ); ?>
                 </div><!-- .entry-meta -->
 				<?php if ( is_single() ) {
 					the_content();
@@ -64,15 +64,15 @@ $author              = get_theme_mod( 'newsmag_enable_author_box', true );
 					               'after'            => '</nav>',
 					               'separator'        => '<span class="sep"></span>',
 					               'next_or_number'   => 'next',
-					               'nextpagelink'     => __( 'Next page <span class="fa fa-caret-right"></span>', 'newsmag' ),
-					               'previouspagelink' => __( '<span class="fa fa-caret-left"></span> Previous page', 'newsmag' ),
+					               'nextpagelink'     => __( 'Next page <span class="nmicon-caret-right"></span>', 'newsmag' ),
+					               'previouspagelink' => __( '<span class="nmicon-caret-left"></span> Previous page', 'newsmag' ),
 				               ) );
 
 				$prev = get_previous_post_link();
-				$prev = str_replace( '&laquo;', '<div class="wrapper"><span class="fa fa-angle-left"></span>', $prev );
+				$prev = str_replace( '&laquo;', '<div class="wrapper"><span class="nmicon-angle-left"></span>', $prev );
 				$prev = str_replace( '</a>', '</a></div>', $prev );
 				$next = get_next_post_link();
-				$next = str_replace( '&raquo;', '<span class="fa fa-angle-right"></span></div>', $next );
+				$next = str_replace( '&raquo;', '<span class="nmicon-angle-right"></span></div>', $next );
 				$next = str_replace( '<a', '<div class="wrapper"><a', $next );
 				?>
                 <div class="newsmag-next-prev row">

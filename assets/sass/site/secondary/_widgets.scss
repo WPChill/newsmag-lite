@@ -29,7 +29,7 @@
     content: '\f002';
     color: $color__brand-red;
     display: block;
-    font-family: 'FontAwesome';
+    font-family: 'newsmag';
   }
 
   .search-submit {
@@ -165,7 +165,7 @@
           display: block;
           position: relative;
           &:before {
-            font-family: 'FontAwesome';
+            font-family: 'newsmag';
             color: $color__brand-red;
             content: '\f017';
             display: inline-block;
@@ -205,7 +205,7 @@
             li {
               &:before {
                 content: "\f105";
-                font-family: 'FontAwesome';
+                font-family: 'newsmag';
                 display: inline-block;
                 margin-left: 0;
                 width: 15px;
@@ -354,7 +354,7 @@
           margin-bottom: 10px;
           &:before {
             content: "\f105";
-            font-family: 'FontAwesome';
+            font-family: 'newsmag';
             display: inline-block;
             margin-left: 0;
             width: 15px;
@@ -459,7 +459,7 @@
         &:first-of-type {
           &:before {
             content: '\f143';
-            font-family: 'FontAwesome';
+            font-family: 'newsmag';
             display: inline-block;
             position: relative;
             margin-right: 5px;
@@ -487,7 +487,7 @@
           color: #767676;
           margin-bottom: 10px;
           &:before {
-            font-family: 'FontAwesome';
+            font-family: 'newsmag';
             color: #767676;
             content: '\f017';
             display: inline-block;
@@ -545,7 +545,7 @@
         color: $color__brand-red;
         top: 3px;
         right: 15px;
-        font-family: 'FontAwesome';
+        font-family: 'newsmag';
         font-size: 20px;
         cursor: pointer;
       }
@@ -560,7 +560,7 @@
         margin-bottom: 10px;
         &:before {
           content: "\f105";
-          font-family: 'FontAwesome';
+          font-family: 'newsmag';
           display: inline-block;
           margin-left: 0;
           width: 15px;
@@ -607,7 +607,7 @@
       li {
         &:before {
           content: "\f105";
-          font-family: 'FontAwesome';
+          font-family: 'newsmag';
           display: inline-block;
           margin-left: 0;
           width: 15px;
@@ -753,7 +753,7 @@
           text-align: center;
           position: relative;
           color: #FFF;
-          font-family: 'FontAwesome';
+          font-family: 'newsmag';
         }
         > a {
           top: 6px;
@@ -785,7 +785,7 @@
           text-align: center;
           position: relative;
           color: #FFF;
-          font-family: 'FontAwesome';
+          font-family: 'newsmag';
         }
         > a {
           top: 6px;
@@ -903,7 +903,7 @@
           margin-bottom: 10px;
           &:before {
             content: "\f105";
-            font-family: 'FontAwesome';
+            font-family: 'newsmag';
             display: inline-block;
             margin-left: 0;
             width: 15px;
@@ -970,7 +970,7 @@
           color: #fff;
           top: 3px;
           right: 15px;
-          font-family: 'FontAwesome';
+          font-family: 'newsmag';
           font-size: 20px;
           cursor: pointer;
           z-index: 0;

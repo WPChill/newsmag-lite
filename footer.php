@@ -25,7 +25,7 @@
 
 	<?php if ( $go_top_enabled ): ?>
 		<a href="#0" id="back-to-top" class="back-to-top">
-			<span class="fa fa-angle-up"></span>
+			<span class="nmicon-angle-up"></span>
 		</a>
 	<?php endif; ?>
 

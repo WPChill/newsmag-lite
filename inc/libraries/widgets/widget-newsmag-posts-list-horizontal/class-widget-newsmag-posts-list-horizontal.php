@@ -28,7 +28,9 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'newsmag' ),
 			'show_post'        => 4,
-			'newsmag_category' => 'uncategorized'
+			'newsmag_category' => 'uncategorized',
+			'order' 		   => 'desc'
+
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -56,7 +58,15 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 				<?php } ?>
             </select>
         </p>
-
+        <p>
+            <label><?php _e( 'Order', 'newsmag' ); ?> :</label>
+            <select name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>"
+                    id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" class="pull-right">
+                <option value ="desc" <?php echo ($instance['order'] == 'desc') ? 'selected' : '';?> ><?php echo esc_html__( 'Descending', 'newsmag' )?></option>
+                <option value ="asc" <?php echo ($instance['order'] == 'asc') ? 'selected' : '';?> ><?php echo esc_html__( 'Ascending', 'newsmag' )?></option>
+                <option value ="rand" <?php echo ($instance['order'] == 'rand') ? 'selected' : '';?> ><?php echo esc_html__( 'Random', 'newsmag' )?></option>
+            </select>
+        </p>
         <label class="block" for="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>">
             <span class="customize-control-title">
                <?php _e( 'Posts to Show', 'newsmag' ); ?> :
@@ -100,7 +110,8 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 
 		$instance['title']            = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['newsmag_category'] = ( ! empty( $new_instance['newsmag_category'] ) ) ? strip_tags( $new_instance['newsmag_category'] ) : '';
-		$instance['show_post']        = ( ! empty( $new_instance['show_post'] ) ) ? strip_tags( $new_instance['show_post'] ) : '';
+		$instance['show_post']        = ( ! empty( $new_instance['show_post'] ) ) ? absint( $new_instance['show_post'] ) : '';
+		$instance['order']            = ( ! empty( $new_instance['order'] ) ) ? strip_tags( $new_instance['order'] ) : '';
 
 		return $instance;
 
@@ -114,10 +125,19 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 	 * @return WP_Query
 	 */
 	public function get_posts( $args ) {
+
 		$idObj = get_category_by_slug( $args['newsmag_category'] );
 		$atts  = array(
-			'posts_per_page' => $args['show_post'],
+			'posts_per_page' => $args['show_post']
 		);
+
+		$atts['order'] = $args['order'];
+		$atts['orderby'] = 'date';
+
+		if('rand' == $atts['order'] ){
+			$atts['order'] = '';
+			$atts['orderby'] = 'rand';
+		}
 
 		if ( $idObj ) {
 			$id          = $idObj->term_id;
@@ -135,7 +155,8 @@ class Widget_Newsmag_Posts_List_Horizontal extends WP_Widget {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'newsmag' ),
 			'show_post'        => 4,
-			'newsmag_category' => ''
+			'newsmag_category' => '',
+			'order'            => 'desc'
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
