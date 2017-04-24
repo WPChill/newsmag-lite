@@ -1,3 +1,6 @@
+### V2.3.2
+	Fixed: Didn't allow removal of the Header Image
+
 ### V2.3.1
 	Fixed: Recommended action index was not working properly in the customizer
 	Fixed: Newsmag no longer loads entire Font Awesome library

@@ -278,7 +278,6 @@ class Newsmag_Lite {
 		add_theme_support( 'custom-header', array(
 			'width'         => 1920,
 			'height'        => 200,
-			'default-image' => get_template_directory_uri() . '/assets/images/header.jpg',
 			'uploads'       => true,
 		) );
 

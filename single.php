@@ -25,7 +25,7 @@ $title = get_the_title( get_the_ID() );
 
 $additional = '';
 if ( ! empty( $img ) ): ?>
-	<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '">' ?>
+	<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '"' ?>
 <?php endif; ?>
 
     <div class="newsmag-custom-header <?php echo ( is_single() && ! $image_in_content ) ? 'newsmag-custom-header-single-post' : '' ?>" <?php echo $additional; ?>>
