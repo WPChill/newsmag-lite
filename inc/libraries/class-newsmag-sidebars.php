@@ -2,6 +2,7 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
 /**
  * Class Sigma_Shop_Sidebars
  */
@@ -30,6 +31,12 @@ class Newsmag_Sidebars {
 	 * @return mixed
 	 */
 	public function remove_specific_widget( $sidebars_widgets ) {
+		$filtering = apply_filters( 'newsmag_widget_filtering', true );
+
+		if ( ! $filtering ) {
+			return $sidebars_widgets;
+		}
+
 		/**
 		 * Start filtering the widgets
 		 */

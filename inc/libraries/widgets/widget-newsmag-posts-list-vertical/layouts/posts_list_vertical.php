@@ -76,6 +76,4 @@ if ( $posts->have_posts() ): ?>
 
 		<?php endwhile; ?>
     </div>
-<?php endif; ?>
-
-<?php wp_reset_query();
+<?php endif;

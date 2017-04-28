@@ -211,6 +211,11 @@ class Newsmag_Lite {
 		wp_enqueue_style( 'owlCarousel-themes', get_template_directory_uri() . '/assets/vendors/owl-carousel/owl.theme.default.css' );
 
 		/**
+		 * Load preloader
+		 */
+		wp_enqueue_style( 'newsmag-preloader', get_template_directory_uri() . '/assets/vendors/preloader/preloader.css' );
+
+		/**
 		 * Load Plyr
 		 */
 		wp_enqueue_script( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.js', array(), $newsmag['Version'], true );
@@ -235,7 +240,7 @@ class Newsmag_Lite {
 				border-left:1px solid ' . $preloader_accent . ';
 			}';
 
-			wp_add_inline_style( 'newsmag-stylesheet', $css );
+			wp_add_inline_style( 'newsmag-preloader', $css );
 		}
 
 		wp_localize_script( 'newsmag-functions', 'WPUrls', array(
@@ -276,9 +281,9 @@ class Newsmag_Lite {
 		 * Add theme support for custom header
 		 */
 		add_theme_support( 'custom-header', array(
-			'width'         => 1920,
-			'height'        => 200,
-			'uploads'       => true,
+			'width'   => 1920,
+			'height'  => 200,
+			'uploads' => true,
 		) );
 
 		add_theme_support( 'title-tag' );
