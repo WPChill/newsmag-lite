@@ -303,7 +303,7 @@ class Newsmag_Helper {
 				echo '<a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a>';
 				break;
 			case 'comments':
-				echo '<a class="newsmag-comments-link" href="' . get_the_permalink( get_the_ID() ) . '/#comments"><span class=" nmicon-comment-o"></span> ' . esc_html( $comments->approved ) . '</a>';
+				echo '<a class="newsmag-comments-link" href="' . get_the_permalink( get_the_ID() ) . '#comments"><span class=" nmicon-comment-o"></span> ' . esc_html( $comments->approved ) . '</a>';
 				break;
 			case 'date':
 				echo '<div class="newsmag-date">' . esc_html( $date ) . '</div>';
