@@ -1,3 +1,5 @@
+### V2.3.4
+	Fixed: Added instagram into newmag icons
 ### V2.3.3
 	Fixed: Preloader is loaded independently
 
