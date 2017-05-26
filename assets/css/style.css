@@ -849,7 +849,7 @@ a {
       #menu-social ul li a[href*="vimeo.com"]::before, #menu-social-footer ul li a[href*="vimeo.com"]::before {
         content: '\f27d'; }
       #menu-social ul li a[href*="instagram.com"]::before, #menu-social-footer ul li a[href*="instagram.com"]::before {
-        content: '\f16d'; }
+        content: '\e900'; }
       #menu-social ul li a[href*="codepen.io"]::before, #menu-social-footer ul li a[href*="codepen.io"]::before {
         content: '\f1cb'; }
       #menu-social ul li a[href*="linkedin.com"]::before, #menu-social-footer ul li a[href*="linkedin.com"]::before {

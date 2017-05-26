@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'newsmag';
-  src:  url('fonts/newsmag.eot?lse38e');
-  src:  url('fonts/newsmag.eot?lse38e#iefix') format('embedded-opentype'),
-    url('fonts/newsmag.ttf?lse38e') format('truetype'),
-    url('fonts/newsmag.woff?lse38e') format('woff'),
-    url('fonts/newsmag.svg?lse38e#newsmag') format('svg');
+  src:  url('fonts/newsmag.eot?hkj9q3');
+  src:  url('fonts/newsmag.eot?hkj9q3#iefix') format('embedded-opentype'),
+    url('fonts/newsmag.ttf?hkj9q3') format('truetype'),
+    url('fonts/newsmag.woff?hkj9q3') format('woff'),
+    url('fonts/newsmag.svg?hkj9q3#newsmag') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.nmicon-instagram:before {
+  content: "\e900";
+}
 .nmicon-search:before {
   content: "\f002";
 }
@@ -261,4 +264,3 @@
 .nmicon-hashtag:before {
   content: "\f292";
 }
-
