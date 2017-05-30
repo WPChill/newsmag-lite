@@ -39,7 +39,7 @@
 					<?php } ?>
 
                     <span class="newsmag-post-box-category">
-						<a href="<?php echo esc_url_raw( get_category_link( $categories[0] ) ) ?>">
+						<a href="<?php echo esc_url( get_category_link( $categories[0] ) ) ?>">
 							<?php echo esc_html( $categories[0]->name ) ?>
 						</a>
 					</span>

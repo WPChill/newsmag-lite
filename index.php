@@ -19,7 +19,7 @@ $img = $img->url;
 
 $additional = '';
 if ( ! empty( $img ) ): ?>
-	<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '">' ?>
+	<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '"' ?>
 <?php endif; ?>
 
     <div class="newsmag-custom-header" <?php echo $additional; ?>>
@@ -65,7 +65,6 @@ if ( $breadcrumbs_enabled ) { ?>
 							get_template_part( 'template-parts/content', get_post_format() );
 
 						endwhile;
-
 					endif;
 					?>
                 </main><!-- #main -->

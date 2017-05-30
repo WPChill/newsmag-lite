@@ -4,7 +4,7 @@ module.exports = function (grunt) {
 	// load all tasks
 	require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
 
-	grunt.initConfig({
+  grunt.config.init({
 		pkg: grunt.file.readJSON('package.json'),
 
 		dirs: {

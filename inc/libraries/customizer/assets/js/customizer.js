@@ -32,7 +32,7 @@
 					/**
 					 * When we're in the slider, show only slider widget
 					 */
-				case 'customize-control-sidebars_widgets-homepage-slider':
+        case 'customize-control-sidebars_widgets-homepage-slider':
 					$.each(widgetList, function ($k, $v) {
 						var individualId = $(this).attr('data-widget-id');
 						if ( individualId.search('newsmag_slider_widget') == -1 ) {
