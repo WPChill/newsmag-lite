@@ -103,7 +103,6 @@ class Newsmag_Lite {
 			$newsmag_recommended_plugins = array(
 				'kiwi-social-share'        => array( 'recommended' => false ),
 				'modula-best-grid-gallery' => array( 'recommended' => true ),
-				'pirate-forms'             => array( 'recommended' => false )
 			);
 
 			/*
