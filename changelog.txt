@@ -1,3 +1,5 @@
+### V2.3.6
+	Removed Pirate Forms from recommended plugins
 ### V2.3.5
 	Fixed: Issue with sidebar filtering
 ### V2.3.4
