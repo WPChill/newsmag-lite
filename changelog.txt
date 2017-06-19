@@ -1,5 +1,6 @@
 ### V2.3.7
 	Updated: Updated epsilon framework to the newest version
+	Fixed: CSS Issue in admin welcome screen
 ### V2.3.6
 	Removed Pirate Forms from recommended plugins
 ### V2.3.5
