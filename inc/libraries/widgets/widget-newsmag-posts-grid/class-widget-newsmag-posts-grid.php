@@ -73,36 +73,37 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
                <?php _e( 'Posts to Show', 'newsmag' ); ?> :
             </span>
         </label>
+		<div class="slider-container">
+	        <input type="text" name="<?php echo esc_attr( $this->get_field_name( 'show_post' ) ); ?>" class="rl-slider"
+	               id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"
+	               value="<?php echo esc_attr( $instance['show_post'] ); ?>"/>
 
-        <input type="text" name="<?php echo esc_attr( $this->get_field_name( 'show_post' ) ); ?>" class="rl-slider"
-               id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"
-               value="<?php echo esc_attr( $instance['show_post'] ); ?>"/>
-
-        <div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="2"
-             data-attr-max="8" data-attr-step="2" class="ss-slider"></div>
-        <script>
-					jQuery(document).ready(function ($) {
-						$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({
-							value: <?php echo esc_attr( $instance['show_post'] ); ?>,
-							range: 'min',
-							min  : 2,
-							max  : 8,
-							step : 2,
-							slide: function (event, ui) {
-								$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').val(ui.value).keyup();
-							}
-						});
-						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').on('focus', function () {
-							$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').trigger('blur');
-						});
-						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').val($('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider("value"));
-						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').change(function () {
-							$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider({
-								value: $(this).val()
-							});
+	        <div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="2"
+	             data-attr-max="8" data-attr-step="2" class="ss-slider"></div>
+	        <script>
+				jQuery(document).ready(function ($) {
+					$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({
+						value: <?php echo esc_attr( $instance['show_post'] ); ?>,
+						range: 'min',
+						min  : 2,
+						max  : 8,
+						step : 2,
+						slide: function (event, ui) {
+							$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').val(ui.value).keyup();
+						}
+					});
+					$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').on('focus', function () {
+						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').trigger('blur');
+					});
+					$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').val($('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider("value"));
+					$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').change(function () {
+						$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider({
+							value: $(this).val()
 						});
 					});
-        </script>
+				});
+	        </script>
+		</div>
 	<?php }
 
 	public function update( $new_instance, $old_instance ) {
