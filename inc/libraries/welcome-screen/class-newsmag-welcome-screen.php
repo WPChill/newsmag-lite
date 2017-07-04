@@ -108,7 +108,7 @@ class Newsmag_Welcome_Screen {
 	public function newsmag_welcome_style_and_scripts( $hook_suffix ) {
 
 		wp_enqueue_style( 'newsmag-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/css/welcome.css' );
-		wp_enqueue_script( 'newsmag-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/js/welcome.js', array( 'jquery' ) );
+		wp_enqueue_script( 'newsmag-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/js/welcome.js', array( 'jquery' ), '12123' );
 
 		wp_localize_script( 'newsmag-welcome-screen', 'newsmagWelcomeScreenObject', array(
 			'nr_actions_required'      => absint( $this->count_actions() ),

@@ -19,8 +19,6 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 	public function enqueue() {
 		wp_enqueue_script( 'jquery-ui' );
 		wp_enqueue_script( 'jquery-ui-slider' );
-		wp_enqueue_style( 'epsilon-styles', get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/css/style.css' );
-		wp_enqueue_script( 'epsilon-object', get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/js/epsilon.js', array( 'jquery' ) );
 	}
 
 	public function form( $instance ) {
@@ -80,29 +78,6 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 
 	        <div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="1"
 	             data-attr-max="10" data-attr-step="1" class="ss-slider"></div>
-	        <script>
-				jQuery(document).ready(function ($) {
-					$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').slider({
-						value: <?php echo esc_attr( $instance['show_post'] ); ?>,
-						range: 'min',
-						min  : 1,
-						max  : 10,
-						step : 1,
-						slide: function (event, ui) {
-							$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"]').val(ui.value).keyup();
-						}
-					});
-					$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').on('focus', function () {
-						$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').trigger('blur');
-					});
-					$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').val($('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider("value"));
-					$('[id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').change(function () {
-						$('[id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>"]').slider({
-							value: $(this).val()
-						});
-					});
-				});
-	        </script>
 		</div>
 	<?php }
 

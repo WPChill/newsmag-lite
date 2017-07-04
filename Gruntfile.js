@@ -254,6 +254,10 @@ module.exports = function (grunt) {
 			case 'js' :
 				grunt.config('paths.js.files', [ filepath ]);
 				break;
+				// SCSS
+			case 'scss':
+		        grunt.config( 'paths.scss.files', [ filepath ] );
+		        break;
 		}
 	});
 
