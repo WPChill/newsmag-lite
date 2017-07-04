@@ -90,6 +90,11 @@ class Newsmag_Lite {
 
 		$handler = 'newsmag-stylesheet';
 		Epsilon_Typography::get_instance( $options, $handler );
+
+		/**
+		 * Instantiate the customizer css
+		 */
+		wp_enqueue_style( 'newsmag_customizer_css', get_template_directory_uri() . '/inc/libraries/customizer/assets/css/newsmag-customizer.css' );
 	}
 
 	/**
