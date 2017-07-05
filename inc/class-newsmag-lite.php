@@ -260,8 +260,8 @@ class Newsmag_Lite {
 	public function admin_enqueues() {
 		$newsmag = wp_get_theme();
 		wp_enqueue_style( 'newsmag-fonts', 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:400,500,600,700', array(), $newsmag['Version'], 'all' );
-		wp_enqueue_style( 'newsmag-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/css/welcome.css', array(), '123123' );
-		wp_enqueue_script( 'newsmag-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/js/welcome.js', array( 'jquery', 'jquery-ui-slider' ), '112323123' );
+		wp_enqueue_style( 'newsmag-lite-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/css/welcome.css', array(), '123123' );
+		wp_enqueue_script( 'newsmag-lite-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/js/welcome.js', array( 'jquery', 'jquery-ui-slider' ), '112323123' );
 	}
 
 	/**
