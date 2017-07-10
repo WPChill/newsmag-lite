@@ -279,6 +279,15 @@
     text-align:center;
 }
 
+.about-wrap .three-col .col {
+    margin-right: 3%;
+    width: 29.95%;
+    float: left;
+}
+.about-wrap .three-col .col:nth-of-type(3n){
+    margin-right: 0;
+}
+
 .slider-container input[type="text"] {
     border: none;
     text-align: center;
