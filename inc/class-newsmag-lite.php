@@ -90,6 +90,7 @@ class Newsmag_Lite {
 
 		$handler = 'newsmag-stylesheet';
 		Epsilon_Typography::get_instance( $options, $handler );
+
 	}
 
 	/**
@@ -259,6 +260,8 @@ class Newsmag_Lite {
 	public function admin_enqueues() {
 		$newsmag = wp_get_theme();
 		wp_enqueue_style( 'newsmag-fonts', 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:400,500,600,700', array(), $newsmag['Version'], 'all' );
+		wp_enqueue_style( 'newsmag-lite-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/css/welcome.css', array(), '123123' );
+		wp_enqueue_script( 'newsmag-lite-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/js/welcome.js', array( 'jquery', 'jquery-ui-slider' ), '112323123' );
 	}
 
 	/**
@@ -296,14 +299,14 @@ class Newsmag_Lite {
 			'video',
 			'status',
 			'audio',
-			'chat'
+			'chat',
 		) );
 
 		register_nav_menus( array(
-			                    'primary'   => esc_html__( 'Primary', 'newsmag' ),
-			                    'social'    => esc_html__( 'Social', 'newsmag' ),
-			                    'copyright' => esc_html__( 'Copyright', 'newsmag' )
-		                    ) );
+			'primary'   => esc_html__( 'Primary', 'newsmag' ),
+			'social'    => esc_html__( 'Social', 'newsmag' ),
+			'copyright' => esc_html__( 'Copyright', 'newsmag' ),
+		) );
 
 		add_theme_support( 'html5', array(
 			'search-form',
