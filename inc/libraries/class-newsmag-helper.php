@@ -179,8 +179,11 @@ class Newsmag_Helper {
 				$type = 'vimeo';
 			} else {
 				$element = new SimpleXMLElement( $embeds[0] );
-				$href    = (string) $element->a->attributes()->href;
-				$type    = 'local';
+				$href = '';
+				if ( ! empty( $element->a ) ) {
+					$href = (string) $element->a->attributes()->href;
+				}
+				$type = 'local';
 			}
 		}
 

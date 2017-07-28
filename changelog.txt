@@ -1,3 +1,5 @@
+### V2.3.8
+	Fixed a bug where Video Formats would trigger an error if no video was found
 ### V2.3.7
 	Updated: Updated epsilon framework to the newest version
 	Fixed: CSS Issue in admin welcome screen
