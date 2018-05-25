@@ -4,8 +4,6 @@ input[type="reset"],
 input[type="submit"] {
   border: 1px solid;
   border-color: $color__brand-red;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
   background: $color__brand-red;
   color: #FFF;
@@ -21,8 +19,6 @@ input[type="submit"] {
   .submit {
     border: 1px solid;
     border-color: $color__brand-red;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
     border-radius: 0;
     background: $color__brand-red;
     color: #FFF;

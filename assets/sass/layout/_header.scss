@@ -99,13 +99,11 @@
 .site-header {
   position: relative;
   .search-form-opener {
-    -webkit-transition: all .2s linear;
     transition: all .2s linear;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     visibility: visible;
     &.hide {
-      -webkit-transition: all .2s linear;
       transition: all .2s linear;
       opacity: 0;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -119,11 +117,8 @@
     right: 0;
     height: 0;
     background: transparentize(#000, .2);
-    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, .35);
-    -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, .35);
     box-shadow: 0 5px 5px rgba(0, 0, 0, .35);
     z-index: 2;
-    -webkit-transition: all .2s linear;
     transition: all .2s linear;
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -134,7 +129,6 @@
       visibility: visible;
       bottom: -78px;
       height: 78px;
-      -webkit-transition: all .2s linear;
       transition: all .2s linear;
     }
     #searchform_topbar {
