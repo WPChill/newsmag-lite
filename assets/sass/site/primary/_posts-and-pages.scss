@@ -152,9 +152,6 @@
       display: block;
       width: 100%;
     }
-    a {
-
-    }
   }
 }
 
@@ -203,12 +200,12 @@
   position: relative;
   background: $color__brand-red;
   .container {
-    position: relative;
+    position: relative;  
     top: 40%;
   }
-  h3, h2 {
+  .page-title {
     text-transform: initial;
-    color: #FFF;
+    color: #FFF; 
     font-size: 33px;
     font-family: 'Poppins', serif;
     font-weight: 700;
@@ -228,12 +225,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: transparent;
-      background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, rgba(0, 0, 0, 1)));
-      background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
-      background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
-      background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
       background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
       content: '';
@@ -259,11 +250,6 @@
       width: 100%;
       height: 100%;
       background: transparent;
-      background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, rgba(0, 0, 0, 1)));
-      background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
-      background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
-      background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
       background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
       content: '';
@@ -392,14 +378,12 @@
     border-bottom-color: #D0EDF3;
     &:after {
       height: 25px;
-      -webkit-transition: all .2s ease-in;
       transition: all .2s ease-in;
     }
     .newsmag-post-box-category {
       bottom: 20px;
       opacity: 1;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
-      -webkit-transition: all .2s ease-in;
       transition: all .2s ease-in;
     }
   }
@@ -444,8 +428,6 @@
       margin-bottom: 10px;
       margin-right: 10px;
       display: inline-block;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
       border-radius: 3px;
       &:first-of-type {
         margin-left: 10px;
@@ -467,7 +449,6 @@
       font-size: 19px;
       position: absolute;
       top: 50%;
-      -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
       left: 5px;
     }

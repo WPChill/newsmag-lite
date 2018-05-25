@@ -221,7 +221,36 @@ module.exports = function (grunt) {
 					ext   : '.min.css'
 				} ]
 			}
-		}
+		},
+		
+		sass: {
+		  dist: {
+			options: {
+			  style: 'expanded',
+			},
+			files: [
+			  {
+				expand: true,
+				cwd: 'assets/sass/',
+				src: [ '*.scss' ],
+				dest: 'assets/css/',
+				ext: '.css'
+			  } ]
+		  }
+		},
+		
+		postcss: {
+		  options: {
+			map: false, // inline sourcemaps
+
+			processors: [
+			  require( 'autoprefixer' )( { browsers: 'last 3 versions' } )
+			]
+		  },
+		  dist: {
+			src: 'assets/css/*.css'
+		  }
+		},
 
 
 	});
@@ -235,6 +264,20 @@ module.exports = function (grunt) {
 			}
 		}
 	});
+	
+	grunt.config( 'watch', {
+	scss: {
+	  tasks: [ 'sass:dist', 'postcss' ],
+	  files: [
+		'assets/sass/*.scss',
+		'assets/sass/**/*.scss',
+		'assets/sass/**/**/*.scss',
+		'assets/sass/**/**/**/*.scss'
+	  ]
+	}
+	} );
+  
+	
 	grunt.event.on('watch', function (action, filepath) {
 		// Determine task based on filepath
 		var get_ext = function (path) {
@@ -254,10 +297,6 @@ module.exports = function (grunt) {
 			case 'js' :
 				grunt.config('paths.js.files', [ filepath ]);
 				break;
-				// SCSS
-			case 'scss':
-		        grunt.config( 'paths.scss.files', [ filepath ] );
-		        break;
 		}
 	});
 
@@ -265,6 +304,14 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', []);
 
+	// Compile SASS
+	grunt.registerTask( 'startSass', [
+	'sass:dist',
+	'postcss',
+	// 'csscomb',
+	// 'cssmin'
+	] );
+	
 	// Build .pot file
 	grunt.registerTask('buildpot', [
 		'makepot'

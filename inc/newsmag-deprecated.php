@@ -9,7 +9,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 
 /**
- * @todo - change newsmag posts navigation to default wordpress
+ * @todo - change newsmag posts navigation to default WordPress
  * @param array $args
  */
 function newsmag_the_posts_navigation( $args = array() ) {

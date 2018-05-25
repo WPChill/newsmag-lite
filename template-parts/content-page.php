@@ -12,7 +12,7 @@
 
 	<div class="col-xs-12">
 		<div class="newsmag-content entry-content">
-			<?php the_content(); ?>
+			<?php the_content(); ?> 
 		</div>
 	</div>
 

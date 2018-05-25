@@ -19,7 +19,7 @@ if ( is_single() ) { ?>
 		<!-- .Avatar -->
 		<!-- Short Description -->
 		<h4 class="post-author p-name fn" rel="author"><?php echo get_the_author_posts_link(); ?></h4>
-		<?php if ( ! empty( $curauth->description ) ): ?>
+		<?php if ( ! empty( $curauth->description ) ) : ?>
 			<p class="p-note"><?php esc_html( the_author_meta( 'description' ) ); ?></p>
 		<?php endif; ?>
 		<!-- .Short Description -->

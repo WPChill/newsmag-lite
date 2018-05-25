@@ -9,11 +9,11 @@
  * @package Newsmag
  */
 
-?>
+?> 
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer" role="contentinfo">
-	<?php get_sidebar( 'footer' ) ?>
+	<?php get_sidebar( 'footer' ); ?>
 
 	<?php
 	if ( get_theme_mod( 'newsmag_after_footer_enable', false ) ) {
@@ -23,7 +23,7 @@
 
 	<?php $go_top_enabled = get_theme_mod( 'newsmag_enable_go_top', true ); ?>
 
-	<?php if ( $go_top_enabled ): ?>
+	<?php if ( $go_top_enabled ) : ?>
 		<a href="#0" id="back-to-top" class="back-to-top">
 			<span class="nmicon-angle-up"></span>
 		</a>
@@ -37,13 +37,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="<?php echo $copyright_menu ? 'col-lg-7 col-sm-8' : 'col-sm-12'; ?>">
-					<?php if ( $copyright_area ): ?>
+					<?php if ( $copyright_area ) : ?>
 						<?php
-						echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://www.machothemes.com/newsmag-lite/">Newsmag</a>. All rights reserved.' ) );
+						echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( 'Y' ) . ' <a href="https://www.machothemes.com/newsmag-lite/">Newsmag</a>. All rights reserved.' ) );
 						?>
 					<?php endif; ?>
 
-					<?php echo __( 'Created by <a href="https://www.machothemes.com" rel="dofollow" title="Professional WordPress Themes">Macho Themes</a>', 'newsmag' ) ?>
+					<?php echo __( 'Created by <a href="https://www.machothemes.com" rel="dofollow" title="Professional WordPress Themes">Macho Themes</a>', 'newsmag' ); ?>
 				</div>
 
 				<?php
@@ -51,11 +51,13 @@
 					?>
 					<div class="col-lg-5 col-sm-4 text-right">
 						<?php
-						wp_nav_menu( array(
-							             'theme_location' => 'copyright',
-							             'menu_id'        => 'copyright-menu',
-							             'items_wrap'     => '<ul id="%1$s" class="copyright-menu %2$s">%3$s</ul>'
-						             ) );
+						wp_nav_menu(
+							array(
+								'theme_location' => 'copyright',
+								'menu_id'        => 'copyright-menu',
+								'items_wrap'     => '<ul id="%1$s" class="copyright-menu %2$s">%3$s</ul>',
+							)
+						);
 						?>
 					</div>
 				<?php } ?>

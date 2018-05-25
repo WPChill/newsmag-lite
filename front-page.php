@@ -15,30 +15,31 @@
 get_header();
 $lazy = get_theme_mod( 'newsmag_enable_blazy', '' );
 
-$show_on_front = get_option('show_on_front');
-if ( $show_on_front == 'posts' ):
+$show_on_front = get_option( 'show_on_front' );
+if ( 'posts' === $show_on_front ) :
 
 	$img = get_custom_header();
 	$img = $img->url;
 
 	$additional = '';
-	if ( ! empty( $img ) ): ?>
-		<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '"' ?>
+	if ( ! empty( $img ) ) : ?>
+		<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '"'; ?>
 	<?php endif; ?>
 
-    <div class="newsmag-custom-header" <?php echo $additional; ?>>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 class="page-title"><?php echo esc_html( get_option( 'blogname' ) ) ?></h2>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="newsmag-custom-header" <?php echo $additional; ?>>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 class="page-title"><?php echo esc_html( get_option( 'blogname' ) ); ?></h1>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<?php
 	$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
-	if ( $breadcrumbs_enabled ) { ?>
+	if ( $breadcrumbs_enabled ) {
+	?>
 		<div class="container newsmag-breadcrumbs-container">
 			<div class="row newsmag-breadcrumbs-row">
 				<div class="col-xs-12">
@@ -51,17 +52,19 @@ if ( $show_on_front == 'posts' ):
 		<div class="row">
 			<?php
 
-			$layout = get_theme_mod( 'newsmag_blog_layout', 'right-sidebar' ); ?>
-			<?php if ( $layout === 'left-sidebar' ): ?>
+			$layout = get_theme_mod( 'newsmag_blog_layout', 'right-sidebar' );
+			?>
+			<?php if ( 'left-sidebar' === $layout ) : ?>
 				<?php get_sidebar( 'sidebar' ); ?>
 			<?php endif; ?>
 
 			<div id="primary"
-			     class="newsmag-content newsmag-archive-page <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top' ?> <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-sm-12 col-xs-12">
+				class="newsmag-content newsmag-archive-page <?php echo $breadcrumbs_enabled ? '' : 'newsmag-margin-top'; ?> <?php echo ( 'fullwidth' === $layout ) ? '' : 'col-lg-8 col-md-8'; ?> col-sm-12 col-xs-12">
 				<main id="main" class="site-main" role="main">
 					<?php
 					if ( have_posts() ) :
-						while ( have_posts() ) : the_post();
+						while ( have_posts() ) :
+							the_post();
 							/*
 							 * Include the Post-Format-specific template for the content.
 							 * If you want to override this in a child theme, then include a file
@@ -74,17 +77,25 @@ if ( $show_on_front == 'posts' ):
 					endif;
 					?>
 				</main><!-- #main -->
-				<?php the_posts_pagination(array('prev_text' => 'prev', 'next_text' => 'next')); ?>
+				<?php
+				the_posts_pagination(
+					array(
+						'prev_text' => 'prev',
+						'next_text' => 'next',
+					)
+				);
+?>
 			</div><!-- #primary -->
-			<?php if ( $layout === 'right-sidebar' ): ?>
+			<?php if ( 'right-sidebar' === $layout ) : ?>
 				<?php get_sidebar( 'sidebar' ); ?>
 			<?php endif; ?>
 		</div>
 	</div>
 
 	<?php
-else:
-	if ( is_active_sidebar( 'homepage-slider' ) ) { ?>
+else :
+	if ( is_active_sidebar( 'homepage-slider' ) ) {
+	?>
 		<div id="newsmag-homepage-slider">
 			<?php
 			dynamic_sidebar( 'homepage-slider' );
@@ -101,4 +112,5 @@ else:
 	</div>
 <?php endif; ?>
 
-<?php get_footer();
+<?php
+get_footer();

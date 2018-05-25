@@ -13,7 +13,7 @@ if ( has_nav_menu( 'social' ) ) {
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="top-header-icons pull-right">
+					<div class="top-header-icons pull-right"> 
 						<?php
 						wp_nav_menu(
 							array(

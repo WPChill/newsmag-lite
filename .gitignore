@@ -2,6 +2,8 @@
 
 /css/style.css.map
 /node_modules/
+/sass-cache/
 .idea/
 /.standard.json
 /build/
+.vscode/settings.json

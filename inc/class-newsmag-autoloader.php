@@ -26,7 +26,7 @@ class Newsmag_Autoloader {
 			get_template_directory() . '/inc/libraries/',
 			get_template_directory() . '/inc/libraries/customizer/',
 			get_template_directory() . '/inc/libraries/epsilon-framework/',
-			get_template_directory() . '/inc/libraries/welcome-screen/'
+			get_template_directory() . '/inc/libraries/welcome-screen/',
 		);
 
 		foreach ( $directories as $directory ) {
@@ -40,7 +40,7 @@ class Newsmag_Autoloader {
 		/**
 		 * Load widgets
 		 */
-		if ( ( count( $parts ) > 2 ) && $parts[0] == 'Widget' && $parts[1] == 'Newsmag' ) {
+		if ( ( count( $parts ) > 2 ) && 'Widget' == $parts[0] && 'Newsmag' == $parts[1] ) {
 			$path = get_template_directory() . '/inc/libraries/widgets/' . strtolower( $bind ) . '/class-' . strtolower( $bind ) . '.php';
 			if ( file_exists( $path ) ) {
 				require_once $path;

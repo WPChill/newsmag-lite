@@ -12,19 +12,20 @@
 	<div class="after-footer-custom-logo">
 		<?php
 			$header_textcolor = get_theme_mod( 'header_textcolor' );
-			if ( function_exists( 'the_custom_logo' ) ) {
-				if ( has_custom_logo() ) {
-					the_custom_logo();
-				} else { ?>
+		if ( function_exists( 'the_custom_logo' ) ) {
+			if ( has_custom_logo() ) {
+				the_custom_logo();
+			} else {
+				?>
 					<?php
-					if ( $header_textcolor !== 'blank' ):
+					if ( 'blank' !== $header_textcolor ) :
 						?>
-						<a class="site-title"
-						   href="<?php echo esc_url_raw( get_home_url() ) ?>"> <?php echo get_option( 'blogname', 'newsmag' ) ?></a>
-					<?php endif;
+						<a class="site-title" href="<?php echo esc_url_raw( get_home_url() ); ?>"> <?php echo get_option( 'blogname', 'newsmag' ); ?></a>
+					<?php
+					endif;
 
-				}
 			}
+		}
 		?>
 	</div>
 	<div class="after-footer-social-menu">
