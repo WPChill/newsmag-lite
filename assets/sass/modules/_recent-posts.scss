@@ -18,14 +18,10 @@
       position            : relative;
       background-position : 50% 50%;
       background-size     : cover;
-      -moz-transition     : all 0.3s;
-      -webkit-transition  : all 0.3s;
       transition          : all 0.3s;
       @media (min-width : 990px) {
         background-size : 100%;
         &:hover {
-          -moz-transition    : all 0.3s;
-          -webkit-transition : all 0.3s;
           transition         : all 0.3s;
           background-size    : 115%;
         }
