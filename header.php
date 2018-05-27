@@ -58,7 +58,7 @@ endif;
 							<?php endif; ?>
 							<?php
 							$description = get_bloginfo( 'description', 'display' );
-							if ( $header_textcolor !== 'blank' && ! empty( $description ) ) :
+							if ( 'blank' !== $header_textcolor && ! empty( $description ) ) :
 							?>
 								<p class="site-description" <?php echo ( ! empty( $header_textcolor ) ) ? 'style="color:#' . esc_attr( $header_textcolor ) . '"' : ''; ?>><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></p>
 								<?php

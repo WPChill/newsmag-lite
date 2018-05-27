@@ -25,7 +25,7 @@ class Newsmag_Helper {
 						'compare' => 'LIKE',
 						'key'     => '_wp_attachment_metadata',
 					),
-				)
+				),
 			);
 			$query      = new WP_Query( $query_args );
 			if ( $query->have_posts() ) {
@@ -47,8 +47,8 @@ class Newsmag_Helper {
 	public static function check_archive() {
 
 		$return = array(
-			'type' => NULL,
-			'id'   => NULL,
+			'type' => null,
+			'id'   => null,
 		);
 
 		if ( is_category() ) {
@@ -90,7 +90,7 @@ class Newsmag_Helper {
 	 * @return bool|mixed
 	 */
 	public static function format_icon( $format = 'standard' ) {
-		if ( $format === 'standard' ) {
+		if ( 'standard' === $format ) {
 			return false;
 		}
 
@@ -103,7 +103,7 @@ class Newsmag_Helper {
 			'video'   => 'nmicon-video-camera',
 			'status'  => 'nmicon-heartbeat',
 			'audio'   => 'nmicon-headphones',
-			'chat'    => 'nmicon-comment-o'
+			'chat'    => 'nmicon-comment-o',
 		);
 
 		return $icons[ $format ];
@@ -143,14 +143,14 @@ class Newsmag_Helper {
 				'class'       => true,
 				'alt'         => true,
 				'width'       => true,
-				'height'      => true
+				'height'      => true,
 			),
-			'noscript' => array()
+			'noscript' => array(),
 		);
 
 		return array(
 			'image' => $img,
-			'tags'  => $allowed_tags
+			'tags'  => $allowed_tags,
 		);
 	}
 
@@ -179,7 +179,7 @@ class Newsmag_Helper {
 				$type = 'vimeo';
 			} else {
 				$element = new SimpleXMLElement( $embeds[0] );
-				$href = '';
+				$href    = '';
 				if ( ! empty( $element->a ) ) {
 					$href = (string) $element->a->attributes()->href;
 				}
@@ -190,14 +190,14 @@ class Newsmag_Helper {
 		if ( ! empty( $href ) ) {
 			switch ( $type ) {
 				case 'local':
-					$html = '<div>';
+					$html  = '<div>';
 					$html .= '<video class="plyr">';
 					$html .= '<source src=' . $href . '>';
 					$html .= '</video>';
 					$html .= '</div>';
 					break;
 				default:
-					$html = '<div class="plyr" data-type="' . $type . '" data-video-id="' . $href . '">';
+					$html  = '<div class="plyr" data-type="' . $type . '" data-video-id="' . $href . '">';
 					$html .= '</div>';
 					break;
 			}
@@ -212,8 +212,8 @@ class Newsmag_Helper {
 	 * @return bool
 	 */
 	public static function on_iis() {
-		$sSoftware = strtolower( $_SERVER["SERVER_SOFTWARE"] );
-		if ( strpos( $sSoftware, "microsoft-iis" ) !== false ) {
+		$s_software = strtolower( $_SERVER['SERVER_SOFTWARE'] );
+		if ( strpos( $s_software, 'microsoft-iis' ) !== false ) {
 			return true;
 		}
 
@@ -228,12 +228,14 @@ class Newsmag_Helper {
 	public static function categorized_blog() {
 		if ( false === ( $all_the_cool_cats = get_transient( 'newsmag_categories' ) ) ) {
 			// Create an array of all the categories that are attached to posts.
-			$all_the_cool_cats = get_categories( array(
-				                                     'fields'     => 'ids',
-				                                     'hide_empty' => 1,
-				                                     // We only need to know if there is more than one category.
-				                                     'number'     => 2,
-			                                     ) );
+			$all_the_cool_cats = get_categories(
+				array(
+					'fields'     => 'ids',
+					'hide_empty' => 1,
+					// We only need to know if there is more than one category.
+					'number'     => 2,
+				)
+			);
 
 			// Count the number of categories that are attached to the posts.
 			$all_the_cool_cats = count( $all_the_cool_cats );
@@ -273,8 +275,8 @@ class Newsmag_Helper {
 		$color_parts = str_split( $hex, 2 );
 		$return      = '#';
 		foreach ( $color_parts as $color ) {
-			$color  = hexdec( $color ); // Convert to decimal
-			$color  = max( 0, min( 255, $color + $steps ) ); // Adjust color
+			$color   = hexdec( $color ); // Convert to decimal
+			$color   = max( 0, min( 255, $color + $steps ) ); // Adjust color
 			$return .= str_pad( dechex( $color ), 2, '0', STR_PAD_LEFT ); // Make two char hex code
 		}
 

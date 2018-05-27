@@ -2,8 +2,10 @@
 
 /css/style.css.map
 /node_modules/
-/sass-cache/
+/sass-cache/*.*
 .idea/
 /.standard.json
 /build/
 .vscode/settings.json
+.csscomb.json
+package-lock.json

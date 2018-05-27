@@ -14,17 +14,19 @@ class Newsmag_LazyLoad {
 		if ( $lazy ) {
 
 			$browser = $this->check_browser_version();
-			if ( $browser['name'] === 'Internet Explorer' ) {
-				add_filter( 'wp_get_attachment_image_attributes', function ( $attr ) {
-					if ( isset( $attr['sizes'] ) ) {
-						unset( $attr['sizes'] );
-					}
-					if ( isset( $attr['srcset'] ) ) {
-						unset( $attr['srcset'] );
-					}
+			if ( 'Internet Explorer' === $browser['name'] ) {
+				add_filter(
+					'wp_get_attachment_image_attributes', function ( $attr ) {
+						if ( isset( $attr['sizes'] ) ) {
+							unset( $attr['sizes'] );
+						}
+						if ( isset( $attr['srcset'] ) ) {
+							unset( $attr['srcset'] );
+						}
 
-					return $attr;
-				}, PHP_INT_MAX );
+						return $attr;
+					}, PHP_INT_MAX
+				);
 				add_filter( 'wp_calculate_image_sizes', '__return_false', PHP_INT_MAX );
 				add_filter( 'wp_calculate_image_srcset', '__return_false', PHP_INT_MAX );
 				remove_filter( 'the_content', 'wp_make_content_images_responsive' );
@@ -43,27 +45,33 @@ class Newsmag_LazyLoad {
 
 	function filter_lazyload_content( $content ) {
 		// Perform a search for all images
-		return preg_replace_callback( '/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', array(
-			$this,
-			'preg_replace_callback_src'
-		), $content );
+		return preg_replace_callback(
+			'/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', array(
+				$this,
+				'preg_replace_callback_src',
+			), $content
+		);
 	}
 
 	function filter_lazyload( $content ) {
 		$this->src = get_the_post_thumbnail_url( $content['id'], 'newsmag-recent-post-list-image' );
 		if ( ! $this->src ) {
 			// Perform a search for all images
-			return preg_replace_callback( '/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', array(
-				$this,
-				'preg_replace_callback_src'
-			), $content['image'] );
+			return preg_replace_callback(
+				'/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', array(
+					$this,
+					'preg_replace_callback_src',
+				), $content['image']
+			);
 		}
 
 		// Perform a search for all images
-		return preg_replace_callback( '/(<\s*img[^>]+)(srcset\s*=\s*"[^"]+")([^>]+>)/i', array(
-			$this,
-			'preg_replace_callback'
-		), $content['image'] );
+		return preg_replace_callback(
+			'/(<\s*img[^>]+)(srcset\s*=\s*"[^"]+")([^>]+>)/i', array(
+				$this,
+				'preg_replace_callback',
+			), $content['image']
+		);
 	}
 
 	function check_browser_version() {
@@ -76,7 +84,7 @@ class Newsmag_LazyLoad {
 		if ( false === ( $response = get_site_transient( 'browser_' . $key ) ) ) {
 			$options = array(
 				'body'       => array( 'useragent' => $_SERVER['HTTP_USER_AGENT'] ),
-				'user-agent' => 'WordPress/' . get_bloginfo( 'version' ) . '; ' . home_url()
+				'user-agent' => 'WordPress/' . get_bloginfo( 'version' ) . '; ' . home_url(),
 			);
 
 			$response = wp_remote_post( 'http://api.wordpress.org/core/browse-happy/1.1/', $options );
@@ -121,7 +129,6 @@ class Newsmag_LazyLoad {
 		// Step 3: Add a noscript tag as a fallback
 		$img_replace .= '<noscript>' . $matches[0] . '</noscript>';
 
-
 		return $img_replace;
 	}
 
@@ -137,7 +144,6 @@ class Newsmag_LazyLoad {
 
 		// Step 3: Add a noscript tag as a fallback
 		$img_replace .= '<noscript>' . $matches[0] . '</noscript>';
-
 
 		return $img_replace;
 	}

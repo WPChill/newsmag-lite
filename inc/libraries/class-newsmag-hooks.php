@@ -148,7 +148,7 @@ class Newsmag_Hooks {
 				$content = preg_replace( '/\[video.*?\]/', '', $content );
 				$content = preg_replace( '/\[\/video.*?\]/', '', $content );
 
-				$html = '<div>';
+				$html  = '<div>';
 				$html .= '<video class="plyr">';
 				$html .= '<source src=' . $match[0][0] . '>';
 				$html .= '</video>';

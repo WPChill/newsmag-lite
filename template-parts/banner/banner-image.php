@@ -12,13 +12,14 @@ $link    = get_theme_mod( 'newsmag_banner_link', 'https://machothemes.com/' );
  */
 if ( $banner_image !== $default ) {
 	$attachment_id = Newsmag_Helper::get_attachment_id( get_theme_mod( 'newsmag_banner_image' ) ); ?>
-	<a href="<?php echo esc_url( $link ) ?>">
+	<a href="<?php echo esc_url( $link ); ?>">
 		<?php echo wp_get_attachment_image( $attachment_id, 'newsmag-wide-banner' ); ?>
 	</a>
 <?php } else { ?>
-	<a href="<?php echo esc_url( $link ) ?>">
+	<a href="<?php echo esc_url( $link ); ?>">
 		<?php
 		echo '<img src="' . esc_url( $default ) . '" />';
 		?>
 	</a>
-<?php }
+<?php
+}

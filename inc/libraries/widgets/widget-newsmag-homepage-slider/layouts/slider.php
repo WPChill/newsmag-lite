@@ -9,11 +9,12 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$owl_nav_list = array();
 
-		if ( $posts->have_posts() ):
-		while ( $posts->have_posts() ): $posts->the_post();
+		if ( $posts->have_posts() ) :
+			while ( $posts->have_posts() ) :
+				$posts->the_post();
 
-			?>
-			<div class="item">
+				?>
+				<div class="item">
 				<div class="item-image">
 					<a href="<?php the_permalink(); ?>">
 						<?php
@@ -24,23 +25,23 @@ if ( ! defined( 'WPINC' ) ) {
 							echo '<img src="' . esc_url( get_template_directory_uri() . '/assets/images/banner-placeholder.jpg' ) . '"/>';
 						}
 
-						?>
-					</a>
-					<div class="slider-caption">
+							?>
+						</a>
+						<div class="slider-caption">
 
-						<?php
+							<?php
 
-						$category = get_the_category();
+							$category = get_the_category();
 
-						$name     = $category[0]->cat_name;
-						$cat_id   = get_cat_ID( $name );
-						$link     = get_category_link( $cat_id );
-						$link_src = '<a href="' . esc_url( $link ) . '">' . $name . '</a>';
-						$date     = get_the_date();
+							$name     = $category[0]->cat_name;
+							$cat_id   = get_cat_ID( $name );
+							$link     = get_category_link( $cat_id );
+							$link_src = '<a href="' . esc_url( $link ) . '">' . $name . '</a>';
+							$date     = get_the_date();
 
-						?>
+							?>
 
-						<div class="slide-meta">
+							<div class="slide-meta">
 							<span class="category"><?php echo $link_src; ?></span>
 							<span
 								class="ticker"><strong><?php echo esc_html( $date ); ?></strong>&nbsp; - &nbsp;<strong>by</strong> <?php the_author(); ?></span>
@@ -52,10 +53,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 						<?php $owl_nav_list[] = get_the_title(); ?>
 
-					</div> <!-- end caption -->
-				</div> <!-- end image -->
-			</div> <!-- end h-entry -->
-		<?php endwhile; ?>
+						</div> <!-- end caption -->
+					</div> <!-- end image -->
+				</div> <!-- end h-entry -->
+			<?php endwhile; ?>
 	</div> <!-- end slider swipe -->
 
 	<!-- article navigation list -->
@@ -72,10 +73,10 @@ if ( ! defined( 'WPINC' ) ) {
 				$title_str = $title_index;
 
 				if ( $title_index < 10 ) {
-					$title_str = "0" . ( $title_index + 1 );
+					$title_str = '0' . ( $title_index + 1 );
 				}
 
-				if ( $title_index == 0 ) {
+				if ( 0 == $title_index ) {
 					echo '<li class="active"><span>' . $title_str . '</span><a href="#">' . $title_value . '</a></li>';
 				} else {
 					echo '<li><span>' . $title_str . '</span><a href="#">' . $title_value . '</a></li>';
