@@ -227,7 +227,7 @@ $wp_customize->add_control(
 			'description' => esc_html__( 'Minimum is 10, Maximum is 55, Incremented by 5', 'newsmag' ),
 			'choices'     => array(
 				'min'  => 10,
-				'max'  => 55,
+				'max'  => 200,
 				'step' => 5,
 			),
 			'section'     => 'newsmag_blog_section',
@@ -256,16 +256,16 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_headings_typography',
 		array(
-			'label'       => esc_html__( 'Headings', 'newsmag' ),
-			'section'     => 'newsmag_typography_headings',
-			'description' => esc_html__( 'Note: Current typography controls will only be affecting the blog.', 'newsmag' ),
-			'choices'     => array(
+			'label'         => esc_html__( 'Headings', 'newsmag' ),
+			'section'       => 'newsmag_typography_headings',
+			'description'   => esc_html__( 'Note: Current typography controls will only be affecting the blog.', 'newsmag' ),
+			'choices'       => array(
 				'font-family',
 				'font-weight',
 				'font-style',
 				'letter-spacing',
 			),
-			'selectors'   => array(
+			'selectors'     => array(
 				'.entry-content h1',
 				'.entry-content h2',
 				'.entry-content h3',
@@ -287,18 +287,18 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_paragraphs_typography',
 		array(
-			'type'        => 'epsilon-typography',
-			'label'       => esc_html__( 'Paragraphs', 'newsmag' ),
-			'section'     => 'newsmag_typography_paragraph',
-			'description' => esc_html__( 'Note: Current typography controls will only be affecting the blog.', 'newsmag' ),
-			'choices'     => array(
+			'type'          => 'epsilon-typography',
+			'label'         => esc_html__( 'Paragraphs', 'newsmag' ),
+			'section'       => 'newsmag_typography_paragraph',
+			'description'   => esc_html__( 'Note: Current typography controls will only be affecting the blog.', 'newsmag' ),
+			'choices'       => array(
 				'font-family',
 				'font-weight',
 				'font-style',
 				'font-size',
 				'line-height',
 			),
-			'selectors'   => array( '.entry-content p' ),
+			'selectors'     => array( '.entry-content p' ),
 			'font_defaults' => array(
 				'font-size'      => '15',
 				'line-height'    => '22',
@@ -316,21 +316,21 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_upsell_macho_typography',
 		array(
-			'section'      => 'newsmag_typography_paragraph',
-			'options'      => array(
+			'section'            => 'newsmag_typography_paragraph',
+			'options'            => array(
 				esc_html__( 'Typography Settings', 'newsmag' ),
 			),
-			'requirements' => array(
+			'requirements'       => array(
 				esc_html__( 'The PRO version of NewsMag offers more typography controls. You will be able to change the font-sizes, line-heights of the selected fonts. Also, more font families are included in the PRO version of NewsMag.', 'newsmag' ),
 			),
-			'priority'     => 0,
-			'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
-			'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+			'priority'           => 0,
+			'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
+			'button_text'        => esc_html__( 'See PRO vs Lite', 'newsmag' ),
 
 			'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/newsmag-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 			'second_button_text' => esc_html__( 'Get PRO now!', 'newsmag' ),
 
-			'separator' => '- or -',
+			'separator'          => '- or -',
 		)
 	)
 );
@@ -339,21 +339,21 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_upsell_macho_typography_b',
 		array(
-			'section'      => 'newsmag_typography_headings',
-			'options'      => array(
+			'section'            => 'newsmag_typography_headings',
+			'options'            => array(
 				esc_html__( 'Typography Settings', 'newsmag' ),
 			),
-			'requirements' => array(
+			'requirements'       => array(
 				esc_html__( 'The PRO version of NewsMag offers more typography controls. You will be able to change the font-sizes, line-heights of the selected fonts. Also, more font families are included in the PRO version of NewsMag.', 'newsmag' ),
 			),
-			'priority'     => 0,
-			'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
-			'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+			'priority'           => 0,
+			'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
+			'button_text'        => esc_html__( 'See PRO vs Lite', 'newsmag' ),
 
 			'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/newsmag-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 			'second_button_text' => esc_html__( 'Get PRO now!', 'newsmag' ),
 
-			'separator' => '- or -',
+			'separator'          => '- or -',
 		)
 	)
 );
@@ -365,23 +365,23 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_upsell_macho_blog',
 		array(
-			'section'      => 'newsmag_blog_section',
-			'options'      => array(
+			'section'            => 'newsmag_blog_section',
+			'options'            => array(
 				esc_html__( 'Related Posts Carousel', 'newsmag' ),
-				esc_html__( 'Extra Blog Layouts', 'newsmag' )
+				esc_html__( 'Extra Blog Layouts', 'newsmag' ),
 			),
-			'requirements' => array(
+			'requirements'       => array(
 				esc_html__( 'Control the number of posts, speed, display of title and date on your related posts carousel.', 'newsmag' ),
 				esc_html__( 'Multiple blog layouts are available in the PRO version of Newsmag. That includes: full-width posts and sidebars on the left.', 'newsmag' ),
 			),
-			'priority'     => 0,
-			'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
-			'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+			'priority'           => 0,
+			'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
+			'button_text'        => esc_html__( 'See PRO vs Lite', 'newsmag' ),
 
 			'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/newsmag-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 			'second_button_text' => esc_html__( 'Get PRO now!', 'newsmag' ),
 
-			'separator' => '- or -',
+			'separator'          => '- or -',
 		)
 	)
 );
@@ -390,21 +390,21 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_upsell_pro_banners',
 		array(
-			'section'      => 'newsmag_general_banners_controls',
-			'options'      => array(
+			'section'            => 'newsmag_general_banners_controls',
+			'options'            => array(
 				esc_html__( 'Extra Banner Ads', 'newsmag' ),
 			),
-			'requirements' => array(
+			'requirements'       => array(
 				esc_html__( 'The PRO version of Newsmag comes with dedicated banner widgets which you can place where you want on the homepage.', 'newsmag' ),
 			),
-			'priority'     => 0,
-			'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
-			'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+			'priority'           => 0,
+			'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
+			'button_text'        => esc_html__( 'See PRO vs Lite', 'newsmag' ),
 
 			'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/newsmag-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 			'second_button_text' => esc_html__( 'Get PRO now!', 'newsmag' ),
 
-			'separator' => '- or -',
+			'separator'          => '- or -',
 		)
 	)
 );
@@ -415,21 +415,21 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_upsell_color_version',
 		array(
-			'section'      => 'colors',
-			'priority'     => 0,
-			'options'      => array(
+			'section'            => 'colors',
+			'priority'           => 0,
+			'options'            => array(
 				esc_html__( 'More Color Options', 'newsmag' ),
 			),
-			'requirements' => array(
+			'requirements'       => array(
 				esc_html__( 'The PRO version of Newsmag allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'newsmag' ),
 			),
-			'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
-			'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+			'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
+			'button_text'        => esc_html__( 'See PRO vs Lite', 'newsmag' ),
 
 			'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/newsmag-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 			'second_button_text' => esc_html__( 'Get PRO now!', 'newsmag' ),
 
-			'separator' => '- or -',
+			'separator'          => '- or -',
 		)
 	)
 );
@@ -439,21 +439,21 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_upsell_newsticker_version',
 		array(
-			'section'      => 'newsmag_general_section',
-			'priority'     => 0,
-			'options'      => array(
+			'section'            => 'newsmag_general_section',
+			'priority'           => 0,
+			'options'            => array(
 				esc_html__( 'News ticker', 'newsmag' ),
 			),
-			'requirements' => array(
+			'requirements'       => array(
 				esc_html__( 'The PRO version of Newsmag allows you to have a newsticker on the left side of the social icons, above the logo. You can use it to display your most recently posted articles or ones you consider are trending.', 'newsmag' ),
 			),
-			'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
-			'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+			'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
+			'button_text'        => esc_html__( 'See PRO vs Lite', 'newsmag' ),
 
 			'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/newsmag-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 			'second_button_text' => esc_html__( 'Get PRO now!', 'newsmag' ),
 
-			'separator' => '- or -',
+			'separator'          => '- or -',
 		)
 	)
 );
@@ -463,21 +463,21 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_upsell_footer_attribution',
 		array(
-			'section'      => 'newsmag_footer_section',
-			'priority'     => 0,
-			'options'      => array(
+			'section'            => 'newsmag_footer_section',
+			'priority'           => 0,
+			'options'            => array(
 				esc_html__( 'Link attribution', 'newsmag' ),
 			),
-			'requirements' => array(
+			'requirements'       => array(
 				esc_html__( 'The PRO version of Newsmag allows you to remove the footer link attribution.', 'newsmag' ),
 			),
-			'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
-			'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+			'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=newsmag-welcome&tab=features' ),
+			'button_text'        => esc_html__( 'See PRO vs Lite', 'newsmag' ),
 
 			'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/newsmag-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 			'second_button_text' => esc_html__( 'Get PRO now!', 'newsmag' ),
 
-			'separator' => '- or -',
+			'separator'          => '- or -',
 		)
 	)
 );
