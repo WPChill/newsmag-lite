@@ -61,7 +61,7 @@
 					if ( is_single() ) {
 						the_content();
 					} else {
-						$excerpt = get_the_content();
+						$excerpt = get_the_excerpt();
 						$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
 						?>
 						<p>
@@ -112,7 +112,7 @@
 					if ( is_single() ) {
 						the_content();
 					} else {
-						$excerpt = get_the_content();
+						$excerpt = get_the_excerpt();
 						$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
 						?>
 						<p>

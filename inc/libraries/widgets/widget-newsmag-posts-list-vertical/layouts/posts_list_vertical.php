@@ -66,7 +66,7 @@ if ( $posts->have_posts() ) : ?>
 								<?php } ?>
 							</div>
 							<?php
-							$excerpt = get_the_content();
+							$excerpt = get_the_excerpt();
 							$length  = (int) get_theme_mod( 'newsmag_excerpt_length', 25 );
 							?>
 							<p>
