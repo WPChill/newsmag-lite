@@ -223,6 +223,7 @@ $wp_customize->add_control(
 		$wp_customize,
 		'newsmag_excerpt_length',
 		array(
+			'type'        => 'epsilon-slider',
 			'label'       => esc_html__( 'Post excerpt length', 'newsmag' ),
 			'description' => esc_html__( 'Minimum is 10, Maximum is 55, Incremented by 5', 'newsmag' ),
 			'choices'     => array(
