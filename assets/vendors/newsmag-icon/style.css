@@ -9,7 +9,8 @@
   font-style: normal;
 }
 
-[class^="nmicon-"], [class*=" nmicon-"] {
+[class^="nmicon-"], [class*=" nmicon-"],
+.newsmag-social-footer .fa {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'newsmag' !important;
   speak: none;
@@ -23,7 +24,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.newsmag-social-footer .fa-instagram:before,
 .nmicon-instagram:before {
   content: "\e900";
 }
@@ -117,9 +118,11 @@
 .nmicon-github-square:before {
   content: "\f092";
 }
+.newsmag-social-footer .fa-twitter:before,
 .nmicon-twitter:before {
   content: "\f099";
 }
+.newsmag-social-footer .fa-facebook:before,
 .nmicon-facebook:before {
   content: "\f09a";
 }
@@ -153,6 +156,7 @@
 .nmicon-reorder:before {
   content: "\f0c9";
 }
+.newsmag-social-footer .fa-pinterest:before,
 .nmicon-pinterest:before {
   content: "\f0d2";
 }
@@ -177,6 +181,7 @@
 .nmicon-caret-right:before {
   content: "\f0da";
 }
+.newsmag-social-footer .fa-linkedin:before,
 .nmicon-linkedin:before {
   content: "\f0e1";
 }
@@ -219,6 +224,7 @@
 .nmicon-youtube-square:before {
   content: "\f166";
 }
+.newsmag-social-footer .fa-youtube:before,
 .nmicon-youtube:before {
   content: "\f167";
 }
