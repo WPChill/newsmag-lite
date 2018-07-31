@@ -5,7 +5,7 @@ if ( ! defined( 'WPINC' ) ) {
 if ( $posts->have_posts() ) :
 
 	$i = 0; ?>
-	<div class="col-md-4 newsmag-blog-post-layout-row">
+	<div class="newsmag-blog-post-layout-row">
 		<?php
 		while ( $posts->have_posts() ) :
 			$posts->the_post();

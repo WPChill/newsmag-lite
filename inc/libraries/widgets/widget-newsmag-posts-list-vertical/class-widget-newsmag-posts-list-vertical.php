@@ -11,7 +11,7 @@ class Widget_Newsmag_Posts_List_Vertical extends WP_Widget {
 
 		parent::__construct(
 			'newsmag_widget_posts_list_vertical', __( 'Newsmag - Posts List Vertical', 'newsmag' ), array(
-				'classname'                   => 'newsmag_builder',
+				'classname'                   => 'newsmag_builder col-md-8',
 				'description'                 => __( 'Very similar to the blog layout. It\'s a versatile layout that can be displayed side-by-side to the Posts Column widget to create a great content combination.', 'newsmag' ),
 				'customize_selective_refresh' => true,
 			)

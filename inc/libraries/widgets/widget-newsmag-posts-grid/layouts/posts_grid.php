@@ -3,7 +3,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 if ( $posts->have_posts() ) : ?>
-	<?php echo ( $posts->post_count > 4 ) ? '<div class="col-md-12">' : '<div class="col-md-8">'; ?>
 	<div class="row newsmag-margin-bottom newsmag-post-banner-row">
 		<?php
 		$id_obj = get_category_by_slug( $instance['newsmag_category'] );
@@ -65,7 +64,6 @@ if ( $posts->have_posts() ) : ?>
 				</div>
 			</div>
 		<?php endwhile; ?>
-	</div>
 	</div>
 <?php
 endif;

@@ -47,12 +47,17 @@ class Newsmag_Welcome_Screen {
 			if ( ! empty( $_GET['action'] ) && $_GET['action'] === 'set_page_automatic' ) {
 				$active_tab = $_GET['tab'];
 				$about      = get_page_by_title( 'Homepage' );
-				update_option( 'page_on_front', $about->ID );
-				update_option( 'show_on_front', 'page' );
+				if ( $about ) {
+					update_option( 'page_on_front', $about->ID );
+					update_option( 'show_on_front', 'page' );
+				}
+				
 
 				// Set the blog page
 				$blog = get_page_by_title( 'Blog' );
-				update_option( 'page_for_posts', $blog->ID );
+				if ( $blog ) {
+					update_option( 'page_for_posts', $blog->ID );
+				}
 
 				wp_redirect( self_admin_url( 'themes.php?page=newsmag-welcome&tab=' . $active_tab ) );
 			}

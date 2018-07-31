@@ -3,7 +3,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 if ( $posts->have_posts() ) : ?>
-	<div class="col-md-8 newsmag-post-list-vertical-row">
+	<div class="newsmag-post-list-vertical-row">
 		<?php
 		$id_obj = get_category_by_slug( $instance['newsmag_category'] );
 		?>

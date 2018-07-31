@@ -12,7 +12,7 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 
 		parent::__construct(
 			'newsmag_widget_posts_grid', __( 'Newsmag - Posts Grid', 'newsmag' ), array(
-				'classname'                   => 'newsmag_builder',
+				'classname'                   => 'newsmag_builder %%column-class%%',
 				'description'                 => __( 'Posts are displayed next to each other in a grid-like fashion.', 'newsmag' ),
 				'customize_selective_refresh' => true,
 			)
@@ -145,11 +145,12 @@ class Widget_Newsmag_Posts_Grid extends WP_Widget {
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
-
-		echo $args['before_widget'];
+		$posts = $this->get_posts( $instance );
+		$before_widget = ( $posts->post_count > 4 ) ? str_replace( '%%column-class%%', 'col-md-12', $args['before_widget'] ) : str_replace( '%%column-class%%', 'col-md-8', $args['before_widget'] );
+		echo $before_widget;
 		$filepath = get_template_directory() . '/inc/libraries/widgets/widget-newsmag-posts-grid/layouts/posts_grid.php';
 
-		$posts = $this->get_posts( $instance );
+		
 
 		if ( file_exists( $filepath ) ) {
 			include $filepath;
