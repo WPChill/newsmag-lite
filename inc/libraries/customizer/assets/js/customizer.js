@@ -4,6 +4,18 @@
  */
 
 (function ($) {
+	wp.customize.bind( 'ready', function() {
+
+		var api = this,
+			newsmagExcerptLenght = api.control( 'newsmag_excerpt_length' ),
+			slider = newsmagExcerptLenght.container.find( '.ss-slider' );
+
+			slider.on( "slidestop", function( event, ui ) {
+				newsmagExcerptLenght.setting( ui.value );
+			} );
+		
+	});
+
 	jQuery(document).ready(function ($) {
 		/**
 		 * Bind an event for the add new widget
