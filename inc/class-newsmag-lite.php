@@ -102,9 +102,10 @@ class Newsmag_Lite {
 			global $newsmag_required_actions, $newsmag_recommended_plugins;
 
 			$newsmag_recommended_plugins = array(
-				'kiwi-social-share'        => array( 'recommended' => false ),
 				'modula-best-grid-gallery' => array( 'recommended' => true ),
+				'simple-author-box'        => array( 'recommended' => true ),
 				'wpforms-lite'             => array( 'recommended' => true ),
+				'kiwi-social-share'        => array( 'recommended' => false ),
 			);
 
 			/*

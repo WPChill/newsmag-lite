@@ -1,3 +1,6 @@
+### V2.4.0
+	Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-lite/milestone/11?closed=1"> Newsmag 2.4.0 </a>
+
 ### V2.3.8
 	Fixed a bug where Video Formats would trigger an error if no video was found
 ### V2.3.7
