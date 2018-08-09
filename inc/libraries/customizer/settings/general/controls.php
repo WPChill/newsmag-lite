@@ -228,7 +228,7 @@ $wp_customize->add_control(
 			'description' => esc_html__( 'Minimum is 10, Maximum is 55, Incremented by 5', 'newsmag' ),
 			'choices'     => array(
 				'min'  => 10,
-				'max'  => 200,
+				'max'  => 55,
 				'step' => 5,
 			),
 			'section'     => 'newsmag_blog_section',
