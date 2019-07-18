@@ -104,7 +104,7 @@ class Newsmag_Lite {
 			$newsmag_recommended_plugins = array(
 				'modula-best-grid-gallery' => array( 'recommended' => true ),
 				'simple-author-box'        => array( 'recommended' => true ),
-				'wpforms-lite'             => array( 'recommended' => true ),
+				'kali-forms'               => array( 'recommended' => true ),
 				'kiwi-social-share'        => array( 'recommended' => false ),
 			);
 
@@ -135,14 +135,14 @@ class Newsmag_Lite {
 					'id'          => 'newsmag-req-ac-download-data',
 					'title'       => esc_html__( 'Download theme sample data', 'newsmag' ),
 					'description' => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
-					'help'        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>, 
+					'help'        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>,
 									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.wie">' . __( 'Widgets', 'newsmag' ) . '</a>',
 					'check'       => Newsmag_Notify_System::has_content(),
 				),
 				array(
 					'id'    => 'newsmag-req-ac-install-data',
 					'title' => esc_html__( 'Import Sample Data', 'newsmag' ),
-					'help'  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'newsmag' ) . '</a> 
+					'help'  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'newsmag' ) . '</a>
 									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'newsmag' ) . '</a>',
 					'check' => Newsmag_Notify_System::has_import_plugins(),
 				),
