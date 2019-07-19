@@ -1,3 +1,6 @@
+### V2.4.1
+	Minor Backend tweaks
+
 ### V2.4.0
 	Implemented everything in here: <a href="https://github.com/MachoThemes/newsmag-lite/milestone/11?closed=1"> Newsmag 2.4.0 </a>
 
