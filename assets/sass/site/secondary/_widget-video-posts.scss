@@ -24,7 +24,9 @@
     }
   }
 
-  .plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover, .plyr__play-large {
+  .plyr--audio .plyr__controls button.tab-focus:focus,
+  .plyr--audio .plyr__controls button:hover,
+  .plyr__play-large {
     background: rgba(0, 0, 0, .6);
     border: 2px solid #fff;
   }
@@ -33,7 +35,8 @@
     opacity: 0;
   }
 
-  .newsmag-post-format-video:hover {
+  .newsmag-post-format-video:hover,
+  .newsmag-post-format-video:focus-within {
     .plyr__controls {
       opacity: 1;
     }

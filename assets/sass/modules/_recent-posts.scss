@@ -21,7 +21,7 @@
       transition          : all 0.3s;
       @media (min-width : 990px) {
         background-size : 100%;
-        &:hover {
+        &:hover, &:focus {
           transition         : all 0.3s;
           background-size    : 115%;
         }
@@ -63,7 +63,7 @@
         display          : inline-block;
         > a {
           color : #FFF;
-          &:hover {
+          &:hover, &:focus {
             color : #FFF;
           }
         }
@@ -76,7 +76,7 @@
         display        : block;
         > a {
           color : #FFF;
-          &:hover {
+          &:hover, &:focus {
             text-decoration : none;
           }
         }

@@ -264,7 +264,8 @@
 
       &.active,
       &.current-menu-item,
-      &:hover,
+	  &:hover,
+	  &:focus-within,
       &:focus {
         > a {
           color: $color__text-main;
@@ -274,7 +275,8 @@
       @media screen and (min-width: 768px) {
         &.active,
         &.current-menu-item,
-        &:hover,
+		&:hover,
+		&:focus-within,
         &:focus {
           > a {
             color: #fff;

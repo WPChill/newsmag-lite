@@ -63,17 +63,20 @@
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
 }
 
-.back-to-top.back-to-top-is-visible, .back-to-top.back-to-top-fade-out, .no-touch .back-to-top:hover {
+.back-to-top.back-to-top-is-visible,
+.back-to-top.back-to-top-fade-out,
+.no-touch .back-to-top:hover,
+.no-touch .back-to-top:focus {
   transition: opacity .3s 0s, visibility 0s 0s;
 }
 
 .back-to-top.back-to-top-is-visible {
   visibility: visible;
   opacity: 1;
-
 }
 
-.no-touch .back-to-top:hover {
+.no-touch .back-to-top:hover,
+.no-touch .back-to-top:focus {
   border: 1px solid $color__brand-red;
   opacity: 1;
   color: $color__brand-red;
@@ -111,7 +114,8 @@
   border: none;
 }
 
-.back-to-top:hover {
+.back-to-top:hover,
+.back-to-top:focus {
   background: #000;
   color: #fff;
 }
@@ -190,7 +194,7 @@
         &[href*="linkedin.com"] {
           color: #0e76a8;
         }
-      }
+	  }
     }
   }
 }

@@ -82,7 +82,7 @@
       > a {
         font-size: 14px;
         color: #cfcfcf;
-        &:hover {
+        &:hover, &:focus {
           color: $color__brand-red;
         }
       }
@@ -107,7 +107,7 @@
     width: 100%;
   }
 
-  &:hover {
+  &:hover, &:focus-within {
     > img,
     > a > img {
       transform: scale(1.1);
@@ -194,12 +194,12 @@
   position: relative;
   background: $color__brand-red;
   .container {
-    position: relative;  
+    position: relative;
     top: 40%;
   }
   .page-title {
     text-transform: initial;
-    color: #FFF; 
+    color: #FFF;
     font-size: 33px;
     font-family: 'Poppins', serif;
     font-weight: 700;
@@ -367,7 +367,7 @@
     }
   }
 
-  &:hover, &:focus {
+  &:hover, &:focus-within {
     border-bottom-color: #D0EDF3;
     &:after {
       height: 25px;
@@ -425,7 +425,7 @@
       &:first-of-type {
         margin-left: 10px;
       }
-      &:hover {
+      &:hover, &:focus {
         background: #ff3d2e;
         color: #FFF;
       }
@@ -528,12 +528,12 @@
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     transition: all .2s ease-in;
-    &:hover {
+    &:hover, &:focus {
       background: #000;
       transition: all .2s ease-in;
     }
     &.dynamic {
-      &:hover {
+      &:hover, &:focus {
         background-color: #000 !important;
         transition: all .2s ease-in;
       }
@@ -568,12 +568,12 @@
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     transition: all .2s ease-in;
-    &:hover {
+    &:hover, &:focus {
       background: #000;
       transition: all .2s ease-in;
     }
     &.dynamic {
-      &:hover {
+      &:hover, &:focus {
         background-color: #000 !important;
         transition: all .2s ease-in;
       }
@@ -614,7 +614,7 @@
       left: 0;
       content: '';
     }
-    &:hover {
+    &:hover, &:focus {
       &:before {
         background: $color__brand-red;
       }

@@ -56,7 +56,7 @@
       }
     }
 
-    &:hover {
+    &:hover, &:focus-within {
       .main-slider-previous,
       .main-slider-next {
         i {
@@ -74,7 +74,9 @@
       right: 20%;
     }
   }
-  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span,
+  .owl-theme .owl-dots .owl-dot:focus span {
     background: $color__brand-red;
   }
   .owl-theme .owl-dots .owl-dot span {
@@ -212,7 +214,7 @@
     .meta {
       a {
         color: #767676;
-        &:hover {
+        &:hover, &:focus {
           color: $color__brand-red;
         }
       }
@@ -308,13 +310,13 @@
             display: none;
           }
         }
-        &:hover {
+        &:hover, &:focus {
           background-color: #000;
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in;
         }
         &.dynamic {
-          &:hover {
+          &:hover, &:focus {
             background-color: #000 !important;
             -webkit-transition: all .2s ease-in;
             transition: all .2s ease-in;
@@ -384,7 +386,7 @@
     transition: all .2s ease-in;
     position: relative;
     z-index: 0;
-    &:hover {
+    &:hover, &:focus {
       border-bottom-color: #D0EDF3;
       .newsmag-post-box-a-category, .newsmag-post-box-category {
         bottom: 20px;
@@ -494,7 +496,7 @@
         z-index: 2;
         -webkit-transition: all .2s ease-in;
         transition: all .2s ease-in;
-        &:hover {
+        &:hover, &:focus {
           background-color: #000;
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in;
@@ -578,7 +580,7 @@
         height: 270px;
       }
     }
-    &:hover {
+    &:hover, &:focus {
       background-size: 115% 115%;
       -moz-transition: all 0.2s;
       -webkit-transition: all 0.2s;
@@ -655,13 +657,13 @@
         transition: all .2s ease-in;
         opacity: 0;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-        &:hover {
+        &:hover, &:focus {
           background-color: #000;
           -webkit-transition: all .2s ease-in;
           transition: all .2s ease-in;
         }
         &.dynamic {
-          &:hover {
+          &:hover, &:focus {
             background-color: #000 !important;
             -webkit-transition: all .2s ease-in;
             transition: all .2s ease-in;

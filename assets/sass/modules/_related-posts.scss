@@ -32,7 +32,7 @@
       &:last-of-type {
         margin-right: none;
       }
-      &:hover {
+      &:hover, &:focus {
         border-color: $color__brand-red;
       }
       a {

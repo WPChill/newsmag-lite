@@ -38,7 +38,7 @@
         }
         /* Add hover effects for the links, the brand colors */
 
-        &:hover {
+        &:hover, &:focus {
           &[href*="wordpress.org"]::before,
           &[href*="wordpress.com"]::before {
             color: #21759b;
@@ -171,7 +171,7 @@
         text-align: center;
         line-height: 33px;
         display: inline-block;
-        &:hover {
+        &:hover, &:focus {
           &[href*="wordpress.org"]::before,
           &[href*="wordpress.com"]::before {
             color: #FFF;

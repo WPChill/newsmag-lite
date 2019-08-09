@@ -372,7 +372,7 @@
 
           }
 
-          &:hover {
+          &:hover, &:focus {
             &:before {
               padding-left: 7px;
             }
@@ -592,7 +592,7 @@
           color: #ccc;
         }
 
-        &:hover {
+        &:hover, &:focus {
           &:before {
             padding-left: 7px;
           }
@@ -622,7 +622,7 @@
           -o-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
           transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
         }
-        &:hover {
+        &:hover, &:focus {
           &:before {
             padding-left: 7px;
           }
@@ -740,7 +740,7 @@
         background-color: $color__brand-red;
         color: #FFF;
         cursor: pointer;
-        &:hover {
+        &:hover, &:focus {
           &:before {
             color: #000;
           }
@@ -772,7 +772,7 @@
         color: #FFF;
         display: block;
         cursor: pointer;
-        &:hover {
+        &:hover, &:focus {
           &:before {
             color: #000;
           }

@@ -196,7 +196,7 @@
         vertical-align: middle;
         width: 23px;
         height: 23px;
-        &:hover, &.input-open {
+        &:hover, &:focus, &.input-open {
           color: darken(#FFF, 5%);
         }
 
@@ -209,7 +209,13 @@
           position: absolute;
           top: 0;
           right: 10px;
-        }
+		}
+
+		&:focus-within {
+			.first-bar, .second-bar {
+				background: $color__brand-red;
+			}
+		}
 
         .first-bar {
           @include transform(rotate(-45deg));

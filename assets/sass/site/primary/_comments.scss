@@ -77,7 +77,7 @@
       font-family: $font__main;
       font-size: 15px;
       font-weight: 700;
-      &:hover {
+      &:hover, &:focus {
         color: darken($color__brand-red, 20%);
       }
     }
