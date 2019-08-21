@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) {
 				?>
 				<div class="item">
 				<div class="item-image">
-					<a href="<?php the_permalink(); ?>">
+					<a href="<?php the_permalink(); ?>" tabindex="-1">
 						<?php
 
 						if ( has_post_thumbnail() ) {

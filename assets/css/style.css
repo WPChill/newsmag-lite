@@ -776,7 +776,7 @@ a:hover, a:active {
   font-family: "Poppins";
   font-weight: 500;
 }
-.main-navigation .nav-menu > li > a:hover, .main-navigation .nav-menu > li > a:focus {
+.main-navigation .nav-menu > li > a:hover {
   outline: none;
 }
 .main-navigation .nav-menu > li:last-of-type {
@@ -2399,6 +2399,9 @@ a:hover, a:active {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   text-transform: initial;
 }
+.newsmag_slider .newsmag-slider .item-image .slider-caption h3 a:focus {
+  color: #ff3d2e;
+}
 .newsmag_slider .newsmag-slider .item-image .slider-caption .post-categories {
   list-style-type: none;
   padding: 0;
@@ -2677,7 +2680,7 @@ a:hover, a:active {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-.newsmag_builder .newsmag-post-box-a:hover .newsmag-post-box-a-category, .newsmag_builder .newsmag-post-box-a:focus .newsmag-post-box-a-category {
+.newsmag_builder .newsmag-post-box-a:hover .newsmag-post-box-a-category, .newsmag_builder .newsmag-post-box-a:focus-within .newsmag-post-box-a-category {
   bottom: 20px;
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
@@ -3015,7 +3018,7 @@ a:hover, a:active {
 .newsmag_builder .newsmag-blog-post-layout-banner.col-md-3 .banner-content h3 a {
   font-size: 16px;
 }
-.newsmag_builder .newsmag-blog-post-layout-banner:hover .newsmag-post-layout-category, .newsmag_builder .newsmag-blog-post-layout-banner:focus .newsmag-post-layout-category {
+.newsmag_builder .newsmag-blog-post-layout-banner:hover .newsmag-post-layout-category, .newsmag_builder .newsmag-blog-post-layout-banner:focus-within .newsmag-post-layout-category {
   bottom: 0;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -3177,6 +3180,9 @@ a:hover, a:active {
 }
 .owl-nav-list li.active span {
   border-right: 4px solid #FF3D2E;
+}
+.owl-nav-list a:focus {
+  border-bottom: 3px solid #ff3d2e;
 }
 .owl-nav-list h4 {
   font-family: "poppins";
@@ -5019,6 +5025,9 @@ a:hover, a:active {
 }
 .site-footer .newsmag-social-footer li a[href*="linkedin.com"] {
   color: #0e76a8;
+}
+.site-footer .newsmag-social-footer li a:focus span {
+  color: #ff3d2e !important;
 }
 
 /*--------------------------------------------------------------

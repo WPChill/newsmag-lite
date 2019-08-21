@@ -195,6 +195,10 @@
           color: #0e76a8;
         }
 	  }
+
+	  a:focus span {
+		  color: $color__brand-red !important;
+	  }
     }
   }
 }

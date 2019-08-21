@@ -20,7 +20,11 @@
             font-size: 33px;
             font-weight: 700;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            text-transform: initial;
+			text-transform: initial;
+
+			&:focus {
+				color: $color__brand-red;
+			}
           }
         }
 
@@ -324,7 +328,7 @@
         }
       }
     }
-    &:hover, &:focus {
+    &:hover, &:focus-within {
       .newsmag-post-box-a-category {
         bottom: 20px;
         opacity: 1;
@@ -691,7 +695,7 @@
       }
     }
 
-    &:hover, &:focus {
+    &:hover, &:focus-within {
       .newsmag-post-layout-category {
         bottom: 0;
         -webkit-transition: all .2s ease-in;

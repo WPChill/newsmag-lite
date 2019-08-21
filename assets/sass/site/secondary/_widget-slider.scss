@@ -45,6 +45,10 @@
     }
   }
 
+  a:focus {
+	  border-bottom: 3px solid $color__brand-red;
+  }
+
   h4 {
     font-family: "poppins";
     display: inline-block;
