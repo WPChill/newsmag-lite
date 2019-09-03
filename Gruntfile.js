@@ -160,7 +160,7 @@ module.exports = function (grunt) {
 		checktextdomain: {
 			standard: {
 				options: {
-					text_domain       : [ 'newsmag' ], //Specify allowed domain(s)
+					text_domain       : [ 'newsmag', 'epsilon-framework' ], //Specify allowed domain(s)
 					create_report_file: "true",
 					keywords          : [ //List keyword specifications
 						'__:1,2d',
