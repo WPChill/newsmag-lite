@@ -1,3 +1,6 @@
+### V2.4.2
+	Security Fix
+
 ### V2.4.1
 	Minor Backend tweaks
 	Improved accesibility with keyboard navigation
