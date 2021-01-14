@@ -28,7 +28,7 @@ MachoThemes.initGoToTop = function ($) {
 	var offset = 300,
 			scroll_top_duration = 700,
 			$back_to_top = $('#back-to-top');
-	jQuery(window).scroll(function () {
+	jQuery(window).on('scroll', function () {
 		( jQuery(this).scrollTop() > offset ) ? $back_to_top.addClass('back-to-top-is-visible') : $back_to_top.removeClass('back-to-top-is-visible');
 	});
 	$back_to_top.on('click', function (event) {
@@ -87,7 +87,7 @@ MachoThemes.initMainSlider = function ($) {
 
 		});
 
-		$('.owl-nav-list li').click(function () {
+		$('.owl-nav-list li').on('click', function () {
 			var slide_index = $(this).index();
 
 			owl.trigger("to.owl.carousel", [ slide_index, 300 ]);
@@ -352,7 +352,7 @@ MachoThemes.initSearchForm = function ($) {
 		trigger.toggleClass('hide');
 		element.toggleClass('opened');
 		setTimeout(function () {
-			input.focus();
+			input.trigger('focus');
 		}, 300);
 		if ( input.val() !== '' ) {
 			inputSubmit.addClass('submit-button').removeClass('close-button');
@@ -372,7 +372,7 @@ MachoThemes.initSearchForm = function ($) {
 
 	inputSubmit.on('click', function () {
 		if ( $(this).hasClass('submit-button') ) {
-			$(this).parent().submit();
+			$(this).parent().on('submit');
 		} else {
 			trigger.toggleClass('hide');
 			element.toggleClass('opened');

@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open() ?>
 
 <?php
 $preloader = get_theme_mod( 'newsmag_preloader_effect', false );

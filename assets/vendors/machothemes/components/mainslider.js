@@ -46,7 +46,7 @@ MachoThemes.initMainSlider = function ($) {
 
 		});
 
-		$('.owl-nav-list li').click(function () {
+		$('.owl-nav-list li').on('click', function () {
 			var slide_index = $(this).index();
 
 			owl.trigger("to.owl.carousel", [ slide_index, 300 ]);

@@ -45,14 +45,10 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
     -- URL: http://scripts.sil.org/OFL
 
 === Images ===
--- screenshot image #1 - https://pixabay.com/en/fashion-beauty-model-portrait-girl-1063100/
+-- screenshot image #1 - https://www.pexels.com/ro-ro/fotografie/fata-femeie-haine-comode-haine-de-zi-33319
 -- screenshot image #2 - https://static.pexels.com/photos/129112/pexels-photo-129112.jpeg
 -- screenshot image #3 - https://www.pexels.com/photo/close-up-portrait-of-a-young-woman-typing-a-text-message-on-mobile-phone-6400/
--- screenshot image #4 - https://pixabay.com/en/keyboard-pen-plan-success-online-621831/
--- banner background image - https://unsplash.com/photos/gxD8hCmi0IQ
-
-https://pixabay.com/en/beautiful-fashion-girl-glamour-1868717/ - #blog article featured image
-https://pixabay.com/en/adult-beach-enjoyment-1867618/ - #slider image 1
+-- screenshot image #4 - https://pxhere.com/en/photo/1330277
 
 https://stocksnap.io/photo/Y4OWV80EPY - 34_StockSnap_Y4OWV80EPY
 https://stocksnap.io/photo/42H3JH8QI5 - 33_StockSnap_42H3JH8QI5
@@ -87,8 +83,5 @@ https://stocksnap.io/photo/YYG2919RXC - 4_StockSnap_YYG2919RXC#
 https://stocksnap.io/photo/IL2GSFO4W2 - 3_StockSnap_IL2GSFO4W2
 https://stocksnap.io/photo/J18ZCO3IPA - 2_StockSnap_J18ZCO3IPA
 https://stocksnap.io/photo/8AGPPYLF5X - 1_lite_A_StockSnap_RVYCCXWSLI copy
-
-
-
 
 -- Any other image included & distributed with the theme has been licensed under the GPL and is the creative work of MachoThemes.com.

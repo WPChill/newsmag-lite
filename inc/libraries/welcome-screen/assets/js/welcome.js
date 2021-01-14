@@ -11,7 +11,7 @@ jQuery( document ).ready( function() {
   }
 
   /* Dismiss required actions */
-  jQuery( '.newsmag-required-action-button' ).click( function() {
+  jQuery( '.newsmag-required-action-button' ).on('click', function() {
 
     var id = jQuery( this ).attr( 'id' ),
         action = jQuery( this ).attr( 'data-action' );
@@ -73,7 +73,7 @@ jQuery( document ).ready( function() {
       } );
 
       jQuery( input ).on( 'focus', function() {
-        jQuery( this ).blur();
+        jQuery( this ).trigger('blur');
       } );
 
       jQuery( '#' + inputId ).attr( 'value', ( jQuery( '#' + id ).slider( 'value' ) ) );

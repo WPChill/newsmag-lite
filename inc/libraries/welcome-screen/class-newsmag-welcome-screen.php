@@ -25,10 +25,6 @@ class Newsmag_Welcome_Screen {
 			$this,
 			'newsmag_dismiss_required_action_callback'
 		) );
-		add_action( 'wp_ajax_nopriv_newsmag_dismiss_required_action', array(
-			$this,
-			'newsmag_dismiss_required_action_callback'
-		) );
 
 		/**
 		 * Set the blog / static page automatically

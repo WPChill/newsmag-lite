@@ -9,7 +9,7 @@ MachoThemes.initSearchForm = function ($) {
 		trigger.toggleClass('hide');
 		element.toggleClass('opened');
 		setTimeout(function () {
-			input.focus();
+			input.trigger('focus');
 		}, 300);
 		if ( input.val() !== '' ) {
 			inputSubmit.addClass('submit-button').removeClass('close-button');
@@ -29,7 +29,7 @@ MachoThemes.initSearchForm = function ($) {
 
 	inputSubmit.on('click', function () {
 		if ( $(this).hasClass('submit-button') ) {
-			$(this).parent().submit();
+			$(this).parent().on('submit');
 		} else {
 			trigger.toggleClass('hide');
 			element.toggleClass('opened');
