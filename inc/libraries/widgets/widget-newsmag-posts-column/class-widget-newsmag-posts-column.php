@@ -60,7 +60,7 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 				foreach ( $categories as $category ) {
 				?>
 					<option
-							value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_attr( $category->cat_name ); ?></option>
+							value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_html( $category->cat_name ); ?></option>
 				<?php } ?>
 			</select>
 		</p>

@@ -105,6 +105,8 @@ class Newsmag_Lite {
 				'modula-best-grid-gallery' => array( 'recommended' => true ),
 				'kali-forms'               => array( 'recommended' => true ),
 				'strong-testimonials'      => array( 'recommended' => true ),
+				'kb-support'               => array( 'recommended' => true),
+				'rsvp'                     => array( 'recommended' => true)
 			);
 
 			/*
