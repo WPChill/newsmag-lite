@@ -284,6 +284,14 @@ dd {
   bottom: 2px;
 }
 
+.entry-content a {
+  text-decoration: underline;
+}
+
+#comments a {
+  text-decoration: underline;
+}
+
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
