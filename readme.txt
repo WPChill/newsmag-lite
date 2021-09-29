@@ -45,15 +45,22 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
     -- URL: http://scripts.sil.org/OFL
 
 === Images ===
--- screenshot image #1 - https://pixy.org/4755507/
--- screenshot image #2 - https://static.pexels.com/photos/129112/pexels-photo-129112.jpeg
--- screenshot image #3 - https://www.pexels.com/photo/close-up-portrait-of-a-young-woman-typing-a-text-message-on-mobile-phone-6400/
--- screenshot image #4 - https://pxhere.com/fr/photo/1330277
+-- screenshot image #1 - https://stocksnap.io/photo/RVYCCXWSLI
+-- screenshot image #2 - https://pixy.org/89326/
+-- screenshot image #3 - https://stocksnap.io/photo/J18ZCO3IPA
+-- screenshot image #4 - https://stocksnap.io/photo/open-sign-IL2GSFO4W2
+-- screenshot image #5 - https://stocksnap.io/photo/HP2MPJT5B6
+-- screenshot image #6 - https://stocksnap.io/photo/quotes-pavement-Y4OWV80EPY
+-- screenshot image #7 - https://stocksnap.io/photo/pencils-writing-0P6FVF3Q5L
 -- banner background image - https://pxhere.com/pt/photo/77289
 
+
+https://pxhere.com/fr/photo/1330277
+https://www.pexels.com/photo/close-up-portrait-of-a-young-woman-typing-a-text-message-on-mobile-phone-6400/
 https://freerangestock.com/photos/105776/photo-details.html - #blog article featured image
 https://www.flickr.com/photos/161723108@N03/28997350607/ - #slider image 1
-
+https://pixy.org/4755507/
+https://static.pexels.com/photos/129112/pexels-photo-129112.jpeg
 https://stocksnap.io/photo/Y4OWV80EPY - 34_StockSnap_Y4OWV80EPY
 https://stocksnap.io/photo/42H3JH8QI5 - 33_StockSnap_42H3JH8QI5
 https://stocksnap.io/photo/XLMUHKTSJ1 - 32_StockSnap_XLMUHKTSJ1#
@@ -86,7 +93,7 @@ https://stocksnap.io/photo/KJ9ZK1L8WS - 5_StockSnap_KJ9ZK1L8WS
 https://stocksnap.io/photo/YYG2919RXC - 4_StockSnap_YYG2919RXC#
 https://stocksnap.io/photo/IL2GSFO4W2 - 3_StockSnap_IL2GSFO4W2
 https://stocksnap.io/photo/J18ZCO3IPA - 2_StockSnap_J18ZCO3IPA
-https://stocksnap.io/photo/8AGPPYLF5X - 1_lite_A_StockSnap_RVYCCXWSLI copy
+https://stocksnap.io/photo/RVYCCXWSLI - 1_lite_A_StockSnap_RVYCCXWSLI copy
 
 
 
