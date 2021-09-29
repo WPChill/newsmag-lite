@@ -48,7 +48,7 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 			<label><?php _e( 'Category', 'newsmag' ); ?> :</label>
 			<select name="<?php echo esc_attr( $this->get_field_name( 'newsmag_category' ) ); ?>"
 					id="<?php echo esc_attr( $this->get_field_id( 'newsmag_category' ) ); ?>">
-				<option value="" 
+				<option value=""
 				<?php
 				if ( empty( $instance['newsmag_category'] ) ) {
 					echo 'selected="selected"';
@@ -60,7 +60,7 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 				foreach ( $categories as $category ) {
 				?>
 					<option
-							value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_attr( $category->cat_name ); ?></option>
+							value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_html( $category->cat_name ); ?></option>
 				<?php } ?>
 			</select>
 		</p>
