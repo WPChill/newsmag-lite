@@ -45,21 +45,21 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
     -- URL: http://scripts.sil.org/OFL
 
 === Images ===
--- screenshot image #1 - https://pixabay.com/en/fashion-beauty-model-portrait-girl-1063100/
+-- screenshot image #1 - https://pixy.org/4755507/
 -- screenshot image #2 - https://static.pexels.com/photos/129112/pexels-photo-129112.jpeg
 -- screenshot image #3 - https://www.pexels.com/photo/close-up-portrait-of-a-young-woman-typing-a-text-message-on-mobile-phone-6400/
--- screenshot image #4 - https://pixabay.com/en/keyboard-pen-plan-success-online-621831/
--- banner background image - https://unsplash.com/photos/gxD8hCmi0IQ
+-- screenshot image #4 - https://pxhere.com/fr/photo/1330277
+-- banner background image - https://pxhere.com/pt/photo/77289
 
-https://pixabay.com/en/beautiful-fashion-girl-glamour-1868717/ - #blog article featured image
-https://pixabay.com/en/adult-beach-enjoyment-1867618/ - #slider image 1
+https://freerangestock.com/photos/105776/photo-details.html - #blog article featured image
+https://www.flickr.com/photos/161723108@N03/28997350607/ - #slider image 1
 
 https://stocksnap.io/photo/Y4OWV80EPY - 34_StockSnap_Y4OWV80EPY
 https://stocksnap.io/photo/42H3JH8QI5 - 33_StockSnap_42H3JH8QI5
 https://stocksnap.io/photo/XLMUHKTSJ1 - 32_StockSnap_XLMUHKTSJ1#
 https://stocksnap.io/photo/QIV7VQGW7K - 31_StockSnap_QIV7VQGW7K#
 https://stocksnap.io/photo/G0V362YTA5 - 30_StockSnap_G0V362YTA5
-https://stocksnap.io/photo/7ZALGLUAAW - 29_StockSnap_7ZALGLUAAW 
+https://stocksnap.io/photo/7ZALGLUAAW - 29_StockSnap_7ZALGLUAAW
 https://stocksnap.io/photo/G3YOGRBLF3 - 28_StockSnap_G3YOGRBLF3
 https://stocksnap.io/photo/91WZ32J28K - 27_StockSnap_91WZ32J28K
 https://stocksnap.io/photo/1IAZ8MX6RM - 26_StockSnap_1IAZ8MX6RM
